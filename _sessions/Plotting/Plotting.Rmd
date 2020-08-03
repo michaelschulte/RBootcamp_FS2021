@@ -1,0 +1,1147 @@
+---
+title: "Plotting"
+author: "Explorative Datenanalyse mit R<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+  <br>
+  <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+    <i class='fas fa-clock' style='font-size:.9em;'></i>
+  </a>&#8239; 
+  <a href='https://therbootcamp.github.io'>
+    <i class='fas fa-home' style='font-size:.9em;' ></i>
+  </a>&#8239;
+  <a href='mailto:therbootcamp@gmail.com'>
+    <i class='fas fa-envelope' style='font-size: .9em;'></i>
+  </a>&#8239;
+  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+    <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+  </a>"
+date: "Februar 2020"
+output:
+  xaringan::moon_reader:
+    css: ["default", "baselrbootcamp.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+layout: true
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:82px"> 
+        <font color="#7E7E7E">
+          www.therbootcamp.com
+        </font>
+      </span>
+    </a>
+    <a href="https://therbootcamp.github.io/">
+      <font color="#7E7E7E">
+       Explorative Datenanalyse mit R | Februar 2020
+      </font>
+    </a>
+    </span>
+  </div> 
+
+---
+
+
+```{r, eval = TRUE, echo = FALSE, warning=F,message=F}
+# Code to knit slides
+baselers <- readr::read_csv("1_Data/basel.csv")
+```
+
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# see: https://github.com/yihui/xaringan
+# install.packages("xaringan")
+# see: 
+# https://github.com/yihui/xaringan/wiki
+# https://github.com/gnab/remark/wiki/Markdown
+options(width=110)
+options(digits = 4)
+```
+
+```{r, echo = FALSE ,message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo = TRUE, eval = TRUE, 
+                      message = FALSE, warning = FALSE, fig.align = 'center', dpi = 200)
+library(tidyverse)
+library(ggthemes)
+basel = read_csv('1_Data/basel.csv')
+```
+
+
+<p align="center">
+<br>
+<img src="image/plots.png" height="540px">
+<br>
+<font style="font-size:10px">from <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html">r-statistics.co</a></font>
+</p>
+
+
+
+---
+
+
+.pull-left4[
+
+# `base` Plotting
+
+<ul>
+  <li class="m1"><span>Der <high>traditionelle</high> Ansatz für Plotting.</span></li>
+  <li class="m2"><span><high>Separate Funktionen</high> für verschiedene Plots</span></li>
+</ul>
+
+<br>
+
+```{r, eval = FALSE}
+# Histogram in base R
+hist(x = basel$alter,
+     xlab = "Alter",
+     ylab = "Häufigkeit",
+     main = "Histogramm Alter")
+```
+
+]
+
+.pull-right5[
+<br><br><br>
+```{r, echo = F}
+# Histogram in base R
+hist(x = basel$alter,
+     xlab = "Alter",
+     ylab = "Häufigkeit",
+     main = "Histogramm Alter")
+```
+
+]
+
+
+
+---
+
+
+.pull-left4[
+
+# `base` Plotting
+
+<ul>
+  <li class="m1"><span>Der <high>traditionelle</high> Ansatz für Plotting.</span></li>
+  <li class="m2"><span><high>Separate Funktionen</high> für verschiedene Plots</span></li>
+</ul>
+
+<br>
+
+
+
+```{r, eval = F}
+# Boxplot in base R
+boxplot(formula = groesse ~ geschlecht,
+        data = basel,
+        xlab = "Geschlecht",
+        ylab = "Groesse",
+        main = "Box plot Groesse")
+```
+
+]
+
+.pull-right5[
+<br><br><br>
+```{r, echo = F}
+# Boxplot in base R
+boxplot(formula = groesse ~ geschlecht,
+        data = basel,
+        xlab = "Geschlecht",
+        ylab = "Groesse",
+        main = "Box plot Groesse")
+```
+
+]
+
+---
+
+
+.pull-left4[
+
+# `base` Plotting
+
+<ul>
+  <li class="m1"><span>Der <high>traditionelle</high> Ansatz für Plotting.</span></li>
+  <li class="m2"><span><high>Separate Funktionen</high> für verschiedene Plots</span></li>
+</ul>
+
+<br>
+
+
+
+```{r, eval = F}
+# Scatterplot in base R
+plot(x = basel$groesse,
+     y = basel$einkommen,
+     xlab = "Height",
+     ylab = "Einkommen",
+     main = "Scatterplot Groesse x Einkommen")
+```
+
+]
+
+.pull-right5[
+<br><br><br>
+```{r, echo = F}
+# Scatterplot in base R
+plot(x = baselers$groesse,
+     y = baselers$einkommen,
+     xlab = "Groesse",
+     ylab = "Einkommen",
+     main = "Scatterplot Groesse x Einkommen")
+```
+
+]
+
+
+---
+
+# Probleme mit Base R plotting
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Die <high>Ästhetik</high> ist nicht mehr zeitgemäss.</span></li>
+  <li class="m2"><span>Schönere Plots = sehr <high>viel Code.</high></span></li>
+  <li class="m3"><span>Generell sehr <high>unflexibel.</high></high></span></li>
+</ul>
+]
+
+.pull-right5[
+
+<p align="center">
+<br>
+<img src="image/outdated.jpeg">
+<br>
+<font style="font-size:10px">from <a href="https://www.healthhosts.com/4-signs-your-website-is-outdated/">healthhosts.com</a></font>
+</p>
+
+]
+
+---
+
+# Das mächtige `tidyverse`
+
+Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-performanter, nutzerfreundlicher Pakete, die speziell für eine effizientere Datenanalyse entwickelt wurden. 
+1. <high><mono>ggplot2</mono> für Grafiken</high>.
+2. <mono>dplyr</mono> für Datenverarbeitung.
+3. <mono>tidyr</mono> für Datenverarbeitung.
+4. `readr` für Daten I/O.
+5. `purrr` für funktionales Programmieren.
+6. `tibble` für moderne `data.frame`s.
+<br><br>
+
+<table style="cellspacing:0; cellpadding:0; border:none;">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <tr>
+    <td bgcolor="white">
+    <img src="image/hex-ggplot2.png" height=160px></img>
+    </td>
+        <td bgcolor="white">
+    <img src="image/hex-dplyr.png"height=160px style="opacity:.2"></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-tidyr.png"height=160px style="opacity:.2"></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-readr.png"height=160px style="opacity:.2"></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-purrr.png"height=160px style="opacity:.2"></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-tibble.png"height=160px style="opacity:.2"></img>
+    </td>
+  </tr>
+</table>
+
+
+
+---
+
+# Modulare Graphiken in <mono>ggplot2</mono>
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><high>data</high>: Der Datensatz</span></li>
+  <li class="m2"><span><high>mapping</high>: Grobe Struktur des Plots</span></li>
+  <ul class="level">
+    <li><span>Was soll auf die Achsen?</span></li>
+    <li><span>Was soll Grösse/Farbe repräsentieren?</span></li>
+  </ul>
+  <li class="m3"><span><high>geoms</high>: Objekte im Plot</high></span></li>
+  <li class="m4"><span><high>labs</high>: Annotierung des Plots</high></span></li>
+  <li class="m5"><span><high>themes</high>: Ästhetische Gestaltung</high></span></li>
+  <li class="m6"><span><high>facets</high>: Auftrennung des Plots </high></span></li>
+  <li class="m7"><span><high>scales</high>: Skalierung der Achsen</high></span></li>
+</ul>
+
+]
+
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 7, fig.height = 5.5}
+goal = ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = class)) +
+  geom_point(size = 3, alpha = .9) + 
+  geom_smooth(col = "blue", method = "lm")+
+  labs(x = "Hubraum in Litern",
+       y = "Autobahn Meilen pro Gallone",
+       title = "MPG Datensatz",
+       subtitle = "Autos mit mehr Hubraum fahren weniger Meilen pro Gallone",
+       caption = "Quelle: mpg Datensatz in ggplot2") + 
+  theme_bw()
+goal
+```
+
+]
+
+
+---
+
+# Wir kreieren diesen Plot
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><high>data</high></span></li>
+  <ul class="level">
+    <li><span>Der <mono>mpg</mono> Datensatz</span></li>
+  </ul>
+  <li class="m2"><span><high>mapping</high></span></li>
+  <ul class="level">
+    <li><span>Hubraum auf die x-Achse</span></li>
+    <li><span>Meilen pro Gallone auf die y-Achse</span></li>
+    <li><span>Farbe der Objekte gemäss Autoklasse</span></li>
+  </ul>
+  <li class="m3"><span><high>geoms</high></span></li>
+  <ul class="level">
+    <li><span>Daten als Punkte</span></li>
+    <li><span>Ergänze Regressionslinie</span></li>
+  </ul>
+  <li class="m4"><span><high>labs</high></span></li>
+  <ul class="level">
+    <li><span>Beschriftungen Achsen und Titel</span></li>
+  </ul>
+  <li class="m5"><span><high>themes</high></span></li>
+  <ul class="level">
+    <li><span>Schwarz-weiss Ästhetik</span></li>
+  </ul>
+  
+</ul>
+
+]
+
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 7, fig.height = 5.5}
+goal
+```
+
+
+]
+
+
+---
+
+# `ggplot()`
+
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Alle Plots beginnen mit <highm>ggplot()</highm></span></li>
+  <li class="m2"><span>2 zentrale Argumente</span></li>
+  <ul class="level">
+    <li><span><mono>data</mono> | Der Datensatz (<mono>tibble</mono>)</span></li>
+    <li><span><mono>mapping</mono> | Die Struktur definiert mittels <mono>aes()</mono>
+  </ul>
+  </span></li>
+</ul>
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5}
+ggplot(data = mpg)
+```
+
+]
+
+
+---
+
+# `aes()`
+
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><highm>aes()</highm> definiert die Struktur für das <mono>mapping</mono> Argument.</span></li>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
+  <ul class="level">
+    <li><span><mono>x,y</mono> | Bestimmt die Achsen</span></li>
+    <li><span><mono>color,fill</mono> | Bestimmt Farben</span></li>
+    <li><span><mono>alpha</mono> | Bestimmt Transparenz</span></li>
+    <li><span><mono>size</mono> | Bestimmt Grössen</span></li>
+    <li><span><mono>shape</mono> | Bestimmt Objektypen (z.B. Kreise oder Quadrate)</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 6, fig.height = 4.5}
+ggplot(data = mpg,
+       mapping = aes(x = displ, y = hwy))
+```
+
+]
+
+---
+
+# <mono>+</mono>
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Der <highm>+</highm> Operator erweitert den Plot um beliebige weitere Plotelemente.</span></li>
+</ul>
+
+<br>
+
+```{r, eval = FALSE, fig.width = 5, fig.height = 4, out.width = "90%"}
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy)) + 
+  
+  # Plotte Daten als Punkte
+  geom_point() 
+```
+
+]
+
+
+.pull-right45[
+
+
+```{r, echo = FALSE, fig.width = 7, fig.height = 5.5}
+ggplot(data = mpg,
+       mapping = aes(x = displ, y = hwy)) + 
+  geom_point()
+```
+
+
+]
+
+
+---
+
+# `geom_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><highm>geom_*()</highm> Funktionen definieren die geometrischen Objekte mit denen die Daten repräsentiert werden.</span></li>
+  <li class="m2"><span>Ein paar <mono>geoms</mono>:</span></li>
+  <ul class="level">
+    <li><span><mono>geom_point()</mono> | für Punkte</span></li>
+    <li><span><mono>geom_bar()</mono> | für Balken</span></li>
+    <li><span><mono>geom_boxplot()</mono> | für Box-Plots </span></li>
+    <li><span><mono>geom_count()</mono> | für Punkte skaliert nach Häufigkeit</span></li>
+    <li><span><mono>geom_smooth()</mono> | für Kurven</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 7, fig.height = 5.5}
+ggplot(data = mpg,
+       mapping = aes(x = displ, y = hwy)) + 
+  geom_point()
+```
+
+
+]
+
+
+
+---
+
+
+.pull-left45[
+
+<br>
+## `geom_count()`
+<br>
+
+```{r, out.width= "100%", echo = TRUE, fig.width = 6, fig.height = 4}
+ggplot(data = mpg,
+  mapping = aes(x = displ, y = hwy)) + 
+  geom_count()
+```
+
+
+
+
+]
+
+.pull-right45[
+
+<br>
+## `geom_bar()`
+<br>
+
+```{r, out.width= "100%", echo = TRUE, fig.width = 6, fig.height = 4}
+ggplot(data = mpg,
+  mapping = aes(x = class)) + 
+  geom_bar()
+```
+
+]
+
+
+
+---
+
+.pull-left45[
+
+<br>
+## `geom_boxplot()`
+<br>
+
+```{r, fig.width = 6, fig.height = 4}
+ggplot(data = mpg,
+  mapping = aes(x = class,
+                y = hwy)) + 
+  geom_boxplot()
+```
+
+]
+
+
+.pull-right45[
+
+<br>
+## `geom_violin()`
+<br>
+
+```{r, out.width= "100%", fig.width = 6, fig.height = 4}
+ggplot(data = mpg,
+  mapping = aes(x = class,
+                y = hwy)) + 
+  geom_violin()
+```
+
+]
+
+---
+
+# Was fehlt?
+
+.pull-left45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = F}
+ggplot(data = mpg,
+       mapping = aes(x = displ, 
+                     y = hwy)) + 
+  geom_point()
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal
+```
+
+]
+
+
+
+
+---
+
+# `aes()`
+
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><highm>aes()</highm> definiert die Struktur für das <mono>mapping</mono> Argument.</span></li>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
+  <ul class="level">
+    <li><span><mono>x,y</mono> | Bestimmt die Achsen</span></li>
+    <li><span><high><mono>color,fill</mono> | Bestimmt Farben</high></span></li>
+  </ul>
+</ul>
+
+
+```{r, fig.width = 6, fig.height = 4.5, eval = F}
+ggplot(data = mpg,
+       mapping = aes(x = displ, 
+                     y = hwy,
+                     
+                     # Farbe gemäss Klasse
+                     color = class)) +
+  geom_point()
+```
+
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = F}
+ggplot(data = mpg,
+       mapping = aes(x = displ, 
+                     y = hwy,
+                     
+                     # Farbe gemäss Klasse
+                     color = class)) +
+  geom_point()
+```
+
+]
+
+---
+
+# Was fehlt?
+
+.pull-left45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = F}
+ggplot(data = mpg,
+       mapping = aes(x = displ, 
+                     y = hwy,
+                     color = class)) + 
+  geom_point()
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal
+```
+
+]
+
+---
+
+# `geom_smooth()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>geom_smooth()</highm> können Kurven an die Daten angepasst werden.</span></li>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
+  <ul class="level">
+    <li><span><mono>method</mono> | Art der Datenanpassung</span></li>
+    <li><span><mono>color</mono> | Farbe</high></span></li>
+  </ul>
+
+</ul>
+
+```{r, fig.width = 7, fig.height = 5.5, eval = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  
+  # Ergänze Kurve
+  geom_smooth(col = "blue")
+```
+
+]
+
+.pull-right45[
+
+
+```{r, fig.width = 7, fig.height = 5.5, echo = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  geom_smooth(col = "blue")
+```
+
+]
+
+---
+
+# `geom_smooth()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>geom_smooth()</highm> können angepasste Kurven ergänzt werden.</span></li>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
+  <ul class="level">
+    <li><span><mono>method</mono> | Art der Datenanpassung</span></li>
+    <li><span><mono>color</mono> | Farbe</high></span></li>
+  </ul>
+</ul>
+
+```{r, fig.width = 7, fig.height = 5.5, eval = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  
+  # Ergänze Kurve
+  geom_smooth(col = "blue",
+              method = "lm")
+```
+
+]
+
+.pull-right45[
+
+
+```{r, fig.width = 7, fig.height = 5.5, echo = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy, col = class)) +
+  geom_point() + 
+  geom_smooth(col = "blue",
+              method = "lm")
+```
+
+]
+
+---
+
+# Vererbung
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><highm>geom</highm>s erben ihre Eigenschaften von <mono>mapping</mono>.</span></li>
+  <li class="m2"><span>Vererbte Eigenschaften können durch eigene Argumente <high>überschrieben</high> werden.</span></li>
+</ul>
+
+
+```{r, fig.width = 7, fig.height = 5.5, eval = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  geom_smooth() 
+```
+
+]
+
+.pull-right45[
+
+<p align="center">
+<br>
+<img src="image/question.png" height=280px>
+<br>
+<font style="font-size:10px">from <a href="http://catchingfire.ca/the-power-of-a-question-mark/">catchingfire.ca</a></font>
+</p>
+]
+
+---
+
+# Vererbung
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span><highm>geom</highm>s erben ihre Eigenschaften von <mono>mapping</mono>.</span></li>
+  <li class="m2"><span>Vererbte Eigenschaften können durch eigene Argumente <high>überschrieben</high> werden.</span></li>
+</ul>
+
+
+```{r, fig.width = 7, fig.height = 5.5, eval = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  geom_smooth() 
+```
+
+]
+
+.pull-right45[
+
+
+```{r, fig.width = 7, fig.height = 5.5, echo = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy, col = class)) +
+  geom_point() + 
+  geom_smooth()
+```
+
+]
+
+---
+
+# Was fehlt?
+
+.pull-left45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy, col = class)) +
+  geom_point() + 
+  geom_smooth(col = "blue",
+              method = "lm")
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal
+```
+
+]
+
+---
+
+# `labs()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>labs()</highm> können alle Aspekte des Plots annotiert werden.</span></li>
+  <li class="m2"><span>Zentrale Argumente:</span></li>
+  <ul class="level">
+    <li><span><mono>x,y</mono> | Achsenbeschriftung</span></li>
+    <li><span><mono>title, subtitle</mono> | Titel und Untertitel</high></span></li>
+    <li><span><mono>caption</mono> | Bildunterschrift</high></span></li>
+  </ul>
+</ul>
+
+```{r, echo = TRUE, eval = FALSE}
+ggplot(...) +
+  labs(x = "Hubraum in Litern",
+       y = "Autobahn Meilen pro Gallone",
+       title = "MPG Datensatz",
+       subtitle = "Autos mit mehr Hub...",
+       caption = "Quelle: mpg Datensatz...")
+```
+
+]
+
+
+.pull-right45[
+
+```{r, echo = FALSE, fig.width = 7, fig.height = 5.5}
+ggplot(data = mpg, mapping = aes(x = displ, y = hwy, color = class)) +
+  geom_point(size = 3, alpha = .9) + 
+  geom_smooth(col = "blue", method = "lm") +
+  labs(x = "Hubraum in Litern",
+       y = "Autobahn Meilen pro Gallone",
+       title = "MPG Datensatz",
+       subtitle = "Autos mit mehr Hubraum fahren weniger Meilen pro Gallone",
+       caption = "Quelle: mpg Datensatz in ggplot2") 
+```
+
+]
+
+
+---
+
+# Was fehlt?
+
+.pull-left45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = F}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy, col = class)) +
+  geom_point() + 
+  geom_smooth(col = "blue",
+              method = "lm") +
+  labs(x = "Hubraum in Litern",
+       y = "Autobahn Meilen pro Gallone",
+       title = "MPG Datensatz",
+       subtitle = "Autos mit mehr Hubraum fahren weniger Meilen pro Gallone",
+       caption = "Quelle: mpg Datensatz in ggplot2") 
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal
+```
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
+  <ul class="level">
+    <li><span><mono>theme_gray()</mono></span></li>
+    <li><span><mono>theme_classic()</mono></span></li>
+    <li><span><mono>theme_void()</mono></span></li>
+    <li><span><mono>theme_excel() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_bw()</mono></span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, eval = F}
+ggplot(...) + theme_gray()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal + theme_gray()
+```
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
+  <ul class="level">
+    <li><span><mono>theme_gray()</mono></span></li>
+    <li><span><mono>theme_classic()</mono></span></li>
+    <li><span><mono>theme_void()</mono></span></li>
+    <li><span><mono>theme_excel() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_bw()</mono></span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, eval = F}
+ggplot(...) + theme_classic()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal + theme_classic()
+```
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
+  <ul class="level">
+    <li><span><mono>theme_gray()</mono></span></li>
+    <li><span><mono>theme_classic()</mono></span></li>
+    <li><span><mono>theme_void()</mono></span></li>
+    <li><span><mono>theme_excel() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_bw()</mono></span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, eval = F}
+ggplot(...) + theme_void()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal + theme_void()
+```
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
+  <ul class="level">
+    <li><span><mono>theme_gray()</mono></span></li>
+    <li><span><mono>theme_classic()</mono></span></li>
+    <li><span><mono>theme_void()</mono></span></li>
+    <li><span><mono>theme_excel() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_bw()</mono></span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, eval = F}
+ggplot(...) + theme_excel()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal + theme_excel()
+```
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
+  <ul class="level">
+    <li><span><mono>theme_gray()</mono></span></li>
+    <li><span><mono>theme_classic()</mono></span></li>
+    <li><span><mono>theme_void()</mono></span></li>
+    <li><span><mono>theme_excel() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_bw()</mono></span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, eval = F}
+ggplot(...) + theme_economist()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal + theme_economist()
+```
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
+  <li class="m2"><span>Einige <mono>theme</mono>s:
+  <br><br>
+  <ul class="level">
+    <li><span><mono>theme_gray()</mono></span></li>
+    <li><span><mono>theme_classic()</mono></span></li>
+    <li><span><mono>theme_void()</mono></span></li>
+    <li><span><mono>theme_excel() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_economist() (<mono>ggthemes</mono>)</mono></span></li>
+    <li><span><mono>theme_bw()</mono></span></li>
+  </ul>
+  </span></li>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, eval = F}
+ggplot(...) + theme_bw()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal + theme_bw()
+```
+
+]
+
+
+---
+
+# Et voila!
+
+.pull-left45[
+
+```{r, fig.width = 7, fig.height = 5.5, eval = F, echo = TRUE}
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy, 
+                     col = class)) +
+  geom_point() + 
+  geom_smooth(col = "blue", 
+              method = "lm")+
+  labs(
+    x = "Hubraum in Litern",
+    y = "Autobahn Meilen pro Gallone",
+    title = "MPG Datensatz",
+    subtitle = "Autos mit mehr Hub...",
+    caption = "Quelle: mpg Datensatz...") + 
+  theme_bw()
+
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+goal
+```
+
+]
+
+---
+
+class: middle, center
+
+<h1><a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Plotting/Plotting_practical.html">Practical</a></h1>
+
+
+
+

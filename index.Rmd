@@ -1,26 +1,72 @@
 ---
-title: R Bootcamp
+title: "Explorative Datenanalyse mit R"
+subtitle: ""
+author: "
+      <a href='https://therbootcamp.github.io'>
+        <i class='fas fa-home' style='font-size:1em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+        <i class='fas fa-clock' style='font-size:1em;' ></i>
+      </a>
+      <a href='mailto:therbootcamp@gmail.com'>
+        <i class='fas fa-envelope' style='font-size: 1em;'></i>
+      </a>
+      <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+        <i class='fab fa-linkedin' style='font-size: 1em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+        <font style='font-style:normal;font-size:20px;padding-left:5px'>The R Bootcamp</font>
+      </a>
+      <br>
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><font style='font-style:normal;font-size:20px;padding-left:9.3px'>Februar 2020</font>
+      "
 output:
   html_document:
     css: index.css
     self_contained: no
-    includes:
-      #in_header: header.html
-      #before_body: doc_prefix.html
-      after_body: doc_suffix.html
 ---
 
-||
-|:---|
-|<font style='font-style:normal;font-size:20px;padding-left:9.3px'>Michael Schulte-Mecklenbeck</font>|
-|<font style='font-style:normal;font-size:20px;padding-left:9.3px'>FS 2019</font>|
+<br>
+
+### Wifi
+
+##### [**Instructions**](https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/wifi_instruct.png)
+
+### Downloads
+
+##### [Data sets](https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/TheRBootcamp_EDA_2020Feb_data.zip)
+
+<!--- <font style="font-size:12px">(made available later)</font>--->
+
+<br>
+
+### Materialien
+|  | Tag 1 | Tag 2 | 
+|:--|:-------------|:-------------|
+|0| Willkommen!<br>[Folien](_sessions/Welcome/Welcome.html) | Wiederholung<br>[Folien](_sessions/Recap/Recap.html)|
+|1| Daten <br>[Folien](_sessions/Data/Data.html), [Practical](_sessions/Data/Data_practical.html) | Plotting <br>[Folien](_sessions/Plotting/Plotting.html), [Practical](_sessions/Plotting/Plotting_practical.html) |
+|2|  Wrangling<br>[Folien](_sessions/Wrangling/Wrangling.html), [Practical](_sessions/Wrangling/Wrangling_practical.html) | Plotting II<br>[Folien](_sessions/PlottingII/PlottingII.html), [Practical](_sessions/PlottingII/PlottingII_practical.html)|
+|3|   Wrangling II<br>[Folien](_sessions/WranglingII/WranglingII.html), [Practical](_sessions/WranglingII/WranglingII_practical.html) | Plotting III<br>[Folien](_sessions/PlottingIII/PlottingIII.html), [Practical](_sessions/PlottingIII/PlottingIII_practical.html) |
+||    | Nächste Schritte<br>[Folien](_sessions/NextSteps/NextSteps.html) |
 
 
-|Date|0|1|2|3|
-|:---|:---|:---|:---|
-20.2.|Welcome!<br>[slides](_sessions/Welcome/Welcome.html)|Intro to R<br>[slides](_sessions/IntroToR/IntroToR.html), [source](_sessions/IntroToR/IntroToR_interactive.R)|Data <br>[slides](_sessions/Data/Data.html), [practical](_sessions/Data/Data_practical.html),[solutions](_sessions/Data/Data_practical_solutions.html)||
-27.2.|Recap|Wrangling<br>[slides](_sessions/Wrangling/Wrangling.html), [practical](_sessions/Wrangling/Wrangling_practical.html),[solutions](_sessions/Data/Wrangling_solutions.html)  | Statistics I<br>[slides](_sessions/StatisticsI/StatisticsI.html), [practical](_sessions/StatisticsI/StatisticsI_practical.html), [solutions](_sessions/StatisticsI/StatisticsI_practical_solutions.html) ||
-6.3.|Recap| Statistics II<br>[slides](_sessions/StatisticsII/StatisticsII.html), [practical](_sessions/StatisticsII/StatisticsII_practical.html), [solutions](_sessions/StatisticsII/StatisticsII_practical_solutions.html)|Plotting I<br>[slides](_sessions/PlottingI/PlottingI.html), [practical](_sessions/PlottingI/PlottingI_practical.html), [solutions](_sessions/PlottingI/PlottingI_practical_solutions.html)||
-27.3.|Recap| Plotting II <br>[slides](_sessions/PlottingII/PlottingII.html), [practical](_sessions/PlottingII/PlottingII_practical.html), [solutions](_sessions/PlottingII/PlottingII_solutions.html)|Reporting<br>[slides](_sessions/Reporting/Reporting.html), [practical](_sessions/Reporting/Reporting_practical.html), [solutions](_sessions/Reporting/Reporting_solutions.html)||
-3.4.|Recap|Case Study [CaseStudy](_sessions/CaseStudy/Financial_Data_Case_Study.html) | Final Project [Medicine](_sessions/FinalProject/FinalProject_Medicine.html), [Clinical](_sessions/FinalProject/FinalProject_Clinical.html) ||
-1.5.|Final Presentations||||
+<!---
+
+|  | Day 1<br>Fundamentals| Day 2<br>Analysis| Day 3<br>Reporting| 
+|:--|:-------------|:-------------|:-------------|
+|0| Welcome!<br>[Folien](_sessions/Welcome/Welcome.html) | Recap I<br>[Folien](_sessions/Recap/Recap.html)| Recap II<br>[Folien](_sessions/RecapII/RecapII.html)|
+|1| Intro to R<br>[Folien](_sessions/IntroToR/IntroToR.html), [source](_sessions/IntroToR/IntroToR_interactive.R) | Statistics I <br>[Folien](_sessions/StatisticsI/StatisticsI.html), [Practical](_sessions/StatisticsI/StatisticsI_Practical.html) | Plotting II <br>[Folien](_sessions/PlottingII/PlottingII.html), [Practical](_sessions/PlottingII/PlottingII.html) |
+|2|  Data <br>[Folien](_sessions/Data/Data.html), [Practical](_sessions/Data/Data_Practical.html)| Statistics II<br>[Folien](_sessions/StatisticsII/Statistics.html), [Practical](_sessions/StatisticsII/Statistics_Practical.html)| Reporting<br>[Folien](_sessions/Reporting/Reporting.html), [Practical](_sessions/Reporting/Reporting_Practical.html)|
+|3|   Wrangling<br>[Folien](_sessions/Wrangling/Wrangling.html), [Practical](_sessions/Wrangling/Wrangling_Practical.html) | Plotting I<br>[Folien](_sessions/PlottingI/Plotting.html), [Practical](_sessions/PlottingI/Plotting_Practical.html) |Case Studies<br>[Intro](_sessions/CaseStudies/CaseStudies.html)<br>[1: Clinical Trial](_sessions/CaseStudies/Clinical_Data_Case_Study.html)<br>[2: Finance ](_sessions/CaseStudies/Financial_Data_Case_Study.html)|
+|4| |  | Next Steps<br> [Folien](_sessions/NextSteps/NextSteps.html) |
+<br>
+
+--->
+
+
+### Agenda
+
+
+<p align="left"><br>
+    <img border="0" alt="Feb2020Schedule" src="_sessions/Welcome/image/schedule.png" style="width:410px">
+</p>

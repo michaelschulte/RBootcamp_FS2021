@@ -1,0 +1,1226 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Wrangling II</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Wrangling II
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Februar 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Explorative Datenanalyse mit R | Februar 2020
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+  
+
+
+
+
+# Advanced `dplyr`
+
+.pull-left45[
+
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Transformation &amp; Organisation&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Fehlende Werte ersetzen / entfernen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Ändere alle Variablen, die...&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Zeilen zu Spalten oder Spalten zu Zeilen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Aggregation&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Nach Variablen gruppieren&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Deskriptive Statistiken berechnen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right45[
+&lt;p align="center"&gt;
+&lt;img src="image/wrangling.jpeg"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://DATENsciencebe.com/tag/DATEN-wrangling/"&gt;DATENsciencebe.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Transformation &amp; Organisation
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Transformation&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Organisation&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse
+```
+
+```
+## # A tibble: 5 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     3    57         2 medikament    NA    NA
+## 4     4    34         1 placebo      100   105
+## 5     5    45         2 medikament    NA    NA
+```
+
+
+]
+
+---
+
+# `mutate_if()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Transformation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Organisation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Ändere alle numeric in character
+  mutate_if(is.numeric, as.character)
+```
+
+```
+## # A tibble: 5 x 6
+##   id    alter bedingung bed_label  t_1   t_2  
+##   &lt;chr&gt; &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt;      &lt;chr&gt; &lt;chr&gt;
+## 1 1     37    1         placebo    123   135  
+## 2 2     65    2         medikament 143   140  
+## 3 3     57    2         medikament &lt;NA&gt;  &lt;NA&gt; 
+## 4 4     34    1         placebo    100   105  
+## 5 5     45    2         medikament &lt;NA&gt;  &lt;NA&gt;
+```
+
+]
+
+---
+
+# `replace_na()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Transformation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Organisation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Ändere fehlende Werte in 110
+  mutate(t_1 = replace_na(t_1, 110))
+```
+
+```
+## # A tibble: 5 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     3    57         2 medikament   110    NA
+## 4     4    34         1 placebo      100   105
+## 5     5    45         2 medikament   110    NA
+```
+
+]
+
+---
+
+# `replace_na()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Transformation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Organisation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Entferne Zeilen mit fehlenden Werten
+  drop_na()
+```
+
+```
+## # A tibble: 3 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     4    34         1 placebo      100   105
+```
+
+]
+
+---
+
+# `starts_with()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Transformation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Organisation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Wähle spalten aus, die mit "t" beginnen
+  select(starts_with("t"))
+```
+
+```
+## # A tibble: 5 x 2
+##     t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;
+## 1   123   135
+## 2   143   140
+## 3    NA    NA
+## 4   100   105
+## 5    NA    NA
+```
+
+]
+
+---
+
+# `contains()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Transformation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Organisation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Wähle spalten aus, die "_" beinhalten
+  select(contains("_"))
+```
+
+```
+## # A tibble: 5 x 3
+##   bed_label    t_1   t_2
+##   &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1 placebo      123   135
+## 2 medikament   143   140
+## 3 medikament    NA    NA
+## 4 placebo      100   105
+## 5 medikament    NA    NA
+```
+
+]
+
+---
+
+# `:`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Transformation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Organisation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Spalten von alter bis t_1
+  select(alter:t_1)
+```
+
+```
+## # A tibble: 5 x 4
+##   alter bedingung bed_label    t_1
+##   &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;
+## 1    37         1 placebo      123
+## 2    65         2 medikament   143
+## 3    57         2 medikament    NA
+## 4    34         1 placebo      100
+## 5    45         2 medikament    NA
+```
+
+]
+
+---
+
+# `pivot_*()`
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Transformation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;replace_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;drop_na()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Organisation
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;starts_with(), contains(), :&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;pivot_longer(), pivot_wider()&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+&lt;img src="image/tidyr-spread-gather.gif" height=420px&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="https://github.com/gadenbuie/tidyexplain"&gt;tidyexplain&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# `pivot_longer()`
+
+.pull-left4[
+
+
+```r
+# wide zu long
+DATEN %&gt;% 
+  pivot_longer(cols = VARS,
+               names_to = NAME1,
+               values_to = NAME2)
+```
+
+]
+
+.pull-right5[
+
+
+```r
+# wide zu long
+patienten_ergebnisse %&gt;% 
+  filter(bed_label == "placebo")
+```
+
+```
+## # A tibble: 2 x 6
+##      id alter bedingung bed_label   t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo     123   135
+## 2     4    34         1 placebo     100   105
+```
+]
+
+---
+
+# `pivot_longer()`
+
+.pull-left4[
+
+
+```r
+# wide zu long
+DATEN %&gt;% 
+  pivot_longer(cols = VARS,
+               names_to = NAME1,
+               values_to = NAME2)
+```
+
+]
+
+.pull-right5[
+
+
+```r
+# wide zu long
+patienten_ergebnisse %&gt;% 
+  filter(bed_label == "placebo") %&gt;%
+  pivot_longer(cols = c("t_1", "t_2"),
+               names_to = "zeit",
+               values_to = "messung")
+```
+
+```
+## # A tibble: 4 x 6
+##      id alter bedingung bed_label zeit  messung
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;dbl&gt;
+## 1     1    37         1 placebo   t_1       123
+## 2     1    37         1 placebo   t_2       135
+## 3     4    34         1 placebo   t_1       100
+## 4     4    34         1 placebo   t_2       105
+```
+
+]
+
+---
+
+
+# `pivot_wider()`
+
+.pull-left4[
+
+
+```r
+# wide zu long
+DATEN %&gt;% 
+  pivot_wider(names_from = VAR1,
+              values_from = VAR2)
+```
+]
+
+.pull-right5[
+
+
+
+
+```r
+# wide zu long
+patienten_ergebnisse_lang
+```
+
+```
+## # A tibble: 4 x 6
+##      id alter bedingung bed_label zeit  messung
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt;   &lt;dbl&gt;
+## 1     1    37         1 placebo   t_1       123
+## 2     1    37         1 placebo   t_2       135
+## 3     4    34         1 placebo   t_1       100
+## 4     4    34         1 placebo   t_2       105
+```
+
+]
+
+---
+
+
+# `pivot_wider()`
+
+.pull-left4[
+
+
+```r
+# wide zu long
+DATEN %&gt;% 
+  pivot_wider(names_from = VAR1,
+              values_from = VAR2)
+```
+]
+
+.pull-right5[
+
+
+
+
+```r
+# wide zu long
+patienten_ergebnisse_lang %&gt;%
+    pivot_wider(names_from = "zeit",
+                values_from = "messung")
+```
+
+```
+## # A tibble: 2 x 6
+##      id alter bedingung bed_label   t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo     123   135
+## 2     4    34         1 placebo     100   105
+```
+
+]
+
+---
+
+# Aggregation
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Aggregation&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;summarise()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;summarise_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;group_by(), summarise()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;n(), first(), last(), nth()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;pull()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+
+
+
+```r
+basel
+```
+
+```
+## # A tibble: 10,000 x 20
+##      id geschlecht alter groesse gewicht
+##   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1     1 f             87    165     NA  
+## 2     2 m             54    175.    85.6
+## 3     3 f             34    147.    53.9
+## 4     4 m             31    166.   105  
+## 5     5 m             24    180.   102. 
+## # … with 9,995 more rows, and 15 more
+## #   variables: einkommen &lt;dbl&gt;,
+## #   bildung &lt;chr&gt;, konfession &lt;chr&gt;,
+## #   kinder &lt;dbl&gt;, glueck &lt;dbl&gt;,
+## #   fitness &lt;dbl&gt;, essen &lt;dbl&gt;,
+## #   alkohol &lt;dbl&gt;, tattoos &lt;dbl&gt;,
+## #   rhein &lt;dbl&gt;, …
+```
+
+
+]
+
+
+
+---
+
+
+
+# `summarise()`
+
+.pull-left4[
+
+
+
+```r
+DATEN %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Berechne deskriptive Statistiken
+  summarise(
+    alter_mean = mean(alter),
+    groesse_median = median(groesse)
+  )
+```
+
+```
+## # A tibble: 1 x 2
+##   alter_mean groesse_median
+##        &lt;dbl&gt;          &lt;dbl&gt;
+## 1       49.4           171.
+```
+
+
+]
+
+---
+
+
+# `summarise_if()`
+
+.pull-left4[
+
+
+
+```r
+DATEN %&gt;%
+  summarise_if(
+    BEDINGUNG,
+    SUMMARY_FUN
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  select(alter, groesse, konfession, einkommen)
+```
+
+```
+## # A tibble: 10,000 x 4
+##   alter groesse konfession     einkommen
+##   &lt;dbl&gt;   &lt;dbl&gt; &lt;chr&gt;              &lt;dbl&gt;
+## 1    87    165  katholisch            NA
+## 2    54    175. konfessionslos      7500
+## 3    34    147. konfessionslos      5500
+## 4    31    166. katholisch            NA
+## 5    24    180. katholisch          3800
+## # … with 9,995 more rows
+```
+
+
+]
+
+---
+
+
+# `summarise_if()`
+
+.pull-left4[
+
+
+
+```r
+DATEN %&gt;%
+  summarise_if(
+    BEDINGUNG,
+    SUMMARY_FUN
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Berechne deskriptive Statistiken
+  select(alter, groesse, konfession, einkommen) %&gt;%
+  summarise_if(is.numeric, mean)
+```
+
+```
+## # A tibble: 1 x 3
+##   alter groesse einkommen
+##   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+## 1  49.4    171.        NA
+```
+
+]
+
+---
+
+
+# `summarise_if()`
+
+.pull-left4[
+
+
+
+```r
+DATEN %&gt;%
+  summarise_if(
+    BEDINGUNG,
+    SUMMARY_FUN,
+    ARGUMENTE
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Berechne deskriptive Statistiken
+  select(alter, groesse, konfession, einkommen) %&gt;%
+  summarise_if(is.numeric, mean, na.rm = TRUE)
+```
+
+```
+## # A tibble: 1 x 3
+##   alter groesse einkommen
+##   &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+## 1  49.4    171.     8355.
+```
+
+]
+
+
+---
+
+# Gruppierte Aggregation
+
+&lt;p align="center"&gt;
+  &lt;img src="image/summarsed_data_diagram.png" height="470px"&gt;
+&lt;/p&gt; 
+
+
+---
+
+# `group_by()`, `summarise()`
+
+.pull-left4[
+
+
+```r
+DATEN %&gt;%
+  group_by(GRUPPEN_VAR) %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Gruppiere nach geschlecht
+  group_by(geschlecht) %&gt;%
+  
+  # Berechne Statistiken
+  summarise(
+    alter_mean = mean(alter),
+    groesse_median = median(groesse)
+  )
+```
+
+```
+## # A tibble: 2 x 3
+##   geschlecht alter_mean groesse_median
+##   &lt;chr&gt;           &lt;dbl&gt;          &lt;dbl&gt;
+## 1 f                49.8           164 
+## 2 m                49.1           178.
+```
+
+]
+
+---
+
+# `n()`
+
+.pull-left4[
+
+
+```r
+DATEN %&gt;%
+  group_by(GRUPPEN_VAR) %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+
+
+
+```r
+basel %&gt;%
+  
+  # Gruppiere nach geschlecht
+  group_by(geschlecht) %&gt;%
+  
+  # Berechne Statistiken
+  summarise(
+    N = n()
+  )
+```
+
+```
+## # A tibble: 2 x 2
+##   geschlecht     N
+##   &lt;chr&gt;      &lt;int&gt;
+## 1 f           5000
+## 2 m           5000
+```
+
+]
+
+---
+
+# `first()`
+
+.pull-left4[
+
+
+```r
+DATEN %&gt;%
+  group_by(GRUPPEN_VAR) %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Gruppiere nach geschlecht
+  group_by(geschlecht) %&gt;%
+  
+  # Berechne Statistiken
+  summarise(
+    N = n(),
+    bild_1 = first(bildung)
+  )
+```
+
+```
+## # A tibble: 2 x 3
+##   geschlecht     N bild_1       
+##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;        
+## 1 f           5000 obligatorisch
+## 2 m           5000 sek III
+```
+
+]
+
+---
+
+# `last()`
+
+.pull-left4[
+
+
+```r
+DATEN %&gt;%
+  group_by(GRUPPEN_VAR) %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Gruppiere nach geschlecht
+  group_by(geschlecht) %&gt;%
+  
+  # Berechne Statistiken
+  summarise(
+    N = n(),
+    bild_1 = first(bildung),
+    bild_N = last(bildung)
+  )
+```
+
+```
+## # A tibble: 2 x 4
+##   geschlecht     N bild_1        bild_N
+##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;         &lt;chr&gt; 
+## 1 f           5000 obligatorisch lehre 
+## 2 m           5000 sek III       lehre
+```
+
+]
+
+---
+
+# `nth()`
+
+.pull-left4[
+
+
+```r
+DATEN %&gt;%
+  group_by(GRUPPEN_VAR) %&gt;%
+  summarise(
+    NAME1 = SUMMARY_FUN(VAR1),
+    NAME2 = SUMMARY_FUN(VAR2)
+  )
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Gruppiere nach geschlecht
+  group_by(geschlecht) %&gt;%
+  
+  # Berechne Statistiken
+  summarise(
+    N = n(),
+    bild_1 = first(bildung),
+    bild_N = last(bildung),
+    bild_150 = nth(bildung, 150)
+  )
+```
+
+```
+## # A tibble: 2 x 5
+##   geschlecht     N bild_1       bild_N bild_150   
+##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;      
+## 1 f           5000 obligatoris… lehre  obligatori…
+## 2 m           5000 sek III      lehre  lehre
+```
+
+]
+
+---
+
+# `pull()`
+
+.pull-left4[
+
+
+```r
+DATEN %&gt;%
+  group_by(GRUPPEN_VAR) %&gt;%
+  summarise(
+    NAME = SUMMARY_FUN(VAR),
+  ) %&gt;%
+  pull(NAME)
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+basel %&gt;%
+  
+  # Gruppiere nach geschlecht
+  group_by(geschlecht) %&gt;%
+  
+  # Berechne Statistiken
+  summarise(N = n()) %&gt;%
+  
+  # Extrahiere Vektor
+  pull(N)
+```
+
+```
+## [1] 5000 5000
+```
+
+]
+
+---
+
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/WranglingII/WranglingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

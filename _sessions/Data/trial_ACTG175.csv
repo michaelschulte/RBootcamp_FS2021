@@ -1,0 +1,2140 @@
+patient_id,molecule,days,age,weight_kg,drug_history,race,gender,symptomatic,cd4_baseline,cd4_96_weeks,cd8_baseline,cd8_20_weeks
+10056,Zidovudine and Zalcitabine,948,48,89.8128,No,White,Female,Asymptomatic,422,660,566,324
+10059,Didanosine,1002,61,49.4424,No,White,Female,Asymptomatic,162,NA,392,564
+10089,Didanosine,961,45,88.452,Yes,White,Male,Asymptomatic,326,122,2063,1893
+10093,Didanosine,1166,47,85.2768,No,White,Male,Asymptomatic,287,NA,1590,966
+10124,Zidovudine,1090,43,66.6792,No,White,Male,Asymptomatic,504,660,870,782
+10140,zidovudine and Didanosine,1181,46,88.9056,Yes,White,Male,Asymptomatic,235,264,860,1060
+10165,Zidovudine,794,31,73.0296,No,White,Male,Asymptomatic,244,106,708,699
+10190,Zidovudine,957,41,66.2256,Yes,White,Male,Asymptomatic,401,453,889,720
+10198,Didanosine,198,40,82.5552,No,White,Male,Symptomatic,214,8,652,131
+10229,Zidovudine,188,35,78.0192,No,White,Male,Asymptomatic,221,NA,221,759
+10241,Zidovudine and Zalcitabine,1073,34,95.256,No,Non-White,Female,Asymptomatic,471,477,770,620
+10341,Didanosine,1175,38,76.4316,No,White,Male,Asymptomatic,340,270,660,510
+10343,Zidovudine and Zalcitabine,1203,25,68.04,No,White,Male,Asymptomatic,540,410,1590,1330
+10361,zidovudine and Didanosine,1065,34,62.8236,No,White,Male,Asymptomatic,212,100,1094,1180
+10364,Zidovudine and Zalcitabine,357,49,79.38,No,White,Male,Asymptomatic,120,NA,800,1090
+10368,Zidovudine,308,40,83.0088,No,White,Male,Symptomatic,150,20,1730,1160
+10378,Zidovudine,1062,27,67.3,Yes,White,Female,Asymptomatic,350,NA,750,990
+10386,Zidovudine and Zalcitabine,1069,46,63.8,No,White,Male,Asymptomatic,330,180,820,630
+10389,zidovudine and Didanosine,322,47,94,No,White,Male,Asymptomatic,180,NA,710,830
+10432,Zidovudine and Zalcitabine,1119,34,60.3288,No,Non-White,Female,Asymptomatic,233,NA,1462,1170
+10456,Didanosine,1154,40,58.0608,Yes,White,Male,Asymptomatic,320,400,830,620
+10462,Zidovudine and Zalcitabine,1231,39,67.1328,Yes,White,Female,Asymptomatic,470,660,950,930
+10476,zidovudine and Didanosine,588,30,64.5,No,White,Male,Symptomatic,230,20,1490,550
+10478,Didanosine,1182,44,75,No,White,Male,Asymptomatic,400,420,990,910
+10649,Didanosine,644,38,62.9,No,White,Female,Asymptomatic,344,105,735,690
+10668,zidovudine and Didanosine,486,39,75,No,White,Male,Asymptomatic,421,NA,1158,1589
+10714,Zidovudine and Zalcitabine,1066,35,81.3,No,White,Male,Asymptomatic,227,NA,1115,605
+10716,Zidovudine,1192,28,70,No,White,Male,Asymptomatic,357,204,1994,1000
+10721,Zidovudine,227,33,64.1,No,White,Male,Asymptomatic,486,42,2400,2265
+10840,Didanosine,318,40,55.566,No,Non-White,Female,Asymptomatic,238,NA,1311,1069
+10881,Zidovudine and Zalcitabine,1093,36,81.6,Yes,White,Male,Symptomatic,236,447,634,711
+10889,Zidovudine and Zalcitabine,1119,40,70,No,White,Female,Symptomatic,407,293,1048,1039
+10893,Didanosine,434,34,69.6,No,White,Male,Asymptomatic,257,376,1063,546
+10894,Didanosine,1206,37,73,No,Non-White,Female,Asymptomatic,342,282,1459,1646
+10896,zidovudine and Didanosine,477,30,50.8,Yes,White,Female,Asymptomatic,444,NA,872,803
+10899,zidovudine and Didanosine,1074,38,87,Yes,White,Male,Symptomatic,496,NA,2127,2753
+10900,zidovudine and Didanosine,1065,45,82.7,No,White,Male,Asymptomatic,370,243,739,606
+10905,Zidovudine and Zalcitabine,779,29,62.6,No,White,Male,Symptomatic,186,109,1962,818
+10907,zidovudine and Didanosine,1159,48,72.6,No,White,Male,Asymptomatic,386,NA,918,761
+10908,Zidovudine,813,34,72.9,No,White,Male,Symptomatic,332,264,1571,1698
+10909,Didanosine,1087,27,87,No,White,Male,Asymptomatic,422,319,1056,1193
+10910,Didanosine,1014,37,69,No,White,Male,Symptomatic,393,723,923,605
+10913,zidovudine and Didanosine,1020,35,61.4,Yes,White,Female,Symptomatic,266,232,462,378
+10914,zidovudine and Didanosine,1139,49,87.2,No,White,Male,Asymptomatic,454,422,1093,568
+10915,Zidovudine,1145,34,75.7,No,White,Male,Asymptomatic,416,NA,991,1017
+10917,zidovudine and Didanosine,1129,33,77.8,No,White,Male,Asymptomatic,293,394,1233,882
+10918,zidovudine and Didanosine,391,43,102.7,No,White,Male,Symptomatic,224,6,1684,988
+10920,zidovudine and Didanosine,1002,30,63.3,No,White,Male,Symptomatic,331,319,691,547
+10923,zidovudine and Didanosine,232,24,67.7,No,White,Male,Asymptomatic,253,8,729,559
+10924,Didanosine,987,67,71,No,White,Male,Symptomatic,307,207,975,931
+10928,Zidovudine and Zalcitabine,1096,31,74.5,No,White,Male,Asymptomatic,364,306,1371,1638
+10929,zidovudine and Didanosine,962,43,61.6,No,White,Female,Symptomatic,340,203,500,522
+10931,Didanosine,1089,39,77.5,No,White,Male,Asymptomatic,293,314,730,604
+10934,zidovudine and Didanosine,1068,37,79.4,No,White,Male,Symptomatic,227,366,1285,827
+10935,zidovudine and Didanosine,1056,25,68.2668,No,White,Male,Asymptomatic,601,683,1099,1073
+10938,zidovudine and Didanosine,998,50,88.9056,No,White,Male,Asymptomatic,483,452,1208,1742
+10941,Zidovudine and Zalcitabine,996,32,74.1636,No,White,Male,Asymptomatic,470,425,940,818
+10947,zidovudine and Didanosine,995,40,74.48112,No,White,Male,Symptomatic,256,290,658,667
+10949,Didanosine,977,30,78.4728,No,White,Male,Asymptomatic,389,464,654,397
+10950,zidovudine and Didanosine,727,26,92.62512,No,White,Female,Asymptomatic,421,NA,337,341
+10952,Zidovudine and Zalcitabine,975,47,87.9984,No,White,Male,Asymptomatic,204,383,936,869
+10956,Didanosine,958,29,72.8028,No,White,Female,Asymptomatic,251,190,382,388
+10957,Zidovudine and Zalcitabine,367,36,53.298,No,Non-White,Female,Asymptomatic,211,NA,562,1283
+10958,zidovudine and Didanosine,513,29,100.2456,No,White,Male,Asymptomatic,199,NA,922,2014
+10961,zidovudine and Didanosine,575,29,85.7304,No,White,Male,Symptomatic,158,NA,725,1104
+10962,zidovudine and Didanosine,950,41,81.8748,Yes,Non-White,Male,Asymptomatic,209,675,1849,1947
+10965,Zidovudine and Zalcitabine,802,33,70.62552,Yes,Non-White,Male,Symptomatic,245,420,618,907
+10966,Didanosine,948,28,66.6792,No,White,Male,Asymptomatic,499,547,447,682
+10967,Zidovudine and Zalcitabine,950,27,80.15112,No,White,Male,Asymptomatic,505,502,1964,1560
+11013,Zidovudine and Zalcitabine,367,54,71.2,Yes,White,Male,Asymptomatic,260,NA,1830,1360
+11059,Zidovudine,1073,41,81.6,Yes,White,Male,Asymptomatic,210,150,810,710
+11083,Didanosine,811,36,85.5,No,White,Male,Symptomatic,360,350,680,530
+11085,Zidovudine and Zalcitabine,853,33,78.6,No,White,Male,Asymptomatic,250,250,850,570
+11127,zidovudine and Didanosine,1223,35,64,Yes,White,Male,Symptomatic,410,400,990,1060
+11128,Zidovudine,1214,48,59,Yes,Non-White,Male,Asymptomatic,430,NA,1370,1780
+11131,Zidovudine and Zalcitabine,1064,28,75.5,No,White,Male,Asymptomatic,400,380,1250,1420
+11142,Didanosine,812,39,72.7,No,White,Male,Asymptomatic,420,NA,1320,1310
+11143,Zidovudine and Zalcitabine,771,25,71.3,No,White,Male,Asymptomatic,310,NA,610,630
+11154,Didanosine,1230,36,99.792,No,Non-White,Male,Asymptomatic,510,430,1800,1100
+11156,Didanosine,1089,42,70.4,No,Non-White,Male,Asymptomatic,540,NA,1870,1610
+11157,Zidovudine,1127,33,104,Yes,White,Female,Asymptomatic,770,NA,520,490
+11158,Zidovudine and Zalcitabine,1083,36,52,No,Non-White,Female,Asymptomatic,430,300,1160,990
+11161,Zidovudine and Zalcitabine,1134,39,54.5,Yes,White,Female,Symptomatic,350,120,1270,1140
+11163,Zidovudine and Zalcitabine,1138,28,58.6,No,White,Male,Asymptomatic,470,370,1080,1090
+11164,Zidovudine,1195,20,67,No,Non-White,Female,Asymptomatic,300,NA,1310,1220
+11167,Zidovudine,1185,27,80,No,Non-White,Male,Asymptomatic,490,500,2040,1590
+11168,Zidovudine and Zalcitabine,1085,39,61,Yes,White,Female,Asymptomatic,210,NA,940,1100
+11171,Zidovudine,330,37,90.5,Yes,Non-White,Male,Asymptomatic,290,NA,1200,1020
+11179,zidovudine and Didanosine,217,27,60.3,No,White,Male,Asymptomatic,260,40,1480,1310
+11180,Zidovudine,1137,31,72.5,Yes,Non-White,Male,Asymptomatic,420,510,400,420
+11182,Zidovudine and Zalcitabine,1072,27,79.2,No,White,Male,Symptomatic,320,250,1020,700
+11185,Zidovudine and Zalcitabine,1138,37,69,Yes,White,Male,Asymptomatic,360,540,710,840
+11187,zidovudine and Didanosine,820,40,78.5,Yes,Non-White,Male,Asymptomatic,280,NA,1130,910
+11189,Didanosine,1122,20,82.5,No,Non-White,Male,Asymptomatic,300,200,590,550
+11195,Zidovudine and Zalcitabine,1104,31,73,No,Non-White,Female,Symptomatic,240,190,1110,1090
+11197,Zidovudine and Zalcitabine,1074,36,63.5,Yes,Non-White,Male,Asymptomatic,270,340,1690,1180
+11200,Zidovudine,1039,37,67.5,Yes,Non-White,Female,Symptomatic,360,260,780,690
+11201,Zidovudine,813,22,69,No,Non-White,Female,Asymptomatic,530,280,1070,850
+11358,Zidovudine,561,34,86.6376,No,White,Male,Asymptomatic,168,23,605,640
+11369,zidovudine and Didanosine,877,33,83.4624,No,White,Male,Asymptomatic,272,195,842,758
+11423,Didanosine,1180,64,77.112,No,White,Male,Asymptomatic,383,517,1430,1797
+11434,Zidovudine and Zalcitabine,1209,41,79.8336,No,White,Male,Asymptomatic,340,393,903,874
+11435,zidovudine and Didanosine,650,28,63.2772,No,White,Male,Asymptomatic,319,84,1642,1230
+11436,Didanosine,1195,47,79.38,Yes,White,Male,Asymptomatic,444,438,1806,1778
+11438,Zidovudine,1101,70,73.9368,No,White,Male,Asymptomatic,429,NA,1121,1034
+11444,Didanosine,1195,27,72.576,No,White,Male,Asymptomatic,287,354,958,1137
+11445,Zidovudine,684,42,86.184,No,White,Male,Symptomatic,149,NA,696,990
+11446,zidovudine and Didanosine,973,37,65.772,Yes,White,Female,Asymptomatic,477,NA,1081,1151
+11449,Zidovudine,1187,30,74.844,No,White,Male,Asymptomatic,441,400,583,590
+11450,zidovudine and Didanosine,1185,40,91.6272,No,White,Male,Symptomatic,255,595,486,729
+11451,Didanosine,1185,35,78.9264,No,White,Male,Asymptomatic,392,200,735,624
+11452,Zidovudine and Zalcitabine,1187,36,78.0192,No,White,Male,Asymptomatic,260,396,851,762
+11454,zidovudine and Didanosine,1164,37,86.184,No,White,Male,Asymptomatic,559,753,1410,1156
+11458,Didanosine,1160,37,83.0088,No,White,Male,Symptomatic,339,317,559,485
+11459,Zidovudine and Zalcitabine,1164,27,75.7512,No,Non-White,Female,Asymptomatic,455,418,721,726
+11462,Zidovudine and Zalcitabine,1044,45,66.2256,Yes,White,Male,Asymptomatic,429,NA,636,698
+11465,Didanosine,1145,32,84.8232,No,White,Male,Asymptomatic,520,613,749,605
+11468,Zidovudine,241,29,82.5552,No,White,Male,Asymptomatic,374,NA,796,847
+11470,Zidovudine,1112,40,55.3392,No,Non-White,Female,Asymptomatic,338,314,1664,1191
+11475,Zidovudine,729,47,72.1224,No,White,Male,Asymptomatic,467,NA,1374,1220
+11476,Zidovudine and Zalcitabine,1082,31,44.226,Yes,White,Female,Symptomatic,642,311,1041,873
+11478,Zidovudine and Zalcitabine,1032,50,78.9264,Yes,White,Male,Asymptomatic,251,NA,2326,1146
+11479,zidovudine and Didanosine,1089,34,83.916,No,Non-White,Male,Asymptomatic,376,795,1129,1362
+11492,Didanosine,1049,41,92.988,No,White,Male,Asymptomatic,444,412,658,693
+11497,Didanosine,551,24,58.5144,No,White,Male,Symptomatic,342,NA,525,390
+11499,Zidovudine,999,39,84.3696,No,White,Male,Asymptomatic,459,526,1398,1287
+11515,zidovudine and Didanosine,1117,41,111,No,White,Male,Asymptomatic,470,NA,1528,910
+11650,Didanosine,1211,28,84.3696,No,White,Male,Asymptomatic,360,350,1130,700
+11651,zidovudine and Didanosine,460,29,86.184,No,White,Male,Asymptomatic,320,NA,830,1090
+11652,zidovudine and Didanosine,882,42,57.6072,No,White,Male,Asymptomatic,290,NA,1270,1050
+11653,Zidovudine and Zalcitabine,1066,30,88.452,No,White,Male,Asymptomatic,370,340,1500,1020
+11654,Zidovudine,1160,27,66.2256,No,White,Male,Asymptomatic,420,340,990,1070
+11655,Zidovudine and Zalcitabine,1071,33,62.8236,No,White,Male,Asymptomatic,240,380,810,1440
+11656,zidovudine and Didanosine,1105,44,69.4008,No,White,Male,Asymptomatic,240,NA,680,600
+11657,Zidovudine and Zalcitabine,1110,48,78.4728,No,White,Male,Asymptomatic,460,390,1560,1520
+11661,zidovudine and Didanosine,980,37,64.4112,No,White,Male,Asymptomatic,310,220,840,530
+11662,Didanosine,1071,43,82.5552,No,White,Male,Asymptomatic,230,NA,1550,1200
+11664,Zidovudine and Zalcitabine,1146,50,77.5656,No,White,Male,Asymptomatic,380,NA,1040,1020
+11665,Zidovudine,1133,28,68.4936,No,White,Male,Asymptomatic,280,300,440,490
+11668,zidovudine and Didanosine,739,26,80.514,No,White,Male,Asymptomatic,250,110,570,660
+11669,Zidovudine,1047,27,76.2048,No,White,Male,Asymptomatic,440,350,460,710
+11671,zidovudine and Didanosine,812,49,88.452,No,White,Male,Symptomatic,220,NA,520,730
+11672,zidovudine and Didanosine,959,28,71.1,Yes,White,Female,Asymptomatic,220,320,330,570
+11674,Didanosine,974,30,77.112,No,White,Male,Asymptomatic,320,NA,850,580
+11676,zidovudine and Didanosine,1028,25,63.504,No,White,Female,Asymptomatic,650,480,1510,890
+11679,Zidovudine and Zalcitabine,1057,37,87.5448,Yes,White,Female,Asymptomatic,330,NA,1130,1050
+11680,Didanosine,980,42,109.5,Yes,Non-White,Male,Asymptomatic,320,260,1140,1630
+11947,Zidovudine and Zalcitabine,1023,39,75.7,No,White,Male,Asymptomatic,431,285,647,407
+11949,Didanosine,1160,30,61,No,Non-White,Male,Asymptomatic,297,348,1971,2474
+11954,zidovudine and Didanosine,904,25,74.844,No,White,Male,Symptomatic,317,NA,1074,928
+11957,Zidovudine and Zalcitabine,1157,41,63.4,No,White,Male,Asymptomatic,235,191,1490,920
+11959,zidovudine and Didanosine,1160,24,71,No,White,Female,Asymptomatic,439,635,2069,1305
+11961,Zidovudine,1077,29,79.8,No,White,Male,Asymptomatic,456,NA,1718,1143
+11962,Didanosine,994,31,79.2,No,White,Male,Symptomatic,504,482,857,1014
+11963,Didanosine,1014,27,66.5,No,White,Male,Asymptomatic,148,NA,289,297
+11965,Zidovudine and Zalcitabine,948,30,69.1,No,White,Male,Asymptomatic,218,195,914,1135
+11967,Zidovudine and Zalcitabine,1023,35,71.85024,No,White,Male,Asymptomatic,385,436,862,923
+11968,Didanosine,1153,37,77.5,No,White,Male,Asymptomatic,422,341,991,847
+11970,Didanosine,1073,27,91.6,No,White,Male,Asymptomatic,229,NA,866,996
+11971,Zidovudine,1146,36,64.4,No,White,Male,Asymptomatic,423,471,1000,1125
+11972,Zidovudine and Zalcitabine,1081,40,78,Yes,White,Male,Symptomatic,228,268,520,737
+11973,Zidovudine,643,23,55.566,No,White,Male,Asymptomatic,265,149,680,784
+11974,Zidovudine,981,41,89.9,No,White,Male,Asymptomatic,209,218,738,1573
+11975,Zidovudine,1077,28,59.9,No,White,Male,Asymptomatic,298,445,618,799
+11976,zidovudine and Didanosine,563,28,75,No,White,Male,Asymptomatic,545,NA,1279,549
+11980,Didanosine,1140,34,103.2,No,Non-White,Male,Asymptomatic,345,202,1010,795
+11981,zidovudine and Didanosine,628,32,90.5,No,White,Male,Asymptomatic,166,NA,624,935
+11983,zidovudine and Didanosine,1068,42,76.5,No,White,Male,Asymptomatic,453,677,600,714
+11984,Zidovudine,731,43,72.7,No,White,Male,Asymptomatic,262,154,1348,1415
+11986,zidovudine and Didanosine,1132,22,75.5,No,Non-White,Male,Asymptomatic,315,NA,772,703
+11987,Zidovudine,483,65,77.2,No,White,Male,Asymptomatic,323,24,1351,1338
+11990,Zidovudine and Zalcitabine,668,29,70.8,No,White,Male,Symptomatic,517,160,1808,550
+11991,Zidovudine and Zalcitabine,1119,31,85,No,Non-White,Male,Asymptomatic,328,417,698,1129
+11992,Didanosine,1117,42,82.7,No,White,Male,Asymptomatic,380,NA,926,772
+11995,Didanosine,1119,34,105.6888,No,White,Male,Symptomatic,427,NA,577,659
+11996,Didanosine,981,45,72.7,No,Non-White,Male,Symptomatic,251,160,1070,1129
+11997,Zidovudine,1116,35,80.5,No,White,Male,Asymptomatic,427,287,592,440
+12001,Zidovudine,880,30,75.5,No,Non-White,Male,Symptomatic,280,NA,1003,943
+12003,Zidovudine,1109,34,65.5,No,White,Male,Asymptomatic,501,562,1276,967
+12006,Didanosine,1016,50,72.576,No,White,Male,Symptomatic,356,254,1045,1148
+12008,Zidovudine,1074,38,70.6,No,Non-White,Male,Asymptomatic,383,293,1627,1909
+20103,zidovudine and Didanosine,1091,29,97.9,No,Non-White,Male,Asymptomatic,415,336,968,769
+20150,Zidovudine and Zalcitabine,930,35,65.7,No,White,Male,Asymptomatic,470,582,1970,1729
+20151,Didanosine,1059,54,80.7408,No,White,Male,Asymptomatic,368,NA,410,455
+20184,Didanosine,947,32,74.3904,No,White,Male,Asymptomatic,548,546,379,403
+20187,Zidovudine,767,45,69,No,White,Male,Asymptomatic,334,196,2079,1905
+20208,Didanosine,1088,37,63.2,No,White,Male,Asymptomatic,202,156,893,1107
+20386,zidovudine and Didanosine,977,37,64.8,No,Non-White,Male,Asymptomatic,315,367,1573,1462
+20435,Zidovudine and Zalcitabine,238,35,65.3184,No,White,Male,Symptomatic,187,NA,396,485
+20437,Didanosine,983,39,71.4,No,White,Male,Asymptomatic,452,NA,707,873
+20438,Zidovudine,159,37,85.7304,No,White,Male,Asymptomatic,415,NA,1659,1282
+20503,Zidovudine and Zalcitabine,1020,30,78.9264,Yes,Non-White,Female,Asymptomatic,481,NA,1083,1661
+20505,Zidovudine,982,35,74.3904,Yes,Non-White,Male,Asymptomatic,446,NA,1711,1131
+20506,Zidovudine and Zalcitabine,230,30,85.2768,Yes,Non-White,Male,Asymptomatic,246,NA,846,672
+20508,Zidovudine,137,37,69.8544,Yes,Non-White,Male,Symptomatic,209,24,1111,749
+20509,zidovudine and Didanosine,1087,34,67.1328,Yes,Non-White,Male,Asymptomatic,312,NA,1584,1254
+20510,Zidovudine and Zalcitabine,885,36,75.7512,Yes,Non-White,Male,Asymptomatic,358,104,1622,1302
+20667,Didanosine,1088,50,117.936,No,White,Male,Asymptomatic,395,422,835,847
+20675,Didanosine,863,31,76,No,White,Male,Asymptomatic,286,215,958,1246
+20678,zidovudine and Didanosine,1091,44,71,No,White,Male,Asymptomatic,313,672,845,855
+20682,Zidovudine,55,38,69.5,No,Non-White,Male,Asymptomatic,375,123,986,611
+20683,zidovudine and Didanosine,1088,51,87.2,No,Non-White,Male,Asymptomatic,336,NA,1167,1168
+20689,zidovudine and Didanosine,1069,27,74.844,No,White,Male,Asymptomatic,337,NA,703,893
+20693,Zidovudine and Zalcitabine,735,33,79.1532,No,White,Male,Asymptomatic,587,NA,1264,1201
+20696,Zidovudine,1047,39,71.442,No,Non-White,Male,Asymptomatic,220,NA,1672,1558
+20699,Didanosine,1034,25,75.2976,No,White,Male,Asymptomatic,411,527,496,551
+20702,Zidovudine,1028,40,89.8128,No,White,Male,Asymptomatic,329,384,778,1488
+20703,Zidovudine and Zalcitabine,1027,40,78.9264,Yes,Non-White,Male,Asymptomatic,304,NA,486,515
+20705,Zidovudine,1014,30,87.5448,No,White,Male,Asymptomatic,346,421,781,823
+20706,zidovudine and Didanosine,581,30,67.3596,No,White,Male,Symptomatic,311,74,633,768
+20707,Zidovudine and Zalcitabine,1006,38,78.0192,Yes,Non-White,Male,Asymptomatic,453,381,787,213
+20716,Zidovudine and Zalcitabine,778,43,73.9368,Yes,Non-White,Female,Asymptomatic,319,NA,1101,564
+20717,Didanosine,321,29,70.5,No,White,Male,Asymptomatic,290,NA,682,729
+20719,Zidovudine and Zalcitabine,958,33,70.7616,No,White,Male,Asymptomatic,203,306,851,972
+20724,Zidovudine,644,28,115.2144,Yes,Non-White,Female,Symptomatic,194,NA,721,765
+30090,Zidovudine and Zalcitabine,1090,33,71.4,No,White,Male,Asymptomatic,352,327,983,1157
+30134,zidovudine and Didanosine,1027,45,67.1,No,Non-White,Male,Asymptomatic,0,332,468,659
+30137,zidovudine and Didanosine,985,60,51.6,No,Non-White,Female,Asymptomatic,0,330,1087,1727
+30343,Didanosine,1098,29,83,No,White,Male,Asymptomatic,304,317,801,678
+30344,Didanosine,1034,34,70,No,White,Male,Asymptomatic,230,361,334,490
+30349,zidovudine and Didanosine,910,31,70.9,No,Non-White,Male,Asymptomatic,239,NA,1265,1043
+30350,Zidovudine,1090,32,70,No,White,Male,Asymptomatic,375,365,565,528
+30353,zidovudine and Didanosine,779,33,72,No,White,Male,Asymptomatic,366,NA,906,822
+40317,Didanosine,941,46,77.112,No,Non-White,Female,Asymptomatic,324,NA,356,380
+40375,Zidovudine and Zalcitabine,1094,40,81.648,No,White,Male,Asymptomatic,468,466,936,902
+40409,Zidovudine,1139,38,79,No,White,Male,Asymptomatic,265,226,597,642
+40422,zidovudine and Didanosine,1145,43,73.0296,No,Non-White,Male,Symptomatic,259,331,1038,980
+40484,Zidovudine and Zalcitabine,1069,35,96.1632,No,White,Male,Asymptomatic,452,399,1269,970
+40488,Didanosine,766,42,74.3904,No,White,Male,Asymptomatic,702,NA,965,1181
+40601,Didanosine,392,59,72.576,No,White,Male,Asymptomatic,324,NA,531,490
+40747,Zidovudine and Zalcitabine,1087,39,86.184,No,Non-White,Male,Symptomatic,453,464,1560,1506
+40756,Zidovudine and Zalcitabine,1027,36,75.2976,No,Non-White,Male,Symptomatic,375,NA,795,638
+40758,Zidovudine,1012,32,69.4008,No,Non-White,Male,Symptomatic,359,NA,816,1170
+41171,Zidovudine,736,39,80.2872,No,White,Male,Symptomatic,236,169,735,545
+41190,zidovudine and Didanosine,243,37,78.0192,No,White,Male,Symptomatic,218,NA,1070,1023
+41193,Zidovudine and Zalcitabine,1117,55,78.0192,No,White,Male,Asymptomatic,547,583,1610,1873
+41271,zidovudine and Didanosine,1087,37,57.6072,No,Non-White,Female,Asymptomatic,144,200,564,680
+41342,Zidovudine and Zalcitabine,975,48,72.1224,No,White,Male,Asymptomatic,305,NA,828,656
+41650,zidovudine and Didanosine,1133,30,59.4216,No,Non-White,Female,Asymptomatic,372,NA,688,1398
+41653,Zidovudine and Zalcitabine,1126,59,87.9984,No,White,Male,Asymptomatic,402,195,670,447
+41654,Didanosine,318,27,85.7304,No,Non-White,Male,Asymptomatic,236,NA,832,810
+41655,Zidovudine,1001,41,73.4832,No,White,Male,Asymptomatic,236,NA,1523,1780
+41658,Zidovudine,1104,38,79.38,No,White,Male,Asymptomatic,369,NA,612,816
+41673,zidovudine and Didanosine,1032,40,75.7512,No,White,Male,Asymptomatic,308,333,868,1104
+42069,Didanosine,1013,40,79.8336,No,Non-White,Female,Asymptomatic,638,900,654,772
+50137,Zidovudine,243,50,78.4728,No,White,Male,Asymptomatic,312,NA,1146,1186
+50185,zidovudine and Didanosine,626,45,74.5,No,White,Male,Asymptomatic,236,115,1080,1121
+50190,Didanosine,1202,47,64.4112,No,White,Male,Asymptomatic,244,403,1629,1809
+50200,Zidovudine,1167,49,100,No,White,Male,Asymptomatic,428,NA,500,449
+50207,zidovudine and Didanosine,1104,46,66.6792,No,White,Male,Symptomatic,319,346,1475,894
+50225,zidovudine and Didanosine,1209,28,68.9472,No,White,Male,Asymptomatic,231,378,609,411
+50233,Zidovudine and Zalcitabine,1231,36,72.5,No,White,Male,Asymptomatic,486,NA,986,967
+50236,Zidovudine and Zalcitabine,817,31,83,No,White,Male,Asymptomatic,663,587,1109,1242
+50252,Zidovudine and Zalcitabine,1115,63,73.4832,No,White,Male,Asymptomatic,498,502,1365,1287
+50258,Zidovudine and Zalcitabine,1125,43,74.3904,Yes,White,Male,Asymptomatic,303,428,488,442
+50260,zidovudine and Didanosine,986,37,67.5,No,White,Male,Asymptomatic,243,154,699,688
+50300,Zidovudine and Zalcitabine,1152,63,74.3904,No,White,Male,Asymptomatic,397,NA,1407,911
+50321,Zidovudine,720,38,65.3184,No,Non-White,Female,Asymptomatic,195,NA,566,454
+50344,Zidovudine,1231,38,67.5,No,White,Male,Asymptomatic,174,NA,559,460
+50423,Zidovudine and Zalcitabine,910,39,83,No,White,Male,Asymptomatic,349,297,1316,967
+50428,Didanosine,567,34,80.5,No,White,Male,Asymptomatic,234,NA,971,1438
+50474,zidovudine and Didanosine,1145,59,87.5448,No,White,Male,Asymptomatic,421,356,1671,1093
+50547,Zidovudine and Zalcitabine,1087,36,68.04,Yes,White,Male,Asymptomatic,442,NA,1021,934
+50566,Zidovudine,1176,44,70.5,No,White,Male,Asymptomatic,247,182,1018,786
+50571,Zidovudine,357,33,67.1328,No,Non-White,Male,Asymptomatic,275,NA,1011,678
+50572,Didanosine,1187,28,84.3696,Yes,White,Male,Symptomatic,387,625,1168,960
+50573,Zidovudine and Zalcitabine,1181,55,90,No,White,Male,Asymptomatic,351,321,561,470
+50574,Didanosine,1121,43,72.576,Yes,White,Male,Asymptomatic,488,NA,1033,1550
+50577,Zidovudine,1064,44,85.2768,No,White,Male,Asymptomatic,416,591,735,1295
+50578,Zidovudine,897,59,84,No,Non-White,Male,Asymptomatic,248,122,426,612
+50579,Didanosine,1165,28,72.5,No,White,Male,Asymptomatic,381,602,1028,1073
+50580,zidovudine and Didanosine,1159,68,90.5,Yes,White,Male,Asymptomatic,367,701,696,713
+50582,Zidovudine,1152,29,74.6172,No,White,Male,Asymptomatic,293,381,1251,958
+50583,zidovudine and Didanosine,1152,33,66,No,Non-White,Male,Asymptomatic,285,413,1084,976
+50585,Didanosine,1062,33,66,No,White,Male,Asymptomatic,232,331,828,804
+50586,Didanosine,1138,34,66.6792,No,White,Male,Asymptomatic,199,NA,772,1148
+50587,Zidovudine,1071,29,49.80528,No,White,Female,Asymptomatic,374,NA,649,786
+50589,Zidovudine and Zalcitabine,966,28,78.4,No,White,Male,Asymptomatic,184,NA,855,633
+50590,Didanosine,994,38,86.2,No,White,Male,Asymptomatic,250,118,480,466
+50593,Didanosine,1122,28,85.5036,Yes,White,Male,Asymptomatic,209,NA,897,1435
+50596,Didanosine,1123,21,59,No,Non-White,Male,Asymptomatic,359,483,766,974
+50603,zidovudine and Didanosine,1004,22,71.6688,No,White,Male,Asymptomatic,257,NA,763,711
+50605,Didanosine,959,59,59.8752,No,White,Male,Asymptomatic,394,230,1346,1337
+50606,Didanosine,988,35,73.0296,No,Non-White,Male,Asymptomatic,241,205,880,693
+50607,Zidovudine,994,36,75.5,Yes,White,Male,Asymptomatic,269,283,1516,1654
+50608,zidovudine and Didanosine,1089,48,91.1736,No,White,Male,Asymptomatic,84,265,706,1516
+50609,Zidovudine,1101,46,87.318,No,White,Male,Symptomatic,488,506,1017,1109
+50610,Zidovudine,1094,31,73.0296,No,White,Male,Symptomatic,269,290,1308,2056
+50611,Zidovudine and Zalcitabine,966,25,65.3184,No,Non-White,Female,Asymptomatic,337,298,784,770
+50612,Zidovudine,908,38,88.5,No,White,Male,Asymptomatic,392,NA,961,920
+50613,Zidovudine and Zalcitabine,1012,54,71.5,No,White,Male,Asymptomatic,301,206,1607,1581
+50614,Didanosine,1089,43,85.7304,No,White,Male,Symptomatic,434,455,1688,1257
+50615,Zidovudine,314,54,68.4936,No,Non-White,Male,Asymptomatic,165,NA,641,813
+50616,Zidovudine and Zalcitabine,881,40,92.0808,No,White,Male,Symptomatic,279,65,895,964
+50617,Zidovudine and Zalcitabine,532,46,80.7408,No,White,Male,Asymptomatic,255,NA,554,653
+50618,zidovudine and Didanosine,1075,34,87.5448,No,Non-White,Male,Symptomatic,305,415,608,563
+50619,Didanosine,1074,32,84,No,White,Male,Asymptomatic,386,533,664,703
+50620,zidovudine and Didanosine,308,31,79.8336,Yes,White,Male,Asymptomatic,419,NA,757,789
+50622,Zidovudine,1068,33,71.8956,No,Non-White,Male,Asymptomatic,291,266,683,945
+50623,Didanosine,1068,35,77,Yes,White,Male,Asymptomatic,293,536,338,580
+50624,zidovudine and Didanosine,1056,33,55,No,Non-White,Female,Asymptomatic,457,533,759,634
+50625,Didanosine,1052,33,68.6,No,White,Female,Asymptomatic,260,458,1430,1389
+50626,Zidovudine and Zalcitabine,1053,32,81.5,No,Non-White,Male,Asymptomatic,420,441,1105,656
+50628,Didanosine,1034,39,81.5,No,White,Male,Asymptomatic,317,396,915,895
+50629,zidovudine and Didanosine,923,46,123.3792,Yes,Non-White,Male,Asymptomatic,380,294,677,777
+50630,Zidovudine and Zalcitabine,1014,50,65.772,Yes,Non-White,Male,Asymptomatic,515,451,1396,1132
+50631,Zidovudine and Zalcitabine,941,26,74.844,No,Non-White,Male,Symptomatic,296,NA,620,588
+50632,Zidovudine,883,45,72.1224,Yes,Non-White,Male,Symptomatic,219,NA,1454,1437
+50633,zidovudine and Didanosine,624,28,75.7512,No,White,Male,Asymptomatic,231,NA,862,726
+50634,Zidovudine,905,23,87,No,White,Female,Asymptomatic,257,196,960,602
+50636,Didanosine,162,42,50.3496,No,Non-White,Female,Asymptomatic,562,NA,796,704
+50637,Didanosine,997,42,57.8,No,White,Female,Asymptomatic,131,113,207,436
+50638,Zidovudine,915,31,71.8,No,White,Male,Asymptomatic,330,NA,1190,1482
+50639,zidovudine and Didanosine,977,42,91.1736,No,White,Male,Asymptomatic,427,NA,2021,2119
+50641,zidovudine and Didanosine,890,40,90.72,No,White,Male,Asymptomatic,439,NA,1468,890
+50642,Zidovudine and Zalcitabine,892,31,71.6688,No,White,Male,Asymptomatic,481,NA,678,548
+50643,Zidovudine,905,41,84.3696,No,White,Male,Asymptomatic,326,NA,1364,1054
+50644,zidovudine and Didanosine,983,33,78.3,Yes,Non-White,Female,Symptomatic,544,500,806,650
+50645,Zidovudine and Zalcitabine,977,27,81.648,No,Non-White,Male,Asymptomatic,349,406,604,415
+50646,Zidovudine and Zalcitabine,357,29,111.5856,No,Non-White,Male,Asymptomatic,277,NA,409,337
+50647,Didanosine,972,39,80.0604,No,White,Male,Asymptomatic,319,NA,919,771
+50648,Zidovudine and Zalcitabine,881,21,96.6168,No,White,Male,Asymptomatic,351,315,536,469
+50649,Zidovudine and Zalcitabine,799,35,87.9984,No,White,Male,Asymptomatic,262,270,1696,1301
+50650,Zidovudine,334,30,62.5968,No,Non-White,Male,Symptomatic,394,NA,1170,1126
+50651,zidovudine and Didanosine,972,38,111.3588,Yes,White,Male,Asymptomatic,384,219,1182,2068
+50652,zidovudine and Didanosine,972,57,63.2772,No,White,Female,Asymptomatic,144,NA,480,492
+50653,Didanosine,971,33,92.5344,No,Non-White,Male,Asymptomatic,617,755,935,1009
+50654,zidovudine and Didanosine,958,38,85.7304,No,White,Male,Asymptomatic,407,NA,952,1101
+50655,Zidovudine,532,44,82.5552,No,White,Male,Asymptomatic,280,14,719,678
+50659,Didanosine,581,30,88.9056,No,White,Male,Asymptomatic,690,NA,830,554
+50660,zidovudine and Didanosine,963,41,73.4832,No,White,Male,Asymptomatic,645,508,1196,936
+50662,Zidovudine,813,66,84.3696,No,White,Male,Asymptomatic,481,55,1472,1176
+50663,Zidovudine,306,53,91,No,White,Male,Asymptomatic,378,NA,875,776
+50664,Didanosine,874,31,87.9984,No,White,Male,Symptomatic,538,NA,1166,776
+50665,Didanosine,760,40,74.52648,No,White,Female,Asymptomatic,395,282,482,537
+60151,zidovudine and Didanosine,1122,37,72.5,No,White,Male,Symptomatic,259,474,1166,559
+60159,Zidovudine and Zalcitabine,648,44,78.5,No,White,Male,Symptomatic,412,167,1829,1901
+60228,Didanosine,1125,56,83.1,Yes,White,Male,Asymptomatic,367,237,649,449
+60245,zidovudine and Didanosine,1138,39,80.8,No,White,Male,Asymptomatic,384,NA,1215,927
+60260,zidovudine and Didanosine,1132,38,78.2,No,White,Male,Asymptomatic,354,NA,955,674
+60267,Zidovudine,1064,29,66.1,No,White,Male,Asymptomatic,469,446,775,567
+60282,Zidovudine and Zalcitabine,469,52,67.1,No,White,Male,Asymptomatic,408,137,1497,1267
+60295,Zidovudine,947,37,76.9,No,White,Male,Asymptomatic,743,651,1412,748
+60296,Didanosine,944,34,78.3,No,White,Male,Asymptomatic,254,NA,624,830
+60307,zidovudine and Didanosine,728,39,75.6,No,White,Male,Symptomatic,161,115,927,1313
+60335,Zidovudine,1151,47,73,No,White,Male,Asymptomatic,289,162,927,950
+60451,zidovudine and Didanosine,1072,40,76.2048,No,White,Male,Asymptomatic,347,332,1092,1585
+60613,Zidovudine,1097,48,72.576,No,White,Male,Asymptomatic,613,NA,770,622
+60614,Zidovudine and Zalcitabine,456,54,76.2048,Yes,White,Male,Asymptomatic,412,58,1154,943
+60615,zidovudine and Didanosine,756,57,92.0808,No,White,Male,Asymptomatic,220,137,600,601
+60616,Didanosine,488,43,57.1536,Yes,White,Male,Asymptomatic,245,157,408,653
+60617,Zidovudine,871,32,86.184,No,Non-White,Male,Asymptomatic,154,NA,406,346
+60618,zidovudine and Didanosine,952,48,83.0088,Yes,White,Male,Asymptomatic,308,314,956,706
+60623,Didanosine,798,32,98.658,No,Non-White,Male,Asymptomatic,283,NA,2794,2641
+60625,Zidovudine,476,42,70.7616,No,White,Male,Symptomatic,358,52,689,440
+60627,zidovudine and Didanosine,1084,32,68.9472,No,White,Male,Symptomatic,248,298,745,722
+60629,Didanosine,189,30,84.8232,Yes,White,Male,Symptomatic,532,NA,458,464
+60649,Zidovudine,770,33,57.1536,No,Non-White,Male,Asymptomatic,275,174,798,740
+60884,Zidovudine,1022,34,79.6,No,White,Male,Symptomatic,103,NA,1084,1313
+60885,Zidovudine and Zalcitabine,1065,38,95,No,White,Male,Asymptomatic,409,253,620,432
+60888,zidovudine and Didanosine,281,34,73.8,No,White,Male,Asymptomatic,165,318,1858,1240
+60889,zidovudine and Didanosine,125,31,95,No,White,Male,Asymptomatic,317,NA,501,393
+60890,Didanosine,1144,26,77.4,No,White,Male,Symptomatic,352,NA,1180,766
+60891,zidovudine and Didanosine,305,29,89.7,No,Non-White,Male,Symptomatic,187,NA,774,1752
+60892,Zidovudine,69,33,97,No,White,Male,Asymptomatic,350,8,1213,500
+60893,Zidovudine and Zalcitabine,1123,29,83.4,No,White,Male,Asymptomatic,404,NA,936,511
+60894,Zidovudine,1005,28,76.7,No,White,Male,Symptomatic,384,NA,1306,1491
+60895,Didanosine,984,25,73,No,Non-White,Male,Asymptomatic,630,539,1328,817
+60896,zidovudine and Didanosine,1026,36,88.3,No,White,Male,Asymptomatic,352,454,386,491
+60897,Zidovudine and Zalcitabine,726,47,91.2,No,White,Male,Symptomatic,316,147,2087,1430
+60900,zidovudine and Didanosine,884,28,67.2,No,White,Male,Asymptomatic,172,NA,1412,1417
+60902,Zidovudine,395,28,65.1,No,White,Male,Asymptomatic,384,293,1415,858
+60903,Zidovudine and Zalcitabine,1042,48,68.1,No,White,Male,Symptomatic,374,NA,1240,515
+60919,Didanosine,1023,22,58.2876,No,Non-White,Male,Asymptomatic,211,NA,515,599
+60921,Zidovudine,663,40,78.4728,No,Non-White,Male,Asymptomatic,262,NA,423,585
+60922,Didanosine,549,25,50.3496,No,White,Male,Asymptomatic,348,12,355,446
+60923,Zidovudine and Zalcitabine,1080,34,70.7616,No,Non-White,Male,Asymptomatic,267,277,431,235
+60925,Zidovudine and Zalcitabine,1059,20,47.4012,No,Non-White,Female,Asymptomatic,292,260,909,1010
+60926,zidovudine and Didanosine,878,36,78.0192,No,Non-White,Male,Symptomatic,389,NA,703,590
+60927,Zidovudine,454,34,68.04,No,Non-White,Male,Symptomatic,167,38,1228,1442
+60928,zidovudine and Didanosine,791,28,58.968,No,Non-White,Male,Symptomatic,235,NA,370,359
+60932,Didanosine,583,37,89.3592,No,White,Male,Asymptomatic,225,NA,225,304
+60959,Zidovudine,475,45,81.4212,No,White,Male,Asymptomatic,668,147,1144,353
+60960,Zidovudine,1195,30,73.6,No,White,Male,Asymptomatic,412,375,807,664
+60962,Didanosine,1121,27,71.8,No,Non-White,Male,Asymptomatic,289,176,1065,945
+60964,Didanosine,1121,33,86.184,No,White,Male,Asymptomatic,395,229,1133,1226
+60965,Didanosine,1113,43,81.4212,No,White,Male,Symptomatic,182,193,298,379
+60966,Zidovudine,1113,29,76.2048,Yes,White,Male,Asymptomatic,196,144,463,391
+60967,zidovudine and Didanosine,577,46,74.6172,No,White,Male,Asymptomatic,127,NA,1565,924
+60968,Didanosine,948,30,108.864,No,White,Male,Asymptomatic,371,317,623,574
+60969,Zidovudine and Zalcitabine,1107,36,73.71,No,White,Male,Asymptomatic,276,NA,684,479
+60970,Didanosine,1012,21,63.9576,No,Non-White,Male,Symptomatic,269,369,545,1164
+60972,Zidovudine,310,35,63.0504,No,Non-White,Female,Asymptomatic,238,NA,926,637
+60973,Zidovudine and Zalcitabine,413,25,75.2976,No,Non-White,Male,Asymptomatic,224,NA,1256,656
+60974,Zidovudine and Zalcitabine,888,27,70.308,No,Non-White,Male,Asymptomatic,535,618,470,532
+60975,Didanosine,1012,28,70.7616,No,Non-White,Male,Symptomatic,295,NA,415,583
+60976,Didanosine,394,48,63.0504,No,White,Male,Symptomatic,200,NA,622,865
+60977,Zidovudine,1032,26,101.8332,No,White,Male,Asymptomatic,301,252,614,570
+60978,Didanosine,1118,29,84.8232,No,White,Male,Asymptomatic,544,722,1087,1255
+60979,Zidovudine and Zalcitabine,1058,29,73.4832,No,Non-White,Female,Asymptomatic,390,442,715,616
+60982,Zidovudine and Zalcitabine,358,48,79.8336,No,White,Male,Asymptomatic,249,NA,932,883
+70255,zidovudine and Didanosine,561,35,69.4008,No,Non-White,Male,Asymptomatic,415,243,744,918
+70264,Zidovudine,1104,39,71.6688,No,Non-White,Male,Asymptomatic,427,479,660,673
+70265,Zidovudine and Zalcitabine,978,39,99.9,No,White,Male,Asymptomatic,490,261,1519,887
+70269,Didanosine,729,36,85.7304,No,White,Male,Symptomatic,191,149,1836,1837
+70308,zidovudine and Didanosine,1167,28,63.0504,No,Non-White,Male,Asymptomatic,314,543,627,1016
+70311,Zidovudine,1116,33,69.8544,No,White,Male,Asymptomatic,321,301,1179,1140
+70324,Didanosine,1063,29,71.71416,No,White,Male,Asymptomatic,339,388,868,851
+70330,Zidovudine,1091,26,74.844,No,White,Male,Asymptomatic,429,624,974,828
+70385,Didanosine,1095,48,83.916,No,White,Male,Asymptomatic,454,626,1135,1409
+70411,Zidovudine and Zalcitabine,1090,32,60.7824,No,White,Male,Asymptomatic,474,541,2104,1160
+70444,Zidovudine and Zalcitabine,1119,41,80.7408,No,White,Male,Asymptomatic,303,79,1135,874
+70455,zidovudine and Didanosine,1214,33,73.4832,No,White,Male,Asymptomatic,426,274,935,628
+70463,zidovudine and Didanosine,1038,27,75.9,No,White,Male,Asymptomatic,442,NA,1088,1008
+70466,Zidovudine,564,28,68.9472,No,White,Male,Asymptomatic,264,106,1117,1084
+70470,Zidovudine and Zalcitabine,393,63,56.4732,No,White,Male,Asymptomatic,151,31,1315,1254
+70477,zidovudine and Didanosine,483,47,68.9472,No,Non-White,Male,Symptomatic,216,NA,1189,773
+70479,Zidovudine,197,36,83.916,No,White,Male,Asymptomatic,222,NA,714,1093
+70483,Didanosine,1102,37,57.1536,No,Non-White,Male,Symptomatic,366,278,1323,1514
+70488,Zidovudine and Zalcitabine,1094,42,68.4936,No,White,Male,Symptomatic,333,566,713,860
+70491,zidovudine and Didanosine,999,35,69.4008,No,White,Male,Symptomatic,151,167,655,829
+70493,Didanosine,664,33,78.0192,No,White,Male,Asymptomatic,263,77,1316,881
+70501,Didanosine,1145,34,77.5656,No,White,Male,Symptomatic,296,NA,850,756
+70506,Zidovudine and Zalcitabine,1150,39,59.8752,No,White,Male,Symptomatic,219,204,888,1116
+70508,Didanosine,730,38,77.112,No,White,Male,Symptomatic,238,NA,756,789
+70521,zidovudine and Didanosine,1097,33,55.7928,No,White,Male,Asymptomatic,834,544,3389,1019
+70528,zidovudine and Didanosine,1153,32,76.2048,Yes,White,Male,Asymptomatic,269,307,640,801
+70529,Didanosine,1203,31,86.6376,No,Non-White,Male,Asymptomatic,359,400,1026,770
+70531,Zidovudine and Zalcitabine,1101,36,85.2768,Yes,White,Male,Asymptomatic,720,594,2448,1742
+70541,zidovudine and Didanosine,1136,27,61.236,No,White,Male,Symptomatic,420,439,1387,1769
+70643,zidovudine and Didanosine,1126,15,59,No,White,Male,Asymptomatic,286,280,507,419
+70645,Didanosine,1146,17,92.7,No,White,Male,Asymptomatic,251,346,858,812
+70787,Zidovudine,1095,38,68.9472,No,White,Male,Symptomatic,435,384,1306,1290
+70788,zidovudine and Didanosine,1097,43,72.576,No,White,Male,Symptomatic,323,285,646,570
+70794,zidovudine and Didanosine,1178,39,85.9572,No,White,Male,Asymptomatic,305,382,801,941
+71077,Zidovudine and Zalcitabine,643,38,82.5552,No,Non-White,Male,Symptomatic,265,74,1678,1223
+71155,Didanosine,898,31,76.6584,Yes,White,Male,Symptomatic,166,197,1325,1253
+71277,Didanosine,148,35,83.0088,No,White,Male,Symptomatic,395,NA,1579,1138
+71328,Zidovudine,1189,38,86.8644,No,White,Male,Asymptomatic,400,351,871,566
+71329,Zidovudine,1188,41,87.9984,No,White,Male,Asymptomatic,331,NA,1242,954
+71330,Zidovudine and Zalcitabine,1189,32,82.5552,No,White,Male,Asymptomatic,351,439,729,1019
+71331,zidovudine and Didanosine,1188,46,92.0808,No,White,Male,Asymptomatic,230,279,1171,1683
+71332,Didanosine,310,32,78.4728,No,Non-White,Male,Asymptomatic,363,16,1258,604
+71333,Zidovudine,772,29,73.9368,Yes,White,Male,Asymptomatic,280,349,1440,1686
+71334,Zidovudine and Zalcitabine,1185,29,79.8336,No,Non-White,Male,Asymptomatic,406,529,1111,907
+71335,Zidovudine and Zalcitabine,1185,34,71.442,No,White,Male,Symptomatic,316,433,804,938
+71337,Zidovudine and Zalcitabine,866,33,70.7616,No,Non-White,Male,Asymptomatic,513,458,1512,1368
+71338,Didanosine,474,20,72.576,No,Non-White,Male,Asymptomatic,369,NA,548,530
+71339,zidovudine and Didanosine,1152,49,70.0812,No,White,Male,Symptomatic,327,432,1125,975
+71340,Zidovudine and Zalcitabine,725,31,85.2768,Yes,White,Male,Symptomatic,326,248,1710,1596
+71341,Zidovudine,310,30,84.5964,No,White,Male,Asymptomatic,273,NA,2072,1406
+71342,Zidovudine,234,33,69.8544,No,Non-White,Male,Asymptomatic,365,NA,1139,1375
+71343,Zidovudine,620,32,60.5556,No,White,Female,Asymptomatic,358,NA,594,416
+71344,Zidovudine and Zalcitabine,1143,32,82.5552,No,White,Male,Symptomatic,435,397,519,358
+71346,Didanosine,154,33,74.3904,Yes,Non-White,Male,Symptomatic,267,NA,1944,1458
+71347,Zidovudine,1139,35,65.772,No,White,Female,Asymptomatic,527,314,615,765
+71348,Didanosine,517,22,64.638,No,White,Male,Asymptomatic,263,NA,956,1023
+71349,zidovudine and Didanosine,295,26,78.0192,Yes,White,Male,Symptomatic,246,NA,512,1340
+71350,Zidovudine and Zalcitabine,467,37,77.3388,Yes,White,Male,Symptomatic,418,NA,631,484
+71351,Zidovudine and Zalcitabine,1009,29,78.4728,Yes,White,Male,Asymptomatic,340,327,1067,1648
+71353,zidovudine and Didanosine,728,34,62.5968,No,White,Male,Asymptomatic,337,437,699,713
+71354,zidovudine and Didanosine,1125,30,70.7616,No,White,Male,Symptomatic,284,533,1287,751
+71356,Zidovudine and Zalcitabine,385,30,78.0192,No,White,Male,Asymptomatic,470,NA,995,732
+71357,Didanosine,1117,32,92.0808,No,White,Male,Symptomatic,485,477,610,703
+71358,Zidovudine and Zalcitabine,998,31,73.2564,No,White,Male,Asymptomatic,402,342,1707,1147
+71360,zidovudine and Didanosine,1098,39,75.2976,Yes,White,Male,Symptomatic,333,254,589,671
+71361,Zidovudine,224,35,93.4416,No,Non-White,Male,Asymptomatic,290,24,1716,1351
+71362,Zidovudine and Zalcitabine,1091,28,67.5864,No,White,Male,Asymptomatic,249,243,689,728
+71364,Didanosine,1091,30,64.8648,No,White,Male,Symptomatic,447,355,1482,1388
+71366,Zidovudine,1090,43,89.3592,No,White,Male,Asymptomatic,319,322,990,1831
+71367,zidovudine and Didanosine,1089,30,82.5552,No,White,Male,Symptomatic,229,284,2140,2241
+71368,Didanosine,956,37,83.4624,No,Non-White,Male,Asymptomatic,384,NA,858,819
+71369,Zidovudine,647,52,72.576,No,Non-White,Female,Asymptomatic,459,163,1704,936
+71370,zidovudine and Didanosine,966,37,83.4624,Yes,White,Male,Asymptomatic,239,NA,686,729
+71371,Zidovudine,1073,60,72.576,No,White,Male,Asymptomatic,300,494,441,513
+71372,Zidovudine and Zalcitabine,331,30,51.4836,No,White,Male,Symptomatic,357,NA,727,903
+71373,zidovudine and Didanosine,1052,36,73.0296,No,White,Male,Symptomatic,277,332,1175,1174
+71374,Zidovudine and Zalcitabine,1049,31,86.4108,No,Non-White,Male,Asymptomatic,436,571,958,798
+71375,Zidovudine,656,27,74.3904,No,Non-White,Male,Symptomatic,437,163,903,739
+71376,zidovudine and Didanosine,1042,33,67.1328,No,White,Male,Asymptomatic,298,399,546,1230
+71377,zidovudine and Didanosine,896,38,68.04,No,White,Male,Symptomatic,177,125,1242,1347
+71378,Didanosine,419,37,79.8336,No,White,Male,Symptomatic,356,127,2884,2106
+71379,zidovudine and Didanosine,967,39,79.38,No,Non-White,Male,Asymptomatic,566,321,1202,1405
+71380,Zidovudine,394,26,67.8132,No,White,Male,Asymptomatic,372,120,1294,1179
+71381,Zidovudine and Zalcitabine,237,45,73.0296,No,White,Male,Asymptomatic,261,NA,796,516
+71382,Didanosine,912,49,90.0396,No,Non-White,Male,Symptomatic,468,568,936,752
+71383,Didanosine,999,30,73.9368,No,Non-White,Male,Symptomatic,275,131,598,678
+71385,Didanosine,975,42,63.0504,No,Non-White,Male,Symptomatic,370,331,570,485
+71386,Zidovudine,908,34,82.782,No,White,Male,Asymptomatic,337,235,1348,889
+71387,zidovudine and Didanosine,314,38,68.04,No,White,Male,Symptomatic,198,NA,1304,1787
+71389,zidovudine and Didanosine,757,42,85.2768,No,White,Male,Asymptomatic,306,254,612,1003
+71390,Didanosine,643,31,95.256,No,White,Male,Symptomatic,319,123,1226,1433
+71391,Zidovudine,949,39,69.8544,No,White,Male,Symptomatic,196,373,631,938
+80272,Zidovudine,147,38,83.4624,No,White,Male,Asymptomatic,248,NA,765,846
+80282,Zidovudine,1079,37,68.2,No,White,Male,Symptomatic,306,480,423,728
+80349,Zidovudine and Zalcitabine,1087,33,78,No,White,Male,Asymptomatic,437,493,969,954
+80362,Didanosine,799,33,69.8544,No,White,Male,Asymptomatic,341,NA,572,616
+80392,Zidovudine,920,36,75,No,White,Male,Asymptomatic,230,NA,620,792
+80406,Zidovudine and Zalcitabine,1060,43,78.6,No,White,Male,Asymptomatic,460,NA,1472,1170
+80413,Zidovudine,182,37,66.6,No,White,Male,Symptomatic,228,NA,1254,737
+80466,Zidovudine,1098,32,63.504,No,White,Male,Asymptomatic,312,242,696,627
+80499,Didanosine,1138,36,82.5552,No,White,Male,Asymptomatic,380,NA,270,480
+80558,Didanosine,706,50,64.4112,No,Non-White,Male,Asymptomatic,432,NA,1728,2250
+80748,zidovudine and Didanosine,1085,37,74.3904,Yes,White,Male,Asymptomatic,325,261,728,495
+80762,Didanosine,995,41,75.3,No,White,Male,Asymptomatic,576,NA,2176,1386
+80927,Zidovudine and Zalcitabine,1130,35,74.3904,No,Non-White,Male,Asymptomatic,480,NA,880,784
+80933,zidovudine and Didanosine,1152,57,80,No,White,Male,Asymptomatic,330,360,930,1080
+81021,Zidovudine,1021,43,76.4,No,White,Male,Asymptomatic,210,187,430,440
+81100,Zidovudine and Zalcitabine,1040,62,83.4624,No,White,Male,Asymptomatic,234,NA,845,1254
+81101,Zidovudine and Zalcitabine,654,29,68,No,Non-White,Male,Asymptomatic,289,49,1054,1102
+81103,zidovudine and Didanosine,1186,38,78.9264,No,White,Female,Asymptomatic,392,NA,272,560
+81104,Didanosine,1167,49,60.7824,No,White,Male,Asymptomatic,352,NA,912,944
+81105,Zidovudine,664,27,71.2152,No,White,Male,Asymptomatic,336,NA,960,756
+81107,Didanosine,208,19,68.04,Yes,Non-White,Male,Asymptomatic,276,NA,612,741
+81108,Didanosine,1020,41,80,No,White,Male,Symptomatic,506,NA,990,816
+81109,Zidovudine and Zalcitabine,476,28,65.5,No,Non-White,Male,Asymptomatic,325,63,770,522
+81110,Zidovudine and Zalcitabine,975,26,70.0812,No,Non-White,Male,Asymptomatic,735,NA,798,656
+81111,Zidovudine and Zalcitabine,1040,28,68,No,White,Male,Asymptomatic,336,420,976,1254
+81127,zidovudine and Didanosine,202,68,70.7616,No,White,Male,Asymptomatic,196,NA,952,570
+81128,Zidovudine and Zalcitabine,1125,33,73.0296,No,White,Male,Asymptomatic,228,209,708,728
+81134,Zidovudine,643,35,97.524,No,White,Male,Asymptomatic,414,168,1495,1280
+81135,zidovudine and Didanosine,1117,31,66.2256,No,Non-White,Male,Asymptomatic,198,403,1206,1914
+81136,zidovudine and Didanosine,1116,39,74.844,No,White,Male,Asymptomatic,306,NA,1224,840
+81137,Zidovudine and Zalcitabine,1112,43,62.1432,No,White,Male,Asymptomatic,294,NA,308,336
+81138,Zidovudine,944,42,48.0816,No,Non-White,Female,Asymptomatic,480,NA,705,583
+81139,Didanosine,498,38,79.38,No,White,Male,Asymptomatic,180,NA,804,756
+81140,Zidovudine,1104,47,64.4112,No,White,Male,Asymptomatic,264,210,392,432
+81141,zidovudine and Didanosine,906,41,73.9368,No,White,Male,Asymptomatic,209,NA,1216,1083
+81143,Zidovudine,949,38,69.8544,No,White,Male,Asymptomatic,304,NA,1140,1496
+81144,zidovudine and Didanosine,218,32,87.5448,No,White,Male,Asymptomatic,345,NA,1518,1116
+81145,zidovudine and Didanosine,1034,51,96.1632,No,White,Male,Asymptomatic,276,NA,648,658
+81146,Didanosine,409,35,56.7,No,White,Female,Asymptomatic,456,NA,1608,1134
+81444,Didanosine,1083,40,73.8,No,White,Male,Symptomatic,360,441,1180,1020
+81445,Zidovudine,1103,42,59.1,No,White,Male,Asymptomatic,380,NA,1020,1544
+81446,zidovudine and Didanosine,1098,26,81,No,White,Male,Asymptomatic,260,NA,550,480
+81447,Zidovudine and Zalcitabine,1153,35,66.2256,No,White,Male,Symptomatic,180,273,744,676
+81448,Didanosine,1153,39,80.5,No,White,Male,Asymptomatic,168,224,864,1633
+81449,Didanosine,1057,31,60.5,No,White,Male,Asymptomatic,480,800,720,1200
+81450,zidovudine and Didanosine,1131,42,79,No,White,Male,Symptomatic,378,NA,1134,846
+81451,Zidovudine,982,32,86.9,No,Non-White,Male,Asymptomatic,600,NA,1575,1197
+81452,Zidovudine and Zalcitabine,1097,46,81,No,White,Male,Asymptomatic,460,434,960,468
+81453,Zidovudine and Zalcitabine,836,58,80.3,No,White,Male,Asymptomatic,364,480,826,930
+81454,Zidovudine and Zalcitabine,956,33,61.2,Yes,White,Female,Asymptomatic,506,NA,1408,1206
+81455,Didanosine,947,43,92.5,No,White,Male,Asymptomatic,342,NA,893,950
+81456,zidovudine and Didanosine,987,37,107.1,No,White,Male,Asymptomatic,324,NA,1890,1292
+81457,zidovudine and Didanosine,975,41,75.1,No,White,Male,Symptomatic,414,NA,1080,976
+81458,Zidovudine,835,23,66.4,No,Non-White,Male,Asymptomatic,420,322,600,468
+81459,zidovudine and Didanosine,1020,35,76.4,No,White,Male,Asymptomatic,504,NA,1323,1239
+81460,zidovudine and Didanosine,795,34,79.2,No,White,Male,Asymptomatic,252,NA,744,594
+81461,Zidovudine,560,32,80,No,White,Male,Asymptomatic,288,NA,672,741
+81462,Zidovudine and Zalcitabine,875,30,59.9,No,Non-White,Male,Symptomatic,363,NA,2442,2016
+81463,zidovudine and Didanosine,231,35,69.8,No,Non-White,Male,Asymptomatic,221,NA,702,1008
+81532,Zidovudine,395,40,78.0192,Yes,Non-White,Female,Symptomatic,527,NA,702,812
+90109,Didanosine,931,45,53.9784,No,White,Female,Asymptomatic,448,565,686,777
+90239,Didanosine,979,47,78.0192,No,White,Male,Asymptomatic,457,NA,804,690
+90278,zidovudine and Didanosine,653,30,67.3596,No,White,Male,Asymptomatic,489,212,1829,1203
+90281,Didanosine,949,34,57.1536,No,Non-White,Female,Asymptomatic,371,439,877,1027
+90292,zidovudine and Didanosine,357,42,72.576,No,Non-White,Male,Asymptomatic,242,NA,1077,1059
+90297,zidovudine and Didanosine,310,32,75.5244,No,Non-White,Female,Asymptomatic,174,28,522,865
+90300,Zidovudine,390,36,84.8232,No,White,Female,Asymptomatic,338,NA,730,603
+90335,Zidovudine,908,26,47.4012,No,Non-White,Female,Asymptomatic,377,NA,801,873
+90369,Didanosine,1161,32,78.9264,No,White,Male,Asymptomatic,359,NA,1048,812
+90427,Zidovudine and Zalcitabine,868,38,55.3392,No,Non-White,Female,Asymptomatic,210,271,1111,1498
+90441,Zidovudine,929,27,59.8752,No,Non-White,Female,Asymptomatic,500,306,617,867
+90608,Didanosine,959,55,82.1016,No,White,Male,Asymptomatic,229,NA,1078,1100
+90667,Zidovudine and Zalcitabine,1087,35,66.6792,No,Non-White,Male,Asymptomatic,448,484,1253,957
+90668,Zidovudine,1147,32,70.308,No,White,Male,Asymptomatic,413,370,516,708
+90669,Zidovudine,410,35,94.8024,Yes,White,Male,Asymptomatic,418,69,1197,1048
+90670,Zidovudine and Zalcitabine,1175,27,71.2152,No,Non-White,Male,Asymptomatic,299,NA,1029,1202
+90671,Didanosine,1179,22,55.7928,No,Non-White,Male,Asymptomatic,775,659,795,640
+90672,zidovudine and Didanosine,542,28,45.36,No,Non-White,Female,Asymptomatic,198,146,572,441
+90673,Didanosine,985,31,75.2976,No,Non-White,Female,Asymptomatic,392,188,864,604
+90674,Zidovudine,796,24,70.7616,Yes,White,Male,Asymptomatic,410,NA,834,396
+90675,Zidovudine,393,44,60.3288,No,White,Male,Asymptomatic,381,198,604,369
+90676,Zidovudine and Zalcitabine,867,33,79.1532,No,White,Male,Symptomatic,145,152,769,840
+90677,zidovudine and Didanosine,1129,26,63.1,No,White,Male,Asymptomatic,368,NA,503,905
+90678,Didanosine,1066,23,84.1428,No,White,Male,Asymptomatic,376,329,667,1125
+90680,Zidovudine and Zalcitabine,1157,29,78.4728,No,White,Male,Asymptomatic,358,294,699,532
+90681,Zidovudine,896,32,78.4728,No,White,Male,Asymptomatic,397,339,1519,886
+90682,zidovudine and Didanosine,1029,27,77.112,No,White,Male,Asymptomatic,288,NA,1167,989
+90683,zidovudine and Didanosine,1116,36,118.3896,No,Non-White,Male,Symptomatic,235,215,2348,3044
+90684,Didanosine,1063,35,83.4624,Yes,Non-White,Male,Asymptomatic,457,413,1053,900
+90685,Zidovudine and Zalcitabine,847,30,87.0912,No,White,Male,Asymptomatic,519,NA,649,915
+90686,Didanosine,1065,64,72.3,No,White,Male,Asymptomatic,258,NA,1623,1768
+90687,Zidovudine and Zalcitabine,995,36,68.04,No,Non-White,Male,Symptomatic,334,491,1068,989
+90689,zidovudine and Didanosine,979,30,75.7512,No,Non-White,Male,Symptomatic,526,325,1254,717
+90691,Zidovudine,1089,33,69.8544,No,Non-White,Female,Asymptomatic,362,201,785,621
+90692,zidovudine and Didanosine,544,25,63.0504,No,White,Male,Symptomatic,372,NA,1464,1080
+90693,Zidovudine,1068,28,73.71,No,White,Male,Asymptomatic,373,474,631,779
+90694,Zidovudine and Zalcitabine,947,32,63.504,No,Non-White,Female,Asymptomatic,385,241,827,507
+90695,Didanosine,1054,22,72.576,No,Non-White,Female,Asymptomatic,373,255,1205,1010
+90696,Zidovudine and Zalcitabine,1010,33,70.5348,No,White,Male,Asymptomatic,308,285,376,396
+90698,zidovudine and Didanosine,831,43,77.112,No,White,Male,Asymptomatic,441,624,1943,1661
+90699,Zidovudine,947,34,64.638,No,Non-White,Male,Asymptomatic,527,506,884,1041
+90700,zidovudine and Didanosine,890,30,89.8128,No,White,Female,Asymptomatic,165,275,515,884
+90703,zidovudine and Didanosine,575,24,61.6896,No,Non-White,Female,Asymptomatic,210,52,1327,1733
+90704,Didanosine,945,32,90.72,No,Non-White,Female,Asymptomatic,362,NA,1267,1136
+90707,Zidovudine,911,32,75.978,No,Non-White,Female,Asymptomatic,223,NA,535,318
+90712,zidovudine and Didanosine,931,45,66.6792,No,Non-White,Female,Asymptomatic,124,NA,705,1027
+100187,Zidovudine and Zalcitabine,1121,20,66.6792,No,White,Male,Asymptomatic,601,545,1294,1180
+110154,zidovudine and Didanosine,1139,30,66.8,No,Non-White,Male,Asymptomatic,400,NA,40,630
+110222,Zidovudine and Zalcitabine,1185,28,68.81112,No,White,Male,Asymptomatic,333,392,564,569
+110283,Zidovudine and Zalcitabine,373,31,75.2976,No,White,Male,Symptomatic,344,3,1607,1543
+110307,Zidovudine,662,26,77.5656,No,White,Male,Symptomatic,251,84,850,1007
+110373,zidovudine and Didanosine,564,46,64.95552,No,White,Male,Symptomatic,259,35,770,916
+110374,Didanosine,204,50,63.7308,No,White,Male,Symptomatic,161,NA,393,441
+110384,Zidovudine,361,37,65.772,Yes,White,Female,Asymptomatic,368,NA,896,1162
+110404,Zidovudine and Zalcitabine,392,35,73.9,No,White,Male,Asymptomatic,431,104,1466,1248
+110405,Didanosine,1042,36,62.5968,Yes,White,Female,Asymptomatic,197,356,998,1223
+110581,Zidovudine,1182,37,47.8,No,White,Male,Asymptomatic,170,80,420,420
+110648,zidovudine and Didanosine,1126,37,68.04,Yes,White,Male,Asymptomatic,246,NA,594,591
+110652,Zidovudine,184,25,78.10992,Yes,White,Male,Symptomatic,404,NA,1039,1130
+110677,Zidovudine and Zalcitabine,1182,33,80,No,White,Male,Asymptomatic,320,380,1600,1420
+110679,Zidovudine and Zalcitabine,1154,38,67.5,No,White,Female,Asymptomatic,460,520,840,660
+110680,Didanosine,301,39,104,No,White,Male,Asymptomatic,300,NA,1950,1580
+110681,Zidovudine and Zalcitabine,1140,37,65.5,No,White,Male,Symptomatic,370,94,1260,1230
+110682,Didanosine,1104,39,62.5968,No,White,Male,Asymptomatic,220,200,1070,1280
+110683,Zidovudine,1097,37,77,No,White,Male,Asymptomatic,450,NA,840,560
+110697,Zidovudine,996,31,90.35712,No,White,Male,Asymptomatic,316,402,741,1318
+110698,zidovudine and Didanosine,1039,58,68.4936,No,White,Female,Asymptomatic,247,283,689,997
+110705,zidovudine and Didanosine,1164,32,80.514,No,White,Male,Asymptomatic,343,550,1059,1901
+110708,Zidovudine,1146,32,64.1844,No,White,Male,Asymptomatic,269,276,1387,1018
+110709,zidovudine and Didanosine,1194,27,65.3184,No,White,Male,Asymptomatic,336,400,1470,1257
+110711,Didanosine,1195,31,65.772,No,Non-White,Male,Asymptomatic,303,430,880,898
+110712,Zidovudine and Zalcitabine,395,36,78.9264,No,White,Male,Asymptomatic,230,NA,1274,1674
+110713,zidovudine and Didanosine,1140,39,66.2256,No,Non-White,Male,Asymptomatic,365,450,1823,996
+110714,zidovudine and Didanosine,822,38,93.4416,No,White,Male,Asymptomatic,564,300,1495,1156
+110715,Zidovudine and Zalcitabine,1126,40,74.3904,No,White,Male,Asymptomatic,321,440,1264,1186
+110716,Zidovudine and Zalcitabine,1123,38,64.8648,No,White,Male,Asymptomatic,400,500,1060,1003
+110717,Zidovudine and Zalcitabine,954,36,120.6576,No,White,Male,Asymptomatic,276,NA,1441,1008
+110718,Zidovudine and Zalcitabine,578,32,87.5448,No,White,Male,Asymptomatic,246,NA,1250,1218
+110720,zidovudine and Didanosine,1088,15,50.8032,No,White,Male,Asymptomatic,212,250,877,564
+110724,zidovudine and Didanosine,1048,28,85.2768,No,White,Male,Asymptomatic,385,460,820,831
+110725,Didanosine,1056,41,77.112,No,White,Male,Asymptomatic,428,510,602,590
+110727,Didanosine,135,44,51.2568,No,White,Male,Symptomatic,222,270,1366,669
+110728,Didanosine,1042,37,73.4832,No,Non-White,Male,Asymptomatic,193,260,469,636
+110730,Zidovudine,653,30,77.112,No,White,Male,Asymptomatic,453,240,631,669
+110733,Zidovudine,583,25,110.6784,No,Non-White,Female,Asymptomatic,611,NA,1426,899
+110736,Didanosine,904,34,74.6172,No,Non-White,Male,Symptomatic,385,215,843,716
+110738,Didanosine,1133,34,74.844,No,White,Male,Symptomatic,237,210,725,641
+110739,Didanosine,1059,37,70.9884,Yes,Non-White,Male,Asymptomatic,309,NA,995,1010
+110741,Zidovudine,1050,37,56.8,Yes,White,Female,Asymptomatic,281,314,675,613
+110742,Didanosine,476,35,48.762,No,White,Female,Asymptomatic,258,7,546,720
+110743,Zidovudine,1009,39,66.906,Yes,Non-White,Male,Asymptomatic,256,267,1099,1296
+110746,Zidovudine,726,46,77.112,No,White,Male,Symptomatic,240,141,1071,1418
+110747,Didanosine,62,41,79.8336,Yes,Non-White,Male,Symptomatic,305,NA,1023,843
+110750,Didanosine,990,51,68.4936,No,White,Male,Symptomatic,410,326,717,588
+110751,Zidovudine and Zalcitabine,978,27,59.6484,No,White,Male,Asymptomatic,447,518,729,661
+110753,zidovudine and Didanosine,822,39,81.648,Yes,White,Male,Asymptomatic,407,271,1201,1264
+110754,zidovudine and Didanosine,1064,45,82.87272,No,Non-White,Male,Asymptomatic,324,365,1427,2064
+110758,Zidovudine and Zalcitabine,973,30,97.2972,No,Non-White,Male,Asymptomatic,480,318,1320,2807
+110760,Zidovudine and Zalcitabine,1087,41,84.3,Yes,Non-White,Female,Asymptomatic,340,NA,680,730
+110762,Zidovudine,1068,36,80,Yes,Non-White,Male,Asymptomatic,600,570,2090,1700
+110764,Zidovudine,968,22,78,No,White,Female,Asymptomatic,360,520,610,620
+110765,Didanosine,976,45,69,Yes,Non-White,Female,Asymptomatic,350,NA,620,570
+110792,Zidovudine and Zalcitabine,904,34,108.864,No,White,Male,Asymptomatic,302,347,786,1020
+120142,zidovudine and Didanosine,1087,28,90.5,No,Non-White,Male,Asymptomatic,428,NA,1832,1314
+120157,Zidovudine and Zalcitabine,1096,44,71.2152,No,White,Male,Asymptomatic,360,451,691,600
+120252,Didanosine,1160,29,80.7408,No,Non-White,Male,Asymptomatic,375,282,538,545
+120295,Zidovudine and Zalcitabine,1160,37,81.648,No,White,Male,Asymptomatic,211,NA,1289,1073
+120328,zidovudine and Didanosine,1065,33,67.5864,No,Non-White,Male,Asymptomatic,394,272,323,512
+120346,Didanosine,1139,32,69.4008,No,White,Male,Asymptomatic,496,367,1442,1631
+120368,zidovudine and Didanosine,224,33,76.6584,No,White,Male,Asymptomatic,264,NA,636,549
+120887,Zidovudine and Zalcitabine,981,25,64.4112,No,Non-White,Male,Asymptomatic,157,127,288,601
+120890,Didanosine,309,58,63.504,No,Non-White,Male,Asymptomatic,275,NA,550,673
+120891,Didanosine,307,25,59.8752,No,White,Male,Asymptomatic,199,NA,899,1156
+120892,Zidovudine,1161,52,68.04,No,Non-White,Male,Asymptomatic,319,367,465,609
+120896,Zidovudine,730,26,58.2,No,White,Male,Asymptomatic,302,64,544,787
+120897,zidovudine and Didanosine,1154,44,104.5,No,White,Male,Asymptomatic,468,NA,605,352
+120898,Zidovudine,1154,42,55.2,No,White,Male,Asymptomatic,522,435,1066,1340
+120900,Zidovudine and Zalcitabine,1147,46,72,No,Non-White,Male,Asymptomatic,380,383,1929,882
+120905,zidovudine and Didanosine,1132,34,96.5,No,White,Male,Asymptomatic,703,NA,641,483
+120910,Zidovudine,435,26,79,No,Non-White,Male,Asymptomatic,176,NA,880,1227
+120911,zidovudine and Didanosine,1117,32,59.4216,No,Non-White,Female,Asymptomatic,231,300,682,720
+120912,Didanosine,522,41,73.2,Yes,White,Male,Asymptomatic,304,NA,1022,1274
+120916,Zidovudine and Zalcitabine,1097,38,75,No,Non-White,Male,Asymptomatic,310,259,601,813
+120917,Didanosine,414,32,57.2,No,White,Male,Symptomatic,490,NA,1078,1574
+120918,zidovudine and Didanosine,1080,30,70.7616,No,White,Female,Asymptomatic,611,1062,1363,960
+120920,Zidovudine and Zalcitabine,1090,33,88.2252,No,Non-White,Male,Asymptomatic,285,235,571,598
+120921,Zidovudine,232,26,61.8,No,Non-White,Male,Symptomatic,173,NA,734,1453
+120924,Didanosine,350,29,64.4112,No,Non-White,Male,Asymptomatic,265,NA,437,579
+120926,Zidovudine and Zalcitabine,560,25,111.132,No,Non-White,Male,Asymptomatic,451,NA,1214,924
+120927,Zidovudine,680,51,60.3288,No,White,Male,Asymptomatic,291,NA,1012,1104
+120933,Zidovudine and Zalcitabine,1034,28,60.3288,No,White,Male,Asymptomatic,388,572,885,740
+120936,zidovudine and Didanosine,569,33,90.2664,No,White,Male,Asymptomatic,293,NA,1044,986
+120937,Didanosine,315,33,78.9264,No,Non-White,Male,Symptomatic,234,NA,666,1041
+120940,zidovudine and Didanosine,994,40,72.3492,No,White,Male,Asymptomatic,234,NA,2076,1314
+120945,Didanosine,985,28,88.452,No,Non-White,Male,Asymptomatic,478,464,1310,807
+120946,Zidovudine and Zalcitabine,979,46,74.6172,No,White,Male,Symptomatic,604,NA,982,1043
+120948,Zidovudine,561,49,66.2256,No,White,Male,Asymptomatic,528,224,827,907
+140087,Zidovudine and Zalcitabine,1000,43,80.4,No,White,Male,Asymptomatic,352,510,755,695
+140091,Didanosine,252,34,83.5,Yes,White,Male,Symptomatic,252,0,1143,708
+140125,Didanosine,895,36,74.1,No,White,Male,Asymptomatic,277,132,1237,899
+140141,Zidovudine and Zalcitabine,1124,39,71.8,Yes,White,Male,Symptomatic,474,433,894,1004
+140164,Didanosine,1098,43,81.8,No,White,Male,Asymptomatic,425,616,1029,826
+140176,Didanosine,1094,39,69.5,No,White,Male,Asymptomatic,490,472,850,901
+140187,zidovudine and Didanosine,964,20,66,No,White,Male,Asymptomatic,504,541,2340,1518
+140196,zidovudine and Didanosine,252,27,88.6,No,White,Male,Symptomatic,234,NA,228,224
+140228,Zidovudine,1131,40,75.9,No,White,Male,Symptomatic,381,215,1332,1690
+140232,Zidovudine,1132,50,68.2,No,White,Male,Asymptomatic,740,643,1428,1145
+140237,zidovudine and Didanosine,1078,34,56.4,No,White,Male,Symptomatic,202,NA,1336,1273
+140260,zidovudine and Didanosine,140,39,81.8,No,White,Male,Symptomatic,623,NA,606,919
+140266,Zidovudine and Zalcitabine,1096,27,55.9,No,White,Male,Asymptomatic,316,388,742,962
+140270,Zidovudine and Zalcitabine,1055,32,79.5,No,White,Male,Asymptomatic,395,412,526,702
+140287,zidovudine and Didanosine,646,35,77.5,No,White,Male,Symptomatic,280,116,1703,1020
+140297,Didanosine,1187,34,68.2,No,White,Male,Asymptomatic,292,301,1098,1156
+140387,Zidovudine and Zalcitabine,854,49,84.1,No,White,Male,Asymptomatic,195,25,351,280
+140400,zidovudine and Didanosine,1121,41,85.5,No,White,Male,Asymptomatic,522,287,1682,1417
+140553,Didanosine,919,36,77.112,No,Non-White,Male,Asymptomatic,266,NA,601,1073
+140589,Didanosine,1181,43,81,No,White,Male,Asymptomatic,458,NA,931,979
+140690,Zidovudine and Zalcitabine,1138,45,66.4,Yes,White,Female,Asymptomatic,171,278,237,367
+140714,Zidovudine,817,63,92.0808,No,White,Male,Asymptomatic,213,NA,1314,1481
+140718,zidovudine and Didanosine,1167,43,70.0812,No,White,Male,Asymptomatic,273,238,737,697
+140728,Zidovudine and Zalcitabine,415,38,78.2,No,White,Male,Asymptomatic,176,11,832,801
+140731,Zidovudine,650,43,94.1,No,White,Male,Asymptomatic,280,122,1706,1456
+140732,zidovudine and Didanosine,896,34,75,No,White,Male,Symptomatic,286,381,709,972
+140735,Zidovudine and Zalcitabine,1179,29,105.9,No,White,Male,Asymptomatic,477,597,893,936
+140736,Didanosine,901,35,75,No,White,Male,Asymptomatic,421,NA,1079,1104
+140738,Didanosine,1141,31,88.6,No,White,Male,Asymptomatic,343,NA,581,557
+140739,Didanosine,284,45,76,Yes,White,Male,Symptomatic,340,NA,1277,1652
+140741,Zidovudine,1172,36,88.6,No,White,Male,Asymptomatic,370,365,1076,1263
+140742,zidovudine and Didanosine,1027,38,79.6068,No,White,Male,Asymptomatic,151,NA,691,819
+140743,Didanosine,1133,45,59,Yes,White,Male,Asymptomatic,475,NA,1260,1389
+140744,zidovudine and Didanosine,1124,30,81.1944,Yes,White,Male,Asymptomatic,0,304,998,1078
+140745,Zidovudine,576,34,79,No,White,Male,Asymptomatic,403,NA,910,918
+140746,Didanosine,1063,38,87,No,White,Male,Asymptomatic,255,248,1149,1155
+140748,Zidovudine,406,29,71.2152,No,White,Male,Symptomatic,320,40,1359,1300
+140749,Zidovudine and Zalcitabine,1158,29,69.1,No,White,Male,Asymptomatic,359,480,612,716
+140750,zidovudine and Didanosine,1154,35,86.6376,No,White,Male,Asymptomatic,520,465,1253,1152
+140751,Zidovudine and Zalcitabine,1154,34,91,No,White,Male,Asymptomatic,396,437,1044,940
+140752,Zidovudine and Zalcitabine,1101,27,75.9,No,White,Male,Asymptomatic,252,NA,1093,1190
+140753,zidovudine and Didanosine,1042,31,84.3696,No,White,Male,Asymptomatic,275,NA,446,596
+140754,zidovudine and Didanosine,1151,43,75.9,Yes,White,Male,Asymptomatic,519,NA,2412,2262
+140756,zidovudine and Didanosine,1139,48,64,No,White,Male,Asymptomatic,439,540,497,700
+140758,Zidovudine,1140,29,70.308,No,White,Male,Asymptomatic,237,371,494,636
+140759,Didanosine,484,46,75.9,Yes,White,Male,Asymptomatic,338,66,1072,1060
+140761,Zidovudine,379,30,71.8956,No,White,Male,Asymptomatic,336,43,959,873
+140762,Zidovudine and Zalcitabine,805,35,82.3,Yes,White,Male,Asymptomatic,323,NA,860,954
+140763,Zidovudine and Zalcitabine,883,31,92.3,Yes,White,Male,Asymptomatic,293,344,1658,1090
+140764,zidovudine and Didanosine,1068,53,93.6,No,White,Male,Asymptomatic,364,315,1213,1237
+140765,zidovudine and Didanosine,1076,34,67.7,Yes,White,Male,Asymptomatic,231,NA,681,904
+140767,Didanosine,1124,49,63.6,Yes,White,Male,Symptomatic,321,379,574,789
+140768,Zidovudine,984,27,78.2,No,White,Male,Symptomatic,449,288,1768,1942
+140769,Didanosine,1069,50,83.3,No,White,Male,Symptomatic,391,347,858,779
+140772,Didanosine,1024,36,67,Yes,Non-White,Male,Asymptomatic,239,NA,1280,1846
+140773,Zidovudine,105,33,70.5,No,White,Male,Asymptomatic,181,19,1156,1013
+140774,Zidovudine and Zalcitabine,1115,55,60.7824,No,White,Male,Asymptomatic,362,970,739,1241
+140775,zidovudine and Didanosine,1111,25,83.6892,No,White,Male,Asymptomatic,350,369,1068,888
+140776,Zidovudine and Zalcitabine,972,39,94.5,Yes,White,Male,Symptomatic,149,NA,564,1037
+140777,zidovudine and Didanosine,218,46,67.7,No,White,Male,Symptomatic,255,NA,578,535
+140778,zidovudine and Didanosine,1102,38,59.5,No,Non-White,Male,Asymptomatic,440,499,861,486
+140779,Zidovudine and Zalcitabine,738,44,72.5,Yes,White,Male,Symptomatic,421,NA,2106,1903
+140780,Zidovudine,210,50,82.7,No,White,Male,Asymptomatic,187,NA,811,512
+140781,Zidovudine and Zalcitabine,1043,39,73.6,No,White,Male,Asymptomatic,187,255,899,879
+140783,Zidovudine,308,44,76.4,No,White,Male,Asymptomatic,345,10,1157,890
+140784,Didanosine,586,27,80.9,Yes,Non-White,Male,Asymptomatic,390,122,1562,886
+140785,Didanosine,1089,34,80.9,No,White,Male,Asymptomatic,228,208,1642,1333
+140786,Didanosine,991,27,63.6,No,White,Male,Asymptomatic,303,493,771,751
+140787,zidovudine and Didanosine,1058,30,64.5,No,White,Male,Asymptomatic,295,271,1065,782
+140789,zidovudine and Didanosine,561,50,77.5,No,White,Male,Asymptomatic,442,NA,950,994
+140791,zidovudine and Didanosine,1063,20,71.1,No,White,Male,Asymptomatic,353,437,859,1151
+140792,Zidovudine,967,38,77.7,Yes,Non-White,Female,Asymptomatic,356,NA,499,614
+140795,zidovudine and Didanosine,1053,48,70.5,No,White,Male,Asymptomatic,526,347,1149,816
+140797,Zidovudine,827,65,60.5,No,White,Male,Asymptomatic,414,270,2016,1507
+140798,Didanosine,1047,34,70,Yes,Non-White,Female,Symptomatic,404,297,2607,2753
+140800,zidovudine and Didanosine,981,44,82.7,No,White,Male,Symptomatic,310,462,1068,1180
+140802,Zidovudine,982,43,69.4008,Yes,White,Female,Asymptomatic,457,331,556,559
+140803,Didanosine,923,29,77.3,No,White,Male,Asymptomatic,357,354,1000,1301
+140804,Zidovudine and Zalcitabine,896,33,82.7,No,White,Male,Asymptomatic,399,474,723,363
+140805,Didanosine,917,33,78.1,No,White,Male,Asymptomatic,420,310,1457,1281
+140809,Zidovudine,594,29,70,Yes,White,Male,Asymptomatic,259,NA,975,735
+140811,zidovudine and Didanosine,990,37,90.9,No,White,Male,Asymptomatic,639,NA,979,573
+150047,Zidovudine and Zalcitabine,1165,31,83.1,No,Non-White,Male,Asymptomatic,449,338,1992,2736
+150062,Zidovudine,1050,37,77.9,No,White,Male,Symptomatic,222,NA,1093,478
+150073,Zidovudine,1166,23,62,No,White,Male,Asymptomatic,421,NA,1243,1556
+150075,Didanosine,1079,35,74.3,No,White,Male,Asymptomatic,438,570,716,857
+150088,Didanosine,802,42,95.2,No,White,Male,Asymptomatic,255,149,453,376
+150089,Zidovudine,54,46,86.1,Yes,White,Male,Asymptomatic,311,NA,1867,813
+150093,Zidovudine,237,42,74.6,No,White,Male,Symptomatic,188,16,1025,473
+150108,Zidovudine,1039,38,90.4,No,White,Male,Symptomatic,310,NA,818,573
+150111,Zidovudine and Zalcitabine,1159,37,74.1,No,White,Male,Asymptomatic,220,329,720,758
+150129,Didanosine,1180,30,73.4832,No,White,Male,Asymptomatic,251,219,306,385
+150141,Didanosine,904,35,66,No,White,Male,Asymptomatic,387,346,1074,1505
+150144,Zidovudine,163,45,62,No,White,Male,Asymptomatic,203,NA,1217,511
+150147,Zidovudine,557,32,90.2,No,White,Male,Asymptomatic,248,75,626,658
+150159,Zidovudine,1132,42,78.5,No,White,Male,Asymptomatic,316,257,778,1236
+150160,zidovudine and Didanosine,1014,43,88.5,No,Non-White,Male,Symptomatic,658,NA,1026,1317
+150163,Zidovudine,1160,59,86,No,White,Male,Asymptomatic,308,219,627,739
+150166,Zidovudine,459,37,93.5,No,Non-White,Male,Asymptomatic,240,NA,894,1197
+150167,Didanosine,402,49,99,No,White,Male,Symptomatic,297,NA,1863,1322
+150168,zidovudine and Didanosine,1131,40,78.4,No,White,Male,Symptomatic,507,339,1498,1255
+150172,Didanosine,1167,48,70.5,No,White,Male,Asymptomatic,232,NA,603,668
+150207,Didanosine,1132,45,76.1,No,White,Male,Asymptomatic,315,NA,1332,1024
+150214,Zidovudine,1153,38,70,No,White,Male,Asymptomatic,463,374,686,589
+150225,zidovudine and Didanosine,1152,45,85.5,No,White,Male,Asymptomatic,211,NA,918,668
+150227,zidovudine and Didanosine,1161,41,73,No,White,Male,Asymptomatic,252,274,677,752
+150236,zidovudine and Didanosine,795,31,78.1,Yes,White,Male,Asymptomatic,257,242,137,515
+150272,zidovudine and Didanosine,651,33,89.9,No,White,Male,Asymptomatic,688,149,1255,1371
+150306,Didanosine,1154,28,66.4,No,White,Male,Asymptomatic,238,NA,1469,1014
+150349,Didanosine,477,47,68.4,No,White,Male,Asymptomatic,230,187,450,214
+150418,Zidovudine and Zalcitabine,1072,38,59.5,No,White,Male,Symptomatic,253,160,478,371
+150420,Zidovudine and Zalcitabine,1167,58,91,No,White,Male,Asymptomatic,368,NA,735,622
+150421,Didanosine,1167,38,81.2,No,White,Male,Asymptomatic,478,441,661,509
+150422,Zidovudine,1064,53,98.5,Yes,Non-White,Male,Asymptomatic,255,NA,615,781
+150424,Zidovudine and Zalcitabine,1032,30,64.4,No,Non-White,Male,Asymptomatic,327,NA,818,1058
+150425,zidovudine and Didanosine,1166,27,56.7,No,White,Male,Asymptomatic,464,NA,1206,975
+150427,zidovudine and Didanosine,312,42,76.1,No,White,Male,Asymptomatic,293,36,1171,976
+150428,Zidovudine and Zalcitabine,1094,39,64.5,Yes,White,Male,Asymptomatic,296,NA,1647,2012
+150429,Zidovudine,713,38,76.7,No,Non-White,Male,Asymptomatic,184,NA,368,575
+150430,Didanosine,1050,29,79.9,No,White,Male,Asymptomatic,265,NA,1061,1037
+150431,zidovudine and Didanosine,770,27,87,No,White,Male,Symptomatic,317,194,903,1226
+150432,zidovudine and Didanosine,1153,27,72,No,White,Female,Asymptomatic,523,543,964,1019
+150435,Didanosine,484,29,74.7,No,White,Male,Asymptomatic,339,NA,999,1056
+150437,Zidovudine and Zalcitabine,477,25,80.4,Yes,White,Male,Asymptomatic,526,NA,1304,1028
+150438,Zidovudine,1152,37,83.9,No,White,Male,Asymptomatic,534,614,763,738
+150439,zidovudine and Didanosine,1158,31,69.4,No,White,Male,Asymptomatic,449,329,1054,1261
+150440,Zidovudine and Zalcitabine,613,38,75.1,No,White,Male,Asymptomatic,239,NA,620,502
+150441,Zidovudine,154,42,74.6,No,Non-White,Male,Symptomatic,293,NA,746,633
+150443,Zidovudine and Zalcitabine,923,35,94.4,No,White,Male,Asymptomatic,202,158,585,460
+150444,Zidovudine,1151,27,78.5,Yes,White,Male,Asymptomatic,436,NA,817,584
+150445,Zidovudine and Zalcitabine,1146,42,85.4,No,White,Male,Asymptomatic,522,579,1714,994
+150446,Zidovudine and Zalcitabine,1030,28,68.1,No,White,Male,Symptomatic,269,333,538,791
+150447,Zidovudine,174,31,84.3,No,White,Male,Asymptomatic,230,42,726,745
+150448,Didanosine,1145,31,78.9,No,White,Male,Asymptomatic,382,NA,710,630
+150449,Zidovudine and Zalcitabine,977,31,72.2,No,White,Male,Asymptomatic,191,191,996,782
+150450,zidovudine and Didanosine,755,26,57.5,No,Non-White,Male,Asymptomatic,551,NA,1914,1490
+150451,Didanosine,1140,29,119.7,No,White,Male,Asymptomatic,599,519,1176,962
+150452,Zidovudine,1132,26,79.4,No,White,Male,Asymptomatic,356,393,978,601
+150453,Zidovudine and Zalcitabine,1016,43,72.5,No,White,Male,Symptomatic,176,NA,782,844
+150454,Zidovudine,331,33,67.4,No,Non-White,Female,Asymptomatic,447,42,1080,946
+150456,zidovudine and Didanosine,1139,48,77.5,No,White,Male,Asymptomatic,231,218,326,480
+150458,Zidovudine,1138,31,72.6,No,Non-White,Male,Asymptomatic,373,260,976,1016
+150459,zidovudine and Didanosine,1133,33,67.7,No,White,Male,Asymptomatic,450,NA,731,588
+150461,Didanosine,1010,31,64,No,White,Male,Asymptomatic,300,NA,571,493
+150463,Zidovudine,1062,26,71.3,No,White,Male,Symptomatic,277,177,704,538
+150464,Zidovudine and Zalcitabine,983,41,75.5,No,White,Male,Asymptomatic,362,455,1156,738
+150465,zidovudine and Didanosine,816,29,71.7,No,White,Male,Asymptomatic,353,NA,657,547
+150466,Didanosine,303,32,73.5,No,White,Male,Asymptomatic,188,51,774,883
+150467,Didanosine,995,27,67.9,No,Non-White,Male,Symptomatic,257,162,831,1111
+150468,zidovudine and Didanosine,1115,39,86,Yes,White,Male,Symptomatic,221,351,1045,2132
+150471,Didanosine,646,35,76.1,No,White,Male,Symptomatic,228,80,871,601
+150472,Zidovudine,1110,35,83.5,No,White,Female,Symptomatic,414,316,740,673
+150473,zidovudine and Didanosine,1105,29,75.7,No,White,Male,Asymptomatic,524,707,1254,1636
+150474,zidovudine and Didanosine,1042,34,74.9,No,Non-White,Male,Asymptomatic,249,NA,635,672
+150477,Zidovudine,992,36,69.3,Yes,White,Male,Asymptomatic,267,NA,839,842
+150479,Didanosine,1110,41,76,No,White,Male,Asymptomatic,367,NA,1183,969
+150481,Zidovudine and Zalcitabine,1105,36,67.5,No,White,Male,Asymptomatic,319,NA,870,947
+150482,zidovudine and Didanosine,1105,36,71.1,No,White,Male,Asymptomatic,267,NA,840,987
+150483,Zidovudine and Zalcitabine,1096,38,70.2,No,White,Male,Asymptomatic,476,389,476,391
+150484,zidovudine and Didanosine,287,38,73.3,No,Non-White,Male,Asymptomatic,273,NA,2096,1544
+150485,Didanosine,974,32,85.8,No,White,Male,Asymptomatic,270,NA,740,709
+150487,Didanosine,626,37,45.6,No,White,Female,Symptomatic,340,317,794,764
+150489,Zidovudine and Zalcitabine,960,28,75.5,No,White,Male,Symptomatic,468,NA,1206,1177
+150490,zidovudine and Didanosine,1090,32,89.5,No,White,Male,Asymptomatic,282,355,2666,1456
+150492,Zidovudine and Zalcitabine,146,30,68.2,No,White,Male,Symptomatic,228,NA,497,311
+150493,Didanosine,672,39,65.2,No,White,Male,Symptomatic,413,174,522,503
+150494,Didanosine,1087,39,68.3,No,White,Male,Symptomatic,194,279,745,764
+150495,Zidovudine,1083,33,78.8,No,White,Male,Asymptomatic,307,420,998,705
+150496,Zidovudine and Zalcitabine,962,31,87.3,No,White,Male,Asymptomatic,352,293,928,902
+150497,zidovudine and Didanosine,1019,31,60.1,Yes,White,Female,Asymptomatic,153,NA,418,513
+150499,Zidovudine and Zalcitabine,487,44,102.1,No,Non-White,Male,Asymptomatic,225,NA,729,550
+150501,Zidovudine and Zalcitabine,1066,26,89.5,No,White,Male,Asymptomatic,214,215,1014,755
+150502,zidovudine and Didanosine,1062,27,78.1,No,White,Male,Asymptomatic,410,NA,390,766
+150503,Zidovudine,825,35,87.2,No,White,Male,Asymptomatic,529,412,696,705
+150507,zidovudine and Didanosine,916,39,81.7,Yes,White,Male,Asymptomatic,445,365,1277,1475
+150508,Didanosine,392,27,81.2,No,White,Male,Symptomatic,355,115,1026,772
+150509,Zidovudine and Zalcitabine,1024,35,85.7,No,White,Male,Asymptomatic,350,407,1255,1084
+150510,Zidovudine,993,24,90.7,No,White,Male,Asymptomatic,359,NA,482,380
+150511,Didanosine,992,31,79.3,No,Non-White,Male,Asymptomatic,276,383,371,408
+150809,Zidovudine and Zalcitabine,986,30,62.7,No,White,Male,Asymptomatic,374,450,1802,1150
+150810,Zidovudine and Zalcitabine,903,40,72.2,No,White,Male,Symptomatic,281,330,941,785
+150811,Didanosine,147,30,79.5,No,Non-White,Male,Symptomatic,348,58,1060,632
+150812,Zidovudine and Zalcitabine,990,25,59.1,No,White,Male,Asymptomatic,378,477,1628,1220
+150911,Didanosine,847,49,94.6,Yes,White,Male,Asymptomatic,627,329,1302,816
+160089,Zidovudine and Zalcitabine,1071,30,74.57184,No,White,Male,Asymptomatic,469,396,1430,1289
+160111,Zidovudine,1034,36,69.31008,No,Non-White,Female,Asymptomatic,309,309,867,1259
+160142,Zidovudine,749,31,78.9264,No,White,Male,Asymptomatic,526,239,1373,839
+160164,Didanosine,1071,32,89.22312,No,White,Male,Asymptomatic,445,454,1356,1471
+160177,Didanosine,1057,44,86.36544,No,White,Male,Asymptomatic,464,460,1230,687
+160204,zidovudine and Didanosine,595,48,77.7,No,White,Male,Asymptomatic,270,180,1220,980
+160208,Didanosine,1066,63,65.0916,No,White,Female,Asymptomatic,373,452,837,1024
+160223,zidovudine and Didanosine,413,24,79.92432,No,White,Male,Asymptomatic,469,NA,1572,1693
+160250,Zidovudine and Zalcitabine,1039,39,80.7,No,Non-White,Male,Asymptomatic,400,NA,889,1094
+160269,Zidovudine and Zalcitabine,1047,29,81.37584,No,White,Male,Asymptomatic,440,310,1139,693
+160344,Zidovudine,1116,29,71.442,No,White,Male,Asymptomatic,421,290,644,700
+160370,Zidovudine and Zalcitabine,1065,31,79.9,No,White,Male,Asymptomatic,468,524,1357,797
+160374,Didanosine,1064,33,58.10616,No,White,Female,Asymptomatic,491,NA,737,760
+160375,zidovudine and Didanosine,1015,31,57.3804,No,White,Female,Asymptomatic,559,467,1097,1131
+160376,zidovudine and Didanosine,1072,31,85.77576,No,White,Male,Asymptomatic,549,500,1526,1686
+160377,Zidovudine and Zalcitabine,1087,65,71.07912,No,White,Male,Asymptomatic,425,290,788,814
+160378,Zidovudine,1012,46,79.1532,No,White,Male,Asymptomatic,413,208,2663,2640
+160380,Didanosine,316,32,72.576,No,Non-White,Male,Asymptomatic,203,NA,572,620
+160381,Zidovudine,1021,30,83.50776,No,White,Male,Asymptomatic,375,327,1054,645
+160383,Didanosine,974,28,44.18064,No,Non-White,Female,Asymptomatic,502,NA,1363,1014
+160384,Zidovudine,582,25,84.1428,No,White,Male,Asymptomatic,264,154,950,1652
+170135,Didanosine,985,26,63.504,No,White,Male,Asymptomatic,287,NA,1223,882
+170184,Zidovudine and Zalcitabine,150,43,69.4008,No,Non-White,Male,Symptomatic,186,NA,1889,2232
+170222,Zidovudine,263,46,90.72,No,Non-White,Male,Asymptomatic,275,NA,1822,1368
+170236,Didanosine,1132,29,69.4008,No,White,Male,Asymptomatic,499,NA,1002,1096
+170251,Zidovudine,1090,28,83.32632,No,White,Male,Asymptomatic,334,433,1127,896
+170288,Zidovudine and Zalcitabine,286,26,82.1,No,White,Male,Asymptomatic,216,NA,660,761
+170342,Zidovudine,284,50,97.0704,No,White,Male,Symptomatic,163,NA,408,286
+170356,Zidovudine,1123,37,94.8024,No,White,Male,Asymptomatic,494,278,1059,1036
+170380,Didanosine,254,55,77.7924,No,Non-White,Male,Asymptomatic,160,11,1076,631
+170398,zidovudine and Didanosine,1130,34,74.3904,No,White,Male,Asymptomatic,449,NA,1337,996
+170472,Zidovudine,839,31,58.8,No,Non-White,Male,Symptomatic,203,165,820,618
+170491,Zidovudine and Zalcitabine,1116,48,82.3284,No,White,Male,Asymptomatic,332,454,618,538
+170495,Didanosine,1080,29,88.9056,No,Non-White,Male,Asymptomatic,437,501,2753,4113
+170509,Zidovudine and Zalcitabine,786,36,71.8956,No,White,Male,Symptomatic,224,NA,743,720
+170541,Zidovudine,1019,43,77.112,No,White,Male,Symptomatic,296,NA,1013,832
+170627,Didanosine,980,32,82.1016,No,White,Male,Symptomatic,224,416,1078,1173
+170631,Didanosine,1123,30,98.4312,Yes,White,Male,Asymptomatic,417,570,702,749
+170632,Zidovudine and Zalcitabine,1123,36,73.0296,No,White,Male,Symptomatic,311,386,812,815
+170633,Didanosine,1112,25,66.5,No,White,Male,Asymptomatic,420,319,819,584
+170635,Zidovudine,286,41,62.1432,No,Non-White,Male,Asymptomatic,299,NA,494,849
+170636,Zidovudine and Zalcitabine,1116,48,45.4,No,White,Female,Asymptomatic,436,330,519,510
+170639,Zidovudine and Zalcitabine,1102,45,67.5864,No,White,Male,Symptomatic,408,404,395,398
+170640,zidovudine and Didanosine,493,30,60.102,No,White,Male,Asymptomatic,162,10,1294,900
+170642,Zidovudine and Zalcitabine,1109,43,65.772,Yes,White,Female,Symptomatic,375,460,806,967
+170645,zidovudine and Didanosine,1104,41,74.3904,No,Non-White,Female,Asymptomatic,480,872,707,677
+170646,zidovudine and Didanosine,1109,31,42.4116,Yes,Non-White,Female,Asymptomatic,448,308,749,730
+170648,Zidovudine,823,44,82.1016,No,White,Male,Asymptomatic,219,NA,604,882
+170651,Zidovudine,1087,29,57.1536,Yes,Non-White,Female,Asymptomatic,448,NA,721,770
+170653,zidovudine and Didanosine,1022,43,69.4008,No,White,Male,Asymptomatic,293,365,890,613
+170662,zidovudine and Didanosine,470,27,79.38,No,White,Male,Asymptomatic,330,NA,1738,1399
+170684,Zidovudine and Zalcitabine,1088,28,92.7,No,Non-White,Male,Asymptomatic,433,520,836,642
+170685,Didanosine,832,39,45.8136,Yes,Non-White,Female,Asymptomatic,207,NA,1261,1236
+170686,zidovudine and Didanosine,1087,35,97.5,No,Non-White,Male,Asymptomatic,396,365,968,929
+170690,zidovudine and Didanosine,138,35,88.6788,No,Non-White,Male,Symptomatic,345,NA,927,1039
+170846,Zidovudine,1074,27,76.2048,No,White,Male,Asymptomatic,456,340,757,632
+170852,Didanosine,476,26,57.834,No,Non-White,Female,Asymptomatic,218,NA,990,1155
+170858,Didanosine,1133,36,63.0504,No,White,Male,Asymptomatic,243,111,680,629
+170868,Zidovudine,571,30,90.0396,No,Non-White,Male,Asymptomatic,329,NA,1254,1233
+170888,zidovudine and Didanosine,470,26,63.6,No,White,Male,Asymptomatic,307,NA,443,523
+170896,Zidovudine,834,29,81.4212,No,White,Male,Asymptomatic,356,273,828,684
+170902,Zidovudine and Zalcitabine,833,57,57.1536,No,Non-White,Female,Asymptomatic,498,NA,659,323
+170905,Didanosine,1000,41,63.0504,No,Non-White,Male,Asymptomatic,174,179,296,328
+170909,Zidovudine and Zalcitabine,1123,36,81.1944,No,White,Male,Asymptomatic,421,559,590,522
+170925,Didanosine,1112,45,78.9264,No,White,Male,Asymptomatic,512,NA,1901,1489
+170945,zidovudine and Didanosine,1116,40,75.2976,Yes,White,Male,Asymptomatic,434,553,1236,940
+170949,Zidovudine,1119,30,78,No,White,Male,Asymptomatic,422,NA,1040,858
+170963,Zidovudine,925,37,88.6788,No,White,Male,Asymptomatic,355,419,595,349
+170965,Didanosine,1049,39,73.0296,No,White,Male,Asymptomatic,226,NA,761,995
+170970,Zidovudine and Zalcitabine,479,27,53.16192,No,White,Female,Symptomatic,230,NA,1014,561
+170971,Didanosine,329,26,77.112,Yes,White,Male,Asymptomatic,172,NA,2267,1621
+170972,Zidovudine,795,38,130.6368,No,White,Female,Asymptomatic,385,NA,949,659
+170987,Zidovudine,452,29,79.38,No,Non-White,Female,Asymptomatic,264,NA,644,617
+171001,zidovudine and Didanosine,552,30,83.8,No,White,Male,Asymptomatic,249,NA,1341,847
+171003,Zidovudine and Zalcitabine,306,49,59.1948,No,White,Female,Asymptomatic,331,NA,471,368
+171036,Zidovudine and Zalcitabine,681,36,50.3496,No,Non-White,Female,Asymptomatic,332,NA,1016,832
+171040,Zidovudine,942,17,51.2568,No,Non-White,Female,Asymptomatic,549,436,1222,711
+180091,zidovudine and Didanosine,1173,47,72.3,No,White,Male,Asymptomatic,210,181,481,1347
+180156,Zidovudine,1194,41,73.8,No,White,Male,Asymptomatic,461,253,691,623
+180220,zidovudine and Didanosine,1195,55,76.6584,No,White,Male,Asymptomatic,460,413,1335,1380
+180223,Didanosine,302,40,78.2,No,White,Male,Asymptomatic,251,34,610,1023
+180241,Didanosine,230,34,68.04,No,White,Male,Asymptomatic,385,54,816,782
+180315,zidovudine and Didanosine,739,31,57.6072,No,Non-White,Female,Asymptomatic,468,462,576,482
+180336,Didanosine,1095,46,62.23392,No,White,Male,Asymptomatic,282,NA,747,512
+180375,Zidovudine and Zalcitabine,540,31,68.04,No,White,Male,Asymptomatic,660,NA,1822,2028
+180391,Didanosine,869,34,72.7,No,Non-White,Male,Asymptomatic,279,NA,993,1015
+180394,Zidovudine,482,22,77.112,No,White,Male,Asymptomatic,364,NA,1295,694
+180462,Zidovudine and Zalcitabine,1160,33,75.4,No,White,Male,Asymptomatic,439,516,1117,1003
+180686,zidovudine and Didanosine,730,29,68.9472,No,Non-White,Female,Asymptomatic,421,NA,662,836
+180688,Didanosine,368,37,70.7616,No,Non-White,Male,Asymptomatic,207,233,618,953
+180692,zidovudine and Didanosine,1067,45,82.782,No,White,Male,Symptomatic,288,545,502,700
+180696,Didanosine,927,36,66.2256,No,Non-White,Female,Symptomatic,393,380,655,620
+180698,Zidovudine,585,29,69.4008,Yes,White,Female,Symptomatic,236,30,542,419
+180701,zidovudine and Didanosine,1087,37,74.3904,No,Non-White,Male,Asymptomatic,314,287,1313,1030
+180702,Didanosine,250,22,105.6888,No,White,Female,Asymptomatic,281,NA,766,624
+180704,zidovudine and Didanosine,1049,56,82.1016,No,Non-White,Male,Asymptomatic,460,660,519,369
+180705,Zidovudine and Zalcitabine,961,39,85.2768,Yes,White,Male,Asymptomatic,180,290,274,950
+180712,Zidovudine,1000,25,48.3084,No,Non-White,Female,Asymptomatic,410,404,760,549
+180876,zidovudine and Didanosine,919,56,71.2152,Yes,Non-White,Male,Asymptomatic,341,NA,773,1053
+180912,Zidovudine and Zalcitabine,1085,29,71.8,Yes,Non-White,Male,Asymptomatic,479,NA,959,718
+180917,Zidovudine,745,35,77.7,Yes,Non-White,Male,Asymptomatic,341,NA,1058,922
+180919,Zidovudine,482,36,75.4,No,White,Male,Asymptomatic,395,132,1059,807
+180920,Zidovudine and Zalcitabine,1120,37,63.6,Yes,Non-White,Male,Asymptomatic,263,230,677,1106
+180922,Didanosine,1085,44,84.3696,Yes,Non-White,Male,Asymptomatic,359,NA,1040,1438
+180925,Zidovudine and Zalcitabine,1011,49,115.668,No,Non-White,Male,Asymptomatic,442,NA,1794,883
+180926,Didanosine,1044,45,69.8544,No,Non-White,Male,Asymptomatic,470,333,986,698
+180928,Didanosine,1002,50,65,No,Non-White,Male,Asymptomatic,452,275,1583,1175
+181173,zidovudine and Didanosine,406,35,81.1,No,White,Male,Asymptomatic,174,47,1394,1551
+181285,zidovudine and Didanosine,1180,29,88.6,No,Non-White,Male,Asymptomatic,380,NA,1673,2462
+181291,Zidovudine and Zalcitabine,1079,38,83.6,No,White,Male,Asymptomatic,276,243,414,860
+181296,Zidovudine and Zalcitabine,1120,28,62.5,No,White,Male,Asymptomatic,226,68,950,816
+181303,Didanosine,1163,32,73.4,No,Non-White,Male,Asymptomatic,441,NA,1123,1072
+181304,zidovudine and Didanosine,1174,30,77.3,No,White,Male,Asymptomatic,309,733,806,1110
+181306,Didanosine,1081,49,76.5,No,Non-White,Male,Asymptomatic,335,217,2312,955
+181309,Zidovudine,825,47,93.2,No,Non-White,Male,Asymptomatic,476,520,680,888
+181317,zidovudine and Didanosine,1120,39,110.7,No,White,Male,Asymptomatic,230,NA,1518,1685
+181318,zidovudine and Didanosine,1146,59,58.6,No,Non-White,Female,Asymptomatic,339,NA,1113,1103
+181319,Zidovudine,1070,38,49.8,Yes,Non-White,Female,Asymptomatic,357,198,796,1228
+181322,Zidovudine,1139,62,95.4,No,Non-White,Male,Asymptomatic,287,NA,620,915
+181323,Didanosine,720,42,65.4,No,Non-White,Male,Asymptomatic,238,169,677,1005
+181324,Didanosine,783,33,73.2,No,Non-White,Male,Asymptomatic,464,NA,524,672
+181325,Zidovudine,1024,29,61.4,No,Non-White,Female,Asymptomatic,272,155,1071,1232
+181333,Zidovudine and Zalcitabine,713,32,92.7,No,White,Male,Asymptomatic,289,155,714,687
+181335,Didanosine,1055,44,77.3,No,White,Male,Asymptomatic,559,NA,805,728
+181336,Zidovudine and Zalcitabine,958,37,59.1,No,White,Female,Asymptomatic,213,70,515,557
+181337,Zidovudine and Zalcitabine,517,32,71.4,No,White,Male,Asymptomatic,216,NA,744,1038
+181341,Zidovudine and Zalcitabine,1093,39,80.9,Yes,Non-White,Female,Asymptomatic,408,NA,952,745
+181342,Didanosine,1103,38,82.2,No,White,Male,Asymptomatic,316,235,1402,1094
+181348,Zidovudine and Zalcitabine,1081,35,62.3,No,Non-White,Female,Asymptomatic,401,NA,836,713
+181349,Didanosine,993,31,70,No,Non-White,Female,Asymptomatic,376,NA,1013,1174
+181352,zidovudine and Didanosine,1076,43,70.5,No,Non-White,Female,Asymptomatic,415,NA,1853,1246
+181371,Zidovudine and Zalcitabine,557,31,86.8,Yes,Non-White,Male,Asymptomatic,224,NA,776,562
+181957,Zidovudine and Zalcitabine,477,35,79,No,Non-White,Male,Asymptomatic,300,NA,1073,930
+181960,Zidovudine,975,32,86.184,No,White,Male,Asymptomatic,379,390,728,944
+181961,zidovudine and Didanosine,1080,27,57.6072,No,White,Male,Symptomatic,453,333,1550,1154
+181963,zidovudine and Didanosine,702,33,71.6688,No,White,Male,Symptomatic,210,NA,602,586
+181964,Zidovudine,1165,32,100.6992,No,White,Male,Symptomatic,375,428,1028,920
+181966,Zidovudine and Zalcitabine,736,30,80.7408,No,White,Male,Asymptomatic,389,NA,1355,941
+181968,Zidovudine,1016,31,102.06,No,White,Male,Asymptomatic,262,NA,622,638
+181969,Zidovudine and Zalcitabine,872,45,71.6688,No,White,Male,Asymptomatic,397,874,1455,1403
+181971,Zidovudine,312,33,67.7,No,Non-White,Male,Asymptomatic,267,NA,1469,1083
+181979,Didanosine,1076,36,58.0608,Yes,Non-White,Female,Asymptomatic,342,48,1229,713
+181980,Zidovudine and Zalcitabine,1103,39,98.4312,No,White,Male,Asymptomatic,410,NA,1426,1304
+181982,Zidovudine,1132,36,84.3696,No,White,Male,Asymptomatic,370,433,1287,1241
+181986,Zidovudine and Zalcitabine,1126,36,86.184,No,White,Male,Asymptomatic,413,463,1084,642
+181990,zidovudine and Didanosine,318,25,67.5864,No,White,Male,Symptomatic,298,136,1428,1557
+181992,Zidovudine and Zalcitabine,299,47,95.2,No,White,Male,Symptomatic,254,NA,2792,2534
+181994,zidovudine and Didanosine,1117,44,82.1016,No,White,Male,Asymptomatic,423,490,1111,1193
+181996,zidovudine and Didanosine,1110,40,79.38,Yes,White,Male,Asymptomatic,386,464,2012,2232
+181997,Zidovudine,1112,37,85.7304,Yes,Non-White,Male,Asymptomatic,352,NA,975,1029
+181998,Didanosine,1043,32,76.6584,No,White,Male,Asymptomatic,245,173,1428,852
+181999,Zidovudine,393,30,70.7616,No,Non-White,Male,Asymptomatic,331,NA,1510,919
+182010,zidovudine and Didanosine,1077,47,85.2768,Yes,White,Male,Asymptomatic,286,428,571,646
+182017,zidovudine and Didanosine,1077,36,84.3696,No,White,Male,Asymptomatic,400,257,2185,1913
+182020,Zidovudine,983,39,78.4728,No,White,Male,Asymptomatic,361,NA,984,1033
+182028,Zidovudine,639,35,73.9368,No,Non-White,Female,Asymptomatic,213,95,1132,750
+182030,zidovudine and Didanosine,589,24,61.236,No,Non-White,Male,Asymptomatic,276,9,1381,1247
+182037,Zidovudine,1026,33,66.6792,No,Non-White,Female,Asymptomatic,341,328,1112,889
+182039,Didanosine,1010,42,103.4208,Yes,White,Male,Asymptomatic,318,457,438,523
+182060,Didanosine,638,38,76.2048,No,Non-White,Male,Asymptomatic,199,NA,707,900
+190039,Didanosine,986,29,64.4112,No,Non-White,Male,Asymptomatic,392,NA,771,1067
+190189,Didanosine,1059,47,71.2152,No,Non-White,Female,Asymptomatic,162,238,459,573
+190191,Didanosine,1095,42,69.8544,No,Non-White,Female,Asymptomatic,429,473,1267,920
+190192,zidovudine and Didanosine,1096,31,80.2872,No,Non-White,Male,Asymptomatic,290,NA,828,585
+190193,Zidovudine,1091,37,69.8544,No,Non-White,Female,Asymptomatic,279,NA,354,444
+190194,Zidovudine and Zalcitabine,1090,42,67.1328,No,White,Female,Asymptomatic,388,606,1040,710
+190195,zidovudine and Didanosine,1091,34,61.6896,No,Non-White,Female,Asymptomatic,247,194,982,1240
+190196,Zidovudine,520,42,86.8644,No,Non-White,Female,Symptomatic,242,NA,516,465
+190197,Didanosine,1087,29,58.2876,No,Non-White,Female,Asymptomatic,324,259,713,714
+190204,Zidovudine,948,30,70.7616,No,White,Female,Asymptomatic,346,NA,337,318
+190210,zidovudine and Didanosine,569,27,59.4216,No,Non-White,Male,Asymptomatic,179,NA,391,800
+190276,Didanosine,1097,34,100.3,No,White,Male,Asymptomatic,365,350,499,392
+190277,Zidovudine,1056,37,63,No,Non-White,Female,Asymptomatic,421,378,2398,2190
+190281,zidovudine and Didanosine,1089,31,41,Yes,White,Female,Asymptomatic,714,301,1155,585
+190342,Didanosine,1091,40,72.7,Yes,White,Female,Symptomatic,313,NA,708,942
+190345,Zidovudine and Zalcitabine,1002,30,79.5,No,Non-White,Male,Asymptomatic,235,NA,1529,1495
+190386,zidovudine and Didanosine,1088,31,69,No,Non-White,Female,Asymptomatic,363,261,596,388
+190393,Zidovudine and Zalcitabine,1153,32,77,No,Non-White,Female,Asymptomatic,342,NA,1108,1248
+190394,Zidovudine,211,34,61.2,No,Non-White,Female,Asymptomatic,212,NA,899,785
+190395,Zidovudine,964,33,68,Yes,White,Male,Asymptomatic,304,NA,632,549
+190396,Didanosine,1147,38,95.5,Yes,Non-White,Male,Asymptomatic,411,292,1276,1173
+190399,Zidovudine,1133,45,69.5,No,Non-White,Female,Asymptomatic,312,191,1168,1103
+190401,Didanosine,383,37,69,No,Non-White,Female,Asymptomatic,209,57,653,541
+190403,zidovudine and Didanosine,1001,24,60,No,Non-White,Female,Asymptomatic,324,242,624,560
+190405,Zidovudine,1084,26,67.6,No,White,Female,Asymptomatic,512,333,800,711
+190407,zidovudine and Didanosine,968,33,43.8,Yes,White,Female,Asymptomatic,263,NA,305,247
+190408,Zidovudine and Zalcitabine,999,39,127.7,No,Non-White,Male,Asymptomatic,508,452,853,783
+190419,Zidovudine,890,31,58.0608,No,Non-White,Female,Asymptomatic,419,NA,679,480
+190521,Didanosine,678,38,70.7616,Yes,White,Male,Asymptomatic,317,NA,716,516
+190526,Zidovudine,1119,34,55.3392,No,White,Female,Asymptomatic,337,477,622,661
+190529,Zidovudine,991,41,61.236,No,Non-White,Female,Asymptomatic,459,388,604,457
+190533,Zidovudine and Zalcitabine,1008,45,58.5144,No,Non-White,Female,Asymptomatic,357,298,611,550
+190540,Zidovudine and Zalcitabine,1147,33,57.1536,No,Non-White,Female,Asymptomatic,463,479,594,554
+190542,Didanosine,561,45,64.4112,No,Non-White,Female,Asymptomatic,273,157,1190,1209
+190543,Zidovudine and Zalcitabine,1030,50,53.5248,No,Non-White,Female,Asymptomatic,481,357,944,485
+190566,Zidovudine,1087,40,71.6688,No,Non-White,Female,Asymptomatic,440,624,493,353
+190597,zidovudine and Didanosine,963,42,73.0296,No,White,Male,Asymptomatic,245,NA,561,753
+190614,Didanosine,1003,31,57.6072,No,Non-White,Female,Asymptomatic,368,365,352,393
+190618,Zidovudine and Zalcitabine,955,52,55.3392,No,Non-White,Female,Asymptomatic,493,348,1114,925
+191604,zidovudine and Didanosine,1140,41,76.2048,Yes,Non-White,Male,Asymptomatic,336,252,896,871
+191605,zidovudine and Didanosine,1064,22,47.628,No,Non-White,Female,Asymptomatic,303,NA,744,613
+191613,Zidovudine and Zalcitabine,1109,29,45.8136,Yes,Non-White,Female,Asymptomatic,237,308,748,788
+191614,Didanosine,1103,33,79.8336,No,Non-White,Female,Asymptomatic,209,224,823,567
+191620,Zidovudine,491,36,80.7408,No,Non-White,Female,Asymptomatic,211,60,1007,1224
+191625,Zidovudine and Zalcitabine,513,20,84.8232,Yes,White,Male,Symptomatic,422,NA,1356,1053
+191627,Zidovudine and Zalcitabine,1063,37,58.5144,No,Non-White,Female,Asymptomatic,223,NA,404,391
+191629,zidovudine and Didanosine,970,39,100.4724,No,Non-White,Male,Asymptomatic,297,504,669,682
+200080,zidovudine and Didanosine,445,35,63.5,No,White,Male,Asymptomatic,278,NA,520,230
+200114,Didanosine,313,38,74.3904,No,White,Male,Asymptomatic,146,20,1774,1469
+200325,Didanosine,1155,38,88.2,No,White,Male,Asymptomatic,342,295,1095,1234
+210039,Zidovudine,400,30,149,No,White,Male,Asymptomatic,345,NA,1052,760
+210125,Zidovudine and Zalcitabine,1165,35,60.3288,No,White,Male,Symptomatic,400,474,1554,1089
+210141,Zidovudine,566,31,72.1224,No,White,Male,Asymptomatic,443,176,1129,823
+210142,Zidovudine and Zalcitabine,1058,45,68.4936,No,White,Male,Asymptomatic,242,149,653,649
+210167,Didanosine,1087,41,71.442,No,White,Male,Asymptomatic,216,NA,1451,1190
+210177,Zidovudine and Zalcitabine,1140,41,69.4008,No,Non-White,Male,Asymptomatic,204,320,417,500
+210208,Zidovudine and Zalcitabine,1090,40,74.3904,No,White,Male,Asymptomatic,400,546,1178,960
+210220,Didanosine,1139,34,61.6896,No,Non-White,Male,Asymptomatic,336,NA,1344,887
+210229,Zidovudine and Zalcitabine,1013,32,73.9,No,White,Male,Symptomatic,296,165,1706,1120
+210233,Didanosine,826,38,89.3592,No,White,Male,Symptomatic,349,NA,562,520
+210293,Zidovudine,1224,35,66.6792,No,White,Male,Asymptomatic,530,365,1267,1277
+210331,Zidovudine,1055,44,83.916,No,White,Male,Asymptomatic,450,NA,791,738
+210348,Didanosine,1154,35,75.978,No,Non-White,Male,Asymptomatic,516,NA,1243,1211
+210382,Zidovudine and Zalcitabine,476,47,64.638,No,White,Male,Asymptomatic,496,296,992,784
+210404,zidovudine and Didanosine,1154,37,89.04168,No,White,Male,Asymptomatic,384,312,1151,964
+210407,zidovudine and Didanosine,1036,26,67.5864,No,White,Male,Asymptomatic,257,NA,368,605
+210526,Didanosine,1109,31,69.4008,No,Non-White,Male,Asymptomatic,400,294,743,620
+210559,Didanosine,381,41,69.4008,No,White,Male,Symptomatic,258,NA,1548,1457
+210561,zidovudine and Didanosine,1159,39,81.648,Yes,White,Male,Asymptomatic,358,323,1574,1242
+210599,Didanosine,653,29,53.0712,No,White,Male,Asymptomatic,477,171,1034,1475
+210601,Zidovudine,627,62,76.4316,No,White,Male,Asymptomatic,408,NA,1392,1244
+210612,Zidovudine,1160,33,60.7824,No,Non-White,Male,Symptomatic,348,116,1326,698
+210623,Zidovudine,559,30,89.8128,No,White,Male,Asymptomatic,290,NA,1352,934
+210645,Zidovudine,226,36,66.6792,No,White,Female,Symptomatic,278,NA,955,964
+210708,Zidovudine,1006,49,91.1736,No,White,Male,Symptomatic,331,380,1426,877
+210766,zidovudine and Didanosine,1152,33,67.8132,No,White,Male,Asymptomatic,404,438,558,548
+210800,zidovudine and Didanosine,1224,32,70.7616,No,White,Male,Asymptomatic,370,502,959,1293
+210829,Zidovudine and Zalcitabine,1151,42,93.4416,No,White,Male,Symptomatic,516,539,716,869
+210833,Zidovudine and Zalcitabine,939,24,71.6688,No,White,Male,Symptomatic,372,306,1066,1232
+210865,Zidovudine,169,49,82.1016,No,White,Male,Asymptomatic,425,219,2248,1814
+210883,Zidovudine,730,55,83.4624,No,White,Male,Asymptomatic,312,264,1000,1199
+210919,Zidovudine,637,37,76.4316,No,White,Male,Asymptomatic,548,356,979,1181
+210943,Didanosine,646,27,65.3184,No,White,Male,Asymptomatic,284,NA,537,780
+210970,Zidovudine,895,31,86.6376,No,White,Male,Asymptomatic,343,160,1244,1220
+210978,Didanosine,1217,39,96.1632,No,White,Male,Symptomatic,411,684,1020,1334
+210995,Didanosine,1224,53,97.524,No,White,Male,Asymptomatic,374,347,1342,1012
+210996,Zidovudine and Zalcitabine,706,42,91.6272,No,White,Male,Symptomatic,281,403,1161,1149
+210998,Zidovudine and Zalcitabine,478,54,60.7824,No,White,Male,Asymptomatic,246,NA,1230,879
+211007,Zidovudine,504,20,72.7,No,White,Male,Asymptomatic,283,NA,694,836
+211033,zidovudine and Didanosine,1191,26,69.4008,No,Non-White,Male,Asymptomatic,324,306,1044,1169
+211038,Didanosine,644,30,53.3,No,White,Male,Symptomatic,578,284,849,1149
+211040,Zidovudine,347,31,81.8748,No,White,Male,Asymptomatic,354,51,680,659
+211043,Didanosine,1182,30,82.3,No,Non-White,Male,Asymptomatic,357,369,821,1032
+211057,Zidovudine,147,32,83.2,Yes,Non-White,Male,Asymptomatic,234,NA,1250,461
+211063,Zidovudine and Zalcitabine,1148,31,75.7,No,White,Male,Symptomatic,540,785,660,630
+211065,zidovudine and Didanosine,1070,29,65.5,No,Non-White,Male,Asymptomatic,431,393,843,745
+211070,zidovudine and Didanosine,898,30,64.5,No,White,Male,Symptomatic,350,186,833,794
+211073,Didanosine,959,23,85.5,No,Non-White,Male,Asymptomatic,715,588,770,774
+211074,zidovudine and Didanosine,1074,33,80.1,No,Non-White,Male,Asymptomatic,426,459,706,609
+211075,Didanosine,1099,30,72.7,No,White,Male,Asymptomatic,311,NA,1408,1802
+211082,Didanosine,1084,27,62,No,Non-White,Male,Asymptomatic,378,513,892,1136
+211086,zidovudine and Didanosine,963,27,75.8,No,Non-White,Male,Asymptomatic,689,NA,919,787
+211222,Didanosine,1224,37,78.9264,No,White,Male,Asymptomatic,462,448,776,688
+211229,Zidovudine and Zalcitabine,1161,27,87.318,No,White,Male,Asymptomatic,560,539,980,635
+211235,zidovudine and Didanosine,1203,37,92.5344,No,White,Male,Asymptomatic,295,NA,868,920
+211238,Zidovudine and Zalcitabine,1189,20,67.2,No,White,Male,Asymptomatic,537,534,736,679
+211239,Didanosine,1176,29,78.4728,No,Non-White,Male,Asymptomatic,229,NA,688,611
+211246,Didanosine,484,37,78.0192,Yes,White,Male,Symptomatic,384,114,1537,1057
+211253,zidovudine and Didanosine,1173,30,81.8748,No,White,Male,Asymptomatic,476,435,1315,1250
+211255,zidovudine and Didanosine,1167,33,80.514,No,Non-White,Male,Asymptomatic,246,263,1574,1740
+211258,zidovudine and Didanosine,641,33,76.2048,No,White,Male,Asymptomatic,1199,NA,509,348
+211272,Zidovudine,1126,37,76.6584,No,White,Male,Asymptomatic,416,NA,1420,1454
+211279,Zidovudine and Zalcitabine,1138,26,65.3184,No,White,Male,Asymptomatic,336,283,516,585
+211281,zidovudine and Didanosine,1069,30,81.3,No,White,Male,Asymptomatic,418,510,1722,1043
+211283,zidovudine and Didanosine,319,23,78.4728,No,White,Male,Asymptomatic,168,NA,512,1214
+211284,zidovudine and Didanosine,1132,69,81.648,No,White,Male,Asymptomatic,455,618,2216,1220
+211285,Zidovudine and Zalcitabine,973,46,76.7,No,White,Male,Asymptomatic,454,420,1115,784
+211299,Didanosine,961,36,65.772,No,White,Female,Asymptomatic,378,NA,697,382
+211314,Zidovudine,406,19,50.8032,No,Non-White,Female,Asymptomatic,298,NA,442,353
+211328,Zidovudine,1054,28,78.9264,No,White,Male,Symptomatic,506,635,758,459
+211333,Zidovudine,989,29,69.8544,No,White,Male,Asymptomatic,414,324,920,801
+211338,Zidovudine and Zalcitabine,252,29,100.6992,No,White,Male,Symptomatic,562,NA,978,586
+211344,Zidovudine,587,34,68.4936,No,Non-White,Male,Asymptomatic,416,NA,1567,2333
+211346,Zidovudine and Zalcitabine,1039,48,69.8544,No,White,Male,Asymptomatic,389,480,931,864
+211351,Didanosine,636,27,86.184,No,Non-White,Male,Asymptomatic,123,61,780,941
+211360,Didanosine,1018,70,63.0504,No,White,Male,Asymptomatic,479,502,682,500
+211365,Didanosine,1007,28,80.2872,No,Non-White,Male,Asymptomatic,558,399,1421,1247
+211370,zidovudine and Didanosine,1004,28,65.772,No,Non-White,Male,Asymptomatic,467,362,1786,1230
+211371,Zidovudine and Zalcitabine,145,27,62.5968,No,Non-White,Male,Asymptomatic,270,NA,917,983
+211377,zidovudine and Didanosine,330,36,77.112,Yes,White,Male,Asymptomatic,346,NA,1018,719
+220036,zidovudine and Didanosine,875,42,73,No,White,Male,Symptomatic,340,NA,1094,689
+220081,Zidovudine,1119,55,71.2152,No,Non-White,Male,Asymptomatic,448,691,752,798
+220120,zidovudine and Didanosine,1146,44,69,No,White,Male,Asymptomatic,580,NA,2617,1896
+220130,Zidovudine,1119,30,57.6072,No,White,Female,Asymptomatic,672,622,636,686
+220416,Didanosine,727,41,72,No,White,Male,Asymptomatic,213,205,906,1232
+220418,Zidovudine and Zalcitabine,50,43,64.4112,No,White,Male,Symptomatic,164,NA,944,927
+220420,Didanosine,1144,38,78.4728,No,White,Male,Asymptomatic,321,322,582,525
+220423,zidovudine and Didanosine,977,32,72.2,No,White,Male,Asymptomatic,225,232,503,629
+220424,Zidovudine,570,48,112,No,White,Female,Asymptomatic,124,68,715,1320
+220425,zidovudine and Didanosine,992,40,66.3,Yes,Non-White,Male,Asymptomatic,197,NA,531,902
+220429,Zidovudine and Zalcitabine,977,39,91,No,White,Male,Asymptomatic,653,308,1359,756
+220430,Zidovudine and Zalcitabine,981,35,73.71,No,White,Male,Asymptomatic,236,257,593,634
+220431,zidovudine and Didanosine,988,38,50,Yes,White,Female,Asymptomatic,275,345,946,1361
+220432,Didanosine,1112,30,129,No,Non-White,Male,Asymptomatic,299,NA,1228,1250
+220437,Zidovudine,1095,29,61.5,No,Non-White,Male,Asymptomatic,321,221,650,912
+220438,zidovudine and Didanosine,1091,41,58,No,Non-White,Female,Asymptomatic,413,NA,1106,1102
+220442,Zidovudine and Zalcitabine,334,36,69.5,Yes,White,Female,Asymptomatic,215,NA,265,311
+220443,Zidovudine and Zalcitabine,1088,36,65.9,Yes,Non-White,Male,Asymptomatic,237,257,919,1042
+220447,Didanosine,993,32,63.6,No,White,Female,Asymptomatic,275,218,301,715
+220451,Zidovudine,1088,28,63.6,No,Non-White,Male,Asymptomatic,267,194,721,929
+220454,Didanosine,1087,35,59.1,No,White,Female,Asymptomatic,327,636,740,613
+220458,Zidovudine,727,42,72.576,No,White,Male,Asymptomatic,316,187,841,731
+220463,Didanosine,1049,38,55.7928,No,White,Female,Asymptomatic,482,528,684,441
+220467,Didanosine,1059,35,62.1432,No,White,Male,Asymptomatic,225,341,321,651
+220468,Zidovudine and Zalcitabine,749,29,66.6792,No,Non-White,Male,Asymptomatic,286,138,784,752
+220473,Zidovudine and Zalcitabine,901,35,99,No,White,Male,Asymptomatic,399,422,1920,1261
+220478,zidovudine and Didanosine,1020,36,62.7,No,White,Female,Asymptomatic,670,812,1571,871
+220488,Didanosine,971,36,78.246,Yes,Non-White,Male,Asymptomatic,379,NA,740,827
+220489,Zidovudine,852,45,70.9,Yes,Non-White,Female,Asymptomatic,422,722,673,633
+220491,zidovudine and Didanosine,667,27,75.3,No,White,Male,Asymptomatic,499,275,870,599
+220492,Zidovudine,986,37,78.5,No,White,Male,Asymptomatic,410,384,623,525
+230024,Zidovudine,1089,42,61.236,No,White,Male,Symptomatic,643,510,1285,1148
+230064,Zidovudine,140,34,63.59472,No,White,Male,Symptomatic,293,NA,895,614
+230073,Didanosine,1088,43,61.236,No,White,Male,Asymptomatic,286,338,602,568
+230080,Zidovudine,812,29,74.844,No,White,Male,Symptomatic,323,257,576,655
+230082,Zidovudine,468,40,88.9056,No,White,Male,Asymptomatic,248,NA,1861,2486
+230087,zidovudine and Didanosine,1077,34,57.6072,No,White,Male,Symptomatic,200,195,380,814
+230091,Zidovudine and Zalcitabine,392,45,86.184,No,White,Male,Symptomatic,174,NA,392,472
+230103,zidovudine and Didanosine,1064,33,89.3592,No,White,Male,Symptomatic,194,219,1162,1478
+230109,Zidovudine,1157,34,64.4112,No,White,Male,Asymptomatic,351,454,1109,965
+230120,Didanosine,1087,32,74.844,No,White,Male,Asymptomatic,362,360,742,1229
+230217,Zidovudine and Zalcitabine,1154,48,71.8956,No,White,Male,Asymptomatic,282,538,780,761
+230228,Didanosine,391,38,64.4112,No,White,Male,Asymptomatic,175,82,460,737
+230230,Zidovudine and Zalcitabine,308,45,73.0296,No,White,Male,Asymptomatic,309,NA,988,1067
+230233,zidovudine and Didanosine,1081,45,86.6376,No,White,Male,Asymptomatic,423,NA,847,884
+230238,Zidovudine,223,42,62.5968,No,White,Male,Asymptomatic,187,NA,827,885
+230273,Zidovudine and Zalcitabine,1157,33,72.48528,No,White,Male,Asymptomatic,508,792,1220,1028
+230278,zidovudine and Didanosine,980,30,69.8544,Yes,White,Female,Symptomatic,184,NA,605,642
+230286,zidovudine and Didanosine,1090,34,68.4936,No,White,Female,Symptomatic,347,278,732,550
+230290,Zidovudine and Zalcitabine,1139,43,71.8956,Yes,White,Male,Asymptomatic,524,418,1373,1225
+230292,zidovudine and Didanosine,559,35,90.9468,No,White,Male,Symptomatic,259,97,609,884
+230293,Didanosine,231,29,73.71,No,Non-White,Male,Symptomatic,186,NA,529,608
+230373,Didanosine,810,32,78.4728,Yes,White,Male,Asymptomatic,306,150,572,576
+230411,Zidovudine,1032,54,73.2564,No,White,Male,Symptomatic,271,NA,825,637
+230412,Didanosine,982,42,70.308,No,White,Male,Symptomatic,285,232,1030,920
+230439,Didanosine,1158,34,76.8852,No,White,Male,Symptomatic,376,426,2444,1965
+230456,Didanosine,476,23,53.9784,No,White,Male,Asymptomatic,208,23,847,539
+230502,Didanosine,1129,35,67.5864,No,Non-White,Female,Asymptomatic,259,NA,549,380
+230537,zidovudine and Didanosine,1102,30,85.2768,No,White,Male,Symptomatic,338,333,648,706
+230546,zidovudine and Didanosine,993,40,73.0296,Yes,Non-White,Male,Asymptomatic,163,NA,581,830
+230563,Didanosine,744,32,77.112,No,White,Male,Symptomatic,370,NA,601,931
+230568,Zidovudine,310,26,68.9472,No,White,Male,Asymptomatic,297,NA,1188,756
+230578,Zidovudine,799,42,71.6688,No,White,Male,Symptomatic,180,113,623,738
+230606,zidovudine and Didanosine,733,38,82.3284,No,White,Male,Asymptomatic,446,458,601,390
+230644,Didanosine,1157,26,76.6584,No,White,Male,Asymptomatic,369,300,534,559
+230686,Zidovudine,1105,35,87.0912,No,Non-White,Male,Symptomatic,369,243,654,474
+230726,Didanosine,1094,33,78.6996,No,White,Male,Symptomatic,269,323,1025,978
+230728,Zidovudine and Zalcitabine,903,27,81.78408,No,White,Male,Asymptomatic,471,547,886,992
+230745,Zidovudine and Zalcitabine,658,39,63.9576,No,White,Male,Asymptomatic,342,95,699,908
+230753,zidovudine and Didanosine,1101,48,82.5552,No,White,Male,Asymptomatic,257,NA,1726,2789
+230765,Didanosine,1089,38,77.7924,No,White,Male,Symptomatic,328,403,756,747
+230804,Zidovudine and Zalcitabine,1012,40,92.5344,No,White,Male,Asymptomatic,264,NA,594,702
+230822,zidovudine and Didanosine,1154,26,92.0808,No,White,Male,Asymptomatic,375,730,1971,3407
+230831,Zidovudine and Zalcitabine,1102,44,66.2256,No,White,Male,Symptomatic,197,233,552,381
+230832,zidovudine and Didanosine,1124,29,65.3184,No,White,Male,Asymptomatic,532,439,684,704
+230833,Zidovudine and Zalcitabine,1157,37,82.782,No,White,Male,Symptomatic,440,749,752,1036
+230835,Didanosine,446,28,81.1944,No,White,Male,Asymptomatic,370,NA,924,716
+230844,Zidovudine,1158,45,63.0504,No,White,Male,Asymptomatic,218,227,921,1229
+230845,Zidovudine and Zalcitabine,1095,46,54.8856,No,White,Male,Symptomatic,193,364,370,547
+231011,Didanosine,1159,26,90.72,No,Non-White,Female,Symptomatic,419,NA,789,769
+231018,Zidovudine,586,21,112.4928,No,Non-White,Male,Asymptomatic,382,NA,1314,1343
+231021,zidovudine and Didanosine,1139,24,102.06,No,Non-White,Male,Asymptomatic,387,476,1462,1391
+231022,Didanosine,223,34,91.1736,No,White,Male,Asymptomatic,232,NA,1391,1872
+231023,Zidovudine,472,27,97.9776,No,White,Female,Symptomatic,386,144,806,931
+231029,Zidovudine and Zalcitabine,1138,27,70.7616,No,White,Male,Asymptomatic,410,NA,850,632
+231030,zidovudine and Didanosine,1123,29,86.72832,No,White,Male,Asymptomatic,218,264,1142,1492
+231031,Zidovudine,1041,52,90.58392,No,White,Male,Asymptomatic,390,NA,780,900
+231032,Didanosine,1084,29,78.0192,Yes,White,Male,Symptomatic,372,448,1032,1134
+231042,Didanosine,389,26,68.04,No,White,Male,Asymptomatic,282,NA,894,1290
+231043,Zidovudine and Zalcitabine,370,28,78.4728,No,White,Male,Asymptomatic,425,NA,979,789
+231046,Zidovudine,33,36,74.3904,No,White,Male,Symptomatic,173,NA,724,649
+231049,Zidovudine and Zalcitabine,1088,32,80.7408,No,White,Male,Asymptomatic,447,570,1247,1180
+231050,Zidovudine and Zalcitabine,1084,43,91.6272,No,White,Male,Symptomatic,249,218,1305,1254
+231052,Zidovudine,549,38,68.4936,Yes,Non-White,Female,Asymptomatic,198,55,1334,1753
+231056,Zidovudine and Zalcitabine,527,35,100.6992,No,White,Female,Asymptomatic,465,NA,1152,1421
+231065,zidovudine and Didanosine,1073,35,78.0192,No,White,Male,Symptomatic,236,303,769,936
+231066,zidovudine and Didanosine,1054,28,59.10408,No,White,Female,Asymptomatic,251,261,337,338
+231069,Didanosine,1069,23,66.906,No,White,Male,Asymptomatic,275,410,1248,984
+231070,Zidovudine,959,26,95.256,No,Non-White,Female,Asymptomatic,628,441,1984,1782
+231071,Didanosine,1060,34,100.6992,No,Non-White,Male,Asymptomatic,503,NA,1760,1157
+231081,Zidovudine and Zalcitabine,512,33,84.8232,No,Non-White,Male,Asymptomatic,352,NA,1102,1049
+231083,Zidovudine,569,32,84.8232,No,Non-White,Male,Asymptomatic,289,82,1245,1855
+231095,zidovudine and Didanosine,989,30,77.5656,No,Non-White,Male,Asymptomatic,309,586,910,477
+231100,zidovudine and Didanosine,997,24,70.7616,No,Non-White,Female,Asymptomatic,622,NA,1010,1073
+231112,Didanosine,990,34,68.9472,No,White,Male,Asymptomatic,459,NA,1485,1269
+240019,Zidovudine,954,41,83.4624,No,White,Male,Symptomatic,198,275,1859,2190
+240082,zidovudine and Didanosine,948,34,58.0608,No,White,Female,Asymptomatic,307,194,1102,1402
+240092,Zidovudine,398,41,83.916,No,White,Male,Asymptomatic,359,NA,1173,1191
+240097,zidovudine and Didanosine,1104,44,100.2456,Yes,White,Female,Asymptomatic,353,308,794,1063
+240101,Zidovudine and Zalcitabine,1096,33,77.8,No,White,Male,Asymptomatic,275,NA,605,459
+240297,zidovudine and Didanosine,862,48,76.6584,Yes,Non-White,Male,Asymptomatic,483,NA,1334,1105
+240301,Zidovudine and Zalcitabine,1096,36,83.6892,No,White,Male,Asymptomatic,321,321,1354,1126
+240328,Zidovudine,995,29,59.8752,No,White,Female,Asymptomatic,314,165,504,399
+240367,Didanosine,804,28,59.8752,No,White,Male,Asymptomatic,481,267,873,924
+240385,Zidovudine and Zalcitabine,1104,33,69.4008,No,White,Male,Asymptomatic,494,316,1690,1129
+240412,Didanosine,993,35,76.4316,No,White,Male,Symptomatic,562,358,899,773
+240442,Zidovudine and Zalcitabine,908,42,78.0192,No,Non-White,Male,Symptomatic,514,338,1146,1018
+240497,Didanosine,479,26,80.7408,No,White,Male,Asymptomatic,416,339,1363,1361
+240502,zidovudine and Didanosine,1087,42,81.648,No,White,Male,Asymptomatic,232,172,1352,1072
+240513,Zidovudine and Zalcitabine,324,28,69.4008,No,Non-White,Female,Asymptomatic,225,31,933,676
+240655,Didanosine,1089,41,63.9576,No,White,Male,Symptomatic,201,236,1186,1289
+240675,zidovudine and Didanosine,1097,35,81.648,No,White,Male,Asymptomatic,505,464,847,1076
+240676,Zidovudine and Zalcitabine,988,47,86.6376,Yes,White,Male,Symptomatic,440,488,1320,1111
+240715,Didanosine,1100,33,71.6688,No,Non-White,Male,Asymptomatic,507,277,1336,990
+240752,zidovudine and Didanosine,998,23,73.71,No,White,Female,Asymptomatic,511,454,752,656
+240797,Zidovudine,1021,36,56.2464,Yes,White,Male,Symptomatic,593,298,1754,1609
+240801,Zidovudine,261,32,68.9472,No,White,Male,Asymptomatic,626,NA,828,826
+240804,Didanosine,1036,31,73.4832,No,White,Male,Symptomatic,368,NA,1021,1301
+240826,Zidovudine and Zalcitabine,476,44,67.1328,No,White,Male,Symptomatic,477,331,1074,1025
+240861,Didanosine,1092,32,71.2152,No,White,Male,Asymptomatic,505,NA,894,993
+240875,zidovudine and Didanosine,318,34,68.2668,No,White,Male,Asymptomatic,276,25,1299,996
+240880,Zidovudine,126,43,73.0296,No,White,Male,Asymptomatic,474,58,1523,1244
+240892,Zidovudine,729,32,75.7512,No,White,Male,Symptomatic,301,155,437,541
+240934,zidovudine and Didanosine,649,39,65.0916,Yes,White,Male,Symptomatic,393,177,2910,2134
+240992,Zidovudine and Zalcitabine,1103,28,103.4208,No,White,Male,Asymptomatic,522,NA,1085,1150
+241005,Zidovudine and Zalcitabine,899,29,52.6176,Yes,Non-White,Female,Asymptomatic,408,294,898,985
+241007,Zidovudine and Zalcitabine,993,41,73.0296,No,White,Male,Symptomatic,318,288,2139,1392
+241050,Zidovudine and Zalcitabine,902,35,52.3908,No,White,Female,Asymptomatic,479,878,496,549
+241099,zidovudine and Didanosine,975,51,68.9472,No,White,Male,Symptomatic,458,530,244,364
+241150,Zidovudine,299,67,82.1016,No,White,Male,Asymptomatic,296,NA,760,814
+241154,zidovudine and Didanosine,1095,27,55.3392,No,Non-White,Female,Symptomatic,234,285,936,1116
+241191,Zidovudine,815,31,89.3592,No,White,Male,Asymptomatic,505,391,1179,734
+241210,Zidovudine,1097,45,89.8128,No,White,Female,Asymptomatic,443,304,812,686
+241222,Didanosine,230,33,78.0192,No,White,Male,Symptomatic,374,NA,838,760
+241224,Zidovudine and Zalcitabine,750,27,64.4112,No,White,Male,Asymptomatic,297,NA,698,404
+241243,zidovudine and Didanosine,1003,26,55.566,Yes,White,Female,Asymptomatic,356,327,739,740
+241259,Didanosine,1093,26,82.1016,No,White,Male,Asymptomatic,325,494,1009,1149
+241279,Didanosine,1034,49,80.7408,No,White,Male,Asymptomatic,392,301,1566,2205
+241280,Didanosine,898,36,78.9264,No,White,Male,Asymptomatic,350,207,946,757
+241284,Zidovudine,140,39,89.3592,No,White,Male,Asymptomatic,429,29,1528,549
+241293,Zidovudine and Zalcitabine,896,32,69.8544,Yes,Non-White,Male,Asymptomatic,425,NA,637,759
+241325,Zidovudine and Zalcitabine,917,44,95.256,No,White,Male,Asymptomatic,332,77,881,375
+241327,Didanosine,14,30,64.638,No,White,Male,Symptomatic,131,1,227,496
+241337,Didanosine,1006,26,91.6272,No,White,Male,Asymptomatic,402,NA,821,942
+241339,zidovudine and Didanosine,1014,35,70.7616,No,White,Male,Symptomatic,433,NA,849,1124
+241347,zidovudine and Didanosine,297,42,79.8336,No,White,Male,Asymptomatic,232,1,560,285
+241359,zidovudine and Didanosine,921,45,78.0192,No,White,Male,Symptomatic,490,323,1592,1801
+241370,zidovudine and Didanosine,737,49,67.1328,No,White,Male,Symptomatic,390,NA,1656,959
+250012,Didanosine,987,27,86.6376,No,White,Male,Asymptomatic,300,210,1620,1180
+250023,Zidovudine,1133,33,76.2048,No,White,Male,Asymptomatic,350,280,2570,2020
+250059,Zidovudine and Zalcitabine,1116,27,67.5864,Yes,White,Male,Asymptomatic,300,NA,540,590
+250071,Didanosine,386,40,75.7512,No,White,Male,Asymptomatic,390,NA,400,350
+250087,Zidovudine,351,26,112.4928,No,Non-White,Female,Asymptomatic,190,NA,690,610
+250091,zidovudine and Didanosine,1131,39,79.1,No,Non-White,Female,Asymptomatic,340,410,870,590
+250106,Zidovudine,815,29,68.4936,No,White,Male,Asymptomatic,280,240,810,630
+250126,zidovudine and Didanosine,1153,34,92.7612,No,White,Male,Asymptomatic,270,360,620,420
+250127,Zidovudine,1147,36,66.6792,No,White,Male,Asymptomatic,300,370,1110,990
+250130,Didanosine,1131,21,65.5452,No,White,Male,Asymptomatic,520,1190,1800,1450
+250137,Didanosine,1137,25,69.8544,No,White,Male,Asymptomatic,410,580,1368,1221
+250141,Didanosine,1147,30,59.6484,No,White,Male,Asymptomatic,310,580,1000,1110
+250143,zidovudine and Didanosine,1130,38,66.8,No,White,Male,Asymptomatic,580,740,1480,1370
+250144,Zidovudine,896,54,74.5,No,White,Male,Symptomatic,460,440,1210,740
+250150,Zidovudine and Zalcitabine,805,35,68.04,No,Non-White,Male,Asymptomatic,230,130,580,860
+250151,Zidovudine and Zalcitabine,1145,46,73.0296,No,White,Male,Asymptomatic,280,240,1500,1070
+250163,Zidovudine,1037,35,77.7,No,White,Male,Symptomatic,490,NA,1130,820
+250189,Zidovudine and Zalcitabine,1101,35,78.246,No,White,Male,Asymptomatic,320,540,870,790
+250194,zidovudine and Didanosine,1131,28,76.6584,No,White,Male,Asymptomatic,440,510,1210,730
+250197,Zidovudine and Zalcitabine,1110,49,86.184,Yes,White,Male,Asymptomatic,300,550,660,570
+250203,Zidovudine,977,34,76.2048,No,White,Male,Asymptomatic,630,730,940,940
+250204,Didanosine,1126,30,76.2048,No,White,Male,Asymptomatic,680,610,850,490
+250205,Zidovudine and Zalcitabine,226,56,46.8,No,Non-White,Female,Asymptomatic,290,NA,860,660
+250221,Didanosine,896,40,85.5,No,White,Male,Asymptomatic,380,NA,770,710
+250223,Didanosine,1082,41,77.7,Yes,Non-White,Male,Asymptomatic,390,540,1190,930
+250224,Zidovudine,1111,22,67.5864,No,Non-White,Female,Asymptomatic,390,NA,530,600
+250225,Zidovudine,1143,44,72.1224,No,White,Male,Asymptomatic,380,500,520,770
+250231,Zidovudine,499,35,61.4628,No,White,Male,Asymptomatic,420,NA,880,710
+250235,zidovudine and Didanosine,314,40,62.1432,No,Non-White,Female,Asymptomatic,200,NA,760,680
+250236,Zidovudine and Zalcitabine,1136,35,79.6068,No,White,Male,Asymptomatic,470,580,930,530
+250240,Zidovudine,1143,33,68.04,No,White,Male,Asymptomatic,320,530,610,440
+250253,Didanosine,974,37,90.2664,No,White,Male,Asymptomatic,210,220,720,950
+250287,Didanosine,1064,28,67.1328,No,White,Male,Asymptomatic,440,330,780,790
+250288,zidovudine and Didanosine,1132,37,76.2048,No,White,Male,Asymptomatic,380,340,710,940
+250289,Didanosine,1078,28,87.0912,Yes,Non-White,Female,Asymptomatic,250,334,1260,830
+250290,Zidovudine and Zalcitabine,896,27,67.1328,No,Non-White,Female,Asymptomatic,210,NA,730,790
+250291,zidovudine and Didanosine,1133,36,70.7616,No,Non-White,Male,Asymptomatic,350,380,1180,960
+250292,Didanosine,1129,30,52.164,No,Non-White,Female,Symptomatic,270,NA,980,1140
+250295,Didanosine,1123,27,75.2976,No,White,Male,Asymptomatic,760,630,1480,980
+250297,Didanosine,1124,39,76.2048,No,White,Male,Symptomatic,390,390,910,770
+250299,Zidovudine,111,39,96.1632,No,Non-White,Male,Asymptomatic,230,40,650,150
+250300,zidovudine and Didanosine,1103,51,73.0296,No,White,Male,Asymptomatic,300,260,1160,920
+250301,zidovudine and Didanosine,1118,52,65.3184,No,White,Male,Asymptomatic,410,470,1400,1600
+250302,Zidovudine and Zalcitabine,236,41,98.4312,No,White,Male,Symptomatic,250,NA,1380,1750
+250303,Zidovudine and Zalcitabine,693,34,64.8648,No,White,Male,Asymptomatic,410,NA,800,700
+250304,zidovudine and Didanosine,1117,32,79.38,No,Non-White,Male,Asymptomatic,390,440,870,1140
+250305,Didanosine,1110,28,74.75328,No,White,Male,Asymptomatic,360,NA,670,960
+250306,Zidovudine and Zalcitabine,561,28,68.4,No,White,Female,Symptomatic,160,NA,730,950
+250403,Didanosine,1117,45,95.7096,No,Non-White,Male,Asymptomatic,630,640,1290,930
+250404,zidovudine and Didanosine,981,45,109.3176,No,White,Male,Symptomatic,380,340,1610,1510
+250406,Zidovudine,1117,41,68.9472,No,White,Male,Asymptomatic,210,200,1090,870
+250414,Didanosine,321,35,89.6,No,White,Male,Asymptomatic,320,210,690,1140
+250419,Zidovudine,1066,33,77.112,No,White,Male,Asymptomatic,280,370,1490,760
+250421,Zidovudine and Zalcitabine,610,56,75.0708,No,White,Male,Asymptomatic,200,97,590,860
+250422,Zidovudine,727,37,93.8952,No,White,Male,Asymptomatic,470,340,870,660
+250425,Didanosine,959,42,58,No,White,Male,Asymptomatic,280,NA,590,630
+250426,zidovudine and Didanosine,987,42,67.8132,No,White,Male,Asymptomatic,320,180,1860,1290
+250428,Zidovudine and Zalcitabine,1110,31,82.23768,No,Non-White,Male,Asymptomatic,490,430,610,810
+250431,Didanosine,1038,30,73.2,No,White,Male,Asymptomatic,270,420,560,740
+250433,Zidovudine,987,34,67.5864,No,White,Male,Asymptomatic,280,250,510,340
+250436,zidovudine and Didanosine,987,27,78.4728,No,White,Male,Asymptomatic,420,580,1070,1280
+250438,Didanosine,623,52,51.4,No,Non-White,Male,Asymptomatic,480,NA,1020,880
+250439,Didanosine,280,24,56.4732,No,Non-White,Male,Asymptomatic,270,22,1540,1280
+250441,Zidovudine and Zalcitabine,1098,42,97.7,No,White,Male,Asymptomatic,410,NA,830,840
+250443,Zidovudine,899,43,74.6,No,White,Male,Asymptomatic,300,NA,970,580
+250447,Zidovudine,477,31,114.534,No,Non-White,Male,Asymptomatic,160,NA,620,970
+250448,Didanosine,763,20,63.6,No,White,Male,Symptomatic,220,NA,470,530
+250449,Didanosine,980,43,77.112,Yes,White,Male,Asymptomatic,260,NA,1680,1510
+250453,Didanosine,1096,48,69.6276,No,White,Male,Asymptomatic,260,270,910,1400
+250454,zidovudine and Didanosine,1089,49,95.7096,No,Non-White,Male,Asymptomatic,480,490,700,910
+250456,Zidovudine and Zalcitabine,1091,29,58.0608,No,Non-White,Male,Asymptomatic,240,NA,820,890
+250457,zidovudine and Didanosine,946,28,66.6792,No,Non-White,Female,Asymptomatic,300,330,690,410
+250459,zidovudine and Didanosine,1091,29,74.5,No,White,Male,Asymptomatic,500,520,900,660
+250460,Zidovudine and Zalcitabine,652,28,79.1,No,White,Male,Asymptomatic,440,220,1000,790
+250461,Zidovudine,1090,27,97.524,No,White,Male,Asymptomatic,410,470,950,1140
+250462,Zidovudine and Zalcitabine,818,22,81.1944,No,Non-White,Female,Asymptomatic,490,280,1090,710
+250463,Zidovudine and Zalcitabine,426,34,85.5036,No,Non-White,Male,Asymptomatic,480,NA,1200,1160
+250464,zidovudine and Didanosine,554,47,87.9984,No,White,Male,Asymptomatic,320,NA,1350,1050
+250465,Zidovudine,1090,31,64.8648,No,White,Male,Asymptomatic,460,350,770,700
+250467,Zidovudine and Zalcitabine,1090,38,91.1736,No,White,Male,Asymptomatic,240,370,500,450
+250471,Zidovudine,1087,32,115.9,No,White,Male,Asymptomatic,280,340,960,470
+250472,zidovudine and Didanosine,1087,21,70.308,No,White,Male,Asymptomatic,280,380,550,730
+250473,Zidovudine and Zalcitabine,897,34,105.0084,No,White,Male,Asymptomatic,230,140,1470,1160
+250476,zidovudine and Didanosine,1087,31,72.8028,No,White,Male,Asymptomatic,310,460,640,600
+250477,Didanosine,952,32,67.1328,No,Non-White,Female,Asymptomatic,310,270,640,530
+250481,zidovudine and Didanosine,1049,38,65.3184,No,Non-White,Male,Asymptomatic,290,620,510,460
+250482,zidovudine and Didanosine,1041,25,75.2976,No,Non-White,Male,Asymptomatic,400,730,870,500
+250485,Zidovudine,1033,34,81.648,Yes,White,Male,Asymptomatic,420,380,890,490
+250490,Zidovudine,990,44,89.8128,No,White,Male,Asymptomatic,270,430,890,850
+250493,Zidovudine and Zalcitabine,919,28,73.9368,No,White,Male,Asymptomatic,550,460,370,840
+250495,Didanosine,1011,27,93.8952,No,White,Male,Asymptomatic,210,310,690,610
+250505,Zidovudine and Zalcitabine,835,21,58.968,No,White,Female,Asymptomatic,300,360,570,740
+250511,Didanosine,882,32,91.1736,No,Non-White,Female,Asymptomatic,380,321,430,530
+250516,Zidovudine,948,53,71.442,No,White,Male,Asymptomatic,350,262,460,740
+250729,Zidovudine and Zalcitabine,560,26,83.4624,No,Non-White,Male,Asymptomatic,340,60,650,800
+251020,Zidovudine and Zalcitabine,391,32,71.2152,No,White,Male,Asymptomatic,189,0,116,680
+251021,zidovudine and Didanosine,1077,33,66.906,No,White,Male,Asymptomatic,468,NA,1011,1404
+251023,Zidovudine,1003,35,64.4112,No,White,Male,Asymptomatic,588,857,1115,889
+251025,Zidovudine and Zalcitabine,988,38,79.38,No,White,Male,Symptomatic,239,173,1180,543
+251026,zidovudine and Didanosine,1121,26,79.6068,No,White,Male,Asymptomatic,448,211,756,644
+251027,Zidovudine and Zalcitabine,337,45,73.9368,No,White,Male,Symptomatic,193,NA,1652,1172
+251028,Didanosine,999,32,79.8336,No,White,Male,Symptomatic,248,133,1305,1081
+251029,Zidovudine,1123,37,65.772,No,White,Male,Symptomatic,358,214,1054,768
+251031,Zidovudine,1117,34,74.3904,No,White,Male,Symptomatic,286,270,2444,1855
+251032,Didanosine,1111,31,72.1224,No,White,Male,Asymptomatic,259,390,1238,901
+251033,Zidovudine,1110,43,95.256,No,White,Male,Symptomatic,232,NA,512,656
+251038,zidovudine and Didanosine,1097,27,73.2564,No,White,Male,Asymptomatic,444,306,1159,1082
+251039,Zidovudine and Zalcitabine,895,34,65.3184,No,White,Male,Asymptomatic,214,184,591,703
+251041,zidovudine and Didanosine,415,26,73.4832,No,White,Male,Symptomatic,160,205,390,568
+251043,Didanosine,980,25,48.3084,No,White,Male,Asymptomatic,438,NA,700,646
+251044,Didanosine,1054,40,71.6688,No,White,Male,Symptomatic,335,504,327,500
+251045,Zidovudine and Zalcitabine,1088,42,62.37,No,Non-White,Male,Asymptomatic,499,676,796,376
+251048,zidovudine and Didanosine,648,31,70.308,Yes,White,Male,Asymptomatic,510,449,1557,1324
+251049,Zidovudine,222,37,65.3184,Yes,White,Male,Symptomatic,142,NA,786,601
+251050,Didanosine,980,36,72.1224,No,Non-White,Male,Asymptomatic,446,308,1338,1444
+251051,Zidovudine,896,21,99.792,No,Non-White,Female,Symptomatic,159,NA,565,882
+251052,Zidovudine and Zalcitabine,1055,28,65.3184,No,Non-White,Male,Asymptomatic,265,403,3101,2627
+251053,Didanosine,169,48,83.4624,No,White,Female,Asymptomatic,291,NA,617,686
+251058,Zidovudine,1021,29,94.8024,No,White,Male,Asymptomatic,302,406,941,1742
+251059,zidovudine and Didanosine,1011,45,127.008,No,White,Male,Asymptomatic,207,410,633,1248
+251060,zidovudine and Didanosine,691,29,68.4936,No,White,Male,Asymptomatic,706,704,980,1195
+251068,zidovudine and Didanosine,824,40,68.04,No,Non-White,Male,Asymptomatic,477,NA,542,616
+260060,Didanosine,988,48,83.4,Yes,White,Male,Symptomatic,378,195,977,987
+260157,Zidovudine,557,43,65.2,No,White,Male,Asymptomatic,469,NA,2739,2240
+260180,Zidovudine and Zalcitabine,1130,31,72,No,White,Male,Asymptomatic,274,NA,673,971
+260208,Didanosine,1064,31,103.6,No,White,Male,Asymptomatic,350,NA,1196,1044
+260244,zidovudine and Didanosine,1117,36,77.6,No,White,Male,Symptomatic,484,594,1645,1637
+260329,Didanosine,1089,32,102.5,No,White,Male,Asymptomatic,257,447,621,640
+260437,Didanosine,1046,38,102.5,No,White,Male,Asymptomatic,293,256,930,730
+260536,Didanosine,987,35,83,No,White,Male,Asymptomatic,447,NA,894,913
+260650,Zidovudine and Zalcitabine,1139,31,76.5,No,White,Male,Asymptomatic,246,NA,346,497
+260693,zidovudine and Didanosine,1138,39,99,No,White,Male,Symptomatic,321,207,1076,1066
+260713,Zidovudine and Zalcitabine,1026,31,90.3,No,White,Male,Asymptomatic,277,301,705,828
+260722,zidovudine and Didanosine,1029,43,101,No,White,Male,Asymptomatic,70,119,314,893
+260735,Zidovudine,1070,39,62.8,No,White,Male,Asymptomatic,337,NA,724,756
+260757,Zidovudine,1001,31,99,No,White,Male,Asymptomatic,364,374,952,1126
+260759,Zidovudine and Zalcitabine,510,34,57.5,No,White,Male,Asymptomatic,217,50,1123,1209
+260817,zidovudine and Didanosine,260,33,102.8,No,White,Male,Asymptomatic,339,NA,477,519
+260828,Zidovudine,1091,27,67.7,No,White,Male,Asymptomatic,238,339,998,699
+260837,Didanosine,1142,29,79.6,No,White,Male,Asymptomatic,273,394,1040,1901
+260867,Zidovudine,1141,30,80,No,White,Male,Asymptomatic,417,594,780,1021
+260873,Zidovudine and Zalcitabine,1067,28,74.2,No,White,Male,Asymptomatic,384,NA,1444,1068
+260879,zidovudine and Didanosine,916,32,69.8,Yes,White,Male,Asymptomatic,435,470,886,855
+260897,zidovudine and Didanosine,1097,45,91.2,No,Non-White,Male,Asymptomatic,323,NA,691,554
+260920,zidovudine and Didanosine,1147,24,67.9,No,White,Female,Asymptomatic,310,341,1032,874
+260926,Didanosine,1088,23,87.6,No,White,Male,Symptomatic,493,NA,927,1283
+260932,Zidovudine,392,29,65.3,No,Non-White,Male,Asymptomatic,412,NA,1115,732
+260934,Zidovudine,1122,24,65.5,No,Non-White,Male,Asymptomatic,266,336,557,609
+260956,Didanosine,464,34,65.5,No,White,Male,Asymptomatic,198,NA,911,874
+260981,Didanosine,321,24,71.5,No,Non-White,Male,Asymptomatic,243,NA,693,647
+260986,Didanosine,455,31,82.5,No,White,Male,Asymptomatic,178,72,978,1059
+260991,zidovudine and Didanosine,1145,36,62.2,No,White,Female,Asymptomatic,297,186,501,478
+261011,Zidovudine and Zalcitabine,1098,29,83,No,White,Male,Asymptomatic,355,NA,1085,870
+261035,Didanosine,1063,35,82.4,No,White,Male,Symptomatic,471,787,613,698
+261040,Zidovudine and Zalcitabine,1054,36,75.2,No,White,Male,Asymptomatic,297,NA,606,524
+261047,zidovudine and Didanosine,822,31,74.7,No,White,Male,Asymptomatic,360,NA,662,778
+261050,Zidovudine,430,36,88.9,No,White,Male,Asymptomatic,371,NA,536,620
+261052,Zidovudine,1035,23,70.308,No,White,Male,Asymptomatic,540,469,1920,1145
+261053,zidovudine and Didanosine,723,26,63.7,Yes,Non-White,Male,Asymptomatic,347,NA,1510,1107
+261058,Zidovudine and Zalcitabine,1002,29,70.8,No,White,Male,Asymptomatic,918,NA,2793,1237
+261065,Zidovudine,893,20,57.3,No,White,Male,Asymptomatic,488,NA,798,952
+261070,Zidovudine and Zalcitabine,1029,32,86.8,No,White,Male,Asymptomatic,420,644,995,1272
+261078,Zidovudine,878,35,61.2,No,Non-White,Male,Asymptomatic,276,NA,804,893
+261085,zidovudine and Didanosine,884,38,66.3,No,White,Female,Asymptomatic,300,NA,505,784
+261088,Didanosine,914,37,60.7,No,White,Male,Asymptomatic,283,259,656,668
+261106,Didanosine,991,35,71,No,White,Male,Asymptomatic,388,NA,1086,1030
+261107,zidovudine and Didanosine,963,25,79.5,No,White,Male,Asymptomatic,420,599,873,979
+270022,Didanosine,935,41,75.7512,No,White,Male,Asymptomatic,343,697,577,941
+270031,Zidovudine,815,33,78.7,No,White,Male,Asymptomatic,622,383,941,757
+270042,Zidovudine,1151,29,78.0192,No,Non-White,Male,Asymptomatic,374,549,671,742
+270056,Zidovudine,1137,36,77.112,No,White,Male,Asymptomatic,373,NA,745,606
+270057,Didanosine,1160,36,86.184,No,White,Male,Asymptomatic,384,227,1704,1926
+270060,zidovudine and Didanosine,721,40,84.8232,No,White,Male,Asymptomatic,400,NA,896,1129
+270074,zidovudine and Didanosine,462,39,69.6276,No,White,Male,Symptomatic,262,110,1208,1334
+270082,Zidovudine,224,30,65.772,No,White,Male,Asymptomatic,430,291,1290,1118
+270129,Zidovudine,649,40,82.5552,No,White,Male,Symptomatic,600,216,1745,1698
+270137,Zidovudine,1154,41,62.1432,No,White,Male,Asymptomatic,477,NA,1273,1235
+270142,Didanosine,1126,35,78.4728,No,White,Male,Asymptomatic,365,557,1964,1546
+270143,Zidovudine and Zalcitabine,560,42,76.2048,No,White,Male,Asymptomatic,494,281,784,469
+270734,Didanosine,558,26,80.7408,No,White,Male,Asymptomatic,343,150,873,888
+270735,Zidovudine and Zalcitabine,1181,30,84.3696,No,White,Male,Asymptomatic,270,323,1132,1856
+270737,zidovudine and Didanosine,910,38,70.7616,No,White,Male,Asymptomatic,353,126,1275,1070
+270738,zidovudine and Didanosine,1181,39,75.2976,No,White,Male,Symptomatic,434,318,997,1358
+270739,Zidovudine and Zalcitabine,350,27,101,No,White,Female,Asymptomatic,337,NA,702,643
+270740,Didanosine,966,39,63.504,Yes,Non-White,Female,Asymptomatic,202,NA,327,431
+270741,Didanosine,1133,35,64.8648,No,Non-White,Female,Asymptomatic,434,NA,768,403
+270742,Zidovudine and Zalcitabine,1050,39,82.5552,No,White,Male,Asymptomatic,342,471,574,1118
+270743,zidovudine and Didanosine,1091,29,65.772,No,White,Male,Asymptomatic,403,386,854,447
+270744,Zidovudine,1088,33,84.3696,No,White,Male,Asymptomatic,235,NA,1313,1439
+270745,Didanosine,572,29,70.7616,No,White,Male,Asymptomatic,321,70,1400,680
+270746,Zidovudine and Zalcitabine,1087,26,73.9368,No,White,Male,Asymptomatic,293,NA,1406,1103
+270747,zidovudine and Didanosine,1088,47,85.2768,No,White,Male,Symptomatic,355,286,880,841
+270748,Zidovudine,938,43,88.452,No,White,Male,Symptomatic,225,261,649,570
+270749,Didanosine,423,25,61.236,No,White,Female,Symptomatic,377,NA,584,743
+270750,zidovudine and Didanosine,917,33,78.9264,No,Non-White,Male,Asymptomatic,320,205,847,897
+270751,zidovudine and Didanosine,1068,27,84.3696,No,White,Male,Asymptomatic,365,549,1169,1072
+270752,Zidovudine,507,37,79.38,No,White,Male,Asymptomatic,385,13,819,713
+270753,zidovudine and Didanosine,1054,25,75.5244,No,Non-White,Male,Asymptomatic,481,NA,577,647
+270754,Didanosine,974,28,71.6688,No,Non-White,Male,Asymptomatic,441,NA,378,537
+270755,Zidovudine,1026,28,76.8852,No,White,Male,Asymptomatic,562,577,463,590
+270756,Zidovudine and Zalcitabine,938,36,113.4,No,White,Female,Asymptomatic,283,NA,500,933
+270758,zidovudine and Didanosine,1019,37,57,No,White,Female,Asymptomatic,464,462,546,706
+270759,Didanosine,897,25,67.5864,No,White,Male,Asymptomatic,456,379,1766,843
+270760,Zidovudine and Zalcitabine,1012,36,114.3072,No,White,Male,Asymptomatic,284,413,716,962
+270761,zidovudine and Didanosine,1006,30,69.4008,No,White,Male,Asymptomatic,659,NA,1392,876
+270762,Didanosine,323,39,54.8856,No,Non-White,Male,Asymptomatic,319,38,3192,2856
+270826,zidovudine and Didanosine,466,34,63.504,No,Non-White,Male,Asymptomatic,294,NA,1292,1646
+270827,Zidovudine,142,45,78.246,No,White,Male,Asymptomatic,180,51,1777,1046
+270828,Zidovudine,1164,41,85.05,No,Non-White,Male,Asymptomatic,396,NA,1034,1207
+270829,Zidovudine and Zalcitabine,1022,22,62.5968,No,Non-White,Male,Symptomatic,411,306,905,1160
+270830,zidovudine and Didanosine,307,40,97.88688,No,Non-White,Female,Asymptomatic,408,NA,696,547
+270831,Didanosine,1159,47,104.1012,No,White,Male,Symptomatic,272,197,2178,1921
+270832,Zidovudine,1154,32,70.7616,No,White,Male,Asymptomatic,271,NA,566,739
+270833,zidovudine and Didanosine,1154,31,83.0088,No,Non-White,Male,Asymptomatic,548,426,1116,1067
+270834,Zidovudine,565,31,80.2872,No,Non-White,Male,Asymptomatic,542,NA,845,742
+270836,Zidovudine and Zalcitabine,476,57,71.2152,No,Non-White,Male,Asymptomatic,301,NA,689,445
+270837,Zidovudine,1048,35,49.4424,No,White,Male,Asymptomatic,441,249,1391,1198
+270838,Didanosine,1029,48,70.308,No,White,Male,Asymptomatic,450,268,1666,1203
+270839,Didanosine,1065,34,67.5864,No,White,Male,Asymptomatic,358,552,895,1124
+270840,zidovudine and Didanosine,382,36,78.38208,No,Non-White,Male,Asymptomatic,327,NA,776,793
+270842,Didanosine,1131,39,76.6584,No,White,Male,Asymptomatic,519,551,1189,847
+270845,zidovudine and Didanosine,1124,38,76.2048,No,White,Male,Asymptomatic,346,NA,864,1318
+270846,zidovudine and Didanosine,1124,49,76.2048,No,White,Male,Asymptomatic,455,533,1176,534
+270847,Zidovudine,624,35,75.5244,No,White,Male,Asymptomatic,328,174,820,977
+270848,Zidovudine and Zalcitabine,1119,36,67.5864,No,White,Male,Asymptomatic,489,505,887,1013
+270849,Didanosine,1112,37,82.1016,No,White,Male,Asymptomatic,316,337,1124,931
+270850,Didanosine,1115,42,72.1224,No,White,Male,Asymptomatic,292,312,626,549
+270851,zidovudine and Didanosine,979,34,70.308,No,White,Male,Asymptomatic,218,NA,519,888
+270852,Zidovudine and Zalcitabine,1108,35,73.9368,No,White,Male,Asymptomatic,347,475,891,594
+270853,zidovudine and Didanosine,1102,37,70.308,No,White,Female,Asymptomatic,356,544,523,643
+270854,Zidovudine,1098,40,81.8748,No,White,Male,Symptomatic,296,410,2048,1750
+270856,Didanosine,999,25,77.112,No,White,Male,Asymptomatic,280,287,699,627
+270858,zidovudine and Didanosine,1093,34,86.6376,No,Non-White,Male,Asymptomatic,277,NA,878,1096
+270859,Zidovudine,859,31,64.4112,No,White,Male,Asymptomatic,294,214,662,625
+270861,Didanosine,1088,36,72.3492,No,White,Male,Asymptomatic,353,385,1389,1678
+270862,zidovudine and Didanosine,949,25,51.4836,No,Non-White,Male,Asymptomatic,282,262,574,534
+270863,Zidovudine,1087,33,74.98008,No,White,Male,Symptomatic,252,NA,1165,811
+270864,Didanosine,386,30,55.7928,No,White,Male,Asymptomatic,147,NA,698,1089
+270865,Zidovudine,1015,32,72.576,No,White,Male,Symptomatic,225,161,1161,1210
+270867,Didanosine,667,39,80.2872,No,Non-White,Male,Asymptomatic,353,NA,3780,3552
+270868,Didanosine,167,32,41.2776,Yes,White,Female,Asymptomatic,328,NA,482,485
+270869,Zidovudine and Zalcitabine,1063,40,75.978,No,Non-White,Female,Asymptomatic,335,287,1164,1214
+270870,Zidovudine and Zalcitabine,1062,40,76,Yes,Non-White,Female,Asymptomatic,502,585,1568,1599
+270873,zidovudine and Didanosine,329,23,52.164,No,Non-White,Female,Asymptomatic,300,NA,622,415
+270875,Didanosine,497,27,83.0088,No,Non-White,Male,Asymptomatic,213,NA,526,632
+270877,zidovudine and Didanosine,1042,30,77.3388,No,Non-White,Male,Asymptomatic,209,254,452,517
+270879,Zidovudine and Zalcitabine,1041,31,49.4424,No,White,Female,Asymptomatic,407,479,925,815
+270883,Didanosine,1028,28,125.6472,No,Non-White,Male,Asymptomatic,257,392,570,893
+270884,Zidovudine and Zalcitabine,1021,29,58.968,No,Non-White,Female,Asymptomatic,463,368,491,481
+270885,Zidovudine,885,37,76.2048,No,White,Male,Asymptomatic,450,NA,1387,1963
+270887,Didanosine,1000,50,70.67088,No,White,Male,Asymptomatic,452,583,796,733
+270888,zidovudine and Didanosine,857,44,87.5448,No,White,Male,Asymptomatic,452,NA,1096,912
+270889,Zidovudine,245,44,89.3592,No,White,Male,Asymptomatic,308,NA,484,351
+270891,Zidovudine and Zalcitabine,517,37,82.1016,No,White,Male,Asymptomatic,393,NA,941,1125
+270892,Zidovudine,847,29,100.0188,No,White,Male,Asymptomatic,441,NA,882,906
+270893,zidovudine and Didanosine,892,37,76.4316,No,Non-White,Female,Asymptomatic,548,426,1949,1099
+270934,Zidovudine,146,57,81.1944,No,White,Male,Symptomatic,226,96,2008,1553
+270941,Zidovudine and Zalcitabine,302,45,51.7104,No,White,Female,Asymptomatic,288,3,835,713
+270948,Didanosine,1067,54,86.6376,No,White,Male,Asymptomatic,345,304,762,900
+270949,Zidovudine and Zalcitabine,1132,43,86.184,No,White,Male,Asymptomatic,390,559,1333,1273
+270960,Didanosine,1166,44,91.6272,No,White,Male,Asymptomatic,295,394,988,741
+270962,Didanosine,1154,50,83.4624,Yes,White,Male,Asymptomatic,606,739,1145,1053
+270969,Zidovudine and Zalcitabine,965,30,58.5144,No,White,Male,Asymptomatic,387,NA,775,424
+270970,Zidovudine and Zalcitabine,1137,36,69.4008,No,White,Male,Asymptomatic,186,199,1135,2713
+270983,Zidovudine,896,30,81.648,No,White,Male,Asymptomatic,334,247,556,550
+270984,zidovudine and Didanosine,550,39,78.0192,No,White,Male,Asymptomatic,232,116,946,1150
+270985,Zidovudine and Zalcitabine,898,28,83.2356,No,White,Male,Asymptomatic,313,157,1111,1435
+271001,Zidovudine,1094,46,65.5452,No,White,Male,Asymptomatic,441,416,592,583
+271004,Zidovudine and Zalcitabine,45,38,78.0192,No,White,Male,Asymptomatic,416,NA,1663,1055
+271365,zidovudine and Didanosine,1098,29,89.3592,No,White,Male,Asymptomatic,466,190,869,838
+271390,zidovudine and Didanosine,1154,37,76.6584,No,White,Male,Asymptomatic,428,320,1435,707
+271735,zidovudine and Didanosine,1178,28,85.7304,No,White,Male,Asymptomatic,416,NA,800,738
+271736,Zidovudine and Zalcitabine,1040,34,62.8236,Yes,Non-White,Female,Asymptomatic,223,343,839,1000
+271737,Didanosine,1178,26,79.8336,No,Non-White,Male,Asymptomatic,375,469,1000,945
+271738,Didanosine,1166,52,61.4628,No,Non-White,Female,Asymptomatic,440,494,645,755
+271739,Zidovudine and Zalcitabine,618,25,70.21728,No,Non-White,Male,Asymptomatic,312,NA,1679,1085
+280226,zidovudine and Didanosine,479,32,58.0608,Yes,Non-White,Female,Asymptomatic,378,NA,1049,870
+280228,Didanosine,381,30,64.638,No,White,Female,Asymptomatic,433,NA,883,428
+280236,Zidovudine,1090,49,59.4216,Yes,Non-White,Female,Asymptomatic,440,NA,2126,1479
+280272,zidovudine and Didanosine,902,35,92.5344,Yes,Non-White,Female,Asymptomatic,349,NA,1124,1398
+280275,Didanosine,839,36,57.6072,No,Non-White,Female,Asymptomatic,239,NA,868,899
+280276,Zidovudine and Zalcitabine,987,32,50.8032,Yes,White,Female,Asymptomatic,253,NA,933,806
+280278,Zidovudine and Zalcitabine,96,40,79.38,Yes,Non-White,Female,Asymptomatic,255,NA,1190,1153
+280281,Didanosine,722,44,90.4932,No,Non-White,Female,Asymptomatic,250,NA,2677,2117
+280282,Didanosine,971,27,66.4524,Yes,White,Female,Asymptomatic,649,NA,2220,1874
+280285,Zidovudine and Zalcitabine,1046,32,64.8648,No,Non-White,Female,Asymptomatic,567,NA,3827,2801
+280286,zidovudine and Didanosine,424,26,47.628,No,Non-White,Female,Asymptomatic,391,NA,681,803
+290062,zidovudine and Didanosine,1013,40,84,No,White,Male,Asymptomatic,295,375,801,722
+300010,Zidovudine,977,30,65,No,White,Male,Symptomatic,171,246,477,428
+300027,Zidovudine,819,50,72.576,No,White,Male,Symptomatic,266,144,1482,1250
+300113,zidovudine and Didanosine,1087,33,78.4,No,White,Male,Asymptomatic,344,290,862,705
+300203,Didanosine,993,32,64.8648,Yes,White,Female,Asymptomatic,386,294,941,1414
+300229,Zidovudine and Zalcitabine,1062,38,75.2,No,Non-White,Male,Asymptomatic,265,205,1349,1372
+300233,zidovudine and Didanosine,1104,40,110.4516,No,White,Male,Asymptomatic,548,874,1117,945
+300238,Zidovudine and Zalcitabine,1188,38,66.2256,No,White,Male,Asymptomatic,368,NA,1279,1290
+300500,Zidovudine,1124,47,67.1328,No,White,Male,Asymptomatic,499,NA,1056,1044
+300501,Zidovudine and Zalcitabine,980,37,81.1944,Yes,White,Male,Asymptomatic,441,NA,923,604
+300507,Zidovudine,1066,43,97.524,No,Non-White,Male,Asymptomatic,240,407,410,494
+300511,Zidovudine and Zalcitabine,299,29,63.9576,No,Non-White,Male,Asymptomatic,486,NA,800,612
+300514,Zidovudine and Zalcitabine,973,29,77.112,No,Non-White,Male,Asymptomatic,164,221,445,655
+300517,Zidovudine and Zalcitabine,1087,31,122.472,No,White,Female,Symptomatic,250,497,985,732
+300522,Zidovudine,1052,39,98.4312,No,White,Male,Asymptomatic,434,483,1632,1373
+300903,zidovudine and Didanosine,934,27,83.4624,No,Non-White,Female,Asymptomatic,427,NA,510,870
+300907,zidovudine and Didanosine,1057,31,63.0504,Yes,White,Female,Asymptomatic,428,383,551,983
+300911,Zidovudine and Zalcitabine,343,19,59.8752,No,Non-White,Female,Asymptomatic,401,NA,774,905
+300921,Didanosine,612,37,63.504,No,Non-White,Female,Asymptomatic,389,NA,552,586
+300922,Zidovudine and Zalcitabine,1017,58,78.246,No,White,Male,Asymptomatic,409,209,520,510
+300923,Didanosine,428,40,67.1328,No,White,Male,Asymptomatic,423,NA,1843,1576
+300924,Didanosine,1088,31,61.6896,No,White,Male,Asymptomatic,296,269,560,725
+300927,Didanosine,1066,40,69.6276,Yes,White,Male,Symptomatic,609,356,1430,883
+300930,Zidovudine,818,24,66.2256,No,White,Female,Symptomatic,450,NA,884,799
+300931,Zidovudine and Zalcitabine,959,44,91.6272,No,White,Female,Asymptomatic,339,186,828,440
+300932,Didanosine,897,31,62.37,No,Non-White,Female,Asymptomatic,243,209,648,409
+300935,Didanosine,429,35,68.2668,Yes,Non-White,Female,Asymptomatic,366,NA,614,703
+300936,Didanosine,1029,33,56.9268,No,Non-White,Male,Asymptomatic,329,465,419,480
+300937,Didanosine,507,26,56.2464,No,White,Female,Asymptomatic,442,NA,1211,839
+300938,Zidovudine,876,36,117.0288,No,White,Female,Asymptomatic,199,223,1228,1184
+300940,Zidovudine and Zalcitabine,1000,33,71.2152,No,White,Male,Asymptomatic,221,194,598,866
+300941,Didanosine,984,30,61.0092,No,Non-White,Female,Asymptomatic,424,NA,878,794
+310038,zidovudine and Didanosine,562,59,53.3,No,White,Female,Asymptomatic,236,110,354,344
+310061,Didanosine,991,24,64.04832,No,White,Male,Asymptomatic,296,NA,444,664
+310171,Zidovudine,813,41,89.5,No,White,Male,Asymptomatic,308,176,972,1376
+310182,zidovudine and Didanosine,994,33,72.8028,No,White,Male,Asymptomatic,446,501,368,336
+310211,Zidovudine,1035,36,93.1,No,White,Male,Asymptomatic,541,NA,1434,1568
+310215,Zidovudine,1110,24,62.1432,No,White,Female,Asymptomatic,531,NA,1927,1850
+310216,Zidovudine,987,29,72.3,No,White,Male,Asymptomatic,298,253,518,750
+310219,Didanosine,537,29,70.9884,No,White,Male,Asymptomatic,404,NA,866,871
+310221,Didanosine,982,35,67.94928,No,Non-White,Female,Asymptomatic,415,NA,943,1228
+310222,Didanosine,555,25,79.7,No,Non-White,Female,Asymptomatic,501,NA,812,805
+310224,Zidovudine and Zalcitabine,1078,35,68,No,White,Male,Asymptomatic,213,223,568,563
+310225,zidovudine and Didanosine,1075,32,58,No,Non-White,Male,Asymptomatic,265,295,1132,1149
+310226,Didanosine,1068,31,95.5,No,White,Male,Asymptomatic,302,463,478,595
+310228,Zidovudine,1006,21,77.9,No,Non-White,Male,Asymptomatic,373,NA,549,663
+310231,Didanosine,966,41,73.0296,Yes,White,Male,Asymptomatic,480,444,700,864
+310232,Zidovudine and Zalcitabine,385,30,68,No,White,Male,Symptomatic,184,NA,563,834
+310233,zidovudine and Didanosine,950,24,72.5,No,Non-White,Female,Symptomatic,347,NA,1167,1300
+310234,Zidovudine,1041,18,57.28968,No,White,Female,Asymptomatic,445,338,766,691
+310235,Zidovudine and Zalcitabine,970,47,59,Yes,White,Female,Asymptomatic,186,284,462,357
+310236,Zidovudine,1015,38,79.4,No,White,Male,Asymptomatic,332,482,1289,860
+310237,Zidovudine,991,40,65.5,No,White,Male,Asymptomatic,274,540,1352,1353
+310238,Zidovudine,413,23,74.4,No,Non-White,Male,Asymptomatic,221,65,731,643
+310239,Didanosine,993,37,71.8,No,White,Male,Asymptomatic,338,335,675,457
+310242,Zidovudine and Zalcitabine,992,33,72.576,No,White,Male,Asymptomatic,383,562,1627,984
+310244,zidovudine and Didanosine,914,27,70.5,No,White,Male,Asymptomatic,227,NA,1058,879
+310706,Zidovudine and Zalcitabine,1008,27,70.7616,No,White,Male,Asymptomatic,290,238,858,1602
+310712,Zidovudine and Zalcitabine,1001,41,65.0916,No,White,Male,Asymptomatic,99,887,105,173
+310713,zidovudine and Didanosine,1098,33,75.2976,No,White,Male,Asymptomatic,548,398,1672,1683
+310728,Zidovudine and Zalcitabine,748,39,80.7408,No,White,Male,Asymptomatic,457,NA,1306,1094
+310739,zidovudine and Didanosine,994,38,82.3,No,White,Male,Asymptomatic,341,210,741,583
+310758,Zidovudine and Zalcitabine,840,33,65.4,No,Non-White,Male,Asymptomatic,343,140,1417,1489
+310761,zidovudine and Didanosine,561,24,59,No,White,Male,Asymptomatic,172,117,847,804
+310763,Zidovudine,1091,40,71.3,No,White,Female,Asymptomatic,503,323,797,734
+310764,Didanosine,993,30,63.9576,No,White,Male,Asymptomatic,250,338,1248,1198
+310765,Didanosine,1103,45,72.7,No,White,Male,Asymptomatic,288,217,1072,1292
+310767,zidovudine and Didanosine,1096,14,65,No,White,Male,Asymptomatic,374,447,707,676
+310769,Zidovudine,197,37,79.38,No,White,Male,Symptomatic,319,NA,1412,563
+320060,Didanosine,989,31,72.3,No,White,Male,Asymptomatic,480,NA,1000,680
+320088,Zidovudine,1134,34,84.2,No,White,Male,Asymptomatic,220,120,620,600
+320195,Didanosine,1002,28,64.8,No,White,Male,Asymptomatic,400,NA,890,650
+320198,Zidovudine and Zalcitabine,835,26,59.8752,No,White,Male,Symptomatic,170,290,348,376
+320286,Zidovudine,1147,32,102.3,No,Non-White,Female,Asymptomatic,374,399,1474,864
+320287,zidovudine and Didanosine,394,22,53.298,No,Non-White,Female,Asymptomatic,306,24,1134,826
+320288,zidovudine and Didanosine,1151,31,64.1844,No,Non-White,Male,Asymptomatic,168,238,1656,795
+320290,Zidovudine and Zalcitabine,1140,18,86.4,No,Non-White,Female,Asymptomatic,320,NA,880,944
+320291,Zidovudine,1147,42,82.3,Yes,Non-White,Female,Asymptomatic,341,540,429,504
+320293,Didanosine,1021,39,94.3,No,Non-White,Female,Asymptomatic,414,330,900,624
+320294,Zidovudine and Zalcitabine,993,22,60.3288,No,White,Male,Asymptomatic,525,287,1400,1100
+320295,Didanosine,1059,28,66.3,No,White,Male,Asymptomatic,600,480,675,429
+320296,Zidovudine,1132,47,74.844,No,Non-White,Female,Asymptomatic,504,486,1176,980
+320297,Zidovudine,139,25,66.2256,No,White,Male,Asymptomatic,612,NA,522,403
+320298,zidovudine and Didanosine,1023,36,51.5,No,Non-White,Female,Asymptomatic,300,250,1240,1254
+320318,Zidovudine,889,25,84.18816,No,White,Male,Asymptomatic,336,270,612,477
+320319,zidovudine and Didanosine,876,37,81.10368,No,White,Male,Asymptomatic,375,NA,690,539
+320322,Zidovudine and Zalcitabine,549,25,63.59472,No,White,Male,Asymptomatic,280,45,1180,1408
+320323,Zidovudine and Zalcitabine,1091,28,68.4936,No,White,Male,Asymptomatic,646,473,731,700
+320325,zidovudine and Didanosine,811,27,94.89312,Yes,White,Male,Asymptomatic,370,NA,860,918
+320326,Zidovudine,1010,37,83.28096,No,White,Male,Asymptomatic,420,378,700,675
+320347,Didanosine,1071,38,67.1,No,White,Male,Asymptomatic,340,510,1160,980
+320348,zidovudine and Didanosine,493,25,68.3,No,White,Male,Symptomatic,340,40,916,560
+320349,Zidovudine and Zalcitabine,1127,40,71.6,No,White,Male,Asymptomatic,330,420,350,380
+320350,Zidovudine and Zalcitabine,1135,34,74,No,White,Male,Symptomatic,220,220,1540,1880
+320351,zidovudine and Didanosine,171,24,65.2,No,White,Female,Symptomatic,140,30,1380,790
+320352,Zidovudine and Zalcitabine,1112,40,91,No,White,Male,Asymptomatic,250,330,900,1010
+320353,Didanosine,1030,37,66.1,No,White,Male,Asymptomatic,280,NA,540,700
+320355,Didanosine,739,42,93.5,No,White,Male,Asymptomatic,250,90,1510,1320
+320357,zidovudine and Didanosine,880,28,159.93936,No,Non-White,Male,Asymptomatic,702,NA,3348,1775
+320362,zidovudine and Didanosine,1042,49,56.42784,Yes,Non-White,Male,Asymptomatic,450,456,1152,686
+320365,Zidovudine,1024,34,86.00256,Yes,Non-White,Female,Asymptomatic,348,324,492,432
+320369,zidovudine and Didanosine,929,31,85.14072,No,Non-White,Female,Asymptomatic,481,297,520,660
+320386,Zidovudine and Zalcitabine,1046,29,65.5,No,White,Male,Asymptomatic,530,NA,1100,710
+320390,Didanosine,1064,24,81.1,No,Non-White,Female,Asymptomatic,420,380,620,610
+320391,Didanosine,313,31,56.3,Yes,White,Male,Asymptomatic,260,30,1140,940
+320392,Zidovudine,746,61,69.8,No,White,Male,Asymptomatic,440,510,1120,1470
+320393,zidovudine and Didanosine,826,33,101,No,White,Male,Asymptomatic,400,NA,860,720
+320396,Zidovudine,927,26,82.2,No,White,Female,Asymptomatic,560,440,970,920
+320398,Didanosine,1045,32,83.1,No,Non-White,Male,Asymptomatic,270,290,600,756
+320400,Didanosine,1049,30,69.1,No,White,Male,Asymptomatic,200,NA,1736,1590
+320401,Zidovudine and Zalcitabine,1012,38,69.8,No,Non-White,Male,Asymptomatic,230,NA,1690,1260
+320402,Didanosine,978,46,86.2,No,White,Male,Asymptomatic,440,995,530,586
+320403,Zidovudine and Zalcitabine,314,36,91.9,No,White,Male,Asymptomatic,280,442,1305,1010
+320406,Zidovudine and Zalcitabine,1087,32,69.3,No,Non-White,Male,Asymptomatic,390,NA,540,450
+320408,Zidovudine,886,25,103.5,No,White,Male,Symptomatic,280,NA,850,1190
+320409,Zidovudine,1009,45,75.3,Yes,White,Female,Symptomatic,240,NA,520,412
+320410,Zidovudine,1008,46,72.4,No,White,Male,Symptomatic,280,250,1590,1300
+320411,zidovudine and Didanosine,1008,26,67.2,No,White,Male,Symptomatic,330,470,1530,1230
+320412,zidovudine and Didanosine,1062,34,63.2,No,White,Male,Asymptomatic,260,250,480,560
+320413,Zidovudine,1014,22,62.3,No,White,Male,Asymptomatic,530,500,816,806
+320415,zidovudine and Didanosine,477,32,84.8232,No,White,Male,Symptomatic,169,66,741,594
+320418,Zidovudine,980,23,67.8132,No,White,Male,Asymptomatic,360,396,1134,780
+320419,zidovudine and Didanosine,813,24,68.4936,No,White,Male,Symptomatic,406,162,672,612
+320420,Zidovudine,1035,32,76.8852,No,Non-White,Female,Asymptomatic,336,264,1632,1235
+320431,zidovudine and Didanosine,990,33,74.1636,No,White,Male,Asymptomatic,348,NA,552,705
+320446,Didanosine,927,35,96.3,No,White,Male,Asymptomatic,130,150,400,390
+320447,Zidovudine,981,29,73.9,No,White,Male,Asymptomatic,520,NA,1070,880
+320449,Didanosine,1027,30,76.3,No,Non-White,Male,Symptomatic,170,230,330,460
+320450,zidovudine and Didanosine,963,38,72.9,No,White,Male,Asymptomatic,380,NA,1116,1270
+320453,Didanosine,986,23,82.1,No,Non-White,Female,Asymptomatic,380,NA,1080,1150
+320456,Didanosine,963,24,71.3,No,Non-White,Male,Asymptomatic,500,NA,840,630
+320457,Zidovudine and Zalcitabine,936,48,85.4,No,White,Male,Asymptomatic,420,490,515,360
+320462,Didanosine,993,47,89.1,No,White,Male,Asymptomatic,220,198,1020,1170
+320463,Zidovudine and Zalcitabine,911,30,60.8,No,Non-White,Male,Asymptomatic,390,NA,640,480
+320464,zidovudine and Didanosine,930,26,69,No,White,Male,Asymptomatic,390,270,720,420
+320466,Zidovudine and Zalcitabine,720,32,97.9,No,Non-White,Male,Symptomatic,250,NA,1170,1040
+320469,Zidovudine and Zalcitabine,924,27,86.6,No,White,Male,Asymptomatic,300,510,450,845
+320472,Zidovudine,905,32,81.5,No,Non-White,Male,Asymptomatic,320,NA,870,762
+320473,Zidovudine,612,27,103.4208,No,White,Male,Asymptomatic,143,60,858,994
+320474,Zidovudine and Zalcitabine,932,30,77.7924,Yes,White,Male,Asymptomatic,391,NA,640,825
+320475,Zidovudine,891,27,66.6,Yes,White,Female,Asymptomatic,320,396,470,432
+320502,zidovudine and Didanosine,919,25,53.1,No,White,Male,Asymptomatic,220,255,480,570
+320531,Zidovudine,905,39,113.4,Yes,Non-White,Female,Asymptomatic,532,NA,462,558
+320532,Didanosine,904,40,68.7204,Yes,White,Male,Asymptomatic,450,NA,630,540
+320533,Zidovudine and Zalcitabine,964,32,64.4112,No,Non-White,Male,Asymptomatic,406,441,630,865
+320534,Zidovudine,583,46,84.8232,No,Non-White,Male,Asymptomatic,494,132,950,407
+320535,Didanosine,958,32,67.1328,Yes,White,Male,Asymptomatic,200,220,2720,2266
+320536,zidovudine and Didanosine,957,22,57.1536,No,White,Male,Asymptomatic,308,260,583,540
+320537,Zidovudine and Zalcitabine,888,36,61.6896,No,Non-White,Male,Asymptomatic,416,NA,1326,690
+320538,Didanosine,927,39,77.5656,Yes,Non-White,Female,Asymptomatic,221,160,1055,1348
+330009,Didanosine,691,35,112.7196,Yes,White,Male,Asymptomatic,290,100,930,670
+330039,Zidovudine and Zalcitabine,1028,41,92.3076,No,White,Male,Asymptomatic,220,220,990,730
+330074,Zidovudine,1083,36,93.8952,No,Non-White,Male,Asymptomatic,270,290,1040,1020
+330128,Zidovudine and Zalcitabine,1081,37,47.628,No,White,Female,Asymptomatic,350,NA,930,690
+330141,Didanosine,631,53,107.5032,No,White,Male,Asymptomatic,290,140,1060,1090
+330156,zidovudine and Didanosine,993,32,65.3184,No,White,Male,Asymptomatic,360,470,590,540
+330164,Zidovudine,1122,45,94.5756,Yes,Non-White,Male,Symptomatic,310,320,1520,1450
+330178,Didanosine,1122,41,86.184,No,Non-White,Female,Asymptomatic,310,NA,1230,1150
+330232,Didanosine,282,44,55.5,Yes,Non-White,Female,Asymptomatic,410,NA,480,590
+330234,Zidovudine,331,44,79.38,No,White,Male,Asymptomatic,300,NA,2130,1970
+330236,Zidovudine,236,42,62.5,No,Non-White,Female,Symptomatic,400,NA,940,560
+330238,Zidovudine and Zalcitabine,755,30,78.83568,Yes,White,Male,Asymptomatic,420,NA,890,1080
+330240,zidovudine and Didanosine,1087,40,80.5,Yes,White,Male,Asymptomatic,480,360,2638,1510
+330241,Zidovudine,475,36,83.4624,Yes,White,Male,Asymptomatic,240,50,540,710
+330242,Zidovudine and Zalcitabine,990,30,135.1728,Yes,White,Male,Symptomatic,220,NA,1120,1250
+330244,zidovudine and Didanosine,1017,33,83.0088,Yes,White,Male,Asymptomatic,440,130,1000,960
+330246,Zidovudine and Zalcitabine,790,39,75.0708,No,Non-White,Male,Asymptomatic,300,100,920,740
+330247,Zidovudine,991,31,85.7304,No,White,Male,Asymptomatic,350,380,410,620
+330248,zidovudine and Didanosine,1081,40,70.0812,Yes,White,Female,Asymptomatic,400,NA,1250,1020
+330249,Didanosine,388,42,76.2048,Yes,Non-White,Male,Symptomatic,330,137,1650,1430
+330251,Didanosine,1110,33,70.5348,No,White,Female,Asymptomatic,440,390,1050,1040
+330254,Zidovudine and Zalcitabine,1098,29,92.5344,No,White,Male,Symptomatic,320,270,1360,940
+330255,zidovudine and Didanosine,1108,40,93.6684,Yes,Non-White,Male,Asymptomatic,470,NA,1510,1700
+330256,zidovudine and Didanosine,1005,41,87.0912,Yes,White,Male,Symptomatic,300,220,560,590
+330257,zidovudine and Didanosine,1097,45,68.2668,Yes,Non-White,Male,Asymptomatic,410,320,980,760
+330259,zidovudine and Didanosine,1008,41,73.2564,No,White,Male,Asymptomatic,280,150,920,1070
+330261,Zidovudine and Zalcitabine,1013,29,94.8024,No,Non-White,Male,Asymptomatic,280,320,980,810
+330262,Didanosine,939,37,88.9056,No,White,Male,Asymptomatic,260,160,2220,2050
+330264,Zidovudine,628,45,60.7824,No,White,Female,Asymptomatic,310,10,880,510
+330265,Zidovudine,437,34,72.576,No,White,Male,Asymptomatic,260,NA,610,740
+330267,zidovudine and Didanosine,1070,31,56.7,No,White,Male,Asymptomatic,380,361,1220,1290
+330274,Zidovudine,143,27,64.77408,No,Non-White,Female,Asymptomatic,510,NA,880,1180
+330275,Zidovudine,392,30,52.6176,No,White,Male,Symptomatic,320,NA,2460,1840
+330276,Didanosine,637,31,63.504,Yes,Non-White,Female,Asymptomatic,230,NA,960,1030
+330279,Didanosine,984,37,87.0912,No,White,Male,Asymptomatic,450,NA,970,690
+330282,Zidovudine,655,26,105.9156,No,White,Male,Asymptomatic,270,60,3190,1730
+330283,zidovudine and Didanosine,1038,40,76.2048,Yes,Non-White,Female,Asymptomatic,520,NA,1210,1160
+330284,Zidovudine and Zalcitabine,1004,33,68.4936,No,White,Male,Asymptomatic,190,NA,830,890
+330287,Didanosine,1003,45,76.8852,No,White,Male,Asymptomatic,150,190,400,536
+330288,Didanosine,991,32,96.1632,No,Non-White,Male,Asymptomatic,270,230,430,410
+330290,Didanosine,383,27,65.3184,No,White,Male,Asymptomatic,270,NA,380,540
+330291,Zidovudine and Zalcitabine,899,37,66.6792,Yes,White,Male,Asymptomatic,530,470,450,820
+340012,Didanosine,1087,37,73.0296,No,White,Male,Asymptomatic,266,NA,892,1016
+340034,zidovudine and Didanosine,983,43,69.8544,No,White,Male,Asymptomatic,648,456,858,941
+340042,Didanosine,894,28,58.5144,No,Non-White,Male,Asymptomatic,549,510,875,591
+340131,zidovudine and Didanosine,602,41,70.308,No,White,Male,Asymptomatic,385,NA,654,991
+340228,Didanosine,1034,39,74.6172,No,White,Male,Asymptomatic,315,NA,579,602
+340285,Zidovudine and Zalcitabine,1101,38,83.916,No,White,Male,Asymptomatic,363,402,1164,830
+340298,zidovudine and Didanosine,999,53,69.8544,No,White,Male,Asymptomatic,554,NA,1039,1827
+340307,Didanosine,875,33,73.6,No,White,Male,Asymptomatic,422,417,739,981
+340531,Zidovudine and Zalcitabine,1088,36,86.184,No,White,Male,Asymptomatic,337,302,618,482
+340596,Didanosine,1062,32,86.6376,No,White,Male,Asymptomatic,293,NA,516,468
+340602,Zidovudine,478,41,78.0192,No,White,Male,Asymptomatic,348,NA,932,649
+340606,zidovudine and Didanosine,1138,49,81.648,No,White,Male,Asymptomatic,598,484,932,837
+340684,Zidovudine,759,40,83.916,Yes,White,Male,Asymptomatic,225,113,651,769
+340689,Zidovudine and Zalcitabine,1066,31,78.9264,No,Non-White,Male,Asymptomatic,589,403,934,738
+340702,Zidovudine and Zalcitabine,797,39,63.0504,Yes,White,Male,Asymptomatic,317,NA,864,666
+340708,zidovudine and Didanosine,1063,30,62.5968,No,Non-White,Male,Symptomatic,163,223,497,485
+340710,Zidovudine and Zalcitabine,1117,46,78.0192,Yes,Non-White,Male,Asymptomatic,246,NA,786,1088
+340713,zidovudine and Didanosine,1056,35,72.576,No,White,Male,Symptomatic,211,312,586,1056
+340718,Zidovudine,709,28,77.112,No,Non-White,Female,Asymptomatic,386,NA,671,597
+340731,zidovudine and Didanosine,1088,44,66.6792,No,Non-White,Male,Asymptomatic,204,245,543,827
+340734,Zidovudine and Zalcitabine,984,26,75.7512,No,Non-White,Female,Asymptomatic,302,486,892,961
+340735,Zidovudine,1050,37,58.968,Yes,White,Female,Asymptomatic,485,NA,908,673
+340744,Zidovudine,645,30,48.0816,No,Non-White,Female,Asymptomatic,377,249,1113,1269
+340748,Zidovudine,477,29,72.2,No,Non-White,Female,Symptomatic,297,28,1246,1196
+340754,Zidovudine and Zalcitabine,1038,37,105,No,White,Male,Asymptomatic,242,NA,1560,1869
+340763,Zidovudine and Zalcitabine,984,25,56.2464,No,Non-White,Male,Asymptomatic,434,484,493,544
+340767,Zidovudine,1002,19,74.844,No,Non-White,Male,Asymptomatic,503,NA,429,480
+340768,Didanosine,1023,27,60.4,No,Non-White,Female,Asymptomatic,511,361,1171,846
+340769,Didanosine,1007,27,53.9784,No,Non-White,Female,Asymptomatic,237,314,1120,920
+340771,Didanosine,308,48,73.2564,No,White,Male,Asymptomatic,481,68,525,390
+350247,Didanosine,976,41,104,No,White,Male,Asymptomatic,528,NA,607,695
+430074,Zidovudine,1120,28,88.6,No,Non-White,Female,Asymptomatic,532,418,745,713
+430075,Zidovudine and Zalcitabine,1087,30,73.8,No,Non-White,Female,Asymptomatic,539,548,623,682
+430080,Didanosine,1053,42,56.2,No,Non-White,Female,Asymptomatic,558,NA,586,714
+490308,Zidovudine,984,20,72,No,Non-White,Male,Asymptomatic,215,236,439,389
+520012,Zidovudine and Zalcitabine,1001,29,86.6376,Yes,White,Male,Asymptomatic,223,241,892,1206
+520014,zidovudine and Didanosine,308,33,120.6576,No,Non-White,Male,Asymptomatic,429,NA,1180,1497
+520015,Zidovudine,890,34,70.308,No,Non-White,Male,Asymptomatic,390,189,1239,1635
+520019,zidovudine and Didanosine,1028,52,61.236,No,White,Male,Symptomatic,319,NA,1596,1382
+520022,Zidovudine,962,32,66.6792,No,Non-White,Male,Asymptomatic,214,NA,816,1146
+520026,Zidovudine and Zalcitabine,404,30,73.9368,No,Non-White,Male,Asymptomatic,263,NA,998,1273
+520028,Didanosine,1054,28,98.8848,No,Non-White,Male,Asymptomatic,459,396,1355,774
+520031,Zidovudine,406,41,66.2256,No,White,Male,Asymptomatic,248,NA,874,1102
+520043,Didanosine,1019,19,54.432,No,Non-White,Female,Asymptomatic,374,300,590,519
+520049,Zidovudine and Zalcitabine,448,57,50.8032,No,Non-White,Male,Asymptomatic,399,54,694,878
+530009,zidovudine and Didanosine,913,42,68.04,No,Non-White,Male,Asymptomatic,426,527,1520,1083
+530014,Zidovudine,1019,28,68.2668,No,Non-White,Female,Asymptomatic,771,280,2257,2347
+530016,zidovudine and Didanosine,902,32,79.6068,No,Non-White,Female,Asymptomatic,230,455,308,330
+530020,Zidovudine and Zalcitabine,408,29,61.4628,No,Non-White,Male,Asymptomatic,437,NA,1139,974
+530021,Didanosine,927,48,72.1224,No,Non-White,Male,Asymptomatic,250,255,649,1348
+530022,Didanosine,505,26,50.3496,No,Non-White,Male,Asymptomatic,250,NA,720,655
+530023,Zidovudine and Zalcitabine,1015,30,92.0808,No,Non-White,Female,Asymptomatic,279,475,859,811
+530025,Zidovudine and Zalcitabine,918,33,43.00128,No,Non-White,Male,Asymptomatic,181,172,367,494
+530027,zidovudine and Didanosine,729,29,63.9576,No,Non-White,Female,Asymptomatic,326,NA,1378,951
+530029,Didanosine,907,40,77.112,No,Non-White,Male,Asymptomatic,308,542,1441,1375
+530031,zidovudine and Didanosine,417,37,81.648,Yes,Non-White,Female,Asymptomatic,198,NA,301,443
+530032,Zidovudine,537,36,82.1016,Yes,Non-White,Male,Asymptomatic,378,NA,572,231
+540009,Zidovudine and Zalcitabine,432,32,65.4,No,Non-White,Female,Asymptomatic,250,NA,570,600
+540011,Zidovudine and Zalcitabine,1077,26,56.8,No,Non-White,Female,Asymptomatic,330,340,700,552
+540012,Zidovudine,257,32,48.62592,No,Non-White,Female,Asymptomatic,280,20,1190,760
+540013,Didanosine,817,28,61.6896,No,Non-White,Female,Asymptomatic,380,240,840,1470
+540014,zidovudine and Didanosine,1030,28,50.3496,No,Non-White,Female,Asymptomatic,310,267,997,516
+540015,Zidovudine,485,34,72.576,Yes,Non-White,Male,Asymptomatic,370,NA,1330,1270
+540017,Zidovudine and Zalcitabine,1011,33,68.4936,Yes,Non-White,Male,Symptomatic,170,220,1140,1120
+540018,Didanosine,989,27,52.70832,No,Non-White,Male,Asymptomatic,420,310,1800,1370
+540019,Zidovudine and Zalcitabine,318,38,59.8752,Yes,Non-White,Female,Asymptomatic,610,NA,1350,1250
+540020,Didanosine,492,39,67.1328,Yes,Non-White,Male,Asymptomatic,420,NA,690,710
+540021,zidovudine and Didanosine,986,43,79.8336,Yes,Non-White,Male,Asymptomatic,200,150,450,650
+540022,Zidovudine,986,27,63.86688,No,Non-White,Male,Asymptomatic,490,380,990,920
+540023,Zidovudine and Zalcitabine,986,39,73.9368,No,Non-White,Female,Asymptomatic,420,500,730,1050
+540024,Zidovudine,986,28,52.164,No,Non-White,Female,Asymptomatic,410,450,890,820
+570009,zidovudine and Didanosine,261,31,68.9472,Yes,White,Female,Symptomatic,266,NA,740,1138
+570010,Zidovudine and Zalcitabine,1019,21,58.968,No,White,Female,Asymptomatic,344,284,603,730
+570011,Zidovudine and Zalcitabine,1004,34,82.1016,Yes,Non-White,Female,Asymptomatic,539,662,1550,1212
+570012,Zidovudine,569,45,90.2664,No,White,Male,Asymptomatic,307,48,863,1046
+570013,Zidovudine,990,27,70.7616,No,White,Male,Asymptomatic,396,360,849,1008
+570014,Didanosine,990,43,83.0088,No,Non-White,Male,Asymptomatic,282,390,1034,1082
+570015,zidovudine and Didanosine,990,38,103.194,Yes,White,Male,Asymptomatic,200,389,734,1175
+580009,Zidovudine,1086,38,63.7308,Yes,White,Male,Asymptomatic,456,300,765,477
+580010,Didanosine,1084,36,70.7616,No,White,Male,Asymptomatic,364,376,977,1066
+580011,Zidovudine,1081,35,76.4316,No,Non-White,Male,Asymptomatic,538,328,706,655
+580013,zidovudine and Didanosine,397,36,75.7512,No,White,Male,Asymptomatic,349,NA,925,1223
+580015,Didanosine,1076,36,67.3596,No,White,Male,Asymptomatic,232,358,277,425
+580016,zidovudine and Didanosine,1082,43,94.8024,No,White,Male,Asymptomatic,446,344,1868,1404
+580018,Zidovudine,1018,29,80.5,No,White,Male,Asymptomatic,450,NA,978,826
+580019,Zidovudine and Zalcitabine,305,34,73.4832,No,White,Male,Asymptomatic,350,NA,865,527
+580020,Zidovudine,1081,33,63.504,No,White,Female,Asymptomatic,348,415,441,379
+580021,Zidovudine,1083,39,80.9676,No,White,Male,Asymptomatic,424,348,524,460
+580022,Didanosine,1033,28,70.7616,No,White,Male,Asymptomatic,464,330,1170,728
+580023,Zidovudine and Zalcitabine,1033,33,73.0296,No,Non-White,Female,Symptomatic,473,NA,2451,2606
+580024,Zidovudine and Zalcitabine,1077,29,78.6996,No,White,Male,Asymptomatic,270,304,1296,1057
+580025,Zidovudine and Zalcitabine,1085,42,70.5348,No,White,Male,Asymptomatic,289,329,1491,838
+580026,Didanosine,158,30,67.1328,No,White,Male,Asymptomatic,269,7,1613,651
+580027,zidovudine and Didanosine,1032,40,69.8544,No,White,Male,Asymptomatic,229,65,1038,653
+580028,zidovudine and Didanosine,1033,33,74.844,No,White,Male,Asymptomatic,364,426,655,712
+580029,Zidovudine and Zalcitabine,1032,51,68.04,No,Non-White,Male,Asymptomatic,202,31,529,392
+580030,Zidovudine,1032,44,77.5656,No,White,Male,Asymptomatic,240,NA,765,872
+580033,Zidovudine and Zalcitabine,269,41,83.4624,No,White,Female,Asymptomatic,232,NA,901,682
+580034,Didanosine,729,28,87.9984,No,White,Female,Asymptomatic,316,158,700,890
+580035,Zidovudine,582,39,73.0296,No,Non-White,Male,Asymptomatic,254,NA,606,734
+580036,Didanosine,1046,35,89.3592,No,White,Male,Asymptomatic,527,571,1156,1180
+580038,Zidovudine and Zalcitabine,316,63,86.6376,No,Non-White,Male,Asymptomatic,593,NA,537,647
+580039,Didanosine,1039,33,66.4524,No,Non-White,Female,Asymptomatic,310,361,800,1032
+580040,zidovudine and Didanosine,1014,30,70.9884,Yes,White,Male,Asymptomatic,300,218,1307,829
+580041,Zidovudine and Zalcitabine,1013,47,84.8,No,White,Male,Asymptomatic,468,828,716,438
+580043,Didanosine,1000,27,70.5348,No,White,Male,Asymptomatic,252,305,1040,1348
+580044,Zidovudine and Zalcitabine,986,26,70.0812,No,White,Male,Asymptomatic,340,464,875,984
+590059,Zidovudine and Zalcitabine,992,27,62.5968,No,Non-White,Female,Asymptomatic,647,497,988,638
+610009,Didanosine,562,45,81.33048,Yes,White,Male,Asymptomatic,205,77,1435,1256
+610011,Didanosine,624,35,70.5,Yes,White,Male,Asymptomatic,273,NA,2263,1529
+610013,Zidovudine and Zalcitabine,1088,27,74.844,No,White,Male,Asymptomatic,441,173,1415,1102
+610014,Zidovudine and Zalcitabine,1068,51,102.3,No,White,Male,Asymptomatic,409,589,563,422
+610015,Zidovudine,314,25,58.7,No,White,Male,Asymptomatic,155,NA,1041,857
+610016,Zidovudine and Zalcitabine,978,54,75.5,No,White,Female,Symptomatic,418,321,1426,1083
+610017,Zidovudine,231,28,83.0088,No,White,Male,Asymptomatic,304,NA,1040,1317
+610018,Zidovudine,974,40,70.4,No,White,Male,Asymptomatic,238,NA,666,690
+610019,Didanosine,1041,60,65.8,No,White,Male,Asymptomatic,326,252,405,557
+610020,Zidovudine and Zalcitabine,806,32,64.1844,No,White,Male,Asymptomatic,573,NA,764,583
+610023,zidovudine and Didanosine,939,41,63.5,No,White,Male,Asymptomatic,375,NA,1774,1910
+610024,Didanosine,904,33,75.5,No,White,Male,Asymptomatic,112,190,291,541
+610025,Zidovudine,797,39,74.43576,No,White,Male,Asymptomatic,406,NA,624,992
+610026,Didanosine,896,31,72.8,No,White,Female,Asymptomatic,314,369,572,846
+610027,Zidovudine and Zalcitabine,1006,34,66.4,No,Non-White,Male,Symptomatic,307,374,970,935
+610028,Zidovudine,1032,33,74.4,No,White,Male,Asymptomatic,212,341,575,1574
+610033,Didanosine,1007,36,77,No,White,Male,Symptomatic,232,262,986,1853
+610034,zidovudine and Didanosine,855,32,84.1,No,White,Male,Asymptomatic,553,371,2029,1803
+610035,zidovudine and Didanosine,989,28,67.6,No,White,Male,Asymptomatic,378,NA,972,1054
+610038,Zidovudine,886,32,78.0192,No,White,Male,Asymptomatic,274,NA,712,750
+610040,Didanosine,989,28,88.9,Yes,White,Male,Asymptomatic,322,269,1041,529
+610042,Zidovudine,844,31,71.8,No,White,Male,Asymptomatic,461,352,1318,1617
+610043,Zidovudine and Zalcitabine,225,30,36.78696,No,White,Male,Asymptomatic,222,NA,666,544
+620009,Didanosine,613,47,69.5,No,White,Male,Asymptomatic,350,160,1440,942
+620010,Zidovudine,738,40,85.5,No,Non-White,Male,Symptomatic,430,420,1260,1480
+620014,Zidovudine and Zalcitabine,287,28,61,No,Non-White,Male,Asymptomatic,360,NA,410,400
+620018,zidovudine and Didanosine,993,35,55.5,No,Non-White,Female,Symptomatic,300,280,790,520
+620019,Didanosine,1053,27,96.1,No,Non-White,Male,Asymptomatic,590,890,1330,1300
+620020,Zidovudine,392,28,73.5,No,Non-White,Female,Asymptomatic,381,100,4255,2690
+620022,zidovudine and Didanosine,1048,39,83.9,No,White,Male,Asymptomatic,370,NA,630,490
+620023,Zidovudine,220,37,72.5,No,White,Female,Asymptomatic,390,NA,2840,1980
+620025,Zidovudine,1012,36,69.5,No,Non-White,Male,Asymptomatic,190,60,340,510
+620026,Zidovudine and Zalcitabine,1045,33,67.4,No,White,Male,Asymptomatic,422,NA,1040,690
+620027,zidovudine and Didanosine,412,30,75.9,No,White,Male,Asymptomatic,580,90,950,874
+620037,Zidovudine,306,39,112.5,Yes,Non-White,Female,Symptomatic,360,NA,550,590
+620038,zidovudine and Didanosine,894,45,78,Yes,Non-White,Male,Asymptomatic,380,350,490,535
+620039,Zidovudine and Zalcitabine,963,37,87,No,White,Male,Asymptomatic,480,730,1550,1910
+620042,Zidovudine,874,39,71.3,Yes,Non-White,Male,Asymptomatic,490,400,1030,1040
+620044,Didanosine,1010,21,77,No,Non-White,Male,Symptomatic,410,NA,1270,1430
+620045,zidovudine and Didanosine,1014,36,57.5,No,Non-White,Male,Asymptomatic,160,210,1390,980
+620046,zidovudine and Didanosine,1010,42,49.5,No,White,Male,Asymptomatic,260,460,1340,1280
+620047,Zidovudine and Zalcitabine,1011,35,64.2,No,White,Male,Symptomatic,260,330,1010,1590
+620053,Didanosine,741,31,45,No,Non-White,Female,Asymptomatic,530,330,1210,1030
+620054,Zidovudine,229,45,84.3,No,White,Male,Asymptomatic,420,NA,1110,1070
+620058,zidovudine and Didanosine,423,31,80.5,No,Non-White,Male,Asymptomatic,170,100,570,350
+620065,Didanosine,986,37,89.7,No,White,Male,Asymptomatic,390,290,1090,910
+620409,Didanosine,813,29,54,No,White,Female,Symptomatic,182,90,606,764
+620410,Zidovudine and Zalcitabine,1052,23,60.5,No,Non-White,Female,Asymptomatic,311,170,246,195
+620412,Didanosine,134,51,55.3,No,White,Female,Symptomatic,277,NA,768,1224
+620416,Zidovudine,221,29,64.2,No,Non-White,Male,Symptomatic,175,NA,905,876
+620420,zidovudine and Didanosine,775,29,67.7,No,White,Male,Asymptomatic,489,240,1050,519
+630012,Zidovudine,224,38,94.5,Yes,White,Male,Symptomatic,242,NA,418,343
+630013,Didanosine,224,39,63.1,No,Non-White,Male,Symptomatic,247,NA,364,266
+630014,zidovudine and Didanosine,190,51,119.2968,No,White,Male,Asymptomatic,231,NA,492,605
+630016,zidovudine and Didanosine,910,49,55.7,No,White,Female,Asymptomatic,200,310,500,649
+630019,Zidovudine and Zalcitabine,301,38,84.91392,Yes,White,Male,Asymptomatic,450,86,954,730
+630020,Didanosine,1061,31,77.5656,No,Non-White,Male,Asymptomatic,432,420,846,882
+630021,Zidovudine,383,32,64.4112,Yes,White,Female,Asymptomatic,234,27,225,294
+630022,zidovudine and Didanosine,357,39,85.7304,No,Non-White,Male,Asymptomatic,550,NA,594,574
+630023,Zidovudine,392,26,86.184,Yes,White,Male,Asymptomatic,342,NA,1098,650
+630024,Zidovudine and Zalcitabine,730,33,65,No,Non-White,Male,Asymptomatic,165,7,900,1000
+630025,Didanosine,1048,51,68.4936,No,White,Female,Asymptomatic,297,150,504,450
+630026,Zidovudine,231,41,80.2872,No,Non-White,Male,Asymptomatic,300,202,795,564
+630028,Zidovudine and Zalcitabine,1042,41,60,Yes,White,Female,Asymptomatic,324,NA,588,506
+630029,Didanosine,1041,43,62.5,No,White,Male,Asymptomatic,252,248,252,238
+630030,Zidovudine,623,29,88.17984,Yes,Non-White,Male,Symptomatic,378,235,864,545
+630031,zidovudine and Didanosine,298,25,74.9,No,White,Female,Asymptomatic,418,NA,1064,1198
+630032,Zidovudine and Zalcitabine,1027,34,70.1,No,White,Male,Asymptomatic,380,286,988,1201
+630033,Didanosine,1020,40,87,No,White,Male,Asymptomatic,412,490,804,1003
+630034,Zidovudine,182,27,90.08496,Yes,Non-White,Male,Asymptomatic,462,NA,1034,938
+630035,Zidovudine and Zalcitabine,889,31,81.1944,Yes,White,Female,Asymptomatic,403,592,689,882
+630036,zidovudine and Didanosine,1014,30,71.3,No,White,Female,Asymptomatic,520,748,772,1061
+630037,Zidovudine and Zalcitabine,1014,29,67.5864,No,Non-White,Male,Asymptomatic,429,539,759,653
+630038,Zidovudine,868,47,53.9784,No,White,Female,Asymptomatic,534,428,675,446
+630039,Didanosine,1005,35,85.7304,Yes,Non-White,Male,Asymptomatic,434,NA,636,438
+630041,Zidovudine and Zalcitabine,875,27,70.7616,Yes,Non-White,Male,Asymptomatic,347,403,419,608
+630042,Zidovudine,997,31,76.11408,No,White,Male,Asymptomatic,420,NA,706,916
+630043,zidovudine and Didanosine,990,27,72.5,No,Non-White,Male,Asymptomatic,328,286,218,220
+630044,Zidovudine and Zalcitabine,743,45,71.3,No,White,Male,Asymptomatic,335,217,567,408
+640009,Zidovudine,1033,52,91.1736,No,Non-White,Female,Asymptomatic,238,290,792,730
+640010,Zidovudine and Zalcitabine,552,29,68.9,Yes,Non-White,Female,Asymptomatic,321,NA,1606,830
+640011,Zidovudine and Zalcitabine,916,37,86.184,Yes,Non-White,Male,Asymptomatic,560,528,1780,910
+640012,zidovudine and Didanosine,1018,32,63.6,Yes,White,Female,Asymptomatic,340,360,570,330
+640013,Didanosine,1014,40,78.9264,No,Non-White,Female,Asymptomatic,330,380,920,1010
+640015,Didanosine,885,47,62.5968,No,White,Female,Asymptomatic,110,NA,230,140
+640016,Zidovudine and Zalcitabine,913,39,62.5968,No,White,Female,Asymptomatic,280,196,440,200
+640018,zidovudine and Didanosine,993,62,98.8848,No,White,Male,Asymptomatic,430,590,1040,570
+640020,zidovudine and Didanosine,957,34,72.1224,Yes,White,Female,Asymptomatic,350,350,720,1270
+640021,Zidovudine,491,40,62.5968,No,White,Female,Asymptomatic,410,NA,1760,3130
+640022,Didanosine,678,36,83.916,Yes,Non-White,Male,Symptomatic,300,NA,550,560
+640023,Zidovudine and Zalcitabine,891,23,93.8952,No,Non-White,Female,Asymptomatic,400,NA,730,860
+640026,zidovudine and Didanosine,947,44,53.5248,Yes,White,Female,Asymptomatic,310,230,1020,720
+640027,Zidovudine,158,43,59,Yes,Non-White,Female,Asymptomatic,290,NA,870,990
+640028,Didanosine,948,34,96.6168,No,White,Male,Asymptomatic,420,460,1170,1540
+640030,zidovudine and Didanosine,672,44,77.112,Yes,Non-White,Male,Asymptomatic,349,NA,424,450
+900017,Zidovudine,310,39,72.3,No,White,Male,Asymptomatic,319,NA,839,857
+900029,Zidovudine and Zalcitabine,1154,21,68,No,White,Male,Symptomatic,417,NA,659,564
+900030,Zidovudine and Zalcitabine,372,27,70.2,No,White,Male,Asymptomatic,302,NA,626,710
+900031,Zidovudine,474,29,62.5,No,White,Male,Symptomatic,406,NA,649,487
+900032,Didanosine,355,32,75,No,White,Male,Asymptomatic,537,NA,427,417
+910028,zidovudine and Didanosine,644,38,74.1636,No,White,Male,Symptomatic,267,NA,956,785
+910029,Didanosine,1140,16,58.0608,No,White,Male,Asymptomatic,369,NA,906,1044
+910030,Didanosine,1106,24,80.7408,No,Non-White,Female,Asymptomatic,271,155,829,838
+910031,zidovudine and Didanosine,1106,22,52.75368,No,White,Female,Asymptomatic,214,253,844,911
+910033,Zidovudine and Zalcitabine,1173,44,81.1944,No,White,Male,Asymptomatic,477,641,1286,937
+910034,Zidovudine and Zalcitabine,1121,13,32.6592,No,White,Male,Symptomatic,265,NA,434,993
+910036,Didanosine,624,17,83.916,No,White,Male,Asymptomatic,388,NA,1143,971
+910037,Zidovudine and Zalcitabine,211,24,90,No,White,Male,Asymptomatic,208,NA,578,497
+910038,Zidovudine,133,30,57.834,No,White,Male,Asymptomatic,239,NA,532,279
+910039,zidovudine and Didanosine,1143,35,85.7304,No,White,Male,Asymptomatic,282,NA,600,669
+910044,Zidovudine,1002,23,63.1,No,White,Male,Asymptomatic,309,NA,540,397
+910045,Zidovudine,427,20,77.112,No,White,Male,Asymptomatic,248,202,413,484
+910053,Zidovudine and Zalcitabine,196,33,84.7,No,White,Female,Asymptomatic,294,NA,2418,1406
+910056,Zidovudine,1090,32,72.2,No,White,Male,Asymptomatic,287,395,786,916
+910057,Zidovudine and Zalcitabine,490,23,63.9576,No,White,Male,Asymptomatic,258,NA,499,720
+910059,Didanosine,1012,25,62.37,No,White,Male,Asymptomatic,454,464,1483,985
+910060,Didanosine,991,33,73.0296,No,White,Male,Asymptomatic,371,390,1398,950
+920031,Zidovudine,1157,33,72.576,No,White,Male,Asymptomatic,346,382,641,713
+920032,Zidovudine and Zalcitabine,1157,23,80.7408,No,White,Male,Asymptomatic,524,358,690,812
+920035,Zidovudine and Zalcitabine,1095,62,81.648,No,White,Male,Asymptomatic,334,388,1070,932
+920038,Zidovudine and Zalcitabine,148,19,77.88312,No,White,Male,Asymptomatic,315,NA,1241,533
+920040,Zidovudine and Zalcitabine,133,42,60.01128,No,White,Male,Asymptomatic,320,NA,815,756
+920041,Didanosine,1140,30,92.5344,No,White,Male,Asymptomatic,300,412,1047,730
+920042,Didanosine,580,28,108.4104,No,White,Male,Asymptomatic,550,NA,1377,1194
+920043,zidovudine and Didanosine,1140,19,70.308,No,White,Male,Asymptomatic,410,397,913,796
+920044,Zidovudine,1133,28,114.7608,No,White,Male,Asymptomatic,396,NA,990,801
+920046,Zidovudine,1119,54,93.2148,No,White,Male,Asymptomatic,400,274,333,305
+920047,Didanosine,567,48,81.1944,No,Non-White,Male,Asymptomatic,461,238,177,220
+920048,Zidovudine and Zalcitabine,1105,44,82.1016,No,White,Male,Asymptomatic,534,465,383,270
+920049,Zidovudine and Zalcitabine,1087,24,49.896,No,Non-White,Male,Asymptomatic,190,180,950,1010
+920050,Didanosine,1087,14,54.2052,No,Non-White,Male,Asymptomatic,290,310,1200,960
+920051,zidovudine and Didanosine,1077,16,54.8856,No,Non-White,Male,Asymptomatic,470,420,950,920
+920052,zidovudine and Didanosine,898,23,66.906,No,Non-White,Male,Asymptomatic,194,148,550,779
+940519,Zidovudine,314,18,56.8,No,Non-White,Male,Asymptomatic,276,34,1279,805
+940521,Didanosine,1151,32,74.3,No,White,Male,Asymptomatic,324,469,315,405
+940522,Zidovudine,413,28,72.03168,No,White,Male,Asymptomatic,348,NA,528,450
+940524,Zidovudine and Zalcitabine,1145,18,75.2976,No,White,Male,Asymptomatic,439,486,760,702
+940527,Zidovudine and Zalcitabine,1129,30,83.82528,Yes,White,Male,Asymptomatic,248,NA,538,444
+940528,Zidovudine,484,37,92,No,White,Male,Asymptomatic,214,NA,1000,1026
+940529,Zidovudine,781,32,65.95344,No,White,Male,Asymptomatic,416,525,816,598
+940531,zidovudine and Didanosine,1115,21,62.86896,No,White,Male,Asymptomatic,229,266,1041,662
+940532,zidovudine and Didanosine,701,24,89.8128,No,Non-White,Male,Asymptomatic,322,20,1612,1496
+940533,Didanosine,1101,12,41.4,No,Non-White,Male,Asymptomatic,301,422,314,457
+940534,Zidovudine and Zalcitabine,265,13,62.86896,No,White,Male,Asymptomatic,445,NA,810,678
+940535,Zidovudine,1056,31,81.8,No,White,Male,Asymptomatic,532,407,1719,657
+940536,Zidovudine,425,21,80.514,No,White,Male,Asymptomatic,300,60,438,701
+940537,Didanosine,1088,25,80.2872,No,White,Male,Asymptomatic,306,402,384,395
+940538,Didanosine,588,28,76.8852,No,Non-White,Male,Asymptomatic,305,NA,1119,778
+940539,Didanosine,109,33,115.53192,No,Non-White,Male,Asymptomatic,424,NA,2404,1013
+940540,zidovudine and Didanosine,1088,32,70.2,No,White,Male,Asymptomatic,313,381,2784,1794
+940541,Didanosine,910,42,74.844,No,White,Male,Asymptomatic,224,270,548,746
+940542,Zidovudine and Zalcitabine,923,52,80.2872,No,White,Male,Asymptomatic,186,192,568,657
+940543,Zidovudine and Zalcitabine,1069,44,80.0604,No,Non-White,Male,Asymptomatic,324,176,1617,1146
+940544,Didanosine,1082,14,41.0508,No,White,Male,Asymptomatic,516,702,1081,1403
+940547,zidovudine and Didanosine,699,20,71.9,No,White,Male,Asymptomatic,290,71,841,897
+940549,Zidovudine,999,35,80.514,No,Non-White,Male,Asymptomatic,490,490,1151,1008
+950027,Zidovudine,993,21,64.4,No,White,Male,Asymptomatic,579,301,1116,1197
+950031,Didanosine,1092,38,85.4,No,White,Male,Asymptomatic,290,272,570,365
+950034,zidovudine and Didanosine,1145,40,86.4108,No,White,Male,Asymptomatic,296,271,395,451
+950036,Zidovudine,1140,27,60.3288,No,White,Male,Asymptomatic,448,256,3046,2798
+950037,zidovudine and Didanosine,1147,12,53.1,No,White,Male,Asymptomatic,328,497,712,1582
+950041,Didanosine,1144,27,60.6,No,White,Male,Asymptomatic,230,382,755,530
+950051,Zidovudine,506,28,68.2,No,White,Male,Asymptomatic,278,121,324,218
+950056,zidovudine and Didanosine,324,12,31,No,White,Male,Asymptomatic,187,NA,176,124
+950061,Didanosine,739,14,64.3,No,Non-White,Male,Asymptomatic,383,NA,1043,1251
+950062,zidovudine and Didanosine,959,30,73.0296,No,White,Male,Asymptomatic,718,NA,491,398
+950064,Zidovudine and Zalcitabine,1089,24,83,No,White,Male,Asymptomatic,452,403,733,875
+950069,Zidovudine and Zalcitabine,757,15,46.8,No,White,Male,Asymptomatic,311,NA,699,508
+950071,Zidovudine,414,21,75.4,No,Non-White,Male,Asymptomatic,190,48,1045,1252
+950075,zidovudine and Didanosine,1088,16,41,No,White,Male,Asymptomatic,458,335,1861,1841
+950077,Zidovudine and Zalcitabine,1088,16,60,No,White,Male,Symptomatic,440,374,451,323
+950078,Zidovudine,1088,21,93.6,No,Non-White,Male,Asymptomatic,628,323,1167,906
+950080,Zidovudine and Zalcitabine,1018,35,73.2,No,White,Male,Asymptomatic,519,360,1016,722
+950081,Didanosine,636,24,66.4,Yes,White,Male,Asymptomatic,359,226,745,591
+960009,Didanosine,1143,27,58.0608,No,Non-White,Male,Asymptomatic,353,NA,680,1086
+960010,Zidovudine and Zalcitabine,1016,31,82.3284,No,White,Male,Asymptomatic,323,333,1394,1021
+960011,Zidovudine,601,40,85.7304,No,White,Male,Asymptomatic,428,NA,643,663
+960012,Didanosine,596,27,94.5756,No,White,Male,Asymptomatic,323,NA,1714,1360
+960013,Zidovudine and Zalcitabine,696,50,97.9776,No,White,Male,Symptomatic,281,NA,1176,873
+960014,Zidovudine,400,13,48.5352,No,White,Male,Symptomatic,283,NA,457,767
+960016,zidovudine and Didanosine,987,32,53.7516,No,White,Male,Asymptomatic,383,444,405,560
+960017,Didanosine,717,36,76.6584,No,White,Male,Asymptomatic,265,NA,967,1080
+960018,Zidovudine and Zalcitabine,795,25,81.1944,No,Non-White,Male,Asymptomatic,196,NA,517,355
+960019,Zidovudine and Zalcitabine,1114,47,60.64632,No,White,Male,Asymptomatic,142,207,891,927
+960020,zidovudine and Didanosine,1109,18,75.7512,No,White,Male,Asymptomatic,148,215,781,571
+960021,Zidovudine,408,23,57.6072,No,White,Male,Asymptomatic,122,NA,875,840
+960022,zidovudine and Didanosine,1007,22,60.23808,No,Non-White,Male,Asymptomatic,225,293,2387,1444
+960023,Didanosine,1096,29,79.38,No,Non-White,Male,Asymptomatic,348,362,1501,1044
+960024,Didanosine,1021,41,56.2464,No,White,Male,Asymptomatic,470,NA,1716,1115
+960025,Zidovudine and Zalcitabine,597,25,73.4832,No,White,Male,Asymptomatic,380,NA,1360,1012
+960026,zidovudine and Didanosine,1089,30,51.7104,No,White,Male,Symptomatic,226,243,519,500
+960028,zidovudine and Didanosine,658,20,55.3392,No,White,Male,Asymptomatic,386,NA,593,725
+960029,Zidovudine and Zalcitabine,868,32,61.9164,No,White,Male,Asymptomatic,646,NA,463,546
+960031,Zidovudine,1004,14,48.3084,No,White,Male,Asymptomatic,481,519,1129,1240
+970025,Didanosine,795,29,57.2,No,White,Female,Asymptomatic,230,148,546,685
+970026,Zidovudine,1043,48,77.2,No,White,Male,Asymptomatic,360,NA,351,374
+970027,zidovudine and Didanosine,1154,37,82.7,No,White,Male,Asymptomatic,358,451,1150,927
+970029,Zidovudine and Zalcitabine,1144,27,64.5,No,White,Male,Asymptomatic,316,232,1517,1182
+970031,Zidovudine and Zalcitabine,1132,23,74.5,No,Non-White,Male,Asymptomatic,255,165,600,530
+970032,zidovudine and Didanosine,636,18,80.4,No,White,Male,Symptomatic,322,NA,919,1355
+970033,Didanosine,487,47,84,No,White,Male,Asymptomatic,128,NA,370,1343
+970462,zidovudine and Didanosine,841,38,82.7,No,White,Male,Asymptomatic,260,NA,818,963
+970463,Didanosine,1156,25,78.5,No,White,Male,Asymptomatic,202,237,694,1015
+970465,Zidovudine and Zalcitabine,1156,16,57.8,No,White,Male,Asymptomatic,395,NA,426,572
+970466,Zidovudine,263,22,85.9,No,White,Male,Asymptomatic,242,NA,465,536
+970470,Didanosine,1152,27,85.8,No,White,Male,Asymptomatic,176,170,960,1372
+970472,Zidovudine and Zalcitabine,150,18,77,No,White,Male,Asymptomatic,294,NA,910,918
+970474,Didanosine,1124,23,66.2,No,White,Male,Asymptomatic,266,265,577,535
+970475,Zidovudine,826,22,99.6,No,White,Male,Asymptomatic,478,NA,632,783
+980009,Zidovudine,1081,33,73,No,Non-White,Male,Symptomatic,190,NA,713,1312
+980011,zidovudine and Didanosine,1083,41,55,No,White,Male,Asymptomatic,429,NA,2508,1463
+980022,zidovudine and Didanosine,664,36,60,No,White,Male,Asymptomatic,739,198,795,603
+980023,Zidovudine,1097,24,71,No,White,Male,Asymptomatic,364,734,770,802
+980026,Didanosine,1146,23,70.9,No,White,Male,Asymptomatic,434,348,1018,806
+980027,Zidovudine,154,21,52.3,No,White,Male,Asymptomatic,415,84,949,666
+980028,Didanosine,1146,25,70.5,No,White,Male,Asymptomatic,550,634,5011,6035
+980029,Zidovudine and Zalcitabine,811,26,55,No,White,Female,Symptomatic,233,326,1209,1126
+980038,Zidovudine and Zalcitabine,889,16,55,No,Non-White,Male,Asymptomatic,198,NA,954,811
+980039,Zidovudine and Zalcitabine,1069,24,66,No,White,Male,Asymptomatic,312,447,352,443
+980041,Didanosine,1101,25,65,No,White,Male,Asymptomatic,252,NA,672,421
+980042,Zidovudine,588,16,63,No,White,Male,Asymptomatic,299,124,546,471
+980045,Zidovudine and Zalcitabine,1087,25,78,No,White,Male,Asymptomatic,468,808,636,554
+980046,zidovudine and Didanosine,948,20,72.4,No,White,Female,Asymptomatic,483,494,1728,1504
+990018,Didanosine,413,27,80.2872,No,White,Male,Asymptomatic,321,NA,910,1009
+990019,Zidovudine and Zalcitabine,1041,39,64.8648,No,White,Male,Asymptomatic,378,NA,504,367
+990021,Didanosine,1091,21,53.298,No,White,Male,Asymptomatic,152,NA,561,720
+990026,Zidovudine,395,17,102.9672,No,Non-White,Male,Asymptomatic,373,NA,1759,1030
+990030,Zidovudine and Zalcitabine,1104,53,69.8544,No,Non-White,Male,Asymptomatic,419,526,1391,1041
+990071,Zidovudine,465,14,60,No,White,Male,Asymptomatic,166,28,999,1838
+990077,Didanosine,1045,45,77.3,No,White,Male,Asymptomatic,911,NA,885,526

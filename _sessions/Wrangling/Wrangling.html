@@ -1,0 +1,1079 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Wrangling</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Wrangling
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Februar 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Explorative Datenanalyse mit R | Februar 2020
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+# Was ist &lt;i&gt;Wrangling&lt;/i&gt;?
+
+&lt;p align = "center"&gt;
+&lt;img src="image/wrangling.jpeg" height=450px&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://datasciencebe.com/tag/data-wrangling/"&gt;datasciencebe.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+---
+
+.pull-left45[
+
+# Das ist Wrangling!
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Transformieren&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Spaltennamen verändern&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Neue Variablen kreieren&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Organisieren&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Sortieren&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Datensätze zusammenführen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Spalten zu Zeilen flippen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Aggregieren&lt;/high&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Datengruppen bilden&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Statistiken für Gruppen berechnen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+]
+
+.pull-right5[
+&lt;br&gt;
+&lt;p align="center"&gt;
+&lt;img src="image/wrangling.png" height = "530px"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+
+.pull-left4[
+
+# 2 'dreckige' Datensätze
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Umbenennen&lt;/high&gt;: Intuitive Spaltennamen vergeben.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Umkodieren&lt;/high&gt;: Angemessene Einheiten und Datenlabels  vergeben.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Verbinden&lt;/high&gt;: Datensätze zusammenführen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Sortieren&lt;/high&gt;: Datensatz ordnen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;Filtern&lt;/high&gt;: Relevante Fälle auswählen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Auswählen&lt;/high&gt;: Relevante Variablen auswählen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+&lt;br&gt;
+
+
+
+
+```r
+patienten
+```
+
+```
+## # A tibble: 5 x 3
+##      id    X1    X2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37     1
+## 2     2    65     2
+## 3     3    57     2
+## 4     4    34     1
+## 5     5    45     2
+```
+
+
+
+
+
+```r
+ergebnisse
+```
+
+```
+## # A tibble: 5 x 3
+##      id   t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     4   100   105
+## 2    92   134   150
+## 3     1   123   135
+## 4     2   143   140
+## 5    99   102    68
+```
+
+]
+
+
+---
+
+# Das mächtige `tidyverse`
+
+Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-performanter, nutzerfreundlicher Pakete, die speziell für eine effizientere Datenanalyse entwickelt wurden. 
+1. `ggplot2` für Grafiken.
+2. &lt;high&gt;&lt;mono&gt;dplyr&lt;/mono&gt; für Datenverarbeitung&lt;/high&gt;.
+3. &lt;high&gt;&lt;mono&gt;tidyr&lt;/mono&gt; für Datenverarbeitung&lt;/high&gt;.
+4. `readr` für Daten I/O.
+5. `purrr` für funktionales Programmieren.
+6. `tibble` für moderne `data.frame`s.
+&lt;br&gt;&lt;br&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;tr&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-ggplot2.png" height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+        &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-dplyr.png"height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-tidyr.png"height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-readr.png"height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-purrr.png"height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-tibble.png"height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# &lt;mono&gt;`%&gt;%`&lt;/mono&gt;
+
+.pull-left45[
+
+Der präferierte Gebrauch von `dplyr` beinhaltet einen &lt;high&gt;neuen Operator&lt;/high&gt;, die Pipe &lt;high&gt;`%&gt;%`&lt;/high&gt;.
+
+&lt;br&gt;
+
+&lt;p align="center"&gt;
+  &lt;img src="image/pipe.jpg" width = "300px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/MagrittePipe.jpg"&gt;wikimedia.org&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right45[
+
+
+
+```r
+# Numerischer Vektor
+score &lt;- c(8, 4, 6, 3, 7, 3)
+score
+```
+
+```
+## [1] 8 4 6 3 7 3
+```
+
+```r
+# Mittelwert: Base-R-style
+mean(score)
+```
+
+```
+## [1] 5.167
+```
+
+```r
+# Mittelwert: dplyr-style
+score %&gt;%  
+  mean()  
+```
+
+```
+## [1] 5.167
+```
+
+
+]
+
+
+
+---
+
+# `%&gt;%`
+
+.pull-left45[
+
+Der präferierte Gebrauch von `dplyr` beinhaltet einen &lt;high&gt;neuen Operator&lt;/high&gt;, die Pipe &lt;high&gt;`%&gt;%`&lt;/high&gt;.
+
+&lt;br&gt;
+
+&lt;p align="center"&gt;
+  &lt;img src="image/pipe.jpg" width = "300px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/MagrittePipe.jpg"&gt;wikimedia.org&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+.pull-right45[
+
+&lt;p align="center"&gt;
+  &lt;img src="image/pipe.png" height = "400px"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+
+.pull-left4[
+
+# Transformation
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Umbenennen&lt;/high&gt;: Intuitive Spaltennamen vergeben.
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;rename()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Umkodieren&lt;/high&gt;: Angemessene Einheiten und Datenlabels  vergeben.
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mutate()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;case_when()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Verbinden&lt;/high&gt;: Datensätze zusammenführen.
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;left_join()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+&lt;br&gt;
+
+
+
+
+```r
+patienten
+```
+
+```
+## # A tibble: 5 x 3
+##      id    X1    X2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37     1
+## 2     2    65     2
+## 3     3    57     2
+## 4     4    34     1
+## 5     5    45     2
+```
+
+
+
+
+
+```r
+ergebnisse
+```
+
+```
+## # A tibble: 5 x 3
+##      id   t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1     4   100   105
+## 2    92   134   150
+## 3     1   123   135
+## 4     2   143   140
+## 5    99   102    68
+```
+
+]
+
+---
+
+# `rename()` 
+
+.pull-left45[
+
+
+```r
+patienten %&gt;%
+  rename(NEU = ALT,
+         NEU = ALT)
+```
+
+]
+
+.pull-right45[
+
+
+```r
+# Starte mit Datensatz
+patienten %&gt;% 
+
+# Ändere Spaltennamen
+  rename(alter = X1,
+         bedingung = X2)
+```
+
+```
+## # A tibble: 5 x 3
+##      id alter bedingung
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;
+## 1     1    37         1
+## 2     2    65         2
+## 3     3    57         2
+## 4     4    34         1
+## 5     5    45         2
+```
+
+
+]
+
+---
+
+# `mutate()` 
+
+.pull-left45[
+
+
+```r
+tibble %&gt;%
+  mutate(
+   NAME1 = DEFINITION1,
+   NAME2 = DEFINITION2,
+   NAME3 = DEFINITION3,
+   ...
+  )
+```
+]
+
+.pull-right45[
+
+
+```r
+patienten %&gt;% 
+  rename(alter = X1, 
+         bedingung = X2) %&gt;%
+  
+# Kreiere neue Variablen
+  mutate(monate = alter * 12,
+         dekaden = alter / 10)
+```
+
+```
+## # A tibble: 5 x 5
+##      id alter bedingung monate dekaden
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;
+## 1     1    37         1    444     3.7
+## 2     2    65         2    780     6.5
+## 3     3    57         2    684     5.7
+## 4     4    34         1    408     3.4
+## 5     5    45         2    540     4.5
+```
+
+]
+
+---
+
+# `case_when()`
+
+.pull-left45[
+
+
+```r
+tibble %&gt;%
+  mutate(
+    NAME = case_when(
+      LOGICAL1 ~ WERT1,
+      LOGICAL2 ~ WERT2,
+      ...
+      )
+    )
+```
+
+
+]
+
+.pull-right45[
+
+
+```r
+patienten %&gt;% 
+  rename(alter = X1, 
+         bedingung = X2) %&gt;%
+  
+# Kreiere bed_label von bedingung
+  mutate(bed_label = case_when(
+    bedingung == 1 ~ "placebo",
+    bedingung == 2 ~ "medikament"))
+```
+
+```
+## # A tibble: 5 x 4
+##      id alter bedingung bed_label 
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;     
+## 1     1    37         1 placebo   
+## 2     2    65         2 medikament
+## 3     3    57         2 medikament
+## 4     4    34         1 placebo   
+## 5     5    45         2 medikament
+```
+
+]
+
+
+---
+
+# Verbinde Daten
+ 
+&lt;p align="center"&gt;
+  &lt;img src="image/joining_data.png" height="450px"&gt;
+&lt;/p&gt; 
+
+
+---
+
+# `inner_join()`
+
+.pull-left4[
+
+
+```r
+TIBBLE1 %&gt;%
+  inner_join(TIBBLE2, 
+             by = c("KEY"))
+```
+
+]
+
+.pull-right5[
+
+
+```r
+patienten %&gt;% 
+  rename(alter = X1, bedingung = X2) %&gt;%
+  mutate(bed_label = case_when(
+    bedingung == 1 ~ "placebo",
+    bedingung == 2 ~ "medikament")) %&gt;%
+  
+  # Verbinde mit ergebnisse
+  inner_join(ergebnisse, by = "id")
+```
+
+```
+## # A tibble: 3 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     4    34         1 placebo      100   105
+```
+]
+
+---
+
+# `left_join()`
+
+.pull-left4[
+
+
+```r
+TIBBLE1 %&gt;%
+  left_join(TIBBLE2, 
+            by = c("KEY"))
+```
+
+]
+
+.pull-right5[
+
+
+```r
+patienten %&gt;% 
+  rename(alter = X1, bedingung = X2) %&gt;%
+  mutate(bed_label = case_when(
+    bedingung == 1 ~ "placebo",
+    bedingung == 2 ~ "medikament")) %&gt;%
+  
+  # Verbinde mit ergebnisse
+  left_join(ergebnisse, by = "id")
+```
+
+```
+## # A tibble: 5 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     3    57         2 medikament    NA    NA
+## 4     4    34         1 placebo      100   105
+## 5     5    45         2 medikament    NA    NA
+```
+]
+
+---
+
+# Organisation
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Sortieren&lt;/high&gt;: Datensatz ordnen.
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;arrange()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;Filtern&lt;/high&gt;: Relevante Fälle auswählen.
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;slice()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;filter()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Auswählen&lt;/high&gt;: Relevante Variablen auswählen.
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;select()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right55[
+
+
+
+
+
+```r
+# Verbundener tibble
+patienten_ergebnisse
+```
+
+```
+## # A tibble: 5 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     3    57         2 medikament    NA    NA
+## 4     4    34         1 placebo      100   105
+## 5     5    45         2 medikament    NA    NA
+```
+
+
+]
+
+---
+
+# `arrange()`
+
+.pull-left4[
+
+
+```r
+# Sortiere aufsteigend
+tibble %&gt;%
+  arrange(VAR1, VAR2)
+
+# Sortiere absteigend (mit desc())
+tibble %&gt;%
+  arrange(desc(VAR1), VAR2)
+```
+
+]
+
+.pull-right5[
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Sortiere nach bedingung
+  arrange(bedingung)
+```
+
+```
+## # A tibble: 5 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     4    34         1 placebo      100   105
+## 3     2    65         2 medikament   143   140
+## 4     3    57         2 medikament    NA    NA
+## 5     5    45         2 medikament    NA    NA
+```
+
+]
+
+---
+
+# `arrange()`
+
+.pull-left4[
+
+
+```r
+# Sortiere aufsteigend
+tibble %&gt;%
+  arrange(VAR1, VAR2)
+
+# Sortiere absteigend (mit desc())
+tibble %&gt;%
+  arrange(desc(VAR1), VAR2)
+```
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Sortiere nach beidem
+  arrange(bedingung, alter) 
+```
+
+```
+## # A tibble: 5 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     4    34         1 placebo      100   105
+## 2     1    37         1 placebo      123   135
+## 3     5    45         2 medikament    NA    NA
+## 4     3    57         2 medikament    NA    NA
+## 5     2    65         2 medikament   143   140
+```
+
+]
+
+
+
+---
+
+# `slice()`
+
+.pull-left4[
+
+
+```r
+# Slice mit Sequenz
+patienten_ergebnisse %&gt;%
+  slice(INDEX_START:INDEX_STOP)
+
+# Slice mit Vektor  
+patienten_ergebnisse %&gt;%
+  slice(c(INDEX1, INDEX2, ...))
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  arrange(bedingung, alter) %&gt;%
+
+# Zeilen 3 und 5 
+  slice(c(3, 5))
+```
+
+```
+## # A tibble: 2 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     5    45         2 medikament    NA    NA
+## 2     2    65         2 medikament   143   140
+```
+
+
+]
+
+---
+
+# `slice()`
+
+.pull-left4[
+
+
+```r
+# Slice mit Sequenz
+patienten_ergebnisse %&gt;%
+  slice(INDEX_START:INDEX_STOP)
+
+# Slice mit Vektor  
+patienten_ergebnisse %&gt;%
+  slice(c(INDEX1, INDEX2, ...))
+```
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  arrange(bedingung, alter) %&gt;%
+
+# Erste 4 Zeilen
+  slice(1:4)
+```
+
+```
+## # A tibble: 4 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     4    34         1 placebo      100   105
+## 2     1    37         1 placebo      123   135
+## 3     5    45         2 medikament    NA    NA
+## 4     3    57         2 medikament    NA    NA
+```
+
+]
+
+---
+
+# `filter()`
+
+.pull-left4[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  filter(VAR1 == WERT1,
+         VAR2 &gt; WERT2,
+         VAR3 &lt; WERT3,
+         VAR4 == WERT4 | VAR5 &lt; WERT5)
+```
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Patienten mit alter &gt; 35
+  filter(alter &gt; 35)
+```
+
+```
+## # A tibble: 4 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     1    37         1 placebo      123   135
+## 2     2    65         2 medikament   143   140
+## 3     3    57         2 medikament    NA    NA
+## 4     5    45         2 medikament    NA    NA
+```
+
+]
+
+
+---
+
+# `filter()`
+
+.pull-left4[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  filter(VAR1 == WERT1,
+         VAR2 &gt; WERT2,
+         VAR3 &lt; WERT3,
+         VAR4 == WERT4 | VAR5 &lt; WERT5)
+```
+
+]
+
+.pull-right5[
+
+
+```r
+# alter grösser 35 &amp; bed_label ist medikament
+patienten_ergebnisse %&gt;%
+  filter(alter &gt; 35,
+         bed_label == "medikament")
+```
+
+```
+## # A tibble: 3 x 6
+##      id alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1     2    65         2 medikament   143   140
+## 2     3    57         2 medikament    NA    NA
+## 3     5    45         2 medikament    NA    NA
+```
+
+]
+
+
+---
+
+# `select()`
+
+.pull-left4[
+
+
+```r
+# Wähle Variablen A und B aus
+tibble %&gt;% 
+  select(VAR1, VAR2)
+
+# Wähle alles ausser A aus
+tibble %&gt;% 
+  select(-VAR1)
+```
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Wähle id und bedingung aus
+  select(id, bedingung)
+```
+
+```
+## # A tibble: 5 x 2
+##      id bedingung
+##   &lt;dbl&gt;     &lt;dbl&gt;
+## 1     1         1
+## 2     2         2
+## 3     3         2
+## 4     4         1
+## 5     5         2
+```
+
+]
+
+---
+
+# `select()`
+
+.pull-left4[
+
+
+```r
+# Wähle Variablen A und B aus
+tibble %&gt;% 
+  select(VAR1, VAR2)
+
+# Wähle alles ausser A aus
+tibble %&gt;% 
+  select(-VAR1)
+```
+
+
+]
+
+.pull-right5[
+
+
+```r
+patienten_ergebnisse %&gt;%
+  
+  # Alles ausser id
+  select(-id)
+```
+
+```
+## # A tibble: 5 x 5
+##   alter bedingung bed_label    t_1   t_2
+##   &lt;dbl&gt;     &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt; &lt;dbl&gt;
+## 1    37         1 placebo      123   135
+## 2    65         2 medikament   143   140
+## 3    57         2 medikament    NA    NA
+## 4    34         1 placebo      100   105
+## 5    45         2 medikament    NA    NA
+```
+
+]
+
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Wrangling/Wrangling_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

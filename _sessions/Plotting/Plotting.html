@@ -1,0 +1,1134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Plotting</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Plotting
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Februar 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Explorative Datenanalyse mit R | Februar 2020
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+
+
+
+
+
+
+&lt;p align="center"&gt;
+&lt;br&gt;
+&lt;img src="image/plots.png" height="540px"&gt;
+&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html"&gt;r-statistics.co&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+
+---
+
+
+.pull-left4[
+
+# `base` Plotting
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der &lt;high&gt;traditionelle&lt;/high&gt; Ansatz für Plotting.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Separate Funktionen&lt;/high&gt; für verschiedene Plots&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+# Histogram in base R
+hist(x = basel$alter,
+     xlab = "Alter",
+     ylab = "Häufigkeit",
+     main = "Histogramm Alter")
+```
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-4-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+---
+
+
+.pull-left4[
+
+# `base` Plotting
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der &lt;high&gt;traditionelle&lt;/high&gt; Ansatz für Plotting.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Separate Funktionen&lt;/high&gt; für verschiedene Plots&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+
+
+```r
+# Boxplot in base R
+boxplot(formula = groesse ~ geschlecht,
+        data = basel,
+        xlab = "Geschlecht",
+        ylab = "Groesse",
+        main = "Box plot Groesse")
+```
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-6-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+
+.pull-left4[
+
+# `base` Plotting
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der &lt;high&gt;traditionelle&lt;/high&gt; Ansatz für Plotting.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Separate Funktionen&lt;/high&gt; für verschiedene Plots&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+
+
+```r
+# Scatterplot in base R
+plot(x = basel$groesse,
+     y = basel$einkommen,
+     xlab = "Height",
+     ylab = "Einkommen",
+     main = "Scatterplot Groesse x Einkommen")
+```
+
+]
+
+.pull-right5[
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Probleme mit Base R plotting
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;high&gt;Ästhetik&lt;/high&gt; ist nicht mehr zeitgemäss.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Schönere Plots = sehr &lt;high&gt;viel Code.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Generell sehr &lt;high&gt;unflexibel.&lt;/high&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+&lt;br&gt;
+&lt;img src="image/outdated.jpeg"&gt;
+&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://www.healthhosts.com/4-signs-your-website-is-outdated/"&gt;healthhosts.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Das mächtige `tidyverse`
+
+Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-performanter, nutzerfreundlicher Pakete, die speziell für eine effizientere Datenanalyse entwickelt wurden. 
+1. &lt;high&gt;&lt;mono&gt;ggplot2&lt;/mono&gt; für Grafiken&lt;/high&gt;.
+2. &lt;mono&gt;dplyr&lt;/mono&gt; für Datenverarbeitung.
+3. &lt;mono&gt;tidyr&lt;/mono&gt; für Datenverarbeitung.
+4. `readr` für Daten I/O.
+5. `purrr` für funktionales Programmieren.
+6. `tibble` für moderne `data.frame`s.
+&lt;br&gt;&lt;br&gt;
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;tr&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-ggplot2.png" height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+        &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-dplyr.png"height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-tidyr.png"height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-readr.png"height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-purrr.png"height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-tibble.png"height=160px style="opacity:.2"&gt;&lt;/img&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+---
+
+# Modulare Graphiken in &lt;mono&gt;ggplot2&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;data&lt;/high&gt;: Der Datensatz&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;mapping&lt;/high&gt;: Grobe Struktur des Plots&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Was soll auf die Achsen?&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Was soll Grösse/Farbe repräsentieren?&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;geoms&lt;/high&gt;: Objekte im Plot&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;labs&lt;/high&gt;: Annotierung des Plots&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;themes&lt;/high&gt;: Ästhetische Gestaltung&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;facets&lt;/high&gt;: Auftrennung des Plots &lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m7"&gt;&lt;span&gt;&lt;high&gt;scales&lt;/high&gt;: Skalierung der Achsen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Wir kreieren diesen Plot
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;data&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Der &lt;mono&gt;mpg&lt;/mono&gt; Datensatz&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;mapping&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Hubraum auf die x-Achse&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Meilen pro Gallone auf die y-Achse&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Farbe der Objekte gemäss Autoklasse&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;geoms&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Daten als Punkte&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Ergänze Regressionslinie&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;labs&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Beschriftungen Achsen und Titel&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;themes&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Schwarz-weiss Ästhetik&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  
+&lt;/ul&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-10-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+
+---
+
+# `ggplot()`
+
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Alle Plots beginnen mit &lt;highm&gt;ggplot()&lt;/highm&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;2 zentrale Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;data&lt;/mono&gt; | Der Datensatz (&lt;mono&gt;tibble&lt;/mono&gt;)&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;mapping&lt;/mono&gt; | Die Struktur definiert mittels &lt;mono&gt;aes()&lt;/mono&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right45[
+
+
+```r
+ggplot(data = mpg)
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-11-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# `aes()`
+
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;aes()&lt;/highm&gt; definiert die Struktur für das &lt;mono&gt;mapping&lt;/mono&gt; Argument.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Zentrale Argumente:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;x,y&lt;/mono&gt; | Bestimmt die Achsen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;color,fill&lt;/mono&gt; | Bestimmt Farben&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;alpha&lt;/mono&gt; | Bestimmt Transparenz&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;size&lt;/mono&gt; | Bestimmt Grössen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;shape&lt;/mono&gt; | Bestimmt Objektypen (z.B. Kreise oder Quadrate)&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ, y = hwy))
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-12-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# &lt;mono&gt;+&lt;/mono&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der &lt;highm&gt;+&lt;/highm&gt; Operator erweitert den Plot um beliebige weitere Plotelemente.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ,
+                     y = hwy)) + 
+  
+  # Plotte Daten als Punkte
+  geom_point() 
+```
+
+]
+
+
+.pull-right45[
+
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-14-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+
+---
+
+# `geom_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;geom_*()&lt;/highm&gt; Funktionen definieren die geometrischen Objekte mit denen die Daten repräsentiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Ein paar &lt;mono&gt;geoms&lt;/mono&gt;:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_point()&lt;/mono&gt; | für Punkte&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_bar()&lt;/mono&gt; | für Balken&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_boxplot()&lt;/mono&gt; | für Box-Plots &lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_count()&lt;/mono&gt; | für Punkte skaliert nach Häufigkeit&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;geom_smooth()&lt;/mono&gt; | für Kurven&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-15-1.png" style="display: block; margin: auto;" /&gt;
+
+
+]
+
+
+
+---
+
+
+.pull-left45[
+
+&lt;br&gt;
+## `geom_count()`
+&lt;br&gt;
+
+
+```r
+ggplot(data = mpg,
+  mapping = aes(x = displ, y = hwy)) + 
+  geom_count()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+
+
+
+]
+
+.pull-right45[
+
+&lt;br&gt;
+## `geom_bar()`
+&lt;br&gt;
+
+
+```r
+ggplot(data = mpg,
+  mapping = aes(x = class)) + 
+  geom_bar()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+---
+
+.pull-left45[
+
+&lt;br&gt;
+## `geom_boxplot()`
+&lt;br&gt;
+
+
+```r
+ggplot(data = mpg,
+  mapping = aes(x = class,
+                y = hwy)) + 
+  geom_boxplot()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-18-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;br&gt;
+## `geom_violin()`
+&lt;br&gt;
+
+
+```r
+ggplot(data = mpg,
+  mapping = aes(x = class,
+                y = hwy)) + 
+  geom_violin()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Was fehlt?
+
+.pull-left45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-20-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-21-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+
+---
+
+# `aes()`
+
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;aes()&lt;/highm&gt; definiert die Struktur für das &lt;mono&gt;mapping&lt;/mono&gt; Argument.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Zentrale Argumente:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;x,y&lt;/mono&gt; | Bestimmt die Achsen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;color,fill&lt;/mono&gt; | Bestimmt Farben&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+
+```r
+ggplot(data = mpg,
+       mapping = aes(x = displ, 
+                     y = hwy,
+                     
+                     # Farbe gemäss Klasse
+                     color = class)) +
+  geom_point()
+```
+
+
+]
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-23-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Was fehlt?
+
+.pull-left45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-24-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-25-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# `geom_smooth()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;geom_smooth()&lt;/highm&gt; können Kurven an die Daten angepasst werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Zentrale Argumente:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;method&lt;/mono&gt; | Art der Datenanpassung&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;color&lt;/mono&gt; | Farbe&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+
+&lt;/ul&gt;
+
+
+```r
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  
+  # Ergänze Kurve
+  geom_smooth(col = "blue")
+```
+
+]
+
+.pull-right45[
+
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-27-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# `geom_smooth()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;geom_smooth()&lt;/highm&gt; können angepasste Kurven ergänzt werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Zentrale Argumente:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;method&lt;/mono&gt; | Art der Datenanpassung&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;color&lt;/mono&gt; | Farbe&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+```r
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  
+  # Ergänze Kurve
+  geom_smooth(col = "blue",
+              method = "lm")
+```
+
+]
+
+.pull-right45[
+
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-29-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Vererbung
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;geom&lt;/highm&gt;s erben ihre Eigenschaften von &lt;mono&gt;mapping&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Vererbte Eigenschaften können durch eigene Argumente &lt;high&gt;überschrieben&lt;/high&gt; werden.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+```r
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  geom_smooth() 
+```
+
+]
+
+.pull-right45[
+
+&lt;p align="center"&gt;
+&lt;br&gt;
+&lt;img src="image/question.png" height=280px&gt;
+&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="http://catchingfire.ca/the-power-of-a-question-mark/"&gt;catchingfire.ca&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Vererbung
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;highm&gt;geom&lt;/highm&gt;s erben ihre Eigenschaften von &lt;mono&gt;mapping&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Vererbte Eigenschaften können durch eigene Argumente &lt;high&gt;überschrieben&lt;/high&gt; werden.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+```r
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     col = class)) +
+  geom_point() + 
+  geom_smooth() 
+```
+
+]
+
+.pull-right45[
+
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-32-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Was fehlt?
+
+.pull-left45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-33-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-34-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# `labs()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;labs()&lt;/highm&gt; können alle Aspekte des Plots annotiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Zentrale Argumente:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;x,y&lt;/mono&gt; | Achsenbeschriftung&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;title, subtitle&lt;/mono&gt; | Titel und Untertitel&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;caption&lt;/mono&gt; | Bildunterschrift&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+```r
+ggplot(...) +
+  labs(x = "Hubraum in Litern",
+       y = "Autobahn Meilen pro Gallone",
+       title = "MPG Datensatz",
+       subtitle = "Autos mit mehr Hub...",
+       caption = "Quelle: mpg Datensatz...")
+```
+
+]
+
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-36-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Was fehlt?
+
+.pull-left45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-37-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-38-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;theme()&lt;/highm&gt; können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Einige &lt;mono&gt;theme&lt;/mono&gt;s:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_gray()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_classic()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_void()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_excel() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_economist() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_bw()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+```r
+ggplot(...) + theme_gray()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-40-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;theme()&lt;/highm&gt; können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Einige &lt;mono&gt;theme&lt;/mono&gt;s:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_gray()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_classic()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_void()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_excel() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_economist() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_bw()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+```r
+ggplot(...) + theme_classic()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-42-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;theme()&lt;/highm&gt; können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Einige &lt;mono&gt;theme&lt;/mono&gt;s:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_gray()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_classic()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_void()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_excel() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_economist() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_bw()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+```r
+ggplot(...) + theme_void()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-44-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;theme()&lt;/highm&gt; können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Einige &lt;mono&gt;theme&lt;/mono&gt;s:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_gray()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_classic()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_void()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_excel() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_economist() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_bw()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+```r
+ggplot(...) + theme_excel()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-46-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;theme()&lt;/highm&gt; können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Einige &lt;mono&gt;theme&lt;/mono&gt;s:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_gray()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_classic()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_void()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_excel() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_economist() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_bw()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+```r
+ggplot(...) + theme_economist()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-48-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+# Formatierung mit `theme_*()`
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mit &lt;highm&gt;theme()&lt;/highm&gt; können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Einige &lt;mono&gt;theme&lt;/mono&gt;s:
+  &lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_gray()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_classic()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_void()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_excel() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_economist() (&lt;mono&gt;ggthemes&lt;/mono&gt;)&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;theme_bw()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+```r
+ggplot(...) + theme_bw()
+```
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-50-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Et voila!
+
+.pull-left45[
+
+
+```r
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy, 
+                     col = class)) +
+  geom_point() + 
+  geom_smooth(col = "blue", 
+              method = "lm")+
+  labs(
+    x = "Hubraum in Litern",
+    y = "Autobahn Meilen pro Gallone",
+    title = "MPG Datensatz",
+    subtitle = "Autos mit mehr Hub...",
+    caption = "Quelle: mpg Datensatz...") + 
+  theme_bw()
+```
+
+]
+
+
+.pull-right45[
+
+&lt;img src="Plotting_files/figure-html/unnamed-chunk-52-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Plotting/Plotting_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

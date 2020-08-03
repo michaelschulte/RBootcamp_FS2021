@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Daten</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Daten
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Februar 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Explorative Datenanalyse mit R | Februar 2020
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+.pull-left45[
+
+# `Tidy` Daten
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Jede Spalte ist eine Variable.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Jede Zeile ist eine Beobachtung.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Jede Zelle beinhaltet nur einen Wert.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;font style="font-size:16px"&gt;...nach &lt;a href="https://github.com/tidyverse/tidyr"&gt;Hadley Wickham&lt;/a&gt;&lt;/font&gt;
+
+]
+
+.pull-right45[
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/data_frame.png"&gt;&lt;/img&gt;
+]
+
+
+
+---
+
+# 3 Klassen von Datenobjekten
+
+.pull-left4[
+
+&lt;high&gt;`list`&lt;/high&gt; - R's Mehrzweck-Container
+- &lt;span&gt;Kann alle Daten beinhalten, inkl. `list`s&lt;/span&gt;
+- &lt;span&gt;Nützlich für komplexe Funktionsoutputs&lt;/span&gt;
+
+&lt;high&gt;`data_frame`&lt;/high&gt; - R's Tabelle
+- &lt;span&gt;Spezialfall einer `list`&lt;/span&gt;
+- &lt;span&gt;R's `Tidy`-Format für Daten
+
+&lt;high&gt;`vector`&lt;/high&gt; - R's Daten-Container
+- &lt;span&gt;Primärer Daten-Container&lt;/span&gt;
+- &lt;span&gt;Beinhaltet Daten genau einer Klasse&lt;/span&gt;
+
+]
+
+.pull-right55[
+&lt;img src="image/main_objects.png"&gt;&lt;/img&gt;
+]
+
+
+
+---
+
+.pull-left45[
+
+# `data_frame`
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Eine &lt;mono&gt;list&lt;/mono&gt;e bestehend aus &lt;high&gt;&lt;mono&gt;vector&lt;/mono&gt;en gleicher Länge&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Die &lt;mono&gt;vector&lt;/mono&gt;en haben verschiedene &lt;high&gt;Klassen&lt;/high&gt;: &lt;mono&gt;numeric&lt;/mono&gt;, &lt;mono&gt;character&lt;/mono&gt;, etc.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Verschiedene Varianten: &lt;mono&gt;data.frame&lt;/mono&gt;, &lt;mono&gt;data.table&lt;/mono&gt;, &lt;highm&gt;tibble&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/data_frame.png"&gt;&lt;/img&gt;
+  ]
+
+---
+
+.pull-left45[
+
+# Inhalt ansehen
+
+
+
+
+```r
+# printe basel
+basel
+```
+
+```
+## # A tibble: 10,000 x 20
+##      id geschlecht alter groesse gewicht
+##   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1     1 F             87    165     NA  
+## 2     2 M             54    175.    85.6
+## 3     3 F             34    147.    53.9
+## 4     4 M             31    166.   105  
+## 5     5 M             24    180.   102. 
+## # … with 9,995 more rows, and 15 more
+## #   variables
+```
+]
+
+.pull-right45[
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/data_frame.png"&gt;&lt;/img&gt;
+  ]
+
+---
+
+.pull-left45[
+
+# Inhalt ansehen
+
+
+```r
+# Zeige den data frame in neuem tab
+View(basel)
+```
+
+&lt;img src="image/view.png"&gt;&lt;/img&gt;
+]
+
+.pull-right45[
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/data_frame.png"&gt;&lt;/img&gt;
+  ]
+
+---
+
+.pull-left45[
+
+# Zugriff mit &lt;high&gt;`$`&lt;/high&gt;
+
+
+
+
+```r
+# Extrahiere die Variable Alter
+basel$alter
+```
+
+```
+##  [1] 87 54 34 31 24 59 48 53 50 62 73 53
+## [13] 38 26
+##  [ reached getOption("max.print") -- omitted 9986 entries ]
+```
+
+```r
+# Extrahiere die Variable Bildung
+basel$bildung
+```
+
+```
+##  [1] "obligatorisch" "sek III"      
+##  [3] "sek III"       "lehre"        
+##  [5] "obligatorisch" "sek III"      
+##  [7] "obligatorisch" "lehre"        
+##  [9] "sek III"       "lehre"        
+## [11] "sek III"       "lehre"        
+## [13] "lehre"         "obligatorisch"
+##  [ reached getOption("max.print") -- omitted 9986 entries ]
+```
+
+]
+
+.pull-right45[
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/data_frame.png"&gt;&lt;/img&gt;
+  ]
+
+---
+
+.pull-left45[
+
+# Verändern mit &lt;high&gt;`$`&lt;/high&gt;
+
+
+```r
+# Teile die Variable einkommen durch 1000
+basel$einkommen &lt;- basel$einkommen / 1000
+
+# zeige data frame
+basel
+```
+
+```
+## # A tibble: 10,000 x 20
+##      id geschlecht alter groesse gewicht
+##   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+## 1     1 F             87    165     NA  
+## 2     2 M             54    175.    85.6
+## 3     3 F             34    147.    53.9
+## 4     4 M             31    166.   105  
+## 5     5 M             24    180.   102. 
+## # … with 9,995 more rows, and 15 more
+## #   variables
+```
+
+]
+
+.pull-right45[
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/data_frame.png"&gt;&lt;/img&gt;
+  ]
+
+---
+
+.pull-left45[
+
+# `vector`
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;R's &lt;high&gt;primärer Daten-Container&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Kann nur eine einzelne &lt;high&gt;Daten-Klasse&lt;/high&gt; beinhalten (und fehlende Werte).&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Daten-Klassen&lt;br&gt;&lt;br&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;highm&gt;numeric&lt;/highm&gt; - Alle Zahlen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;highm&gt;character&lt;/highm&gt; - Alle Zeichen (e.g., Namen)&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;highm&gt;logical&lt;/highm&gt; - &lt;mono&gt;TRUE&lt;/mono&gt; oder &lt;mono&gt;FALSE&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;...&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;highm&gt;NA&lt;/highm&gt; - fehlende Werte&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right4[
+
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;img src="image/vector.png"&gt;&lt;/img&gt;
+  ]
+
+
+---
+
+.pull-left45[
+
+# Zugriff / Ändern via `[ ]`
+
+
+```r
+# Extrahiere die Variable Alter
+alter &lt;- basel$alter
+alter
+```
+
+
+```
+##  [1] 87 54 34 31 24 59 48 53 50 62
+```
+
+
+```r
+# Extrahiere zweiten Wert
+alter[2]
+```
+
+```
+## [1] 54
+```
+
+
+```r
+# Ändere zweiten Wert
+alter[2] &lt;- 100
+alter
+```
+
+Mehr Info [hier](http://rspatial.org/intr/rst/4-indexing.html).
+
+]
+
+.pull-right4[
+
+  &lt;br&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;img src="image/vector.png"&gt;&lt;/img&gt;
+  ]
+
+
+---
+
+# Datentyp: `numeric`
+
+.pull-left45[
+
+&lt;highm&gt;numeric&lt;/highm&gt; Vektoren &lt;high&gt;beinhalten Zahlen&lt;/high&gt; und nur Zahlen.
+
+
+```r
+# Extrahiere die Variable Alter
+basel$alter
+```
+
+
+```
+##  [1] 87 54 34 31 24 59 48 53 50 62
+```
+
+
+```r
+# Zeige die Klasse von Alter
+class(basel$alter)
+```
+
+```
+## [1] "numeric"
+```
+
+```r
+# Ist Alter numeric
+is.numeric(basel$alter)
+```
+
+```
+## [1] TRUE
+```
+
+]
+
+.pull-right4[
+  &lt;img src="image/vector_types_numeric.png"&gt;&lt;/img&gt;
+  ]
+
+
+---
+
+# Datentyp: `character`
+
+.pull-left45[
+
+&lt;highm&gt;character&lt;/highm&gt; Vektoren &lt;high&gt;beinhalten alle Zeichen&lt;/high&gt; um die herum &lt;high&gt;Anführungszeichen&lt;/high&gt; stehen.
+
+
+```r
+# Extrahiere die Variable Geschlecht
+basel$geschlecht
+```
+
+
+```
+## [1] "F" "M" "F" "M" "M" "M" "F" "F"
+```
+
+
+```r
+# Extrahiere die Variable Bildung
+basel$bildung
+```
+
+
+```
+## [1] "obligatorisch" "sek III"      
+## [3] "sek III"       "lehre"        
+## [5] "obligatorisch" "sek III"      
+## [7] "obligatorisch" "lehre"
+```
+
+
+]
+
+.pull-right4[
+  &lt;img src="image/vector_types_character.png"&gt;&lt;/img&gt;
+  ]
+
+
+
+---
+
+# Datentyp: `character`
+
+.pull-left45[
+
+&lt;highm&gt;character&lt;/highm&gt; Vektoren &lt;high&gt;beinhalten alle Zeichen&lt;/high&gt; um die herum &lt;high&gt;Anführungszeichen&lt;/high&gt; stehen.
+
+
+```r
+# Extrahiere die Variable Alter
+basel$alter
+```
+
+
+```
+##  [1] 87 54 34 31 24 59 48 53 50 62
+```
+
+
+```r
+# Wandle Alter in character um
+as.character(basel$alter)
+```
+
+
+```
+##  [1] "87" "54" "34" "31" "24" "59" "48"
+##  [8] "53" "50" "62"
+```
+
+]
+
+.pull-right4[
+  &lt;img src="image/vector_types_character.png"&gt;&lt;/img&gt;
+  ]
+
+
+---
+
+# Datentyp: `logical`
+
+.pull-left45[
+
+&lt;highm&gt;logical&lt;/highm&gt; Vektoren werden typischerweise durch &lt;high&gt;logische Vergleiche&lt;/high&gt; erstellt und benutzt um in Data Frames oder Vektoren bestimmte &lt;high&gt;Fälle auszuwählen&lt;/high&gt;. 
+
+
+```r
+# Welche Werte in Geschlecht sind m
+basel$geschlecht == "M"
+```
+
+
+```
+##  [1] FALSE  TRUE FALSE  TRUE  TRUE  TRUE
+##  [7] FALSE FALSE  TRUE FALSE
+```
+
+
+```r
+# Welche Werte in Alteer sind kleiner 30
+basel$alter &lt; 30
+```
+
+
+```
+##  [1] FALSE FALSE FALSE FALSE  TRUE FALSE
+##  [7] FALSE FALSE FALSE FALSE
+```
+
+]
+
+.pull-right4[
+  &lt;img src="image/vector_types_logical.png"&gt;&lt;/img&gt;
+  ]
+
+
+---
+
+# Datentyp: `logical`
+
+.pull-left45[
+
+&lt;highm&gt;logical&lt;/highm&gt; Vektoren werden typischerweise durch &lt;high&gt;logische Vergleiche&lt;/high&gt; erstellt und benutzt um in Data Frames oder Vektoren bestimmte &lt;high&gt;Fälle auszuwählen&lt;/high&gt;. 
+
+&lt;u&gt;Logische Operatoren&lt;/u&gt;
+
+&lt;high&gt;`==`&lt;/high&gt; - ist gleich&lt;br&gt;
+&lt;high&gt;`&lt;`&lt;/high&gt;, &lt;high&gt;`&gt;`&lt;/high&gt; - kleiner/grösser als&lt;br&gt;
+&lt;high&gt;`&lt;=`&lt;/high&gt;, &lt;high&gt;`&gt;=`&lt;/high&gt; - kleiner/grösser als oder gleich&lt;br&gt;
+&lt;high&gt;`&amp;`&lt;/high&gt;, &lt;high&gt;`&amp;&amp;`&lt;/high&gt; - logisches UND&lt;br&gt;
+&lt;high&gt;`|`&lt;/high&gt;, &lt;high&gt;`||`&lt;/high&gt; - logisches ODER&lt;br&gt;
+
+]
+
+.pull-right4[
+  &lt;img src="image/vector_types_logical.png"&gt;&lt;/img&gt;
+  ]
+
+---
+
+&lt;div class="center_text"&gt;
+  &lt;span&gt;
+  Input/Ouput
+  &lt;/span&gt;
+&lt;/div&gt; 
+
+
+---
+
+# Datentypen ausserhalb von R
+
+&lt;table class="tg"  style="cellspacing:0; cellpadding:0; border:none;" width="95%"&gt;
+&lt;col width=30%&gt;
+&lt;col width=30%&gt;
+&lt;col width=30%&gt;
+&lt;tr&gt;
+  &lt;td bgcolor = 'white' style='vertical-align:top'&gt;
+    &lt;ul&gt;
+      &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Strukturierte Daten&lt;/high&gt;
+        &lt;ul class="level"&gt;
+        &lt;li&gt;&lt;span&gt;Delimiter getrennt: &lt;mono&gt;.csv&lt;/mono&gt;, &lt;mono&gt;.txt&lt;/mono&gt;, etc.&lt;/span&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;span&gt;Relationale Datenbanken: &lt;mono&gt;SQL&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;br&gt;&lt;img src="image/structured.png" height=250px&gt;
+        &lt;/span&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;td bgcolor = 'white' style='vertical-align:top'&gt;
+    &lt;ul&gt;
+      &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Semi-strukturierte Daten&lt;/high&gt;
+        &lt;ul class="level"&gt;
+        &lt;li&gt;&lt;span&gt;Markup: &lt;mono&gt;.xml&lt;/mono&gt;, &lt;mono&gt;.xls&lt;/mono&gt;, &lt;mono&gt;.html&lt;/mono&gt; etc.&lt;/span&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;span&gt;Non markup: &lt;mono&gt;JSON&lt;/mono&gt;, &lt;mono&gt;MongoDB&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;br&gt;&lt;img src="image/html.png" height=250px&gt;
+        &lt;/span&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;td bgcolor = 'white' style='vertical-align:top'&gt;
+    &lt;ul&gt;
+      &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Unstrukturierte Daten&lt;/high&gt;
+        &lt;ul class="level"&gt;
+        &lt;li&gt;&lt;span&gt;z.B. Text&lt;/span&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+        &lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br2&gt;&lt;img src="image/text.png" height=250px&gt;
+        &lt;/span&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+
+
+---
+
+# Delimiter getrennte Daten 
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Delimiter&lt;/high&gt; separieren die Spalten.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Meist als &lt;high&gt;lokale Textdatei&lt;/high&gt; vorliegend.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Datenklassen&lt;/high&gt; werden inferiert.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="image/readr.png" height=200&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right45[
+
+&lt;p align="center"&gt;
+  &lt;img src="image/structured.png" height=400&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Delimiter getrennte Daten 
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Delimiter&lt;/high&gt; separieren die Spalten.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Meist als &lt;high&gt;lokale Textdatei&lt;/high&gt; vorliegend.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Datenklassen&lt;/high&gt; werden inferiert.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+&lt;p align="center"&gt;
+  &lt;img src="image/readr.png" height=200&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right45[
+
+
+
+
+
+```r
+# Lese Basel Datensatz ein
+basel &lt;- read_csv("1_Data/basel.csv")
+
+# Benutze expliziten Delimiter
+basel &lt;- read_delim("1_Data/basel.csv",
+                   delim = ",")
+basel
+```
+
+```
+## # A tibble: 10,000 x 20
+##      id geschlecht alter groesse
+##   &lt;dbl&gt; &lt;chr&gt;      &lt;dbl&gt;   &lt;dbl&gt;
+## 1     1 f             87    165 
+## 2     2 m             54    175.
+## 3     3 f             34    147.
+## 4     4 m             31    166.
+## 5     5 m             24    180.
+## # … with 9,995 more rows, and 16
+## #   more variables
+```
+
+]
+
+---
+
+# Den Filepath finden
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Finde den Filepath mittels RStudio's &lt;high&gt;Auto-Complete&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Setze den Cursor zwischen Anführungszeichen und drücke &lt;highm&gt;Tab&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align="center"&gt;
+  &lt;img src="image/tab.png" height="150px"&gt;&lt;/img&gt;
+&lt;/p&gt;
+
+] 
+
+.pull-right45[
+
+&lt;p align="center"&gt;
+  &lt;img src="image/auto_complete_1.png"&gt;&lt;/img&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Den Filepath finden
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Finde den Filepath mittels RStudio's &lt;high&gt;Auto-Complete&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Setze den Cursor zwischen Anführungszeichen und drücke &lt;highm&gt;Tab&lt;/highm&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align="center"&gt;
+  &lt;img src="image/tab.png" height="150px"&gt;&lt;/img&gt;
+&lt;/p&gt;
+
+] 
+
+.pull-right45[
+
+&lt;p align="center"&gt;
+  &lt;img src="image/auto_complete_2.png"&gt;&lt;/img&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Inferierte Datentypen 
+
+.pull-left45[
+
+
+
+```r
+# Lese Basel Datensatz ein
+basel &lt;- read_csv("1_Data/basel.csv")
+```
+
+```
+## Parsed with column specification:
+## cols(
+##   .default = col_double(),
+##   geschlecht = col_character(),
+##   bildung = col_character(),
+##   konfession = col_character(),
+##   fasnacht = col_character(),
+##   sehhilfe = col_character()
+## )
+```
+
+```
+## See spec(...) for full column specifications.
+```
+
+]
+
+.pull-right45[
+
+&lt;img src="image/structured.png"&gt;&lt;/image&gt;
+
+]
+
+---
+
+# Inferierte Datentypen 
+
+.pull-left45[
+
+Manchmal ist es nötig `readr` etwas auf die Sprünge zu helfen, damit &lt;high&gt;Datentypen korrekt inferiert&lt;/high&gt; werden. 
+
+
+```r
+# Setze Symbol für fehlende Werte
+basel &lt;- read_csv("1_Data/basel.csv",
+                  na = c('NA'))
+
+# Re-inferiere Datentypen
+basel &lt;- type_convert(basel)
+```
+]
+
+.pull-right45[
+
+&lt;img src="image/structured.png"&gt;&lt;/image&gt;
+
+]
+
+---
+
+# Relationale Datenbanken &lt;font style="font-size: 16px"&gt;siehe &lt;a href="https://db.rstudio.com/"&gt;db.rstudio.com&lt;/a&gt;&lt;/font&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;R kann direkt &lt;high&gt;auf Datenbanken arbeiten&lt;/high&gt;: &lt;mono&gt;MySQL&lt;/mono&gt;, &lt;mono&gt;MariaDB&lt;/mono&gt;, &lt;mono&gt;BigQuery&lt;/mono&gt;, &lt;mono&gt;Redshift&lt;/mono&gt;, etc.&lt;br&gt;&lt;font style="font-size:16px"&gt;Siehe &lt;a href="https://db.rstudio.com/databases"&gt;hier&lt;/a&gt;.&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;dplyr&lt;/mono&gt; wird z.B. &lt;high&gt;automatisch übersetzt.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+
+
+```r
+# Verbinge mit MySQL Datenbank
+con &lt;- dbConnect(MySQL(), 
+         user='studiech_rbootca', 
+         password='Du*5hA+7NU:8T', 
+         dbname='studiech_rbootcamp', 
+         host='studie.ch',
+         port = 3306)
+
+# Zeige Tabellen
+dbListTables(con)
+```
+
+```
+## [1] "basel"
+```
+
+]
+
+
+---
+
+# Relationale Datenbanken &lt;font style="font-size: 16px"&gt;siehe &lt;a href="https://db.rstudio.com/"&gt;db.rstudio.com&lt;/a&gt;&lt;/font&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;R kann direkt &lt;high&gt;auf Datenbanken arbeiten&lt;/high&gt;: &lt;mono&gt;MySQL&lt;/mono&gt;, &lt;mono&gt;MariaDB&lt;/mono&gt;, &lt;mono&gt;BigQuery&lt;/mono&gt;, &lt;mono&gt;Redshift&lt;/mono&gt;, etc.&lt;br&gt;&lt;font style="font-size:16px"&gt;Siehe &lt;a href="https://db.rstudio.com/databases"&gt;hier&lt;/a&gt;.&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;dplyr&lt;/mono&gt; wird z.B. &lt;high&gt;automatisch übersetzt.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+
+
+```r
+# Extrahiere Tabelle Customers
+basel &lt;- tbl(con, "basel")
+basel
+```
+
+```
+## # Source:   table&lt;basel&gt; [?? x 20]
+## # Database: mysql 5.7.26-log-cll-lve
+## #   [studiech_rbootca@studie.ch:/studiech_rbootcamp]
+##      id geschlecht alter_jahre groesse
+##   &lt;dbl&gt; &lt;chr&gt;            &lt;dbl&gt;   &lt;dbl&gt;
+## 1     1 f                   87    165 
+## 2     2 m                   54    175.
+## 3     3 f                   34    147.
+## 4     4 m                   31    166.
+## 5     5 m                   24    180.
+## # … with more rows, and 16 more
+## #   variables
+```
+
+]
+
+---
+
+# Relationale Datenbanken &lt;font style="font-size: 16px"&gt;siehe &lt;a href="https://db.rstudio.com/"&gt;db.rstudio.com&lt;/a&gt;&lt;/font&gt;
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;R kann direkt &lt;high&gt;auf Datenbanken arbeiten&lt;/high&gt;: &lt;mono&gt;MySQL&lt;/mono&gt;, &lt;mono&gt;MariaDB&lt;/mono&gt;, &lt;mono&gt;BigQuery&lt;/mono&gt;, &lt;mono&gt;Redshift&lt;/mono&gt;, etc.&lt;br&gt;&lt;font style="font-size:16px"&gt;Siehe &lt;a href="https://db.rstudio.com/databases"&gt;hier&lt;/a&gt;.&lt;/font&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;dplyr&lt;/mono&gt; wird z.B. &lt;high&gt;automatisch übersetzt.&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right45[
+
+
+
+
+```r
+# Extrahiere Tabelle Customers
+basel &lt;- tbl(con, "basel")
+
+# Extrahiere CompanyNamer Variable
+basel %&gt;% pull(konfession)
+```
+
+```
+##  [1] "katholisch"     "konfessionslos"
+##  [3] "konfessionslos" "katholisch"    
+##  [5] "katholisch"     NA              
+##  [7] "konfessionslos" "katholisch"    
+##  [9] "konfessionslos" "andere"        
+##  [ reached getOption("max.print") -- omitted 9990 entries ]
+```
+
+]
+
+
+---
+
+# Semi-strukturierte Daten &lt;font style="font-size: 16px"&gt;mit &lt;a href="https://github.com/r-lib/xml2"&gt;&lt;mono&gt;xml2&lt;/mono&gt;&lt;/a&gt; und &lt;a href="https://github.com/hadley/rvest"&gt;&lt;mono&gt;rvest&lt;/mono&gt;&lt;/a&gt;&lt;/font&gt; 
+
+
+
+
+```r
+# Tabelle laden von Wikipedia (mit xml2 und rvest)
+read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %&gt;%
+  html_node(xpath = '//*[@id="mw-content-text"]/div/table[2]') %&gt;%
+  html_table() %&gt;% as_tibble()
+```
+
+```
+## # A tibble: 17 x 3
+##    Release Date        Description                                                        
+##    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;                                                              
+##  1 0.16    ""          "This is the last alpha version developed primarily by Ihaka and G…
+##  2 0.49    "1997-04-2… "This is the oldest source release which is currently available on…
+##  3 0.60    "1997-12-0… "R becomes an official part of the GNU Project. The code is hosted…
+##  4 0.65.1  "1999-10-0… "First versions of update.packages and install.packages functions …
+##  5 1.0     "2000-02-2… "Considered by its developers stable enough for production use.[50…
+##  6 1.4     "2001-12-1… "S4 methods are introduced and the first version for Mac OS X is m…
+##  7 1.8     "2003-10-0… "Introduced a flexible condition handling mechanism for signalling…
+##  8 2.0     "2004-10-0… "Introduced lazy loading, which enables fast loading of data with …
+##  9 2.1     "2005-04-1… "Support for UTF-8 encoding, and the beginnings of internationaliz…
+## 10 2.11    "2010-04-2… "Support for Windows 64 bit systems."                              
+## # … with 7 more rows
+```
+
+
+---
+
+# Other data &lt;font style="font-size: 16px"&gt;siehe &lt;a href="https://cran.r-project.org/web/packages/rio/vignettes/rio.html"&gt;rio&lt;/a&gt;&lt;/font&gt;
+
+.pull-left45[
+### `readr` &lt;img src="image/readr.png" width="50", align="right"&gt; 
+
+```r
+# read fixed width files (can be fast)
+data &lt;- read_fwf(file, ...)
+
+# read Apache style log files
+data &lt;- read_log(file, ...)
+```
+
+### `haven` &lt;img src="image/haven.png" width="50" align="right"&gt;
+
+```r
+# read SAS's .sas7bat and sas7bcat files
+data &lt;- read_sas(file, ...)
+
+# read SPSS's .sav files
+data &lt;- read_sav(file, ...)
+
+# etc
+```
+]
+
+.pull-right45[
+### `readxl` &lt;img src="image/readxl.png" width="50" align="right"&gt;
+
+```r
+# read Excel's .xls and xlsx files
+data &lt;- read_excel(file, ...)
+```
+&lt;br&gt;
+### Other
+
+```r
+# Read Matlab .mat files
+data &lt;- R.matlab::readMat(file, ...)
+
+# Read and wrangle .xml and .html
+data &lt;- XML::xmlParseParse(file, ...)
+
+# from package jsonlite: read .json files
+data &lt;- jsonlite::read_json(file, ...)
+```
+]
+
+---
+
+class: middle, center
+
+&lt;i&gt;Download&lt;/i&gt;
+
+&lt;h1&gt;&lt;a href="https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/TheRBootcamp_EDA_2020Feb_data.zip" download&gt;Daten&lt;/a&gt;&lt;/h1&gt;
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Data/Data_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

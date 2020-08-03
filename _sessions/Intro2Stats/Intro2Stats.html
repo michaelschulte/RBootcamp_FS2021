@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+  <head>
+    <title>Einführung Statistik</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Statistik mit R   The R Bootcamp" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Einführung Statistik
+### Statistik mit R<br> <a href='https://therbootcamp.github.io'> The R Bootcamp </a> <br> <a href='https://therbootcamp.github.io/SmR_2020Mai/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Mai 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Statistik mit R | Mai 2020
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+
+
+# Was ist Statistik?
+
+
+.pull-left45[
+
+
+&lt;i&gt;"Lehre von den Daten über den Staat“&lt;/i&gt;&lt;br&gt;&lt;font style="font-size:10px"&gt;&lt;a href="https://de.wikipedia.org/wiki/Statistik"&gt;Gottfried Achenwall, 1749&lt;/a&gt;&lt;/font&gt;
+
+&lt;i&gt;"...eine umfangreiche Beschreibung der gesellschaftlichen, politischen und wirtschaftlichen Eigenschaften eines Staates"&lt;/i&gt;&lt;br&gt;&lt;font style="font-size:10px"&gt;&lt;a href="https://de.wikipedia.org/wiki/Statistik"&gt;Ernst Landberg über den Statistikbegriff von Achenwall&lt;/a&gt;&lt;/font&gt;
+
+Von &lt;i&gt;statisticum&lt;/i&gt;, lat., den Staat betreffend.&lt;br&gt;&lt;font style="font-size:10px"&gt;&lt;a href="https://de.wikipedia.org/wiki/Statistik"&gt;Wikipedia&lt;/a&gt;&lt;/font&gt;
+
+
+
+
+
+
+
+]
+
+.pull-right45[
+
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/achenwall.png" height = 400px&gt;&lt;br&gt;
+  Gottfried Achenwall, 1719 - 1772&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://www.pinterest.de/biografiaspuntoinfo/"&gt;pinterest.de&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+# Äste der Statistik
+
+.pull-left45[
+
+### Deskriptive Statistik
+
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Zusammenfassung&lt;/high&gt; zentraler Eigenschaften der Daten durch etablierte Masse&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Eigenschaften&lt;/high&gt; und &lt;high&gt;Masse&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Häufigkeiten&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Zentralität&lt;/b&gt;: Mittelwert, Median, Modalwert&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Streuung&lt;/b&gt;: Varianz, Interquartilabstand, Spannweite&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Zusammenhänge&lt;/b&gt;: Diverse Korrelationsmasse&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Visualisierung&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right45[
+
+### Inferenzstatistik
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Entscheidungen&lt;/high&gt; über deskriptive Statistiken&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Unterscheidet&lt;/high&gt; sich ein deskriptives Mass &lt;high&gt;von angenommenen Werten&lt;/high&gt;, z.B. 0.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Unterscheiden sich &lt;high&gt;deskriptive Masse untereinander&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Schätzungen&lt;/high&gt; über deskriptive Statistiken&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+---
+
+
+# Deskriptive Statistik
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Zusammenfassung&lt;/high&gt; zentraler Eigenschaften der Daten durch etablierte Masse&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Masse&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Häufigkeiten&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Zentralität&lt;/b&gt;: Mittelwert, Median, Modalwert&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Streuung&lt;/b&gt;: Varianz, Interquartilabstand, Spannweite&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Zusammenhänge&lt;/b&gt;: Diverse Korrelationsmasse&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Visualisierung&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+]
+
+
+.pull-right45[
+
+
+
+
+```r
+immatrikulation %&gt;% filter(Jahr == 2019)
+```
+
+
+```
+## # A tibble: 26 x 3
+##    Kanton          Jahr Immatrikulation…
+##    &lt;chr&gt;          &lt;dbl&gt;            &lt;dbl&gt;
+##  1 Aargau          2019              216
+##  2 Appenzell Aus…  2019                6
+##  3 Appenzell Inn…  2019                6
+##  4 Basel-Landsch…  2019              466
+##  5 Basel-Stadt     2019              360
+##  6 Bern            2019               73
+##  7 Freiburg        2019               12
+##  8 Genf            2019                2
+##  9 Glarus          2019                6
+## 10 Graubünden      2019               24
+## # … with 16 more rows
+```
+
+]
+
+---
+
+# Deskriptive Statistik
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Zusammenfassung&lt;/high&gt; zentraler Eigenschaften der Daten durch etablierte Masse&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Masse&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Häufigkeiten&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Zentralität&lt;/b&gt;: Mittelwert, Median, Modalwert&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Streuung&lt;/b&gt;: Varianz, Interquartilabstand, Spannweite&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Zusammenhänge&lt;/b&gt;: Diverse Korrelationsmasse&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Visualisierung&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+
+]
+
+
+.pull-right45[
+
+
+
+
+```r
+immatrikulation %&gt;% filter(Jahr == 2019) %&gt;%
+  summarize(
+    Total = sum(Immatrikulationen),
+    Mittel = median(Immatrikulationen),
+    Streuung = sd(Immatrikulationen)
+    )
+```
+
+
+```
+## # A tibble: 1 x 3
+##   Total Median Streuung
+##   &lt;dbl&gt;  &lt;dbl&gt;    &lt;dbl&gt;
+## 1  1651   14.5     114.
+```
+
+]
+
+
+
+---
+
+
+.pull-left45[
+
+# Deskriptive Statistik
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Zusammenfassung&lt;/high&gt; zentraler Eigenschaften der Daten durch etablierte Masse&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Masse&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Häufigkeiten&lt;/b&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Zentralität&lt;/b&gt;: Mittelwert, Median, Modalwert&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Streuung&lt;/b&gt;: Varianz, Interquartilabstand, Spannweite&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Zusammenhänge&lt;/b&gt;: Diverse Korrelationsmasse&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Visualisierung&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+
+.pull-right45[
+
+&lt;br&gt;
+
+&lt;img src="Intro2Stats_files/figure-html/unnamed-chunk-8-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+
+
+---
+
+
+.pull-left45[
+
+# Inferenz-Statistik
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Entscheidungen und Urteile&lt;/high&gt; über Deskriptive Entscheidungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Beispiele&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Unterscheidet&lt;/high&gt; sich ein deskriptives Mass &lt;high&gt;von angenommenen Werten&lt;/high&gt;, z.B. 0.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Unterscheiden&lt;/high&gt; sich deskriptive Masse &lt;high&gt;untereinander&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+]
+
+
+.pull-right45[
+
+&lt;br&gt;
+
+&lt;img src="Intro2Stats_files/figure-html/unnamed-chunk-9-1.png" style="display: block; margin: auto;" /&gt;
+
+]
+
+
+---
+
+# Inferenz-Statistik
+
+.pull-left45[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Entscheidungen und Urteile&lt;/high&gt; über Deskriptive Entscheidungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Beispiele&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Unterscheidet&lt;/high&gt; sich ein deskriptives Mass &lt;high&gt;von angenommenen Werten&lt;/high&gt;, z.B. 0.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Unterscheiden&lt;/high&gt; sich deskriptive Masse &lt;high&gt;untereinander&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+]
+
+
+.pull-right45[
+
+
+
+
+```r
+immatrikulation
+```
+
+
+```
+## # A tibble: 26 x 3
+##    Kanton                 `2009` `2019`
+##    &lt;chr&gt;                   &lt;dbl&gt;  &lt;dbl&gt;
+##  1 Aargau                    173    216
+##  2 Appenzell Ausserrhoden     14      6
+##  3 Appenzell Innerrhoden      14      6
+##  4 Basel-Landschaft          418    466
+##  5 Basel-Stadt               345    360
+##  6 Bern                       91     73
+##  7 Freiburg                   14     12
+##  8 Genf                        6      2
+##  9 Glarus                      0      6
+## 10 Graubünden                 29     24
+## # … with 16 more rows
+```
+
+]
+
+
+
+---
+
+# Ist der Unterschied...
+
+&lt;br&gt;
+
+.pull-left5[
+
+&lt;p align="center"&gt;
+
+  &lt;font style="font-family:'Yanone Kaffeesatz';font-size:40px"&gt;Systematisch&lt;/font&gt;&lt;br&gt;
+
+  &lt;img src="image/gears.jpeg" width=420px height=300px style="border-radius:10%"&gt;
+
+&lt;/p&gt;
+
+
+
+]
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+
+  &lt;font style="font-family:'Yanone Kaffeesatz';font-size:40px"&gt;Zufällig&lt;/font&gt;&lt;br&gt;
+
+  &lt;img src="image/chance.jpeg" width=420px height=300px style="border-radius:10%"&gt;
+
+&lt;/p&gt;
+
+
+]
+
+
+---
+
+.pull-left2[
+
+# Kann das sein?
+
+]
+
+.pull-right7[
+
+&lt;br&gt;
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/chocolate.png" height=500px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://blog.dectech.co.uk/2016/04/06/why-is-correlation-not-causation-part-i/"&gt;dectech.co.uk&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left2[
+
+# Kann das sein?
+
+]
+
+.pull-right7[
+
+&lt;br&gt;
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/drownings.png" height = 500px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;from &lt;a href="https://www.tylervigen.com/spurious-correlations"&gt;tylervigen.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left35[
+
+# Das Modell der Inferenz-Statistik
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die Inferenz-Statistik geht i.A. davon aus, dass den Beobachtungen (Stichprobe) eine &lt;high&gt;wahre, unbeobachtete Welt&lt;/high&gt; (Population) zugrunde liegt. &lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Ziel der Inferenz-Statistik ist es von der Stichprobe &lt;high&gt;auf die Population zu schliessen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Grundlage der Inferenz sind &lt;high&gt;Annahmen&lt;/high&gt; darüber wie die Population &lt;high&gt;die Stichprobe generiert&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/model.png" height="520"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left35[
+
+# Nullhypothese H0
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Jede statistische Inferenz beginnt mit &lt;high&gt;Annahmen über die Population&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;In der klassischen Inferenz-Statistik ist &lt;high&gt;die wichtigste Annahme&lt;/high&gt; die Nullhypothese H0.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Die Nullhypothese H0 dient...&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;Als Grundlage für die &lt;high&gt;Konstruktion des Tests&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Als &lt;high&gt;Vergleichsmasstab&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism1.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# Nullhypothese H0
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Wahrscheinlichkeiten &lt;mono&gt;&lt;b&gt;p&lt;/b&gt;&lt;/mono&gt;&lt;/high&gt; unterliegen den beobachteten Häufigkeiten.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p align = "center" &gt;
+  &lt;img src="image/ps.png" height=320px&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism1.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left35[
+
+# Datenmodell
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Beschreibt wie, gegeben die H0, die &lt;high&gt;Stichproben verteilt sein sollten&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Bedient sich i.d.R. bekannter &lt;high&gt;Wahrscheinlichkeitsverteilungen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+`$$Pr(Daten|H0) = Verteilung$$`
+
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism2.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# Datenmodell
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Weist jedem &lt;high&gt;Häufigkeitsmuster&lt;/high&gt; eine &lt;high&gt;Wahrscheinlichkeit&lt;/high&gt; zu gebeben &lt;mono&gt;&lt;b&gt;p&lt;/b&gt;&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p align = "center" &gt;
+  &lt;img src="image/ps.png" height=320px&gt;
+&lt;/p&gt;
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism2.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+
+
+---
+
+.pull-left35[
+
+# Daten unter H0
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Mithilfe des Datenmodells können &lt;high&gt;Stichproben unter der H0 simuliert werden&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism3.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# Teststatistik
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Teststatistiken sind auf bestimmte Inferenztests &lt;high&gt;zugeschnittene deskriptive Statistiken&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Beinhaltet i.d.R.:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Schätzung&lt;/high&gt; der Elemente in der H0.&lt;/li&gt;&lt;/span&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Zusammenfassung&lt;/high&gt; des relevanten Effekts/Zusammenhangs.&lt;/li&gt;&lt;/span&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism4.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left35[
+
+# Teststatistik
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die &lt;mono&gt;&lt;b&gt;p&lt;/b&gt;&lt;/mono&gt; werden geschätzt als &lt;mono&gt;&lt;b&gt;p&amp;#x0302;&lt;/b&gt;&lt;/mono&gt;, die &lt;high&gt;relative Häufigkeit der Kantone&lt;/high&gt; über die Jahre hinweg.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;p align = "center" &gt;
+  &lt;img src="image/ps2.png" height=320px&gt;
+&lt;/p&gt;
+
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism4.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# Teststatistik
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die X&lt;sup&gt;2&lt;/sup&gt; Teststatistik summiert die &lt;high&gt;normalisierten, quadratischen Abweichungen&lt;/high&gt; der auf Basis von &lt;mono&gt;&lt;b&gt;p&lt;/b&gt;&lt;/mono&gt; erwarteten Häufigkeiten.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;p align = "center" &gt;
+  &lt;img src="image/teststat.png"&gt;
+&lt;/p&gt;
+
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism4.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+
+
+---
+
+.pull-left35[
+
+# Stichprobenverteilung
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Die Stichprobenverteilung ist die Verteilung von &lt;high&gt;deskriptiven Statistiken&lt;/high&gt;,  die aus theoretischen (oder simulierten) &lt;high&gt;Stichproben aus der Population&lt;/high&gt; berechnet werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Meist geht es um die &lt;high&gt;Verteilung der Teststatistik&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism5.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# &lt;i&gt;p&lt;/i&gt;-Wert
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Vergleich der beobachteten Werte mit der Stichprobenverteilung&lt;/high&gt; unter H0 verrät wie konsistent die gemachten Beobachtungen mit der H0 sind.&lt;/span&gt;&lt;/li&gt;
+    &lt;li class="m2"&gt;&lt;span&gt;Möglichkeiten&lt;/span&gt;&lt;/li&gt;
+    &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;&lt;b&gt;Likelihood&lt;/b&gt;&lt;/li&gt;&lt;/span&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Extremität&lt;/high&gt;&lt;/li&gt;&lt;/span&gt;
+    &lt;/ul&gt; 
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism6.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left35[
+
+# &lt;i&gt;p&lt;/i&gt;-Wert
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;i&gt;p&lt;/i&gt;-Wert ist die Wahrscheinlichkeit &lt;high&gt;unter H0 solche oder extremere Beobachtungen zu machen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Extremer kann in &lt;high&gt;eine oder beide Richtungen&lt;/high&gt; bestimmt werden.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism7.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# Testverteilung
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Meist ist die Form der &lt;high&gt;Stichprobenverteilung bereits bekannt&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Für Fälle wie diesen ist dies die &lt;high&gt;&amp;Chi;&lt;sup&gt;2&lt;/sup&gt; Verteilung&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism8.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# Freiheitsgrade
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Testverteilungen haben Parameter, die der &lt;high&gt;aktuellen Situation angepasst werden&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Parameter.&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+  &lt;li&gt;&lt;span&gt;&lt;high&gt;Freiheitsgrade&lt;/high&gt;&lt;/li&gt;&lt;/span&gt;
+  &lt;li&gt;&lt;span&gt;Nicht-Zentralität&lt;/li&gt;&lt;/span&gt;
+  &lt;li&gt;&lt;span&gt;etc.&lt;/li&gt;&lt;/span&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism9.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left35[
+
+# Freiheitsgrade
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Freiheitsgrade (degrees of freedom) drücken die &lt;high&gt;Anzahl der "freien" Beobachtungen&lt;/high&gt; aus.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+&lt;p align = "center" &gt;
+  &lt;img src="image/df.png"&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism9.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# Freiheitsgrade
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Freiheitsgrade (degrees of freedom) drücken die &lt;high&gt;Anzahl der "freien" Beobachtungen&lt;/high&gt; aus.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p align = "center" style="margin-top:20px"&gt;
+  &lt;img src="image/ps2.png" height=320px&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/mechanism9.png" style='margin-top:20px'&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Die Normalverteilung
+
+.pull-left35[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Traditionell das &lt;high&gt;Arbeitstier&lt;/high&gt; der Inferenzstatistik.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Beschrieben durch&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;Mittelwert &amp;mu;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Standardabweichung &amp;sigma;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;li class="m3"&gt;Folgt aus dem &lt;high&gt;zentralen Grenzwertsatz&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;br&gt;
+
+`$$\large p(x|\mu, \sigma) = \frac{1}{\sigma \sqrt 2\pi}e^{-(x-\mu)/2\sigma^2}$$`
+
+]
+
+.pull-right5[
+
+&lt;p align = "left" &gt;
+  &lt;img src="image/normal.png" height=430px&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+.pull-left35[
+
+# Zentraler Grenzwertsatz 
+&lt;p style="margin-top:-30px"&gt;&lt;font style="font-size:16px"&gt;oder warum die Welt normal ist&lt;/font&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Mittelwerte&lt;/high&gt; egal welcher Verteilung &lt;high&gt;konvergieren gegen eine Normalverteilung&lt;/high&gt; mit steigendem &lt;mono&gt;N&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Eigenschaften&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Mittelwert&lt;/high&gt; der Mittelwerte konvergiert gegen &amp;mu;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Standardabweichung&lt;/high&gt; der Mittelwerte konvergiert gegen &amp;sigma;/&amp;#8730;n&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+$$ \large \bar{X} \xrightarrow{d} \mathcal{N}(\mu, \frac{\sigma}{\sqrt{n}}) $$
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+
+&lt;p align ="left"&gt;
+  &lt;img src="image/clt_bimod.png"&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;img src="image/clt_bimods.gif"&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+.pull-left35[
+
+# Zentraler Grenzwertsatz 
+&lt;p style="margin-top:-30px"&gt;&lt;font style="font-size:16px"&gt;oder warum die Welt normal ist&lt;/font&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Mittelwerte&lt;/high&gt; egal welcher Verteilung &lt;high&gt;konvergieren gegen eine Normalverteilung&lt;/high&gt; mit steigendem &lt;mono&gt;N&lt;/mono&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Eigenschaften&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class=level&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Mittelwert&lt;/high&gt; der Mittelwerte konvergiert gegen &amp;mu;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Standardabweichung&lt;/high&gt; der Mittelwerte konvergiert gegen &amp;sigma;/&amp;#8730;n&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+$$ \large \bar{X} \xrightarrow{d} \mathcal{N}(\mu, \frac{\sigma}{\sqrt{n}}) $$
+
+]
+
+.pull-right5[
+
+&lt;br&gt;
+
+&lt;p align ="left"&gt;
+  &lt;img src="image/clt_expos.png"&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;img src="image/clt_expos.gif"&gt;
+&lt;/p&gt;
+
+]
+
+
+
+---
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/SmR_2020Mai/index.html"&gt;Schedule&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

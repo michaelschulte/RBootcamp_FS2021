@@ -1,1 +1,5 @@
-# RBootcamp_HS2020
+# R for Data Science by Basel R Bootcamp
+
+Data science is one of the most exciting fields around, and the R statistical language is one of the best ways to learn and practice it. In this packed weekend, you will learn how to do data science using R from the ground-up. You will start by learning the basics of the R language and the RStudio programming environment. You will then cover topics ranging from loading data from external files, to cleaning and organising data, to conducting basic statistical analyses and creating striking visualisations.
+
+The course will take place from 9:00 to 18:00 on each course day. Each day will contain a series of short lectures and examples to introduce you to new topics. The bulk of each day will be dedicated to hands-on exercises to help you ‘learn by doing’. Dedicated time will be given for 1:1 feedback. All course materials, tutorials, examples, exercises, and solutions will be available online for you to view at any time during, and after the course.

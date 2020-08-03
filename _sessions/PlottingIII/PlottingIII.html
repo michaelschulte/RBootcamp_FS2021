@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Plotting III</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Plotting III
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://therbootcamp.github.io/EDA_2020Feb/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Februar 2020
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Explorative Datenanalyse mit R | Februar 2020
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+
+# Agenda
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Kontext&lt;/span&gt;&lt;/li&gt;
+  &lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Kognitive Limitationen&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Vermeide 'clutter'?&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Schaffe Ordnung&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Setze Fokus&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Nutze Vorwissen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Abildungsarten&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Text, Tabelle, Graphik&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Do's und Dont's&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+&lt;img src="image/badplot.jpg" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://www.modernanalyst.com/Resources/BusinessAnalystHumor/tabid/218/ID/3516/Data_Analysis_Conclusions.aspx"&gt;modernanalyst.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Agenda
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Kontext&lt;/span&gt;&lt;/li&gt;
+  &lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Kognitive Limitationen&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Vermeide 'clutter'?&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Schaffe Ordnung&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Setze Fokus&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Nutze Vorwissen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Abildungsarten&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Text, Tabelle, Graphik&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Do's und Dont's&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+]
+
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+&lt;img src="image/storytelling.jpg" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# Was ist der Kontext?
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Zwecke&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Explorierend&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;high&gt;Erklärend&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Audience&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Vorwissen&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Erwartungen&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+&lt;img src="image/audience.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href=""&gt;upbeatagency.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# Kognitive Limitationen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Gedächtnis-&lt;/high&gt; und &lt;high&gt;Aufmerksamkeitspanne&lt;/high&gt; von Menschen sind limitiert.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Informationsverarbeitung beeinflusst durch:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;span&gt;&lt;li&gt;&lt;high&gt;Erwartungen&lt;/high&gt; und Vorwissen&lt;/span&gt;&lt;/li&gt;
+    &lt;span&gt;&lt;li&gt;&lt;high&gt;Visuelle&lt;/high&gt; Charakteristika&lt;/li&gt;&lt;/span&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+&lt;p align="center"&gt;
+&lt;img src="image/homer.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;from &lt;a href="https://www.pinterest.de/pin/458311699553074413/?lp=true"&gt;pinterest.de&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Kognitive Limitationen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Gedächtnis-&lt;/high&gt; und &lt;high&gt;Aufmerksamkeitspanne&lt;/high&gt; von Menschen sind limitiert.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Informationsverarbeitung beeinflusst durch:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;span&gt;&lt;li&gt;&lt;high&gt;Erwartungen&lt;/high&gt; und Vorwissen&lt;/span&gt;&lt;/li&gt;
+    &lt;span&gt;&lt;li&gt;&lt;high&gt;Visuelle&lt;/high&gt; Charakteristika&lt;/li&gt;&lt;/span&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+&lt;p align="center"&gt;
+&lt;img src="image/3s1.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Kognitive Limitationen
+
+.pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Gedächtnis-&lt;/high&gt; und &lt;high&gt;Aufmerksamkeitspanne&lt;/high&gt; von Menschen sind limitiert.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Informationsverarbeitung beeinflusst durch:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;span&gt;&lt;li&gt;&lt;high&gt;Erwartungen&lt;/high&gt; und Vorwissen&lt;/span&gt;&lt;/li&gt;
+    &lt;span&gt;&lt;li&gt;&lt;high&gt;Visuelle&lt;/high&gt; Charakteristika&lt;/li&gt;&lt;/span&gt;
+  &lt;/ul&gt;
+  &lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right5[
+&lt;p align="center"&gt;
+&lt;img src="image/3s2.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+
+
+---
+
+# Vermeide 'clutter'
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Entferne alle &lt;high&gt;unnötig&lt;/high&gt;en Elemente.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Freiflächen&lt;/high&gt; in Graphiken sind genauso wichtig wie Pausen beim sprechen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/table1.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Vermeide 'clutter'
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Entferne alle &lt;high&gt;unnötig&lt;/high&gt;en Elemente.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Freiflächen&lt;/high&gt; in Graphiken sind genauso wichtig wie Pausen beim sprechen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/table2.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Vermeide 'clutter'
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Entferne alle &lt;high&gt;unnötig&lt;/high&gt;en Elemente.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Freiflächen&lt;/high&gt; in Graphiken sind genauso wichtig wie Pausen beim sprechen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/table3.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+
+---
+
+# Schaffe Ordnung
+
+.pull-left3[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Richte Elemente an &lt;high&gt;klare&lt;/high&gt;n &lt;high&gt;Linien&lt;/high&gt; aus.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Nochmal: &lt;high&gt;Freiflächen&lt;/high&gt; in Graphiken sind genauso wichtig wie Pausen beim sprechen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/clutter1.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Schaffe Ordnung
+
+.pull-left3[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Richte Elemente an &lt;high&gt;klare&lt;/high&gt;n &lt;high&gt;Linien&lt;/high&gt; aus.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Nochmal: &lt;high&gt;Freiflächen&lt;/high&gt; in Graphiken sind genauso wichtig wie Pausen beim sprechen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/clutter2.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Setze Fokus
+
+.pull-left3[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Nutze &lt;high&gt;wenige Farben&lt;/high&gt; und setze sie &lt;high&gt;strategisch&lt;/high&gt; ein (gilt auch für Kontrast).&lt;/span&gt;&lt;/li&gt;
+  &lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Wähle angemessene, &lt;high&gt;ansprechende Farben&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Tools: &lt;a href="https://color.adobe.com/de/create"&gt;color.adobe.com&lt;/a&gt; oder &lt;a href="https://coolors.co/"&gt;coolors.co&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Farbsätze: &lt;a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"&gt;viridis&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Sei &lt;high&gt;konsistent&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/marriage1.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Setze Fokus
+
+.pull-left3[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Nutze &lt;high&gt;wenige Farben&lt;/high&gt; und setze sie &lt;high&gt;strategisch&lt;/high&gt; ein (gilt auch für Kontrast).&lt;/span&gt;&lt;/li&gt;
+  &lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Wähle angemessene, &lt;high&gt;ansprechende Farben&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Tools: &lt;a href="https://color.adobe.com/de/create"&gt;color.adobe.com&lt;/a&gt; oder &lt;a href="https://coolors.co/"&gt;coolors.co&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Farbsätze: &lt;a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"&gt;viridis&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Sei &lt;high&gt;konsistent&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/marriage2.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+
+---
+
+# Setze Fokus
+
+.pull-left3[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Nutze &lt;high&gt;wenige Farben&lt;/high&gt; und setze sie &lt;high&gt;strategisch&lt;/high&gt; ein (gilt auch für Kontrast).&lt;/span&gt;&lt;/li&gt;
+  &lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Wähle angemessene, &lt;high&gt;ansprechende Farben&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Tools: &lt;a href="https://color.adobe.com/de/create"&gt;color.adobe.com&lt;/a&gt; oder &lt;a href="https://coolors.co/"&gt;coolors.co&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Farbsätze: &lt;a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"&gt;viridis&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Sei &lt;high&gt;konsistent&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/colorwheel.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;see &lt;a href="https://color.adobe.com/de/create"&gt;color.adobe.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+# Setze Fokus
+
+.pull-left3[
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Nutze &lt;high&gt;wenige Farben&lt;/high&gt; und setze sie &lt;high&gt;strategisch&lt;/high&gt; ein (gilt auch für Kontrast).&lt;/span&gt;&lt;/li&gt;
+  &lt;br&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Wähle angemessene, &lt;high&gt;ansprechende Farben&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Tools: &lt;a href="https://color.adobe.com/de/create"&gt;color.adobe.com&lt;/a&gt; oder &lt;a href="https://coolors.co/"&gt;coolors.co&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Farbsätze: &lt;a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html"&gt;viridis&lt;/a&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Sei &lt;high&gt;konsistent&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/colorwheel2.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;see &lt;a href="https://coolors.co/"&gt;coolors.co&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+]
+
+---
+
+class: middle, center
+
+&lt;h1&gt;Darstellungsarten&lt;/h1&gt;
+&lt;h2&gt;Do's und Don'ts&lt;/h2&gt;
+
+---
+
+# DO: Text chart
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Geht es nur um eine Zahl, präsentiere sie als Text.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/text1.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# DO: Text chart
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Geht es nur um eine Zahl, präsentiere sie als Text.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/text2.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Tabellen
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Tabellen sind &lt;high&gt;präzise&lt;/high&gt; und vollständig.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Müssen &lt;high&gt;seriell gelesen&lt;/high&gt; werden und brauchen of Zeit.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Schlankere Tabellen&lt;/high&gt; sind leichter zu lesen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Farben&lt;/high&gt; können das Verständnis &lt;high&gt;unterstützen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/table4.png" height="340px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Tabellen
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Tabellen sind &lt;high&gt;präzise&lt;/high&gt; und vollständig.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Müssen &lt;high&gt;seriell gelesen&lt;/high&gt; werden und brauchen of Zeit.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Schlankere Tabellen&lt;/high&gt; sind leichter zu lesen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Farben&lt;/high&gt; können das Verständnis &lt;high&gt;unterstützen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/table5.png" height="340px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Graphiken
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Können &lt;high&gt;parallel&lt;/high&gt; verarbeitet werden.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Eine gute Graphik ist oft leichter zu verstehen als eine gute Tabelle.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Gute Graphiken sind &lt;high&gt;schwieriger&lt;/high&gt; als gute Tabellen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/graphs.png" height="440px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Barplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Sehr &lt;high&gt;geläufig&lt;/high&gt; und dadurch attraktiv.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Grundlinie liegt auf &lt;high&gt;Null&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Natürliche &lt;high&gt;Reihenfolge&lt;/high&gt; der Kategorien.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/bar0.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# DO: Barplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Sehr &lt;high&gt;geläufig&lt;/high&gt; und dadurch attraktiv.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Grundlinie liegt auf &lt;high&gt;Null&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Natürliche &lt;high&gt;Reihenfolge&lt;/high&gt; der Kategorien.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/bar1.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+
+# DO: Barplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Sehr &lt;high&gt;geläufig&lt;/high&gt; und dadurch attraktiv.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Grundlinie liegt auf &lt;high&gt;Null&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Natürliche &lt;high&gt;Reihenfolge&lt;/high&gt; der Kategorien.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+
+&lt;p align="center"&gt;
+&lt;img src="image/bar2.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# DO: Horizontaler Barplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Horizontale Barplots sind etwas &lt;high&gt;leichter zu lesen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/barhoriz1.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Horizontaler Barplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Horizontale Barplots sind etwas &lt;high&gt;leichter zu lesen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/barhoriz2.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# DO: Linienplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Gut für den &lt;high&gt;Verlauf einzelner Variablen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;X-Achse muss &lt;high&gt;gleichschrittig&lt;/high&gt; sein.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/line1.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Linienplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Gut für den &lt;high&gt;Verlauf einzelner Variablen&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;X-Achse muss &lt;high&gt;gleichschrittig&lt;/high&gt; sein.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/line2.png" height="380px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Slopeplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Gut für &lt;high&gt;Veränderungen&lt;/high&gt; über zwei Beobachtungen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Überlappungen können &lt;high&gt;leicht komplex&lt;/high&gt; werden.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/slope1.png" height="420px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Slopeplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Gut für &lt;high&gt;Veränderungen&lt;/high&gt; über zwei Beobachtungen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Überlappungen können &lt;high&gt;leicht komplex&lt;/high&gt; werden.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/slope2.png" height="420px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Scatterplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Gut für &lt;high&gt;Zusammenhänge&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/scatter1.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+
+---
+
+# DO: Scatterplot
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Gut für &lt;high&gt;Zusammenhänge&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+&lt;img src="image/scatter2.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# DON'T: Pie charts
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Schwer&lt;/high&gt; zu verstehen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Niemals 3D&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/pie1.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DON'T: Pie charts
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Schwer&lt;/high&gt; zu verstehen.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Niemals 3D&lt;/high&gt;.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/pie2.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DON'T: Area graph
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Besser&lt;/high&gt; als pie charts.&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Flächen immer schwer zu verstehen.&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/area.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DON'T: 2. Achse
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Unnötig komplex&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Besser:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Explizierte Werte&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Vertikal getrennte Achse&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/secondaxis.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DON'T: 2. Achse
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Unnötig komplex&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Besser:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Explizierte Werte&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Vertikal getrennte Achse&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/secondaxis2.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DON'T: 2. Achse
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Unnötig komplex&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Besser:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Explizierte Werte&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Vertikal getrennte Achse&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/secondaxis3.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# DO: Annotation
+
+.pull-left3[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Annotation ist &lt;high&gt;sehr wichtig&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;Immer nötig:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;x-Achsen Titel&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;y-Achsen Titel&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Meistens hilfreich:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Plot Titel&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;br&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;Oft hilfreich:&lt;/span&gt;&lt;/li&gt;
+  &lt;ul class="level"&gt;
+    &lt;li&gt;&lt;span&gt;Untertitel&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Legende&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Erläuterungen im plot&lt;/span&gt;&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ul&gt;
+
+]
+
+
+.pull-right6[
+&lt;p align="center"&gt;
+
+&lt;img src="image/breakup.png" height="400px"&gt;&lt;br&gt;
+&lt;font style="font-size:10px"&gt;adapted from &lt;a href="http://www.storytellingwithdata.com/"&gt;storytellingwithdata.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/PlottingIII/PlottingIII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

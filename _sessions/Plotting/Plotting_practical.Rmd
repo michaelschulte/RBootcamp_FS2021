@@ -1,0 +1,517 @@
+---
+title: "Plotting"
+author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
+  <tr style='border:none'>
+    <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
+      <font style='font-style:normal'>Explorative Datenanalyse mit R</font><br>
+      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+        <i class='fas fa-clock' style='font-size:.9em;' ></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <i class='fas fa-home' style='font-size:.9em;'></i>
+      </a>
+      <a href='mailto:therbootcamp@gmail.com'>
+        <i class='fas fa-envelope' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://www.linkedin.com/company/rbootcamp'>
+        <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <font style='font-style:normal'>The R Bootcamp</font>
+      </a>
+    </td>
+    <td style='width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none'>
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+    </td>
+  </tr></table>"
+output:
+  html_document:
+    css: practical.css
+    self_contained: no
+    
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(comment = NA, 
+                      fig.width = 6, 
+                      fig.height = 6,
+                      fig.align = 'center',
+                      echo = TRUE, 
+                      eval = TRUE, 
+                      warning = FALSE, 
+                      message = FALSE)
+
+options(digits = 3)
+require(tidyverse)
+```
+
+<p align="center" width="100%">
+  <img src="image/burgers.jpg" alt="Trulli" style="width:100%">
+  <br>
+  <font style="font-size:10px">from <a href="https://www.today.com/recipes/anne-burell-s-killer-turkey-burgers-recipe-t146616">today.com</a></font>
+</p>
+
+# {.tabset}
+
+## Überblick
+
+In diesem Practical wirst du üben mit `ggplot2` publikationsfertige Grafiken zu erstellen. 
+
+Am Ende des Practicals wirst du wissen wie man:
+
+1. Einen Plot Schritt-für-Schritt aufbaut.
+2. Verschiedene `geom`s verwendet.
+3. Farben verändert.
+
+## Aufgaben
+
+### A - Setup
+
+1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+
+2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Plotting Practical" als Kommentare an den Anfang des Skripts.
+
+```{r, eval = FALSE, echo = TRUE}
+## NAME
+## DATUM
+## Plotting Practical
+```
+
+3. Speichere das neue Skript unter dem Namen `plotting_practical.R` im `2_Code` Ordner.
+
+4. Lade `tidyverse` und `ggthemes`.
+
+### B - Lade den Datensatz
+
+1. Verwende die `read_csv()` Funktion um den Datensatz `mcdonalds` als Objekt `mcdonalds` einzulesen. Denke an den Trick mit den Anführungszeichen. 
+
+```{r, echo = F, eval = T, message = F}
+# Lese mcdonalds
+mcdonalds <- read_csv('1_Data/mcdonalds.csv')
+```
+
+2. Printe den Datensatz. Wurden alle Variablentypen korrekt identifiziert?
+
+3. Verwende `summary()` um einen weiteren Überblick über die Daten zu bekommen.
+
+### C - Baue einen Plot
+
+In diesem Abschnitt wirst du den folgenden Plot Schritt-für-Schritt zusammenbauen. 
+
+```{r, echo = FALSE, eval = TRUE, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
+  geom_point() +
+  geom_smooth(col = "black") +
+  labs(title = "McDonalds Nährwerte",
+       subtitle = "Jeder Punkt ist ein Menü-Item",
+       caption = "Quelle: Kaggle.com") +
+  xlim(0, 1250) +
+  theme_minimal()
+```
+
+1. Verwende `ggplot()` um einen leeren Plot zu starten. Positioniere `Calories` auf der x-Achse und `SaturatedFat` auf der y-Achse. 
+
+```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
+ggplot(data = mcdonalds, 
+       mapping = aes(x = XX, y = XX))
+```
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat))
+```
+
+2. Verwende `geom_point()` und `+` um Punkte zu plotten.
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat)) +
+  geom_point()
+```
+
+3. Verwende das `col` Argument in `aes()` um die Farbe nach der Variable `Category` variieren zu lassen.
+
+```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
+ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() 
+```
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
+  geom_point()
+```
+
+4. Verwende `geom_smooth()` um eine angepasste Linie zu ergänzen.
+
+```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
+ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() 
+```
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
+  geom_point() +
+  geom_smooth()
+```
+
+5. Oops! Hast du mehre Linien anstatt einer bekommen? Löse das Problem indem du die Farbe innerhalb von `geom_smooth()` auf `black` setzt. 
+
+```{r, echo = TRUE, eval = FALSE, fig.width = 6, fig.height = 4}
+ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() +
+  geom_smooth(col = "XX") 
+```
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
+  geom_point() +
+  geom_smooth(col = "black")
+```
+
+6. Verwende `labs()` um den Plot angemessen zu annotieren.
+
+```{r, echo = TRUE, eval = FALSE, fig.width = 8, fig.height = 2}
+ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() +
+  geom_smooth(col = "XX") +
+  labs(title = "XX",
+       subtitle = "XX",
+       caption = "XX")
+```
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
+  geom_point() +
+  geom_smooth(col = "black") +
+  labs(title = "McDonalds Nährwerte",
+       subtitle = "Jeder Punkt ist ein Menü-Item",
+       caption = "Quelle: Kaggle.com")
+```
+
+7. Verwende `xlim()`, eine einfache Version von `scale_x_continuous()`, um die x-Achse auf die Werte `0` und `1250` zu begrenzen. 
+
+```{r, echo = TRUE, eval = FALSE, fig.width = 8, fig.height = 2}
+ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() +
+  geom_smooth(col = "XX") +
+  labs(title = "XX",
+       subtitle = "XX",
+       caption = "XX") +
+  xlim(XX, XX)
+```
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
+  geom_point() +
+  geom_smooth(col = "black") +
+  labs(title = "McDonalds Nährwerte",
+       subtitle = "Jeder Punkt ist ein Menü-Item",
+       caption = "Quelle: Kaggle.com") +
+  xlim(0, 1250)
+```
+
+8. Abschliessend verwende `theme_minimal()` um die Ästhetik des Plots anzupassen.  
+
+```{r, fig.width = 7, fig.height = 4}
+ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
+  geom_point() +
+  geom_smooth(col = "black") +
+  labs(title = "McDonalds Nährwerte",
+       subtitle = "Jeder Punkt ist ein Menü-Item",
+       caption = "Quelle: Kaggle.com") +
+  xlim(0, 1250) +
+  theme_minimal()
+```
+
+
+### D - `geom`s
+
+1. Verwende den Code unten um einen Violinen-Plot der `Calories` (y-Achse) in Abhängigkeit der `Category` (x-Achse) zu kreieren. Violinenplots zeigen mit ihrer Dicke die jeweilige relative Häufigkeit der Werte an - in diesem Fall der Kalorien. Verwende für das Argument `fill` ebenfalls `Category`, um die Violinen entsprechend einzufärben.
+
+```{r, eval = FALSE, echo = TRUE, fig.width = 8, fig.height = 3}
+ggplot(data = mcdonalds, 
+       aes(x = XX, y = XX, fill = XX)) +
+  geom_violin()
+```
+
+
+```{r, fig.width = 8, fig.height = 3}
+ggplot(data = mcdonalds, 
+       aes(x = Category, y = Calories, fill = Category)) +
+  geom_violin()
+
+```
+
+2. Ergänze mit `labs()` einen angemessenen Titel (`title`) und Untertitel (`subtitle`).   
+
+```{r, eval = FALSE, echo = TRUE, fig.width = 8, fig.height = 3}
+ggplot(data = mcdonalds, aes(x = XX, y = XX, fill = XX)) +
+  geom_violin() +
+  labs(title = "XX",
+       subtitle = "XX")
+```
+
+```{r, fig.width = 8, fig.height = 3}
+ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +
+  geom_violin() +
+  labs(title = "McDonalds",
+       subtitle = "Kalorienverteilung pro Menü Kategorie")
+```
+
+3. Ergänze `guides(fill = FALSE)`, so dass keine Legende gezeigt wird. 
+
+```{r, eval = FALSE, echo = TRUE, fig.width = 8, fig.height = 3}
+ggplot(data = mcdonalds, aes(x = XX, y = XX, fill = XX)) +
+  geom_violin() +
+  labs(title = "XX",
+       subtitle = "XX") + 
+  guides(fill = FALSE)
+```
+
+```{r, fig.width = 8, fig.height = 3}
+ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +
+  geom_violin() +
+  labs(title = "McDonalds",
+       subtitle = "Kalorienverteilung pro Menü Kategorie") +
+  guides(fill = FALSE)
+```
+
+4. Verwende `geom_jitter()` um Punkte über die Violinen zu plotten. Setze in der Funktion `width = 1` und `alpha = .5`.
+
+```{r, fig.width = 8, fig.height = 3}
+ggplot(data = mcdonalds, 
+       aes(x = Category, y = Calories, fill = Category)) +
+  geom_violin() +
+  labs(title = "McDonalds",
+       subtitle = "Kalorienverteilung pro Menü Kategorie") +
+  guides(fill = FALSE) +
+  geom_jitter(width = .1, alpha = .5)
+```
+
+5. Probiere ein paar Sachen aus:
+
+- Ändere die Werte für `width` oder `alpha` in `geom_jitter()`.
+- Entferne `fill = Category`. 
+- Verwende `geom_boxplot()` um stattdessen einen Box-Plot zu plotten.  
+
+### E - `geom_text`
+
+In dieser Sektion wirst du den folgenden Plot unter Verwendung von `geom_text()` kreieren.
+
+```{r, echo = FALSE, eval = TRUE, fig.width = 8, fig.height = 4}
+ggplot(mcdonalds, aes(x = Sugars, 
+                      y = Calories, 
+                      col = Category, 
+                      label = Item)) +
+  geom_point() +
+  geom_text(data = mcdonalds %>% 
+            filter(Calories > 1100),
+            col = "black", 
+            check_overlap = TRUE, 
+            hjust = "left") +
+  xlim(0, 150) +
+  ylim(0, 2000) +
+  theme_minimal() +
+  labs(title = "Ergänze Labels zu einem Plot mit geom_text()")
+```
+
+1. Beginne damit folgendes Code-Template entsprechend auszufüllen. 
+
+```{r, echo = TRUE, eval = FALSE}
+ggplot(mcdonalds, aes(x = XX, 
+                      y = XX, 
+                      col = XX)) +
+  geom_point() +
+  xlim(XX, XX) +
+  ylim(XX, XX) +
+  theme_minimal() +
+  labs(title = "XX")
+```
+
+2. Nun ergänze `geom_text()` so dass für jeden Punkt das entsprechende `Item` Label angezeigt wird.
+
+3. Wo sind die Labels? Ah, du hast `ggplot` nicht gesagt welche Spalte die Information beinhaltet, die in den Labels stehen soll. Behebe dieses Problem indem du innerhalb der `aes()` Funktion dem Argument `label` die Spalte `Item` zuweist. Führe den Code nochmal aus. Jetzt solltest du viele labels sehen!
+
+4. Passe `geom_text()` an in dem du `col` auf `black`, `check_overlap` auf `TRUE`, und `hjust` auf `left` setzt.
+
+5. Verwende nun das `data` Argument in `geom_text()` und weise ihm einen gefilterten Auschnitt des `mcdonalds` Datensatzes zu, nämlich `data = mcdonalds %>% filter(Calories > 1100)`. Schau was passiert.
+
+```{r, fig.width = 8, fig.height = 4, eval = FALSE}
+ggplot(mcdonalds, aes(x = Sugars, 
+                      y = Calories, 
+                      col = Category, 
+                      label = Item)) +
+  geom_point() +
+  geom_text(data = mcdonalds %>% 
+            filter(Calories > 1100),
+            col = "black", 
+            check_overlap = TRUE, 
+            hjust = "left") +
+  xlim(0, 150) +
+  ylim(0, 2000) +
+  theme_minimal() +
+  labs(title = "Ergänze Labels zu einem Plot mit geom_text()")
+```
+
+6. Probiere ein paar Sachen aus:
+
+- Verwende das `size` Argument in `aes()`, so dass die Grösse der Punkte den `Calories` entspricht. 
+
+- Versuche andere `theme_*` Funktionen. Z.B. `theme_excel()` oder `theme_economist()` aus dem `ggthemes` Paket.
+
+
+### F - Statistiken
+
+1. Mit der `stat_summary()` Funktion können auch direkt einfache Statistiken berechnet und geplotted werden. Verwende den folgenden Code um die `Calories` (y-Achse) gegen `Categories` zu plotten. Annotiere angemessen. 
+
+```{r, eval = FALSE, echo = TRUE}
+ggplot(XX, aes(x = XX, y = X)) +
+  stat_summary(geom = "bar", 
+               fun.y = "mean") +
+  labs(title = "XX",
+       subtitle = "XX")
+```
+
+```{r, eval = TRUE, fig.width = 10, fig.height = 4}
+ggplot(mcdonalds, aes(x = Category, y = Calories)) +
+  stat_summary(geom = "bar", 
+               fun.y = "mean") +
+  labs(title = "Calories gegen McDonalds Menu Kategorie",
+       subtitle = "Balken repräsentieren Mittelwwerte")
+```
+
+2. Probiere ein paar Sachen aus:
+
+- Verwende den `"median"` anstatt `"mean"`.
+- Gib jedem Balken eine andere Farbe. 
+- Ergänze Punkte über den Balken mit `geom_point()`, `geom_count()`, oder `geom_jitter()`.
+
+```{r, fig.width = 10, fig.height = 4}
+ggplot(mcdonalds, aes(x = Category, 
+                      y = Calories, 
+                      col = Category)) +
+  stat_summary(geom = "bar", 
+               fun.y = "median") +
+  geom_jitter() +
+  labs(title = "Calories gegen McDonalds Menu Kategorie",
+       subtitle = "Balken repräsentieren Mittelwwerte")
+```
+
+### X - Challenges
+
+1. Kreiere deinen eigenen, neuen Plot mit dem `mcdonalds` Datensatz. Weitere `geom`s und alles weitere findest du [**hier**](https://ggplot2.tidyverse.org/reference/) 
+
+## Beispiele
+
+```{r, eval = FALSE, echo = TRUE}
+
+# Lade tidyverse
+library(tidyverse)        
+
+# Printe die mpg Daten
+mpg 
+
+# Beginne den Plot
+ggplot(data = mpg)
+
+# Ergänze das mapping, d.h. bestimme x und y
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy))  
+
+#  Ergänze Punkte
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy)) +
+       geom_point()     
+
+# Ergänze nach Häufigkeit skalierte Punkte
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy)) +
+       geom_count()   
+
+# Assigne class zum col Argument und füge labels mit labs() hinzu 
+ggplot(data = mpg, 
+  mapping = aes(x = displ, y = hwy, col = class)) +  
+  geom_point(size = 3, position = 'jitter') +
+  labs(x = "Hubraum in Litern",
+       y = "Autobahn Meilen pro Gallone",
+       title = "MPG Datensatz",
+       subtitle = "Autos mit groesserem Hubraum fahren wneiger Meilen",
+       caption = "Quelle: mpg Datensatz aus ggplot2")
+  
+
+# Ergänze eine Kurve für jede Klasse
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy, 
+                     color = class)) +
+  geom_point(size = 3, alpha = .9) + 
+  geom_smooth(method = "lm")
+
+# Ergänze eine Kurve für alle Klassen zusammen
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy, 
+                     color = class)) +
+  geom_point(size = 3, alpha = .9) + 
+  geom_smooth(col = "blue", method = "lm")
+
+# Kombination von verschiedenen Elementen
+ggplot(data = mpg, 
+       mapping = aes(x = cty, y = hwy)) + 
+       geom_count(aes(color = manufacturer)) +    
+       geom_smooth() +
+       geom_text(data = filter(mpg, cty > 25), 
+                 aes(x = cty,y = hwy, 
+                     label = rownames(filter(mpg, cty > 25))),
+                     position = position_nudge(y = -1), 
+                                check_overlap = TRUE, 
+                     size = 5) + 
+  labs(x = "Hubraum in Litern",
+       y = "Autobahn Meilen pro Gallone",
+       title = "MPG Datensatz",
+       subtitle = "Autos mit groesserem Hubraum fahren wneiger Meilen",
+       caption = "Quelle: mpg Datensatz aus ggplot2")
+```
+
+
+## Datensätze
+
+```{r, eval = TRUE, message = FALSE}
+library(tidyverse)
+library(ggthemes)
+mcdonalds <- read_csv("1_Data/mcdonalds.csv")
+```
+
+|File  |Rows | Columns |
+|:----|:-----|:------|
+|[mcdonalds.csv](https://raw.githubusercontent.com/therbootcamp/R4DS_2019Feb/master/1_Data/mcdonalds.csv)| 260 | 24 |
+
+*First 5 rows and columns of mcdonalds.csv*
+
+```{r, eval = TRUE, echo = FALSE}
+knitr::kable(mcdonalds[1:5, 1:5])
+```
+
+## Funktionen
+
+### Pakete
+
+|Paket| Installation|
+|:------|:------|
+|`tidyverse`|`install.packages("tidyverse")`|
+|`ggthemes`|`install.packages("ggthemes")`|
+
+
+## Resourcen
+
+### Dokumentation
+
+Siehe die `ggplot2` [**Webseite**](http://ggplot2.tidyverse.org/) und Selva Prabhakaran's [**Webseite**](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) mit inspirierenden `ggplot2` Beispielen. 
+
+### Cheatsheet
+
+<p align="center" width="100%">
+<a href="https://d33wubrfki0l68.cloudfront.net/21d683072b0c21cbd9b41fc0e37a587ad26b9525/cbf41/wp-content/uploads/2018/08/data-visualization-2.1.png">
+  <img src="https://d33wubrfki0l68.cloudfront.net/21d683072b0c21cbd9b41fc0e37a587ad26b9525/cbf41/wp-content/uploads/2018/08/data-visualization-2.1.png" style="width:70%"></a>
+  <br>
+  <font style="font-size:10px">from <a href="https://www.rstudio.com/resources/cheatsheets/">R Studio</a></font>
+</p>
+

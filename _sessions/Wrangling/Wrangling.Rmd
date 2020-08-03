@@ -1,0 +1,782 @@
+---
+title: "Wrangling"
+author: "Explorative Datenanalyse mit R<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+  <br>
+  <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+    <i class='fas fa-clock' style='font-size:.9em;'></i>
+  </a>&#8239; 
+  <a href='https://therbootcamp.github.io'>
+    <i class='fas fa-home' style='font-size:.9em;' ></i>
+  </a>&#8239;
+  <a href='mailto:therbootcamp@gmail.com'>
+    <i class='fas fa-envelope' style='font-size: .9em;'></i>
+  </a>&#8239;
+  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+    <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+  </a>"
+date: "Februar 2020"
+output:
+  xaringan::moon_reader:
+    css: ["default", "baselrbootcamp.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+layout: true
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:82px"> 
+        <font color="#7E7E7E">
+          www.therbootcamp.com
+        </font>
+      </span>
+    </a>
+    <a href="https://therbootcamp.github.io/">
+      <font color="#7E7E7E">
+       Explorative Datenanalyse mit R | Februar 2020
+      </font>
+    </a>
+    </span>
+  </div> 
+
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# see: https://github.com/yihui/xaringan
+# install.packages("xaringan")
+# see: 
+# https://github.com/yihui/xaringan/wiki
+# https://github.com/gnab/remark/wiki/Markdown
+options(width=110)
+options(digits = 4)
+require(tidyverse)
+basel = readr::read_csv('1_data/basel.csv')
+```
+
+
+# Was ist <i>Wrangling</i>?
+
+<p align = "center">
+<img src="image/wrangling.jpeg" height=450px><br>
+<font style="font-size:10px">from <a href="https://datasciencebe.com/tag/data-wrangling/">datasciencebe.com</a></font>
+</p>
+
+
+---
+
+.pull-left45[
+
+# Das ist Wrangling!
+
+<ul>
+  <li class="m1"><span><high>Transformieren</high>
+  <br><br>
+  <ul class="level">
+    <li><span>Spaltennamen verändern</span></li>
+    <li><span>Neue Variablen kreieren</span></li>
+  </ul></span></li>
+  <li class="m2"><span><high>Organisieren</high>
+  <br><br>
+  <ul class="level">
+    <li><span>Sortieren</span></li>
+    <li><span>Datensätze zusammenführen</span></li>
+    <li><span>Spalten zu Zeilen flippen</span></li>
+  </ul></span></li>
+  <li class="m3"><span><high>Aggregieren</high>
+  <br><br>
+  <ul class="level">
+    <li><span>Datengruppen bilden</span></li>
+    <li><span>Statistiken für Gruppen berechnen</span></li>
+  </ul></span></li>
+</ul>
+
+
+
+]
+
+.pull-right5[
+<br>
+<p align="center">
+<img src="image/wrangling.png" height = "530px">
+</p>
+
+]
+
+---
+
+
+.pull-left4[
+
+# 2 'dreckige' Datensätze
+
+<ul>
+  <li class="m1"><span><high>Umbenennen</high>: Intuitive Spaltennamen vergeben.</span></li>
+  <li class="m2"><span><high>Umkodieren</high>: Angemessene Einheiten und Datenlabels  vergeben.</span></li>
+  <li class="m3"><span><high>Verbinden</high>: Datensätze zusammenführen.</span></li>
+  <li class="m4"><span><high>Sortieren</high>: Datensatz ordnen.</span></li>
+  <li class="m5"><span><high>Filtern</high>: Relevante Fälle auswählen.</span></li>
+  <li class="m6"><span><high>Auswählen</high>: Relevante Variablen auswählen.</span></li>
+</ul>
+
+]
+
+.pull-right45[
+
+<br>
+
+```{r, echo = F}
+patienten <- tibble(id = c(1, 2, 3, 4, 5),
+                    X1 = c(37, 65, 57, 34, 45),
+                    X2 = c(1, 2, 2, 1, 2))
+
+```
+
+```{r}
+patienten
+```
+
+
+```{r, echo = F}
+ergebnisse <- tibble(id = c(4, 92, 1, 2, 99),
+                     t_1 = c(100, 134, 123, 143, 102),
+                     t_2 = c(105, 150, 135, 140,68))
+```
+
+```{r}
+ergebnisse
+```
+
+]
+
+
+---
+
+# Das mächtige `tidyverse`
+
+Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-performanter, nutzerfreundlicher Pakete, die speziell für eine effizientere Datenanalyse entwickelt wurden. 
+1. `ggplot2` für Grafiken.
+2. <high><mono>dplyr</mono> für Datenverarbeitung</high>.
+3. <high><mono>tidyr</mono> für Datenverarbeitung</high>.
+4. `readr` für Daten I/O.
+5. `purrr` für funktionales Programmieren.
+6. `tibble` für moderne `data.frame`s.
+<br><br>
+
+<table style="cellspacing:0; cellpadding:0; border:none;">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <col width="15%">
+  <tr>
+    <td bgcolor="white">
+    <img src="image/hex-ggplot2.png" height=160px style="opacity:.2"></img>
+    </td>
+        <td bgcolor="white">
+    <img src="image/hex-dplyr.png"height=160px></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-tidyr.png"height=160px></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-readr.png"height=160px style="opacity:.2"></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-purrr.png"height=160px style="opacity:.2"></img>
+    </td>
+    <td bgcolor="white">
+    <img src="image/hex-tibble.png"height=160px style="opacity:.2"></img>
+    </td>
+  </tr>
+</table>
+
+---
+
+# <mono>`%>%`</mono>
+
+.pull-left45[
+
+Der präferierte Gebrauch von `dplyr` beinhaltet einen <high>neuen Operator</high>, die Pipe <high>`%>%`</high>.
+
+<br>
+
+<p align="center">
+  <img src="image/pipe.jpg" width = "300px"><br>
+<font style="font-size:10px">from <a href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/MagrittePipe.jpg">wikimedia.org</a></font>
+</p>
+
+]
+
+.pull-right45[
+
+
+```{r}
+# Numerischer Vektor
+score <- c(8, 4, 6, 3, 7, 3)
+score
+
+# Mittelwert: Base-R-style
+mean(score)
+
+# Mittelwert: dplyr-style
+score %>%  
+  mean()  
+```
+
+
+]
+
+
+
+---
+
+# `%>%`
+
+.pull-left45[
+
+Der präferierte Gebrauch von `dplyr` beinhaltet einen <high>neuen Operator</high>, die Pipe <high>`%>%`</high>.
+
+<br>
+
+<p align="center">
+  <img src="image/pipe.jpg" width = "300px"><br>
+<font style="font-size:10px">from <a href="https://upload.wikimedia.org/wikipedia/en/thumb/b/b9/MagrittePipe.jpg">wikimedia.org</a></font>
+</p>
+
+
+]
+
+.pull-right45[
+
+<p align="center">
+  <img src="image/pipe.png" height = "400px">
+</p>
+
+]
+
+---
+
+
+.pull-left4[
+
+# Transformation
+
+<ul>
+  <li class="m1"><span><high>Umbenennen</high>: Intuitive Spaltennamen vergeben.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>rename()</mono></span></li>
+  </ul>
+  </span></li>
+  <li class="m2"><span><high>Umkodieren</high>: Angemessene Einheiten und Datenlabels  vergeben.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>mutate()</mono></span></li>
+    <li><span><mono>case_when()</mono></span></li>
+  </ul>
+  </span></li>
+  <li class="m3"><span><high>Verbinden</high>: Datensätze zusammenführen.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>left_join()</mono></span></li>
+  </ul>
+  </span></li>
+</ul>
+
+]
+
+.pull-right45[
+
+<br>
+
+```{r, echo = F}
+patienten <- tibble(id = c(1, 2, 3, 4, 5),
+                    X1 = c(37, 65, 57, 34, 45),
+                    X2 = c(1, 2, 2, 1, 2))
+
+```
+
+```{r}
+patienten
+```
+
+
+```{r, echo = F}
+ergebnisse <- tibble(id = c(4, 92, 1, 2, 99),
+                     t_1 = c(100, 134, 123, 143, 102),
+                     t_2 = c(105, 150, 135, 140,68))
+```
+
+```{r}
+ergebnisse
+```
+
+]
+
+---
+
+# `rename()` 
+
+.pull-left45[
+
+```{r, eval = FALSE, echo = TRUE}
+patienten %>%
+  rename(NEU = ALT,
+         NEU = ALT)
+```
+
+]
+
+.pull-right45[
+
+```{r}
+# Starte mit Datensatz
+patienten %>% 
+
+# Ändere Spaltennamen
+  rename(alter = X1,
+         bedingung = X2)
+```
+
+
+]
+
+---
+
+# `mutate()` 
+
+.pull-left45[
+
+```{r, eval = FALSE}
+tibble %>%
+  mutate(
+   NAME1 = DEFINITION1,
+   NAME2 = DEFINITION2,
+   NAME3 = DEFINITION3,
+   ...
+  )
+```
+]
+
+.pull-right45[
+
+```{r, warning = FALSE}
+patienten %>% 
+  rename(alter = X1, 
+         bedingung = X2) %>%
+  
+# Kreiere neue Variablen
+  mutate(monate = alter * 12,
+         dekaden = alter / 10)
+```
+
+]
+
+---
+
+# `case_when()`
+
+.pull-left45[
+
+```{r, eval = FALSE}
+tibble %>%
+  mutate(
+    NAME = case_when(
+      LOGICAL1 ~ WERT1,
+      LOGICAL2 ~ WERT2,
+      ...
+      )
+    )
+
+```
+
+
+]
+
+.pull-right45[
+
+```{r}
+patienten %>% 
+  rename(alter = X1, 
+         bedingung = X2) %>%
+  
+# Kreiere bed_label von bedingung
+  mutate(bed_label = case_when(
+    bedingung == 1 ~ "placebo",
+    bedingung == 2 ~ "medikament"))
+```
+
+]
+
+
+---
+
+# Verbinde Daten
+ 
+<p align="center">
+  <img src="image/joining_data.png" height="450px">
+</p> 
+
+
+---
+
+# `inner_join()`
+
+.pull-left4[
+
+```{r, eval = FALSE}
+TIBBLE1 %>%
+  inner_join(TIBBLE2, 
+             by = c("KEY"))
+```
+
+]
+
+.pull-right5[
+
+```{r,error=TRUE}
+patienten %>% 
+  rename(alter = X1, bedingung = X2) %>%
+  mutate(bed_label = case_when(
+    bedingung == 1 ~ "placebo",
+    bedingung == 2 ~ "medikament")) %>%
+  
+  # Verbinde mit ergebnisse
+  inner_join(ergebnisse, by = "id")
+```
+]
+
+---
+
+# `left_join()`
+
+.pull-left4[
+
+```{r, eval = FALSE}
+TIBBLE1 %>%
+  left_join(TIBBLE2, 
+            by = c("KEY"))
+```
+
+]
+
+.pull-right5[
+
+```{r,error=TRUE}
+patienten %>% 
+  rename(alter = X1, bedingung = X2) %>%
+  mutate(bed_label = case_when(
+    bedingung == 1 ~ "placebo",
+    bedingung == 2 ~ "medikament")) %>%
+  
+  # Verbinde mit ergebnisse
+  left_join(ergebnisse, by = "id")
+```
+]
+
+---
+
+# Organisation
+
+.pull-left4[
+
+<ul>
+  <li class="m4"><span><high>Sortieren</high>: Datensatz ordnen.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>arrange()</mono></span></li>
+  </ul>
+  </span></li>
+  <li class="m5"><span><high>Filtern</high>: Relevante Fälle auswählen.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>slice()</mono></span></li>
+    <li><span><mono>filter()</mono></span></li>
+  </ul>
+  </span></li>
+  <li class="m6"><span><high>Auswählen</high>: Relevante Variablen auswählen.
+  <br><br>
+  <ul class="level">
+    <li><span><mono>select()</mono></span></li>
+  </ul>
+  </span></li>
+</ul>
+
+]
+
+.pull-right55[
+
+```{r,echo=FALSE,error=TRUE}
+patienten_ergebnisse = patienten %>% 
+  rename(alter = X1, bedingung = X2) %>%
+  mutate(bed_label = case_when(
+    bedingung == 1 ~ "placebo",
+    bedingung == 2 ~ "medikament")) %>%
+  
+  # Verbinde mit ergebnisse
+  left_join(ergebnisse, by = "id")
+```
+
+
+```{r}
+# Verbundener tibble
+patienten_ergebnisse
+```
+
+
+]
+
+---
+
+# `arrange()`
+
+.pull-left4[
+
+```{r, echo = TRUE, eval = FALSE}
+# Sortiere aufsteigend
+tibble %>%
+  arrange(VAR1, VAR2)
+
+# Sortiere absteigend (mit desc())
+tibble %>%
+  arrange(desc(VAR1), VAR2)
+```
+
+]
+
+.pull-right5[
+```{r}
+patienten_ergebnisse %>%
+  
+  # Sortiere nach bedingung
+  arrange(bedingung)
+```
+
+]
+
+---
+
+# `arrange()`
+
+.pull-left4[
+
+```{r, echo = TRUE, eval = FALSE}
+# Sortiere aufsteigend
+tibble %>%
+  arrange(VAR1, VAR2)
+
+# Sortiere absteigend (mit desc())
+tibble %>%
+  arrange(desc(VAR1), VAR2)
+```
+]
+
+.pull-right5[
+
+```{r}
+patienten_ergebnisse %>%
+  
+  # Sortiere nach beidem
+  arrange(bedingung, alter) 
+```
+
+]
+
+
+
+---
+
+# `slice()`
+
+.pull-left4[
+
+```{r, eval = F}
+# Slice mit Sequenz
+patienten_ergebnisse %>%
+  slice(INDEX_START:INDEX_STOP)
+
+# Slice mit Vektor  
+patienten_ergebnisse %>%
+  slice(c(INDEX1, INDEX2, ...))
+```
+
+
+]
+
+.pull-right5[
+
+```{r}
+patienten_ergebnisse %>%
+  arrange(bedingung, alter) %>%
+
+# Zeilen 3 und 5 
+  slice(c(3, 5))
+```
+
+
+]
+
+---
+
+# `slice()`
+
+.pull-left4[
+
+```{r, eval = F}
+# Slice mit Sequenz
+patienten_ergebnisse %>%
+  slice(INDEX_START:INDEX_STOP)
+
+# Slice mit Vektor  
+patienten_ergebnisse %>%
+  slice(c(INDEX1, INDEX2, ...))
+```
+
+]
+
+.pull-right5[
+
+```{r}
+patienten_ergebnisse %>%
+  arrange(bedingung, alter) %>%
+
+# Erste 4 Zeilen
+  slice(1:4)
+```
+
+]
+
+---
+
+# `filter()`
+
+.pull-left4[
+
+```{r, eval = F}
+patienten_ergebnisse %>%
+  filter(VAR1 == WERT1,
+         VAR2 > WERT2,
+         VAR3 < WERT3,
+         VAR4 == WERT4 | VAR5 < WERT5)
+```
+]
+
+.pull-right5[
+
+```{r}
+patienten_ergebnisse %>%
+  
+  # Patienten mit alter > 35
+  filter(alter > 35)
+```
+
+]
+
+
+---
+
+# `filter()`
+
+.pull-left4[
+
+```{r, eval = F}
+patienten_ergebnisse %>%
+  filter(VAR1 == WERT1,
+         VAR2 > WERT2,
+         VAR3 < WERT3,
+         VAR4 == WERT4 | VAR5 < WERT5)
+```
+
+]
+
+.pull-right5[
+
+```{r}
+# alter grösser 35 & bed_label ist medikament
+patienten_ergebnisse %>%
+  filter(alter > 35,
+         bed_label == "medikament")
+```
+
+]
+
+
+---
+
+# `select()`
+
+.pull-left4[
+
+```{r, eval = FALSE}
+# Wähle Variablen A und B aus
+tibble %>% 
+  select(VAR1, VAR2)
+
+# Wähle alles ausser A aus
+tibble %>% 
+  select(-VAR1)
+```
+
+]
+
+.pull-right5[
+
+```{r}
+patienten_ergebnisse %>%
+  
+  # Wähle id und bedingung aus
+  select(id, bedingung)
+```
+
+]
+
+---
+
+# `select()`
+
+.pull-left4[
+
+```{r, eval = FALSE}
+# Wähle Variablen A und B aus
+tibble %>% 
+  select(VAR1, VAR2)
+
+# Wähle alles ausser A aus
+tibble %>% 
+  select(-VAR1)
+```
+
+
+]
+
+.pull-right5[
+
+```{r}
+patienten_ergebnisse %>%
+  
+  # Alles ausser id
+  select(-id)
+```
+
+]
+
+
+
+---
+
+class: middle, center
+
+<h1><a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/Wrangling/Wrangling_practical.html">Practical</a></h1>
+

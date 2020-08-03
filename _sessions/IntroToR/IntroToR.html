@@ -1,0 +1,1669 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Einführung in R(Studio)</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp @ CSS" />
+    <link href="libs/remark-css/default.css" rel="stylesheet" />
+    <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Einführung in R(Studio)
+### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a> <br> <a href='https://therbootcamp.github.io/EDA_2019CSS/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Dezember 2019
+
+---
+
+
+layout: true
+
+&lt;div class="my-footer"&gt;
+  &lt;span style="text-align:center"&gt;
+    &lt;span&gt; 
+      &lt;img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/&gt;
+    &lt;/span&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;span style="padding-left:82px"&gt; 
+        &lt;font color="#7E7E7E"&gt;
+          www.therbootcamp.com
+        &lt;/font&gt;
+      &lt;/span&gt;
+    &lt;/a&gt;
+    &lt;a href="https://therbootcamp.github.io/"&gt;
+      &lt;font color="#7E7E7E"&gt;
+       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+      &lt;/font&gt;
+    &lt;/a&gt;
+    &lt;/span&gt;
+  &lt;/div&gt; 
+
+---
+
+
+
+
+
+
+&lt;!---
+# R
+
+From [Wikipedia](https://en.wikipedia.org/wiki/Statistical_model) (emphasis added):
+
+&gt; R is an **open source programming language** and software environment for **statistical computing and graphics** that is supported by the **R Foundation for Statistical Computing**. The R language is **widely used among statisticians and data miners** for developing statistical software and data analysis. Polls, surveys of data miners, and studies of scholarly literature databases show that **R's popularity has increased substantially in recent years**.
+
+&gt; R is a GNU package. The source code for the R software environment is written primarily in **C, Fortran, and R**. R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems. While R has a command line interface, there are several **graphical front-ends available**.
+
+
+GNU's Not Unix!
+GPL guarantees end users the freedom to run, study, share and modify the software
+---&gt;
+
+
+# R ist eine Programmiersprache
+
+Eine Programmiersprache ist eine &lt;high&gt;formale Sprache&lt;/high&gt; die eine Reihe Instruktionen für alle möglichen Ziele spezifiziert. Programmiersprachen bestehen aus &lt;high&gt;instruktionen für einen Computer&lt;/high&gt; und werden genutzt um &lt;high&gt;Algorithmen zu implementieren&lt;/high&gt;.
+
+.pull-left4[
+&lt;br&gt;
+### Algorithmus in Worten
+1. Lade Daten
+2. Extrahiere Variablen
+3. Führe Analyse durch
+4. Zeige Resultate
+]
+
+.pull-right6[
+&lt;br&gt;
+### Implementation in R
+
+```r
+data &lt;- read.table(link)
+variables &lt;- data[,c('gruppe','variable')]
+analysis &lt;- lm(variable ~ gruppe, data = variables)
+summary(analysis)
+```
+]
+
+---
+
+# Warum R?
+
+.pull-left45[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/indeed2019.png" height = 400px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;siehe &lt;a href="http://r4stats.com/articles/popularity/"&gt;r4stats.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+.pull-right45[
+&lt;p align = "center"&gt;
+  &lt;img src="image/indeed2019change.png" height = 400px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;siehe &lt;a href="http://r4stats.com/articles/popularity/"&gt;r4stats.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# R wird relevant bleiben
+
+R ist de facto die &lt;high&gt;lingua franca&lt;/high&gt; für Statistik und Datenanalyse. 
+
+.pull-left45[
+&lt;br&gt;
+### Pro
+1. **Open-source** und umsonst.
+2. **Community** (e.g., [stackoverflow](https://stackoverflow.com/))
+3. **Erweiterbarkeit** ([CRAN](https://cran.r-project.org/))
+4. [**Tidyverse**](https://www.tidyverse.org/)
+5. [**RStudio**](https://www.rstudio.com/)
+6. **Produktivität**: [Latex](https://www.latex-project.org/), [Markdown](https://daringfireball.net/projects/markdown/), [GitHub](https://github.com/)
+]
+
+.pull-right45[
+&lt;br&gt;
+### Ehemals Contra
+1. **Unschön**e Sprache wird überarbeitet ([Tidyverse](https://www.tidyverse.org/))
+2. **Langsam**e Elemente werden ersetzt ([Rcpp](http://www.rcpp.org/))
+3. **Brücken** zu externen Tools/Sprachen ([rPython](http://rpython.r-forge.r-project.org/), [tensorflow](https://tensorflow.rstudio.com/))
+
+]
+
+---
+
+# Komponenten von R
+&lt;br&gt;
+&lt;table class="tg"  style="cellspacing:0; cellpadding:0; border:none;" width="95%"&gt;
+&lt;col width="25%"&gt;
+&lt;col width="35%"&gt;
+&lt;col width="25%"&gt;
+&lt;tr valign="top"&gt;
+  &lt;td style="padding:20px"&gt;
+  &lt;p align = "center"&gt;
+  &lt;font style="font-size:28px"&gt;&lt;i&gt;R&lt;/i&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/R.png" height = 130px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;adapted from &lt;a href="https://cei.org/file/internet-server-farm"&gt;cei.org&lt;/a&gt;&lt;/font&gt;
+  &lt;/p&gt;
+  &lt;/td&gt;
+  &lt;td style="padding:20px"&gt;
+  &lt;p align = "center"&gt;
+  &lt;font style="font-size:28px"&gt;&lt;i&gt;RStudio&lt;/i&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/rstudio2.png" height = 130px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;adapted from &lt;a href="https://rstudio.com/"&gt;rstudio.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+  &lt;/td&gt;
+  &lt;td style="padding:20px"&gt;
+  &lt;p align = "center"&gt;
+  &lt;font style="font-size:28px"&gt;&lt;i&gt;R Packages&lt;/i&gt;&lt;/font&gt;&lt;br&gt;&lt;br&gt;
+  &lt;img src="image/packages_many.png" height = 130px&gt;&lt;br&gt;
+  &lt;font style="font-size:10px"&gt;adapted from &lt;a href="https://towardsdatascience.com/ten-random-useful-things-in-r-that-you-might-not-know-about-54b2044a3868"&gt;towardsdatascience.com&lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+  &lt;/td&gt;
+&lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+# Das mächtige `tidyverse`
+
+Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-performanter, nutzerfreundlicher Pakete, die speziell für eine effizientere Datenanalyse entwickelt wurden. 
+1. `ggplot2` für Grafiken.
+2. `dplyr` für Datenverarbeitung&lt;/high&gt;.
+3. `tidyr` für Datenverarbeitung.
+4. `readr` für Daten I/O.
+5. `purrr` für funktionales Programmieren.
+6. `tibble` für moderne `data.frame`s.
+&lt;br&gt;&lt;br&gt;
+
+
+&lt;table style="cellspacing:0; cellpadding:0; border:none;"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;col width="15%"&gt;
+  &lt;tr&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-ggplot2.png" height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-dplyr.png"height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-tidyr.png"height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-readr.png"height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-purrr.png"height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+    &lt;td bgcolor="white"&gt;
+    &lt;img src="image/hex-tibble.png"height=160px&gt;&lt;/img&gt;
+    &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;
+
+---
+
+&lt;div class="center_text"&gt;
+  &lt;span&gt;
+  10 grundlegende R Lektionen
+  &lt;/span&gt;
+&lt;/div&gt; 
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+&lt;p align="center"&gt;
+  &lt;img src="image/assignment.png"&gt;
+&lt;/p&gt;
+
+
+]
+
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Ein Objekt namens eins_zwei_drei
+eins_zwei_drei &lt;- c(1, 2, 3)
+
+# Printe das Objekt
+print(eins_zwei_drei)
+```
+
+```
+## [1] 1 2 3
+```
+
+```r
+# Printe das Objekt
+eins_zwei_drei
+```
+
+```
+## [1] 1 2 3
+```
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Ein Objekt namens eins_zwei_drei
+eins_zwei_drei &lt;- c(1, 2, 3)
+
+# Berechne den Mittelwert
+mean(eins_zwei_drei)
+```
+
+```
+## [1] 2
+```
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Ein Objekt namens eins_zwei_drei
+eins_zwei_drei &lt;- c(1, 2, 3)
+
+# Berechne den Mittelwert
+ergebnis &lt;- mean(eins_zwei_drei)
+
+# Benutze Ergebnis
+ergebnis * 10
+```
+
+```
+## [1] 20
+```
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Ein Objekt namens eins_zwei_drei
+eins_zwei_drei &lt;- c(1, 2, 3)
+
+# Printe das Objekt
+eins_zwei_drei
+```
+
+```
+## [1] 1 2 3
+```
+
+```r
+# Addiere 100
+eins_zwei_drei + 100
+```
+
+```
+## [1] 101 102 103
+```
+
+```r
+# Printe das Objekt
+eins_zwei_drei
+```
+
+```
+## [1] 1 2 3
+```
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Ein Objekt namens eins_zwei_drei
+eins_zwei_drei &lt;- c(1, 2, 3)
+
+# Printe das Objekt
+eins_zwei_drei
+```
+
+```
+## [1] 1 2 3
+```
+
+```r
+# Ändere das Objekt
+eins_zwei_drei &lt;- eins_zwei_drei + 100
+
+# Printe das Objekt
+eins_zwei_drei
+```
+
+```
+## [1] 101 102 103
+```
+
+]
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Ein Objekt namens eins_zwei_drei
+eins_zwei_drei &lt;- c(1, 2, 3)
+
+# Ergänze um weitere Zahl
+und_vier &lt;- c(eins_zwei_drei, 4)
+
+# Printe das Objekt
+und_vier
+```
+
+```
+## [1] 1 2 3 4
+```
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Alles passiert durch Funktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+&lt;p align="center"&gt;&lt;img src="image/input_output.png" height="300"&gt;&lt;/p&gt;
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Alles passiert durch Funktionen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Funktion c()
+eins_zwei_drei &lt;- c(1, 2, 3)
+
+# Funktion `+`()
+eins_zwei_drei + 100
+```
+
+```
+## [1] 101 102 103
+```
+
+```r
+# Funktion print()
+eins_zwei_drei
+```
+
+```
+## [1] 1 2 3
+```
+
+```r
+# Funktion mean()
+mean(x = eins_zwei_drei)
+```
+
+```
+## [1] 2
+```
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Funktionen haben (Default) Argumente&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Kein Argument
+mean()
+```
+
+```
+## Error in mean.default(): argument "x" is missing, with no default
+```
+
+```r
+# Ein (notwendiges) Argument
+mean(c(1, 2, 3))
+```
+
+```
+## [1] 2
+```
+
+```r
+# Hinzufügen eines fehlenden Werts (NA)
+mean(c(1, 2, 3, NA))
+```
+
+```
+## [1] NA
+```
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Funktionen haben (Default) Argumente&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Kein Argument
+mean()
+```
+
+```
+## Error in mean.default(): argument "x" is missing, with no default
+```
+
+```r
+# Ein (notwendiges) Argument
+mean(c(1, 2, 3))
+```
+
+```
+## [1] 2
+```
+
+```r
+# Ändere den Default zur Entfernung des NAs
+mean(c(1, 2, 3, NA), na.rm = TRUE)
+```
+
+```
+## [1] 2
+```
+]
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;Argumente erwarten Klassen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Berechne Mittelwert von c(1, 2, 3)
+mean(c(1, 2, 3))
+```
+
+```
+## [1] 2
+```
+
+```r
+# Berechne Mittelwert von c('1', '2', '3')
+mean(c("1", "2", "3"))
+```
+
+```
+## Warning in mean.default(c("1", "2", "3")): argument is not numeric or logical: returning NA
+```
+
+```
+## [1] NA
+```
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;Argumente erwarten Klassen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Klasse von c(1, 2, 3)
+class(c(1, 2, 3))
+```
+
+```
+## [1] "numeric"
+```
+
+```r
+# Klasse von c('1', '2', '3')
+class(c("1", "2", "3"))
+```
+
+```
+## [1] "character"
+```
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+?mean
+```
+&lt;p align="center"&gt;&lt;img src="image/help_mean.png" width="500"&gt;&lt;/p&gt;
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+?mean
+```
+&lt;p align="center"&gt;&lt;img src="image/help_usage.png" width="500"&gt;&lt;/p&gt;
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Mittelwert von c(1, 2, 3)
+mean(c(1, 2, 3))
+```
+
+```
+## [1] 2
+```
+
+```r
+# Mittelwert von c(TRUE, FALSE, TRUE)
+mean(c(TRUE, FALSE, TRUE))
+```
+
+```
+## [1] 0.6667
+```
+
+```r
+# Mittelwert von c("1", "2", "3")
+mean(c("1", "2", "3"))
+```
+
+```
+## Warning in mean.default(c("1", "2", "3")): argument is not numeric or logical: returning NA
+```
+
+```
+## [1] NA
+```
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+?mean
+```
+&lt;p align="center"&gt;&lt;img src="image/help_usage.png" width="500"&gt;&lt;/p&gt;
+]
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Mittelwert von c(1, 2, 3, NA)
+mean(c(1, 2, 3, NA), na.rm = TRUE)
+```
+
+```
+## [1] 2
+```
+
+```r
+# Mittelwert von c(1, 2, 3, NA)
+mean(c(1, 2, 3, NA), na.rm = "TRUE")
+```
+
+```
+## [1] 2
+```
+
+```r
+# Mittelwert von c(1, 2, 3, NA)
+mean(c(1, 2, 3, NA), na.rm = "ABCD")
+```
+
+```
+## Error in if (na.rm) x &lt;- x[!is.na(x)]: argument is not interpretable as logical
+```
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Klasse von TRUE
+class(TRUE)
+```
+
+```
+## [1] "logical"
+```
+
+```r
+# Klasse von "TRUE"
+class("TRUE")
+```
+
+```
+## [1] "character"
+```
+
+```r
+# Klasse von "ABCD"
+class("ABCD")
+```
+
+```
+## [1] "character"
+```
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+```r
+# Wandle "TRUE" in logical um
+as.logical("TRUE")
+```
+
+```
+## [1] TRUE
+```
+
+```r
+# Wandle "ABCD" in logical um
+as.logical("ABCD")
+```
+
+```
+## [1] NA
+```
+
+]
+
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+&lt;p align="center"&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;font style="font-size:48px"&gt;&lt;i&gt;Kurze&lt;br&gt;Pause?&lt;/i&gt;&lt;/font&gt;&lt;/p&gt;
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7"&gt;&lt;span&gt;&lt;high&gt;Funktionen leben in Paketen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+&lt;p align="center"&gt;&lt;img src="image/pakete.png" height="400"&gt;&lt;/p&gt;
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7"&gt;&lt;span&gt;&lt;high&gt;Funktionen leben in Paketen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+&lt;iframe src="https://www.rdocumentation.org/trends?page1=1&amp;sort1=total&amp;page2=1&amp;sort2=total&amp;page3=1&amp;page4=1" width="500" height="400" frameborder="0" marginheight="0" marginwidth="0" zoom="0.5"&gt;&lt;/iframe&gt;
+
+&lt;p align="center"&gt;
+&lt;font style="font-size:10px"&gt;siehe &lt;a href="https://www.rdocumentation.org/trends"&gt;www.rdocumentation.org/trends
+  &lt;/a&gt;&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7"&gt;&lt;span&gt;&lt;high&gt;Funktionen leben in Paketen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+
+.pull-right5[
+
+&lt;high&gt;Installiere&lt;/high&gt; Pakete &lt;high&gt;einmal&lt;/high&gt; mit `install.packages()`
+
+
+```r
+install.packages("tidyverse")
+```
+&lt;br2&gt;
+&lt;high&gt;Lade&lt;/high&gt; existierende Pakete &lt;high&gt;jedes mal&lt;/high&gt; mit `library()`
+
+
+```r
+library(tidyverse)
+```
+
+&lt;p align="left"&gt;&lt;img src="image/tidyverse.png" height="180"&gt;&lt;/p&gt;
+]
+
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8"&gt;&lt;span&gt;&lt;high&gt;Lernt von Fehlern und Warnungen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+
+```r
+# Message: Interessant
+basel &lt;- type_convert(baselers)
+```
+
+
+```
+## Parsed with column specification:
+## cols(
+##   sex = col_character()
+## )
+```
+
+
+```r
+# Warning: Wichtig
+result &lt;- mean('NA')
+```
+
+```
+## Warning in mean.default("NA"): argument is not numeric or logical: returning NA
+```
+
+```r
+# Error: Beheben
+lenth(x = 1)
+```
+
+```
+## Error in lenth(x = 1): could not find function "lenth"
+```
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8"&gt;&lt;span&gt;&lt;high&gt;Lernt von Fehlern und Warnungen&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;p style="top:250px"&gt; &lt;/p&gt;
+
+| Fehler | Beschreibung |
+|:------|:--------------------------------------------|
+| `'could not find function'`| Typo oder Paket nicht geladen|
+| `'error in eval'`| Ein Objekt wird verwendet, dass nicht existiert.|
+| `'cannot open()'`| Typo oder fehlende Ordner im Pfad.|
+| `'no applicable method'`| Funktion erwartet andere Klassen. |
+| package errors | Fehler im installieren, kompilieren, oder laden von Paketen. |
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9"&gt;&lt;span&gt;&lt;high&gt;Benutzt R in RStudio&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/rstudio.png" height = 350px&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9"&gt;&lt;span&gt;&lt;high&gt;Benutzt R in RStudio&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;p align = "left"&gt;
+  &lt;img src="image/editor_edit.png"&gt;
+&lt;br&gt;&lt;br&gt;&lt;br&gt;
+Shortcut für &lt;high&gt;schicke Code zur Console&lt;/high&gt;:&lt;br&gt;&lt;br2&gt;&lt;font size = 6&gt;&amp;#8984;/ctrl + &amp;#9166;&lt;/font&gt;&lt;br&gt;&lt;br2&gt;&lt;br2&gt;
+Shortcut für &lt;high&gt;führe Chunk wiederholt aus&lt;/high&gt;:&lt;br&gt;&lt;br2&gt;&lt;font size = 6&gt;  &amp;#8984;/ctrl + &amp;#8679; + p&lt;/font&gt;
+&lt;/p&gt;
+
+]
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9"&gt;&lt;span&gt;&lt;high&gt;Benutzt R in RStudio&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10g"&gt;&lt;span&gt;Benutzt Projekte in Rstudio&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;p align = "center"&gt;
+  &lt;img src="image/auto_complete_1.png"&gt;
+&lt;/p&gt;
+
+]
+
+
+---
+
+# 10 grundlegende R Lektionen
+
+.pull-left4[
+&lt;b&gt;Syntax&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m1g"&gt;&lt;span&gt;Der Assignment Operator &lt;mono&gt;&lt;-&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m2g"&gt;&lt;span&gt;&lt;mono&gt;&lt;-&lt;/mono&gt; kreiert/verändert Objekte&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m3g"&gt;&lt;span&gt;Alles passiert durch Funktionen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m4g"&gt;&lt;span&gt;Funktionen haben (Default) Argumente&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m5g"&gt;&lt;span&gt;Argumente erwarten Klassen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m6g"&gt;&lt;span&gt;Findet Hilfe mit &lt;mono&gt;?&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;b&gt;Produktivität&lt;/b&gt;
+&lt;ul&gt;
+  &lt;li class="m7g"&gt;&lt;span&gt;Funktionen leben in Paketen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m8g"&gt;&lt;span&gt;Lernt von Fehlern und Warnungen&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m9g"&gt;&lt;span&gt;Benutzt R in RStudio&lt;/span&gt;&lt;/li&gt;
+  &lt;li class="m10"&gt;&lt;span&gt;&lt;high&gt;Benutzt Projekte in Rstudio&lt;/high&gt;&lt;/span&gt;&lt;/li&gt;
+&lt;/ul&gt;
+]
+
+.pull-right5[
+
+&lt;b&gt;Projekte helfen bei...&lt;/b&gt;&lt;br&gt;
+workspace und history speichern &amp;#9679; projektspezifische Optionen setzen &amp;#9679; Dateien finden &amp;#9679; Versionskontrolle &amp;#9679; etc.
+&lt;br&gt;&lt;br&gt;
+&lt;p align = "left"&gt;
+  &lt;img src="image/folder_structure.png"&gt;
+&lt;/p&gt;
+
+
+]
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2019CSS/1_Data/TheRBootcamp_EDA_2019CSS_data.zip"&gt;Downloads&lt;/a&gt;&lt;/h1&gt;
+
+---
+
+class: middle, center
+
+&lt;h1&gt;&lt;a&gt;Interactive&lt;/a&gt;&lt;/h1&gt;
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false,
+"ratio": "16:9"
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>

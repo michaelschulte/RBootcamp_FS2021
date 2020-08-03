@@ -1,0 +1,751 @@
+---
+title: "Plotting II"
+author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
+  <tr style='border:none'>
+    <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
+      <font style='font-style:normal'>Explorative Datenanalyse mit R</font><br>
+      <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+        <i class='fas fa-clock' style='font-size:.9em;' ></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <i class='fas fa-home' style='font-size:.9em;'></i>
+      </a>
+      <a href='mailto:therbootcamp@gmail.com'>
+        <i class='fas fa-envelope' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://www.linkedin.com/company/rbootcamp'>
+        <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+      </a>
+      <a href='https://therbootcamp.github.io'>
+        <font style='font-style:normal'>The R Bootcamp</font>
+      </a>
+    </td>
+    <td style='width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none'>
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+    </td>
+  </tr></table>"
+output:
+  html_document:
+    css: practical.css
+    self_contained: no
+    
+---
+
+```{r setup, echo = FALSE, warning=F, message=F}
+knitr::opts_chunk$set(comment = NA, 
+                      fig.width = 6, 
+                      fig.height = 6,
+                      fig.align = 'center',
+                      echo = TRUE, 
+                      eval = TRUE, 
+                      warning = FALSE,
+                      message = FALSE)
+
+options(digits = 3)
+
+library(tidyverse)
+library(ggthemes)
+require(viridis)
+require(patchwork)
+
+verbrechen = read_csv('../../1_Data/verbrechen.csv')
+
+```
+
+<p align="center">
+<img width="100%" src="image/crime.png" margin=0><br>
+<font style="font-size:10px">adapted from [paherald.sk.ca](http://www.trueloveproperty.co.uk/houses-sale-ingham/)</font>
+</p>
+
+# {.tabset}
+
+## Überblick
+
+In diesem Practical wirst du weiter üben mit `ggplot2` publikationsfertige Grafiken zu erstellen. 
+
+Am Ende des Practicals wirst du wissen wie man:
+
+1. `facet`s benutzt.
+2. `theme`s und `scale`s anpasst.
+3. Bilddateien erstellt.
+4. Multiple Plots verbindet.
+
+## Aufgaben
+
+### A - Setup
+
+1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+
+2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "PlottingII Practical" als Kommentare an den Anfang des Skripts.
+
+```{r, eval = FALSE, echo = TRUE}
+## NAME
+## DATUM
+## PlottingII Practical
+```
+
+3. Speichere das neue Skript unter dem Namen `plottingII_practical.R` im `2_Code` Ordner.
+
+4. Lade `tidyverse`, `viridis`, und `patchwork`.
+
+### B - Lade den Datensatz
+
+1. Verwende die `read_csv()` Funktion um den Datensatz `verbrechen.csv` als Objekt `verbrechen` einzulesen. Denke an den Trick mit den Anführungszeichen. 
+
+```{r, echo = F, eval = T, message = F}
+# Lese kriminalitaet.csv
+verbrechen <- read_csv('../../1_Data/verbrechen.csv')
+```
+
+2. Printe den Datensatz. Wurden alle Variablentypen korrekt identifiziert?
+
+3. Verwende `summary()` um einen weiteren Überblick über die Daten zu bekommen.
+
+### C - `facet`s
+
+In diesem Abschnitt analysierst du den Zusammenhang zwischen dem Anteil der Bevölkerung, die mit der Metro fahren, und verschiedenen Verbrechen. 
+
+1. Verwende den folgenden Code um die Beziehung zwischen `prozent_metro` (x-Achse) und `haeufigkeit` (y-Achse) zu plotten. 
+
+```{r, eval = FALSE, echo = TRUE}
+ggplot(XX, aes(x = XX, 
+               y = XX)) +
+  geom_point(alpha = .3) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  theme_minimal()
+```
+
+```{r}
+ggplot(verbrechen, aes(x = prozent_metro, 
+                       y = haeufigkeit)) +
+  geom_point(alpha = .3) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  theme_minimal()
+```
+
+2. Sieht noch nicht so informativ aus. Ergänze `scale_x_continuous(trans = 'pseudo_log')` und `scale_y_continuous(trans = 'pseudo_log')` um die y und x-Achse zu stauchen. Später noch mehr zu Skalierungen. 
+
+```{r}
+ggplot(verbrechen, aes(x = prozent_metro, 
+                       y = haeufigkeit)) +
+  geom_point(alpha = .3) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log')
+```
+
+3. Besser, oder? Jetzt zeichnet sich ein schwach positiver Zusammenhang ab. Könnte das anders aussehen, wenn man die verschiedenen Klassen von Verbrechen differenziert? Versuche dies mal über verschiedene Farben indem du `verbrechen` dem `col` Argument in `aes()` zuweist.
+
+```{r}
+ggplot(verbrechen, aes(x = prozent_metro, 
+                       y = haeufigkeit,
+                       col = verbrechen)) +
+  geom_point(alpha = .3) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log')
+```
+
+4. Nicht wirklich informativ, oder? Anstatt mit `col` versuche nun die verschiedenen Verbrechen mit `facet_wrap()` zu differenzieren. Siehe unten.
+
+```{r, eval = FALSE, echo = TRUE}
+ggplot(XX, aes(x = XX, 
+               y = XX)) +
+  geom_point(alpha = .3) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') +
+  facet_wrap(~ XX)
+  
+```
+
+```{r}
+ggplot(verbrechen, aes(x = prozent_metro, 
+                       y = haeufigkeit)) +
+  geom_point(alpha = .2) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') +
+  facet_wrap(~verbrechen)
+```
+
+5. Es zeichnet sich ab, dass nicht alle Verbrechen gleich mit dem Anteil Metro-fahrender zusammenhängen. Der stärkste Zusammenhang scheint zu Autodiebstählen und Raubüberfällen zu bestehen. Kann aber natürlich sein, dass eine dritte Variable diesen Zusammenhang treibt, z.B. der Prozentsatz unter der Armutsgrenze lebender Personen. Verwende `facet_grid()` um gleichzeitig nach Verbrechen und `prozent_armut` kleiner oder grösser 10% zu differenzieren. Wie du im Code siehst, kannst du den logischen Vergleich direkt in die Funktion schreiben.   
+
+```{r, eval = FALSE, echo = TRUE}
+ggplot(XX, aes(x = XX, 
+               y = XX)) +
+  geom_point(alpha = .3) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') +
+  facet_grid(XX > 10 ~ XX)
+  
+```
+
+```{r}
+ggplot(verbrechen, aes(x = prozent_metro, 
+                       y = haeufigkeit)) +
+  geom_point(alpha = .2) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') + 
+  facet_grid(prozent_armut > 10 ~ verbrechen)
+```
+
+6. Relativ eindeutig: Die Anzahl Metro-fahrender ist nur mit Verbrechen assoziiert, wenn die Bezirke eine hohe Armut aufweisen. Gleichzeitig gibt es praktisch keine Differenzierung mehr: Alle Verbrechen sind mit der Anzahl Metro-fahrender assoziert. Seltsam, oder? Vielleicht haben wir noch nicht die richtige Drittvariable. Probiere doch mal `bevoelkerung_dichte` grösser als `5000` als erste Variable in `facet_grid()` aus.    
+
+```{r, eval = FALSE, echo = TRUE}
+ggplot(XX, aes(x = XX, 
+               y = XX)) +
+  geom_point(alpha = .3) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') +
+  facet_grid(XX > 5000 ~ XX)
+  
+```
+
+```{r}
+ggplot(verbrechen, aes(x = prozent_metro, 
+                       y = haeufigkeit)) +
+  geom_point(alpha = .2) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') + 
+  facet_grid(bevoelkerung_dichte > 5000 ~ verbrechen)
+```
+
+7. Der Zusammenhang ist verschwunden. Wir haben von Beginn an übersehen, dass viele Metro-fahrer stark mit einer hohen Bevölkerungsdichte assoziert ist und diese wiederum mit der Anzahl von Delikten. Spiele ein wenig herum. Welche Zusammenhänge kannst du noch entdecken?      
+
+### D - `theme`s
+
+In diesem Abschnitt passt du deinen Lieblingsplot aus dem letzten Abschnitt mit der `theme()` Funktion an. 
+
+1. Zuallererst speichere deinen Plot als ein `gg` Objekt mit Namen `verbrechen_gg`.
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg <- XX
+```
+
+```{r}
+verbrechen_gg <- ggplot(verbrechen, 
+                        aes(x = prozent_metro, 
+                            y = haeufigkeit)) +
+  geom_point(alpha = .2) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') + 
+  facet_grid(bevoelkerung_dichte > 5000 ~ verbrechen)
+```
+
+2. Ändere die Farbe des Hintergrunds des Panels zu `white`. Verwende hierzu das `panel.background` in der `theme()` Funktion und die `element_rect()` Helferfunktion.   
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = XX)
+    )
+```
+
+```{r}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = 'white')
+    )
+```
+
+3. Als nächstes, ändere die Farbe der Haupt- und Nebenlinien zu `"grey75"` und deren Grössen zu `.25` und `.1` respektive. Verwende hierzu die Argumente `panel.grid.major` und `panel.grid.minor` und die Helferfunktion `element_line()`. 
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = XX),
+    panel.grid.major = element_line(color = XX, size = XX),
+    panel.grid.minor = element_line(color = XX, size = XX)
+    )
+```
+
+```{r}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = 'white'),
+    panel.grid.major = element_line(color = 'grey75', size = .25),
+    panel.grid.minor = element_line(color = 'grey75', size = .1)
+    )
+```
+
+4. Ändere nun die Farbe des Hintergunds der Panel-Überschriften zu `white`. Verwende das `strip.background` Argument und wiederum die `element_rect()` Helferfunktion.
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = XX),
+    panel.grid.major = element_line(color = XX, size = XX),
+    panel.grid.minor = element_line(color = XX, size = XX),
+    strip.background = element_rect(fill = XX),
+    )
+```
+
+```{r}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = 'white'),
+    panel.grid.major = element_line(color = 'grey75', size = .25),
+    panel.grid.minor = element_line(color = 'grey75', size = .1),
+    strip.background = element_rect(fill = 'white')
+    )
+```
+
+5. Nun ändere die Schriftart der Überschriften zu `italic` mit dem `face` Argument, setze den Text rechtsbündig (`hjust = 1`) und die Schriftgrösse (`size`) auf `12`. Verwende hierzu das `strip.text` Argument und die genannten Argumente in `element_text()`. Siehe `?element_text()`.
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = XX),
+    panel.grid.major = element_line(color = XX, size = XX),
+    panel.grid.minor = element_line(color = XX, size = XX),
+    strip.background = element_rect(fill = XX),
+    strip.text = element_text(face = XX, size = XX, hjust = XX)
+    )
+```
+
+```{r}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = 'white'),
+    panel.grid.major = element_line(color = 'grey75', size = .25),
+    panel.grid.minor = element_line(color = 'grey75', size = .1),
+    strip.background = element_rect(fill = 'white'),
+    strip.text = element_text(face = 'italic', size = 12, hjust = 1)
+    )
+```
+
+6. Setze noch die Schriftgrösse der Achsenbeschriftungen auf `12` und setze jeweils einen Abstand von `10`. Verwende hierzu die Argumente `axis.title.x` und `axis.title.y` und die Helferfunktionen `element_text()` und `margin()`. Siehe `?margin()`.
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = XX),
+    panel.grid.major = element_line(color = XX, size = XX),
+    panel.grid.minor = element_line(color = XX, size = XX),
+    strip.background = element_rect(fill = XX),
+    strip.text = element_text(face = XX, size = XX, hjust = XX),
+    axis.title.x = element_text(size = XX, margin = margin(t = XX)),
+    axis.title.y = element_text(size = XX, margin = margin(r = XX)),
+    )
+```
+
+```{r}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = 'white'),
+    panel.grid.major = element_line(color = 'grey75', size = .25),
+    panel.grid.minor = element_line(color = 'grey75', size = .1),
+    strip.background = element_rect(fill = 'white'),
+    strip.text = element_text(face = 'italic', size = 12, hjust = 1),
+    axis.title.x = element_text(size = 12, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 12, margin = margin(r = 10))
+    )
+```
+
+7. Abschliessend erhöhe den Abstand zwischen den Panels auf `1.1` in der Einheit `"lines"` mittels des `panel.spacing` Argument und der `unit()` Funktion. 
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = XX),
+    panel.grid.major = element_line(color = XX, size = XX),
+    panel.grid.minor = element_line(color = XX, size = XX),
+    strip.background = element_rect(fill = XX),
+    strip.text = element_text(face = XX, size = XX, hjust = XX),
+    axis.title.x = element_text(size = XX, margin = margin(t = XX)),
+    axis.title.y = element_text(size = XX, margin = margin(r = XX)),
+    panel.spacing = unit(XX, units = XX)
+    )
+```
+
+```{r}
+verbrechen_gg + 
+  theme(
+    panel.background = element_rect(fill = 'white'),
+    panel.grid.major = element_line(color = 'grey75', size = .25),
+    panel.grid.minor = element_line(color = 'grey75', size = .1),
+    strip.background = element_rect(fill = 'white'),
+    strip.text = element_text(face = 'italic', size = 12, hjust = 1),
+    axis.title.x = element_text(size = 12, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 12, margin = margin(r = 10)),
+    panel.spacing = unit(1.1, units = "lines")
+    )
+```
+
+### E - Mein `theme()` Objekt
+
+1. Speichere nun alle bisher genutzten `theme` Einstellungen in ein eigenes Objekt mit dem Namen `mein_theme`.
+
+```{r, echo = TRUE, eval = FALSE}
+mein_theme <- theme(
+  XX = XX,
+  XX = XX,
+  ...
+  )
+```
+
+```{r}
+mein_theme <- theme(
+    panel.background = element_rect(fill = 'white'),
+    panel.grid.major = element_line(color = 'grey75', size = .25),
+    panel.grid.minor = element_line(color = 'grey75', size = .1),
+    strip.background = element_rect(fill = 'white'),
+    strip.text = element_text(face = 'italic', size = 12, hjust = 1),
+    axis.title.x = element_text(size = 12, margin = margin(t = 10)),
+    axis.title.y = element_text(size = 12, margin = margin(r = 10)),
+    panel.spacing = unit(1.1, units = "lines")
+    )
+```
+
+2. Jetzt kreiere einen neuen Plot mit anderen Variablen als zuvor und ergänze `mein_theme` (Ohne Klammern). 
+
+```{r, echo = TRUE, eval = FALSE}
+ggplot(verbrechen, 
+       aes(x = XX, 
+           y = XX)) + 
+  geom_point() +
+  facet_wrap(~ XX) +
+  mein_theme
+```
+
+```{r, echo = TRUE, eval = FALSE}
+ggplot(verbrechen, 
+       aes(x = median_einkommen, 
+           y = haeufigkeit)) + 
+  geom_point() +
+  facet_wrap(~ staat) +
+  mein_theme
+```
+
+3. Wenn dir `mein_theme` nicht gefällt, geh zur 1. Aufgabe und nimmm Änderungen vor. Siehe `?theme`. Probiere zum Beispiel mal die Argumente `axis.ticks` und `strip.placement` aus.
+
+### F - Skalierung
+
+In diesem Abschnitt lernst du die Skalierung von Achsen und Objekten anzupassen.
+
+1. Bevor du anfängst Skalierungen anzupassen, lass uns zwei weitere Elemente von `aes()` spezifizieren, damit wir mehr zu skalieren haben. Weise im Code unten `staat` dem Argument `col` zu und `bevoelkerung` dem Argument `size`. Speichere den Plot wiederum als `verbrechen_gg` und plotte den Plot einmal.
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg <- ggplot(data = verbrechen, 
+                        mapping = aes(x = prozent_metro, 
+                                    y = haeufigkeit,
+                                    col = XX,
+                                    size = XX)) +
+  geom_point(alpha = .5) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') + 
+  facet_wrap(~ verbrechen) +
+  mein_theme
+
+verbrechen_gg
+```
+
+```{r}
+verbrechen_gg <- ggplot(data = verbrechen, 
+                        mapping = aes(x = prozent_metro, 
+                                     y = haeufigkeit,
+                                     col = staat,
+                                     size = bevoelkerung)) +
+  geom_point(alpha = .5) +
+  labs(title = "Verbrechen",
+       subtitle = "Haeufigkeit und Nutzung öffentlicher Verkehrsmittel") +
+  scale_x_continuous(trans = 'pseudo_log') + 
+  scale_y_continuous(trans = 'pseudo_log') + 
+  facet_wrap(~ verbrechen) +
+  mein_theme
+
+verbrechen_gg
+```
+
+2. Als erstes verwende `sclale_size()` und darin das `range` argument um die Grösse der Punkte zu verkleinern. Damit kannst du die Überlappung etwas verringern. Probiere ein paar Werte für die untere und obere Grenze aus, die jeweils kleiner als `10` sein sollten, um einen guten Trade-off zwischen Grösse und Überlappung zu finden.
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + scale_size(range = c(XX, XX))
+```
+
+```{r}
+verbrechen_gg + scale_size(range = c(.5, 3))
+```
+
+3. Nun ändere die Farben mit `scale_color_colorblind()` (spezifische Version von `scale_color_gradient()`), so dass die Farben auch per Helligkeit voneinander abgrenzbar sind. 
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + 
+  scale_size(range = c(XX, XX)) + 
+  scale_color_colorblind()
+```
+
+```{r}
+verbrechen_gg + 
+  scale_size(range = c(.5, 3)) + 
+  scale_color_colorblind()
+```
+
+5. Alternativ kann man die Farbskala selbst setzen. Verwende `scale_color_manual()` und die `viridis()` Funktion aus dem `viridis` Paket (nicht vergessen zu laden) um die Farben manuell anzupassen. Viridis ist ein anderer, etablierter und etwas schönerer Farbsatz, der ebenfalls Helligkeitsunterschiede berücksichtigt.   
+
+```{r, echo = TRUE, eval = FALSE}
+verbrechen_gg + 
+  scale_size(range = c(XX, XX)) + 
+  scale_color_manual(values = viridis(7))
+```
+
+```{r}
+verbrechen_gg +
+  scale_size(range = c(.5, 3)) + 
+  scale_color_manual(values = viridis(7))
+```
+
+6. Ok, sieht ganz ordentlich aus, oder? Kann man aber bestimmt noch verbessern. Go explore!
+
+### G - Bilddateien
+
+1. Es ist an der Zeit euren Plot als eine Bilddatei zu speichern. Verwende nun `ggsave` um deinen letzten `verbrechen_gg` plot als eine `.pdf`-Datei unter dem Namen `verbrechen.pdf` zu speichern. Danach solltest du deinen Plot im Ordner `3_Figures` finden. Schaue nach und öffne die Datei. 
+
+```{r, echo = TRUE, eval = FALSE}
+ggsave(filename = "3_Figures/verbrechen.pdf", 
+       device = "pdf", 
+       plot = verbrechen_gg,
+       width = 4, 
+       height = 4, 
+       units = "in")
+```
+
+```{r, eval = FALSE}
+ggsave(filename = "3_Figures/verbrechen.pdf", 
+       device = "pdf", 
+       plot = verbrechen_gg,
+       width = 4, 
+       height = 4, 
+       units = "in")
+```
+
+2. Probiere ein paar Sachen aus:
+
+- Verändere `width` und `height` in der `ggsave()` Funktion.
+- Speichere ein `.png` anstatt eines `.pdf` indem du `filename` und `device` entsprechend anpasst.
+
+
+### X - Challenges: Multiple Plots
+
+In diesem Abschnitt lernst du mit dem `patchwork` Paket multiple Plots zusammenzustellen.
+
+1. Kreiere 3 verschiedene Plots, die jeweils `haeufigkeiten` gegen eine andere Variable im Datensatz plotten. Für eine bessere Übersicht verzichte erstmal auf `facet`s. Nenne die 3 Plots `verbrechen_a`, `verbrechen_b`, und `verbrechen_c`. 
+
+2. Stelle alle 3 Plots nebeneinander mit `verbrechen_a + verbrechen_b + verbrechen_c`. 
+
+3. Stelle den 3. Plot unter die ersten beiden mit `verbrechen_a + verbrechen_b / verbrechen_c`. 
+
+4. Ändere das `theme` aller drei Plots gleichzeitig zu `theme_void()` mit dem `&`-Operator. 
+
+5. Speichere deinen Plot als `.pdf` mit `ggsave()`.
+
+
+## Beispiele
+
+```{r, eval = FALSE, echo = TRUE}
+
+library(tidyverse) 
+
+# Scatterplot mit Hubraum und Meilen pro Gallone
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy)) +
+       geom_point()  
+
+# Speichere den Plot
+mein_plot <- ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy)) +
+       geom_point()  
+
+# Plotte den Plot
+mein_plot
+
+# Facets ------------
+
+# Kreiere Facetten nach Klasse
+mein_plot <- mein_plot + 
+  facet_wrap(~class)
+
+# plot
+mein_plot
+
+# Ändere themes ------------
+
+# Ändere die Hintergrundfarbe
+mein_plot +
+  theme(
+    panel.background = element_rect(fill='green')
+  )
+
+# Ändere die Rasterlinien
+mein_plot +
+  theme(
+    panel.grid.major = element_line(color = 'red', size = 2),
+    panel.grid.minor = element_line(color = 'blue', size = 1)
+  )
+
+# Ändere den Überschriftenhintergrund
+mein_plot +
+  theme(
+    strip.background = element_rect(fill = 'blue'),
+    strip.text = element_text(face = 'bold', size = 12)
+  )
+
+# Ändere die Achsenbeschriftungen
+mein_plot +
+  theme(
+    axis.title.y = element_text(size = 12, margin = margin(r = 10)),
+    axis.title.x = element_text(size = 12, margin = margin(t = 10))
+  )
+
+# Ändere die Panelabstände
+mein_plot +
+  theme(
+    panel.spacing = unit(2, "lines")
+  )
+
+# Speichere themes ------------
+
+# Kreiere theme
+mein_theme <- theme(
+  panel.background = element_rect(fill='green'),
+  panel.grid.major = element_line(color = 'red', size = 2),
+  panel.grid.minor = element_line(color = 'blue', size = 1),
+  strip.background = element_rect(fill = 'blue'),
+  strip.text = element_text(face = 'bold', size = 12),
+  strip.background = element_rect(fill = 'blue'),
+  strip.text = element_text(face = 'bold', size = 12),
+  axis.title.y = element_text(size = 12, margin = margin(r = 10)),
+  axis.title.x = element_text(size = 12, margin = margin(t = 10)),
+  panel.spacing = unit(2, "lines")
+)
+
+# Wende theme an (keine Klammern)
+mein_plot + mein_theme 
+
+# Skalierung ------------
+
+# Ändere die x-Achsenskalierung
+mein_plot + scale_x_continuous(limits = c(0, 10))
+
+# Ändere die Farbskalierung
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy,
+                     color = class)) +
+       geom_point() +
+  scale_color_manual(values = viridis(7))
+  
+# Kreiere Bilddateien ------------
+
+# Kreiere ein pdf
+ggsave(filename = "mein_plot_name", 
+       plot = mein_plot,
+       device = "pdf", 
+       path = 'plotting_folder',
+       width = 4, 
+       height = 4, 
+       units = "in")
+
+```
+
+
+## Datensätze
+
+|Datei | Zeilen | Spalten | 
+|:----|:-----|:------|
+|[verbrechen.csv](https://raw.githubusercontent.com/therbootcamp/Intro2R_Unibe/master/_sessions/PlottingII/1_Data/crime.csv) | 7497 | 12 | 
+
+Der `verbrechen` Datensatz ist ein Ausschnitt aus dem "Communities and Crime Unnormalized Data Set" des "UCI Machine Learning Repository".  
+
+#### Variablenbeschreibungen
+
+|Variable | Beschreibung |
+|:-------------|:-------------------------------------|
+|gemeinde| Name der Gemeinde  |
+|staat| Kürzel des US Staats |
+|bevoelkerung| Bevölkerungs |
+|bevoelkerung_dichte| Dichte der Bevölkerungs |
+|haushalt_groesse| Durchschnittliche Haushaltsgrösse |
+|median_einkommen| Median Einkommen |
+|prozent_pension| Prozent in Pension befindlicher Einwohner |
+|prozent_armut| Prozent in Armut lebender Einwohner |
+|prozent_arbeitslos| Prozent arbeitsloser Einwohner |
+|prozent_metro| Prozent Metro-fahrender Einwohner |
+|verbrechen| Art des Verbrechen |
+|haeufigkeit| Häufigkeit des Verbrechens |
+
+## Funktionen
+
+### Paket
+
+|Paket| Installation|
+|:------|:------|
+|`tidyverse`|`install.packages("tidyverse")`|
+|`viridis`|`install.packages("viridis")`|
+|`patchwork`|`install.packages("patchwork")`|
+
+### Funktionen
+
+*`facet`s*
+
+| Function| Package | Description |
+|:---|:------|:---------------------------------------------|
+| `facet_wrap()`|`ggplot2`| Kreiere Facetting mit automatischen Zeilenbrüchen | 
+| `facet_grid()`|`ggplot2`| Kreiere Facetting in Tabellenform | 
+
+*`theme`s*
+
+| Function| Package | Description |
+|:---|:------|:---------------------------------------------|
+| `theme()`|`ggplot2`| Ändere `theme`s | 
+| `element_rect()`|`ggplot2`| Helferfunktion für Flächen | 
+| `element_line()`|`ggplot2`| Helferfunktion für Linien | 
+| `element_text()`|`ggplot2`| Helferfunktion für Text | 
+| `element_blank()`|`ggplot2`| Helferfunktion für das Entfernen von Elementen | 
+
+*`scale`s*
+
+| Function| Package | Description |
+|:---|:------|:---------------------------------------------|
+| `scale_x_*()`, `scale_y_*()`| `ggplot2` | Skaliert die x- und y-Achsen | 
+| `scale_size_*()`| `ggplot2` |  Skaliert Grössen | 
+| `scale_color_*()`| `ggplot2` | Skaliert Farben | 
+| `scale_fill_*()`| `ggplot2` | Skaliert Füllfarben | 
+| `scale_alpha_*()`| `ggplot2` | Skaliert Transparenz | 
+
+
+## Resourcen
+
+### Dokumentation
+
+- Siehe die `ggplot2` [**Webseite**](http://ggplot2.tidyverse.org/).
+
+- Selva Prabhakaran's [**Webseite**](http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html) mit inspirierenden `ggplot2` Beispielen. 
+
+### Cheatsheets
+
+<p align="center" width="100%">
+<a href="https://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.pdf">
+  <img src="http://www.rstudio.com/wp-content/uploads/2015/03/ggplot2-cheatsheet.png" style="width:70%"></a>
+  <br>
+  <font style="font-size:10px">from <a href="https://www.rstudio.com/resources/cheatsheets/">R Studio</a></font>
+</p>
+

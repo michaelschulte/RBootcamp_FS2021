@@ -1,0 +1,1260 @@
+---
+title: "Plotting II"
+author: "Explorative Datenanalyse mit R<br>
+  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
+  <br>
+  <a href='https://therbootcamp.github.io/EDA_2020Feb/'>
+    <i class='fas fa-clock' style='font-size:.9em;'></i>
+  </a>&#8239; 
+  <a href='https://therbootcamp.github.io'>
+    <i class='fas fa-home' style='font-size:.9em;' ></i>
+  </a>&#8239;
+  <a href='mailto:therbootcamp@gmail.com'>
+    <i class='fas fa-envelope' style='font-size: .9em;'></i>
+  </a>&#8239;
+  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
+    <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+  </a>"
+date: "Februar 2020"
+output:
+  xaringan::moon_reader:
+    css: ["default", "baselrbootcamp.css"]
+    lib_dir: libs
+    nature:
+      highlightStyle: github
+      highlightLines: true
+      countIncrementalSlides: false
+      ratio: '16:9'
+---
+
+layout: true
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png" height=14 style="vertical-align: middle"/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:82px"> 
+        <font color="#7E7E7E">
+          www.therbootcamp.com
+        </font>
+      </span>
+    </a>
+    <a href="https://therbootcamp.github.io/">
+      <font color="#7E7E7E">
+       Explorative Datenanalyse mit R | Februar 2020
+      </font>
+    </a>
+    </span>
+  </div> 
+
+---
+
+```{r setup, include=FALSE}
+options(htmltools.dir.version = FALSE)
+# see: https://github.com/yihui/xaringan
+# install.packages("xaringan")
+# see: 
+# https://github.com/yihui/xaringan/wiki
+# https://github.com/gnab/remark/wiki/Markdown
+options(width=110)
+options(digits = 4)
+```
+
+```{r, echo = FALSE ,message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment=NA, fig.width=6, fig.height=6, echo = TRUE, eval = TRUE, 
+                      message = FALSE, warning = FALSE, fig.align = 'center', dpi = 200)
+library(tidyverse)
+library(ggthemes)
+library(extrafont)
+library(gridExtra)
+#loadfonts()
+```
+
+# Plots anpassen
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Kreiere und verändere ein <highm>gg</highm> Plot-Objekt.</span></li>
+  <li class="m2"><span>Teile den Plot auf mit <highm>facet</highm>s</span></li>
+  <li class="m3"><span>Nutze <highm>theme</highm>s um einzelne Aspekte des Plots zu formatieren</span></li>
+  <li class="m4"><span>Kreiere deine eigenen <highm>theme</highm>s.</span></li>
+  <li class="m5"><span>Speichere deinen Plot als <highm>.pdf</highm> oder <highm>.png</highm>.</span></li>
+</ul>
+
+]
+
+
+.pull-right45[
+
+<p align="center">
+<img src="image/button.jpeg" height="420px"><br>
+<font style="font-size:10px">from <a href="http://www.lonniemillsap.com/?p=1779">lonniemillsap.com</a></font>
+</p>
+
+]
+
+
+---
+
+# Das <mono>gg</mono> Objekt
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Die <mono>ggplot</mono> generiert ein <high><mono>gg</mono> Objekt</high>, dass gespeichert werden kann.</span></li>
+  <li class="m2"><span><mono>gg</mono> Objekte können durch <mono>+</mono> beliebig <high>verändert/erweitert</high> werden</span></li>
+  <li class="m3"><span>Ausführen des Objekts generiert den Plot.</span></li>
+</ul>
+
+```{r, fig.width = 8}
+# Weise Plot Objekt zu
+mein_plot <- ggplot(data = mpg,
+                    aes(x = displ,y = hwy)) + 
+  geom_point() + theme_bw()
+
+# Zeige Klasse
+class(mein_plot)
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5}
+mein_plot 
+```
+
+]
+
+---
+
+# Das <mono>gg</mono> Objekt
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Die <mono>ggplot</mono> generiert ein <high><mono>gg</mono> Objekt</high>, dass gespeichert werden kann.</span></li>
+  <li class="m2"><span><mono>gg</mono> Objekte können durch <mono>+</mono> beliebig <high>verändert/erweitert</high> werden</span></li>
+  <li class="m3"><span>Ausführen des Objekts generiert den Plot.</span></li>
+</ul>
+
+```{r, fig.width = 8}
+# Weise Plot Objekt zu
+mein_plot <- ggplot(data = mpg,
+                    aes(x = displ,y = hwy)) + 
+  geom_point() + theme_bw()
+
+# Zeige Klasse
+class(mein_plot)
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5}
+mein_plot + geom_smooth()
+```
+
+]
+
+
+---
+
+# `facet_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Facetting kreiert <high>denselben Plot für Gruppen</high> definiert durch dritte Variablen.</span></li>
+  <li class="m2"><span>Facet Funktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>facet_wrap()</mono></span></li>
+    <li><span><mono>facet_grid()</mono></span></li>
+  </ul>
+</ul>
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE, eval = F}
+# Ohne facetting
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy)) + 
+  geom_point() + theme_bw()
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+# Ohne facetting
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy)) + 
+  geom_point() + theme_bw()
+```
+
+]
+
+---
+
+# `facet_wrap()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Facetting kreiert <high>denselben Plot für Gruppen</high> definiert durch dritte Variablen.</span></li>
+  <li class="m2"><span>Facet Funktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>facet_wrap()</mono></span></li>
+    <li><span><mono>facet_grid()</mono></span></li>
+  </ul>
+</ul>
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE, eval = F}
+# Ohne facetting
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy)) + 
+  geom_point() + theme_bw() +
+  facet_wrap(~ class)
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+# Mit faceting
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy)) + 
+  geom_point() + theme_bw() +
+  facet_wrap(~ class)
+```
+
+]
+
+---
+
+# `facet_grid()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Facetting kreiert <high>denselben Plot für Gruppen</high> definiert durch dritte Variablen.</span></li>
+  <li class="m2"><span>Facet Funktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>facet_wrap()</mono></span></li>
+    <li><span><mono>facet_grid()</mono></span></li>
+  </ul>
+</ul>
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE, eval = F}
+# Ohne facetting
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy)) + 
+  geom_point() + theme_bw() +
+  facet_grid(drv ~ class) 
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+# Mit facetting
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy)) + 
+  geom_point() + theme_bw() +
+  facet_grid(drv ~ class) 
+```
+
+]
+
+
+---
+
+# `theme()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Passt mit den <high>87 Argumenten von <mono>theme()</mono></high> alle ästhetischen Aspekte deines Plots an.</span></li>
+  <li class="m2"><span>Nutze hierzu vier Helferfunktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>element_rect()</mono> | für Flächen</span></li>
+    <li><span><mono>element_line()</mono> | für Linien</span></li>
+    <li><span><mono>element_text()</mono> | für Text</span></li>
+    <li><span><mono>element_blank()</mono> | zum entfernen</span></li>
+  </ul>
+</ul>
+
+```{r, eval = F}
+# Verwendung von theme
+mein_plot + 
+  theme(argument = element_*(), 
+        argument = element_*(),
+        ...)
+```
+
+]
+
+
+.pull-right45[
+
+<p align="center">
+<img src="image/theme.png">
+</p>
+]
+
+---
+
+# Hintergrund
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Argumente für den Hintergrund:</span></li>
+  <ul class="level">
+    <li><span><mono>panel.background</mono> | für den inneren Hintergrund</span></li>
+    <li><span><mono>plot.background</mono> | für den äusseren Hintergrund</span></li>
+  </ul>
+</ul>
+
+```{r, eval = F}
+# Ändere den Hintergrund
+mein_plot + 
+  theme(
+    panel.background = 
+      element_rect(fill = 'tomato'), 
+    plot.background = 
+      element_rect(fill = 'burlywood'))
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+# Ändere den Hintergrund
+mein_plot = mein_plot + 
+  theme(
+    panel.background = element_rect(fill = 'tomato'), 
+    plot.background = element_rect(fill = 'burlywood'))
+mein_plot
+```
+
+]
+
+---
+
+# Raster
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Argumente für das Raster:</span></li>
+  <ul class="level">
+    <li><span><mono>panel.grid.major</mono> | grössere Rasterlinien</span></li>
+    <li><span><mono>panel.grid.minor</mono> | kleinere Rasterlinien</span></li>
+  </ul>
+</ul>
+
+```{r, eval = F}
+# Ändere das Raster
+mein_plot + 
+  theme(
+    panel.grid.major = 
+      element_line(colour = "salmon"),
+    panel.grid.minor = 
+      element_line(colour = "seagreen"))
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+# Ändere das Raster
+mein_plot = mein_plot + 
+  theme(
+    panel.grid.major = 
+      element_line(colour = "salmon"),
+    panel.grid.minor = 
+      element_line(colour = "seagreen")
+    )
+mein_plot
+```
+
+]
+
+---
+
+# Raster
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Argumente für das Raster:</span></li>
+  <ul class="level">
+    <li><span><mono>panel.grid.major</mono> | grössere Rasterlinien</span></li>
+    <li><span><mono>panel.grid.minor</mono> | kleinere Rasterlinien</span></li>
+  </ul>
+</ul>
+
+```{r, eval = F}
+# Ändere das Raster
+mein_plot + 
+  theme(
+    panel.grid.major = 
+      element_line(colour = "salmon",
+                   size = 3),
+    panel.grid.minor = 
+      element_line(colour = "seagreen",
+                   size = 1.5))
+
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+# Ändere das Raster
+mein_plot = mein_plot + 
+  theme(
+    panel.grid.major = 
+      element_line(colour = "salmon",
+                   size = 3),
+    panel.grid.minor = 
+      element_line(colour = "seagreen",
+                   size = 1.5)
+    )
+mein_plot
+```
+
+]
+
+---
+
+# Achsen
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Argumente für die Achsen:</span></li>
+  <ul class="level">
+    <li><span><mono>axis.line.x</mono> | x-Achse</span></li>
+    <li><span><mono>axis.line.y</mono> | y-Achse</span></li>
+    <li><span><mono>axis.title.x</mono> | x-Achse Titel</span></li>
+    <li><span><mono>axis.title.y</mono> | y-Achse Titel</span></li>
+  </ul>
+</ul>
+
+```{r, eval = F}
+# Ändere die Achsen
+mein_plot + 
+  theme(
+    axis.line.x = 
+      element_line(colour = "deeppink", 
+                   size = 3.5, 
+                   lineend = "butt"),
+    axis.line.y = 
+      element_line(colour = "deeppink", 
+                   size = 3.5))
+
+```
+
+]
+
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+# Ändere die Achsen
+mein_plot = mein_plot + 
+  theme(
+    axis.line.x = 
+      element_line(colour = "deeppink", 
+                   size = 3.5, 
+                   lineend = "butt"),
+    axis.line.y = 
+      element_line(colour = "deeppink", 
+                   size = 3.5)
+    )
+mein_plot
+```
+
+]
+
+---
+
+# Achsen
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Argumente für die Achsen:</span></li>
+  <ul class="level">
+    <li><span><mono>axis.line.x</mono> | x-Achse</span></li>
+    <li><span><mono>axis.line.y</mono> | y-Achse</span></li>
+    <li><span><mono>axis.title.x</mono> | x-Achse Titel</span></li>
+    <li><span><mono>axis.title.y</mono> | y-Achse Titel</span></li>
+  </ul>
+</ul>
+
+```{r, eval = F}
+# change grid line color
+mein_plot + 
+  theme(
+    axis.title.x = 
+      element_text(family = "Comic Sans MS", 
+                   size = 30),
+    axis.title.y = 
+      element_text(family = "Comic Sans MS", 
+                   size = 30))
+
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = FALSE}
+# change grid line color
+mein_plot = mein_plot + 
+  theme(
+    axis.line.x = 
+      element_line(colour = "deeppink", 
+                   size = 3.5, 
+                   lineend = "butt"),
+    axis.line.y = 
+      element_line(colour = "deeppink", 
+                   size = 3.5),
+    axis.title.x = 
+      element_text(
+                   family = "Comic Sans MS", 
+                   size = 30),
+    axis.title.y = 
+      element_text(family = "Comic Sans MS", 
+                   size = 30)
+    )
+mein_plot
+```
+
+]
+
+
+---
+
+.pull-left45[
+
+# Weitere Argumente <font style="font-size:16px"> (unvollständig)</font>
+
+<u><mono>theme()</mono></u>
+
+<table style="width:100%">
+  <tr>
+    <td> <b>Argument</b> </td>
+    <td> <b>Beschreibung</b> </td>
+  </tr>
+  <tr>
+    <td> <mono>axis.title.*</mono> </td>
+    <td> Alles betreffend Achsentitel </td>
+  </tr>
+  <tr>
+    <td> <mono>axis.ticks.*</mono> </td>
+    <td> Alles betreffend Achseneinteilungen </td>
+  </tr>
+  <tr>
+    <td> <mono>axis.line.*</mono> </td>
+    <td> Alles betreffend Achsenlinien </td>
+  </tr>
+  <tr>
+    <td> <mono>legend.*</mono> </td>
+    <td> Alles betreffend Legenden </td>
+  </tr>
+  <tr>
+    <td> <mono>panel.*</mono> </td>
+    <td> Alles betreffend die innere Plotregion </td>
+  </tr>
+  <tr>
+    <td> <mono>plot.*</mono> </td>
+    <td> Alles betreffend die äussere Plotregion </td>
+  </tr>
+  <tr>
+    <td> <mono>strip.*</mono> </td>
+    <td> Alles betreffend die Facet Titel </td>
+  </tr>
+</table>
+
+]
+
+.pull-right45[
+
+<br>
+
+<u><mono>element_rect()</mono></u>
+
+<table style="width:100%">
+  <tr>
+    <td> <b>Argument</b> </td>
+    <td> <b>Beschreibung</b> </td>
+  </tr>
+  <tr>
+    <td> <mono>fill</mono> </td>
+    <td> Füllfarbe </td>
+  </tr>
+  <tr>
+    <td> <mono>colour</mono> </td>
+    <td> Randfarbe </td>
+  </tr>
+</table>
+
+<u><mono>element_line()</mono></u>
+
+<table style="width:100%">
+  <tr>
+    <td> <b>Argument</b> </td>
+    <td> <b>Beschreibung</b> </td>
+  </tr>
+  <tr>
+    <td> <mono>size</mono> </td>
+    <td> Liniengrösse </td>
+  </tr>
+  <tr>
+    <td> <mono>linetype</mono> </td>
+    <td> Art der Linie </td>
+  </tr>
+</table>
+
+<u><mono>element_text()</mono></u>
+
+<table style="width:100%">
+  <tr>
+    <td> <b>Argument</b> </td>
+    <td> <b>Beschreibung</b> </td>
+  </tr>
+  <tr>
+    <td> <mono>face</mono> </td>
+    <td> Schriftart </td>
+  </tr>
+  <tr>
+    <td> <mono>colour</mono> </td>
+    <td> Schriftfarbe </td>
+  </tr>
+</table>
+
+]
+
+
+---
+
+# Eigene themes
+
+.pull-left45[
+
+```{r}
+mein_theme <- theme(
+  panel.background = 
+    element_rect(fill = 'tomato'), 
+  plot.background = 
+    element_rect(fill = 'burlywood'),
+  panel.grid.major = element_line(
+    colour = "salmon", size = 3),
+  panel.grid.minor = element_line(
+    colour = "seagreen", size = 1.5),
+  axis.line.x = element_line(
+    colour = "deeppink", size = 3.5, 
+    lineend = "butt"),
+  axis.line.y = element_line(
+    colour = "deeppink", size = 3.5),
+  axis.title.x = element_text(
+    family = "Comic Sans MS", size = 30),
+  axis.title.y = element_text(
+    family = "Comic Sans MS", size = 30))
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = F}
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ,
+                     y = hwy)) + 
+              geom_point() + 
+              theme_bw()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+mein_plot
+```
+
+]
+
+---
+
+# Eigene themes
+
+.pull-left45[
+
+```{r}
+mein_theme <- theme(
+  panel.background = 
+    element_rect(fill = 'tomato'), 
+  plot.background = 
+    element_rect(fill = 'burlywood'),
+  panel.grid.major = element_line(
+    colour = "salmon", size = 3),
+  panel.grid.minor = element_line(
+    colour = "seagreen", size = 1.5),
+  axis.line.x = element_line(
+    colour = "deeppink", size = 3.5, 
+    lineend = "butt"),
+  axis.line.y = element_line(
+    colour = "deeppink", size = 3.5),
+  axis.title.x = element_text(
+    family = "Comic Sans MS", size = 30),
+  axis.title.y = element_text(
+    family = "Comic Sans MS", size = 30))
+```
+
+]
+
+.pull-right45[
+
+```{r, echo = F}
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ,
+                     y = hwy)) + 
+              geom_point() + 
+              theme_bw()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+mein_plot + mein_theme
+```
+
+]
+
+---
+
+# `scale_*()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <mono>scale_*()</mono> Funktionen lassen sich alle möglichen Längen/Grössen skalieren.</span></li>
+  <li class="m2"><span>Klassen von <mono>scale_*()</mono> Funktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
+    <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
+    <li><span><mono>scale_size_*</mono> | Skaliere Groessen</span></li>
+    <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
+    <li><span>...</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, echo = F}
+# orginal plot
+mein_plot <- ggplot(data = mpg,
+       aes(x = displ, y = hwy,
+           size = cyl, color = class)) + 
+  geom_point() + theme_bw()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+mein_plot
+```
+
+
+]
+
+---
+
+# `scale_x_continuous()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <mono>scales_*()</mono> Funktionen lassen alle möglichen Längen/Grössen skalieren.</span></li>
+  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
+    <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
+    <li><span><mono>scale_size_*</mono> | Skaliere Groessen</span></li>
+    <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
+    <li><span>...</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, echo = F}
+# orginal plot
+mein_plot <- ggplot(data = mpg,
+       aes(x = displ, y = hwy,
+           size = cyl, color = class)) + 
+  geom_point() + theme_bw()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+mein_plot + 
+  scale_x_continuous(limits = c(1, 30))
+```
+
+]
+
+---
+
+# `scale_x_reverse()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <mono>scales_*()</mono> Funktionen lassen alle möglichen Längen/Grössen skalieren.</span></li>
+  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
+    <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
+    <li><span><mono>scale_size_*</mono> | Skaliere Groessen</span></li>
+    <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
+    <li><span>...</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, echo = F}
+# orginal plot
+mein_plot <- ggplot(data = mpg,
+       aes(x = displ, y = hwy,
+           size = cyl, color = class)) + 
+  geom_point() + theme_bw()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+mein_plot + 
+  scale_x_reverse()
+```
+
+]
+
+---
+
+# `scale_color_hue()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <mono>scales_*()</mono> Funktionen lassen alle möglichen Längen/Grössen skalieren.</span></li>
+  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
+    <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
+    <li><span><mono>scale_size_*</mono> | Skaliere Groessen</span></li>
+    <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
+    <li><span>...</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, echo = F}
+# orginal plot
+mein_plot <- ggplot(data = mpg,
+       aes(x = displ, y = hwy,
+           size = cyl, color = class)) + 
+  geom_point() + theme_bw()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+mein_plot + 
+  scale_colour_hue(h = c(160, 260))
+```
+
+]
+
+---
+
+# `scale_size()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Mit <mono>scales_*()</mono> Funktionen lassen alle möglichen Längen/Grössen skalieren.</span></li>
+  <li class="m2"><span>Klassen von <mono>scales_*()</mono> Funktionen:</span></li>
+  <ul class="level">
+    <li><span><mono>scale_xy_*</mono> | Skaliere Achsen</span></li>
+    <li><span><mono>scale_color_*, scale_color_*</mono> | Skaliere Farben</span></li>
+    <li><span><mono>scale_size_*</mono> | Skaliere Groessen</span></li>
+    <li><span><mono>scale_alpha_*</mono> | Skaliere Transparenzen</span></li>
+    <li><span>...</span></li>
+  </ul>
+</ul>
+
+]
+
+.pull-right45[
+
+```{r, echo = F}
+# orginal plot
+mein_plot <- ggplot(data = mpg,
+       aes(x = displ, y = hwy,
+           size = cyl, color = class)) + 
+  geom_point() + theme_bw()
+```
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+mein_plot + 
+  scale_size(range = c(1, 15))
+```
+
+]
+
+
+
+---
+
+# Multiple Plots
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
+  <ul class="level">
+    <li><span><mono>+</mono> | generisch zusammefügen</span></li>
+    <li><span><mono>|</mono> | nebeneinander stellen</span></li>
+    <li><span><mono>/</mono> | untereinander stellen</span></li>
+    <li><span><mono>()</mono> | zusammenfassen</span></li>
+    <li><span><mono>&</mono> | auf alle anwenden</span></li>
+  </ul>
+</ul>
+
+```{r, echo = F}
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ,
+                     y = hwy)) + 
+              geom_point() + 
+              theme_bw()
+
+require(patchwork)
+```
+
+<br>
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+# Speichere plots
+schoen <- mein_plot
+unschoen <- mein_plot + mein_theme
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+schoen + unschoen
+```
+
+]
+
+---
+
+# Multiple Plots
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
+  <ul class="level">
+    <li><span><mono>+</mono> | generisch zusammefügen</span></li>
+    <li><span><mono>|</mono> | nebeneinander stellen</span></li>
+    <li><span><mono>/</mono> | untereinander stellen</span></li>
+    <li><span><mono>()</mono> | zusammenfassen</span></li>
+    <li><span><mono>&</mono> | auf alle anwenden</span></li>
+  </ul>
+</ul>
+
+```{r, echo = F}
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ,
+                     y = hwy)) + 
+              geom_point() + 
+              theme_bw()
+
+require(patchwork)
+```
+
+<br>
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+# Speichere plots
+schoen <- mein_plot
+unschoen <- mein_plot + mein_theme
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+schoen | unschoen + schoen
+```
+
+]
+
+---
+
+# Multiple Plots
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
+  <ul class="level">
+    <li><span><mono>+</mono> | generisch zusammefügen</span></li>
+    <li><span><mono>|</mono> | nebeneinander stellen</span></li>
+    <li><span><mono>/</mono> | untereinander stellen</span></li>
+    <li><span><mono>()</mono> | zusammenfassen</span></li>
+    <li><span><mono>&</mono> | auf alle anwenden</span></li>
+  </ul>
+</ul>
+
+```{r, echo = F}
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ,
+                     y = hwy)) + 
+              geom_point() + 
+              theme_bw()
+
+require(patchwork)
+```
+
+<br>
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+# Speichere plots
+schoen <- mein_plot
+unschoen <- mein_plot + mein_theme
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+(schoen+schoen) / (schoen+schoen)
+```
+
+]
+
+---
+
+# Multiple Plots
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
+  <ul class="level">
+    <li><span><mono>+</mono> | generisch zusammefügen</span></li>
+    <li><span><mono>|</mono> | nebeneinander stellen</span></li>
+    <li><span><mono>/</mono> | untereinander stellen</span></li>
+    <li><span><mono>()</mono> | zusammenfassen</span></li>
+    <li><span><mono>&</mono> | auf alle anwenden</span></li>
+  </ul>
+</ul>
+
+```{r, echo = F}
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ,
+                     y = hwy)) + 
+              geom_point() + 
+              theme_bw()
+
+require(patchwork)
+```
+
+<br>
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+# Speichere plots
+schoen <- mein_plot
+unschoen <- mein_plot + mein_theme
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+(schoen+schoen) / (schoen+schoen) &
+  mein_theme
+```
+
+]
+
+---
+
+# Multiple Plots
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Das <mono>patchwork</mono> Paket liefert eine einfache Syntax um Plots zu verknüpfen.</span></li>
+  <li class="m2"><span><mono>patchwork</mono> Syntax:</span></li>
+  <ul class="level">
+    <li><span><mono>+</mono> | generisch zusammefügen</span></li>
+    <li><span><mono>|</mono> | nebeneinander stellen</span></li>
+    <li><span><mono>/</mono> | untereinander stellen</span></li>
+    <li><span><mono>()</mono> | zusammenfassen</span></li>
+    <li><span><mono>&</mono> | auf alle anwenden</span></li>
+  </ul>
+</ul>
+
+```{r, echo = F}
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ,
+                     y = hwy)) + 
+              geom_point() + 
+              theme_bw()
+
+require(patchwork)
+```
+
+<br>
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+# Speichere plots
+schoen <- mein_plot
+unschoen <- mein_plot + mein_theme
+```
+
+]
+
+.pull-right45[
+
+```{r, fig.width = 7, fig.height = 5.5, echo = TRUE}
+(schoen+schoen) / (schoen+schoen) +
+  plot_annotation(tag_levels = "A") & 
+  theme(legend.position = "none") 
+```
+
+]
+
+---
+
+# `ggsave()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Kreiere <high>Bilddateien</high> mit <mono>ggsave()</mono>.</span></li>
+  <li class="m2"><span><mono>ggsave</mono> Argumente:</span></li>
+  <ul class="level">
+    <li><span><mono>filename</mono> | Dateipfad</span></li>
+    <li><span><mono>device</mono> | z.B. <mono>".pdf"</mono> oder <mono>".png"</mono></span></li>
+    <li><span><mono>path</mono> | Pfad zum Ordneer</span></li>
+    <li><span><mono>height, width</mono> | Höhe, Breite</span></li>
+    <li><span><mono>unit</mono> | Einheit für Höhe, Breite</span></li>
+    <li><span><mono>dpi</mono> | Auflösung pro Einheit</span></li>
+  </ul>
+</ul>
+
+]
+
+
+.pull-right45[
+
+```{r, eval = FALSE}
+# Kreiere meinen Plot
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ, y = hwy)) + 
+            geom_point() + 
+            mytheme
+
+# Kreiere "mein_plot.pdf"
+ggsave(filename = "mein_plot",
+       plot = mein_plot,
+       device = "pdf",
+       path = "figures",
+       width = 6, 
+       height = 4)
+```
+
+]
+
+---
+
+# `ggsave()`
+
+.pull-left45[
+
+<ul>
+  <li class="m1"><span>Kreiere <high>Bilddateien</high> mit <mono>ggsave()</mono>.</span></li>
+  <li class="m2"><span><mono>ggsave</mono> Argumente:</span></li>
+  <ul class="level">
+    <li><span><mono>filename</mono> | Dateipfad</span></li>
+    <li><span><mono>device</mono> | z.B. <mono>".pdf"</mono> oder <mono>".png"</mono></span></li>
+    <li><span><mono>path</mono> | Pfad zum Ordneer</span></li>
+    <li><span><mono>height, width</mono> | Höhe, Breite</span></li>
+    <li><span><mono>unit</mono> | Einheit für Höhe, Breite</span></li>
+    <li><span><mono>dpi</mono> | Auflösung pro Einheit</span></li>
+  </ul>
+</ul>
+
+]
+
+
+.pull-right45[
+
+```{r, eval = FALSE}
+# Kreiere meinen Plot
+mein_plot <- ggplot(data = mpg,
+                 aes(x = displ, y = hwy)) + 
+            geom_point() + 
+            mytheme
+
+# Kreiere "mein_plot.png"
+ggsave(filename = "mein_plot",
+       plot = mein_plot,
+       device = "png",
+       path = "figures",
+       width = 6, 
+       height = 4)
+```
+
+]
+
+
+
+---
+
+class: middle, center
+
+<h1><a href="https://therbootcamp.github.io/EDA_2020Feb/_sessions/PlottingII/PlottingII_practical.html">Practical</a></h1>
