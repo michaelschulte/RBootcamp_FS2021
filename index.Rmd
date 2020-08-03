@@ -1,0 +1,26 @@
+---
+title: R Bootcamp
+output:
+  html_document:
+    css: index.css
+    self_contained: no
+    includes:
+      #in_header: header.html
+      #before_body: doc_prefix.html
+      after_body: doc_suffix.html
+---
+
+||
+|:---|
+|<font style='font-style:normal;font-size:20px;padding-left:9.3px'>Michael Schulte-Mecklenbeck</font>|
+|<font style='font-style:normal;font-size:20px;padding-left:9.3px'>FS 2019</font>|
+
+
+|Date|0|1|2|3|
+|:---|:---|:---|:---|
+20.2.|Welcome!<br>[slides](_sessions/Welcome/Welcome.html)|Intro to R<br>[slides](_sessions/IntroToR/IntroToR.html), [source](_sessions/IntroToR/IntroToR_interactive.R)|Data <br>[slides](_sessions/Data/Data.html), [practical](_sessions/Data/Data_practical.html),[solutions](_sessions/Data/Data_practical_solutions.html)||
+27.2.|Recap|Wrangling<br>[slides](_sessions/Wrangling/Wrangling.html), [practical](_sessions/Wrangling/Wrangling_practical.html),[solutions](_sessions/Data/Wrangling_solutions.html)  | Statistics I<br>[slides](_sessions/StatisticsI/StatisticsI.html), [practical](_sessions/StatisticsI/StatisticsI_practical.html), [solutions](_sessions/StatisticsI/StatisticsI_practical_solutions.html) ||
+6.3.|Recap| Statistics II<br>[slides](_sessions/StatisticsII/StatisticsII.html), [practical](_sessions/StatisticsII/StatisticsII_practical.html), [solutions](_sessions/StatisticsII/StatisticsII_practical_solutions.html)|Plotting I<br>[slides](_sessions/PlottingI/PlottingI.html), [practical](_sessions/PlottingI/PlottingI_practical.html), [solutions](_sessions/PlottingI/PlottingI_practical_solutions.html)||
+27.3.|Recap| Plotting II <br>[slides](_sessions/PlottingII/PlottingII.html), [practical](_sessions/PlottingII/PlottingII_practical.html), [solutions](_sessions/PlottingII/PlottingII_solutions.html)|Reporting<br>[slides](_sessions/Reporting/Reporting.html), [practical](_sessions/Reporting/Reporting_practical.html), [solutions](_sessions/Reporting/Reporting_solutions.html)||
+3.4.|Recap|Case Study [CaseStudy](_sessions/CaseStudy/Financial_Data_Case_Study.html) | Final Project [Medicine](_sessions/FinalProject/FinalProject_Medicine.html), [Clinical](_sessions/FinalProject/FinalProject_Clinical.html) ||
+1.5.|Final Presentations||||

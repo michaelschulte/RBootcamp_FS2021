@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>R Bootcamp</title>
+
+<script src="index_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="index_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="index_files/navigation-1.1/tabsets.js"></script>
+<link href="index_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="index_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="index.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">R Bootcamp</h1>
+
+</div>
+
+
+<table>
+<tbody>
+<tr class="odd">
+<td align="left"><font style='font-style:normal;font-size:20px;padding-left:9.3px'>Michael Schulte-Mecklenbeck</font></td>
+</tr>
+<tr class="even">
+<td align="left"><font style='font-style:normal;font-size:20px;padding-left:9.3px'>FS 2019</font></td>
+</tr>
+</tbody>
+</table>
+<table style="width:28%;">
+<colgroup>
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+<col width="6%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Date</th>
+<th align="left">0</th>
+<th align="left">1</th>
+<th align="left">2</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">20.2.</td>
+<td align="left">Welcome!<br><a href="_sessions/Welcome/Welcome.html">slides</a></td>
+<td align="left">Intro to R<br><a href="_sessions/IntroToR/IntroToR.html">slides</a>, <a href="_sessions/IntroToR/IntroToR_interactive.R">source</a></td>
+<td align="left">Data <br><a href="_sessions/Data/Data.html">slides</a>, <a href="_sessions/Data/Data_practical.html">practical</a>,<a href="_sessions/Data/Data_practical_solutions.html">solutions</a></td>
+</tr>
+<tr class="even">
+<td align="left">27.2.</td>
+<td align="left">Recap</td>
+<td align="left">Wrangling<br><a href="_sessions/Wrangling/Wrangling.html">slides</a>, <a href="_sessions/Wrangling/Wrangling_practical.html">practical</a>,<a href="_sessions/Data/Wrangling_solutions.html">solutions</a></td>
+<td align="left">Statistics I<br><a href="_sessions/StatisticsI/StatisticsI.html">slides</a>, <a href="_sessions/StatisticsI/StatisticsI_practical.html">practical</a>, <a href="_sessions/StatisticsI/StatisticsI_practical_solutions.html">solutions</a></td>
+</tr>
+<tr class="odd">
+<td align="left">6.3.</td>
+<td align="left">Recap</td>
+<td align="left">Statistics II<br><a href="_sessions/StatisticsII/StatisticsII.html">slides</a>, <a href="_sessions/StatisticsII/StatisticsII_practical.html">practical</a>, <a href="_sessions/StatisticsII/StatisticsII_practical_solutions.html">solutions</a></td>
+<td align="left">Plotting I<br><a href="_sessions/PlottingI/PlottingI.html">slides</a>, <a href="_sessions/PlottingI/PlottingI_practical.html">practical</a>, <a href="_sessions/PlottingI/PlottingI_practical_solutions.html">solutions</a></td>
+</tr>
+<tr class="even">
+<td align="left">27.3.</td>
+<td align="left">Recap</td>
+<td align="left">Plotting II <br><a href="_sessions/PlottingII/PlottingII.html">slides</a>, <a href="_sessions/PlottingII/PlottingII_practical.html">practical</a>, <a href="_sessions/PlottingII/PlottingII_solutions.html">solutions</a></td>
+<td align="left">Reporting<br><a href="_sessions/Reporting/Reporting.html">slides</a>, <a href="_sessions/Reporting/Reporting_practical.html">practical</a>, <a href="_sessions/Reporting/Reporting_solutions.html">solutions</a></td>
+</tr>
+<tr class="odd">
+<td align="left">3.4.</td>
+<td align="left">Recap</td>
+<td align="left">Case Study <a href="_sessions/CaseStudy/Financial_Data_Case_Study.html">CaseStudy</a></td>
+<td align="left">Final Project <a href="_sessions/FinalProject/FinalProject_Medicine.html">Medicine</a>, <a href="_sessions/FinalProject/FinalProject_Clinical.html">Clinical</a></td>
+</tr>
+<tr class="even">
+<td align="left">1.5.</td>
+<td align="left">Final Presentations</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+</tbody>
+</table>
+
+<div class="my-footer">
+  <span style="text-align:center">
+    <span> 
+      <img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png"  width='100'/>
+    </span>
+    <a href="https://therbootcamp.github.io/">
+      <span style="padding-left:5px"> 
+        <font color="#7E7E7E">
+          www.therbootcamp.com
+        </font>
+      </span>
+    </a>
+</div>
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
