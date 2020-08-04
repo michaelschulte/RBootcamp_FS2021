@@ -24,7 +24,7 @@ output:
 |      | Wrangling II | [slides](_sessions/WranglingII/WranglingII.html) | [practical](_sessions/WranglingII/WranglingII_practical.html)<!---, [solutions](_sessions/WranglingII/WranglingII_practical_solutions.html)--->|
 |09.10.| Recap | | | 
 || Plotting I | [slides](_sessions/PlottingI/PlottingI.html) | [practical](_sessions/PlottingI/PlottingI_practical.html)<!---, [solutions](_sessions/PlottingI/PlottingI_practical_solutions.html)--->| 
-|| Plotting II | [slides](_sessions/WranglingII/WranglingII.html) | [practical](_sessions/WranglingII/WranglingII_practical.html)<!---, [solutions](_sessions/WranglingII/WranglingII_practical_solutions.html)--->|
+|| Plotting II | [slides](_sessions/PlottingII/PlottingII.html) | [practical](_sessions/PlottingII/PlottingII_practical.html)<!---, [solutions](_sessions/PlottingII/PlottingII_practical_solutions.html)--->|
 |16.10.| Recap | | | 
 || Plotting III | [slides](_sessions/PlottingIII/PlottingIII.html) | [practical](_sessions/PlottingI/PlottingIII_practical.html)<!---, [solutions](_sessions/PlottingIII/PlottingIII_practical_solutions.html)--->| |
 || Statistics I | [slides](_sessions/StatisticsI/StatisticsI.html) | [practical](_sessions/StatisticsI/StatisticsI_practical.html)<!---, [solutions](_sessions/StatisticsI/StatisticsI_practical_solutions.html)--->||
