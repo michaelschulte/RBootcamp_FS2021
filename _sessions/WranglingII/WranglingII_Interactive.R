@@ -1,6 +1,6 @@
 ### Wrangling II
 ### Explorative Datenanalyse mit R
-### Februar 2020
+### HS 2020
 
 library(tidyverse)
 

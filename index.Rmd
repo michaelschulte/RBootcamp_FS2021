@@ -1,10 +1,10 @@
 ---
-title: "RBootcamp - Datenanalyse mit R"
-subtitle: ""
+title: "R Bootcamp - Datascience mit R lernen"
+subtitle: "420257"
 author: "
       <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
         <i class='fas fa-home' style='font-size:1em;'></i>
-      </a><font style='font-style:normal;font-size:20px;padding-left:9.3px'>Februar 2020</font>
+      </a><font style='font-style:normal;font-size:20px;padding-left:9.3px'>HS 2020</font>
       "
 output:
   html_document:
@@ -14,7 +14,7 @@ output:
 
 ### Der Plan: 
 
-|Datum|Thema|Material|Practical|
+|Datum|Thema|Einführung|Übungen|
 |:--:|:-|:--:|:--:|
 |18.09.| Willkommen! | [slides](_sessions/Welcome/Welcome.html) | | 
 |      | Einführung R | [slides](_sessions/IntroToR/IntroToR.html), [data sets](https://raw.githubusercontent.com/michaelschulte.github.io/RBootcamp_HS2020/master/1_Data/RBootcamp_HS2020_data.zip) | [source](_sessions/IntroToR/IntroToR_interactive.R) |
