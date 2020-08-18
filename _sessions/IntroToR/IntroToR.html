@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Einführung in R(Studio)</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp @ CSS" />
+    <meta name="author" content="Datascience mit R lernen   R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -12,8 +12,8 @@
 class: center, middle, inverse, title-slide
 
 # Einführung in R(Studio)
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a> <br> <a href='https://therbootcamp.github.io/EDA_2019CSS/'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
-### Dezember 2019
+### Datascience mit R lernen<br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> R Bootcamp </a>
+### HS 2020
 
 ---
 
@@ -34,7 +34,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+       Datascience mit R lernen | HS 2020
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -46,20 +46,6 @@ layout: true
 
 
 
-
-&lt;!---
-# R
-
-From [Wikipedia](https://en.wikipedia.org/wiki/Statistical_model) (emphasis added):
-
-&gt; R is an **open source programming language** and software environment for **statistical computing and graphics** that is supported by the **R Foundation for Statistical Computing**. The R language is **widely used among statisticians and data miners** for developing statistical software and data analysis. Polls, surveys of data miners, and studies of scholarly literature databases show that **R's popularity has increased substantially in recent years**.
-
-&gt; R is a GNU package. The source code for the R software environment is written primarily in **C, Fortran, and R**. R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems. While R has a command line interface, there are several **graphical front-ends available**.
-
-
-GNU's Not Unix!
-GPL guarantees end users the freedom to run, study, share and modify the software
----&gt;
 
 
 # R ist eine Programmiersprache
@@ -807,7 +793,7 @@ mean(c(1, 2, 3))
 ```
 
 ```r
-# Berechne Mittelwert von c('1', '2', '3')
+# Berechne Mittelwert von c("1", "2", "3")
 mean(c("1", "2", "3"))
 ```
 
@@ -857,7 +843,7 @@ class(c(1, 2, 3))
 ```
 
 ```r
-# Klasse von c('1', '2', '3')
+# Klasse von c("1", "2", "3")
 class(c("1", "2", "3"))
 ```
 
@@ -1568,7 +1554,7 @@ workspace und history speichern &amp;#9679; projektspezifische Optionen setzen &
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://therbootcamp.github.io/EDA_2019CSS/1_Data/TheRBootcamp_EDA_2019CSS_data.zip"&gt;Downloads&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://michaelschulte.github.io/RBootcamp_HS2020/1_Data/TheRBootcamp_HS2020_data.zip"&gt;Downloads&lt;/a&gt;&lt;/h1&gt;
 
 ---
 
@@ -1622,9 +1608,25 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
     deleted = true;
   });
-})();</script>
-
-<script>
+})();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
 (function() {
   var links = document.getElementsByTagName('a');
   for (var i = 0; i < links.length; i++) {
@@ -1633,7 +1635,23 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     }
   }
 })();
-</script>
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
 
 <script>
 slideshow._releaseMath = function(el) {

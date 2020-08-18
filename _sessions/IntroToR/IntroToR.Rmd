@@ -1,21 +1,11 @@
 ---
 title: "Einführung in R(Studio)"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp <font style='font-size:30px;vertical-align:middle'>@</font> CSS</a>
-  <br>
-  <a href='https://therbootcamp.github.io/EDA_2019CSS/'>
-    <i class='fas fa-clock' style='font-size:.9em;'></i>
-  </a>&#8239; 
-  <a href='https://therbootcamp.github.io'>
-    <i class='fas fa-home' style='font-size:.9em;' ></i>
-  </a>&#8239;
-  <a href='mailto:therbootcamp@gmail.com'>
-    <i class='fas fa-envelope' style='font-size: .9em;'></i>
-  </a>&#8239;
-  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
-    <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+author: "
+  Datascience mit R lernen<br>
+  <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
+     R Bootcamp
   </a>"
-date: "Dezember 2019"
+date: "HS 2020"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -43,13 +33,14 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Explorative Datenanalyse mit R @ CSS | Dezember 2019
+       Datascience mit R lernen | HS 2020
       </font>
     </a>
     </span>
   </div> 
 
 ---
+
 
 
 ```{r, eval = TRUE, echo = FALSE, warning=F,message=F}
@@ -69,21 +60,6 @@ options(digits = 4)
 
 require(tidyverse)
 ```
-
-<!---
-# R
-
-From [Wikipedia](https://en.wikipedia.org/wiki/Statistical_model) (emphasis added):
-
-> R is an **open source programming language** and software environment for **statistical computing and graphics** that is supported by the **R Foundation for Statistical Computing**. The R language is **widely used among statisticians and data miners** for developing statistical software and data analysis. Polls, surveys of data miners, and studies of scholarly literature databases show that **R's popularity has increased substantially in recent years**.
-
-> R is a GNU package. The source code for the R software environment is written primarily in **C, Fortran, and R**. R is freely available under the GNU General Public License, and pre-compiled binary versions are provided for various operating systems. While R has a command line interface, there are several **graphical front-ends available**.
-
-
-GNU's Not Unix!
-GPL guarantees end users the freedom to run, study, share and modify the software
---->
-
 
 # R ist eine Programmiersprache
 
@@ -1381,7 +1357,7 @@ workspace und history speichern &#9679; projektspezifische Optionen setzen &#967
 
 class: middle, center
 
-<h1><a href="https://therbootcamp.github.io/EDA_2019CSS/1_Data/TheRBootcamp_EDA_2019CSS_data.zip">Downloads</a></h1>
+<h1><a href="https://michaelschulte.github.io/RBootcamp_HS2020/1_Data/TheRBootcamp_HS2020_data.zip">Downloads</a></h1>
 
 ---
 

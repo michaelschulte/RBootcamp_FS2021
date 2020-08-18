@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<html lang="" xml:lang="">
   <head>
     <title>Daten</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Explorative Datenanalyse mit R  The R Bootcamp" />
+    <meta name="author" content="Datascience mit R lernen   R Bootcamp" />
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -12,7 +12,7 @@
 class: center, middle, inverse, title-slide
 
 # Daten
-### Explorative Datenanalyse mit R<br> <a href='https://therbootcamp.github.io'>The R Bootcamp</a> <br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020//'> <i class='fas fa-clock' style='font-size:.9em;'></i> </a>  <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;' ></i> </a>  <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a>  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a>
+### Datascience mit R lernen<br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> R Bootcamp </a>
 ### HS 2020
 
 ---
@@ -34,7 +34,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | HS 2020
+       Datascience mit R lernen | HS 2020
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -882,7 +882,7 @@ read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %&gt;%
 ```
 
 ```
-## # A tibble: 17 x 3
+## # A tibble: 21 x 3
 ##    Release Date        Description                                                        
 ##    &lt;chr&gt;   &lt;chr&gt;       &lt;chr&gt;                                                              
 ##  1 0.16    ""          "This is the last alpha version developed primarily by Ihaka and G…
@@ -894,8 +894,8 @@ read_html("https://en.wikipedia.org/wiki/R_(programming_language)") %&gt;%
 ##  7 1.8     "2003-10-0… "Introduced a flexible condition handling mechanism for signalling…
 ##  8 2.0     "2004-10-0… "Introduced lazy loading, which enables fast loading of data with …
 ##  9 2.1     "2005-04-1… "Support for UTF-8 encoding, and the beginnings of internationaliz…
-## 10 2.11    "2010-04-2… "Support for Windows 64 bit systems."                              
-## # … with 7 more rows
+## 10 2.6.2   "2008-02-0… "Last version to support Windows 95, 98, Me and NT 4.0[51]"        
+## # … with 11 more rows
 ```
 
 
@@ -1011,6 +1011,32 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
     deleted = true;
   });
 })();
+(function() {
+  "use strict"
+  // Replace <script> tags in slides area to make them executable
+  var scripts = document.querySelectorAll(
+    '.remark-slides-area .remark-slide-container script'
+  );
+  if (!scripts.length) return;
+  for (var i = 0; i < scripts.length; i++) {
+    var s = document.createElement('script');
+    var code = document.createTextNode(scripts[i].textContent);
+    s.appendChild(code);
+    var scriptAttrs = scripts[i].attributes;
+    for (var j = 0; j < scriptAttrs.length; j++) {
+      s.setAttribute(scriptAttrs[j].name, scriptAttrs[j].value);
+    }
+    scripts[i].parentElement.replaceChild(s, scripts[i]);
+  }
+})();
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
 // adds .remark-code-has-line-highlighted class to <pre> parent elements
 // of code chunks containing highlighted lines with class .remark-code-line-highlighted
 (function(d) {
@@ -1028,17 +1054,6 @@ if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
   }
   preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
 })(document);</script>
-
-<script>
-(function() {
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
-      links[i].target = '_blank';
-    }
-  }
-})();
-</script>
 
 <script>
 slideshow._releaseMath = function(el) {
