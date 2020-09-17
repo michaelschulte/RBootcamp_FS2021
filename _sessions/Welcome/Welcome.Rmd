@@ -153,7 +153,7 @@ Chief Decision Scientist at Google
 <ul>
   <li class="m1"><span><high>Wiederholung</high></span></li>
   <ul class="level">
-    <li><span>Folien-basierte Wiederholung</span></li>
+    <li><span>Gruppen gestalten Wiederholung</span></li>
     <li><span>Offene Fragen klären</span></li>
   </ul>
   <li class="m2"><span><high>Thematischer Input</high>
@@ -296,6 +296,8 @@ Chief Decision Scientist at Google
   <li class="m1"><span>Mach <high>jederzeit</high> Pausen.</span></li>
   <li class="m2"><span>Programmieren braucht [Kaffee|Tee|Wasser].</span></li>
   <li class="m3"><span>Mich gerne daran <high>erinnern</high>, dass eine Pause gut wäre!</span></li>
+  <li class="m4"><span>Eine fixe 30-Minuten Pause in der Mitte des Nachmittages</li>
+  
 </ul>
 
 ]
@@ -348,6 +350,34 @@ Chief Decision Scientist at Google
 ]
 
 ---
+
+# Teams bilden
+
+.pull-left5[
+
+<ul>
+  <li class="m1"><span>Random allocation?</span></li>
+  <li class="m2"><span>Präferenzen für Teams?</span></li>
+  <li class="m3"><span>Gruppename finden</span></li>
+</ul>
+
+
+<a href="https://docs.google.com/spreadsheets/d/17o_D2txO8h9igLfw1COqRKZsTIzOdTRdANO_gROf6vM/edit?usp=sharing">Liste für die Gruppenamen</a>
+
+]
+
+.pull-right45[
+
+<p align="center">
+<img src="image/teams.jpg" height="360px">
+<br>
+<font style="font-size:10px">from <a href="www.freepik.com">www.freepik.com</a></font>
+</p>
+
+]
+
+---
+
 class: middle, center
 
 <h1><a href=https://michaelschulte.github.io/RBootcamp_HS2020/index.html>Agenda</a></h1>

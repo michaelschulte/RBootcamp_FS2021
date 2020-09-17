@@ -833,8 +833,7 @@ class: middle, center
 
 <i>Download</i>
 
-<h1><a href="https://raw.githubusercontent.com/therbootcamp/EDA_2020Feb/master/1_Data/TheRBootcamp_EDA_2020Feb_data.zip" download>Daten</a></h1>
-
+<h1><a href="https://michaelschulte.github.io/RBootcamp_HS2020/1_Data/TheRBootcamp_HS2020_data.zip" download>Daten</a></h1>
 
 ---
 

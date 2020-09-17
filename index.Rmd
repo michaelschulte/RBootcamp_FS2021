@@ -17,7 +17,7 @@ output:
 |Datum|Thema|Einführung|Übungen|
 |:--:|:-|:--:|:--:|
 |18.09.| Willkommen! | [slides](_sessions/Welcome/Welcome.html) | | 
-|      | Einführung R | [slides](_sessions/IntroToR/IntroToR.html), [data sets](https://raw.githubusercontent.com/michaelschulte.github.io/RBootcamp_HS2020/master/1_Data/RBootcamp_HS2020_data.zip) | [source](_sessions/IntroToR/IntroToR_interactive.R) |
+|      | Einführung R | [slides](_sessions/IntroToR/IntroToR.html), [data sets](https://michaelschulte.github.io/RBootcamp_HS2020/1_Data/TheRBootcamp_HS2020_data.zip) | [source](_sessions/IntroToR/IntroToR_interactive.R) |
 |      | Data | [slides](_sessions/Data/Data.html) | [practical](_sessions/Data/Data_practical.html) <!---, [solutions](_sessions/Data/Data_practical_solutions.html)--->|
 |25.09.| Recap | | | 
 || Wrangling I | [slides](_sessions/Wrangling/Wrangling.html) | [practical](_sessions/Wrangling/Wrangling_practical.html)<!---, [solutions](_sessions/Wrangling/Wrangling_practical_solutions.html)--->| 

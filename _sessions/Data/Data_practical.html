@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -84,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -146,6 +145,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -157,18 +157,6 @@ summary {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -195,7 +183,7 @@ $(document).ready(function () {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Explorative Datenanalyse mit R</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020//'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/rbootcamp'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -211,7 +199,7 @@ $(document).ready(function () {
 </p>
 <div id="section" class="section level1 tabset tabset-fade">
 <h1></h1>
-<div id="uberblick" class="section level2">
+<div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical wirst du R’s Datenklassen besser kennenlernen und das Einlesen und Schreiben von Daten üben.</p>
 <p>Am Ende des Practicals wirst du wissen:</p>
@@ -249,6 +237,7 @@ library(readxl)</code></pre>
 <p>Die folgende Tabelle zeigt die Daten von fünf hypothetischenn Baselern. Im ersten Teil dieses Practicals ist es deine Aufgabe diese Tabelle nachzubauen und anschliessend zu analysieren. Wann immmer du <code>XX</code> siehst, bedeutet das, dass du etwas an dessen Stelle eintragen sollst.</p>
 <p><em>5 Baseler</em></p>
 <table>
+<caption>Data from 5 baselers</caption>
 <thead>
 <tr class="header">
 <th align="left">id</th>
@@ -333,7 +322,7 @@ length(XX)</code></pre>
 length(id)</code></pre>
 <pre><code>[1] 5</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Kreiere einen Vektor <code>geschlecht</code>, der die entsprechenden Werte aus der 5 Baseler Tabelle enthält. Stelle sicher, dass du Anführungszeichen <code>&quot;&quot;</code> um die einzelnen Elemente setzt, damit R weiss, dass es sich um <code>character</code> Werte handelt. Wenn du fertig bist, lasse dir den Vektor anzeigen.</li>
+<li>Kreiere einen Vektor <code>geschlecht</code>, der die entsprechenden Werte aus der 5 Baseler Tabelle enthält. Stelle sicher, dass du Anführungszeichen <code>""</code> um die einzelnen Elemente setzt, damit R weiss, dass es sich um <code>character</code> Werte handelt. Wenn du fertig bist, lasse dir den Vektor anzeigen.</li>
 </ol>
 <pre class="r"><code># Kreiere Vektor geschlecht 
 XX &lt;- c(&quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;)</code></pre>
@@ -419,14 +408,14 @@ basel</code></pre>
 </ol>
 <pre class="r"><code># Zeige deskriptive Statistiken
 summary(basel)</code></pre>
-<pre><code>       id        alter      geschlecht    groesse       gewicht   
- Min.   :1   Min.   :24.0   f:1        Min.   :168   Min.   : 56  
- 1st Qu.:2   1st Qu.:27.0   m:4        1st Qu.:174   1st Qu.: 70  
- Median :3   Median :31.0              Median :177   Median : 94  
- Mean   :3   Mean   :38.2              Mean   :182   Mean   :294  
- 3rd Qu.:4   3rd Qu.:44.0              3rd Qu.:180   3rd Qu.:318  
- Max.   :5   Max.   :65.0              Max.   :209   Max.   :934  
-                                                     NA&#39;s   :1    </code></pre>
+<pre><code>       id        alter       geschlecht           groesse       gewicht   
+ Min.   :1   Min.   :24.0   Length:5           Min.   :168   Min.   : 56  
+ 1st Qu.:2   1st Qu.:27.0   Class :character   1st Qu.:174   1st Qu.: 70  
+ Median :3   Median :31.0   Mode  :character   Median :177   Median : 94  
+ Mean   :3   Mean   :38.2                      Mean   :182   Mean   :294  
+ 3rd Qu.:4   3rd Qu.:44.0                      3rd Qu.:180   3rd Qu.:318  
+ Max.   :5   Max.   :65.0                      Max.   :209   Max.   :934  
+                                                             NA&#39;s   :1    </code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Verwende den <code>$</code>-Operator, um allein die Variable <code>alter</code> zu printen.</li>
 </ol>
@@ -447,7 +436,7 @@ min(basel$alter)</code></pre>
 <h3>D - Lesen und Schreiben von Delimiter-separierten Dateien</h3>
 <p>In diesem Abschnitt wirst du den bekannten <code>diamonds</code> Datensatz einlesen und bearbeiten.</p>
 <ol style="list-style-type: decimal">
-<li>Finde den Filepath zum <code>diomands.csv</code> Datensatz. Setze hierzu den Cursor zwischen zwei Anführungszeichen <code>&quot;&quot;</code> und drücke ⇥ (tab). Speichere den Filepath in einem Objekt namens <code>diamonds_path</code>.</li>
+<li>Finde den Filepath zum <code>diomands.csv</code> Datensatz. Setze hierzu den Cursor zwischen zwei Anführungszeichen <code>""</code> und drücke ⇥ (tab). Speichere den Filepath in einem Objekt namens <code>diamonds_path</code>.</li>
 </ol>
 <pre class="r"><code># Setze den Cursor zwischen &quot;&quot; und drücke tab
 diamonds_path &lt;- &quot;&quot;</code></pre>
@@ -624,16 +613,15 @@ teuer &lt;- diamonds$preis &gt; 10000</code></pre>
 </ol>
 <pre class="r"><code># Print teuer
 teuer</code></pre>
-<pre><code>  [1] FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE
- [12] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [23] FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [34] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE
- [45] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE
- [56] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [67] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
- [78] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE
- [89] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
-[100] FALSE</code></pre>
+<pre><code>  [1] FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [25]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [37] FALSE FALSE FALSE FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE
+ [49] FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [61] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE FALSE FALSE
+ [73] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [85] FALSE FALSE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+ [97] FALSE FALSE FALSE FALSE</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Ergänze den Datensatz um die neue Variable <code>teuer</code>.</li>
 </ol>
@@ -681,20 +669,20 @@ titanic &lt;- read_excel(&quot;1_Data/titanic.xls&quot;)</code></pre>
 <pre class="r"><code># Printe und evaluiere Ausmasse
 titanic</code></pre>
 <pre><code># A tibble: 1,309 x 14
-   pclass survived name  sex      age sibsp parch ticket  fare cabin
-    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt;
- 1      1        1 Alle… fema… 29         0     0 24160  211.  B5   
- 2      1        1 Alli… male   0.917     1     2 113781 152.  C22 …
- 3      1        0 Alli… fema…  2         1     2 113781 152.  C22 …
- 4      1        0 Alli… male  30         1     2 113781 152.  C22 …
- 5      1        0 Alli… fema… 25         1     2 113781 152.  C22 …
- 6      1        1 Ande… male  48         0     0 19952   26.6 E12  
- 7      1        1 Andr… fema… 63         1     0 13502   78.0 D7   
- 8      1        0 Andr… male  39         0     0 112050   0   A36  
- 9      1        1 Appl… fema… 53         2     0 11769   51.5 C101 
-10      1        0 Arta… male  71         0     0 PC 17…  49.5 &lt;NA&gt; 
-# … with 1,299 more rows, and 4 more variables: embarked &lt;chr&gt;,
-#   boat &lt;chr&gt;, body &lt;dbl&gt;, home.dest &lt;chr&gt;</code></pre>
+   pclass survived name  sex      age sibsp parch ticket  fare cabin embarked
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   
+ 1      1        1 Alle… fema… 29         0     0 24160  211.  B5    S       
+ 2      1        1 Alli… male   0.917     1     2 113781 152.  C22 … S       
+ 3      1        0 Alli… fema…  2         1     2 113781 152.  C22 … S       
+ 4      1        0 Alli… male  30         1     2 113781 152.  C22 … S       
+ 5      1        0 Alli… fema… 25         1     2 113781 152.  C22 … S       
+ 6      1        1 Ande… male  48         0     0 19952   26.6 E12   S       
+ 7      1        1 Andr… fema… 63         1     0 13502   78.0 D7    S       
+ 8      1        0 Andr… male  39         0     0 112050   0   A36   S       
+ 9      1        1 Appl… fema… 53         2     0 11769   51.5 C101  S       
+10      1        0 Arta… male  71         0     0 PC 17…  49.5 &lt;NA&gt;  C       
+# … with 1,299 more rows, and 3 more variables: boat &lt;chr&gt;, body &lt;dbl&gt;,
+#   home.dest &lt;chr&gt;</code></pre>
 <pre class="r"><code>dim(titanic)</code></pre>
 <pre><code>[1] 1309   14</code></pre>
 <ol start="3" style="list-style-type: decimal">
@@ -758,11 +746,10 @@ sleep</code></pre>
 #   trubstay &lt;dbl+lbl&gt;, wakenite &lt;dbl+lbl&gt;, niteshft &lt;dbl+lbl&gt;,
 #   liteslp &lt;dbl+lbl&gt;, refreshd &lt;dbl+lbl&gt;, satsleep &lt;dbl+lbl&gt;,
 #   qualslp &lt;dbl+lbl&gt;, stressmo &lt;dbl+lbl&gt;, medhelp &lt;dbl+lbl&gt;,
-#   problem &lt;dbl+lbl&gt;, impact1 &lt;dbl+lbl&gt;, impact2 &lt;dbl+lbl&gt;,
-#   impact3 &lt;dbl+lbl&gt;, impact4 &lt;dbl+lbl&gt;, impact5 &lt;dbl+lbl&gt;,
-#   impact6 &lt;dbl+lbl&gt;, impact7 &lt;dbl+lbl&gt;, stopb &lt;dbl+lbl&gt;,
-#   restlss &lt;dbl+lbl&gt;, drvsleep &lt;dbl+lbl&gt;, drvresul &lt;dbl+lbl&gt;, ess &lt;dbl&gt;,
-#   anxiety &lt;dbl&gt;, depress &lt;dbl&gt;, fatigue &lt;dbl&gt;, lethargy &lt;dbl&gt;,
+#   problem &lt;dbl+lbl&gt;, impact1 &lt;dbl+lbl&gt;, impact2 &lt;dbl+lbl&gt;, impact3 &lt;dbl+lbl&gt;,
+#   impact4 &lt;dbl+lbl&gt;, impact5 &lt;dbl+lbl&gt;, impact6 &lt;dbl+lbl&gt;, impact7 &lt;dbl+lbl&gt;,
+#   stopb &lt;dbl+lbl&gt;, restlss &lt;dbl+lbl&gt;, drvsleep &lt;dbl+lbl&gt;, drvresul &lt;dbl+lbl&gt;,
+#   ess &lt;dbl&gt;, anxiety &lt;dbl&gt;, depress &lt;dbl&gt;, fatigue &lt;dbl&gt;, lethargy &lt;dbl&gt;,
 #   tired &lt;dbl&gt;, sleepy &lt;dbl&gt;, energy &lt;dbl&gt;, stayslprec &lt;dbl+lbl&gt;,
 #   getsleprec &lt;dbl+lbl&gt;, qualsleeprec &lt;dbl+lbl&gt;, totsas &lt;dbl&gt;,
 #   cigsgp3 &lt;dbl+lbl&gt;, agegp3 &lt;dbl+lbl&gt;, probsleeprec &lt;dbl+lbl&gt;,
@@ -801,7 +788,7 @@ which(sleep$alchohol &gt; 10)</code></pre>
 </ol>
 <pre class="r"><code># Geschlecht und Alter der Person
 sleep$marital[which(sleep$alchohol &gt; 10)]</code></pre>
-<pre><code>&lt;Labelled double&gt;: marital status
+<pre><code>&lt;labelled&lt;double&gt;[1]&gt;: marital status
 [1] 2
 
 Labels:
@@ -811,7 +798,7 @@ Labels:
      3        divorced
      4         widowed</code></pre>
 <pre class="r"><code>sleep$sex[which(sleep$alchohol &gt; 10)]</code></pre>
-<pre><code>&lt;Labelled double&gt;: sex
+<pre><code>&lt;labelled&lt;double&gt;[1]&gt;: sex
 [1] 1
 
 Labels:
@@ -909,7 +896,7 @@ chickens &lt;- read_excel(&quot;1_Data/chickens.xlsx&quot;)
 # .sav (SPSS)
 chickens &lt;- read_spss(&quot;1_Data/chickens.sav&quot;)</code></pre>
 </div>
-<div id="datensatze" class="section level2">
+<div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
 <pre class="r"><code>library(tidyverse)
 library(readxl)
@@ -965,15 +952,15 @@ library(haven)</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>haven</code></td>
-<td align="left"><code>install.packages(&quot;haven&quot;)</code></td>
+<td align="left"><code>install.packages("haven")</code></td>
 </tr>
 <tr class="odd">
 <td align="left"><code>readxl</code></td>
-<td align="left"><code>install.packages(&quot;readxl&quot;)</code></td>
+<td align="left"><code>install.packages("readxl")</code></td>
 </tr>
 </tbody>
 </table>
@@ -990,7 +977,7 @@ library(haven)</code></pre>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left"><code>c(&quot;a&quot;, &quot;b&quot;, &quot;c&quot;)</code></td>
+<td align="left"><code>c("a", "b", "c")</code></td>
 <td align="left">Kreiere <code>character</code> Vektor</td>
 </tr>
 <tr class="even">
@@ -1144,6 +1131,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
