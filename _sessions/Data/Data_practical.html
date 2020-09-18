@@ -227,10 +227,6 @@ summary {
 library(tidyverse)
 library(haven)
 library(readxl)</code></pre>
-<pre class="r"><code># Pakete laden
-library(tidyverse)
-library(haven)
-library(readxl)</code></pre>
 </div>
 <div id="b---kreiere-vektoren" class="section level3">
 <h3>B - Kreiere Vektoren</h3>
@@ -299,88 +295,44 @@ XX &lt;- c(XX, XX, XX, XX, XX)
 
 # Printe den Vektor
 XX</code></pre>
-<pre class="r"><code># Erstelle Vektor namens id
-id &lt;- 1:5 
-
-# Printe den Vektor
-id</code></pre>
 <pre><code>[1] 1 2 3 4 5</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Verwende die Funktion <code>class()</code>, um zu überprüfen welche Klasse der <code>id</code> Vektor hat. Ist er <code>numeric</code>?</li>
 </ol>
 <pre class="r"><code># Zeige die Klasse von id
 class(XX)</code></pre>
-<pre class="r"><code># Zeige die Klasse von id
-class(id)</code></pre>
 <pre><code>[1] &quot;integer&quot;</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende die <code>length()</code> Funktion, um die länge von <code>id</code> zu bestimmen. Hat er die Länge 5? Wenn nicht, stelle sicher, dass du den Vektor korrekt definiert hast.</li>
 </ol>
 <pre class="r"><code># Zeige die Länge des Vektors
 length(XX)</code></pre>
-<pre class="r"><code># Zeige die Länge des Vektors
-length(id)</code></pre>
 <pre><code>[1] 5</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Kreiere einen Vektor <code>geschlecht</code>, der die entsprechenden Werte aus der 5 Baseler Tabelle enthält. Stelle sicher, dass du Anführungszeichen <code>""</code> um die einzelnen Elemente setzt, damit R weiss, dass es sich um <code>character</code> Werte handelt. Wenn du fertig bist, lasse dir den Vektor anzeigen.</li>
 </ol>
 <pre class="r"><code># Kreiere Vektor geschlecht 
 XX &lt;- c(&quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;)</code></pre>
-<pre class="r"><code># Kreiere Vektor geschlecht 
-geschlecht &lt;- c(&quot;m&quot;, &quot;m&quot;, &quot;f&quot;, &quot;m&quot;, &quot;m&quot;)
-
-# Zeige den Vektor
-geschlecht</code></pre>
 <pre><code>[1] &quot;m&quot; &quot;m&quot; &quot;f&quot; &quot;m&quot; &quot;m&quot;</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Verwende wiederum die Funktionen <code>class()</code> und <code>length()</code>, um die Klasse (<code>character</code>) und die Länge (5) zu überprüfen?</li>
 </ol>
-<pre class="r"><code># Zeige die Klasse und die Länge von geschlecht
-class(geschlecht)</code></pre>
 <pre><code>[1] &quot;character&quot;</code></pre>
-<pre class="r"><code>length(geschlecht)</code></pre>
 <pre><code>[1] 5</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Führe die selben Schritte nun für die Spalten <code>alter</code> und <code>groesse</code> aus.</li>
 </ol>
-<pre class="r"><code># Kreiere Vektor alter
-alter &lt;- c(44, 65, 31, 27, 24)
-
-# Zeige Vektor alter
-alter</code></pre>
 <pre><code>[1] 44 65 31 27 24</code></pre>
-<pre class="r"><code># Zeige Klasse von Vektor alter
-class(alter)</code></pre>
 <pre><code>[1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code># Zeige Länge von Vektor alter
-length(alter)</code></pre>
 <pre><code>[1] 5</code></pre>
-<pre class="r"><code># Kreiere Vektor groesse
-groesse &lt;- c(174, 180, 168, 209, 177)
-
-# Zeige Vektor groesse
-groesse</code></pre>
 <pre><code>[1] 174 180 168 209 177</code></pre>
-<pre class="r"><code># Zeige Klasse von Vektor groesse
-class(groesse)</code></pre>
 <pre><code>[1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code># Zeige Länge von Vektor groesse
-length(groesse)</code></pre>
 <pre><code>[1] 5</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Schaue dir die Spalte <code>gewicht</code> an. Du wirst sehen, dass sie einen fehlenden Wert beinhaltet. Kreiere einen Vektor <code>gewicht</code> mit denselben Schritten wie zuvor. Spezifiziere den fehlenden Wert dabei als <code>NA</code> - ohne Anführungszeichen.</li>
 </ol>
-<pre class="r"><code># Kreiere Vektor gewicht
-gewicht &lt;- c(113, 75, 56, 934, NA)
-
-# Zeige Vektor gewicht
-gewicht</code></pre>
 <pre><code>[1] 113  75  56 934  NA</code></pre>
-<pre class="r"><code># Zeige Klasse von Vektor gewicht
-class(gewicht)</code></pre>
 <pre><code>[1] &quot;numeric&quot;</code></pre>
-<pre class="r"><code># Zeige Länge von Vektor gewicht
-length(gewicht)</code></pre>
 <pre><code>[1] 5</code></pre>
 </div>
 <div id="c---kreiere-tibbles" class="section level3">
@@ -390,13 +342,9 @@ length(gewicht)</code></pre>
 </ol>
 <pre class="r"><code># Kreiere data frame aus den Vektoren
 XX &lt;- tibble(XX, XX, XX, XX, XX, XX) </code></pre>
-<pre class="r"><code># Kreiere data frame aus den Vektoren
-basel &lt;- data.frame(id, alter, geschlecht, groesse, gewicht) </code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Printe den data frame. Enthält er alle Vektoren? Welche Ausmasse (Anzahl Zeilen, Spalten) hat der data frame?</li>
 </ol>
-<pre class="r"><code># Print basel
-basel</code></pre>
 <pre><code>  id alter geschlecht groesse gewicht
 1  1    44          m     174     113
 2  2    65          m     180      75
@@ -406,8 +354,6 @@ basel</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende die Funktion <code>summary()</code> um deskriptive Statistiken für die Variablen in <code>basel</code> zu erstellen.</li>
 </ol>
-<pre class="r"><code># Zeige deskriptive Statistiken
-summary(basel)</code></pre>
 <pre><code>       id        alter       geschlecht           groesse       gewicht   
  Min.   :1   Min.   :24.0   Length:5           Min.   :168   Min.   : 56  
  1st Qu.:2   1st Qu.:27.0   Class :character   1st Qu.:174   1st Qu.: 70  
@@ -417,20 +363,9 @@ summary(basel)</code></pre>
  Max.   :5   Max.   :65.0                      Max.   :209   Max.   :934  
                                                              NA&#39;s   :1    </code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Verwende den <code>$</code>-Operator, um allein die Variable <code>alter</code> zu printen.</li>
+<li><p>Verwende den <code>$</code>-Operator, um allein die Variable <code>alter</code> zu printen.</p></li>
+<li><p>Verwende die Funktionen <code>mean()</code>, <code>max()</code>, <code>min()</code>, und <code>median()</code> umd deskriptive Statistiken direkt für die Variable <code>alter</code> zu berechnen</p></li>
 </ol>
-<pre class="r"><code># Printe alter
-basel$XX</code></pre>
-<pre class="r"><code># Printe alter
-basel$alter</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Verwende die Funktionen <code>mean()</code>, <code>max()</code>, <code>min()</code>, und <code>median()</code> umd deskriptive Statistiken direkt für die Variable <code>alter</code> zu berechnen</li>
-</ol>
-<pre class="r"><code># Deskriptive Statistiken für alter
-mean(basel$alter)
-median(basel$alter)
-max(basel$alter)
-min(basel$alter)</code></pre>
 </div>
 <div id="d---lesen-und-schreiben-von-delimiter-separierten-dateien" class="section level3">
 <h3>D - Lesen und Schreiben von Delimiter-separierten Dateien</h3>
@@ -440,15 +375,11 @@ min(basel$alter)</code></pre>
 </ol>
 <pre class="r"><code># Setze den Cursor zwischen &quot;&quot; und drücke tab
 diamonds_path &lt;- &quot;&quot;</code></pre>
-<pre class="r"><code># Setze den Cursor zwischen &quot;&quot; und drücke tab
-diamonds_path &lt;- &quot;1_Data/diamonds.csv&quot;</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Jetzt verwende das Objekt <code>diamonds_path</code> in der Funktion <code>read_csv()</code>, um den Datensatz einzulesen und als neues Objekt <code>diamonds</code> zu speichern. (Der Umweg über das Objekt <code>diamonds_path</code> ist natürlich nicht zwingend nötig. Man kann den Filepath auch direkt als Argument einsetzen.)</li>
 </ol>
 <pre class="r"><code># Lese den diamonds Datensatz ein
 diamonds &lt;- read_csv(file = XX)</code></pre>
-<pre class="r"><code># Lese den diamonds Datensatz ein
-diamonds &lt;- read_csv(file = diamonds_path)</code></pre>
 <pre><code>Parsed with column specification:
 cols(
   `0.8` = col_character(),
@@ -462,8 +393,6 @@ cols(
 <ol start="3" style="list-style-type: decimal">
 <li>Printe den <code>diamonds</code> Datensatz. Inspiziere insbesondere die Variablennamen. Etwas stimmt nicht, oder?</li>
 </ol>
-<pre class="r"><code># Print diamonds
-diamonds</code></pre>
 <pre><code># A tibble: 99 x 7
    `0.8` `Very Good` H     VVS1  `62.9`  `58` `4468`
    &lt;chr&gt; &lt;chr&gt;       &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;
@@ -484,9 +413,6 @@ diamonds</code></pre>
 <pre class="r"><code># lese dimaonds nochmal ein, diesmal mit expliziten Spaltennamen
 diamonds &lt;- read_csv(file = XX, 
                      col_names = c(&#39;name_1&#39;,&#39;name_2&#39;,&#39;...&#39;))  </code></pre>
-<pre class="r"><code># lese dimaonds nochmal ein, diesmal mit expliziten Spaltennamen
-diamonds &lt;- read_csv(file = diamonds_path,
-                     col_names = c(&quot;karat&quot;, &quot;cut&quot;, &quot;farbe&quot;, &quot;klarheit&quot;, &quot;tiefe&quot;, &quot;tabelle&quot;, &quot;preis&quot;))</code></pre>
 <pre><code>Parsed with column specification:
 cols(
   karat = col_character(),
@@ -500,8 +426,6 @@ cols(
 <ol start="5" style="list-style-type: decimal">
 <li>Re-inspeziere den Datensatz. Sind die Spaltennamen nun korrekt?</li>
 </ol>
-<pre class="r"><code># print diamonds
-diamonds</code></pre>
 <pre><code># A tibble: 100 x 7
    karat cut       farbe klarheit tiefe tabelle preis
    &lt;chr&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -520,8 +444,6 @@ diamonds</code></pre>
 <li><p>Richte nun deine Aufmerksamkeit auf die Klassen der Variablen. Wurden die Klassen aller Variablen richtig interpretiert?</p></li>
 <li><p>Finde heraus was passiert ist. Wähle die <code>karat</code> Variable aus und schaue dir die Werte genau an. Zwischen dem 10. und 20. Eintrag solltest du eine Irregularität erkennen, die dafür verantwortlich ist, dass die Variable als <code>character</code> erkannt wurde.</p></li>
 </ol>
-<pre class="r"><code># Zeige die Variable Karat
-diamonds$karat</code></pre>
 <pre><code>  [1] &quot;0.8&quot;  &quot;0.74&quot; &quot;2.03&quot; &quot;0.41&quot; &quot;1.54&quot; &quot;0.3&quot;  &quot;0.3&quot;  &quot;1.2&quot;  &quot;0.58&quot; &quot;0.31&quot;
  [11] &quot;1.24&quot; &quot;0.91&quot; &quot;1.28&quot; &quot;0.31&quot; &quot;1.02&quot; &quot;1&quot;    &quot;0,37&quot; &quot;0.55&quot; &quot;0.54&quot; &quot;0.34&quot;
  [21] &quot;0.91&quot; &quot;0.9&quot;  &quot;0.5&quot;  &quot;0.31&quot; &quot;1.66&quot; &quot;0.47&quot; &quot;0.3&quot;  &quot;0.7&quot;  &quot;1.72&quot; &quot;0.41&quot;
@@ -537,8 +459,6 @@ diamonds$karat</code></pre>
 </ol>
 <pre class="r"><code># Ersetze den falschen Wert
 diamonds$karat[XX] &lt;- YY</code></pre>
-<pre class="r"><code># Ersetze den falschen Wert
-diamonds$karat[17] &lt;- 0.37</code></pre>
 <ol start="9" style="list-style-type: decimal">
 <li>Jetzt hast du den Wert ausgebessert, aber <code>karat</code> ist immer noch vom Typ <code>character</code>. Verwende die Funktion <code>type_convert()</code> um dies zu beheben. Siehe unten.</li>
 </ol>
@@ -554,8 +474,6 @@ cols(
 <ol start="10" style="list-style-type: decimal">
 <li>Printe <code>diamonds</code>, um sicher zu stellen, dass <code>karat</code> jetzt <code>numeric</code> ist, bzw. <code>dbl</code> (ein Typ von <code>numeric</code>).</li>
 </ol>
-<pre class="r"><code># Zeige diamonds
-diamonds</code></pre>
 <pre><code># A tibble: 100 x 7
    karat cut       farbe klarheit tiefe tabelle preis
    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -575,26 +493,15 @@ diamonds</code></pre>
 </ol>
 <pre class="r"><code># Schreibe den sauberen diamonds Datensatz 
 write_csv(x = XX, path = &quot;XX/XX.csv&quot;)</code></pre>
-<pre class="r"><code># Schreibe den sauberen diamonds Datensatz 
-write_csv(x = diamonds, &quot;1_Data/diamonds_sauber.csv&quot;)</code></pre>
 <ol start="12" style="list-style-type: decimal">
-<li>Um sicherzustellen, dass nicht wieder die selben Probleme auftreten, lese <code>diamonds_clean.csv</code> wieder ein und schaue dir die Spaltennamen und die Spaltentypen an. Alles in Ordnung?</li>
+<li><p>Um sicherzustellen, dass nicht wieder die selben Probleme auftreten, lese <code>diamonds_clean.csv</code> wieder ein und schaue dir die Spaltennamen und die Spaltentypen an. Alles in Ordnung?</p></li>
+<li><p>Jetzt wäre der Datensatz fertig für die Analyse. Exploriere ein wenig. Berechne deskriptive Statistiken für die verschiedenen Variablen. Du kannst mehr über die Variablen erfahren mit <code>?diamonds</code>. (Namen sind aus dem Englischen übersetzt.)</p></li>
 </ol>
-<pre class="r"><code># Lese den sauberen diamonds Datensatz ein
-diamonds_clean &lt;- read_csv(file = &quot;1_Data/diamonds_sauber.csv&quot;)</code></pre>
-<ol start="13" style="list-style-type: decimal">
-<li>Jetzt wäre der Datensatz fertig für die Analyse. Exploriere ein wenig. Berechne deskriptive Statistiken für die verschiedenen Variablen. Du kannst mehr über die Variablen erfahren mit <code>?diamonds</code>. (Namen sind aus dem Englischen übersetzt.)</li>
-</ol>
-<pre class="r"><code># Deskriptive Statistiken
-mean(diamonds$karat)</code></pre>
 <pre><code>[1] 0.742</code></pre>
-<pre class="r"><code>mean(diamonds$preis)</code></pre>
 <pre><code>[1] 3543</code></pre>
-<pre class="r"><code>table(diamonds$cut)</code></pre>
 <pre><code>
      Fair      Good     Ideal   Premium Very Good 
         2         5        46        31        16 </code></pre>
-<pre class="r"><code>table(diamonds$klarheit)</code></pre>
 <pre><code>
   I1   IF  SI1  SI2  VS1  VS2 VVS1 VVS2 
    1    4   17   19   15   24   10   10 </code></pre>
@@ -606,13 +513,9 @@ mean(diamonds$karat)</code></pre>
 </ol>
 <pre class="r"><code># Kreiere Vektor teuer
 ZZ &lt;- diamonds$XX &gt; YY</code></pre>
-<pre class="r"><code># Kreiere Vektor teuer
-teuer &lt;- diamonds$preis &gt; 10000</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Printe den <code>teuer</code> Vektor. Er sollte nur <code>TRUE</code> und <code>FALSE</code> enthalten. Falls ja, decken sich die ersten Werte in <code>preis</code> mit den Werten in <code>teuer</code>?</li>
 </ol>
-<pre class="r"><code># Print teuer
-teuer</code></pre>
 <pre><code>  [1] FALSE FALSE  TRUE FALSE  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
  [13] FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
  [25]  TRUE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
@@ -627,27 +530,19 @@ teuer</code></pre>
 </ol>
 <pre class="r"><code># Ergänze Vektor
 XX$YY &lt;- ZZ</code></pre>
-<pre class="r"><code># Ergänze Vektor
-diamonds$teuer &lt;- teuer</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Verwende die Funktion <code>table()</code>, um auszuzählen wie viele Diamanten teuer sind. Benutze hierzu wiederum den <code>$</code>-Operator um die Variable auszuwählen.</li>
 </ol>
-<pre class="r"><code># Zähle die teuren Diamanten
-table(diamonds$teuer)</code></pre>
 <pre><code>
 FALSE  TRUE 
    92     8 </code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Verwende die <code>mean()</code> Funktion, um auszuzählen welcher Anteil teuer ist. Erinnere, <code>mean()</code> funktioniert auch mit logischen Vektoren.</li>
 </ol>
-<pre class="r"><code># Anteil teuerer Diamanten
-mean(diamonds$teuer)</code></pre>
 <pre><code>[1] 0.08</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Verwende sowohl einen logischen Vergleich, <code>&gt;</code> oder <code>&lt;</code>, als auch die <code>mean()</code> Funktion, um zu bestimmen welcher Anteil Diamanten mehr als 1 Karat besitzt.</li>
 </ol>
-<pre class="r"><code># Anteil Diamanten mit karat &gt; 1
-mean(diamonds$karat &gt; 1)</code></pre>
 <pre><code>[1] 0.26</code></pre>
 </div>
 <div id="f---einlesen-anderer-formate" class="section level3">
@@ -661,13 +556,9 @@ mean(diamonds$karat &gt; 1)</code></pre>
 </ol>
 <pre class="r"><code># Lese titanic.xls
 titanic &lt;- read_excel(path = &quot;XX&quot;)</code></pre>
-<pre class="r"><code># Lese titanic.xls
-titanic &lt;- read_excel(&quot;1_Data/titanic.xls&quot;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Printe <code>titanic</code> und evaluiere die Ausmasse des Datensatzes mit <code>dim()</code>.</li>
 </ol>
-<pre class="r"><code># Printe und evaluiere Ausmasse
-titanic</code></pre>
 <pre><code># A tibble: 1,309 x 14
    pclass survived name  sex      age sibsp parch ticket  fare cabin embarked
     &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   
@@ -683,13 +574,10 @@ titanic</code></pre>
 10      1        0 Arta… male  71         0     0 PC 17…  49.5 &lt;NA&gt;  C       
 # … with 1,299 more rows, and 3 more variables: boat &lt;chr&gt;, body &lt;dbl&gt;,
 #   home.dest &lt;chr&gt;</code></pre>
-<pre class="r"><code>dim(titanic)</code></pre>
 <pre><code>[1] 1309   14</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende <code>table()</code> um auszuzählen wie viele Leute das Unglück der Titanic überlebt haben (Spalte <code>survived</code>).</li>
 </ol>
-<pre class="r"><code># Wie viele haben überlebt?
-table(titanic$XX)</code></pre>
 <pre class="r"><code># Wie viele haben überlebt?
 table(titanic$XX)</code></pre>
 <pre><code>&lt; table of extent 0 &gt;</code></pre>
@@ -698,8 +586,6 @@ table(titanic$XX)</code></pre>
 </ol>
 <pre class="r"><code># Wie viele haben pro Passagierklasse überlebt?
 table(titanic$XX, titanic$XX)</code></pre>
-<pre class="r"><code># Wie viele haben pro Passagierklasse überlebt?
-table(titanic$pclass, titanic$survived)</code></pre>
 <pre><code>   
       0   1
   1 123 200
@@ -708,9 +594,6 @@ table(titanic$pclass, titanic$survived)</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Verwende <code>write_csv()</code> um den Datensatz <code>titanic</code> als <code>.csv</code> auf in deinen <code>1_Data</code> Ordner zu schreiben.</li>
 </ol>
-<pre class="r"><code># Schreiben Daten als .csv
-write_csv(x = titanic, 
-          path = &quot;1_Data/titanic.csv&quot;)</code></pre>
 </div>
 <div id="spss" class="section level4">
 <h4>SPSS</h4>
@@ -720,13 +603,9 @@ write_csv(x = titanic,
 <li>Verwende die <code>read_spss()</code> Funktion, um den Datensatz <code>sleep.sav</code> als ein neues Objekt <code>sleep</code> einzulesen.</li>
 </ol>
 <pre class="r"><code>XX &lt;- read_spss(file = &quot;XX&quot;)</code></pre>
-<pre class="r"><code># Lese sleep Daten
-sleep &lt;- read_spss(file = &quot;1_Data/sleep.sav&quot;)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Printe <code>sleep</code> und evaluiere die Ausmasse des Datensatzes mit <code>dim()</code>. Du wirst sehen, R war so clever die Labels der Variablen mit zu übernehmen.</li>
 </ol>
-<pre class="r"><code># Printe und evaluiere Ausmass
-sleep</code></pre>
 <pre><code># A tibble: 271 x 55
       id     sex   age marital edlevel weight height healthrate fitrate
    &lt;dbl&gt; &lt;dbl+l&gt; &lt;dbl&gt; &lt;dbl+l&gt; &lt;dbl+l&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl+lbl&gt; &lt;dbl+l&gt;
@@ -754,20 +633,14 @@ sleep</code></pre>
 #   getsleprec &lt;dbl+lbl&gt;, qualsleeprec &lt;dbl+lbl&gt;, totsas &lt;dbl&gt;,
 #   cigsgp3 &lt;dbl+lbl&gt;, agegp3 &lt;dbl+lbl&gt;, probsleeprec &lt;dbl+lbl&gt;,
 #   drvslprec &lt;dbl+lbl&gt;</code></pre>
-<pre class="r"><code>dim(sleep)</code></pre>
 <pre><code>[1] 271  55</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende die <code>mean()</code> Funktion um auszuzählen wie viele alkoholische Getränke die Mitarbeiter im Durchschnitt pro Tag zu sich nehmen (Spalte <code>alchohol</code>). Achte auf etwaige fehlende Werte!</li>
 </ol>
-<pre class="r"><code># Berechne die mittlere Anzahl drinks
-mean(x = sleep$alchohol, na.rm = TRUE)</code></pre>
 <pre><code>[1] 1</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Verwende <code>write_csv()</code> um den Datensatz <code>sleep</code> als <code>.csv</code> auf in deinen <code>1_Data</code> Ordner zu schreiben.</li>
 </ol>
-<pre class="r"><code># Schreibe Daten als .csv
-write_csv(x = sleep, 
-          path = &quot;1_Data/sleep.csv&quot;)</code></pre>
 </div>
 </div>
 <div id="x---mit-logicals-rechnen" class="section level3">
@@ -775,8 +648,6 @@ write_csv(x = sleep,
 <ol style="list-style-type: decimal">
 <li>Verwende <code>sum()</code> und <code>&gt;</code> um auszuzählen wie viele Uni Melbourne Mitarbeiter mehr als 10 Drinks pro Tag zu sich nehmen.</li>
 </ol>
-<pre class="r"><code># Mehr als 10 Drinks
-sum(sleep$alchohol &gt; 10, na.rm = TRUE)</code></pre>
 <pre><code>[1] 1</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Indentifiziere den Index der Person in der Variable <code>alchohol</code> mit <code>which()</code>.</li>
@@ -786,8 +657,6 @@ which(sleep$alchohol &gt; 10)</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Nutze den Index der Person um dir, deren Geschlecht (<code>sex</code>) und Beziehungsstatus (<code>marital</code>) anzeigen zu lassen. Nutze hier die Klammern <code>[]</code>.</li>
 </ol>
-<pre class="r"><code># Geschlecht und Alter der Person
-sleep$marital[which(sleep$alchohol &gt; 10)]</code></pre>
 <pre><code>&lt;labelled&lt;double&gt;[1]&gt;: marital status
 [1] 2
 
@@ -797,7 +666,6 @@ Labels:
      2 married/defacto
      3        divorced
      4         widowed</code></pre>
-<pre class="r"><code>sleep$sex[which(sleep$alchohol &gt; 10)]</code></pre>
 <pre><code>&lt;labelled&lt;double&gt;[1]&gt;: sex
 [1] 1
 
@@ -808,14 +676,10 @@ Labels:
 <ol start="4" style="list-style-type: decimal">
 <li>Verwende <code>mean()</code> und <code>&gt;</code> um das mittlere Alter derjenigen Personen zu berechnen, die mehr als einen Drink pro Tag zu sich nehmen.</li>
 </ol>
-<pre class="r"><code># Mittleres Alter für &gt; 1 Drink
-mean(sleep$age[which(sleep$alchohol &gt; 1)], na.rm = TRUE)</code></pre>
 <pre><code>[1] 48</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Verwende nun den Code der letzten Aufgabe und <code>!</code> um das mittlere Alter derjenigen Personen zu berechnen, die <i>nicht</i> mehr als einen Drink pro Tag zu sich nehmen. Wo gehört das <code>!</code> hin?</li>
 </ol>
-<pre class="r"><code># Mittleres Alter für not &gt; 1 Drink
-mean(sleep$age[which(!sleep$alchohol &gt; 1)], na.rm = TRUE)</code></pre>
 <pre><code>[1] 42.5</code></pre>
 </div>
 </div>
@@ -898,9 +762,6 @@ chickens &lt;- read_spss(&quot;1_Data/chickens.sav&quot;)</code></pre>
 </div>
 <div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
-<pre class="r"><code>library(tidyverse)
-library(readxl)
-library(haven)</code></pre>
 <table>
 <colgroup>
 <col width="8%" />
