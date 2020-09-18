@@ -35,6 +35,14 @@ output:
 || Projektpräsentationen |  | <!--- [Medicine](_sessions/FinalProject/FinalProject_Medicine.html), [Clinical](_sessions/FinalProject/FinalProject_Clinical.html)--->| |
 
 
+# Practicals
+
+Upload bitte in der Form: Gruppe_Practical#.R
+
+[Practical Upload](https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5)
+
+
+
 <!---
 
 |  | Day 1<br>Fundamentals| Day 2<br>Analysis| Day 3<br>Reporting| 
