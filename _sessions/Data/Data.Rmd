@@ -271,8 +271,6 @@ alter[2] <- 100
 alter
 ```
 
-Mehr Info [hier](http://rspatial.org/intr/rst/4-indexing.html).
-
 ]
 
 .pull-right4[
@@ -397,17 +395,17 @@ as.character(basel$alter[1:10])
 <highm>logical</highm> Vektoren werden typischerweise durch <high>logische Vergleiche</high> erstellt und benutzt um in Data Frames oder Vektoren bestimmte <high>Fälle auszuwählen</high>. 
 
 ```{r, eval = F}
-# Welche Werte in Geschlecht sind m
+# Welche Werte in Geschlecht sind M
 basel$geschlecht == "M"
 ```
 
 ```{r, echo = F}
-# Welche Werte in Geschlecht sind m
+# Welche Werte in Geschlecht sind M
 basel$geschlecht[1:10] == "M"
 ```
 
 ```{r, eval = F}
-# Welche Werte in Alteer sind kleiner 30
+# Welche Werte in Alter sind kleiner 30
 basel$alter < 30
 ```
 
