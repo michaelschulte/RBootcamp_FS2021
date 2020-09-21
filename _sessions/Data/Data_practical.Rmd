@@ -117,7 +117,7 @@ XX
 
 ```{r}
 # Erstelle Vektor namens id
-id <- 1:5 
+id <- c(1, 2, 3, 4, 5)
 
 # Printe den Vektor
 id
@@ -225,7 +225,7 @@ XX <- tibble(XX, XX, XX, XX, XX, XX)
 
 ```{r}
 # Kreiere data frame aus den Vektoren
-basel <- data.frame(id, alter, geschlecht, groesse, gewicht) 
+basel <- tibble(id, alter, geschlecht, groesse, gewicht) 
 ```
 
 2. Printe den data frame. Enthält er alle Vektoren? Welche Ausmasse (Anzahl Zeilen, Spalten) hat der data frame?

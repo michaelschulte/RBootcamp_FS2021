@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>Plotting</title>
+<title>Plotting I</title>
 
 <script src="Plotting_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -84,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -146,6 +145,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -157,18 +157,6 @@ summary {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -189,13 +177,13 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Plotting</h1>
+<h1 class="title toc-ignore">Plotting I</h1>
 <h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
 <col width='10%'>
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Explorative Datenanalyse mit R</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020//'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/rbootcamp'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -211,7 +199,7 @@ $(document).ready(function () {
 </p>
 <div id="section" class="section level1 tabset">
 <h1></h1>
-<div id="uberblick" class="section level2">
+<div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical wirst du üben mit <code>ggplot2</code> publikationsfertige Grafiken zu erstellen.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
@@ -254,30 +242,22 @@ $(document).ready(function () {
 </ol>
 <pre class="r"><code>ggplot(data = mcdonalds, 
        mapping = aes(x = XX, y = XX))</code></pre>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat))</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Verwende <code>geom_point()</code> und <code>+</code> um Punkte zu plotten.</li>
 </ol>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat)) +
-  geom_point()</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende das <code>col</code> Argument in <code>aes()</code> um die Farbe nach der Variable <code>Category</code> variieren zu lassen.</li>
 </ol>
 <pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
   geom_point() </code></pre>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
-  geom_point()</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Verwende <code>geom_smooth()</code> um eine angepasste Linie zu ergänzen.</li>
 </ol>
 <pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
   geom_point() </code></pre>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
-  geom_point() +
-  geom_smooth()</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Oops! Hast du mehre Linien anstatt einer bekommen? Löse das Problem indem du die Farbe innerhalb von <code>geom_smooth()</code> auf <code>black</code> setzt.</li>
@@ -285,9 +265,6 @@ $(document).ready(function () {
 <pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
   geom_point() +
   geom_smooth(col = &quot;XX&quot;) </code></pre>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
-  geom_point() +
-  geom_smooth(col = &quot;black&quot;)</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol start="6" style="list-style-type: decimal">
 <li>Verwende <code>labs()</code> um den Plot angemessen zu annotieren.</li>
@@ -298,12 +275,6 @@ $(document).ready(function () {
   labs(title = &quot;XX&quot;,
        subtitle = &quot;XX&quot;,
        caption = &quot;XX&quot;)</code></pre>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
-  geom_point() +
-  geom_smooth(col = &quot;black&quot;) +
-  labs(title = &quot;McDonalds Nährwerte&quot;,
-       subtitle = &quot;Jeder Punkt ist ein Menü-Item&quot;,
-       caption = &quot;Quelle: Kaggle.com&quot;)</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol start="7" style="list-style-type: decimal">
 <li>Verwende <code>xlim()</code>, eine einfache Version von <code>scale_x_continuous()</code>, um die x-Achse auf die Werte <code>0</code> und <code>1250</code> zu begrenzen.</li>
@@ -315,25 +286,10 @@ $(document).ready(function () {
        subtitle = &quot;XX&quot;,
        caption = &quot;XX&quot;) +
   xlim(XX, XX)</code></pre>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
-  geom_point() +
-  geom_smooth(col = &quot;black&quot;) +
-  labs(title = &quot;McDonalds Nährwerte&quot;,
-       subtitle = &quot;Jeder Punkt ist ein Menü-Item&quot;,
-       caption = &quot;Quelle: Kaggle.com&quot;) +
-  xlim(0, 1250)</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
 <ol start="8" style="list-style-type: decimal">
 <li>Abschliessend verwende <code>theme_minimal()</code> um die Ästhetik des Plots anzupassen.</li>
 </ol>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Calories, y = SaturatedFat, col = Category)) +
-  geom_point() +
-  geom_smooth(col = &quot;black&quot;) +
-  labs(title = &quot;McDonalds Nährwerte&quot;,
-       subtitle = &quot;Jeder Punkt ist ein Menü-Item&quot;,
-       caption = &quot;Quelle: Kaggle.com&quot;) +
-  xlim(0, 1250) +
-  theme_minimal()</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
 </div>
 <div id="d---geoms" class="section level3">
@@ -344,9 +300,6 @@ $(document).ready(function () {
 <pre class="r"><code>ggplot(data = mcdonalds, 
        aes(x = XX, y = XX, fill = XX)) +
   geom_violin()</code></pre>
-<pre class="r"><code>ggplot(data = mcdonalds, 
-       aes(x = Category, y = Calories, fill = Category)) +
-  geom_violin()</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-19-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Ergänze mit <code>labs()</code> einen angemessenen Titel (<code>title</code>) und Untertitel (<code>subtitle</code>).</li>
@@ -355,10 +308,6 @@ $(document).ready(function () {
   geom_violin() +
   labs(title = &quot;XX&quot;,
        subtitle = &quot;XX&quot;)</code></pre>
-<pre class="r"><code>ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +
-  geom_violin() +
-  labs(title = &quot;McDonalds&quot;,
-       subtitle = &quot;Kalorienverteilung pro Menü Kategorie&quot;)</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-21-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="3" style="list-style-type: decimal">
 <li>Ergänze <code>guides(fill = FALSE)</code>, so dass keine Legende gezeigt wird.</li>
@@ -368,22 +317,10 @@ $(document).ready(function () {
   labs(title = &quot;XX&quot;,
        subtitle = &quot;XX&quot;) + 
   guides(fill = FALSE)</code></pre>
-<pre class="r"><code>ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +
-  geom_violin() +
-  labs(title = &quot;McDonalds&quot;,
-       subtitle = &quot;Kalorienverteilung pro Menü Kategorie&quot;) +
-  guides(fill = FALSE)</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-23-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li>Verwende <code>geom_jitter()</code> um Punkte über die Violinen zu plotten. Setze in der Funktion <code>width = 1</code> und <code>alpha = .5</code>.</li>
 </ol>
-<pre class="r"><code>ggplot(data = mcdonalds, 
-       aes(x = Category, y = Calories, fill = Category)) +
-  geom_violin() +
-  labs(title = &quot;McDonalds&quot;,
-       subtitle = &quot;Kalorienverteilung pro Menü Kategorie&quot;) +
-  guides(fill = FALSE) +
-  geom_jitter(width = .1, alpha = .5)</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-24-1.png" width="768" style="display: block; margin: auto;" /></p>
 <ol start="5" style="list-style-type: decimal">
 <li>Probiere ein paar Sachen aus:</li>
@@ -414,23 +351,7 @@ $(document).ready(function () {
 <li><p>Wo sind die Labels? Ah, du hast <code>ggplot</code> nicht gesagt welche Spalte die Information beinhaltet, die in den Labels stehen soll. Behebe dieses Problem indem du innerhalb der <code>aes()</code> Funktion dem Argument <code>label</code> die Spalte <code>Item</code> zuweist. Führe den Code nochmal aus. Jetzt solltest du viele labels sehen!</p></li>
 <li><p>Passe <code>geom_text()</code> an in dem du <code>col</code> auf <code>black</code>, <code>check_overlap</code> auf <code>TRUE</code>, und <code>hjust</code> auf <code>left</code> setzt.</p></li>
 <li><p>Verwende nun das <code>data</code> Argument in <code>geom_text()</code> und weise ihm einen gefilterten Auschnitt des <code>mcdonalds</code> Datensatzes zu, nämlich <code>data = mcdonalds %&gt;% filter(Calories &gt; 1100)</code>. Schau was passiert.</p></li>
-</ol>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Sugars, 
-                      y = Calories, 
-                      col = Category, 
-                      label = Item)) +
-  geom_point() +
-  geom_text(data = mcdonalds %&gt;% 
-            filter(Calories &gt; 1100),
-            col = &quot;black&quot;, 
-            check_overlap = TRUE, 
-            hjust = &quot;left&quot;) +
-  xlim(0, 150) +
-  ylim(0, 2000) +
-  theme_minimal() +
-  labs(title = &quot;Ergänze Labels zu einem Plot mit geom_text()&quot;)</code></pre>
-<ol start="6" style="list-style-type: decimal">
-<li>Probiere ein paar Sachen aus:</li>
+<li><p>Probiere ein paar Sachen aus:</p></li>
 </ol>
 <ul>
 <li><p>Verwende das <code>size</code> Argument in <code>aes()</code>, so dass die Grösse der Punkte den <code>Calories</code> entspricht.</p></li>
@@ -447,28 +368,15 @@ $(document).ready(function () {
                fun.y = &quot;mean&quot;) +
   labs(title = &quot;XX&quot;,
        subtitle = &quot;XX&quot;)</code></pre>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Category, y = Calories)) +
-  stat_summary(geom = &quot;bar&quot;, 
-               fun.y = &quot;mean&quot;) +
-  labs(title = &quot;Calories gegen McDonalds Menu Kategorie&quot;,
-       subtitle = &quot;Balken repräsentieren Mittelwwerte&quot;)</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-29-1.png" width="960" style="display: block; margin: auto;" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Probiere ein paar Sachen aus:</li>
 </ol>
 <ul>
-<li>Verwende den <code>&quot;median&quot;</code> anstatt <code>&quot;mean&quot;</code>.</li>
+<li>Verwende den <code>"median"</code> anstatt <code>"mean"</code>.</li>
 <li>Gib jedem Balken eine andere Farbe.</li>
 <li>Ergänze Punkte über den Balken mit <code>geom_point()</code>, <code>geom_count()</code>, oder <code>geom_jitter()</code>.</li>
 </ul>
-<pre class="r"><code>ggplot(mcdonalds, aes(x = Category, 
-                      y = Calories, 
-                      col = Category)) +
-  stat_summary(geom = &quot;bar&quot;, 
-               fun.y = &quot;median&quot;) +
-  geom_jitter() +
-  labs(title = &quot;Calories gegen McDonalds Menu Kategorie&quot;,
-       subtitle = &quot;Balken repräsentieren Mittelwwerte&quot;)</code></pre>
 <p><img src="Plotting_practical_files/figure-html/unnamed-chunk-30-1.png" width="960" style="display: block; margin: auto;" /></p>
 </div>
 <div id="x---challenges" class="section level3">
@@ -547,11 +455,8 @@ ggplot(data = mpg,
        subtitle = &quot;Autos mit groesserem Hubraum fahren wneiger Meilen&quot;,
        caption = &quot;Quelle: mpg Datensatz aus ggplot2&quot;)</code></pre>
 </div>
-<div id="datensatze" class="section level2">
+<div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
-<pre class="r"><code>library(tidyverse)
-library(ggthemes)
-mcdonalds &lt;- read_csv(&quot;1_Data/mcdonalds.csv&quot;)</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -632,11 +537,11 @@ mcdonalds &lt;- read_csv(&quot;1_Data/mcdonalds.csv&quot;)</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 <tr class="even">
 <td align="left"><code>ggthemes</code></td>
-<td align="left"><code>install.packages(&quot;ggthemes&quot;)</code></td>
+<td align="left"><code>install.packages("ggthemes")</code></td>
 </tr>
 </tbody>
 </table>
@@ -674,6 +579,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

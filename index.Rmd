@@ -18,18 +18,18 @@ output:
 |:--:|:-|:--:|:--:|
 |18.09.| Willkommen! | [slides](_sessions/Welcome/Welcome.html) | | 
 |      | Einführung R | [slides](_sessions/IntroToR/IntroToR.html), [data sets](https://michaelschulte.github.io/RBootcamp_HS2020/1_Data/TheRBootcamp_HS2020_data.zip) | [source](_sessions/IntroToR/IntroToR_interactive.R) |
-|      | Data | [slides](_sessions/Data/Data.html) | [practical](_sessions/Data/Data_practical.html) <!---, [solutions](_sessions/Data/Data_practical_solutions.html)--->|
+|      | Data | [slides](_sessions/Data/Data.html) | [practical](_sessions/Data/Data_practical.html), [solutions](_sessions/Data/Data_practical_solutions.html)|
 |25.09.| Recap | | | 
-|| Wrangling I | <!---[slides](_sessions/Wrangling/Wrangling.html)---> | <!--- [practical](_sessions/Wrangling/Wrangling_practical.html)---><!---, [solutions](_sessions/Wrangling/Wrangling_practical_solutions.html)--->| 
-|      | Wrangling II | <!---[slides](_sessions/WranglingII/WranglingII.html)---> | <!---[practical](_sessions/WranglingII/WranglingII_practical.html)---><!---, [solutions](_sessions/WranglingII/WranglingII_practical_solutions.html)--->|
+|| Wrangling I | [slides](_sessions/Wrangling/Wrangling.html) |  [practical](_sessions/Wrangling/Wrangling_practical.html)<!---, [solutions](_sessions/Wrangling/Wrangling_practical_solutions.html)--->| 
+|      | Wrangling II | [slides](_sessions/WranglingII/WranglingII.html) | [practical](_sessions/WranglingII/WranglingII_practical.html)<!---, [solutions](_sessions/WranglingII/WranglingII_practical_solutions.html)--->|
 |09.10.| Recap | | | 
 || Plotting I | <!---[slides](_sessions/PlottingI/PlottingI.html)---> | <!---[practical](_sessions/PlottingI/PlottingI_practical.html)---><!---, [solutions](_sessions/PlottingI/PlottingI_practical_solutions.html)--->| 
 || Plotting II | <!---[slides](_sessions/PlottingII/PlottingII.html)---> | <!---[practical](_sessions/PlottingII/PlottingII_practical.html)---><!---, [solutions](_sessions/PlottingII/PlottingII_practical_solutions.html)--->|
 |16.10.| Recap | | | 
-|| Plotting III | <!---[slides](_sessions/PlottingIII/PlottingIII.html)---> | <!---[practical](_sessions/PlottingI/PlottingIII_practical.html)---><!---, [solutions](_sessions/PlottingIII/PlottingIII_practical_solutions.html)--->| |
-|| Statistics I | <!---[slides](_sessions/StatisticsI/StatisticsI.html) --->| <!---[practical](_sessions/StatisticsI/StatisticsI_practical.html)---><!---, [solutions](_sessions/StatisticsI/StatisticsI_practical_solutions.html)--->||
+|| Competition | <!---[slides](_sessions/PlottingIII/PlottingIII.html)---> | <!---[practical](_sessions/PlottingI/PlottingIII_practical.html)---><!---, [solutions](_sessions/PlottingIII/PlottingIII_practical_solutions.html)--->| |
+|| Intro Projekte||||
 |23.10.| Recap | | | 
-|| Statistics II |<!--- [slides](_sessions/StatisticsII/StatisticsII.html)---> | <!---[practical](_sessions/StatisticsII/StatisticsII_practical.html)---><!---, [solutions](_sessions/StatisticsII/StatisticsII_practical_solutions.html)--->| |
+|| Lineare Modelle |<!--- [slides](_sessions/LinearModelsI/LinearModelsI.html)---> | <!---[practical](_sessions/LinearModelsI/LinearModelsI_practical.html)---><!---, [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)--->| |
 || Reporting |<!--- [slides](_sessions/Reporting/Reporting.html) --->| <!---[practical](_sessions/Reporting/Reporting_practical.html)---><!---, [solutions](_sessions/Reporting/Reporting_practical_solutions.html)--->||
 |06.11.| Recap | | | 
 || Projektpräsentationen |  | <!--- [Medicine](_sessions/FinalProject/FinalProject_Medicine.html), [Clinical](_sessions/FinalProject/FinalProject_Clinical.html)--->| |

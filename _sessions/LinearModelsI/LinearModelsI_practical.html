@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>Lineare Modelle I</title>
+<title>Lineare Modelle</title>
 
 <script src="LinearModelsI_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -84,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -146,6 +145,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -157,18 +157,6 @@ summary {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -189,13 +177,13 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Lineare Modelle I</h1>
+<h1 class="title toc-ignore">Lineare Modelle</h1>
 <h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
 <col width='10%'>
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Statistik mit R</font><br> <a href='https://therbootcamp.github.io/SmR_2020Mai/'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -211,7 +199,7 @@ $(document).ready(function () {
 </p>
 <div id="section" class="section level1 tabset">
 <h1></h1>
-<div id="uberblick" class="section level2">
+<div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>Am Ende des Practicals wirst du wissen…</p>
 <ol style="list-style-type: decimal">
@@ -407,7 +395,7 @@ gefitted &lt;- fitted(wein_lm)</code></pre>
 <li><p>Et voilà, ihr habt <code>R-squared</code> gefunden. Ihr könnt jetzt auch einmal die Varianz der Residuen und die der gefitteten Werte addieren und mit der Varianz des Kriteriums vergleichen.</p></li>
 </ol>
 </div>
-<div id="d---multiple-regression-alle-pradiktoren" class="section level3">
+<div id="d---multiple-regression-alle-prädiktoren" class="section level3">
 <h3>D - Multiple Regression: Alle Prädiktoren</h3>
 <ol style="list-style-type: decimal">
 <li>Teste nun den Effekt aller Prädiktoren (bis auf <code>Farbe</code>) auf die wahrgenommene <code>Qualität</code> (Kriterium) des Weines. Um alle Prädiktoren zu inkludieren kann man einfach <code>.</code> verwenden, und um einen auszuschliessen <code>-</code>- Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt <code>wein_lm</code> zu speichern.</li>
@@ -428,7 +416,7 @@ wein_lm &lt;- lm(formula = Qualität ~ . - Farbe,
 <li>Um wie viel ist R-squared gestiegen?</li>
 </ul>
 </div>
-<div id="e---multiple-regression-alle-pradiktoren" class="section level3">
+<div id="e---multiple-regression-alle-prädiktoren" class="section level3">
 <h3>E - Multiple Regression: Alle Prädiktoren</h3>
 <ol style="list-style-type: decimal">
 <li>Gehe zurück zum ersten Modell mit <code>Restzucker</code> als einzigen Prädiktor. Inkludiere nacheinander jeweils einen anderen Prädiktor und studiere, wie sich das Gewicht und die Signifikanz von Restzucker verändert.</li>
@@ -475,7 +463,7 @@ hwy_fit
 hwy_resid &lt;- residuals(hwy_mod)
 hwy_resid</code></pre>
 </div>
-<div id="datensatze" class="section level2">
+<div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
 <table>
 <thead>
@@ -574,7 +562,7 @@ hwy_resid</code></pre>
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 </tr>
 </tbody>
 </table>
@@ -638,6 +626,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

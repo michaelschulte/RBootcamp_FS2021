@@ -1,19 +1,9 @@
 ---
 title: "Plotting II"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
-  <br>
-  <a href='https://michaelschulte.github.io/RBootcamp_HS2020//'>
-    <i class='fas fa-clock' style='font-size:.9em;'></i>
-  </a>&#8239; 
-  <a href='https://therbootcamp.github.io'>
-    <i class='fas fa-home' style='font-size:.9em;' ></i>
-  </a>&#8239;
-  <a href='mailto:therbootcamp@gmail.com'>
-    <i class='fas fa-envelope' style='font-size: .9em;'></i>
-  </a>&#8239;
-  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
-    <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+author: "
+  Datascience mit R lernen<br>
+  <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
+    R Bootcamp
   </a>"
 date: "HS 2020"
 output:

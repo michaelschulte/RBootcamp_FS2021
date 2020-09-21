@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
@@ -84,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -146,6 +145,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -157,18 +157,6 @@ summary {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -195,7 +183,7 @@ $(document).ready(function () {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Explorative Datenanalyse mit R</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020//'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/rbootcamp'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -211,7 +199,7 @@ $(document).ready(function () {
 </p>
 <div id="section" class="section level1 tabset">
 <h1></h1>
-<div id="uberblick" class="section level2">
+<div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical wirst du das Transformieren, Gruppieren und Analysieren von Daten mit <code>dplyr</code> üben.</p>
 <p>Am Ende des Practicals wirst du wissen wie man:</p>
@@ -237,7 +225,6 @@ $(document).ready(function () {
 </ol>
 <pre class="r"><code># Pakete laden
 library(tidyverse)     </code></pre>
-<pre class="r"><code>library(tidyverse)</code></pre>
 </div>
 <div id="b---transformation-von-long-zu-wide-format" class="section level3">
 <h3>B - Transformation von <em>Long</em> zu <em>Wide</em> Format</h3>
@@ -249,42 +236,35 @@ library(tidyverse)     </code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Mache dich mit dem Datensatz vertraut in dem du die ersten paar Zeilen (<code>print()</code>) und die Variablennamen (<code>names()</code>) anschaust.</li>
 </ol>
-<pre class="r"><code>names(bevoelkerung)</code></pre>
 <pre><code> [1] &quot;Stadtname&quot;          &quot;st_wbev_2011&quot;       &quot;st_wbev_2001&quot;      
  [4] &quot;proz_ver-2001–2011&quot; &quot;bevdichte&quot;          &quot;st_wbev_1930&quot;      
  [7] &quot;st_wbev_1970&quot;       &quot;st_wbev_1980&quot;       &quot;st_wbev_1990&quot;      
 [10] &quot;st_wbev_2000&quot;      </code></pre>
-<pre class="r"><code>bevoelkerung</code></pre>
 <pre><code># A tibble: 161 x 10
-   Stadtname st_wbev_2011 st_wbev_2001 `proz_ver-2001–… bevdichte
-   &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;            &lt;dbl&gt;     &lt;dbl&gt;
- 1 Basel           164516       164665             -0.1        69
- 2 Bern            125681       122211              2.8        24
- 3 Genève          188234       175697              7.1       119
- 4 Lausanne        129383       115272             12.2        31
- 5 Winterth…       103075        89484             15.2        15
- 6 Zürich          376990       340197             10.8        43
- 7 Biel-Bie…        51635        48142              7.3        24
- 8 Lugano           55151        50877              8.4        17
- 9 Luzern           78093        73233              6.6        27
-10 St. Gall…        73505        69857              5.2        19
-# … with 151 more rows, and 5 more variables: st_wbev_1930 &lt;dbl&gt;,
-#   st_wbev_1970 &lt;dbl&gt;, st_wbev_1980 &lt;dbl&gt;, st_wbev_1990 &lt;dbl&gt;,
-#   st_wbev_2000 &lt;dbl&gt;</code></pre>
+   Stadtname st_wbev_2011 st_wbev_2001 `proz_ver-2001–… bevdichte st_wbev_1930
+   &lt;chr&gt;            &lt;dbl&gt;        &lt;dbl&gt;            &lt;dbl&gt;     &lt;dbl&gt;        &lt;dbl&gt;
+ 1 Basel           164516       164665             -0.1        69       148063
+ 2 Bern            125681       122211              2.8        24       111783
+ 3 Genève          188234       175697              7.1       119       124121
+ 4 Lausanne        129383       115272             12.2        31        75915
+ 5 Winterth…       103075        89484             15.2        15        53925
+ 6 Zürich          376990       340197             10.8        43       290937
+ 7 Biel-Bie…        51635        48142              7.3        24        37726
+ 8 Lugano           55151        50877              8.4        17        17672
+ 9 Luzern           78093        73233              6.6        27        47066
+10 St. Gall…        73505        69857              5.2        19        63947
+# … with 151 more rows, and 4 more variables: st_wbev_1970 &lt;dbl&gt;,
+#   st_wbev_1980 &lt;dbl&gt;, st_wbev_1990 &lt;dbl&gt;, st_wbev_2000 &lt;dbl&gt;</code></pre>
 <ol start="7" style="list-style-type: decimal">
-<li>Im Moment sind die Daten so angeordnet, dass jedes Jahr eine einzelne Spalte hat, also im <em>Wide</em> Format; wir brauchen sie aber im <em>Long</em> format, z.B. fürs Plotting. Verwende <code>pivot_longer()</code> um das Format zu wechseln. Verwende <code>&quot;st_wbev_2011&quot;</code> und <code>&quot;st_wbev_2001&quot;</code> für das <code>cols</code> Argument und <code>&quot;jahr&quot;</code> das <code>names_to</code> Argument und speichere das Resultat als neues Objekt <code>bevoelkerung_long</code> ab.</li>
+<li>Im Moment sind die Daten so angeordnet, dass jedes Jahr eine einzelne Spalte hat, also im <em>Wide</em> Format; wir brauchen sie aber im <em>Long</em> format, z.B. fürs Plotting. Verwende <code>pivot_longer()</code> um das Format zu wechseln. Verwende <code>"st_wbev_2011"</code> und <code>"st_wbev_2001"</code> für das <code>cols</code> Argument und <code>"jahr"</code> das <code>names_to</code> Argument und speichere das Resultat als neues Objekt <code>bevoelkerung_long</code> ab.</li>
 </ol>
 <pre class="r"><code># Transofmation vom Wide ins Long Format
 bevoelkerung_long &lt;- bevoelkerung %&gt;%
   pivot_longer(cols = c(&quot;XX&quot;, &quot;XX&quot;), names_to = &quot;XX&quot;)</code></pre>
-<pre class="r"><code># Transofmation vom Wide ins Long Format
-bevoelkerung_long &lt;- bevoelkerung %&gt;%
-  pivot_longer(cols = c(&quot;st_wbev_2011&quot;, &quot;st_wbev_2001&quot;), names_to = &quot;jahr&quot;)</code></pre>
 <ol start="8" style="list-style-type: decimal">
 <li><p>Printe den neu erstellten Datensatz an. Alles wie erwartet?</p></li>
 <li><p>Nun wollen wir nicht nur die Jahre 2001 und 2011, sondern alle im Datensatz vorhandenen Jahre ins Long Format bringen. Schaue dir nochmals die Namen der Spalten an.</p></li>
 </ol>
-<pre class="r"><code>names(bevoelkerung)</code></pre>
 <pre><code> [1] &quot;Stadtname&quot;          &quot;st_wbev_2011&quot;       &quot;st_wbev_2001&quot;      
  [4] &quot;proz_ver-2001–2011&quot; &quot;bevdichte&quot;          &quot;st_wbev_1930&quot;      
  [7] &quot;st_wbev_1970&quot;       &quot;st_wbev_1980&quot;       &quot;st_wbev_1990&quot;      
@@ -295,8 +275,6 @@ bevoelkerung_long &lt;- bevoelkerung %&gt;%
 <pre class="r"><code># Transofmation vom Wide ins Long Format
 bevoelkerung_long &lt;- bevoelkerung %&gt;%
   pivot_longer(cols = starts_with(&quot;XX&quot;), names_to = &quot;XX&quot;)</code></pre>
-<pre class="r"><code>bevoelkerung_long &lt;- bevoelkerung %&gt;%
-  pivot_longer(cols = starts_with(&quot;st_&quot;), names_to = &quot;jahr&quot;)</code></pre>
 <ol start="11" style="list-style-type: decimal">
 <li><p>Printe nochmal <code>bevoelkerung_long</code>.</p></li>
 <li><p>Die Einwohnerzahl ist im neuen Datensatz mi dem Standardwert <code>value</code> benannt. Führe nun nochmal die <code>pivot_longer</code> Funktion aus, verwende nun aber auch noch das <code>values_to</code> Argument um die neue Spalte <code>einwohner</code> zu nennen.</p></li>
@@ -304,15 +282,10 @@ bevoelkerung_long &lt;- bevoelkerung %&gt;%
 <pre class="r"><code># Transofmation vom Wide ins Long Format
 bevoelkerung_long &lt;- bevoelkerung %&gt;%
   pivot_longer(cols = starts_with(&quot;XX&quot;), names_to = &quot;XX&quot;, values_to = &quot;XX&quot;)</code></pre>
-<pre class="r"><code>bevoelkerung_long &lt;- bevoelkerung %&gt;%
-  pivot_longer(cols = starts_with(&quot;st_&quot;), names_to = &quot;jahr&quot;, values_to = &quot;einwohner&quot;)</code></pre>
 <ol start="13" style="list-style-type: decimal">
 <li><p>Schaue dir das Resultat an. Alles in Ordnung?</p></li>
 <li><p>Verwende nun das <code>names_prefix</code> Argument um die Präfixe der Jahreszahlen automatisch zu entfernen.</p></li>
 </ol>
-<pre class="r"><code>bevoelkerung_long &lt;- bevoelkerung %&gt;%
-  pivot_longer(starts_with(&quot;st_&quot;), names_to = &quot;jahr&quot;, values_to = &quot;einwohner&quot;,
-               names_prefix = &quot;st_wbev_&quot;)</code></pre>
 </div>
 <div id="c---transformation-von-long-zu-wide-format" class="section level3">
 <h3>C - Transformation von <em>Long</em> zu <em>Wide</em> Format</h3>
@@ -320,15 +293,10 @@ bevoelkerung_long &lt;- bevoelkerung %&gt;%
 <pre class="r"><code># Transofmation vom Long ins Wide Format
 bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
   pivot_wider(names_from = XX, values_from = XX)</code></pre>
-<pre class="r"><code>bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
-  pivot_wider(names_from = jahr, values_from = einwohner)</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li><p>Vergleiche <code>bevoelkerung_wide</code> mit <code>bevoelkerung</code>. War die Rücktransformation erfolgreich? Was fehlt?</p></li>
-<li><p>Um die zuvor entfernten Präfixe wieder bei den Variablennamen hinzuzufügen, kannst du das <code>names_prefix</code> argument in <code>pivot_wider()</code> verwenden. Benutze <code>names_prefix</code> um <code>&quot;st_wbev_&quot;</code> als Präfix hinzuzufügen.</p></li>
+<li><p>Um die zuvor entfernten Präfixe wieder bei den Variablennamen hinzuzufügen, kannst du das <code>names_prefix</code> argument in <code>pivot_wider()</code> verwenden. Benutze <code>names_prefix</code> um <code>"st_wbev_"</code> als Präfix hinzuzufügen.</p></li>
 </ol>
-<pre class="r"><code>bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
-  pivot_wider(names_from = jahr, values_from = einwohner,
-              names_prefix = &quot;st_wbev_&quot;)</code></pre>
 </div>
 <div id="d---wiederholung-wrangling-i" class="section level3">
 <h3>D - Wiederholung Wrangling I</h3>
@@ -340,7 +308,6 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
 <ol start="2" style="list-style-type: decimal">
 <li>Printe den Datensatz und verwende <code>summary()</code> und <code>names()</code> um einen Eindruck über dessen Struktur zu erhalten.</li>
 </ol>
-<pre class="r"><code>kc_house</code></pre>
 <pre><code># A tibble: 21,613 x 11
     preis schlafzimmer badezimmer qf_wohnraum qf_parzelle stoecke  ufer
     &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -356,7 +323,6 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
 10 3.23e5            3       2.5         1890        6560       2     0
 # … with 21,603 more rows, and 4 more variables: qf_dachstock &lt;dbl&gt;,
 #   qf_keller &lt;dbl&gt;, baujahr &lt;dbl&gt;, postleitzahl &lt;dbl&gt;</code></pre>
-<pre class="r"><code>summary(kc_house)</code></pre>
 <pre><code>     preis          schlafzimmer    badezimmer    qf_wohnraum   
  Min.   :  75000   Min.   : 0.0   Min.   :0.00   Min.   :  290  
  1st Qu.: 321950   1st Qu.: 3.0   1st Qu.:1.75   1st Qu.: 1427  
@@ -364,20 +330,20 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
  Mean   : 540088   Mean   : 3.4   Mean   :2.11   Mean   : 2080  
  3rd Qu.: 645000   3rd Qu.: 4.0   3rd Qu.:2.50   3rd Qu.: 2550  
  Max.   :7700000   Max.   :33.0   Max.   :8.00   Max.   :13540  
-  qf_parzelle         stoecke          ufer        qf_dachstock 
- Min.   :    520   Min.   :1.00   Min.   :0.000   Min.   : 290  
- 1st Qu.:   5040   1st Qu.:1.00   1st Qu.:0.000   1st Qu.:1190  
- Median :   7618   Median :1.50   Median :0.000   Median :1560  
- Mean   :  15107   Mean   :1.49   Mean   :0.008   Mean   :1788  
- 3rd Qu.:  10688   3rd Qu.:2.00   3rd Qu.:0.000   3rd Qu.:2210  
- Max.   :1651359   Max.   :3.50   Max.   :1.000   Max.   :9410  
-   qf_keller       baujahr      postleitzahl  
- Min.   :   0   Min.   :1900   Min.   :98001  
- 1st Qu.:   0   1st Qu.:1951   1st Qu.:98033  
- Median :   0   Median :1975   Median :98065  
- Mean   : 292   Mean   :1971   Mean   :98078  
- 3rd Qu.: 560   3rd Qu.:1997   3rd Qu.:98118  
- Max.   :4820   Max.   :2015   Max.   :98199  </code></pre>
+  qf_parzelle         stoecke          ufer        qf_dachstock    qf_keller   
+ Min.   :    520   Min.   :1.00   Min.   :0.000   Min.   : 290   Min.   :   0  
+ 1st Qu.:   5040   1st Qu.:1.00   1st Qu.:0.000   1st Qu.:1190   1st Qu.:   0  
+ Median :   7618   Median :1.50   Median :0.000   Median :1560   Median :   0  
+ Mean   :  15107   Mean   :1.49   Mean   :0.008   Mean   :1788   Mean   : 292  
+ 3rd Qu.:  10688   3rd Qu.:2.00   3rd Qu.:0.000   3rd Qu.:2210   3rd Qu.: 560  
+ Max.   :1651359   Max.   :3.50   Max.   :1.000   Max.   :9410   Max.   :4820  
+    baujahr      postleitzahl  
+ Min.   :1900   Min.   :98001  
+ 1st Qu.:1951   1st Qu.:98033  
+ Median :1975   Median :98065  
+ Mean   :1971   Mean   :98078  
+ 3rd Qu.:1997   3rd Qu.:98118  
+ Max.   :2015   Max.   :98199  </code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Da es sich um einen US Datensatz handelt, sind die Flächenangaben in Quadratfuss angegeben. Wir als “rest of the world” sind natürlich es eher gewohnt in Quadratmeter zu denken. Kreiere dazu drei neue Variablen <code>qm_wohnraum</code>, <code>qm_dachstock</code> und <code>qm_keller</code>, welche die jeweilige Raumgrösse in Quadratmeter angeben. Ein Quadratfuss entspricht 0.093 Quadratmeter.</li>
 </ol>
@@ -385,29 +351,16 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
   mutate(XX = XX * 0.093,
          XX = XX * 0.093,
          XX  = XX * 0.093)</code></pre>
-<pre class="r"><code>kc_house &lt;- kc_house %&gt;%
-  mutate(qm_wohnraum = qf_wohnraum * 0.093,
-         qm_dachstock = qf_dachstock * 0.093,
-         qm_keller  = qf_keller * 0.093)</code></pre>
 <ol start="4" style="list-style-type: decimal">
-<li>Kreiere wiederum mit <code>mutate()</code> eine neue Spalte <code>qm_total</code>, welche die Summe aus <code>qm_wohnraum</code>, <code>qm_dachstock</code> und <code>qm_keller</code> darstellt.</li>
+<li><p>Kreiere wiederum mit <code>mutate()</code> eine neue Spalte <code>qm_total</code>, welche die Summe aus <code>qm_wohnraum</code>, <code>qm_dachstock</code> und <code>qm_keller</code> darstellt.</p></li>
+<li><p>Füge eine neue Variable <code>villa</code> hinzu (mit <code>mutate()</code>), welche den Wert “ja” annimmt, wenn <code>qm_total</code> grösser als 750 ist und “nein”, wenn <code>qm_total</code> kleiner oder gleich 750 ist.</p></li>
 </ol>
-<pre class="r"><code>kc_house &lt;- kc_house %&gt;%
-  mutate(qm_total = qm_wohnraum + qm_dachstock + qm_keller)</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Füge eine neue Variable <code>villa</code> hinzu (mit <code>mutate()</code>), welche den Wert “ja” annimmt, wenn <code>qm_total</code> grösser als 750 ist und “nein”, wenn <code>qm_total</code> kleiner oder gleich 750 ist.</li>
-</ol>
-<pre class="r"><code>kc_house &lt;- kc_house %&gt;%
-                mutate(villa = case_when(
-                              qm_total &gt; 750 ~ &quot;ja&quot;,
-                              qm_total &lt;= 750~ &quot;nein&quot;))</code></pre>
 </div>
 <div id="e---summarise" class="section level3">
 <h3>E - <code>summarise</code></h3>
 <ol style="list-style-type: decimal">
 <li>Unter Verwendung der base-R <code>data$col</code> Notation, berechne den Mittelwert über alle Hauspreise.</li>
 </ol>
-<pre class="r"><code>mean(kc_house$preis)</code></pre>
 <pre><code>[1] 540088</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Berechne wieder den Mittelwert aber verwende diesmal <code>summarise()</code> Funktion. Worin besteht der Unterschied der Resultate dieser und der vorherigen Aufgabe?</li>
@@ -416,10 +369,6 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
   summarise(
     XX = mean(XX)
   )</code></pre>
-<pre class="r"><code>kc_house %&gt;%
-  summarise(
-    preis_mean = mean(preis)
-  )</code></pre>
 <pre><code># A tibble: 1 x 1
   preis_mean
        &lt;dbl&gt;
@@ -427,10 +376,6 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
 <ol start="3" style="list-style-type: decimal">
 <li>Wie hoch ist der höchste Verkaufspreis? Verwende die <code>max()</code> Funktion.</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  summarise(
-    preis_max = max(preis)
-  )</code></pre>
 <pre><code># A tibble: 1 x 1
   preis_max
       &lt;dbl&gt;
@@ -438,10 +383,6 @@ bevoelkerung_wide &lt;- bevoelkerung_long %&gt;%
 <ol start="4" style="list-style-type: decimal">
 <li>Sortiere mittels der <code>arrange()</code> und der <code>desc()</code> Funktion den Datensatz nach <code>preis</code> in absteigender Reihenfolge und printe das Resultat. Richtig sortiert?</li>
 </ol>
-<pre class="r"><code>kc_house &lt;- kc_house %&gt;%
-  arrange(desc(preis))
-
-kc_house</code></pre>
 <pre><code># A tibble: 21,613 x 16
     preis schlafzimmer badezimmer qf_wohnraum qf_parzelle stoecke  ufer
     &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -463,8 +404,6 @@ kc_house</code></pre>
 </ol>
 <pre class="r"><code>kc_house %&gt;%
   summarise(million_prozent = mean(XX &gt; XX))</code></pre>
-<pre class="r"><code>kc_house %&gt;%
-  summarise(million_prozent = mean(preis &gt; 1000000))</code></pre>
 <pre><code># A tibble: 1 x 1
   million_prozent
             &lt;dbl&gt;
@@ -472,12 +411,6 @@ kc_house</code></pre>
 <ol start="6" style="list-style-type: decimal">
 <li>Berechne die mittlere Anzahl Stockwerke (<code>stoecke</code>) und Badezimmer (<code>badezimmer</code>) von Villen (<code>villa</code>). Verwende erst <code>filter()</code> um Villen auszuwählen und danach <code>summarise()</code>.</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  filter(villa == &quot;ja&quot;) %&gt;%
-  summarise(
-    stoecke_mean = mean(stoecke),
-    badezimmer_mean = mean(badezimmer)
-  )</code></pre>
 <pre><code># A tibble: 1 x 2
   stoecke_mean badezimmer_mean
          &lt;dbl&gt;           &lt;dbl&gt;
@@ -491,9 +424,6 @@ kc_house</code></pre>
 <pre class="r"><code>kc_house %&gt;%
   group_by(XX) %&gt;%
   summarise(N = XX)</code></pre>
-<pre class="r"><code>kc_house %&gt;%
-  group_by(villa) %&gt;%
-  summarise(N = n())</code></pre>
 <pre><code># A tibble: 2 x 2
   villa     N
   &lt;chr&gt; &lt;int&gt;
@@ -502,10 +432,6 @@ kc_house</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Ergänze nun einen Eintrag in <code>summarise()</code> die den mittlere Verkaufspreis von Villen und normalen Häusern (nicht-Villen) berechnet?</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  group_by(villa) %&gt;%
-  summarise(N = n(),
-            preis_mean = mean(preis))</code></pre>
 <pre><code># A tibble: 2 x 3
   villa     N preis_mean
   &lt;chr&gt; &lt;int&gt;      &lt;dbl&gt;
@@ -514,12 +440,6 @@ kc_house</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende nun <code>group_by()</code> und <code>summarise()</code> um auch noch das Maximum zu bestimmen.</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  group_by(villa) %&gt;%
-  summarise(N = n(),
-            preis_min = min(preis),
-            preis_mean = mean(preis),
-            preis_max = max(preis))</code></pre>
 <pre><code># A tibble: 2 x 5
   villa     N preis_min preis_mean preis_max
   &lt;chr&gt; &lt;int&gt;     &lt;dbl&gt;      &lt;dbl&gt;     &lt;dbl&gt;
@@ -528,10 +448,6 @@ kc_house</code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li>Haben Häuser, welche später gebaut wurden, eine grössere Wohnfläche? Gruppiere zur Beantwortung dieser Frage die Daten nach <code>baujahr</code> und berechne dann die mittlere Wohnfläche (<code>qm_wohnraum</code>).</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  group_by(baujahr) %&gt;%
-  summarise(N = n(),
-            wohnraum = mean(qm_wohnraum))</code></pre>
 <pre><code># A tibble: 116 x 3
    baujahr     N wohnraum
      &lt;dbl&gt; &lt;int&gt;    &lt;dbl&gt;
@@ -549,11 +465,6 @@ kc_house</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Kreiere eine neue Variable <code>baujahrzehnt</code>, welche angibt, in welchem Jahrzehnt ein Haus gebaut wurde und erstelle dann die Tabelle der letzten Aufgabe Gruppiert nach dieser neuen Variable. Tipp: die <code>floor()</code> Funktion rundet eine Zahl auf die nächst kleinere ganze Zahl ab.</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  mutate(baujahrzehnt = floor(baujahr / 10) * 10) %&gt;%
-  group_by(baujahrzehnt) %&gt;%
-  summarise(N = n(),
-            wohnraum = mean(qm_wohnraum))</code></pre>
 <pre><code># A tibble: 12 x 3
    baujahrzehnt     N wohnraum
           &lt;dbl&gt; &lt;int&gt;    &lt;dbl&gt;
@@ -577,17 +488,9 @@ kc_house</code></pre>
 </ol>
 <pre class="r"><code>theodorus &lt;- kc_house %&gt;%
   filter(XX %in% c(XX, XX, XX, XX))</code></pre>
-<pre class="r"><code>theodorus &lt;- kc_house %&gt;%
-  filter(postleitzahl %in% c(98001, 98109, 98117, 98199))</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Berechne für Theodorus den mittleren, den den Minimum-, den Maximumpreis, sowie die Anzahl Häuser pro Gruppe, separat für die Postleitzahlen und ob es eine Villa ist.</li>
 </ol>
-<pre class="r"><code>theodorus %&gt;%
-  group_by(postleitzahl, villa) %&gt;%
-  summarise(preis_mean = mean(preis),
-            stoecke_min = min(stoecke),
-            stoecke_max = max(stoecke),
-            N = n())</code></pre>
 <pre><code># A tibble: 8 x 6
 # Groups:   postleitzahl [4]
   postleitzahl villa preis_mean stoecke_min stoecke_max     N
@@ -606,11 +509,6 @@ kc_house</code></pre>
 <ol style="list-style-type: decimal">
 <li>Welche Postleitzahl hat den höchsten Anteil Häuser, welche am Ufer gebaut sind (<code>ufer</code>)? Printe nur diese Zeile des Datensatzes.</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  group_by(postleitzahl) %&gt;%
-  summarise(ufer_p = mean(ufer)) %&gt;%
-  arrange(desc(ufer_p)) %&gt;%
-  slice(1)</code></pre>
 <pre><code># A tibble: 1 x 2
   postleitzahl ufer_p
          &lt;dbl&gt;  &lt;dbl&gt;
@@ -618,26 +516,16 @@ kc_house</code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Welches Haus hat das schlechteste Preis-Wohnraumgrösse Verhältnis? Printe nur diese Zeile des Datensatzes.</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  mutate(preis_zu_flaeche = preis / qm_wohnraum) %&gt;%
-  arrange(desc(preis_zu_flaeche)) %&gt;%
-  slice(1)</code></pre>
 <pre><code># A tibble: 1 x 17
    preis schlafzimmer badezimmer qf_wohnraum qf_parzelle stoecke  ufer
    &lt;dbl&gt;        &lt;dbl&gt;      &lt;dbl&gt;       &lt;dbl&gt;       &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
 1 874950            2          1        1080        4000       1     0
-# … with 10 more variables: qf_dachstock &lt;dbl&gt;, qf_keller &lt;dbl&gt;,
-#   baujahr &lt;dbl&gt;, postleitzahl &lt;dbl&gt;, qm_wohnraum &lt;dbl&gt;,
-#   qm_dachstock &lt;dbl&gt;, qm_keller &lt;dbl&gt;, qm_total &lt;dbl&gt;, villa &lt;chr&gt;,
-#   preis_zu_flaeche &lt;dbl&gt;</code></pre>
+# … with 10 more variables: qf_dachstock &lt;dbl&gt;, qf_keller &lt;dbl&gt;, baujahr &lt;dbl&gt;,
+#   postleitzahl &lt;dbl&gt;, qm_wohnraum &lt;dbl&gt;, qm_dachstock &lt;dbl&gt;, qm_keller &lt;dbl&gt;,
+#   qm_total &lt;dbl&gt;, villa &lt;chr&gt;, preis_zu_flaeche &lt;dbl&gt;</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Welche 10 Postleitzahlen haben im Schnitt die höchsten Hauspreise? Printe nur diese 10 Zeilen.</li>
 </ol>
-<pre class="r"><code>kc_house %&gt;%
-  group_by(postleitzahl) %&gt;%
-  summarise(preis_mean = mean(preis)) %&gt;%
-  arrange(desc(preis_mean)) %&gt;%
-  slice(1:10)</code></pre>
 <pre><code># A tibble: 10 x 2
    postleitzahl preis_mean
           &lt;dbl&gt;      &lt;dbl&gt;
@@ -730,14 +618,6 @@ kc_house</code></pre>
 </tr>
 </tbody>
 </table>
-<pre class="r"><code>kc_house %&gt;%
-  filter(baujahr &gt;= 1990 &amp; baujahr &lt; 1999) %&gt;%
-  group_by(baujahr) %&gt;%
-  summarise(N = n(),
-            preis_mean = mean(preis),
-            preis_max = max(preis),
-            qm_wohnraum_mean = mean(qm_wohnraum)) %&gt;%
-  knitr::kable(digits = 0)</code></pre>
 <table>
 <thead>
 <tr class="header">
@@ -863,7 +743,7 @@ basel %&gt;%
   group_by(geschlecht, bildung) %&gt;%
   summarise_if(is.numeric, mean, na.rm = TRUE)</code></pre>
 </div>
-<div id="datensatze" class="section level2">
+<div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
 <table>
 <colgroup>
@@ -1128,7 +1008,7 @@ basel %&gt;%
 <tbody>
 <tr class="odd">
 <td align="left"><code>tidyverse</code></td>
-<td align="left"><code>install.packages(&quot;tidyverse&quot;)</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
 <td align="left">Ein Metapaket für Data Science, einschliesslich <code>dplyr</code>, <code>ggplot2</code> und weitere Pakete</td>
 </tr>
 </tbody>
@@ -1232,6 +1112,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>

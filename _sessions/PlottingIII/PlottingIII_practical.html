@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
 
 
-<title>Wettbewerb: Explorative Datenanalyse</title>
+<title>Wettbewerb: explorative Datenanalyse</title>
 
 <script src="PlottingIII_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -84,7 +84,6 @@ code {
 }
 img {
   max-width:100%;
-  height: auto;
 }
 .tabbed-pane {
   padding-top: 12px;
@@ -146,6 +145,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -157,18 +157,6 @@ summary {
   display: none;
 }
 </style>
-
-<script>
-$(document).ready(function () {
-  window.buildTabsets("TOC");
-});
-
-$(document).ready(function () {
-  $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
-  });
-});
-</script>
 
 <!-- code folding -->
 
@@ -189,13 +177,13 @@ $(document).ready(function () {
 
 
 
-<h1 class="title toc-ignore">Wettbewerb: Explorative Datenanalyse</h1>
+<h1 class="title toc-ignore">Wettbewerb: explorative Datenanalyse</h1>
 <h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
 <col width='10%'>
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Explorative Datenanalyse</font> <br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020//'> <i class='fas fa-clock' style='font-size:.9em;' ></i> </a> <a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:.9em;'></i> </a> <a href='mailto:therbootcamp@gmail.com'> <i class='fas fa-envelope' style='font-size: .9em;'></i> </a> <a href='https://www.linkedin.com/company/basel-r-bootcamp/'> <i class='fab fa-linkedin' style='font-size: .9em;'></i> </a> <a href='https://therbootcamp.github.io'> <font style='font-style:normal'>The R Bootcamp</font> </a>  
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -211,7 +199,7 @@ $(document).ready(function () {
 </p>
 <div id="section" class="section level1 tabset">
 <h1></h1>
-<div id="uberblick" class="section level2">
+<div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb zur Explorativen Datenanalyse. Grabt tief in einen Datensatz um die beste, entscheidungsrelevanteste Graphik zu erstellen und damit 🍫🍫🍫 zu gewinnnen.</p>
 <p>Der Wettbewerb endet in…</p>
@@ -272,17 +260,7 @@ var x = setInterval(function() {
 <li><p>Am Wettbewerb teilzunehmen ermöglicht dir die Chance viel 🍫🍫🍫 zu gewinnen.</p></li>
 <li><p>Die nimmst am Wettbewerb teil indem du deine beste Graphik im <code>.png</code> Format und das zugehörige R Script einreichst.</p></li>
 <li><p>Vor dem Einreichen, speichere deine Graphik mittels <code>ggsave()</code> (siehe code) und benenne die Datei mit einem von dir ausgewählten <em>Pseudonym</em>. Benutze das <em>Pseudonym</em> ebenfalls im Namen der <code>.R</code> Skriptdatei.</p></li>
-</ol>
-<pre class="r"><code># speichere plot
-ggsave(filename = &quot;plot_PSEUDONYM.png&quot;,
-       plot = mein_plot,
-       device = &quot;png&quot;,       
-       units = &#39;in&#39;,
-       width = 5,         # ggf. vergrössern/verkleinern
-       height = 5         # ggf. vergrössern/verkleinern
-       )</code></pre>
-<ol start="5" style="list-style-type: decimal">
-<li>Reiche deine Beitrag über diese Links ein:</li>
+<li><p>Reiche deine Beitrag über diese Links ein:</p></li>
 </ol>
 <ul>
 <li><a href="https://www.dropbox.com/request/beSVQncMl0gozVWW3F91"><strong>Graphik einreichen</strong></a></li>
@@ -293,6 +271,10 @@ ggsave(filename = &quot;plot_PSEUDONYM.png&quot;,
 </ol>
 <p>Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnenen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.</p>
 </div>
+</div>
+<div id="rating" class="section level2">
+<h2>Rating</h2>
+<p>Bitte rated die einzelnen Beiträge über diesen <a href="https://docs.google.com/forms/d/e/1FAIpQLSdI_QbUFZ0AkB3uL-DkSEkF-CtT3zpMa3IS-JLpaQ4CAyb2rg/viewform?usp=sf_link"><strong>Link</strong></a></p>
 </div>
 <div id="beispiel" class="section level2">
 <h2>Beispiel</h2>
@@ -317,11 +299,7 @@ ggsave(filename = &#39;plot_DOZENTEN.png&#39;,
        width = 7,
        height = 5)</code></pre>
 </div>
-<div id="rating" class="section level2">
-<h2>Rating</h2>
-<p>Bitte rated die einzelnen Beiträge über diesen <a href="https://docs.google.com/forms/d/e/1FAIpQLSdI_QbUFZ0AkB3uL-DkSEkF-CtT3zpMa3IS-JLpaQ4CAyb2rg/viewform?usp=sf_link"><strong>Link</strong></a></p>
-</div>
-<div id="datensatze" class="section level2">
+<div id="datensätze" class="section level2">
 <h2>Datensätze</h2>
 <table>
 <thead>
@@ -450,6 +428,23 @@ $(document).ready(function () {
 
 
 </script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
 
 <!-- dynamically load mathjax for compatibility with self-contained -->
 <script>
