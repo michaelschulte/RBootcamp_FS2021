@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="Covid-Boot-Camp &amp; Arr-PiRaten" />
+
+
+<title>Final Project: Medicine</title>
+
+<script src="FinalProject_Medicine_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="FinalProject_Medicine_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="FinalProject_Medicine_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="FinalProject_Medicine_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="FinalProject_Medicine_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="FinalProject_Medicine_files/navigation-1.1/tabsets.js"></script>
+<link href="FinalProject_Medicine_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="FinalProject_Medicine_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Final Project: Medicine</h1>
+<h3 class="subtitle">Datascience with R</h3>
+<h4 class="author">Covid-Boot-Camp &amp; Arr-PiRaten</h4>
+
+</div>
+
+
+<p align="center">
+<img width="80%" src="https://meetville.com/blog/wp-content/uploads/2015/01/imgonline-com-ua-Resize-quU8YQt7HJLDQEjt.jpg" margin=0><br> <font style="font-size:10px">adapted from <a href="https://meetville.com/blog/wp-content/uploads/2015/01/imgonline-com-ua-Resize-quU8YQt7HJLDQEjt.jpg">meetville.com</a></font>
+</p>
+<div id="section" class="section level1 tabset tabset-fade">
+<h1></h1>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>This is your final assignment in this course. You will use all we learned during the course to understand, arrange, analyse, visualise and report on a new dataset about medical appointments.</p>
+<p>What is the dataset about? There is a large number of medical appointments where patients end up canceling or simply do not show up. This practise comes with costs to the medical system - in this assignment we will try to understand what drives patients not to show up in a sample of medical appointments from Vitoria, Espirito Santo, Brazil.</p>
+<p>You should (at least) complete the following tasks</p>
+<ol style="list-style-type: decimal">
+<li>load the two .csv files you find in <code>Datasets</code> into R objects.</li>
+<li>Work through A:D cleaning, visualising and fusioning the two tibbles.</li>
+<li>Run statistical models (in E) predicting whether a patient is a no-show for an appointment.</li>
+<li>Prepare two documents (with code examples) documenting your work - a .html document and a .html presentation (you are expected to use the slides from this presentation to talk us through what you did and what you found out).</li>
+</ol>
+</div>
+<div id="tasks" class="section level2">
+<h2>Tasks</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Open your <code>therbootcamp</code> R project. It should already have the folders <code>1_Data</code> and <code>2_Code</code>. Make sure that the data files listed in the <code>Datasets</code> section above are in your <code>1_Data</code> folder.</p></li>
+<li><p>Open a new R script. At the top of the script, using comments, write your name and the date. Save it as a new file called <code>final_project.R</code> in the <code>therbootcamp</code> folder.</p></li>
+<li><p>Using <code>library()</code> load the set of packages for this practical listed in the packages section above.</p></li>
+<li><p>Read the <code>appointments.csv</code> and the <code>weather.csv</code> files into two objects called <code>appointments</code> and <code>weather</code> respectively. Check out the content of the two datasets in Overview and Datasets above.</p></li>
+</ol>
+</div>
+<div id="b---initial-data-inspection" class="section level3">
+<h3>B - Initial data inspection</h3>
+<ol style="list-style-type: decimal">
+<li><p>We want to first see what variables are in the dataset (check out Datasets above) and whether there are variables with impossible values. Generate an overview of all variables with minimum and maximum values, means and medians for all appropriate numeric variables. Correct the variable(s) that stand out and provide a rational for what you did. Also rename Hipertension into Hyptertension and Handcap into Handicap.</p></li>
+<li><p>How many patients showed up for their appointment(s), how many did not?</p></li>
+<li><p>How many patients are female, how many are male? Who (PatientID) has the most number of appointments? Split that analysis (most number of appointments) for gender.</p></li>
+<li><p>Generate a simple plot with the age of all patients.</p></li>
+<li><p>Summarise the number of particiants per age in years (range: <code>range(appointments$Age)</code>) for the whole <code>appointments</code> dataset. Generate a line graph showing the distribution of patients per age. Now split this graph into two rows with Female|Male and two columns with Show|No-Show - this will give you an age distribution with four panels.</p></li>
+<li><p>Generate a new variable <code>age_group</code> which includes four groups [1:4] where 1: ‘children’ between 0 and 18 years, 2: ‘young adults’ between 19 and 30 years, 3: ‘adults’ (31:50 years) and 4 ‘old adults’ (51:max(Age))</p></li>
+<li><p>Plot the four age groups on the x-axis and the size of the groups on the y-axis (call this variable: number_cases). Connect the points with a line graph, separated for gender. Facet the graph into two parts, with <code>noshow</code> ‘No’ on top and <code>nowshow</code> ‘Yes’ on bottom. So ultimately you should have 4 lines, 2 in each panel.</p></li>
+</ol>
+</div>
+<div id="c---playing-with-time" class="section level3">
+<h3>C - Playing with time</h3>
+<ol style="list-style-type: decimal">
+<li><p>We want to explore the time difference between making an appointment and actually having an appointment a little more. Using the <code>lubridate()</code> package extract Year-Month-Day from <code>ScheduledDay</code> and write this date information (without time) into a new variable <code>ScheduledDate</code> (Hint: <code>date()</code> ). Convert <code>AppointmentDay</code> to the date class, too. We want to get the distribution of time between scheduled appointment date and actual appointment day - write this difference (in days) in a new variable called <code>time_diff</code>. There are some appointments with a negative <code>time_diff</code>. We assume that these are based on typos - remove them from the dataset.</p></li>
+<li><p>Categorize lead days - we now want to categorize the <code>time_diff</code> variable into a new varialbe called <code>lead_days</code> with five categories: ‘0 days’, ‘1-2 days’, ‘3-7 days’, ‘8-31 days’, ‘32+ days’.</p></li>
+</ol>
+</div>
+<div id="d---adding-the-weather" class="section level3">
+<h3>D - Adding the weather</h3>
+<ol style="list-style-type: decimal">
+<li><p>Weather could have a strong influence for going to the doctor. The <code>weather</code> tibble provide information about the weather in Vitoria.We will join the two datasets adding <code>RH2M</code>, <code>T2M</code> and <code>PRECTOT</code> from <code>weather</code> to <code>appointments</code>. You want to join these by <code>AppointmentDay</code> (from <code>appointements</code>) and <code>YYYYMMDD</code> (from <code>weather</code>) - Hint: <code>left_join()</code>. Call the new dataset: <code>full_df</code>.</p></li>
+<li><p>Check that you <code>full_df</code> dataframe has the following dimension:</p></li>
+</ol>
+</div>
+<div id="e---predicting" class="section level3">
+<h3>E - Predicting</h3>
+<ol style="list-style-type: decimal">
+<li><p>From the given list of parameters, such as gender, time difference between making an appointment and the actual appointment, demographic variables, the weather on the appointment day build two different regression models that predict whether a patient will be a no show for his/her appointment.</p></li>
+<li><p>Explain why you ended up with your final model.</p></li>
+</ol>
+</div>
+<div id="f---presenting-the-results" class="section level3">
+<h3>F - Presenting the results</h3>
+<ol style="list-style-type: decimal">
+<li><p>Generate a new file with <code>File - R Markdown - Document</code> (with the default: HTML). Save this file to your <code>TheRBootcamp</code> folder.</p></li>
+<li><p>Document your 3 central insights out of this dataset. Describe what the insights are with your own words and document them with figures, statistics and tables produced with R code in your Markdown file <code>FinalReport_GROUPNAME.html</code>.</p></li>
+<li><p>Generate a new file with <code>File - R Markdown - Presentation</code> (with the default: HTML Isoslides). Save this file to your <code>TheRBootcamp</code> folder <code>FinalPresentation_GROUPNAME.html</code>.</p></li>
+<li><p>Prepare a 5 minute presentation documenting your approach to the Document your 3 central insights out of this dataset. Describe what the insights are with your own words and document them with figures, statistics and tables produced with R code in your Markdown file.</p></li>
+</ol>
+</div>
+</div>
+<div id="datasets" class="section level2">
+<h2>Datasets</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">File</th>
+<th align="left">Rows</th>
+<th align="left">Columns</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="1_Data/medical_noshows.csv">medical_noshows.csv</a></td>
+<td align="left">110527</td>
+<td align="left">14</td>
+<td align="left">Patient shows</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="1_Data/weather.csv">wheather.csv</a></td>
+<td align="left">41</td>
+<td align="left">10</td>
+<td align="left">Weather data for Vitoria Brasil</td>
+</tr>
+</tbody>
+</table>
+<div id="variables-in-medical_noshows.csv-appointments" class="section level3">
+<h3>Variables in medical_noshows.csv (appointments)</h3>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">PatientId</td>
+<td align="left">ID of a patient</td>
+</tr>
+<tr class="even">
+<td align="left">AppointmentID</td>
+<td align="left">ID for each appointment</td>
+</tr>
+<tr class="odd">
+<td align="left">Gender</td>
+<td align="left">Male or Female</td>
+</tr>
+<tr class="even">
+<td align="left">AppointmentDay</td>
+<td align="left">The day of the actual appointment, when patients have to visit the doctor</td>
+</tr>
+<tr class="odd">
+<td align="left">ScheduledDay</td>
+<td align="left">The day someone called or registered the appointment, this should be before the appointment</td>
+</tr>
+<tr class="even">
+<td align="left">Age</td>
+<td align="left">How old is the patient</td>
+</tr>
+<tr class="odd">
+<td align="left">Neighbourhood</td>
+<td align="left">Where the patient was born</td>
+</tr>
+<tr class="even">
+<td align="left">Hipertension</td>
+<td align="left">True or False</td>
+</tr>
+<tr class="odd">
+<td align="left">Diabetes</td>
+<td align="left">True or False</td>
+</tr>
+<tr class="even">
+<td align="left">Alcoholism</td>
+<td align="left">True or False</td>
+</tr>
+<tr class="odd">
+<td align="left">Handcap</td>
+<td align="left">Hanicapped - level 1:4, 1 lowest level</td>
+</tr>
+<tr class="even">
+<td align="left">SMS_received</td>
+<td align="left">True: 1 or more messages sent to the patient</td>
+</tr>
+<tr class="odd">
+<td align="left">No-show</td>
+<td align="left">1: No, 2: Yes</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="variables-in-brazil_wheather.csv-weather" class="section level3">
+<h3>Variables in brazil_wheather.csv (weather)</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">LON</td>
+<td align="left">Longitude</td>
+</tr>
+<tr class="even">
+<td align="left">LAT</td>
+<td align="left">Latitude</td>
+</tr>
+<tr class="odd">
+<td align="left">YEAR</td>
+<td align="left">Year</td>
+</tr>
+<tr class="even">
+<td align="left">MM</td>
+<td align="left">Month</td>
+</tr>
+<tr class="odd">
+<td align="left">DD</td>
+<td align="left">Day</td>
+</tr>
+<tr class="even">
+<td align="left">DOY</td>
+<td align="left">Day of Year</td>
+</tr>
+<tr class="odd">
+<td align="left">YYYYMMDD</td>
+<td align="left">Date</td>
+</tr>
+<tr class="even">
+<td align="left">RH2M</td>
+<td align="left">Relative Humidity at 2 Meters</td>
+</tr>
+<tr class="odd">
+<td align="left">T2M</td>
+<td align="left">Temperature at 2 Meters</td>
+</tr>
+<tr class="even">
+<td align="left">PRECTOT</td>
+<td align="left">Precipitation</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

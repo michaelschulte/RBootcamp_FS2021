@@ -1,0 +1,249 @@
+---
+title: "Final Project: Medicine"
+subtitle: "Datascience with R"
+author: "Covid-Boot-Camp & Arr-PiRaten" 
+output:
+  html_document:
+    css: practical.css
+    self_contained: no
+
+---
+
+```{r setup, echo = FALSE, warning=F, message=F}
+knitr::opts_chunk$set(comment = NA, 
+                      fig.width = 6, 
+                      fig.height = 6,
+                      fig.align = 'center',
+                      echo = FALSE, 
+                      eval = FALSE, 
+                      warning = FALSE,
+                      message = FALSE)
+
+options(digits = 3)
+library(tidyverse)
+library(lubridate)
+library(ggmap)
+```
+
+<p align="center">
+<img width="80%" src="https://meetville.com/blog/wp-content/uploads/2015/01/imgonline-com-ua-Resize-quU8YQt7HJLDQEjt.jpg" margin=0><br>
+<font style="font-size:10px">adapted from [meetville.com](https://meetville.com/blog/wp-content/uploads/2015/01/imgonline-com-ua-Resize-quU8YQt7HJLDQEjt.jpg)</font>
+</p>
+
+
+# {.tabset .tabset-fade}
+
+## Overview
+
+This is your final assignment in this course. You will use all we learned during the course to understand, arrange, analyse, visualise and report on a new dataset about medical appointments.
+
+What is the dataset about? There is a large number of medical appointments where patients end up canceling or simply do not show up. This practise comes with costs to the medical system - in this assignment we will try to understand what drives patients not to show up in a sample of medical appointments from Vitoria, Espirito Santo, Brazil.
+
+You should (at least) complete the following tasks
+
+1. load the two .csv files you find in `Datasets` into R objects.
+2. Work through A:D cleaning, visualising and fusioning the two tibbles.
+3. Run statistical models (in E) predicting whether a patient is a no-show for an appointment.
+4. Prepare two documents (with code examples) documenting your work - a .html document and a .html presentation (you are expected to use the slides from this presentation to talk us through what you did and what you found out).
+
+## Tasks
+
+### A - Setup
+
+1. Open your `therbootcamp` R project. It should already have the folders `1_Data` and `2_Code`. Make sure that the data files listed in the `Datasets` section above are in your `1_Data` folder.
+
+2. Open a new R script. At the top of the script, using comments, write your name and the date. Save it as a new file called `final_project.R` in the `therbootcamp` folder.  
+
+3. Using `library()` load the set of packages for this practical listed in the packages section above.
+
+4. Read the `appointments.csv` and the `weather.csv` files into two objects called `appointments` and `weather` respectively. Check out the content of the two datasets in Overview and Datasets above.
+
+```{r}
+appointments <- read_csv('1_Data/medical_noshows.csv')
+weather <- read_csv('1_Data/weather.csv')
+```
+
+### B - Initial data inspection
+
+1. We want to first see what variables are in the dataset (check out Datasets above) and whether there are variables with impossible values. Generate an overview of all variables with minimum and maximum values, means and medians for all appropriate numeric variables. Correct the variable(s) that stand out and provide a rational for what you did.
+Also rename Hipertension into Hyptertension and Handcap into Handicap.
+
+```{r}
+summary(appointments)
+
+appointments <-
+appointments %>%
+  filter(Age >= 0) %>%
+  rename('Hypertension' = 'Hipertension',
+         'Handicap' = 'Handcap')
+```
+
+2. How many patients showed up for their appointment(s), how many did not?
+
+```{r}
+table(appointments$NoShow)
+```
+
+3. How many patients are female, how many are male? Who (PatientID) has the most number of appointments? Split that analysis (most number of appointments) for gender.
+
+```{r}
+  appointments %>%
+    group_by(PatientId,Gender) %>%
+    count(unique(PatientId)) %>%
+    arrange(desc(n))
+```
+
+4. Generate a simple plot with the age of all patients. 
+
+```{r}
+  ggplot(appointments, aes(PatientId, Age)) +
+  geom_point(alpha = 0.5) 
+```
+
+5. Summarise the number of particiants per age in years (range: ```range(appointments$Age)```) for the whole `appointments` dataset. Generate a line graph showing the distribution of patients per age. Now split this graph into two rows with  Female|Male and two columns with Show|No-Show - this will give you an age distribution with four panels.
+
+```{r}
+  appointments %>%
+  group_by(Age, Gender, NoShow) %>%
+  summarise(size = n()) %>%
+  ggplot(., aes(Age, size)) +
+  geom_line() +
+  facet_grid(Gender ~ NoShow)
+```
+
+6. Generate a new variable `age_group` which includes four groups [1:4] where 1: 'children' between 0 and 18 years, 2:  'young adults' between 19 and 30 years, 3: 'adults' (31:50 years) and 4 'old adults' (51:max(Age)) 
+
+
+```{r}
+  appointments <-
+  appointments %>%
+    mutate(age_group = case_when(Age %in% c(0:18) ~ 'children',
+                                 Age %in% c(19:30) ~ 'young adults',
+                                 Age %in% c(31:50) ~ 'adults',
+                                 Age %in% c(51:max(Age)) ~ 'old adults'))
+```
+
+
+7. Plot the four age groups on the x-axis and the size of the groups on the y-axis (call this variable: number_cases). Connect the points with a line graph, separated for gender. Facet the graph into two parts, with `noshow` 'No' on top and `nowshow` 'Yes' on bottom. So ultimately you should have 4 lines, 2 in each panel. 
+
+
+```{r}
+  appointments %>%
+  group_by(age_group, Gender, NoShow) %>%
+  summarise(number_cases = n(),
+            size = n()) %>%
+  ggplot(., aes(age_group, size, colour = Gender, group = Gender)) +
+  geom_line() +
+  facet_grid(NoShow ~ .)
+```
+
+### C - Playing with time
+
+1. We want to explore the time difference between making an appointment and actually having an appointment a little more. Using the `lubridate()` package extract Year-Month-Day from `ScheduledDay` and write this date information (without time) into a new variable `ScheduledDate` (Hint: `date()` ). Convert `AppointmentDay` to the date class, too. We want to get the distribution of time between scheduled appointment date and actual appointment day - write this difference (in days) in a new variable called `time_diff`. There are some appointments with a negative `time_diff`. We assume that these are based on typos - remove them from the dataset.
+
+```{r}
+appointments <- 
+appointments %>%
+  mutate(ScheduledDate = date(ScheduledDay)) %>%
+  mutate(AppointmentDay = date(AppointmentDay)) %>%
+  mutate(time_diff = AppointmentDay - ScheduledDate) %>%
+  filter(!time_diff < 0)
+
+dim(appointments)
+```
+
+2. Categorize lead days - we now want to categorize the `time_diff` variable into a new varialbe called `lead_days` with five categories: '0 days', '1-2 days', '3-7 days', '8-31 days', '32+ days'.
+
+```{r}
+appointments <- 
+appointments %>%
+  mutate(lead_days = case_when(time_diff == 0 ~ '0 days',
+                               time_diff %in% c(1:2) ~ '1-2 days',
+                               time_diff %in% c(3:7) ~ '3-7 days',
+                               time_diff %in% c(8:31) ~ '8-31 days',
+                               time_diff %in% c(32:max(time_diff)) ~ '32+ days'))
+```
+
+
+### D - Adding the weather
+
+1. Weather could have a strong influence for going to the doctor. The `weather` tibble provide information about the weather in Vitoria.We will join the two datasets adding `RH2M`, `T2M` and `PRECTOT` from `weather` to `appointments`. You want to join these by `AppointmentDay` (from `appointements`) and `YYYYMMDD` (from `weather`) - Hint: `left_join()`. Call the new dataset: `full_df`.
+
+```{r}
+weather <- 
+weather %>%
+  select('YYYYMMDD', 'RH2M', 'T2M', 'PRECTOT')
+
+full_df <- 
+appointments %>%
+  left_join(weather, by = c('AppointmentDay' = 'YYYYMMDD'))
+
+```
+
+2. Check that you `full_df` dataframe has the following dimension:
+
+```{r}
+dim(full_df)
+```
+
+### E - Predicting
+
+1. From the given list of parameters, such as gender, time difference between making an appointment and the actual appointment, demographic variables, the weather on the appointment day build two different regression models that predict whether a patient will be a no show for his/her appointment.
+
+2. Explain why you ended up with your final model.
+
+### F - Presenting the results
+
+1. Generate a new file with `File - R Markdown - Document` (with the default: HTML). Save this file to your `TheRBootcamp` folder. 
+
+2. Document your 3 central insights out of this dataset. Describe what the insights are with your own words and document them with figures, statistics and tables produced with R code in your Markdown file `FinalReport_GROUPNAME.html`.   
+
+3. Generate a new file with `File - R Markdown - Presentation` (with the default: HTML Isoslides). Save this file to your `TheRBootcamp` folder `FinalPresentation_GROUPNAME.html`. 
+
+4. Prepare a 5 minute presentation documenting your approach to the Document your 3 central insights out of this dataset. Describe what the insights are with your own words and document them with figures, statistics and tables produced with R code in your Markdown file.
+
+## Datasets
+
+```{r, eval = TRUE, message = FALSE}
+library(tidyverse)
+appointments <- read_csv('1_Data/medical_noshows.csv')
+weather <- read_csv('1_Data/weather.csv')
+```
+
+|File | Rows | Columns | Description |
+|:----|:-----|:------|:-----------------------------------------|
+|[medical_noshows.csv](1_Data/medical_noshows.csv) | 110527 | 14| Patient shows|no-shows for various cities in Brasil |
+|[wheather.csv](1_Data/weather.csv) | 41 | 10| Weather data for Vitoria Brasil |
+
+### Variables in medical_noshows.csv (appointments)
+
+|Variable | Description |
+|:--------|:-----------------------------|
+|PatientId | ID of a patient |
+|AppointmentID | ID for each appointment |
+|Gender | Male or Female|
+|AppointmentDay | The day of the actual appointment, when patients have to visit the doctor |
+|ScheduledDay | The day someone called or registered the appointment, this should be before the appointment|
+|Age | How old is the patient|
+|Neighbourhood | Where the patient was born|
+|Hipertension | True or False |
+|Diabetes | True or False |
+|Alcoholism | True or False |
+|Handcap | Hanicapped - level 1:4, 1 lowest level |
+|SMS_received | True: 1 or more messages sent to the patient|
+|No-show | 1: No, 2: Yes|
+
+### Variables in brazil_wheather.csv (weather)
+
+|Variable | Description |
+|:--------|:-----------------------------|
+|LON  |Longitude|
+|LAT  |Latitude|
+|YEAR  |Year| 
+|MM    |Month|
+|DD   |Day|
+|DOY |Day of Year|
+|YYYYMMDD|Date|    
+|RH2M   |Relative Humidity at 2 Meters|
+|T2M |Temperature at 2 Meters|
+|PRECTOT|Precipitation|

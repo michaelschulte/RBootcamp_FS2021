@@ -26,7 +26,7 @@ output:
 || Plotting I | <!---[slides](_sessions/PlottingI/PlottingI.html)---> | <!---[practical](_sessions/PlottingI/PlottingI_practical.html)---><!---, [solutions](_sessions/PlottingI/PlottingI_practical_solutions.html)--->| 
 || Plotting II | <!---[slides](_sessions/PlottingII/PlottingII.html)---> | <!---[practical](_sessions/PlottingII/PlottingII_practical.html)---><!---, [solutions](_sessions/PlottingII/PlottingII_practical_solutions.html)--->|
 |16.10.| Recap | | | 
-|| Competition | <!---[slides](_sessions/PlottingIII/PlottingIII.html)---> | <!---[practical](_sessions/PlottingI/PlottingIII_practical.html)---><!---, [solutions](_sessions/PlottingIII/PlottingIII_practical_solutions.html)--->| |
+|| Plotting III + Competition | <!---[slides](_sessions/PlottingIII/PlottingIII.html)---> | <!---[competition](_sessions/PlottingIII/Competition.html)---><!---, [solutions](_sessions/PlottingIII/PlottingIII_practical_solutions.html)--->| |
 || Intro Projekte||||
 |23.10.| Recap | | | 
 || Lineare Modelle |<!--- [slides](_sessions/LinearModelsI/LinearModelsI.html)---> | <!---[practical](_sessions/LinearModelsI/LinearModelsI_practical.html)---><!---, [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)--->| |
@@ -40,8 +40,6 @@ output:
 Upload bitte in der Form: Gruppe_Practical#.R
 
 [Practical Upload](https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5)
-
-
 
 <!---
 

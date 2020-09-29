@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+<meta name="author" content="We-R-lost &amp; R-Pandemi" />
+
+
+<title>Final Project: Clinical</title>
+
+<script src="FinalProject_Clinical_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="FinalProject_Clinical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="FinalProject_Clinical_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="FinalProject_Clinical_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="FinalProject_Clinical_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="FinalProject_Clinical_files/navigation-1.1/tabsets.js"></script>
+<link href="FinalProject_Clinical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="FinalProject_Clinical_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Final Project: Clinical</h1>
+<h3 class="subtitle">Datascience with R</h3>
+<h4 class="author">We-R-lost &amp; R-Pandemi</h4>
+
+</div>
+
+
+<p align="center">
+<img width="100%" src="image/clinical.jpg" margin=0><br> <font style="font-size:10px">adapted from <a href="http://www.formerfda.com/wp-content/uploads/2014/08/clinical-trials.jpg">formerfda.com</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>In this case study, we will look at the results of a clinical trial exploring the effectiveness of a new medication called dimarta on reducing histamine in patients with a disease that leads to chronically high histamine levels. In the study, 300 patients were assigned to one of three different treatment arms. One arm was given a placebo. The other arm was given adiclax – the standard of care for the disease. Finally, the third arm was given dimarta. There were two main measures of interest in the trial: patient’s changes in histamine from the beginning to the end of the trial, and their change in quality of life (measured by self report).</p>
+<p>In addition to exploring the effects of the three medications, the researchers are interested in the extent to which three different biomarkers, dw, ms, and np, are correlated with therapeutic outcomes. In other words, to patients that express one or more of these biomarkers have better, or worse, outcomes that those that do not express these biomarkers?</p>
+</div>
+<div id="tasks" class="section level2">
+<h2>Tasks</h2>
+<div id="a---getting-setup" class="section level3">
+<h3>A - Getting Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Open your <code>TheRBootcamp</code> R project. It should already have the folders <code>1_Data</code> and <code>2_Code</code>.</p></li>
+<li><p>Open a new R script. At the top of the script, using comments, write your name and the date. Save it as a new file called <code>FinalProject_Dimarta.R</code> in the <code>TheRBootcamp</code> folder.</p></li>
+<li><p>At the top of the script load the <code>tidyverse</code> package.</p></li>
+</ol>
+</div>
+<div id="b---data-io" class="section level3">
+<h3>B - Data I/O</h3>
+<ol style="list-style-type: decimal">
+<li><p>Using <code>read_csv()</code>, load the <code>dimarta_trial.csv</code>, <code>dimarta_demographics.csv</code>, and <code>dimarta_biomarker.csv</code> datasets as <em>three</em> new objects called <code>trial_df</code>, <code>demographics_df</code>, and <code>biomarker_df</code>.</p></li>
+<li><p>Get a first impression of the objects you just created by exploring them with a mixture of the <code>View()</code>, <code>head()</code>, <code>names()</code>, and <code>str()</code> functions. Were they all loaded correctly?</p></li>
+</ol>
+</div>
+<div id="c---data-wrangling" class="section level3">
+<h3>C - Data Wrangling</h3>
+<ol style="list-style-type: decimal">
+<li><p>Change the name of the column <code>arm</code> in the <code>trial_df</code> data to <code>StudyArm</code>.</p></li>
+<li><p>Using the <code>table()</code> function, look at the values of the <code>StudyArm</code> column in <code>trial_df</code>. You’ll notice the values are 1, 2, and 3. Using <code>mutate()</code> and <code>case_when()</code> change these values to the appropriate names of the study arms (look at the variable descriptions to see which is which!)</p></li>
+<li><p>In the <code>demographics_df</code> data, you’ll see that gender is coded as 0 and 1. Using <code>mutate()</code> create a <em>new</em> column in <code>demographics_df</code> called <code>gender_c</code> that shows gender as a string, where 0 = “male”, and 1 = “female”.</p></li>
+<li><p>Now let’s create a new object called <code>dimarta_df</code> that combines data from <code>trial_df</code> and <code>demographics_df</code>. To do this, use <code>left_join()</code> to combine the <code>trial_df</code> data with the <code>demographics_df</code> data. This will merge the two datasets so you can have the study results and demographic data in the same dataframe. Make sure to assign the result to a new object called <code>dimarta_df</code></p></li>
+<li><p>You’ll notice that the <code>biomarker_df</code> dataframe is in the ‘long’ format, where each row is a patient’s biomarker result. Making use of the <code>spread()</code> function, create a new dataframe called <code>biomarker_wide_df</code> where each row is a patient, and the results from different biomarkers are in different columns. When you finish, look at <code>biomarker_wide_df</code> to see how it looks!</p></li>
+<li><p>Now, using the <code>left_join</code> function, add the <code>biomarker_wide_df</code> data to the <code>dimarta_df</code> data! Now you should have all of the data in a single dataframe called <code>dimarta_df</code></p></li>
+<li><p>View <code>dimarta_df</code> to make sure the data look correct! The data should have one row for each patient, and 13 separate columns, including <code>dw</code>, <code>ms</code>, and <code>np</code></p></li>
+<li><p>Using the <code>mean()</code> function, calculate the mean age of all patients.</p></li>
+<li><p>Create a table showing how many male and female patients were in the trial.</p></li>
+<li><p>Now, using similar code, find out how many patients were assigned to each study arm.</p></li>
+<li><p>Find out how many men and women were assigned to each study arm (Hint: You can use very similar code to what you used above, just add a second grouping variable!)</p></li>
+<li><p>Add a new column to the <code>dimarta_df</code> data called <code>histamine_change</code> that shows the <em>change</em> in patient’s histamine levels from the start to the end of the trial (Hint: use <code>mutate()</code> and just subtract <code>histamine_start</code> from <code>histamine_end</code>!)</p></li>
+<li><p>Add a new column to <code>dimarta_df</code> called <code>qol_change</code> that shows the change in patient’s quality of life.</p></li>
+<li><p>Calculate the percentage of patients who tested positive for each of the three biomarkers (Hint: If you calculate the <code>mean()</code> of a logical vector, you will get the percentage of TRUE values!)</p></li>
+<li><p>Were there different distributions of age in the different trial sites? To answer this, separately calculate the mean and standard deviations of patient ages in each site. (Hint: group the data by <code>site</code>, then calculate two separate summary statistics: <code>age_mean = mean(age)</code>, and <code>age_sd = sd(age)</code>.</p></li>
+<li><p>Calculate the mean change in histamine results separately for each study site</p></li>
+<li><p>Calculate the mean change in histamine results (<code>histamine_change</code>) for each study arm. Which study arm had a largest decrease in histamine?</p></li>
+<li><p>Calculate the mean change in quality of life (<code>qol_change</code>) for each study arm. Do the results match what you found with the histamine results?</p></li>
+</ol>
+</div>
+<div id="d---plotting" class="section level3">
+<h3>D - Plotting</h3>
+<ol style="list-style-type: decimal">
+<li><p>Create boxplots showing the relationship between study arm and histamine change.</p></li>
+<li><p>Try using <code>geom_jitter()</code> to add the raw points to the plot</p></li>
+<li><p>Create the same plot as above, but instead of analysing study arm, try analysing gender. (Tip! convert gender to a factor with <code>factor(gender)</code>) What do you find? Did one gender have better histamine improvements than the other?</p></li>
+<li><p>Now create the same plot but show both gender and study arm in the same plot. One way to do this would be to color the points by gender!</p></li>
+<li><p>Is there a correlation between patient’s starting and ending histamiine levels? Create a scatterplot with a regression line to find out!</p></li>
+<li><p>Now create the same plot as above, but have different colored points for different study arms (but only one regression line).</p></li>
+<li><p>Instead of having different study arms as different colored points, create another plot using <code>facet_wrap()</code> to have different study arms in different plotting panels.</p></li>
+</ol>
+</div>
+<div id="e---statistics" class="section level3">
+<h3>E - Statistics</h3>
+<ol style="list-style-type: decimal">
+<li><p>Create a regression model predicting final histamine levels as a function of all variables in the dataset that make clinical sense to include (as far as you can judge this). Call it <code>full_glm</code>.</p></li>
+<li><p>Explore the object with <code>summary()</code>, <code>tidy()</code> (part of the <code>broom</code> package), and <code>names()</code>. Which variables predict final histamine levels?</p></li>
+<li><p>Add the residuals from this model as a new column in your data called <code>residuals_full</code></p></li>
+<li><p>Plot the residuals from the regression as a histogram (hint: you can find the residuals in your regression object). How do they look?</p></li>
+<li><p>Add the absolute value of the residuals from the model as a new column in your data called <code>residuals_abs_full</code></p></li>
+<li><p>Plot the absolute value of the residuals as a histogram. How do these look?</p></li>
+<li><p>What is the mean value of the absolute value of this residuals?</p></li>
+<li><p>Now create a regression model predicting histamine change based <em>only</em> on the study arm. Call it <code>arm_glm</code>. Then follow the steps above to add the residuals (original and absolute) from this model to your dataframe. Call them <code>residuals_arm</code> and <code>residuals_abs_arm</code>.</p></li>
+<li><p>Calculate the mean of the raw and absolute residuals from your <code>arm_glm</code> model. How do they compare to your <code>full_glm</code> model? What does this mean?</p></li>
+</ol>
+</div>
+<div id="f---presenting-the-results" class="section level3">
+<h3>F - Presenting the results</h3>
+<ol style="list-style-type: decimal">
+<li><p>Generate a new file with <code>File - R Markdown - Document</code> (with the default: HTML). Save this file to your <code>TheRBootcamp</code> folder.</p></li>
+<li><p>Document your 3 central insights out of this dataset. Describe what the insights are with your own words and document them with figures, statistics and tables produced with R code in your Marddown file <code>FinalReport_GROUPNAME.html</code>.</p></li>
+<li><p>Generate a new file with <code>File - R Markdown - Presentation</code> (with the default: HTML Isoslides). Save this file to your <code>TheRBootcamp</code> folder <code>FinalPresentation_GROUPNAME.html</code>.</p></li>
+<li><p>Prepare a 5 minute presentation documenting your approach to the Document your 3 central insights out of this dataset. Describe what the insights are with your own words and document them with figures, statistics and tables produced with R code in your Marddown file.</p></li>
+</ol>
+</div>
+</div>
+<div id="datasets" class="section level2">
+<h2>Datasets</h2>
+<table>
+<colgroup>
+<col width="8%" />
+<col width="10%" />
+<col width="11%" />
+<col width="70%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">File</th>
+<th align="left">Rows</th>
+<th align="left">Columns</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/BaselRBootcamp_2018July/master/_sessions/_data/baselrbootcamp_data/dimarta_trial.csv">dimarta_trial.csv</a></td>
+<td align="left">300</td>
+<td align="left">6</td>
+<td align="left">Key DIMARTA trial outcomes</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/BaselRBootcamp_2018July/master/_sessions/_data/baselrbootcamp_data/dimarta_biomarker.csv">dimarta_biomarker.csv</a></td>
+<td align="left">900</td>
+<td align="left">3</td>
+<td align="left">Biomarker status’ for 3 different biomarkers for each patient.</td>
+</tr>
+<tr class="odd">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/BaselRBootcamp_2018July/master/_sessions/_data/baselrbootcamp_data/dimarta_demographics.csv">dimarta_demographics.csv</a></td>
+<td align="left">300</td>
+<td align="left">5</td>
+<td align="left">Demographic information for each patient</td>
+</tr>
+</tbody>
+</table>
+<p>Column Descriptions</p>
+<p><strong>dimarta_trial.csv</strong></p>
+<table>
+<caption>Table1. <code>dimarta_trial.csv</code> variable description:</caption>
+<colgroup>
+<col width="32%" />
+<col width="67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">PatientID</td>
+<td align="left">Unique patient id</td>
+</tr>
+<tr class="even">
+<td align="left">arm</td>
+<td align="left">Treatment arm, either 1 = placebo, 2 = adiclax (the standard of treatment), or 3 = dimarta (the target drug)</td>
+</tr>
+<tr class="odd">
+<td align="left">histamine_start</td>
+<td align="left">histamine value at the start of the trial</td>
+</tr>
+<tr class="even">
+<td align="left">histamine_end</td>
+<td align="left">histamine value at the end of the trial</td>
+</tr>
+<tr class="odd">
+<td align="left">qol_start</td>
+<td align="left">Patient’s rated quality of life at the start of the trial</td>
+</tr>
+<tr class="even">
+<td align="left">qol_end</td>
+<td align="left">Patient’s rated quality of life at the end of the trial</td>
+</tr>
+</tbody>
+</table>
+<p><strong>dimarta_demographics.csv</strong></p>
+<table>
+<caption>Table2. <code>dimarta_demographics.csv</code> variable description:</caption>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">PatientID</td>
+<td align="left">Unique patient id</td>
+</tr>
+<tr class="even">
+<td align="left">age</td>
+<td align="left">Patient age</td>
+</tr>
+<tr class="odd">
+<td align="left">gender</td>
+<td align="left">Patient gender, 0 = male, 1 = female</td>
+</tr>
+<tr class="even">
+<td align="left">site</td>
+<td align="left">Site where the clinical trial was conducted</td>
+</tr>
+<tr class="odd">
+<td align="left">diseasestatus</td>
+<td align="left">Status of the patient’s disease at start of trial</td>
+</tr>
+</tbody>
+</table>
+<p><strong>dimarta_biomarker.csv</strong></p>
+<table>
+<caption>Table3. <code>dimarta_biomarker.csv</code> variable description:</caption>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">PatientID</td>
+<td align="left">Unique patient id</td>
+</tr>
+<tr class="even">
+<td align="left">Biomarker</td>
+<td align="left">One of three biomarkers: dw, ms, and np</td>
+</tr>
+<tr class="odd">
+<td align="left">BiomarkerStatus</td>
+<td align="left">Result of the test for the biomarker.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

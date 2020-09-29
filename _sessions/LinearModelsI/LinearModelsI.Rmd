@@ -291,7 +291,7 @@ ggplot(d,
 
 ---
 
-# Einfache lineare regression
+# Einfache lineare Regression
 
 .pull-left4[
 

@@ -231,13 +231,6 @@ ggplot(data = mcdonalds,
 
 2. Ergänze mit `labs()` einen angemessenen Titel (`title`) und Untertitel (`subtitle`).   
 
-```{r, eval = FALSE, echo = TRUE, fig.width = 8, fig.height = 3}
-ggplot(data = mcdonalds, aes(x = XX, y = XX, fill = XX)) +
-  geom_violin() +
-  labs(title = "XX",
-       subtitle = "XX")
-```
-
 ```{r, fig.width = 8, fig.height = 3}
 ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +
   geom_violin() +
@@ -246,14 +239,6 @@ ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +
 ```
 
 3. Ergänze `guides(fill = FALSE)`, so dass keine Legende gezeigt wird. 
-
-```{r, eval = FALSE, echo = TRUE, fig.width = 8, fig.height = 3}
-ggplot(data = mcdonalds, aes(x = XX, y = XX, fill = XX)) +
-  geom_violin() +
-  labs(title = "XX",
-       subtitle = "XX") + 
-  guides(fill = FALSE)
-```
 
 ```{r, fig.width = 8, fig.height = 3}
 ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +

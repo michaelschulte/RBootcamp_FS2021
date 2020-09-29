@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Reporting</title>
+
+<script src="Reporting_practical_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Reporting_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Reporting_practical_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Reporting_practical_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Reporting_practical_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Reporting_practical_files/navigation-1.1/tabsets.js"></script>
+<link href="Reporting_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Reporting_practical_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Reporting</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center">
+<img width="100%" src="image/reporting.png" margin=0><br> <font style="font-size:10px">adapted from <a href="https://www.dertreasurer.de/news/software-it/neue-technologien-helfen-beim-reporting-60631/">dertreasurer.de</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>By the end of this practical you will know how to:</p>
+<ol style="list-style-type: decimal">
+<li>Create a new R Markdown file (<code>.Rmd</code>)</li>
+<li>“Knit” an R Markdown file to an <code>.html</code> or <code>.pdf</code> report</li>
+<li>Format text using formatting tags</li>
+<li>Create code chunks</li>
+<li>Add plots and tables</li>
+<li>Include code output in sentences with inline chunks</li>
+</ol>
+</div>
+<div id="tasks" class="section level2">
+<h2>Tasks</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Open your <code>RBootcamp</code> R project. It should already have the folders <code>1_Data</code> and <code>2_Code</code>. Make sure that the data files listed in the Datasets section above are in your <code>2_Data</code> folder</p></li>
+<li><p>Because R Markdown looks quite a bit different from standard R code, the best way to look at examples is to see a new R Markdown document in action. In RStudio, click File – New File – R Markdown</p></li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/rmarkdown_ss_A.png" width="60%" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Give the document a title and an author. For the output format, select HTML (the default). Click Ok!</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/rmarkdown_ss_B.png" width="60%" style="display: block; margin: auto;" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>A new file that looks like this should open up. This is your first R Markdown document!</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/rmarkdown_ss_C.png" width="60%" style="display: block; margin: auto;" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Save your markdown file <em>in your main project directory</em> (not a sub-folder – you’ll put it there later!) under the name <code>dynamicreports_practical.Rmd</code></p></li>
+<li><p>Now <em>knit</em> your document to an HTML file. To do this, click the <em>knit</em> button (or use the Command + Shift + K shortcut)</p></li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/rmarkdown_ss_D.png" width="60%" style="display: block; margin: auto;" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li>Now you should see your final, HTML document! Scroll up and down the document and see how she looks!</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/rmarkdown_ss_E.png" width="60%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="b---heres-your-goal" class="section level3">
+<h3>B - Here’s your goal!</h3>
+<p>In this practical you will create as much of <a href="https://michaelschulte.github.io/RBootcamp/_sessions/Reporting/Reporting_answers.html">this html document</a> as you can! Open the document and keep it open in a separate window as you work through the practical!</p>
+</div>
+<div id="c---load-packages-data-and-set-default-chunk-options" class="section level3">
+<h3>C - Load packages, data and set default chunk options</h3>
+<ol style="list-style-type: decimal">
+<li>The first chunk in your document already has the label <code>setup</code>. This is your setup chunk. This is a good place to load your packages and import your data. Inside of this chunk, write the comment <code># Load Packages -------------</code>. Then, using the <code>library()</code> function, load the packages listed in the <code>Packages</code> section above.</li>
+</ol>
+<p><img src="https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/setup_chunk.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Knit your document! Make sure you don’t get any errors!</p></li>
+<li><p>Now it’s time to load your datafiles. In the <em>same</em> <code>setup</code> chunk, load each of the data files listed in the <code>Datasets</code> section.</p></li>
+</ol>
+<pre class="r"><code># --- Load packages
+library(XX)
+library(XX)
+
+# --- Load data
+XXX &lt;- read_csv()
+XXX &lt;- read_csv()</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Knit your document! Make sure you don’t get any errors!</p></li>
+<li><p>Now it’s time to change some of the <em>default</em> chunk options. <em>Inside of your setup code chunk</em> change the existing values of <code>knitr::opts_chunk$set</code> to the following:</p></li>
+</ol>
+<pre class="r"><code># INCLUDE ALL OF THIS CODE IN YOUR FIRST &#39;setup&#39; CHUNK!
+
+knitr::opts_chunk$set(fig.width = 6,        # Figure width (in)
+                      fig.height = 4,       # Figure height (in)
+                      echo = FALSE,          # Repeat code
+                      eval = TRUE,          # Evaluate chunks
+                      message = FALSE,      # Don&#39;t print messages
+                      warning = FALSE,      # Don&#39;t print warnings
+                      fig.align = &#39;center&#39;) # Center figures
+
+options(digits = 2)  # Round all output to 2 digits</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Knit your document! Make sure you see an output!</li>
+</ol>
+</div>
+<div id="d---add-formatted-text-and-an-image" class="section level3">
+<h3>D - Add formatted text and an image</h3>
+<ol style="list-style-type: decimal">
+<li>Below your last markdown chunk, write the necessary text and Markdown tags to create the following sentence. Be sure to create italic text using single astricies <em>*italic*</em> and and bold text using two astricies **<strong>bold</strong>**</li>
+</ol>
+<ul>
+<li>In this practical, I will analyse two datasets and show reproducible results in a dynamic document created in R Markdown. R Markdown is great because I can integrate R code directly into my document, and easily use <em>italics</em> and <strong>bold</strong> using formatting tags.</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Create a new third level header with the text “Overview” using three hashtags <code>### Overview</code></p></li>
+<li><p>Knit the document!</p></li>
+<li><p>Create a new code chunk by either clicking the “Insert - R” button, or by using the “Command + Option + I”" shortcut on Mac</p></li>
+<li><p>Now it’s time to add an image to your document! In the chunk you just created, use the following template to include an image of a burger in your document. You can find the image here: <a href="https://dwulff.github.io/Intro2R_Unibe/_sessions/PlottingI/image/burgers.jpg">link</a>. (Tip: Use right click and copy link address to copy the link)</p></li>
+</ol>
+<pre class="r"><code># Include a buger image
+
+include_graphics(path = &quot;XXX&quot;)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Knit the document!</p></li>
+<li><p>Was your image too big? To make the image a bit smaller, include the chunk argument <code>out.width = "30%"</code>. Note: chunk options are specified within the curly brackets, i.e., <code>{r, option = value}</code>.</p></li>
+<li><p>Knit the document!</p></li>
+<li><p>Include the appropriate text and formatting to write the sentence below. When writing the number of columns and rows, use in-line chunks to get the data directly from the <code>mcdonalds</code> object! You can get the number of columns with <code>ncol(mcdonalds)</code> and the number of rows with <code>nrow(mcdonalds)</code></p></li>
+</ol>
+<ul>
+<li>The <code>mcdonalds</code> data has 24 columns and 260 rows. Each row corresponds to a different menu item. The data originally come from <a href="https://www.kaggle.com/mcdonalds/nutrition-facts">https://www.kaggle.com/mcdonalds/nutrition-facts</a>.</li>
+</ul>
+<ol start="10" style="list-style-type: decimal">
+<li>Knit the document!</li>
+</ol>
+</div>
+<div id="e---add-a-formatted-table-with-datatable" class="section level3">
+<h3>E - Add a formatted table with <code>datatable()</code></h3>
+<ol style="list-style-type: decimal">
+<li><p>Add a new 3rd level header called “Data”</p></li>
+<li><p>Below the header, write the sentence: “Here is a table showing the first 6 columns in the data”</p></li>
+<li><p>Create a new code chunk</p></li>
+<li><p>Inside the chunk, include the following code which uses the <code>datatable</code> function to render a dataframe as a nicely formatted HTML table.</p></li>
+</ol>
+<pre class="r"><code># Print the first 6 columns of the data as a datatable
+mcdonalds %&gt;% 
+  select(1:6) %&gt;% 
+  datatable()</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Knit the document! Do you see your nicely formatted table?</p></li>
+<li><p>Play around with your table. Instead of selecting the first 6 columns, select the columns <code>Item</code>, <code>Category</code>, <code>Calories</code>, <code>Sodium</code> in your code.</p></li>
+<li><p>Knit the document!</p></li>
+</ol>
+</div>
+<div id="f---add-plots" class="section level3">
+<h3>F - Add plots</h3>
+<ol style="list-style-type: decimal">
+<li><p>Add a new 3rd level header called “Calories Histogram”</p></li>
+<li><p>Write the appropriate combination of markdown, text, and code to create the following output. Be sure to specify the mean and maximum umber of calories using inline chunks!. Here’s some <code>ggplot2</code> code that might help in creating your plot.</p></li>
+</ol>
+<p><img src="https://github.com/therbootcamp/therbootcamp.github.io/blob/master/_sessions/_image/calories_histogram.jpg?raw=true" width="75%" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Create a histogram of Calories
+
+ggplot(data = mcdonalds,
+       aes(x = XX)) +
+  geom_histogram(col = &quot;white&quot;) +
+  labs(title = &quot;XX&quot;,
+       subtitle = &quot;XX&quot;,
+       caption = &quot;XX&quot;) +
+  theme_bw()</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Knit the document! Diagnose and correct any errors!</p></li>
+<li><p>Add a new 3rd level header called “Calories and Sodium”</p></li>
+<li><p>Write the appropriate combination of markdown, text, and code to create the following output (Here’s some <code>ggplot2</code> code that might help!):</p></li>
+</ol>
+<p><img src="https://github.com/therbootcamp/therbootcamp.github.io/blob/master/_sessions/_image/calories_sodium_ss.jpg?raw=true" width="75%" style="display: block; margin: auto;" /></p>
+<pre class="r"><code># Create a scatterplot showing the relationship
+#  between Calories and Sodium
+
+ggplot(data = XX,
+       aes(x = XX, y = XX)) +
+  geom_point() +
+  labs(title = &quot;XX&quot;,
+       subtitle = &quot;XX&quot;,
+       caption = &quot;XX&quot;) +
+  theme_bw()</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Knit the document! Diagnose and correct any errors!</p></li>
+<li><p>Add a 3rd level header called “Calories by Category”</p></li>
+<li><p>Write the appropriate combination of markdown, text, and code to create the following output (Here’s some <code>ggplot2</code> and <code>dplyr</code> code that might help!)</p></li>
+</ol>
+<pre class="r"><code># ggplot
+
+ggplot(data = XX,
+       aes(x = XX, y = XX, fill = XX)) +
+  stat_summary(geom = &quot;bar&quot;, fun.y = &quot;mean&quot;) +
+  guides(fill = FALSE) +
+  labs(title = &quot;McDonalds Menu Items&quot;,
+       subtitle = &quot;Created with ggplot2&quot;,
+       caption = &quot;Source: Kaggle.com&quot;) +
+  theme_bw()
+
+# dplyr
+
+Calories_agg &lt;- XX %&gt;%
+  group_by(XX) %&gt;%
+  summarise(
+    Min = min(XX),
+    Mean = mean(XX),
+    Median = median(XX),
+    Max = max(XX)
+  )
+
+kable(x = Calories_agg, 
+      caption = &quot;Summary Statistics of McDonalds Menu item Calories&quot;)</code></pre>
+<p><img src="https://github.com/therbootcamp/therbootcamp.github.io/blob/master/_sessions/_image/DynamicReports_CaloriesCategory.jpg?raw=true" width="75%" style="display: block; margin: auto;" /></p>
+</div>
+<div id="g---add-a-table-of-statistical-test-results" class="section level3">
+<h3>G - Add a table of statistical test results</h3>
+<p>Now let’s show the results of a regression analysis predicting the sodium content of an item as a function of its calories.</p>
+<ol style="list-style-type: decimal">
+<li><p>Add a new 3rd level header called “Regression”</p></li>
+<li><p>Using the appropriate combination of text and code chunks, create the following output. Use the following template for help!</p></li>
+</ol>
+<pre class="r"><code># Create regression model predicting Sodium from Calories
+
+cal_sod_lm &lt;- lm(formula = XX ~ XX,
+                 data = mcdonalds)
+
+# Export cal_sod_lm to a nicely formatted table
+
+kable(x = tidy(cal_sod_lm), 
+      digits = 3, 
+      caption = &quot;Regression analysis predicting Sodium from Calories&quot;)</code></pre>
+<p><img src="https://github.com/therbootcamp/therbootcamp.github.io/blob/master/_sessions/_image/regression_output.jpg?raw=true" width="75%" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Knit the document! Diagnose and correct any errors!</li>
+</ol>
+</div>
+<div id="h---add-tabs" class="section level3">
+<h3>H - Add tabs!</h3>
+<ol style="list-style-type: decimal">
+<li><p>Up to this point, your results are presented in one long html-output - we want to add tabs now, to make reading the report easier. To do this, just add the second level header <code>## {.tabset}</code> <em>above</em> your <code>### Overview</code> header</p></li>
+<li><p>Knit your document! Do you see the tabs now?</p></li>
+</ol>
+</div>
+</div>
+<div id="datasets" class="section level2">
+<h2>Datasets</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">File</th>
+<th align="left">Description</th>
+<th align="left">Rows</th>
+<th align="left">Columns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/BaselRBootcamp_2018July/master/_sessions/_data/complete/mcdonalds.csv">mcdonalds.csv</a></td>
+<td align="left">Nutrition information from McDonalds menu items</td>
+<td align="left">260</td>
+<td align="left">24</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="functions" class="section level2">
+<h2>Functions</h2>
+<div id="packages" class="section level3">
+<h3>Packages</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Package</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>knitr</code></td>
+<td align="left"><code>install.packages("knitr")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>DT</code></td>
+<td align="left"><code>install.packages("DT")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>broom</code></td>
+<td align="left"><code>install.packages("broom")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>rmdformats</code></td>
+<td align="left"><code>install.packages("rmdformats")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="resources" class="section level2">
+<h2>Resources</h2>
+<div id="documentation" class="section level3">
+<h3>Documentation</h3>
+<ul>
+<li><p>The <code>rmdformats</code> package has many nice templates for .Rmd files. Look at their GitHub page at <a href="https://github.com/juba/rmdformats">https://github.com/juba/rmdformats</a> for examples. If you install the package from CRAN with <code>install.packages('rmdformats')</code>, you’ll get lots of new templates when you open a new Markdown file in RStudio.</p></li>
+<li><p>If you want to use custom .css files, check out the the <a href="http://rmarkdown.rstudio.com/html_document_format.html#custom_css">R Studio HTML document guide</a>. You can also look at the .css files underlying the <code>rmdformats</code> package on their GitHub page here <a href="https://github.com/juba/rmdformats">https://github.com/juba/rmdformats</a>. For example, here is their .css file for the “html docco” template <a href="https://raw.githubusercontent.com/juba/rmdformats/master/inst/templates/html_docco/docco.css">https://raw.githubusercontent.com/juba/rmdformats/master/inst/templates/html_docco/docco.css</a></p></li>
+</ul>
+</div>
+<div id="cheatsheet" class="section level3">
+<h3>Cheatsheet</h3>
+<a href="https://github.com/rstudio/cheatsheets/raw/master/rmarkdown-2.0.pdf">
+<center>
+<p><img src="https://d33wubrfki0l68.cloudfront.net/65dffd1bdcaa0025006262164d98e8068e8b4387/c3895/wp-content/uploads/2018/08/rmarkdown-2.0.png" width="600px"> </a></p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

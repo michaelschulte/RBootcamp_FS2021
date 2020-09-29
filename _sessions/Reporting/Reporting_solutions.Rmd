@@ -1,0 +1,133 @@
+---
+title: "Dynamic Reports with RMarkdown"
+author: "Bern R Bootcamp"
+output: html_document
+---
+
+```{r, include = FALSE}
+# INCLUDE ALL OF THIS CODE IN YOUR FIRST CHUNK!
+
+knitr::opts_chunk$set(fig.width = 6,        # Figure width (in)
+                      fig.height = 4,       # Figure height (in)
+                      echo = FALSE,          # Repeat code
+                      eval = TRUE,          # Evaluate chunks
+                      message = FALSE,      # Don't print messages
+                      warning = FALSE,      # Don't print warnings
+                      fig.align = 'center') # Center figures
+
+options(digits = 2)  # Round all output to 2 digits
+
+
+# Load libraries
+
+library(tidyverse)
+library(knitr)
+library(broom)
+library(skimr)
+
+# Load data 
+
+mcdonalds <- read_csv("1_Data/mcdonalds.csv")
+happiness <- read_csv("1_Data/happiness.csv")
+```
+
+In this practical, I will analyse two datasets and show reproducible results in a dynamic document created in R Markdown. R Markdown is great because I can integrate `code` directly into my document, and easily use *italics* and **bold** using formatting tags.
+
+# Fast Food Nutrition 
+
+## {.tabset}
+
+### Overview
+
+```{r, out.width = "30%", fig.cap="Source: Wikipedia"}
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/Cheeseburger.jpg/2560px-Cheeseburger.jpg")
+```
+
+The `mcdonalds` data contains `r ncol(mcdonalds)` pieces of information for `r nrow(mcdonalds)` menu items. The data originally come from [https://www.kaggle.com/mcdonalds/nutrition-facts](https://www.kaggle.com/mcdonalds/nutrition-facts).
+
+
+### Data
+
+Here is a table showing the first 6 columns in the data
+
+```{r, echo = FALSE}
+DT::datatable(mcdonalds %>% select(1:6))
+```
+
+### Calories Histogram
+
+Across all items, the mean number of calories is `r mean(mcdonalds$Calories)` and the maximum is `r max(mcdonalds$Calories)`. The following plot is a histogram showing the distribution of calories across all menu items
+
+```{r, fig.width = 6, fig.height = 4}
+ggplot(data = mcdonalds,
+       aes(x = Calories)) +
+  geom_histogram(col = "white") +
+  labs(title = "McDonalds Menu Items",
+       subtitle = "Created with ggplot2",
+       caption = "Source: Kaggle.com") +
+  theme_bw()
+```
+
+### Calories and Sodium Scatterplot
+
+Is there a relationship between the number of calories and sodium in mcdonalds items? To answer this, let's start by showing a scatterplot:
+
+```{r, fig.width = 6, fig.height = 4}
+ggplot(data = mcdonalds,
+       aes(x = Calories, y = Sodium)) +
+  geom_point() +
+  labs(title = "McDonalds Menu Items",
+       subtitle = "Created with ggplot2",
+       caption = "Source: Kaggle.com") +
+  theme_bw()
+```
+
+### Calories by Category
+
+Which menu categories have the most calories? To answer this, we'll start by creating a barplot showing the the mean calories for each menu category
+
+```{r, fig.width = 12, fig.height = 4, out.width = "90%"}
+ggplot(data = mcdonalds,
+       aes(x = Category, y = Calories, fill = Category)) +
+  stat_summary(geom = "bar", fun.y = "mean") +
+  guides(fill = FALSE) +
+  labs(title = "McDonalds Menu Items",
+       subtitle = "Created with ggplot2",
+       caption = "Source: Kaggle.com") +
+  theme_bw()
+```
+
+Here is a table showing summary statistics of each category
+
+```{r}
+Calories_agg <- mcdonalds %>%
+  group_by(Category) %>%
+  summarise(
+    Min = min(Calories),
+    Mean = mean(Calories),
+    Median = median(Calories),
+    Max = max(Calories)
+  )
+
+kable(x = Calories_agg, 
+      caption = "Summary Statistics of McDonalds Menu item Calories")
+```
+
+
+### Regression
+
+To see if there is a relationship between calories and sodium across menu items, I conducted a regression analysis using the `lm()` function in R, here are the main results:
+
+```{r}
+# Create regression model predicting Sodium from Calories
+
+cal_sod_lm <- lm(Sodium ~ Calories,
+                 data = mcdonalds)
+
+# Export cal_sod_lm to a nicely formatted table
+
+kable(x = tidy(cal_sod_lm), 
+      digits = 3, 
+      caption = "Regression analysis predicting Sodium from Calories")
+```
+
