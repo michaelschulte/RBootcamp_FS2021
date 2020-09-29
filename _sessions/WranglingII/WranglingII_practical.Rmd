@@ -504,8 +504,8 @@ basel %>%
 
 |File | Zeilen | Spalten | Beschreibung |
 |:----|:-----|:------|:-----------------------------------------|
-|[kc_house.csv](https://raw.githubusercontent.com/michaelschulte/RBootcamp_HS2020/_sessions/WranglingII/1_Data/kc_house.csv) | 21613 | 11|Verkaufspreise von Häusern in King County zwischen Mai 2014 und Mai 2015. |
-|[bevoelkerung.csv](https://raw.githubusercontent.com/michaelschulte/RBootcamp_HS2020/_sessions/WranglingII/1_Data/bevoelkerung.csv) | 161 | 10|Einwohnerzahlen Schweizer Städte von 1930 bis 2011. |
+|[kc_house.csv](https://github.com/michaelschulte/RBootcamp_HS2020/blob/master/_sessions/WranglingII/1_Data/kc_house.csv) | 21613 | 11|Verkaufspreise von Häusern in King County zwischen Mai 2014 und Mai 2015. |
+|[bevoelkerung.csv](https://github.com/michaelschulte/RBootcamp_HS2020/blob/master/_sessions/WranglingII/1_Data/bevoelkerung.csv) | 161 | 10|Einwohnerzahlen Schweizer Städte von 1930 bis 2011. |
 
 #### kc_house.csv
 
