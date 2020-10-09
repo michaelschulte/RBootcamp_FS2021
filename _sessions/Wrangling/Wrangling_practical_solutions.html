@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Wrangling</title>
+
+<script src="Wrangling_practical_solutions_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Wrangling_practical_solutions_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Wrangling_practical_solutions_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Wrangling_practical_solutions_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Wrangling_practical_solutions_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="Wrangling_practical_solutions_files/navigation-1.1/tabsets.js"></script>
+<link href="Wrangling_practical_solutions_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Wrangling_practical_solutions_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Wrangling</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center" width="100%">
+<img src="image/trial.jpg" alt="Trulli" style="width:100%;height:280px"> <br> <font style="font-size:10px">from <a href="https://parkinsonsnewstoday.com/2016/02/24/promising-respiratory-drug-focus-of-new-clinical-trial-for-parkinsons-disease">parkinsonsnewstoday.com</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="overview" class="section level2">
+<h2>Overview</h2>
+<p>In diesem Practical wirst du üben Daten mit <code>dplyr</code> zu transformieren und zu organisieren.</p>
+<p>Am Ende des Practicals wirst du wissen wie man:</p>
+<ol style="list-style-type: decimal">
+<li>Spalten verändert, kreiert, auswählt.</li>
+<li>Fälle auswählt.</li>
+<li>Daten verbindet.</li>
+</ol>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und “Wrangling I Practical” als Kommentare an den Anfang des Skripts.</p></li>
+</ol>
+<pre class="r"><code>## NAME
+## DATUM
+## Wrangling Practical</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Speichere das neue Skript unter dem Namen <code>wrangling_practical.R</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Lade das <code>tidyverse</code> Paket.</p></li>
+</ol>
+<pre class="r"><code># Pakete laden
+library(tidyverse)     </code></pre>
+<pre class="r"><code>library(tidyverse)</code></pre>
+</div>
+<div id="b---lade-den-datensatz" class="section level3">
+<h3>B - Lade den Datensatz</h3>
+<ol style="list-style-type: decimal">
+<li><p>Verwende die <code>read_csv()</code> Funktion um den Datensatz <code>appointments</code> als Objekt <code>appointments</code> einzulesen. Denke an den Trick mit den Anführungszeichen.</p></li>
+<li><p>Printe den Datensatz. Wurden alle Variablentypen korrekt identifiziert?</p></li>
+<li><p>Verwende <code>summary()</code> um einen weiteren Überblick über die Daten zu bekommen.</p></li>
+</ol>
+</div>
+<div id="c---verändere-spaltennamen-mit-rename" class="section level3">
+<h3>C - Verändere Spaltennamen mit <code>rename()</code></h3>
+<ol style="list-style-type: decimal">
+<li>Verwende <code>names()</code> um die Spaltennamen anzuzeigen.</li>
+</ol>
+<pre class="r"><code># Zeige Spaltennamen
+names(XXX)</code></pre>
+<pre class="r"><code># Zeige Spaltennamen
+names(appointments)</code></pre>
+<pre><code> [1] &quot;PatientId&quot;      &quot;AppointmentID&quot;  &quot;Gender&quot;         &quot;ScheduledDay&quot;  
+ [5] &quot;AppointmentDay&quot; &quot;Age&quot;            &quot;Neighbourhood&quot;  &quot;Hypertension&quot;  
+ [9] &quot;Diabetes&quot;       &quot;Alcoholism&quot;     &quot;Handicap&quot;       &quot;SMS_received&quot;  
+[13] &quot;NoShow&quot;        </code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Eine der Spalten hat aktuell den namen <code>Age</code>. Verwende <code>rename()</code> um den Namen in <code>alter_jahre</code> zu ändern, so dass klar ist, dass es sich um das Alter in Jahren handelt.</li>
+</ol>
+<pre class="r"><code># Ändere Age zu alter_jahre
+appointments &lt;- appointments %&gt;%
+  rename(NEU = ALT)</code></pre>
+<pre class="r"><code># Ändere Age zu alter_jahre
+appointments &lt;- appointments %&gt;%
+  rename(alter_jahre = Age)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Verwende nochmals <code>names()</code> um dir die Namen anzeigen zu lassen. Hat sich der Name geändert?</li>
+</ol>
+<pre class="r"><code>names(appointments)</code></pre>
+<pre><code> [1] &quot;PatientId&quot;      &quot;AppointmentID&quot;  &quot;Gender&quot;         &quot;ScheduledDay&quot;  
+ [5] &quot;AppointmentDay&quot; &quot;alter_jahre&quot;    &quot;Neighbourhood&quot;  &quot;Hypertension&quot;  
+ [9] &quot;Diabetes&quot;       &quot;Alcoholism&quot;     &quot;Handicap&quot;       &quot;SMS_received&quot;  
+[13] &quot;NoShow&quot;        </code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Ergänze nun den Code unten, um alle Variablennamen ins Deutsche zu übersetzen.</li>
+</ol>
+<pre class="r"><code>appointments &lt;- appointments %&gt;%
+  rename(patient = XX,
+         termin_id = XX,
+         geschlecht = XX,
+         termin_vereinbart = XX,
+         termin_tag = XX,
+         geburtsort = XX,
+         bluthochdruck = XX,
+         diabetes = XX,
+         alkoholismus = XX,
+         behinderung = XX,
+         sms_erhalten = XX,
+         termin_eingehalten = XX)</code></pre>
+<pre class="r"><code>appointments &lt;- appointments %&gt;%
+  rename(patient = PatientId,
+         termin_id = AppointmentID,
+         geschlecht = Gender,
+         termin_vereinbart = ScheduledDay,
+         termin_tag = AppointmentDay,
+         geburtsort = Neighbourhood,
+         bluthochdruck = Hypertension,
+         diabetes = Diabetes,
+         alkoholismus = Alcoholism,
+         behinderung = Handicap,
+         sms_erhalten = SMS_received,
+         termin_eingehalten = NoShow)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Überprüfe mit <code>names()</code> ob alles stimmt.</li>
+</ol>
+</div>
+<div id="d---verändere-spalten-mit-mutate" class="section level3">
+<h3>D - Verändere Spalten mit <code>mutate()</code></h3>
+<ol style="list-style-type: decimal">
+<li>Verwende <code>mutate()</code> um eine Spalte zu ergänzen, die das Alter in Monaten enthält, also <code>alter_jahre * 12</code> und nenne die Spalte <code>alter_monate</code>.</li>
+</ol>
+<pre class="r"><code># Alter in Monaten
+appointments &lt;- appointments %&gt;%
+  mutate(XX = XX * 12)</code></pre>
+<pre class="r"><code># Alter in Monaten
+appointments &lt;- appointments %&gt;%
+  mutate(alter_monate = alter_jahre * 12)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Verwende <code>mutate()</code> um eine Spalte <code>krankheitsgrad</code> zu ergänzen, die anzeigt wie viele Erkrankungen der Patient hat. Addiere hierzu die Spalten <code>bluthochdruck</code>, <code>diabetes</code>, <code>alkoholismus</code>. Erinnere, dass gilt: <code>TRUE = 1</code> und <code>FALSE = 0</code>.</li>
+</ol>
+<pre class="r"><code># Kreiere Krankheitsgrad
+appointments &lt;- appointments %&gt;%
+  mutate(XX = XX + XX + XX)</code></pre>
+<pre class="r"><code># Kreiere Krankheitsgrad
+appointments &lt;- appointments %&gt;%
+  mutate(krankheitsgrad = bluthochdruck + diabetes + alkoholismus)</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Verwende <code>mutate()</code> und <code>case_when()</code> um eine Spalte <code>schwer_krank</code> zu ergänzen, die <code>Ja</code> trägt, wenn jemand einen Krankheitsgrad von grösser 1 hat, und sonst <code>Nein</code>.</li>
+</ol>
+<pre class="r"><code># Kreiere schwer_krank
+appointments &lt;- appointments %&gt;%
+  mutate(schwer_krank = case_when(
+    XX &lt;= XX ~ &quot;Nein&quot;,
+    XX  &gt; XX ~ &quot;Ja&quot;
+    )
+  )</code></pre>
+<pre class="r"><code># Kreiere schwer_krank
+appointments &lt;- appointments %&gt;%
+  mutate(schwer_krank = case_when(
+    krankheitsgrad &lt;= 1 ~ &quot;Nein&quot;,
+    krankheitsgrad  &gt; 1 ~ &quot;Ja&quot;
+    )
+  )</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Verwende <code>mutate()</code> und <code>case_when()</code> um <code>M</code> und <code>F</code> in der Spalte <code>geschlecht</code> in <code>männlich</code> und <code>weiblich</code> zu verändern. Weise hierzu die entstehende Variable direkt wieder der Spalte <code>geschlecht</code> zu.</li>
+</ol>
+<pre class="r"><code># Verändere geschlecht
+appointments &lt;- appointments %&gt;%
+  mutate(XX = case_when(
+    XX == XX ~ XX,
+    XX == XX ~ XX
+    )
+  )</code></pre>
+<pre class="r"><code># Verändere geschlecht
+appointments &lt;- appointments %&gt;%
+  mutate(geschlecht = case_when(
+    geschlecht == &quot;M&quot; ~ &quot;männlich&quot;,
+    geschlecht == &quot;F&quot; ~ &quot;weiblich&quot;
+    )
+  )</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Verwende <code>mutate()</code> und <code>case_when()</code> um <code>No</code> und <code>Yes</code> in der Spalte <code>termin_eingehalten</code> in <code>0</code> respektive <code>1</code> zu verändern. Kreiere hierzu eine neue Spalte mit Namen <code>termin_eingehalten_01</code>.</li>
+</ol>
+<pre class="r"><code># Termin eingehalten Yes = 1, No = 0
+appointments &lt;- appointments %&gt;%
+  mutate(XX = case_when(
+    XX == XX ~ XX,
+    XX == XX ~ XX
+    )
+  )</code></pre>
+<pre class="r"><code># Termin eingehalten Yes = 1, No = 0
+appointments &lt;- appointments %&gt;%
+  mutate(termin_eingehalten_01 = case_when(
+    termin_eingehalten == &quot;No&quot; ~ 0,
+    termin_eingehalten == &quot;Yes&quot; ~ 1,
+    )
+  )</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li>Finde mit dem untenstehenden Code heraus, ob schwerkranke Patienten häufiger den Termin nicht wahrnehmen (verwende <code>termin_eingehalten_01</code>).</li>
+</ol>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+data_frame %&gt;%
+  filter(XX == XX) %&gt;%
+  pull(XX) %&gt;%
+  mean()
+
+data_frame %&gt;%
+  filter(XX != XX) %&gt;%
+  pull(XX) %&gt;%
+  mean()</code></pre>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+appointments %&gt;%
+  filter(schwer_krank == &quot;Ja&quot;) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.177</code></pre>
+<pre class="r"><code>appointments %&gt;%
+  filter(schwer_krank != &quot;Ja&quot;) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.204</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li>Vergleiche nun, ob es in den wahrgenommenen Terminen vielleicht Unterschiede zwischen Männern und Frauen gibt und ob es Unterschiede zwischen Patienten gibt, die mehr oder weniger als 360 Monate alt sind.</li>
+</ol>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+appointments %&gt;%
+  filter(geschlecht == &quot;männlich&quot;) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.2</code></pre>
+<pre class="r"><code>appointments %&gt;%
+  filter(geschlecht != &quot;männlich&quot;) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.203</code></pre>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+appointments %&gt;%
+  filter(alter_monate &gt;= 360) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.184</code></pre>
+<pre class="r"><code>appointments %&gt;%
+  filter(alter_monate &lt; 360) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.229</code></pre>
+</div>
+<div id="e---organisieren-mit-select-filter-slice-und-arrange" class="section level3">
+<h3>E - Organisieren mit <code>select()</code>, <code>filter()</code>, <code>slice()</code>, und <code>arrange()</code></h3>
+<ol style="list-style-type: decimal">
+<li>Verwende <code>select()</code> um die Spalten <code>patient</code>, <code>geschlecht</code>, <code>alter_jahre</code>, <code>krankheitsgrad</code> und <code>termin_eingehalten_01</code> auszuwählen. Speichere den resultierenden data frame als <code>appointments_reduziert</code>.</li>
+</ol>
+<pre class="r"><code># Wähle Spalten aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(XX, XX, XX, XX, XX)</code></pre>
+<pre class="r"><code># Wähle Spalten aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_reduziert</code>. Sind die richtigen Spalten enthalten?</p></li>
+<li><p>Verwende <code>filter()</code> um Fälle auszuwählen, in denen der Patient weiblich ist. Ergänze hierzu direkt die Pipeline.</p></li>
+</ol>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(XX, XX, XX, XX, XX) %&gt;%
+  filter(XX == XX)</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;)</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_reduziert$geschlecht</code>. Sind noch Männer enthalten?</p></li>
+<li><p>Ergänze die Pipeline um gleichzeitig nur Patienten auszuwählen, die über 30 Jahre alt sind.</p></li>
+</ol>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(XX, XX, XX, XX, XX) %&gt;%
+  filter(XX == XX,
+         XX &gt; XX)</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_reduziert$alter_jahre</code>. Sind noch Jüngere enthalten?</p></li>
+<li><p>Verwende <code>arrange()</code> um den <code>appointments_reduziert</code> Datensatz aufsteigend nach Alter zu ordnen. Ergänze die Pipeline.</p></li>
+</ol>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(XX, XX, XX, XX, XX) %&gt;%
+  filter(XX == XX,
+         XX &gt; XX) %&gt;%
+  arrange(XX)</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(alter_jahre)</code></pre>
+<ol start="8" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_reduziert</code> und <code>appointments_reduziert$alter_jahre</code>. Ist alles schön sortiert?</p></li>
+<li><p>Verwende <code>arrange()</code> und <code>desc()</code> um diesmal <code>appointments_reduziert</code> absteigend (descending) nach Alter zu ordnen.</p></li>
+</ol>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(XX, XX, XX, XX, XX) %&gt;%
+  filter(XX == XX,
+         XX &gt; XX) %&gt;%
+  arrange(desc(XX))</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(desc(alter_jahre))</code></pre>
+<ol start="10" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_reduziert</code> und <code>appointments_reduziert$alter_jahre</code>. Ist alles schön sortiert?</p></li>
+<li><p>Verwende <code>arrange()</code> und <code>desc()</code> um <code>appointments_reduziert</code> ebenfalls, absteigend (descending) nach <code>krankheitsgrad</code> zu ordnen.</p></li>
+</ol>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(XX, XX, XX, XX, XX) %&gt;%
+  filter(XX == XX,
+         XX &gt; XX) %&gt;%
+  arrange(desc(XX),
+          desc(XX))</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(desc(alter_jahre),
+          desc(krankheitsgrad))</code></pre>
+<ol start="12" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_reduziert</code> und <code>appointments_reduziert$krankheitsgrad</code>. Ist alles schön sortiert?</p></li>
+<li><p>Ändere die Reihenfolge von <code>krankheitsgrad</code> und <code>alter_jahre</code> in der <code>arrange()</code> Funktion um primär nach <code>krankheitsgrad</code> zu sortieren.</p></li>
+</ol>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(XX, XX, XX, XX, XX) %&gt;%
+  filter(XX == XX,
+         XX &gt; XX) %&gt;%
+  arrange(desc(XX),
+          desc(XX))</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(desc(krankheitsgrad),
+          desc(alter_jahre))</code></pre>
+<ol start="14" style="list-style-type: decimal">
+<li>Verwende <code>slice()</code> um die ersten zwanzig Fälle in <code>appointments_reduziert</code> auszuwählen. Ergänze die Pipeline.</li>
+</ol>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(XX, XX, XX, XX, XX) %&gt;%
+  filter(XX == XX,
+         XX &gt; XX) %&gt;%
+  arrange(desc(XX),
+          desc(XX)) %&gt;%
+  slice(XX:XX)</code></pre>
+<pre class="r"><code># Wähle Fälle aus
+appointments_reduziert &lt;- appointments %&gt;%
+  select(patient, geschlecht, alter_jahre, krankheitsgrad, termin_eingehalten_01) %&gt;%
+  filter(geschlecht == &#39;weiblich&#39;,
+         alter_jahre &gt; 30) %&gt;%
+  arrange(desc(krankheitsgrad),
+          desc(alter_jahre)) %&gt;%
+  slice(1:20)</code></pre>
+<ol start="15" style="list-style-type: decimal">
+<li>Printe <code>appointments_reduziert</code>. Sind es nun 20 Fälle? Sind die ausgewählten Fälle zum Termin erschienen?</li>
+</ol>
+</div>
+<div id="f---verbinde-datensätze-mit-_join" class="section level3">
+<h3>F - Verbinde Datensätze mit <code>*_join()</code></h3>
+<ol style="list-style-type: decimal">
+<li><p>Verwende die <code>read_csv()</code> Funktion um den Datensatz <code>weather</code>, welcher Daten über das Wetter in Brasilien enthält, als Objekt <code>weather</code> einzulesen. Denke an den Trick mit den Anführungszeichen.</p></li>
+<li><p>Printe den Datensatz. Wurden alle Variablentypen korrekt identifiziert?</p></li>
+<li><p>Verwende <code>summary()</code> um einen weiteren Überblick über die Daten zu bekommen.</p></li>
+<li><p>Verwende <code>select()</code> und <code>rename()</code> um die Spalten <code>YYYYMMDD</code> und <code>PRECTOT</code> auszuwählen und sie in <code>termin_tag</code> und <code>niederschlag</code> umzubenennnen. Nenne das resultierende Objekt <code>weather_reduziert</code></p></li>
+</ol>
+<pre class="r"><code># Verarbeite weather
+weather_reduziert &lt;- weather %&gt;%
+  select(XX, XX) %&gt;%
+  rename(XX = XX,
+         XX = XX) </code></pre>
+<pre class="r"><code># Verarbeite weather
+weather_reduziert &lt;- weather %&gt;%
+  select(YYYYMMDD, PRECTOT) %&gt;%
+  rename(termin_tag = YYYYMMDD,
+         niederschlag = PRECTOT) </code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li><p>Printe <code>weather_reduziert</code>. Ist alles wie gewünscht?</p></li>
+<li><p>Verwende <code>left_join()</code> um <code>weather_reduziert</code> mit den Spalten <code>termin_tag</code> und <code>termin_eingehalten</code> in <code>appointments</code> zu verbinden. Nenne den gemeinsamen Datensatz <code>appointments_weather</code>.</p></li>
+</ol>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(XX, XX) %&gt;%
+  left_join(XX)</code></pre>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(termin_tag, termin_eingehalten) %&gt;%
+  left_join(weather_reduziert)</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_weather</code>. Ist alles in Ordnung?</p></li>
+<li><p>Verwende <code>select()</code> um nach dem Verbinden die Spalten in die folgende Reihenfolge zu bringen: <code>termin_tag</code>, <code>niederschlag</code>, und <code>termin_eingehalten</code>.</p></li>
+</ol>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(XX, XX) %&gt;%
+  left_join(XX) %&gt;%
+  select(XX, XX, XX)</code></pre>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(termin_tag, termin_eingehalten) %&gt;%
+  left_join(weather_reduziert) %&gt;%
+  select(termin_tag, niederschlag, termin_eingehalten)</code></pre>
+<ol start="9" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_weather</code>. Ist alles in Ordnung?</p></li>
+<li><p>Erstelle im nächsten Schritt der Pipeline erneut eine Variable <code>termin_eingelten_01</code> genauso wie du das vorher bereits einmal gemacht hast. Erstelle ausserdem eine Variable <code>niederschlag_01</code> die anzeigt, ob es Niederschlag gab oder nicht.</p></li>
+</ol>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(XX, XX) %&gt;%
+  left_join(XX) %&gt;%
+  select(XX, XX, XX) %&gt;%
+  mutate(
+    termin_eingehalten_01 = case_when(
+      XX == XX ~ XX,
+      XX == XX ~ XX,
+      ),
+    niederschlag_01 = case_when(
+      XX == 0 ~ 0,
+      XX &gt; 0 ~ 1,
+      )
+  )</code></pre>
+<pre class="r"><code># Verbinde Datensätze
+appointments_weather &lt;- appointments %&gt;%
+  select(termin_tag, termin_eingehalten) %&gt;%
+  left_join(weather_reduziert) %&gt;%
+  select(termin_tag, niederschlag, termin_eingehalten) %&gt;%
+  mutate(
+    termin_eingehalten_01 = case_when(
+      termin_eingehalten == &quot;No&quot; ~ 0,
+      termin_eingehalten == &quot;Yes&quot; ~ 1,
+      ),
+    niederschlag_01 = case_when(
+      niederschlag == 0 ~ 0,
+      niederschlag &gt; 0 ~ 1,
+      )
+    )</code></pre>
+<ol start="11" style="list-style-type: decimal">
+<li><p>Printe <code>appointments_weather</code>. Ist alles in Ordnung?</p></li>
+<li><p>Finde nun mit Hilfe des untenstehenden Codes heraus, ob Termine bei Regen seltener eingehalten wurden.</p></li>
+</ol>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+data_frame %&gt;%
+  filter(XX == XX) %&gt;%
+  pull(XX) %&gt;%
+  mean()
+
+data_frame %&gt;%
+  filter(XX != XX) %&gt;%
+  pull(XX) %&gt;%
+  mean()</code></pre>
+<pre class="r"><code># Anteil nicht wahrgenommener Termine
+appointments_weather %&gt;%
+  filter(niederschlag_01 == 1) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.201</code></pre>
+<pre class="r"><code>appointments_weather %&gt;%
+  filter(niederschlag_01 != 1) %&gt;%
+  pull(termin_eingehalten_01) %&gt;%
+  mean()</code></pre>
+<pre><code>[1] 0.23</code></pre>
+</div>
+<div id="x---challenge" class="section level3">
+<h3>X - Challenge</h3>
+<ol style="list-style-type: decimal">
+<li>Versuche alle bisherigen Schritte beginnend beim einlesen bis zum Verbinden der Datensätze in eine einzige Pipeline zu bringen. Das Ziel ist es die letzte Version von <code>appointments_weather</code> zu erstellen ohne auch nur einmal ein Objekt zwischendrin zuzuweisen.</li>
+</ol>
+<pre class="r"><code># kreire appointments_weather
+read_csv(&quot;XX&quot;) %&gt;%
+  ...</code></pre>
+</div>
+</div>
+<div id="beispiele" class="section level2">
+<h2>Beispiele</h2>
+<pre class="r"><code># Wrangling mit dplyr ---------------------------
+
+library(tidyverse)  
+
+# Lade basel
+basel &lt;- read_csv(&quot;1_Data/basel.csv&quot;)
+
+# dplyr Pipeline
+
+basel %&gt;%
+  
+  # Ändere Spaltennamen
+  rename(alter_jahre = alter,
+         schwimmen = rhein) %&gt;%
+  
+  # Nur Leute über 30
+  filter(alter_jahre &gt; 30) %&gt;%
+  
+  # Berechne neue Variablen
+  mutate(gewicht_pfungd = gewicht * 2.22,
+         groesse_meter = groesse / 100,
+         BMI = gewicht / groesse_m ^ 2,
+         
+         # Binarisiere geschlecht
+         geschlecht_01 = case_when(
+                           geschlecht == &quot;m&quot; ~ 0,
+                           geschlecht == &quot;f&quot; ~ 1),
+
+        # Ist groesse groesser als 150cm
+        groesse_150 = case_when(
+                          groesse &lt; 150 ~ 1,
+                          groesse &gt;= 150 ~ 0)) %&gt;%
+  
+  # Sortiere die Daten
+  arrange(geschlecht, desc(alter_jahre)))</code></pre>
+</div>
+<div id="datensätze" class="section level2">
+<h2>Datensätze</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="24%" />
+<col width="28%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Datei</th>
+<th align="left">Zeilen</th>
+<th align="left">Spalten</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://github.com/therbootcamp/R4DS_2019Feb/blob/master/1_Data/appointments.csv?raw=true">appointments.csv</a></td>
+<td align="left">110526</td>
+<td align="left">13</td>
+<td align="left">Datensatz zu eingehalten Arztterminen in Brasilien</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/therbootcamp/R4DS_2019Feb/blob/master/1_Data/weather.csv?raw=true">weather.csv</a></td>
+<td align="left">41</td>
+<td align="left">10</td>
+<td align="left">Datensatz zum Wetter in Brasilien zur selben Zeit wie in <code>appointments.csv</code></td>
+</tr>
+</tbody>
+</table>
+<div id="appointments.csv" class="section level4">
+<h4>appointments.csv</h4>
+<p><em>Erste 5 Zeilen von appointments.csv</em></p>
+<table>
+<colgroup>
+<col width="6%" />
+<col width="9%" />
+<col width="4%" />
+<col width="13%" />
+<col width="10%" />
+<col width="2%" />
+<col width="12%" />
+<col width="8%" />
+<col width="6%" />
+<col width="7%" />
+<col width="6%" />
+<col width="8%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">PatientId</th>
+<th align="right">AppointmentID</th>
+<th align="left">Gender</th>
+<th align="left">ScheduledDay</th>
+<th align="left">AppointmentDay</th>
+<th align="right">Age</th>
+<th align="left">Neighbourhood</th>
+<th align="left">Hypertension</th>
+<th align="left">Diabetes</th>
+<th align="left">Alcoholism</th>
+<th align="right">Handicap</th>
+<th align="left">SMS_received</th>
+<th align="left">NoShow</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">2.99e+13</td>
+<td align="right">5642903</td>
+<td align="left">F</td>
+<td align="left">2016-04-29 18:38:08</td>
+<td align="left">2016-04-29</td>
+<td align="right">62</td>
+<td align="left">JARDIM DA PENHA</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0</td>
+<td align="left">FALSE</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">5.59e+14</td>
+<td align="right">5642503</td>
+<td align="left">M</td>
+<td align="left">2016-04-29 16:08:27</td>
+<td align="left">2016-04-29</td>
+<td align="right">56</td>
+<td align="left">JARDIM DA PENHA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0</td>
+<td align="left">FALSE</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">4.26e+12</td>
+<td align="right">5642549</td>
+<td align="left">F</td>
+<td align="left">2016-04-29 16:19:04</td>
+<td align="left">2016-04-29</td>
+<td align="right">62</td>
+<td align="left">MATA DA PRAIA</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0</td>
+<td align="left">FALSE</td>
+<td align="left">No</td>
+</tr>
+<tr class="even">
+<td align="right">8.68e+11</td>
+<td align="right">5642828</td>
+<td align="left">F</td>
+<td align="left">2016-04-29 17:29:31</td>
+<td align="left">2016-04-29</td>
+<td align="right">8</td>
+<td align="left">PONTAL DE CAMBURI</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="left">FALSE</td>
+<td align="right">0</td>
+<td align="left">FALSE</td>
+<td align="left">No</td>
+</tr>
+<tr class="odd">
+<td align="right">8.84e+12</td>
+<td align="right">5642494</td>
+<td align="left">F</td>
+<td align="left">2016-04-29 16:07:23</td>
+<td align="left">2016-04-29</td>
+<td align="right">56</td>
+<td align="left">JARDIM DA PENHA</td>
+<td align="left">TRUE</td>
+<td align="left">TRUE</td>
+<td align="left">FALSE</td>
+<td align="right">0</td>
+<td align="left">FALSE</td>
+<td align="left">No</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">PatientId</td>
+<td align="left">ID des Patienten</td>
+</tr>
+<tr class="even">
+<td align="left">AppointmentID</td>
+<td align="left">ID des Arzttermins</td>
+</tr>
+<tr class="odd">
+<td align="left">Gender</td>
+<td align="left">M = Männlich, F = Weiblich</td>
+</tr>
+<tr class="even">
+<td align="left">ScheduledDay</td>
+<td align="left">Der Tag an dem der Termin vereinbart wurde</td>
+</tr>
+<tr class="odd">
+<td align="left">AppointmentDay</td>
+<td align="left">Der Tag des Arzttermins</td>
+</tr>
+<tr class="even">
+<td align="left">Age</td>
+<td align="left">Wie alt ist der Patient</td>
+</tr>
+<tr class="odd">
+<td align="left">Neighbourhood</td>
+<td align="left">Wo wurde der Patient geboren</td>
+</tr>
+<tr class="even">
+<td align="left">Hypertension</td>
+<td align="left">Bluthochdruck Ja, Nein</td>
+</tr>
+<tr class="odd">
+<td align="left">Diabetes</td>
+<td align="left">Diabetes Ja, Nein</td>
+</tr>
+<tr class="even">
+<td align="left">Alcoholism</td>
+<td align="left">Alcoholismus Ja, Nein</td>
+</tr>
+<tr class="odd">
+<td align="left">Handcap</td>
+<td align="left">Behinderung - Stufen 1 bis 4, 1 niedrigstes Level</td>
+</tr>
+<tr class="even">
+<td align="left">SMS_received</td>
+<td align="left">Hat der Patient eine Erinnerung per SMS erhalten?</td>
+</tr>
+<tr class="odd">
+<td align="left">No-show</td>
+<td align="left">Ist der Patient zum Termin erschienen?</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="weather.csv" class="section level4">
+<h4>weather.csv</h4>
+<p><em>Erste 5 Zeilen von weather.csv</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">LON</th>
+<th align="right">LAT</th>
+<th align="right">YEAR</th>
+<th align="right">MM</th>
+<th align="right">DD</th>
+<th align="right">DOY</th>
+<th align="left">YYYYMMDD</th>
+<th align="right">RH2M</th>
+<th align="right">T2M</th>
+<th align="right">PRECTOT</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">20.3</td>
+<td align="right">40.3</td>
+<td align="right">2016</td>
+<td align="right">4</td>
+<td align="right">29</td>
+<td align="right">120</td>
+<td align="left">2016-04-29</td>
+<td align="right">86.6</td>
+<td align="right">11.57</td>
+<td align="right">6.18</td>
+</tr>
+<tr class="even">
+<td align="right">20.3</td>
+<td align="right">40.3</td>
+<td align="right">2016</td>
+<td align="right">4</td>
+<td align="right">30</td>
+<td align="right">121</td>
+<td align="left">2016-04-30</td>
+<td align="right">73.5</td>
+<td align="right">14.02</td>
+<td align="right">0.04</td>
+</tr>
+<tr class="odd">
+<td align="right">20.3</td>
+<td align="right">40.3</td>
+<td align="right">2016</td>
+<td align="right">5</td>
+<td align="right">1</td>
+<td align="right">122</td>
+<td align="left">2016-05-01</td>
+<td align="right">75.9</td>
+<td align="right">12.98</td>
+<td align="right">4.48</td>
+</tr>
+<tr class="even">
+<td align="right">20.3</td>
+<td align="right">40.3</td>
+<td align="right">2016</td>
+<td align="right">5</td>
+<td align="right">2</td>
+<td align="right">123</td>
+<td align="left">2016-05-02</td>
+<td align="right">84.7</td>
+<td align="right">11.41</td>
+<td align="right">22.99</td>
+</tr>
+<tr class="odd">
+<td align="right">20.3</td>
+<td align="right">40.3</td>
+<td align="right">2016</td>
+<td align="right">5</td>
+<td align="right">3</td>
+<td align="right">124</td>
+<td align="left">2016-05-03</td>
+<td align="right">84.6</td>
+<td align="right">8.69</td>
+<td align="right">5.81</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">LON</td>
+<td align="left">Längengrad</td>
+</tr>
+<tr class="even">
+<td align="left">LAT</td>
+<td align="left">Breitengrad</td>
+</tr>
+<tr class="odd">
+<td align="left">YEAR</td>
+<td align="left">Jahr</td>
+</tr>
+<tr class="even">
+<td align="left">MM</td>
+<td align="left">Monat</td>
+</tr>
+<tr class="odd">
+<td align="left">DD</td>
+<td align="left">Tag</td>
+</tr>
+<tr class="even">
+<td align="left">DOY</td>
+<td align="left">Tag des Jahres</td>
+</tr>
+<tr class="odd">
+<td align="left">YYYYMMDD</td>
+<td align="left">Datum</td>
+</tr>
+<tr class="even">
+<td align="left">RH2M</td>
+<td align="left">Relative Feuchtigkeit auf 2 Metern</td>
+</tr>
+<tr class="odd">
+<td align="left">T2M</td>
+<td align="left">Temperatur auf 2 Metern</td>
+</tr>
+<tr class="even">
+<td align="left">PRECTOT</td>
+<td align="left">Niederschlag</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="pakete" class="section level3">
+<h3>Pakete</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Package</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen-1" class="section level3">
+<h3>Funktionen</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Package</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>rename()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Spalten umbenennen</td>
+</tr>
+<tr class="even">
+<td align="left"><code>select()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Spalten auswählen</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>filter()</code>, <code>slice()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Fälle auswählen</td>
+</tr>
+<tr class="even">
+<td align="left"><code>arrange()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Fälle sortieren</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>mutate()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Spalten verändern / kreieren</td>
+</tr>
+<tr class="even">
+<td align="left"><code>case_when()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Rekodiere Spalten</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="resourcen" class="section level2">
+<h2>Resourcen</h2>
+<div id="dplyr-vignette" class="section level3">
+<h3><code>dplyr</code> vignette</h3>
+<p>Siehe die <code>dplyr</code> <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html"><strong>vignette</strong></a>.</p>
+</div>
+<div id="cheatsheet" class="section level3">
+<h3>Cheatsheet</h3>
+<p align="center" width="100%">
+<a href="image/data-wrangling-cheatsheet.pdf" download> <img src="image/wrangling_cheat.jpg" style="width:70%"></a> <br> <font style="font-size:10px">from <a href="https://www.rstudio.com/resources/cheatsheets/">R Studio</a></font>
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
