@@ -1,0 +1,611 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Plotting I</title>
+
+<script src="PlottingI_practicaI_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="PlottingI_practicaI_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="PlottingI_practicaI_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="PlottingI_practicaI_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="PlottingI_practicaI_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="PlottingI_practicaI_files/navigation-1.1/tabsets.js"></script>
+<link href="PlottingI_practicaI_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="PlottingI_practicaI_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Plotting I</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center" width="100%">
+<img src="image/burgers.jpg" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://www.today.com/recipes/anne-burell-s-killer-turkey-burgers-recipe-t146616">today.com</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="überblick" class="section level2">
+<h2>Überblick</h2>
+<p>In diesem Practical wirst du üben mit <code>ggplot2</code> publikationsfertige Grafiken zu erstellen.</p>
+<p>Am Ende des Practicals wirst du wissen wie man:</p>
+<ol style="list-style-type: decimal">
+<li>Einen Plot Schritt-für-Schritt aufbaut.</li>
+<li>Verschiedene <code>geom</code>s verwendet.</li>
+<li>Farben verändert.</li>
+</ol>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und “Plotting Practical” als Kommentare an den Anfang des Skripts.</p></li>
+</ol>
+<pre class="r"><code>## NAME
+## DATUM
+## Plotting Practical</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Speichere das neue Skript unter dem Namen <code>plotting_practical.R</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Lade <code>tidyverse</code> und <code>ggthemes</code>.</p></li>
+</ol>
+</div>
+<div id="b---lade-den-datensatz" class="section level3">
+<h3>B - Lade den Datensatz</h3>
+<ol style="list-style-type: decimal">
+<li><p>Verwende die <code>read_csv()</code> Funktion um den Datensatz <code>mcdonalds</code> als Objekt <code>mcdonalds</code> einzulesen. Denke an den Trick mit den Anführungszeichen.</p></li>
+<li><p>Printe den Datensatz. Wurden alle Variablentypen korrekt identifiziert?</p></li>
+<li><p>Verwende <code>summary()</code> um einen weiteren Überblick über die Daten zu bekommen.</p></li>
+</ol>
+</div>
+<div id="c---baue-einen-plot" class="section level3">
+<h3>C - Baue einen Plot</h3>
+<p>In diesem Abschnitt wirst du den folgenden Plot Schritt-für-Schritt zusammenbauen.</p>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-3-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: decimal">
+<li>Verwende <code>ggplot()</code> um einen leeren Plot zu starten. Positioniere <code>Calories</code> auf der x-Achse und <code>SaturatedFat</code> auf der y-Achse.</li>
+</ol>
+<pre class="r"><code>ggplot(data = mcdonalds, 
+       mapping = aes(x = XX, y = XX))</code></pre>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-5-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Verwende <code>geom_point()</code> und <code>+</code> um Punkte zu plotten.</li>
+</ol>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-6-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Verwende das <code>col</code> Argument in <code>aes()</code> um die Farbe nach der Variable <code>Category</code> variieren zu lassen.</li>
+</ol>
+<pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() </code></pre>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-8-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Verwende <code>geom_smooth()</code> um eine angepasste Linie zu ergänzen.</li>
+</ol>
+<pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() </code></pre>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-10-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Oops! Hast du mehre Linien anstatt einer bekommen? Löse das Problem indem du die Farbe innerhalb von <code>geom_smooth()</code> auf <code>black</code> setzt.</li>
+</ol>
+<pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() +
+  geom_smooth(col = &quot;XX&quot;) </code></pre>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-12-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="6" style="list-style-type: decimal">
+<li>Verwende <code>labs()</code> um den Plot angemessen zu annotieren.</li>
+</ol>
+<pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() +
+  geom_smooth(col = &quot;XX&quot;) +
+  labs(title = &quot;XX&quot;,
+       subtitle = &quot;XX&quot;,
+       caption = &quot;XX&quot;)</code></pre>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-14-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="7" style="list-style-type: decimal">
+<li>Verwende <code>xlim()</code>, eine einfache Version von <code>scale_x_continuous()</code>, um die x-Achse auf die Werte <code>0</code> und <code>1250</code> zu begrenzen.</li>
+</ol>
+<pre class="r"><code>ggplot(mcdonalds, aes(x = XX, y = XX, col = XX)) +
+  geom_point() +
+  geom_smooth(col = &quot;XX&quot;) +
+  labs(title = &quot;XX&quot;,
+       subtitle = &quot;XX&quot;,
+       caption = &quot;XX&quot;) +
+  xlim(XX, XX)</code></pre>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-16-1.png" width="672" style="display: block; margin: auto;" /></p>
+<ol start="8" style="list-style-type: decimal">
+<li>Abschliessend verwende <code>theme_minimal()</code> um die Ästhetik des Plots anzupassen.</li>
+</ol>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+</div>
+<div id="d---geoms" class="section level3">
+<h3>D - <code>geom</code>s</h3>
+<ol style="list-style-type: decimal">
+<li>Verwende den Code unten um einen Violinen-Plot der <code>Calories</code> (y-Achse) in Abhängigkeit der <code>Category</code> (x-Achse) zu kreieren. Violinenplots zeigen mit ihrer Dicke die jeweilige relative Häufigkeit der Werte an - in diesem Fall der Kalorien. Verwende für das Argument <code>fill</code> ebenfalls <code>Category</code>, um die Violinen entsprechend einzufärben.</li>
+</ol>
+<pre class="r"><code>ggplot(data = mcdonalds, 
+       aes(x = XX, y = XX, fill = XX)) +
+  geom_violin()</code></pre>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-19-1.png" width="768" style="display: block; margin: auto;" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Ergänze mit <code>labs()</code> einen angemessenen Titel (<code>title</code>) und Untertitel (<code>subtitle</code>).</li>
+</ol>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-20-1.png" width="768" style="display: block; margin: auto;" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Ergänze <code>guides(fill = FALSE)</code>, so dass keine Legende gezeigt wird.</li>
+</ol>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-21-1.png" width="768" style="display: block; margin: auto;" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Verwende <code>geom_jitter()</code> um Punkte über die Violinen zu plotten. Setze in der Funktion <code>width = 1</code> und <code>alpha = .5</code>.</li>
+</ol>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-22-1.png" width="768" style="display: block; margin: auto;" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li>Probiere ein paar Sachen aus:</li>
+</ol>
+<ul>
+<li>Ändere die Werte für <code>width</code> oder <code>alpha</code> in <code>geom_jitter()</code>.</li>
+<li>Entferne <code>fill = Category</code>.</li>
+<li>Verwende <code>geom_boxplot()</code> um stattdessen einen Box-Plot zu plotten.</li>
+</ul>
+</div>
+<div id="e---geom_text" class="section level3">
+<h3>E - <code>geom_text</code></h3>
+<p>In dieser Sektion wirst du den folgenden Plot unter Verwendung von <code>geom_text()</code> kreieren.</p>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-23-1.png" width="768" style="display: block; margin: auto;" /></p>
+<ol style="list-style-type: decimal">
+<li>Beginne damit folgendes Code-Template entsprechend auszufüllen.</li>
+</ol>
+<pre class="r"><code>ggplot(mcdonalds, aes(x = XX, 
+                      y = XX, 
+                      col = XX)) +
+  geom_point() +
+  xlim(XX, XX) +
+  ylim(XX, XX) +
+  theme_minimal() +
+  labs(title = &quot;XX&quot;)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Nun ergänze <code>geom_text()</code> so dass für jeden Punkt das entsprechende <code>Item</code> Label angezeigt wird.</p></li>
+<li><p>Wo sind die Labels? Ah, du hast <code>ggplot</code> nicht gesagt welche Spalte die Information beinhaltet, die in den Labels stehen soll. Behebe dieses Problem indem du innerhalb der <code>aes()</code> Funktion dem Argument <code>label</code> die Spalte <code>Item</code> zuweist. Führe den Code nochmal aus. Jetzt solltest du viele labels sehen!</p></li>
+<li><p>Passe <code>geom_text()</code> an in dem du <code>col</code> auf <code>black</code>, <code>check_overlap</code> auf <code>TRUE</code>, und <code>hjust</code> auf <code>left</code> setzt.</p></li>
+<li><p>Verwende nun das <code>data</code> Argument in <code>geom_text()</code> und weise ihm einen gefilterten Auschnitt des <code>mcdonalds</code> Datensatzes zu, nämlich <code>data = mcdonalds %&gt;% filter(Calories &gt; 1100)</code>. Schau was passiert.</p></li>
+<li><p>Probiere ein paar Sachen aus:</p></li>
+</ol>
+<ul>
+<li><p>Verwende das <code>size</code> Argument in <code>aes()</code>, so dass die Grösse der Punkte den <code>Calories</code> entspricht.</p></li>
+<li><p>Versuche andere <code>theme_*</code> Funktionen. Z.B. <code>theme_excel()</code> oder <code>theme_economist()</code> aus dem <code>ggthemes</code> Paket.</p></li>
+</ul>
+</div>
+<div id="f---statistiken" class="section level3">
+<h3>F - Statistiken</h3>
+<ol style="list-style-type: decimal">
+<li>Mit der <code>stat_summary()</code> Funktion können auch direkt einfache Statistiken berechnet und geplotted werden. Verwende den folgenden Code um die <code>Calories</code> (y-Achse) gegen <code>Categories</code> zu plotten. Annotiere angemessen.</li>
+</ol>
+<pre class="r"><code>ggplot(XX, aes(x = XX, y = X)) +
+  stat_summary(geom = &quot;bar&quot;, 
+               fun.y = &quot;mean&quot;) +
+  labs(title = &quot;XX&quot;,
+       subtitle = &quot;XX&quot;)</code></pre>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-27-1.png" width="960" style="display: block; margin: auto;" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Probiere ein paar Sachen aus:</li>
+</ol>
+<ul>
+<li>Verwende den <code>"median"</code> anstatt <code>"mean"</code>.</li>
+<li>Gib jedem Balken eine andere Farbe.</li>
+<li>Ergänze Punkte über den Balken mit <code>geom_point()</code>, <code>geom_count()</code>, oder <code>geom_jitter()</code>.</li>
+</ul>
+<p><img src="PlottingI_practicaI_files/figure-html/unnamed-chunk-28-1.png" width="960" style="display: block; margin: auto;" /></p>
+</div>
+<div id="x---challenges" class="section level3">
+<h3>X - Challenges</h3>
+<ol style="list-style-type: decimal">
+<li>Kreiere deinen eigenen, neuen Plot mit dem <code>mcdonalds</code> Datensatz. Weitere <code>geom</code>s und alles weitere findest du <a href="https://ggplot2.tidyverse.org/reference/"><strong>hier</strong></a></li>
+</ol>
+</div>
+</div>
+<div id="beispiele" class="section level2">
+<h2>Beispiele</h2>
+<pre class="r"><code># Lade tidyverse
+library(tidyverse)        
+
+# Printe die mpg Daten
+mpg 
+
+# Beginne den Plot
+ggplot(data = mpg)
+
+# Ergänze das mapping, d.h. bestimme x und y
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy))  
+
+#  Ergänze Punkte
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy)) +
+       geom_point()     
+
+# Ergänze nach Häufigkeit skalierte Punkte
+ggplot(data = mpg, 
+       mapping = aes(x = displ, y = hwy)) +
+       geom_count()   
+
+# Assigne class zum col Argument und füge labels mit labs() hinzu 
+ggplot(data = mpg, 
+  mapping = aes(x = displ, y = hwy, col = class)) +  
+  geom_point(size = 3, position = &#39;jitter&#39;) +
+  labs(x = &quot;Hubraum in Litern&quot;,
+       y = &quot;Autobahn Meilen pro Gallone&quot;,
+       title = &quot;MPG Datensatz&quot;,
+       subtitle = &quot;Autos mit groesserem Hubraum fahren wneiger Meilen&quot;,
+       caption = &quot;Quelle: mpg Datensatz aus ggplot2&quot;)
+  
+
+# Ergänze eine Kurve für jede Klasse
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy, 
+                     color = class)) +
+  geom_point(size = 3, alpha = .9) + 
+  geom_smooth(method = &quot;lm&quot;)
+
+# Ergänze eine Kurve für alle Klassen zusammen
+ggplot(data = mpg, 
+       mapping = aes(x = displ, 
+                     y = hwy, 
+                     color = class)) +
+  geom_point(size = 3, alpha = .9) + 
+  geom_smooth(col = &quot;blue&quot;, method = &quot;lm&quot;)
+
+# Kombination von verschiedenen Elementen
+ggplot(data = mpg, 
+       mapping = aes(x = cty, y = hwy)) + 
+       geom_count(aes(color = manufacturer)) +    
+       geom_smooth() +
+       geom_text(data = filter(mpg, cty &gt; 25), 
+                 aes(x = cty,y = hwy, 
+                     label = rownames(filter(mpg, cty &gt; 25))),
+                     position = position_nudge(y = -1), 
+                                check_overlap = TRUE, 
+                     size = 5) + 
+  labs(x = &quot;Hubraum in Litern&quot;,
+       y = &quot;Autobahn Meilen pro Gallone&quot;,
+       title = &quot;MPG Datensatz&quot;,
+       subtitle = &quot;Autos mit groesserem Hubraum fahren wneiger Meilen&quot;,
+       caption = &quot;Quelle: mpg Datensatz aus ggplot2&quot;)</code></pre>
+</div>
+<div id="datensätze" class="section level2">
+<h2>Datensätze</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">File</th>
+<th align="left">Rows</th>
+<th align="left">Columns</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/R4DS_2019Feb/master/1_Data/mcdonalds.csv">mcdonalds.csv</a></td>
+<td align="left">260</td>
+<td align="left">24</td>
+</tr>
+</tbody>
+</table>
+<p><em>First 5 rows and columns of mcdonalds.csv</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Category</th>
+<th align="left">Item</th>
+<th align="left">ServingSize</th>
+<th align="right">Calories</th>
+<th align="right">CaloriesfromFat</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Breakfast</td>
+<td align="left">Egg McMuffin</td>
+<td align="left">4.8 oz (136 g)</td>
+<td align="right">300</td>
+<td align="right">120</td>
+</tr>
+<tr class="even">
+<td align="left">Breakfast</td>
+<td align="left">Egg White Delight</td>
+<td align="left">4.8 oz (135 g)</td>
+<td align="right">250</td>
+<td align="right">70</td>
+</tr>
+<tr class="odd">
+<td align="left">Breakfast</td>
+<td align="left">Sausage McMuffin</td>
+<td align="left">3.9 oz (111 g)</td>
+<td align="right">370</td>
+<td align="right">200</td>
+</tr>
+<tr class="even">
+<td align="left">Breakfast</td>
+<td align="left">Sausage McMuffin with Egg</td>
+<td align="left">5.7 oz (161 g)</td>
+<td align="right">450</td>
+<td align="right">250</td>
+</tr>
+<tr class="odd">
+<td align="left">Breakfast</td>
+<td align="left">Sausage McMuffin with Egg Whites</td>
+<td align="left">5.7 oz (161 g)</td>
+<td align="right">400</td>
+<td align="right">210</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="pakete" class="section level3">
+<h3>Pakete</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Paket</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>ggthemes</code></td>
+<td align="left"><code>install.packages("ggthemes")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="resourcen" class="section level2">
+<h2>Resourcen</h2>
+<div id="dokumentation" class="section level3">
+<h3>Dokumentation</h3>
+<p>Siehe die <code>ggplot2</code> <a href="http://ggplot2.tidyverse.org/"><strong>Webseite</strong></a> und Selva Prabhakaran’s <a href="http://r-statistics.co/Top50-Ggplot2-Visualizations-MasterList-R-Code.html"><strong>Webseite</strong></a> mit inspirierenden <code>ggplot2</code> Beispielen.</p>
+</div>
+<div id="cheatsheet" class="section level3">
+<h3>Cheatsheet</h3>
+<p align="center" width="100%">
+<a href="https://d33wubrfki0l68.cloudfront.net/21d683072b0c21cbd9b41fc0e37a587ad26b9525/cbf41/wp-content/uploads/2018/08/data-visualization-2.1.png"> <img src="https://d33wubrfki0l68.cloudfront.net/21d683072b0c21cbd9b41fc0e37a587ad26b9525/cbf41/wp-content/uploads/2018/08/data-visualization-2.1.png" style="width:70%"></a> <br> <font style="font-size:10px">from <a href="https://www.rstudio.com/resources/cheatsheets/">R Studio</a></font>
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
