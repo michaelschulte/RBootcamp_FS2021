@@ -23,7 +23,7 @@ output:
 || Wrangling I | [slides](_sessions/Wrangling/Wrangling.html) |  [practical](_sessions/Wrangling/Wrangling_practical.html) <br> [Practical Upload](https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5) Format: NAME_Wrangling1.R, [solutions](_sessions/Wrangling/Wrangling_practical_solutions.html)| 
 |      | Wrangling II | [slides](_sessions/WranglingII/WranglingII.html) | [practical](_sessions/WranglingII/WranglingII_practical.html)  <br> [Practical Upload](https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5) Format: NAME_Wrangling2.R, [solutions](_sessions/WranglingII/WranglingII_practical_solutions.html)|
 |09.10.| Recap | | | 
-|| Plotting I | [slides](_sessions/PlottingI/PlottingI.html) | [practical](_sessions/PlottingI/PlottingI_practical.html)<!---, [solutions](_sessions/PlottingI/PlottingI_practical_solutions.html)--->| 
+|| Plotting I | [slides](_sessions/PlottingI/PlottingI.html) | [practical](_sessions/PlottingI/PlottingI_practicaI.html)<!---, [solutions](_sessions/PlottingI/PlottingI_practical_solutions.html)--->| 
 || Plotting II | [slides](_sessions/PlottingII/PlottingII.html) | [practical](_sessions/PlottingII/PlottingII_practical.html)<!---, [solutions](_sessions/PlottingII/PlottingII_practical_solutions.html)--->|
 |16.10.| Recap | | | 
 || Plotting III + Competition | <!---[slides](_sessions/PlottingIII/PlottingIII.html)---> | <!---[competition](_sessions/PlottingIII/Competition.html)---><!---, [solutions](_sessions/PlottingIII/PlottingIII_practical_solutions.html)--->| |
