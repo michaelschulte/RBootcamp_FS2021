@@ -201,58 +201,6 @@ library(gridExtra)
 
 ---
 
-# Kognitive Limitationen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span><high>Gedächtnis-</high> und <high>Aufmerksamkeitspanne</high> von Menschen sind limitiert.</span></li>
-  <li class="m2"><span>Informationsverarbeitung beeinflusst durch:</span></li>
-  <ul class="level">
-    <span><li><high>Erwartungen</high> und Vorwissen</span></li>
-    <span><li><high>Visuelle</high> Charakteristika</li></span>
-  </ul>
-  </span></li>
-</ul>
-
-]
-
-.pull-right5[
-<p align="center">
-<img src="image/3s1.png" height="380px"><br>
-<font style="font-size:10px">adapted from <a href="http://www.storytellingwithdata.com/">storytellingwithdata.com</a></font>
-</p>
-]
-
----
-
-# Kognitive Limitationen
-
-.pull-left4[
-
-<ul>
-  <li class="m1"><span><high>Gedächtnis-</high> und <high>Aufmerksamkeitspanne</high> von Menschen sind limitiert.</span></li>
-  <li class="m2"><span>Informationsverarbeitung beeinflusst durch:</span></li>
-  <ul class="level">
-    <span><li><high>Erwartungen</high> und Vorwissen</span></li>
-    <span><li><high>Visuelle</high> Charakteristika</li></span>
-  </ul>
-  </span></li>
-</ul>
-
-]
-
-.pull-right5[
-<p align="center">
-<img src="image/3s2.png" height="380px"><br>
-<font style="font-size:10px">adapted from <a href="http://www.storytellingwithdata.com/">storytellingwithdata.com</a></font>
-</p>
-]
-
-
-
----
-
 # Vermeide 'clutter'
 
 .pull-left3[
@@ -397,59 +345,6 @@ library(gridExtra)
 <p align="center">
 <img src="image/marriage2.png" height="400px"><br>
 <font style="font-size:10px">adapted from <a href="http://www.storytellingwithdata.com/">storytellingwithdata.com</a></font>
-</p>
-]
-
-
----
-
-# Setze Fokus
-
-.pull-left3[
-<ul>
-  <li class="m1"><span>Nutze <high>wenige Farben</high> und setze sie <high>strategisch</high> ein (gilt auch für Kontrast).</span></li>
-  <br>
-  <li class="m2"><span>Wähle angemessene, <high>ansprechende Farben</high>.</span></li>
-  <ul class="level">
-    <li><span>Tools: <a href="https://color.adobe.com/de/create">color.adobe.com</a> oder <a href="https://coolors.co/">coolors.co</a></span></li>
-    <li><span>Farbsätze: <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis</a></span></li>
-  </ul>
-  <br>
-  <li class="m3"><span>Sei <high>konsistent</high>.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-<p align="center">
-<img src="image/colorwheel.png" height="400px"><br>
-<font style="font-size:10px">see <a href="https://color.adobe.com/de/create">color.adobe.com</a></font>
-</p>
-]
-
----
-
-# Setze Fokus
-
-.pull-left3[
-<ul>
-  <li class="m1"><span>Nutze <high>wenige Farben</high> und setze sie <high>strategisch</high> ein (gilt auch für Kontrast).</span></li>
-  <br>
-  <li class="m2"><span>Wähle angemessene, <high>ansprechende Farben</high>.</span></li>
-  <ul class="level">
-    <li><span>Tools: <a href="https://color.adobe.com/de/create">color.adobe.com</a> oder <a href="https://coolors.co/">coolors.co</a></span></li>
-    <li><span>Farbsätze: <a href="https://cran.r-project.org/web/packages/viridis/vignettes/intro-to-viridis.html">viridis</a></span></li>
-  </ul>
-  <br>
-  <li class="m3"><span>Sei <high>konsistent</high>.</span></li>
-</ul>
-
-]
-
-.pull-right6[
-<p align="center">
-<img src="image/colorwheel2.png" height="400px"><br>
-<font style="font-size:10px">see <a href="https://coolors.co/">coolors.co</a></font>
 </p>
 ]
 
@@ -873,29 +768,6 @@ class: middle, center
 
 ---
 
-# DON'T: Area graph
-
-.pull-left3[
-
-<ul>
-  <li class="m1"><span><high>Besser</high> als pie charts.</span></li>
-  <li class="m2"><span>Flächen immer schwer zu verstehen.</span></li>
-</ul>
-
-
-]
-
-
-.pull-right6[
-<p align="center">
-
-<img src="image/area.png" height="400px"><br>
-<font style="font-size:10px">adapted from <a href="http://www.storytellingwithdata.com/">storytellingwithdata.com</a></font>
-</p>
-
-]
-
----
 
 # DON'T: 2. Achse
 
@@ -1023,4 +895,4 @@ class: middle, center
 
 class: middle, center
 
-<h1><a href="https://michaelschulte.github.io/RBootcamp_HS2020//_sessions/PlottingIII/PlottingIII_practical.html">Practical</a></h1>
+<h1><a href="https://michaelschulte.github.io/RBootcamp_HS2020//_sessions/PlottingIII/Competition.html">! Competition !</a></h1>

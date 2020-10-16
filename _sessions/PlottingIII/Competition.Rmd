@@ -50,7 +50,7 @@ Der Wettbewerb endet in...
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Oct 22, 2020 15:33:00").getTime();
+var countDownDate = new Date("Oct 16, 2020 15:30:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -93,7 +93,7 @@ Christoph Brutschin, Vorsteher des Departments für Wirtschaft, Soziales und Umw
 
 2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Explorative Datenanalyse Wettbewerb" als Kommentare an den Anfang des Skripts.
 
-3. Speichere das neue Skript unter dem Namen `wettbewerb_practical.R` im `2_Code` Ordner.
+3. Speichere das neue Skript unter dem Namen `Gruppenname_Wettbewerb.R` im `2_Code` Ordner.
 
 4. Lade das `tidyverse` Paket und alle weiteren Pakete, die du verwenden möchtest.
 
@@ -118,9 +118,9 @@ library(tidyverse)
 
 2. Am Wettbewerb teilzunehmen ermöglicht dir die Chance viel &#127851;&#127851;&#127851; zu gewinnen. 
 
-3. Die nimmst am Wettbewerb teil indem du deine beste Graphik im `.png` Format und das zugehörige R Script einreichst.
+3. Ihr nehmt am Wettbewerb teil indem ihr eure beste Graphik im `.png` Format und das zugehörige R Script einreicht.
 
-4. Vor dem Einreichen, speichere deine Graphik mittels `ggsave()` (siehe code) und benenne die Datei mit einem von dir ausgewählten *Pseudonym*. Benutze das *Pseudonym* ebenfalls im Namen der `.R` Skriptdatei. 
+4. Vor dem Einreichen, speichert eure Graphik mittels `ggsave()` (siehe code) und benennt die Datei mit eurem *Gruppennamen*. Benutzt euren *Gruppennamen* ebenfalls im Namen der `.R` Skriptdatei (siehe oben). 
 
 ```{r}
 # speichere plot
@@ -133,17 +133,19 @@ ggsave(filename = "plot_PSEUDONYM.png",
        )
 ```
 
-5. Reiche deine Beitrag über diese Links ein: 
+5. Reicht euren Beitrag über diesen Link ein: 
 
 - [**Graphik + Skript einreichen**](https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5)
 
-6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den Kursteilnehmern. Der Beitrag mit den meisten Punkten gewinnt.   
+6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den KursteilnehmerInnen. Der Beitrag mit den im dem höchten Punktemittel gewinnt.   
+
+7. Bitte euren eigenen Beitrag nicht bewerten!
 
 Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnenen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.     
 
 ## Rating
 
-Bitte rated die einzelnen Beiträge über diesen [**Link**](https://forms.gle/8PizcxPBbkAmKbyy8)
+Bitte rated die einzelnen Beiträge über diesen [**Link**](https://forms.gle/d2csMcUNSp2sz6PU9)
 
 
 ## Beispiel

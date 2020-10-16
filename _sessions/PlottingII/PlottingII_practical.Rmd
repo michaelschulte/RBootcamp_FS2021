@@ -76,7 +76,7 @@ Am Ende des Practicals wirst du wissen wie man:
 
 3. Speichere das neue Skript unter dem Namen `plottingII_practical.R` im `2_Code` Ordner.
 
-4. Lade `tidyverse`, `viridis`, und `patchwork`.
+4. Lade `tidyverse`, `viridis`, `ggthemes` und `patchwork`.
 
 ### B - Lade den Datensatz
 

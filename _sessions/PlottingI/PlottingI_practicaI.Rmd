@@ -248,7 +248,7 @@ ggplot(data = mcdonalds, aes(x = Category, y = Calories, fill = Category)) +
   guides(fill = FALSE)
 ```
 
-4. Verwende `geom_jitter()` um Punkte über die Violinen zu plotten. Setze in der Funktion `width = 1` und `alpha = .5`.
+4. Verwende `geom_jitter()` um Punkte über die Violinen zu plotten. Setze in der Funktion `width = .1` und `alpha = .5`.
 
 ```{r, fig.width = 8, fig.height = 3}
 ggplot(data = mcdonalds, 

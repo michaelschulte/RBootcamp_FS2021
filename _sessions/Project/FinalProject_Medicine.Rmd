@@ -200,7 +200,7 @@ dim(full_df)
 
 3. Generate a new file with `File - R Markdown - Presentation` (with the default: HTML Isoslides). Save this file to your `TheRBootcamp` folder `FinalPresentation_GROUPNAME.html`. 
 
-4. Prepare a 5 minute presentation documenting your approach to the Document your 3 central insights out of this dataset. Describe what the insights are with your own words and document them with figures, statistics and tables produced with R code in your Markdown file.
+4. Prepare a **3 minute presentation** documenting your approach to the Document your 3 central insights out of this dataset. Describe what the insights are with your own words and document them with figures, statistics and tables produced with R code in your Markdown file.
 
 ## Datasets
 
