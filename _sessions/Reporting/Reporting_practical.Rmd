@@ -100,7 +100,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ### B - Here's your goal!
 
-In this practical you will create as much of [this html document](https://michaelschulte.github.io/RBootcamp/_sessions/Reporting/Reporting_answers.html) as you can! Open the document and keep it open in a separate window as you work through the practical!
+In this practical you will create as much of [this html document](https://michaelschulte.github.io/RBootcamp/_sessions/Reporting/Reporting_solutions.html) as you can! Open the document and keep it open in a separate window as you work through the practical!
 
 ### C - Load packages, data and set default chunk options
 

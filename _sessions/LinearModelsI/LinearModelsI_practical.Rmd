@@ -25,7 +25,7 @@ knitr::opts_chunk$set(comment = NA,
                       fig.width = 6,
                       fig.height = 6,
                       fig.align = 'center',
-                      echo = TRUE,
+                      echo = FALSE,
                       eval = TRUE,
                       warning = FALSE)
 
@@ -52,14 +52,16 @@ wein <- read_csv("1_Data/wein.csv")
 
 Am Ende des Practicals wirst du wissen...
 
-1. Wie du einfache und multiple Regressionen in R implementierst.
-2. Wie du die Ergebnisse einer Regression interpretierst.
+1. Wie du eine Korrelation berechnest und interpretierst.
+2. Wie du einen t-test berechnest und interpretierst.
+3. Wie du einfache und multiple Regressionen in R implementierst.
+4. Wie du die Ergebnisse einer Regression interpretierst.
 
 ## Aufgaben
 
 ### A - Setup
 
-1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelistet sind, in deinem `1_Data` Ordner hast.
+1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
 
 2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Lineare Modelle Practical" als Kommentare an den Anfang des Skripts.
 
@@ -77,7 +79,7 @@ Am Ende des Practicals wirst du wissen...
 library(tidyverse)
 ```
 
-5. Verwende die `read_csv()` Funktion um `wein.csv` einzulesen.
+5. Verwende die `read_csv()` Funktion um `wein.csv` einzulesen (Falls du die Datei noch nicht auf deinem Computer hast, lade sie zuerst vom Menü 'Datensätze' herunter.)
 
 ```{r, echo = T, eval = T, message = F}
 # Lese Daten ein
@@ -95,9 +97,45 @@ wein <- read_csv(file = "1_Data/wein.csv")
 wein <- wein %>% mutate_if(is.character, factor)
 ```
 
-### B - Einfache Regression
+### B - Korrelation
 
-1. In diesem ersten Abschnitt geht es darum den Effekt von `Restzucker` (Prädiktor) auf die wahrgenommene `Qualität` (Kriterium) des Weines zu prüfen. Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt `wein_lm` zu speichern.
+1. Im ersten Schritt wirst du eine einfache Hypothese prüfen: Die Menge an Restzucker im Wein hängt positiv mit dem Alkoholgehalt zusammen. D.h.: je mehr Zucker im Wein desto mehr Alkohol.
+
+2. Berechne die Korrelation der Variablen `Restzucker` und `Alkohol` aus dem Datensatz `wein`.
+
+```{r echo = TRUE, eval = FALSE}
+cor.test(wein$XXX, wein$XXX)
+```
+
+```{r}
+cor.test(wein$Restzucker, wein$Alkohol)
+```
+3. Ok. Unsere Hypothese scheint nicht zu stimmen! Wie gross die die Korreation? Was bedeutet das Vorzeichen? 
+
+4. Genau - wir finden eine negative Korrelation von r = -.359, d.h., je mehr Zucker der Wein enthält, desto weniger Alkohol ist vorhaden - genau das Gegenteil, das wir oben erwartet haben.
+
+### C - t-test
+
+1. Rotwein hat im Normalfall mehr Gerbstoff aber dafür weniger Säure als Weisswein.
+
+2. Die Frage ist nun, ob dieser Unterschied überall gilt - also auch in unserem Beispieldatensatz von Vinho Verde.
+
+3. Berechne einen t-test für die `Freie_Säure` zwischen Rot- und Weisswein (`Farbe`).
+
+```{r echo = TRUE, eval = FALSE}
+t.test(XXX ~ XXX, data = XXX)
+```
+
+```{r}
+t.test(Freie_Säure ~ Farbe, data = wein)
+```
+4. Was ist der absolute mittlere Unterschied zwischen Rot- und Weisswein in freier Säure?
+
+5. Ist dieser Unterschied signifikant?
+
+### D - Einfache Regression
+
+1. In diesem Abschnitt geht es darum den Effekt von `Restzucker` (Prädiktor) auf die wahrgenommene `Qualität` (Kriterium) des Weines zu prüfen. Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt `wein_lm` zu speichern.
 
 ```{r, eval = FALSE, echo = TRUE}
 # Einfache Regression
@@ -141,31 +179,9 @@ Welche Sektion zeigt an, welchen Einfluss `Restzucker` auf die Qualität des Wei
 
 6. Exakt, ein Anstieg von `1` (g/ml) geht mit einer Veränderung von `-.0067` in der Qualität einher. Also je süsser der Wein, desto niedriger die eingeschätzte Qualität. Aber ist dieser Effekt signifikant? Was zeigt der p-Wert für `Restzucker` an?
 
-7. Der Effekt von `Restzucker` ist signifikant von Null verschieden. Versuche nachzuverfolgen wie R zu diesem Wert kommt. Erinnere dich, der p-Wert folgt aus der Teststatistik, in diesem Fall <i>t</i>. Was ist der t-Wert für `Restzucker`?
+7. Der Effekt von `Restzucker` ist signifikant von Null verschieden. 
 
-8. Der t-Wert ist `-2.982`. D.h., das beobachtete Ergebnis hat in der <i>t</i>-Verteilung mit 6,495 Freiheitsgraden (siehe Schlussabschnitt des Outputs) eine eben solche Ausprägung. Der p-Wert ist nun die Fläche unterhalb der Verteilung in die Richtung extremerer Werte. Die Funktion `pt()` gibt für bestimmte t-Werte die Fläche für niedrigere Werte raus. Probiert einmal was ihr erhaltet, wenn ihr den ermittelten t-Wert (`q` für Quantil) und die Freiheitsgrade (`df`) in die Funktion eingebt. Wie könnte der Zusammenhang zum p-Wert im Ergebnis aussehen?
-
-```{r, echo = TRUE, eval = FALSE}
-# Berechne Fläche unter t-Wert
-pt(q = XX, df = XX)
-```
-
-```{r}
-# Berechne Fläche unter t-Wert
-pt(q = -2.982, df = 6495)
-```
-
-9. Genau der ermittelte Wert ist genau die Hälfte des p-Werts. Das hat damit zu tun, dass R-automatisch zweiseitig testet, d.h., Abweichungen in die positive und negative Richtung gleichermassen berücksichtigt. Hätte man eine klar gerichtete Hypothese, könnte man also den p-Wert im Ergebnis halbieren.   
-
-10. Es gibt noch weitere Werte, die du miteinander verknüpfen kannst. Der t-Wert ergibt sich nämlich unmittelbar aus dem Gewicht (`Estimate`) und dem Standardfehler (`Std.Error`). Kannst du den Zusammenhang erkennen?
-
-11. Der t-Wert ist nichts anderes als das Gewicht geteilt durch den Standardfehler. Betrachte nun die andere, erste Zeile des `Coefficients` Outputs. Wie interpretierst du ihn? Die Zeile gibt die Ergebnisse für den Intercept an, d.h., den Wert des Kriterium, wenn der Prädiktor Null ist. Nicht leicht zu interpretieren, oder? Es gibt keinen Wein mit `Restzucker` gleich Null. Später mehr dazu.
-
-12. Lenke nun deine Aufmerksamkeit auf den Schlussteil. Hier siehst du eine weitere Zusammenfassung über das Modell. Von besonderem Interesse ist das `Multiple R-squared`, da es angibt wie viel Varianz das Modell insgesamt am Kriterium erklären kann. Was meinst du, ist der Wert gross oder klein?
-
-13. Der Wert ist in der Tat relativ klein. Nur .1% der Varianz kann aufgeklärt werden, was wirklich nicht viel ist. Zeit weitere Prädiktoren hinzuzunehmen.
-
-### C - Multiple Regression
+### E - Multiple Regression
 
 1. Teste nun den Effekt mehrerer Prädiktoren auf die wahrgenommene `Qualität` (Kriterium) des Weines. Inkludiere neben `Restzucker` `pH_Wert`, `Alkohol`, und `Sulphate`. Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt `wein_lm` zu speichern.
 
@@ -186,7 +202,7 @@ wein_lm <- lm(formula = Qualität ~ Restzucker + pH_Wert + Alkohol + Sulphate,
 wein_lm
 ```
 
-3. Rohe Regressionsgewichte lassen nicht darauf schliessen, welche Bedeutung ein Prädiktor hat, da die Skalierung der Prädiktoren unmittelbar mit einfliesst. Wäre z.B. Alkohol in Promille angegeben, dann wäre das Gewicht 10x grösser. Dies kannst du leicht mit dem Template unten testen. Füge die vier Prädiktoren ein sodass Alkohol in innerhalb der `I()` steht und führe das Modell aus. Speichere es aber nicht.
+3. Rohe Regressionsgewichte lassen nicht darauf schliessen, welche Bedeutung ein Prädiktor hat, da die Skalierung der Prädiktoren unmittelbar mit einfliesst. Wäre z.B. Alkohol in Promille angegeben, dann wäre das Gewicht 10x grösser. Dies kannst du leicht mit dem Template unten testen. Füge die vier Prädiktoren ein sodass Alkohol innerhalb von `I()` steht und führe das Modell aus. Speichere es aber nicht.
 
 ```{r, eval = FALSE, echo = TRUE}
 # Multiple Regression
@@ -213,66 +229,8 @@ summary(wein_lm)
 
 8. Am besten zieht man in der Tat den t-Wert heran. Je grösser dieser ist, desto grösser ist das Signal für den assoziierten Prädiktor. Richte nun deine Aufmerksamkeit auf den Schlussteil. Wie gross ist `R-squared`?
 
-9. Das `R-squared` hat sich deutlich erhöht. Nun werden knapp 22% der Varianz des Kriteriums erklärt. Auch dies ist etwas, dass wir unmittelbar mit den Funktionen nachvollziehen können. Speichert mit dem template zunächst das Kriterium, die Residuen und die gefitteten Werte. Für letztere beiden gibt es, wie ihr seht, nützliche Funktionen.
+9. Das `R-squared` hat sich deutlich erhöht. Nun werden knapp 22% der Varianz des Kriteriums erklärt. 
 
-```{r, eval = FALSE, echo = TRUE}
-# Residuen & gefittete Werte
-kriterium <- wein$XX
-residuen <- residuals(XX)
-gefitted <- fitted(XX)
-```
-
-```{r, eval = FALSE, echo = TRUE}
-# Residuen & gefittete Werte
-kriterium <- wein$Qualität
-residuen <- residuals(wein_lm)
-gefitted <- fitted(wein_lm)
-```
-
-10. Jetzt teilt ihr einmal die Varianz der gefitteten Werte (`var(gefitted)`) durch die Varianz des Kriteriums (`var(kriterium)`).
-
-11. Et voilà, ihr habt `R-squared` gefunden. Ihr könnt jetzt auch einmal die Varianz der Residuen und die der gefitteten Werte addieren und mit der Varianz des Kriteriums vergleichen.
-
-### D - Multiple Regression: Alle Prädiktoren
-
-1. Teste nun den Effekt aller Prädiktoren (bis auf `Farbe`) auf die wahrgenommene `Qualität` (Kriterium) des Weines. Um alle Prädiktoren zu inkludieren kann man einfach `.` verwenden, und um einen auszuschliessen `-`- Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt `wein_lm` zu speichern.
-
-```{r, eval = FALSE, echo = TRUE}
-# Multiple Regression aller Prädiktoren ausser Farbe
-wein_lm <- lm(formula = XX ~ . - XX,
-              data = XX)
-```
-
-```{r}
-# Multiple Regression aller Prädiktoren ausser Farbe
-wein_lm <- lm(formula = Qualität ~ . - Farbe,
-              data = wein)
-```
-
-2. Evaluiert die Summary des Modells.
-
-- Sind die Vorzeichen der Gewichte gleichgeblieben?
-- Welche Prädiktoren sind signifikant?
-- Welche Prädiktoren haben den grössten Einfluss?
-- Um wie viel ist R-squared gestiegen?
-
-### E - Multiple Regression: Alle Prädiktoren
-
-1. Gehe zurück zum ersten Modell mit `Restzucker` als einzigen Prädiktor. Inkludiere nacheinander jeweils einen anderen Prädiktor und studiere, wie sich das Gewicht und die Signifikanz von Restzucker verändert.
-
-```{r, eval = FALSE, echo = TRUE}
-# Multiple Regression aller Prädiktoren ausser Farbe
-wein_lm <- lm(formula = XX ~ Restzucker + XX,
-              data = XX)
-```
-
-```{r}
-# Multiple Regression aller Prädiktoren ausser Farbe
-lm(formula = Qualität ~ Restzucker + Alkohol,
-   data = wein)
-```
-
-2. Der Schlüssel zur letzten Aufgabe steckt in `cor(wein %>% select(-Farbe))['Restzucker',]` und in `cor(wein %>% select(-Farbe))['Qualität',]`, d.h., den bivariaten Korrelationen zwischen Restzucker und den jeweils anderen Prädiktoren und Qualität und den jeweils anderen Prädiktoren. Beides fliesst in die Berechnung des Gewichts für `Restzucker` mit ein. Siehe Folien.
 
 ## Beispiele
 
