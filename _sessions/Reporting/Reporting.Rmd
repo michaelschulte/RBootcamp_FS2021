@@ -460,5 +460,5 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 class: middle, center
 
-<h1><a href="https://michaelschulte.github.io/RBootcamp/_sessions/Reporting/Reporting_practical.html">Practical</a></h1>
+<h1><a href="https://michaelschulte.github.io/RBootcamp_HS2020/_sessions/Reporting/Reporting_practical.html">Practical</a></h1>
 
