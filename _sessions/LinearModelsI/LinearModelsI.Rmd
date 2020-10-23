@@ -208,6 +208,40 @@ ggplot(d,
 
 ---
 
+# Korrelation
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Korrelationsmasse drücken aus, <high>wie stark Veränderungen</high> in einer Variable <high>mit Veränderungen</high> in einer anderen Variable <high>einhergehen</high>.</span></li>
+  <li class="m2"><span>Beispiele</span></li>
+  <ul class="level">
+    <li><span><high>Produkt-Moment Korrelation</high></span></li>
+    <li><span>Rangkorrelation</span></li>
+    <li><span>Phi-koeffizient</span></li>
+  </ul>
+</ul>
+
+<br>
+
+$$\large r_{xy} = \frac{\sum_i (x_i - \bar{x})(y_i - \bar{y})}{(n-1)s_xs_y}$$
+
+
+]
+
+
+
+.pull-right5[
+
+```{r echo = TRUE}
+cor(d$Äquivalenzeinkommen, d$Nächte, 
+    use = 'complete')
+```
+
+]
+
+---
+
 # Lineare Regression
 
 .pull-left4[
@@ -341,6 +375,7 @@ ggplot(d,
   #annotate("text",y = mean(d$Nächte,na.rm=T)+600,x = 5000,label=expression(bar(y)),size=5) +
   theme_bw()
 
+
 ```
 
 ]
@@ -409,7 +444,7 @@ ggplot(d,
 
 
 <ul>
-  <li class="m1"><span>Die Residuen sind der <high>Fehler</high> den die Regreessionsfunktion in der <high>Vorhersage y&#x0302; des Kriteriums</high> macht.</span></li>
+  <li class="m1"><span>Die Residuen sind der <high>Fehler</high> den die Regressionsfunktion in der <high>Vorhersage y&#x0302; des Kriteriums</high> macht.</span></li>
   <li class="m2"><span>Mittels der Residuen kann die <high>Qualität der Vorhersage</high> evaluiert werden.</span></li>
   </ul>
 </ul>
@@ -685,6 +720,47 @@ mtext(c('Zweiseitig','Dichte','t'),side=c(3,2,1),font=c(2,1,1),line=c(0,0,.5))
 
 ]
 
+---
+
+# t-Test
+
+.pull-left4[
+
+<ul>
+  <li class="m1"><span>Der Test vergleicht den beobachteten t-Wert mit entweder...</span></li>
+  <ul>
+    <li><span>Einseitig: t<sub>&alpha;</sub></span></li>
+    <li><span>Zweiseitig: t<sub>&alpha;/2</sub></span></li>
+  </ul>
+ </ul>
+</ul>
+
+<br>
+
+$$\Large t_\nu=\frac{\beta_j}{\sigma_{\beta_j}}>t_{\nu,\alpha}$$
+<br>
+
+$$\Large t_\nu=\frac{\beta_j}{\sigma_{\beta_j}}>t_{\nu,\frac{\alpha}{2}}$$
+
+]
+
+.pull-right5[
+
+```{r, echo = TRUE}
+# Unterschiede im BIP für länger v. kürzere Besucher?
+tour <- 
+tour %>%
+  mutate(split = case_when(Dauer > median(Dauer) ~ 'laenger',
+                           Dauer <= median(Dauer) ~ 'kuerzer'))
+df <- 
+tour %>%
+  left_join(europa)
+# run test
+t.test(BIP ~ split, data = df)
+
+```
+
+]
 
 ---
 
@@ -1104,7 +1180,7 @@ resid(naechte_lm)
 
 ```{r, eval = TRUE, echo  =FALSE}
 # Get fitted values (only first 5)
-fitted(naechte_lm)[1:5]
+predict(naechte_lm)[1:5]
 
 # Get residuals (only first 10)
 resid(naechte_lm)[1:5]
