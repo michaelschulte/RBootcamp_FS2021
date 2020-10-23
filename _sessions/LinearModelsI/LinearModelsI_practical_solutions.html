@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Lineare Modelle</title>
+
+<script src="LinearModelsI_practical_solutions_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="LinearModelsI_practical_solutions_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="LinearModelsI_practical_solutions_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="LinearModelsI_practical_solutions_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="LinearModelsI_practical_solutions_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="LinearModelsI_practical_solutions_files/navigation-1.1/tabsets.js"></script>
+<link href="LinearModelsI_practical_solutions_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="LinearModelsI_practical_solutions_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+      </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Lineare Modelle</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center" width="100%">
+<img src="image/vinho.png" alt="Trulli" style="width:100%"> <br> <font style="font-size:10px">from <a href="https://www.gourmet-blog.de/vinho-verde-wein-mit-gu-siegel/">gourmet-blog.de</a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1></h1>
+<div id="überblick" class="section level2">
+<h2>Überblick</h2>
+<p>Am Ende des Practicals wirst du wissen…</p>
+<ol style="list-style-type: decimal">
+<li>Wie du eine Korrelation berechnest und interpretierst.</li>
+<li>Wie du einen t-test berechnest und interpretierst.</li>
+<li>Wie du einfache und multiple Regressionen in R implementierst.</li>
+<li>Wie du die Ergebnisse einer Regression interpretierst.</li>
+</ol>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R project. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und “Lineare Modelle Practical” als Kommentare an den Anfang des Skripts.</p></li>
+</ol>
+<pre class="r"><code>## NAME
+## DATUM
+## Lineare Modelle Practical</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Speichere das neue Skript unter dem Namen <code>lineare_modelle_practical.R</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Lade das Paket <code>tidyverse</code>.</p></li>
+</ol>
+<pre class="r"><code>library(tidyverse)</code></pre>
+<ol start="5" style="list-style-type: decimal">
+<li>Verwende die <code>read_csv()</code> Funktion um <code>wein.csv</code> einzulesen (Falls du die Datei noch nicht auf deinem Computer hast, lade sie zuerst vom Menü ‘Datensätze’ herunter.)</li>
+</ol>
+<pre class="r"><code># Lese Daten ein
+wein &lt;- read_csv(file = &quot;1_Data/wein.csv&quot;)</code></pre>
+<ol start="6" style="list-style-type: decimal">
+<li><p>Printe den Datensatz.</p></li>
+<li><p>Verwende <code>names(XX)</code>, <code>summary(XX)</code>, und <code>View(XX)</code> um einen weiteren Überblick über die Daten zu bekommen.</p></li>
+<li><p>Führe den Code unten aus um sicherzustellen, dass alle <code>character</code> Variablen als Faktoren vorliegen. Das hilft den statistischen Modellen kategoriale Variablen richtig zu interpretieren.</p></li>
+</ol>
+<pre class="r"><code># Konvertiere alle character zu factor
+wein &lt;- wein %&gt;% mutate_if(is.character, factor)</code></pre>
+</div>
+<div id="b---korrelation" class="section level3">
+<h3>B - Korrelation</h3>
+<ol style="list-style-type: decimal">
+<li><p>Im ersten Schritt wirst du eine einfache Hypothese prüfen: Die Menge an Restzucker im Wein hängt positiv mit dem Alkoholgehalt zusammen. D.h.: je mehr Zucker im Wein desto mehr Alkohol.</p></li>
+<li><p>Berechne die Korrelation der Variablen <code>Restzucker</code> und <code>Alkohol</code> aus dem Datensatz <code>wein</code>.</p></li>
+</ol>
+<pre class="r"><code>cor.test(wein$XXX, wein$XXX)</code></pre>
+<pre class="r"><code>cor.test(wein$Restzucker, wein$Alkohol)</code></pre>
+<pre><code>
+    Pearson&#39;s product-moment correlation
+
+data:  wein$Restzucker and wein$Alkohol
+t = -31, df = 6495, p-value &lt;2e-16
+alternative hypothesis: true correlation is not equal to 0
+95 percent confidence interval:
+ -0.380 -0.338
+sample estimates:
+   cor 
+-0.359 </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Ok. Unsere Hypothese scheint nicht zu stimmen! Wie gross die die Korreation? Was bedeutet das Vorzeichen?</p></li>
+<li><p>Genau - wir finden eine negative Korrelation von r = -.359, d.h., je mehr Zucker der Wein enthält, desto weniger Alkohol ist vorhaden - genau das Gegenteil, das wir oben erwartet haben.</p></li>
+</ol>
+</div>
+<div id="c---t-test" class="section level3">
+<h3>C - t-test</h3>
+<ol style="list-style-type: decimal">
+<li><p>Rotwein hat im Normalfall mehr Gerbstoff aber dafür weniger Säure als Weisswein.</p></li>
+<li><p>Die Frage ist nun, ob dieser Unterschied überall gilt - also auch in unserem Beispieldatensatz von Vinho Verde.</p></li>
+<li><p>Berechne einen t-test für die <code>Freie_Säure</code> zwischen Rot- und Weisswein (<code>Farbe</code>).</p></li>
+</ol>
+<pre class="r"><code>t.test(XXX ~ XXX, data = XXX)</code></pre>
+<pre class="r"><code>t.test(Freie_Säure ~ Farbe, data = wein)</code></pre>
+<pre><code>
+    Welch Two Sample t-test
+
+data:  Freie_Säure by Farbe
+t = 53, df = 1939, p-value &lt;2e-16
+alternative hypothesis: true difference in means is not equal to 0
+95 percent confidence interval:
+ 0.240 0.259
+sample estimates:
+  mean in group rot mean in group weiss 
+              0.528               0.278 </code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Was ist der absolute mittlere Unterschied zwischen Rot- und Weisswein in freier Säure?</p></li>
+<li><p>Ist dieser Unterschied signifikant?</p></li>
+</ol>
+</div>
+<div id="d---einfache-regression" class="section level3">
+<h3>D - Einfache Regression</h3>
+<ol style="list-style-type: decimal">
+<li>In diesem Abschnitt geht es darum den Effekt von <code>Restzucker</code> (Prädiktor) auf die wahrgenommene <code>Qualität</code> (Kriterium) des Weines zu prüfen. Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt <code>wein_lm</code> zu speichern.</li>
+</ol>
+<pre class="r"><code># Einfache Regression
+wein_lm &lt;- lm(formula = XX ~ XX,
+              data = XX)</code></pre>
+<pre class="r"><code>wein_lm &lt;- lm(formula = Qualität ~ Restzucker,
+              data = wein)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Printe das Fit-Objekt <code>wein_lm</code>. Welche Information wird dir angezeigt? Was sagen dir die Werte?</li>
+</ol>
+<pre class="r"><code>wein_lm</code></pre>
+<pre><code>
+Call:
+lm(formula = Qualität ~ Restzucker, data = wein)
+
+Coefficients:
+(Intercept)   Restzucker  
+    5.85532     -0.00679  </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Der Default-Output von <code>lm</code>-Objekten ist nicht sehr informativ. Er zeigt nur den Code und die Schätzungen für die beiden Parameter: den Intercept und das Gewicht für <code>Restzucker</code>. Verwende <code>summary()</code> um einen informativeren Output zu erhalten.</li>
+</ol>
+<pre class="r"><code># Zeige Ergebnisse
+summary(XX)</code></pre>
+<pre class="r"><code>summary(wein_lm)</code></pre>
+<pre><code>
+Call:
+lm(formula = Qualität ~ Restzucker, data = wein)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-2.851 -0.808  0.158  0.229  3.217 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  5.85532    0.01645  355.89   &lt;2e-16 ***
+Restzucker  -0.00679    0.00228   -2.98   0.0029 ** 
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.873 on 6495 degrees of freedom
+Multiple R-squared:  0.00137,   Adjusted R-squared:  0.00121 
+F-statistic: 8.89 on 1 and 6495 DF,  p-value: 0.00287</code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li>Summary zeigt einem ausführliche Ergebnisse in fünf Sektionen:</li>
+</ol>
+<ul>
+<li>Call: Der Modellcode.</li>
+<li>Residuals: Verschiedene Statistiken der Verteilung der Residuen.</li>
+<li>Coefficients: Die Schätzer und Tests für die Modellparameter.</li>
+<li>Signif. codes: Übliche Kodierung für Signifikanzlevels.</li>
+<li>Schluss: Statistiken über dem Gesamtfit des Modells.</li>
+</ul>
+<p>Welche Sektion zeigt an, welchen Einfluss <code>Restzucker</code> auf die Qualität des Weines hat?</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>In der Tat, die Sektion <code>Coefficients</code> zeigt an, welche Werte für die Parameter geschätzt wurden und ob sie signifikant (gegeben H0) sind, und ist daher meist von zentralem Interesse. Welcher Paramterwert bzw. welches Gewicht (<code>Estimate</code>) wurde für <code>Restzucker</code> ermittelt? Was bedeutet dieser Wert?</p></li>
+<li><p>Exakt, ein Anstieg von <code>1</code> (g/ml) geht mit einer Veränderung von <code>-.0067</code> in der Qualität einher. Also je süsser der Wein, desto niedriger die eingeschätzte Qualität. Aber ist dieser Effekt signifikant? Was zeigt der p-Wert für <code>Restzucker</code> an?</p></li>
+<li><p>Der Effekt von <code>Restzucker</code> ist signifikant von Null verschieden.</p></li>
+</ol>
+</div>
+<div id="e---multiple-regression" class="section level3">
+<h3>E - Multiple Regression</h3>
+<ol style="list-style-type: decimal">
+<li>Teste nun den Effekt mehrerer Prädiktoren auf die wahrgenommene <code>Qualität</code> (Kriterium) des Weines. Inkludiere neben <code>Restzucker</code> <code>pH_Wert</code>, <code>Alkohol</code>, und <code>Sulphate</code>. Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt <code>wein_lm</code> zu speichern.</li>
+</ol>
+<pre class="r"><code># Multiple Regression
+wein_lm &lt;- lm(formula = XX ~ XX + XX + XX + XX,
+              data = XX)</code></pre>
+<pre class="r"><code>wein_lm &lt;- lm(formula = Qualität ~ Restzucker + pH_Wert + Alkohol + Sulphate,
+              data = wein)</code></pre>
+<ol start="2" style="list-style-type: decimal">
+<li>Printe wiederum das Modell. Wie interpretierst du die Grössen der Regressionsgewichte Kannst du aus ihnen ablesen, welcher Prädiktor die meiste Bedeutung hat?</li>
+</ol>
+<pre class="r"><code>wein_lm</code></pre>
+<pre><code>
+Call:
+lm(formula = Qualität ~ Restzucker + pH_Wert + Alkohol + Sulphate, 
+    data = wein)
+
+Coefficients:
+(Intercept)   Restzucker      pH_Wert      Alkohol     Sulphate  
+     1.8422       0.0280      -0.0767       0.3669       0.4171  </code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li>Rohe Regressionsgewichte lassen nicht darauf schliessen, welche Bedeutung ein Prädiktor hat, da die Skalierung der Prädiktoren unmittelbar mit einfliesst. Wäre z.B. Alkohol in Promille angegeben, dann wäre das Gewicht 10x grösser. Dies kannst du leicht mit dem Template unten testen. Füge die vier Prädiktoren ein sodass Alkohol innerhalb von <code>I()</code> steht und führe das Modell aus. Speichere es aber nicht.</li>
+</ol>
+<pre class="r"><code># Multiple Regression
+lm(formula = XX ~ XX + XX + I(XX / 10) + XX,
+   data = XX)</code></pre>
+<pre class="r"><code>lm(formula = Qualität ~ Restzucker + pH_Wert + I(Alkohol/10) + Sulphate,
+   data = wein)</code></pre>
+<pre><code>
+Call:
+lm(formula = Qualität ~ Restzucker + pH_Wert + I(Alkohol/10) + 
+    Sulphate, data = wein)
+
+Coefficients:
+  (Intercept)     Restzucker        pH_Wert  I(Alkohol/10)       Sulphate  
+       1.8422         0.0280        -0.0767         3.6687         0.4171  </code></pre>
+<ol start="4" style="list-style-type: decimal">
+<li><p>Also, hohe Regressionsgewichte müssen immer relativ zur Skalierung interpretiert werden. Nichtsdestotrotz ist bereits etwas bemerkenswertes an den Gewichten ablesbar. Schau dir das Regressionsgewicht für <code>Restzucker</code> an. War das nicht mal negativ? Führt mehr Zucker plötzlich zu höherer wahrgenommener Qualität?</p></li>
+<li><p>So einfach ist das leider nicht. In der multiplen Regression hängt alles mit allem zusammen. D.h., das Gewicht von <code>Restzucker</code> hängt von den anderen Gewichten mit ab und ist konditional zu interpretieren. Wiederum nicht leicht!</p></li>
+<li><p>Schaue dir nun die <code>summary()</code> an. Welche Effekte gehen in welche Richtung, welche Effekte sind signifikant?</p></li>
+</ol>
+<pre class="r"><code>summary(wein_lm)</code></pre>
+<pre><code>
+Call:
+lm(formula = Qualität ~ Restzucker + pH_Wert + Alkohol + Sulphate, 
+    data = wein)
+
+Residuals:
+   Min     1Q Median     3Q    Max 
+-3.494 -0.501 -0.035  0.492  3.099 
+
+Coefficients:
+            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)  1.84215    0.22155    8.32  &lt; 2e-16 ***
+Restzucker   0.02800    0.00225   12.43  &lt; 2e-16 ***
+pH_Wert     -0.07671    0.06256   -1.23     0.22    
+Alkohol      0.36687    0.00864   42.49  &lt; 2e-16 ***
+Sulphate     0.41713    0.06646    6.28  3.7e-10 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 0.772 on 6492 degrees of freedom
+Multiple R-squared:  0.219, Adjusted R-squared:  0.219 
+F-statistic:  456 on 4 and 6492 DF,  p-value: &lt;2e-16</code></pre>
+<ol start="7" style="list-style-type: decimal">
+<li><p>Alkohol, Sulphate, und Restzucker hängen alle drei signifikant positiv mit der Qualität zusammen, der pH-Wert dagegen negativ, jedoch nicht signifikant. Auf Basis der Summary, kannst du jetzt ausmachen, welcher Prädiktor die grösste Bedeutung hat? Welcher Wert würdest du zu Rate ziehen?</p></li>
+<li><p>Am besten zieht man in der Tat den t-Wert heran. Je grösser dieser ist, desto grösser ist das Signal für den assoziierten Prädiktor. Richte nun deine Aufmerksamkeit auf den Schlussteil. Wie gross ist <code>R-squared</code>?</p></li>
+<li><p>Das <code>R-squared</code> hat sich deutlich erhöht. Nun werden knapp 22% der Varianz des Kriteriums erklärt.</p></li>
+</ol>
+</div>
+</div>
+<div id="beispiele" class="section level2">
+<h2>Beispiele</h2>
+<pre class="r"><code># Regression mit R
+
+library(tidyverse)
+
+# Model:
+# Sagt der Hubraum (displ) die pro gallone
+# fahrbaren Meilen voraus?
+hwy_mod &lt;- lm(formula = hwy ~ displ,
+               data = mpg)
+
+# Ergebnisse
+summary(hwy_mod)
+coef(hwy_mod)
+
+# Gefittete Werte
+hwy_fit &lt;- fitted(hwy_mod)
+hwy_fit
+
+# Residuums
+hwy_resid &lt;- residuals(hwy_mod)
+hwy_resid</code></pre>
+</div>
+<div id="datensätze" class="section level2">
+<h2>Datensätze</h2>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Datei</th>
+<th align="left">Zeile</th>
+<th align="left">Spalte</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://raw.githubusercontent.com/therbootcamp/SmR_2020Mai/master/TheRBootcamp/1_Data/wein.csv">wein.csv</a></td>
+<td align="left">6497</td>
+<td align="left">13</td>
+</tr>
+</tbody>
+</table>
+<div id="wein.csv" class="section level4">
+<h4>wein.csv</h4>
+<p>Der <code>wein.csv</code> Datensatz enthält aus den Jahren 2004 bis 2007 des Comissão De Viticultura Da Região Dos Vinhos Verdes, der Offiziellen Zertifizierungsagentur des Vinho Verde in Portugal.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Name</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Qualität</td>
+<td align="left">Qualitätsurteil über den Wein von 1-9</td>
+</tr>
+<tr class="even">
+<td align="left">Farbe</td>
+<td align="left">Roter oder weisser Wein</td>
+</tr>
+<tr class="odd">
+<td align="left">Gelöste_Säure</td>
+<td align="left">Konzentration der im Wein gelösten Säuren</td>
+</tr>
+<tr class="even">
+<td align="left">Freie_Säure</td>
+<td align="left">Konzentration der verflüchtigbaren Säuren</td>
+</tr>
+<tr class="odd">
+<td align="left">Citronensäure</td>
+<td align="left">Citronensäurekonzentration im Wein</td>
+</tr>
+<tr class="even">
+<td align="left">Restzucker</td>
+<td align="left">Zuckerkonzentration im Wein</td>
+</tr>
+<tr class="odd">
+<td align="left">Chloride</td>
+<td align="left">Chloridkonzentration im Wein</td>
+</tr>
+<tr class="even">
+<td align="left">Freie_Schwefeldioxide</td>
+<td align="left">Konzentration der verflüchtigbaren Schwefeldioxide</td>
+</tr>
+<tr class="odd">
+<td align="left">Gesamt_Schwefeldioxide</td>
+<td align="left">Konzentration der Schwefeldioxide insgesamt</td>
+</tr>
+<tr class="even">
+<td align="left">Dichte</td>
+<td align="left">Dichte des Weins</td>
+</tr>
+<tr class="odd">
+<td align="left">pH_Wert</td>
+<td align="left">pH-Wert des Weins. Je kleiner, desto saurer.</td>
+</tr>
+<tr class="even">
+<td align="left">Sulphate</td>
+<td align="left">Sulphatkontration im Wein</td>
+</tr>
+<tr class="odd">
+<td align="left">Alkohol</td>
+<td align="left">Alkoholkonzentration im Wein in %</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="pakete" class="section level3">
+<h3>Pakete</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Package</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen-1" class="section level3">
+<h3>Funktionen</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Package</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>lm</code></td>
+<td align="left"><code>stats</code></td>
+<td align="left">Fitte ein lineares Modell</td>
+</tr>
+<tr class="even">
+<td align="left"><code>fitted</code></td>
+<td align="left"><code>stats</code></td>
+<td align="left">Extrahiere vorhergesagte Werte</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>residuals</code></td>
+<td align="left"><code>stats</code></td>
+<td align="left">Extrahiere Residuen</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="resourcen" class="section level2">
+<h2>Resourcen</h2>
+<div id="books" class="section level3">
+<h3>Books</h3>
+<ul>
+<li><a href="https://www.amazon.com/Discovering-Statistics-Using-Andy-Field/dp/1446200469">Discovering Statistics with R</a> von Andy Field ist sehr gut</li>
+<li><a href="https://bookdown.org/ndphillips/YaRrr/">YaRrr! The Pirate’s Guide to R</a> hat hilfreiche und unterhaltsame Kapitel zu Statistik mit R.</li>
+</ul>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>

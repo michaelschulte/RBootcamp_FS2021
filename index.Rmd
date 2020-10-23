@@ -29,8 +29,8 @@ output:
 || Plotting III + Competition | [slides](_sessions/PlottingIII/PlottingIII.html)| [Competition](_sessions/PlottingIII/Competition.html)| |
 || Intro Projekte||[Covid-Boot-Camp & Arr-PiRaten](_sessions/Project/FinalProject_Medicine.html) <br> [We-R-lost & R-Pandemi](_sessions/Project/FinalProject_Clinical.html)||
 |23.10.| Recap | | | 
-|| Lineare Modelle |[slides](_sessions/LinearModelsI/LinearModelsI.html)| [practical](_sessions/LinearModelsI/LinearModelsI_practical.html)<!---, [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)--->| |
-|| Reporting | [slides](_sessions/Reporting/Reporting.html)| [practical](_sessions/Reporting/Reporting_practical.html)<!---, [solutions](_sessions/Reporting/Reporting_practical_solutions.html)--->||
+|| Lineare Modelle |[slides](_sessions/LinearModelsI/LinearModelsI.html)| [practical](_sessions/LinearModelsI/LinearModelsI_practical.html), [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)| |
+|| Reporting | [slides](_sessions/Reporting/Reporting.html)| [practical](_sessions/Reporting/Reporting_practical.html), [solutions](_sessions/Reporting/Reporting_practical_solutions.html)||
 |06.11.| Recap | | | 
 || Projektpräsentationen |  | <!--- [Medicine](_sessions/FinalProject/FinalProject_Medicine.html), [Clinical](_sessions/FinalProject/FinalProject_Clinical.html)--->| |
 

@@ -1,0 +1,311 @@
+---
+title: "Lineare Modelle"
+author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
+  <tr style='border:none'>
+    <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
+      <font style='font-style:normal'>Datascience mit R lernen</font><br>
+      <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
+        <i class='fas fa-home' style='font-size:.9em;'></i>
+      </a>
+      
+    </td>
+    <td style='width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none'>
+      <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+    </td>
+  </tr></table>"
+output:
+  html_document:
+    css: practical.css
+    self_contained: no
+
+---
+
+```{r setup, echo = FALSE, message = FALSE, warning = FALSE}
+knitr::opts_chunk$set(comment = NA,
+                      fig.width = 6,
+                      fig.height = 6,
+                      fig.align = 'center',
+                      echo = TRUE,
+                      eval = TRUE,
+                      warning = FALSE)
+
+options(digits = 3)
+
+# Load packages
+library(tidyverse)
+
+# Load packages
+wein <- read_csv("1_Data/wein.csv")
+
+```
+
+<p align="center" width="100%">
+  <img src="image/vinho.png" alt="Trulli" style="width:100%">
+  <br>
+  <font style="font-size:10px">from <a href="https://www.gourmet-blog.de/vinho-verde-wein-mit-gu-siegel/">gourmet-blog.de</a></font>
+</p>
+
+
+# {.tabset}
+
+## Überblick
+
+Am Ende des Practicals wirst du wissen...
+
+1. Wie du eine Korrelation berechnest und interpretierst.
+2. Wie du einen t-test berechnest und interpretierst.
+3. Wie du einfache und multiple Regressionen in R implementierst.
+4. Wie du die Ergebnisse einer Regression interpretierst.
+
+## Aufgaben
+
+### A - Setup
+
+1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
+
+2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Lineare Modelle Practical" als Kommentare an den Anfang des Skripts.
+
+```{r, eval = FALSE, echo = TRUE}
+## NAME
+## DATUM
+## Lineare Modelle Practical
+```
+
+3. Speichere das neue Skript unter dem Namen `lineare_modelle_practical.R` im `2_Code` Ordner.
+
+4. Lade das Paket `tidyverse`.
+
+```{r}
+library(tidyverse)
+```
+
+5. Verwende die `read_csv()` Funktion um `wein.csv` einzulesen (Falls du die Datei noch nicht auf deinem Computer hast, lade sie zuerst vom Menü 'Datensätze' herunter.)
+
+```{r, echo = T, eval = T, message = F}
+# Lese Daten ein
+wein <- read_csv(file = "1_Data/wein.csv")
+```
+
+6. Printe den Datensatz.
+
+7. Verwende `names(XX)`, `summary(XX)`, und `View(XX)` um einen weiteren Überblick über die Daten zu bekommen.
+
+8. Führe den Code unten aus um sicherzustellen, dass alle `character` Variablen als Faktoren vorliegen. Das hilft den statistischen Modellen kategoriale Variablen richtig zu interpretieren.
+
+```{r, echo = TRUE}
+# Konvertiere alle character zu factor
+wein <- wein %>% mutate_if(is.character, factor)
+```
+
+### B - Korrelation
+
+1. Im ersten Schritt wirst du eine einfache Hypothese prüfen: Die Menge an Restzucker im Wein hängt positiv mit dem Alkoholgehalt zusammen. D.h.: je mehr Zucker im Wein desto mehr Alkohol.
+
+2. Berechne die Korrelation der Variablen `Restzucker` und `Alkohol` aus dem Datensatz `wein`.
+
+```{r echo = TRUE, eval = FALSE}
+cor.test(wein$XXX, wein$XXX)
+```
+
+```{r}
+cor.test(wein$Restzucker, wein$Alkohol)
+```
+3. Ok. Unsere Hypothese scheint nicht zu stimmen! Wie gross die die Korreation? Was bedeutet das Vorzeichen? 
+
+4. Genau - wir finden eine negative Korrelation von r = -.359, d.h., je mehr Zucker der Wein enthält, desto weniger Alkohol ist vorhaden - genau das Gegenteil, das wir oben erwartet haben.
+
+### C - t-test
+
+1. Rotwein hat im Normalfall mehr Gerbstoff aber dafür weniger Säure als Weisswein.
+
+2. Die Frage ist nun, ob dieser Unterschied überall gilt - also auch in unserem Beispieldatensatz von Vinho Verde.
+
+3. Berechne einen t-test für die `Freie_Säure` zwischen Rot- und Weisswein (`Farbe`).
+
+```{r echo = TRUE, eval = FALSE}
+t.test(XXX ~ XXX, data = XXX)
+```
+
+```{r}
+t.test(Freie_Säure ~ Farbe, data = wein)
+```
+4. Was ist der absolute mittlere Unterschied zwischen Rot- und Weisswein in freier Säure?
+
+5. Ist dieser Unterschied signifikant?
+
+### D - Einfache Regression
+
+1. In diesem Abschnitt geht es darum den Effekt von `Restzucker` (Prädiktor) auf die wahrgenommene `Qualität` (Kriterium) des Weines zu prüfen. Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt `wein_lm` zu speichern.
+
+```{r, eval = FALSE, echo = TRUE}
+# Einfache Regression
+wein_lm <- lm(formula = XX ~ XX,
+              data = XX)
+```
+
+```{r}
+wein_lm <- lm(formula = Qualität ~ Restzucker,
+              data = wein)
+```
+
+2. Printe das Fit-Objekt `wein_lm`. Welche Information wird dir angezeigt? Was sagen dir die Werte?
+
+```{r}
+wein_lm
+```
+
+3. Der Default-Output von `lm`-Objekten ist nicht sehr informativ. Er zeigt nur den Code und die Schätzungen für die beiden Parameter: den Intercept und das Gewicht für `Restzucker`. Verwende `summary()` um einen informativeren Output zu erhalten.  
+
+```{r, echo = TRUE, eval = FALSE}
+# Zeige Ergebnisse
+summary(XX)
+```
+
+```{r}
+summary(wein_lm)
+```
+
+4. Summary zeigt einem ausführliche Ergebnisse in fünf Sektionen:
+
+- Call: Der Modellcode.
+- Residuals: Verschiedene Statistiken der Verteilung der Residuen.
+- Coefficients: Die Schätzer und Tests für die Modellparameter.
+- Signif. codes: Übliche Kodierung für Signifikanzlevels.
+- Schluss: Statistiken über dem Gesamtfit des Modells.
+
+Welche Sektion zeigt an, welchen Einfluss `Restzucker` auf die Qualität des Weines hat?
+
+5. In der Tat, die Sektion `Coefficients` zeigt an, welche Werte für die Parameter geschätzt wurden und ob sie signifikant (gegeben H0) sind, und ist daher meist von zentralem Interesse. Welcher Paramterwert bzw. welches Gewicht (`Estimate`) wurde für `Restzucker` ermittelt? Was bedeutet dieser Wert?
+
+6. Exakt, ein Anstieg von `1` (g/ml) geht mit einer Veränderung von `-.0067` in der Qualität einher. Also je süsser der Wein, desto niedriger die eingeschätzte Qualität. Aber ist dieser Effekt signifikant? Was zeigt der p-Wert für `Restzucker` an?
+
+7. Der Effekt von `Restzucker` ist signifikant von Null verschieden. 
+
+### E - Multiple Regression
+
+1. Teste nun den Effekt mehrerer Prädiktoren auf die wahrgenommene `Qualität` (Kriterium) des Weines. Inkludiere neben `Restzucker` `pH_Wert`, `Alkohol`, und `Sulphate`. Verwende das template unten, um ein entsprechendes lineares Modell zu testen und in das Objekt `wein_lm` zu speichern.
+
+```{r, eval = FALSE, echo = TRUE}
+# Multiple Regression
+wein_lm <- lm(formula = XX ~ XX + XX + XX + XX,
+              data = XX)
+```
+
+```{r}
+wein_lm <- lm(formula = Qualität ~ Restzucker + pH_Wert + Alkohol + Sulphate,
+              data = wein)
+```
+
+2. Printe wiederum das Modell. Wie interpretierst du die Grössen der Regressionsgewichte Kannst du aus ihnen ablesen, welcher Prädiktor die meiste Bedeutung hat?
+
+```{r}
+wein_lm
+```
+
+3. Rohe Regressionsgewichte lassen nicht darauf schliessen, welche Bedeutung ein Prädiktor hat, da die Skalierung der Prädiktoren unmittelbar mit einfliesst. Wäre z.B. Alkohol in Promille angegeben, dann wäre das Gewicht 10x grösser. Dies kannst du leicht mit dem Template unten testen. Füge die vier Prädiktoren ein sodass Alkohol innerhalb von `I()` steht und führe das Modell aus. Speichere es aber nicht.
+
+```{r, eval = FALSE, echo = TRUE}
+# Multiple Regression
+lm(formula = XX ~ XX + XX + I(XX / 10) + XX,
+   data = XX)
+```
+
+```{r}
+lm(formula = Qualität ~ Restzucker + pH_Wert + I(Alkohol/10) + Sulphate,
+   data = wein)
+```
+
+4. Also, hohe Regressionsgewichte müssen immer relativ zur Skalierung interpretiert werden. Nichtsdestotrotz ist bereits etwas bemerkenswertes an den Gewichten ablesbar. Schau dir das Regressionsgewicht für `Restzucker` an. War das nicht mal negativ? Führt mehr Zucker plötzlich zu höherer wahrgenommener Qualität?
+
+5. So einfach ist das leider nicht. In der multiplen Regression hängt alles mit allem zusammen. D.h., das Gewicht von `Restzucker` hängt von den anderen Gewichten mit ab und ist konditional zu interpretieren. Wiederum nicht leicht!
+
+6. Schaue dir nun die `summary()` an. Welche Effekte gehen in welche Richtung, welche Effekte sind signifikant?  
+
+```{r}
+summary(wein_lm)
+```
+
+7. Alkohol, Sulphate, und Restzucker hängen alle drei signifikant positiv mit der Qualität zusammen, der pH-Wert dagegen negativ, jedoch nicht signifikant. Auf Basis der Summary, kannst du jetzt ausmachen, welcher Prädiktor die grösste Bedeutung hat? Welcher Wert würdest du zu Rate ziehen?
+
+8. Am besten zieht man in der Tat den t-Wert heran. Je grösser dieser ist, desto grösser ist das Signal für den assoziierten Prädiktor. Richte nun deine Aufmerksamkeit auf den Schlussteil. Wie gross ist `R-squared`?
+
+9. Das `R-squared` hat sich deutlich erhöht. Nun werden knapp 22% der Varianz des Kriteriums erklärt. 
+
+
+## Beispiele
+
+```{r, eval = FALSE, echo = TRUE}
+# Regression mit R
+
+library(tidyverse)
+
+# Model:
+# Sagt der Hubraum (displ) die pro gallone
+# fahrbaren Meilen voraus?
+hwy_mod <- lm(formula = hwy ~ displ,
+               data = mpg)
+
+# Ergebnisse
+summary(hwy_mod)
+coef(hwy_mod)
+
+# Gefittete Werte
+hwy_fit <- fitted(hwy_mod)
+hwy_fit
+
+# Residuums
+hwy_resid <- residuals(hwy_mod)
+hwy_resid
+
+
+```
+
+
+## Datensätze
+
+|Datei | Zeile | Spalte |
+|:----|:-----|:------|
+|[wein.csv](https://raw.githubusercontent.com/therbootcamp/SmR_2020Mai/master/TheRBootcamp/1_Data/wein.csv) | 6497 | 13 |
+
+#### wein.csv
+
+Der `wein.csv` Datensatz enthält aus den Jahren 2004 bis 2007 des Comissão De Viticultura Da Região Dos Vinhos Verdes, der Offiziellen Zertifizierungsagentur des Vinho Verde in Portugal.
+
+| Name | Beschreibung |
+|:-------------|:-------------------------------------|
+|Qualität | Qualitätsurteil über den Wein von 1-9 |
+|Farbe| Roter oder weisser Wein |
+|Gelöste_Säure| Konzentration der im Wein gelösten Säuren |
+|Freie_Säure| Konzentration der verflüchtigbaren Säuren |
+|Citronensäure| Citronensäurekonzentration im Wein |
+|Restzucker| Zuckerkonzentration im Wein|
+|Chloride| Chloridkonzentration im Wein|
+|Freie_Schwefeldioxide| Konzentration der verflüchtigbaren Schwefeldioxide |
+|Gesamt_Schwefeldioxide| Konzentration der Schwefeldioxide insgesamt |
+|Dichte|Dichte des Weins|
+|pH_Wert|pH-Wert des Weins. Je kleiner, desto saurer. |
+|Sulphate| Sulphatkontration im Wein |
+|Alkohol| Alkoholkonzentration im Wein in %|
+
+## Funktionen
+
+### Pakete
+
+|Package| Installation|
+|:------|:------|
+|`tidyverse`|`install.packages("tidyverse")`|
+
+### Funktionen
+
+| Function| Package | Description |
+|:---|:------|:---------------------------------------------|
+|   `lm`|`stats`| Fitte ein lineares Modell  |
+|   `fitted`|`stats`| Extrahiere vorhergesagte Werte|
+|   `residuals`|`stats`| Extrahiere Residuen |
+
+## Resourcen
+
+### Books
+
+- [Discovering Statistics with R](https://www.amazon.com/Discovering-Statistics-Using-Andy-Field/dp/1446200469) von Andy Field ist sehr gut
+- [YaRrr! The Pirate's Guide to R](https://bookdown.org/ndphillips/YaRrr/) hat hilfreiche und unterhaltsame Kapitel zu Statistik mit R.
