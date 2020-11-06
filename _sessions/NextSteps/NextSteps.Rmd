@@ -1,19 +1,9 @@
 ---
 title: "Nächste Schritte"
-author: "Explorative Datenanalyse mit R<br>
-  <a href='https://therbootcamp.github.io'>The R Bootcamp</a>
-  <br>
-  <a href='https://michaelschulte.github.io/RBootcamp_HS2020//'>
-    <i class='fas fa-clock' style='font-size:.9em;'></i>
-  </a>&#8239; 
-  <a href='https://therbootcamp.github.io'>
-    <i class='fas fa-home' style='font-size:.9em;' ></i>
-  </a>&#8239;
-  <a href='mailto:therbootcamp@gmail.com'>
-    <i class='fas fa-envelope' style='font-size: .9em;'></i>
-  </a>&#8239;
-  <a href='https://www.linkedin.com/company/basel-r-bootcamp/'>
-    <i class='fab fa-linkedin' style='font-size: .9em;'></i>
+author: "
+  Datascience mit R lernen<br>
+  <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
+    R Bootcamp
   </a>"
 date: "HS 2020"
 output:
@@ -49,8 +39,6 @@ layout: true
     </span>
   </div> 
 
----
-
 ```{r setup, include=FALSE}
 options(htmltools.dir.version = FALSE)
 # see: https://github.com/yihui/xaringan
@@ -62,22 +50,24 @@ options(width=110)
 options(digits = 4)
 library(tidyverse)
 ```
+---
+
+# Präsentationen heute
 
 
-.pull-left45[
 
-<br><br><br><br><br>
+- Covid-R-Bootcamp (Fragen: We-R-Lost)
+- We-R-Lost (Fragen: Arr-PiRaten)
+- Arr-PiRaten (Fragen: R-Pandemi)
+- R-Pandemi (Fragen: Covid-R-Bootcamp)
 
-# Hallo Tidyverse Experten
+Anonymes [Feedback](https://forms.gle/38LagXxyH2cMHynt8)
 
-Nach zwei Tagen kennt ihr nun die Grundlagen von R und des Tidyverse!
+---
+class: center, middle
 
-]
+# Hallo Tidyverse Experten!
 
-.pull-right4[
-
-<img src="image/schedule.png" height="580" align="center">
-]
 
 ---
 
@@ -106,9 +96,7 @@ Nach zwei Tagen kennt ihr nun die Grundlagen von R und des Tidyverse!
 <font size = 6>
 1. Anwenden<br>
 2. Bücher<br>
-3. Webseiten<br>
-4. Hilfe & Consulting<br>
-5. Weiterführende Kurse<br>
+3. Webseiten
 ]
 
 </font>
@@ -221,121 +209,15 @@ Das Netz ist vll. der beste Ort für Informationen über R.
 </p>
 ]
 
----
-
-# Support
-
-<table class="tg"  style="cellspacing:0; cellpadding:0; border:none">
-  <col width="22%">
-  <col width="22%">
-  <col width="22%">
-  <tr>
-    <th class="tg-yw4l" valign='top'>
-    <p align="center"><br>
-    <a href="www.dirkwulff.org"><img border="0" alt="W3Schools" src="https://therbootcamp.github.io/img/team/1.png" height="230" style="border-radius:50%"></a><br>
-    <p align="center">
-    <font size = 5>Dr. Dirk Wulff</font><br><br>
-    <a href="www.dirkwulff.org"><b>dirkwulff.org</b></a><br>
-    <a href="https://github.com/dwulff"><b>github.com/dwulff</b></a><br>
-    <font size=4><i>packages: </i></font> 
-    <a href="https://cran.r-project.org/web/packages/cstab/index.html"><b>cstab</b></a>, <br>
-    <a href="https://cran.r-project.org/web/packages/mousetrap/index.html"><b>mousetrap</b></a>, <a href="https://cran.r-project.org/web/packages/memnet/index.html"><b>memnet</b> <a href="https://github.com/dwulff/choicepp"><b>choicepp</b>
-    </p>  
-  </th>
-  
-  <th class="tg-yw4l" valign='top'><p align="center"><br>
-    <a href="https://psychologie.unibas.ch/en/persons/markus-steiner/about-me/"><img border="0" alt="W3Schools" src="https://therbootcamp.github.io/img/team/2.png" height="230" style="border-radius:50%"></a><br>
-    <p align="center">
-    <font size = 5>Markus Steiner</font><br><br>
-    <a href="https://github.com/mdsteiner"><b>github.com/mdsteiner</b></a><br>
-    <font size=4><i>packages: </i></font> 
-    <a href="https://github.com/mdsteiner/ShinyPsych"><b>ShinyPsych</b></a>, <br>
-    <a href="https://github.com/mdsteiner/EFAdiff"><b>EFAdiff</b></a> <br><br>
-    </p>
-  </th>
-  
-  <th class="tg-yw4l" valign='top'>
-    <p align="center">
-    <p align="center"><br>
-    <a href="https://www.schulte-mecklenbeck.com/"><img border="0" alt="W3Schools" src="https://therbootcamp.github.io/img/team/3.png" height="230" style="border-radius:50%"></a><br>
-    <p align="center">
-    <font size = 5>Dr. Michael Schulte-<br>Mecklenbeck</font><br><br>
-    <a href="www.schulte-mecklenbeck.com"><b>schulte-mecklenbeck.com</b></a><br>
-    <a href="https://github.com/schultem"><b>github.com/schultem</b></a><br><br>
-    </p>
-  </th>
-
-
-</tr>
-
-</table>
-
----
-
-
-# Weiterführende Kurse
-
-
-<table class="tg"  style="cellspacing:0; cellpadding:0; border:none;">
-<tr valign="top">
-  <col width="25%">
-  <col width="25%">
-  <col width="25%">
-  <td>
-    <p align="center">
-      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Statistik mit R<br></font><br>
-      <br>
-      <img src="https://therbootcamp.github.io/img/courses/2.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>March 20/21, 2020</high><br><br><br>
-      </a>
-    </p>
-  </td>
-  <td>
-    <p align="center">
-      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Maschinelles Lernen mit R</font><br>
-      <br>
-      <img src="https://therbootcamp.github.io/img/courses/3.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>April 3/4, 2020</high><br><br><br>
-      </a>
-    </p>
-  </td>
-  <td>
-    <p align="center">
-      <a class="project-link" href="http://therbootcamp.github.io/#courses" align="center">
-      <font style="font-size:20px;weight:700"><br>Reporting mit R<br></font><br>
-      <br>
-      <img src="https://therbootcamp.github.io/img/courses/4.png" height="230px" style="border-radius:50%;border:10px solid #E9ECEF"></img><br><br>
-      <high>Juni 5/6, 2020</high><br><br><br>
-      </a>
-    </p>
-  </td>
-  </tr>
-
-
----
-
-.pull-left45[
-# Bitte gebt uns Feedback
-<br><br>
-
-<p align = "center">
-  <img src="image/feedback.png" height=350px></img><br>
-  <font style="font-size:10px">from <a href="https://cdn-images-1.medium.com/max/1600/1*5OZNYAfzDZfM1lwJBZEuHQ.png">medium.com</a></font>
-</p>
-
-]
-
-.pull-right45[
-
-<p align="center"><br><br>
-<iframe src="https://docs.google.com/forms/d/e/1FAIpQLSefABREozlrgBnY7dfRtoKZRVAlTOk83tW0LR1JgHJsJrdxfw/viewform?embedded=true" width="430" height="550" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe></p>
-
-]
 
 ---
 class: center, middle
 
-# Herzlichen Dank! und noch eine Sache...
+# Feedback
+
+---
+
+class: center, middle
+
+# Merci!
 
