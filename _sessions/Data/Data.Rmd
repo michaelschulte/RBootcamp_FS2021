@@ -831,7 +831,7 @@ class: middle, center
 
 <i>Download</i>
 
-<h1><a href="https://michaelschulte.github.io/RBootcamp_FS2021/1_Data/TheRBootcamp_FS2021_data.zip" download>Daten</a></h1>
+<h1><a href="https://michaelschulte.github.io/RBootcamp_FS2021/1_Data/RBootcamp_FS2021_data.zip">Downloads</a></h1>
 
 ---
 
