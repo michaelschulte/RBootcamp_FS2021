@@ -4,7 +4,7 @@ author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
       <font style='font-style:normal'>Datascience mit R lernen</font><br>
-      <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
+      <a href='https://michaelschulte.github.io/RBootcamp_FS2021/'>
         <i class='fas fa-home' style='font-size:.9em;'></i>
       </a>
       
@@ -156,7 +156,7 @@ options(digits = 2)  # Round all output to 2 digits
 
 4. Create a new code chunk by either clicking the "Insert - R" button, or by using the "Command + Option + I"" shortcut on Mac
 
-5. Now it's time to add an image to your document! In the chunk you just created, use the following template to include an image of a burger in your document. You can find the image here: [link](https://michaelschulte.github.io/RBootcamp_HS2020/_sessions/PlottingI/image/burgers.jpg). (Tip: Use right click and copy link address to copy the link)
+5. Now it's time to add an image to your document! In the chunk you just created, use the following template to include an image of a burger in your document. You can find the image here: [link](https://michaelschulte.github.io/RBootcamp_FS2021/_sessions/PlottingI/image/burgers.jpg). (Tip: Use right click and copy link address to copy the link)
 
 
 

@@ -2,10 +2,10 @@
 title: "Daten"
 author: "
   Datascience mit R lernen<br>
-  <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
+  <a href='https://michaelschulte.github.io/RBootcamp_FS2021/'>
      R Bootcamp
   </a>"
-date: "HS 2020"
+date: "FS 2021"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -33,7 +33,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Datascience mit R lernen | HS 2020
+       Datascience mit R lernen | FS 2021
       </font>
     </a>
     </span>
@@ -831,12 +831,12 @@ class: middle, center
 
 <i>Download</i>
 
-<h1><a href="https://michaelschulte.github.io/RBootcamp_HS2020/1_Data/TheRBootcamp_HS2020_data.zip" download>Daten</a></h1>
+<h1><a href="https://michaelschulte.github.io/RBootcamp_FS2021/1_Data/TheRBootcamp_FS2021_data.zip" download>Daten</a></h1>
 
 ---
 
 class: middle, center
 
-<h1><a href="https://michaelschulte.github.io/RBootcamp_HS2020//_sessions/Data/Data_practical.html">Practical</a></h1>
+<h1><a href="https://michaelschulte.github.io/RBootcamp_FS2021/_sessions/Data/Data_practical.html">Practical</a></h1>
 
 

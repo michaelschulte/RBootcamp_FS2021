@@ -2,10 +2,10 @@
 title: "Willkommen"
 author: "
   Datascience mit R lernen<br>
-  <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
+  <a href='https://michaelschulte.github.io/RBootcamp_FS2021/'>
     R Bootcamp
   </a>"
-date: "HS 2020"
+date: "FS 2021"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -33,7 +33,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Datascience mit R lernen | HS 2020
+       Datascience mit R lernen | FS 2021
       </font>
     </a>
     </span>
@@ -63,7 +63,7 @@ Klicke auf <high>"Start Bootcamp"</high> auf Ilias!
 .pull-right5[
 
 <br><br>
-<iframe src="https://michaelschulte.github.io/RBootcamp_HS2020/" width="500" height="500"></iframe>
+<iframe src="https://michaelschulte.github.io/RBootcamp_FS2021/" width="500" height="500"></iframe>
 
 ]
 
@@ -198,7 +198,7 @@ Chief Decision Scientist at Google
   <li class="m2"><span><high>Materialien</high>
   <br><br>
   <ul class="level">
-    <li><span><a href="https://michaelschulte.github.io/RBootcamp_HS2020/">online verfügbar</a></span></li>
+    <li>online verfügbar</li>
   </ul>
   </span></li>
 </ul>
@@ -243,9 +243,9 @@ Chief Decision Scientist at Google
 .pull-right5[
 <br>
 
-  <iframe src="https://michaelschulte.github.io/RBootcamp_HS2020/_sessions/Data/Data_practical.html" height="480px" width = "500px"></iframe>
+  <iframe src="https://michaelschulte.github.io/RBootcamp_FS2021/_sessions/Data/Data_practical.html" height="480px" width = "500px"></iframe>
 
-  Beispiel:<a href="https://michaelschulte.github.io/RBootcamp_HS2020/_sessions/Data/Data_practical.html"> Daten </a>
+  Beispiel:<a href="https://michaelschulte.github.io/RBootcamp_FS2021/_sessions/Data/Data_practical.html"> Daten </a>
 
 ]
 
@@ -293,7 +293,7 @@ Chief Decision Scientist at Google
 # Pausen
 
 <ul>
-  <li class="m1"><span>Mach <high>jederzeit</high> Pausen.</span></li>
+  <li class="m1"><span>Macht <high>jederzeit</high> Pausen.</span></li>
   <li class="m2"><span>Programmieren braucht [Kaffee|Tee|Wasser].</span></li>
   <li class="m3"><span>Mich gerne daran <high>erinnern</high>, dass eine Pause gut wäre!</span></li>
   <li class="m4"><span>Eine fixe 30-Minuten Pause in der Mitte des Nachmittages</li>
@@ -333,7 +333,7 @@ Chief Decision Scientist at Google
   <li class="m3"><span>Hast du Programmiererfahrung mit R oder anderen Programmiersprachen?</span></li>
   <li class="m4"><span>Wieso möchtest Du R lernen?</span></li>
   <li class="m5"><span>Kaffee oder Tee?</span></li>
-  <li class="m6"><span>Bier oder Wein?</span></li>
+  <li class="m6"><span>Mac oder PC?</span></li>
   <li class="m7"><span>Berlin oder Paris?</span></li>
 </ul>
 
@@ -356,7 +356,7 @@ Chief Decision Scientist at Google
 .pull-left5[
 
 <ul>
-  <li class="m1"><span>Random allocation?</span></li>
+  <li class="m1"><span>Random allocation</span></li>
   <li class="m2"><span>Präferenzen für Teams?</span></li>
   <li class="m3"><span>Gruppename finden</span></li>
 </ul>
@@ -380,4 +380,4 @@ Chief Decision Scientist at Google
 
 class: middle, center
 
-<h1><a href=https://michaelschulte.github.io/RBootcamp_HS2020/index.html>Agenda</a></h1>
+<h1><a href=https://michaelschulte.github.io/RBootcamp_FS2021/index.html>Agenda</a></h1>

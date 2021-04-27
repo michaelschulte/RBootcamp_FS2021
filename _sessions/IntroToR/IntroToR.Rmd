@@ -2,10 +2,10 @@
 title: "Einführung in R(Studio)"
 author: "
   Datascience mit R lernen<br>
-  <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'>
+  <a href='https://michaelschulte.github.io/RBootcamp_FS2021/'>
      R Bootcamp
   </a>"
-date: "HS 2020"
+date: "FS 2021"
 output:
   xaringan::moon_reader:
     css: ["default", "baselrbootcamp.css"]
@@ -33,7 +33,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Datascience mit R lernen | HS 2020
+       Datascience mit R lernen | FS 2021
       </font>
     </a>
     </span>
@@ -86,9 +86,9 @@ summary(analysis)
 
 ---
 
-# Warum R?
-
 .pull-left45[
+
+# Warum R?
 
 <p align = "center">
   <img src="image/indeed2019.png" height = 400px><br>
@@ -98,6 +98,7 @@ summary(analysis)
 ]
 
 .pull-right45[
+<br><br><br>
 <p align = "center">
   <img src="image/indeed2019change.png" height = 400px><br>
   <font style="font-size:10px">siehe <a href="http://r4stats.com/articles/popularity/">r4stats.com</a></font>
@@ -107,11 +108,13 @@ summary(analysis)
 
 ---
 
+.pull-left45[
+
 # R wird relevant bleiben
+
 
 R ist de facto die <high>lingua franca</high> für Statistik und Datenanalyse. 
 
-.pull-left45[
 <br>
 ### Pro
 1. **Open-source** und umsonst.
@@ -123,7 +126,7 @@ R ist de facto die <high>lingua franca</high> für Statistik und Datenanalyse.
 ]
 
 .pull-right45[
-<br>
+<br><br><br><br><br><br><br><br><br>
 ### Ehemals Contra
 1. **Unschön**e Sprache wird überarbeitet ([Tidyverse](https://www.tidyverse.org/))
 2. **Langsam**e Elemente werden ersetzt ([Rcpp](http://www.rcpp.org/))
@@ -218,9 +221,9 @@ Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-per
 
 ---
 
-# 10 grundlegende R Lektionen
-
 .pull-left4[
+
+# 10 grundlegende R Lektionen
 
 <b>Syntax</b>
 <ul>
@@ -244,9 +247,11 @@ Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-per
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1"><span><high>Der Assignment Operator <mono><-</mono></high></span></li>
@@ -267,8 +272,8 @@ Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-per
 ]
 
 
-.pull-right5[
-
+.pull-right5[ <br><br><br><br>
+<br><br><br><br>
 <p align="center">
   <img src="image/assignment.png">
 </p>
@@ -277,12 +282,13 @@ Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-per
 ]
 
 
-
 ---
+
+.pull-left4[
 
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -303,7 +309,7 @@ Das [`tidyverse`](https://www.tidyverse.org/) ist im Kern eine Sammlung hoch-per
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Ein Objekt namens eins_zwei_drei
 eins_zwei_drei <- c(1, 2, 3)
@@ -319,9 +325,11 @@ eins_zwei_drei
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -342,7 +350,7 @@ eins_zwei_drei
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Ein Objekt namens eins_zwei_drei
 eins_zwei_drei <- c(1, 2, 3)
@@ -355,9 +363,12 @@ mean(eins_zwei_drei)
 
 ---
 
+.pull-left4[
+
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -378,7 +389,7 @@ mean(eins_zwei_drei)
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Ein Objekt namens eins_zwei_drei
 eins_zwei_drei <- c(1, 2, 3)
@@ -394,9 +405,11 @@ ergebnis * 10
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -417,7 +430,7 @@ ergebnis * 10
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Ein Objekt namens eins_zwei_drei
 eins_zwei_drei <- c(1, 2, 3)
@@ -437,9 +450,11 @@ eins_zwei_drei
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -460,7 +475,7 @@ eins_zwei_drei
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Ein Objekt namens eins_zwei_drei
 eins_zwei_drei <- c(1, 2, 3)
@@ -481,9 +496,11 @@ eins_zwei_drei
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -504,7 +521,7 @@ eins_zwei_drei
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Ein Objekt namens eins_zwei_drei
 eins_zwei_drei <- c(1, 2, 3)
@@ -521,9 +538,11 @@ und_vier
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -544,15 +563,17 @@ und_vier
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 <p align="center"><img src="image/input_output.png" height="300"></p>
 ]
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -573,7 +594,7 @@ und_vier
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Funktion c()
 eins_zwei_drei <- c(1, 2, 3)
@@ -592,9 +613,11 @@ mean(x = eins_zwei_drei)
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -615,7 +638,7 @@ mean(x = eins_zwei_drei)
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r, error=TRUE,tidy=T}
 # Kein Argument
 mean()
@@ -631,9 +654,11 @@ mean(c(1, 2, 3, NA))
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -654,7 +679,7 @@ mean(c(1, 2, 3, NA))
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r, error=TRUE,tidy=T}
 # Kein Argument
 mean()
@@ -671,9 +696,11 @@ mean(c(1, 2, 3, NA), na.rm = TRUE)
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -694,7 +721,7 @@ mean(c(1, 2, 3, NA), na.rm = TRUE)
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r, error=TRUE,tidy=T}
 # Berechne Mittelwert von c(1, 2, 3)
 mean(c(1, 2, 3))
@@ -706,9 +733,11 @@ mean(c("1", "2", "3"))
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -729,7 +758,7 @@ mean(c("1", "2", "3"))
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r, error=TRUE,tidy=T}
 # Klasse von c(1, 2, 3)
 class(c(1, 2, 3))
@@ -741,9 +770,11 @@ class(c("1", "2", "3"))
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -764,7 +795,7 @@ class(c("1", "2", "3"))
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 ?mean
 ```
@@ -773,9 +804,11 @@ class(c("1", "2", "3"))
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -796,7 +829,7 @@ class(c("1", "2", "3"))
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 ?mean
 ```
@@ -805,9 +838,11 @@ class(c("1", "2", "3"))
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -828,7 +863,7 @@ class(c("1", "2", "3"))
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Mittelwert von c(1, 2, 3)
 mean(c(1, 2, 3))
@@ -844,9 +879,11 @@ mean(c("1", "2", "3"))
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -867,7 +904,7 @@ mean(c("1", "2", "3"))
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 ?mean
 ```
@@ -877,9 +914,11 @@ mean(c("1", "2", "3"))
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -900,7 +939,7 @@ mean(c("1", "2", "3"))
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r, error = T}
 # Mittelwert von c(1, 2, 3, NA)
 mean(c(1, 2, 3, NA), na.rm = TRUE)
@@ -916,9 +955,11 @@ mean(c(1, 2, 3, NA), na.rm = "ABCD")
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -939,7 +980,7 @@ mean(c(1, 2, 3, NA), na.rm = "ABCD")
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Klasse von TRUE
 class(TRUE)
@@ -955,9 +996,11 @@ class("ABCD")
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -978,7 +1021,7 @@ class("ABCD")
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 ```{r}
 # Wandle "TRUE" in logical um
 as.logical("TRUE")
@@ -993,9 +1036,11 @@ as.logical("ABCD")
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1016,15 +1061,17 @@ as.logical("ABCD")
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 <p align="center"><br><br><br><br><br><font style="font-size:48px"><i>Kurze<br>Pause?</i></font></p>
 ]
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1045,15 +1092,17 @@ as.logical("ABCD")
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 <p align="center"><img src="image/pakete.png" height="400"></p>
 ]
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1074,7 +1123,7 @@ as.logical("ABCD")
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 
 <iframe src="https://www.rdocumentation.org/trends?page1=1&sort1=total&page2=1&sort2=total&page3=1&page4=1" width="500" height="400" frameborder="0" marginheight="0" marginwidth="0" zoom="0.5"></iframe>
 
@@ -1089,9 +1138,11 @@ as.logical("ABCD")
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1112,7 +1163,7 @@ as.logical("ABCD")
 ]
 
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 
 <high>Installiere</high> Pakete <high>einmal</high> mit `install.packages()`
 
@@ -1133,9 +1184,11 @@ library(tidyverse)
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1155,7 +1208,7 @@ library(tidyverse)
 </ul>
 ]
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 
 ```{r, eval=F}
 # Message: Interessant
@@ -1180,9 +1233,11 @@ lenth(x = 1)
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1202,7 +1257,7 @@ lenth(x = 1)
 </ul>
 ]
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 
 <p style="top:250px"> </p>
 
@@ -1218,9 +1273,11 @@ lenth(x = 1)
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1240,7 +1297,7 @@ lenth(x = 1)
 </ul>
 ]
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 
 <p align = "center">
   <img src="image/rstudio.png" height = 350px>
@@ -1250,9 +1307,11 @@ lenth(x = 1)
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1272,7 +1331,7 @@ lenth(x = 1)
 </ul>
 ]
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 
 <p align = "left">
   <img src="image/editor_edit.png">
@@ -1285,9 +1344,11 @@ Shortcut für <high>führe Chunk wiederholt aus</high>:<br><br2><font size = 6> 
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1307,7 +1368,7 @@ Shortcut für <high>führe Chunk wiederholt aus</high>:<br><br2><font size = 6> 
 </ul>
 ]
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 
 <p align = "center">
   <img src="image/auto_complete_1.png">
@@ -1318,9 +1379,11 @@ Shortcut für <high>führe Chunk wiederholt aus</high>:<br><br2><font size = 6> 
 
 ---
 
+.pull-left4[
+
 # 10 grundlegende R Lektionen
 
-.pull-left4[
+
 <b>Syntax</b>
 <ul>
   <li class="m1g"><span>Der Assignment Operator <mono><-</mono></span></li>
@@ -1340,7 +1403,7 @@ Shortcut für <high>führe Chunk wiederholt aus</high>:<br><br2><font size = 6> 
 </ul>
 ]
 
-.pull-right5[
+.pull-right5[ <br><br><br><br>
 
 <b>Projekte helfen bei...</b><br>
 workspace und history speichern &#9679; projektspezifische Optionen setzen &#9679; Dateien finden &#9679; Versionskontrolle &#9679; etc.

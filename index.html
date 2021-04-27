@@ -9,17 +9,27 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="  HS 2020" />
+<meta name="author" content="  FS 2021" />
 
 
 <title>R Bootcamp - Datascience mit R lernen</title>
 
+<script src="index_files/header-attrs-2.7/header-attrs.js"></script>
 <script src="index_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="index_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="index_files/navigation-1.1/tabsets.js"></script>
 <link href="index_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="index_files/highlightjs-9.12.0/highlight.js"></script>
@@ -31,14 +41,9 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -51,32 +56,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="index.css" type="text/css" />
 
@@ -87,10 +67,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -107,6 +83,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -119,7 +98,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -183,37 +161,31 @@ summary {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
 <h1 class="title toc-ignore">R Bootcamp - Datascience mit R lernen</h1>
 <h3 class="subtitle">420257</h3>
-<h4 class="author"><img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1em;'></i> </a><font style='font-style:normal;font-size:20px;padding-left:9.3px'>HS 2020</font></h4>
+<h4 class="author"><img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><a href='https://therbootcamp.github.io'> <i class='fas fa-home' style='font-size:1em;'></i> </a><font style='font-style:normal;font-size:20px;padding-left:9.3px'>FS 2021</font></h4>
 
 </div>
 
 
 <div id="der-plan" class="section level1">
 <h1>Der Plan:</h1>
-<table style="width:100%;">
-<colgroup>
-<col width="28%" />
-<col width="14%" />
-<col width="28%" />
-<col width="28%" />
-</colgroup>
+<table>
 <thead>
 <tr class="header">
 <th align="center">Datum</th>
 <th align="left">Thema</th>
-<th align="center">Einführung</th>
-<th align="center">Übungen</th>
+<th align="center">Input</th>
+<th align="center">Practicals</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="center">18.09.</td>
+<td align="center">30.04.</td>
 <td align="left">Willkommen!</td>
 <td align="center"><a href="_sessions/Welcome/Welcome.html">slides</a></td>
 <td align="center"></td>
@@ -221,17 +193,17 @@ summary {
 <tr class="even">
 <td align="center"></td>
 <td align="left">Einführung R</td>
-<td align="center"><a href="_sessions/IntroToR/IntroToR.html">slides</a>, <a href="https://michaelschulte.github.io/RBootcamp_HS2020/1_Data/TheRBootcamp_HS2020_data.zip">data sets</a></td>
+<td align="center"><a href="_sessions/IntroToR/IntroToR.html">slides</a>, <a href="https://michaelschulte.github.io/RBootcamp_FS2021/1_Data/TheRBootcamp_FS2021_data.zip">data sets</a></td>
 <td align="center"><a href="_sessions/IntroToR/IntroToR_interactive.R">source</a></td>
 </tr>
 <tr class="odd">
 <td align="center"></td>
 <td align="left">Data</td>
 <td align="center"><a href="_sessions/Data/Data.html">slides</a></td>
-<td align="center"><a href="_sessions/Data/Data_practical.html">practical</a>, <a href="_sessions/Data/Data_practical_solutions.html">solutions</a></td>
+<td align="center"><a href="_sessions/Data/Data_practical.html">practical</a>, <!--[solutions](_sessions/Data/Data_practical_solutions.html)--></td>
 </tr>
 <tr class="even">
-<td align="center">25.09.</td>
+<td align="center">07.05.</td>
 <td align="left">Recap</td>
 <td align="center"></td>
 <td align="center"></td>
@@ -239,17 +211,17 @@ summary {
 <tr class="odd">
 <td align="center"></td>
 <td align="left">Wrangling I</td>
-<td align="center"><a href="_sessions/Wrangling/Wrangling.html">slides</a></td>
-<td align="center"><a href="_sessions/Wrangling/Wrangling_practical.html">practical</a> <br> <a href="https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5">Practical Upload</a> Format: NAME_Wrangling1.R, <a href="_sessions/Wrangling/Wrangling_practical_solutions.html">solutions</a></td>
+<td align="center"><!-- [slides](_sessions/Wrangling/Wrangling.html) --></td>
+<td align="center"><!-- [practical](_sessions/Wrangling/Wrangling_practical.html) <br> [Practical Upload](https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5) Format: NAME_Wrangling1.R, [solutions](_sessions/Wrangling/Wrangling_practical_solutions.html)--></td>
 </tr>
 <tr class="even">
 <td align="center"></td>
 <td align="left">Wrangling II</td>
-<td align="center"><a href="_sessions/WranglingII/WranglingII.html">slides</a></td>
-<td align="center"><a href="_sessions/WranglingII/WranglingII_practical.html">practical</a> <br> <a href="https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5">Practical Upload</a> Format: NAME_Wrangling2.R, <a href="_sessions/WranglingII/WranglingII_practical_solutions.html">solutions</a></td>
+<td align="center"><!--[slides](_sessions/WranglingII/WranglingII.html) |<!-- [practical](_sessions/WranglingII/WranglingII_practical.html)  <br> [Practical Upload](https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5) Format: NAME_Wrangling2.R, [solutions](_sessions/WranglingII/WranglingII_practical_solutions.html)--></td>
+<td align="center"></td>
 </tr>
 <tr class="odd">
-<td align="center">09.10.</td>
+<td align="center">14.05.</td>
 <td align="left">Recap</td>
 <td align="center"></td>
 <td align="center"></td>
@@ -257,17 +229,17 @@ summary {
 <tr class="even">
 <td align="center"></td>
 <td align="left">Plotting I</td>
-<td align="center"><a href="_sessions/PlottingI/PlottingI.html">slides</a></td>
-<td align="center"><a href="_sessions/PlottingI/PlottingI_practicaI.html">practical</a>, <a href="_sessions/PlottingI/PlottingI_practicaI_solutions.html">solutions</a></td>
+<td align="center"><!--[slides](_sessions/PlottingI/PlottingI.html)--></td>
+<td align="center"><!-- [practical](_sessions/PlottingI/PlottingI_practicaI.html), [solutions](_sessions/PlottingI/PlottingI_practicaI_solutions.html)--></td>
 </tr>
 <tr class="odd">
 <td align="center"></td>
 <td align="left">Plotting II</td>
-<td align="center"><a href="_sessions/PlottingII/PlottingII.html">slides</a></td>
-<td align="center"><a href="_sessions/PlottingII/PlottingII_practical.html">practical</a>, <a href="_sessions/PlottingII/PlottingII_practical_solutions.html">solutions</a></td>
+<td align="center"><!--[slides](_sessions/PlottingII/PlottingII.html) --></td>
+<td align="center"><!-- [practical](_sessions/PlottingII/PlottingII_practical.html), [solutions](_sessions/PlottingII/PlottingII_practical_solutions.html)--></td>
 </tr>
 <tr class="even">
-<td align="center">16.10.</td>
+<td align="center">21.05.</td>
 <td align="left">Recap</td>
 <td align="center"></td>
 <td align="center"></td>
@@ -275,52 +247,38 @@ summary {
 <tr class="odd">
 <td align="center"></td>
 <td align="left">Plotting III + Competition</td>
-<td align="center"><a href="_sessions/PlottingIII/PlottingIII.html">slides</a></td>
-<td align="center"><a href="_sessions/PlottingIII/Competition.html">Competition</a></td>
+<td align="center"><!-- [slides](_sessions/PlottingIII/PlottingIII.html)--></td>
+<td align="center"><!-- [Competition](_sessions/PlottingIII/Competition.html)| |
+||Intro Projekte||[Covid-Boot-Camp & Arr-PiRaten](sessions/Project/FinalProject_Medicine.html) <br> [We-R-lost & R-Pandemi](_sessions/Project/FinalProject_Clinical.html)--></td>
 </tr>
 <tr class="even">
-<td align="center"></td>
-<td align="left">Intro Projekte</td>
-<td align="center"></td>
-<td align="center"><a href="_sessions/Project/FinalProject_Medicine.html">Covid-Boot-Camp &amp; Arr-PiRaten</a> <br> <a href="_sessions/Project/FinalProject_Clinical.html">We-R-lost &amp; R-Pandemi</a></td>
-</tr>
-<tr class="odd">
-<td align="center">23.10.</td>
+<td align="center">28.05.</td>
 <td align="left">Recap</td>
 <td align="center"></td>
 <td align="center"></td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="center"></td>
 <td align="left">Lineare Modelle</td>
-<td align="center"><a href="_sessions/LinearModelsI/LinearModelsI.html">slides</a></td>
-<td align="center"><a href="_sessions/LinearModelsI/LinearModelsI_practical.html">practical</a>, <a href="_sessions/LinearModelsI/LinearModelsI_practical_solutions.html">solutions</a></td>
-</tr>
-<tr class="odd">
-<td align="center"></td>
-<td align="left">Reporting</td>
-<td align="center"><a href="_sessions/Reporting/Reporting.html">slides</a></td>
-<td align="center"><a href="_sessions/Reporting/Reporting_practical.html">practical</a>, <a href="_sessions/Reporting/Reporting_practical_solutions.html">solutions</a></td>
+<td align="center"><!--[slides](_sessions/LinearModelsI/LinearModelsI.html)--></td>
+<td align="center"><!--[practical](_sessions/LinearModelsI/LinearModelsI_practical.html), [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)| |
+|| Reporting | [slides](_sessions/Reporting/Reporting.html)--></td>
 </tr>
 <tr class="even">
-<td align="center">06.11.</td>
+<td align="center">04.06.</td>
 <td align="left">Projektpräsentationen</td>
-<td align="center"><a href="_sessions/NextSteps/NextSteps.html">Next steps</a></td>
-<td align="center"><a href="https://forms.gle/38LagXxyH2cMHynt8">feedback</a></td>
-</tr>
-<tr class="odd">
-<td align="center"></td>
-<td align="left">Covid-R-Bootcamp, We-R-Lost, Arr-PiRaten, R-Pandemi</td>
-<td align="center"></td>
-<td align="center"><!--- [Medicine](_sessions/FinalProject/FinalProject_Medicine.html), [Clinical](_sessions/FinalProject/FinalProject_Clinical.html)---></td>
+<td align="center"><!--[Next steps](_sessions/NextSteps/NextSteps.html)--></td>
+<td align="center"><!--[feedback](https://forms.gle/38LagXxyH2cMHynt8)| 
+|| Covid-R-Bootcamp, We-R-Lost, Arr-PiRaten, R-Pandemi --></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="practicals" class="section level1">
 <h1>Practicals</h1>
-<p>Upload bitte in der Form: Gruppe_Practical#.R</p>
-<p><a href="https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5">Practical Upload</a></p>
+<p>Upload bitte in der Form: Gruppe_Practical#XY.zip</p>
+<p>Practicals sollen immer alle nötigen Daten, .RProject File und Code beinhalten und problemlos laufen.</p>
+<p><a href="https://www.dropbox.com/request/yKJIygRY1BZkpOj3ljMb">Practical Upload</a></p>
 <!---
 
 |  | Day 1<br>Fundamentals| Day 2<br>Analysis| Day 3<br>Reporting| 
@@ -352,7 +310,7 @@ summary {
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -370,7 +328,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

@@ -13,22 +13,36 @@
 
 <title>Daten</title>
 
+<script src="Data_practical_files/header-attrs-2.7/header-attrs.js"></script>
 <script src="Data_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="Data_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="Data_practical_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="Data_practical_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="Data_practical_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="Data_practical_files/navigation-1.1/tabsets.js"></script>
 <link href="Data_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="Data_practical_files/highlightjs-9.12.0/highlight.js"></script>
 
-<style type="text/css">code{white-space: pre;}</style>
 <style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -41,32 +55,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="practical.css" type="text/css" />
 
@@ -77,10 +66,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -97,6 +82,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -109,7 +97,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -173,7 +160,7 @@ summary {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -183,7 +170,7 @@ summary {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_FS2021/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -198,7 +185,7 @@ summary {
 <img src="https://www.methodspace.com/wp-content/uploads/2018/02/Big-data-slider_GEBI.jpg" alt="Trulli" style="width:100%;height:280px"> <br> <font style="font-size:10px">from <a href="https://www.methodspace.com">methodspace.com</a></font>
 </p>
 <div id="section" class="section level1 tabset tabset-fade">
-<h1></h1>
+<h1 class="tabset tabset-fade"></h1>
 <div id="überblick" class="section level2">
 <h2>Überblick</h2>
 <p>In diesem Practical wirst du R’s Datenklassen besser kennenlernen und das Einlesen und Schreiben von Daten üben.</p>
@@ -301,7 +288,7 @@ XX</code></pre>
 </ol>
 <pre class="r"><code># Zeige die Klasse von id
 class(XX)</code></pre>
-<pre><code>[1] &quot;integer&quot;</code></pre>
+<pre><code>[1] &quot;numeric&quot;</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende die <code>length()</code> Funktion, um die länge von <code>id</code> zu bestimmen. Hat er die Länge 5? Wenn nicht, stelle sicher, dass du den Vektor korrekt definiert hast.</li>
 </ol>
@@ -345,12 +332,14 @@ XX &lt;- tibble(XX, XX, XX, XX, XX, XX) </code></pre>
 <ol start="2" style="list-style-type: decimal">
 <li>Printe den data frame. Enthält er alle Vektoren? Welche Ausmasse (Anzahl Zeilen, Spalten) hat der data frame?</li>
 </ol>
-<pre><code>  id alter geschlecht groesse gewicht
-1  1    44          m     174     113
-2  2    65          m     180      75
-3  3    31          f     168      56
-4  4    27          m     209     934
-5  5    24          m     177      NA</code></pre>
+<pre><code># A tibble: 5 x 5
+     id alter geschlecht groesse gewicht
+  &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;
+1     1    44 m              174     113
+2     2    65 m              180      75
+3     3    31 f              168      56
+4     4    27 m              209     934
+5     5    24 m              177      NA</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende die Funktion <code>summary()</code> um deskriptive Statistiken für die Variablen in <code>basel</code> zu erstellen.</li>
 </ol>
@@ -380,7 +369,8 @@ diamonds_path &lt;- &quot;&quot;</code></pre>
 </ol>
 <pre class="r"><code># Lese den diamonds Datensatz ein
 diamonds &lt;- read_csv(file = XX)</code></pre>
-<pre><code>Parsed with column specification:
+<pre><code>
+── Column specification ────────────────────────────────────────────────────────
 cols(
   `0.8` = col_character(),
   `Very Good` = col_character(),
@@ -413,7 +403,8 @@ cols(
 <pre class="r"><code># lese dimaonds nochmal ein, diesmal mit expliziten Spaltennamen
 diamonds &lt;- read_csv(file = XX, 
                      col_names = c(&#39;name_1&#39;,&#39;name_2&#39;,&#39;...&#39;))  </code></pre>
-<pre><code>Parsed with column specification:
+<pre><code>
+── Column specification ────────────────────────────────────────────────────────
 cols(
   karat = col_character(),
   cut = col_character(),
@@ -464,7 +455,8 @@ diamonds$karat[XX] &lt;- YY</code></pre>
 </ol>
 <pre class="r"><code># Re-inferiere Datentypen
 diamonds &lt;- type_convert(diamonds)</code></pre>
-<pre><code>Parsed with column specification:
+<pre><code>
+── Column specification ────────────────────────────────────────────────────────
 cols(
   karat = col_double(),
   cut = col_character(),
@@ -477,16 +469,16 @@ cols(
 <pre><code># A tibble: 100 x 7
    karat cut       farbe klarheit tiefe tabelle preis
    &lt;dbl&gt; &lt;chr&gt;     &lt;chr&gt; &lt;chr&gt;    &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
- 1 0.8   Very Good H     VVS1      62.9      58  4468
- 2 0.74  Ideal     H     IF        60.9      57  3760
- 3 2.03  Premium   I     SI1       61.4      58 15683
- 4 0.41  Ideal     G     VVS1      62.1      55  1151
- 5 1.54  Premium   G     VS1       61.1      56 14438
- 6 0.3   Ideal     E     VS2       61.8      55   795
- 7 0.3   Ideal     H     VVS2      61.5      56   605
- 8 1.2   Ideal     D     SI1       61.8      58  7508
- 9 0.580 Ideal     E     VS2       62.3      54  1809
-10 0.31  Ideal     H     VS2       62.6      57   489
+ 1  0.8  Very Good H     VVS1      62.9      58  4468
+ 2  0.74 Ideal     H     IF        60.9      57  3760
+ 3  2.03 Premium   I     SI1       61.4      58 15683
+ 4  0.41 Ideal     G     VVS1      62.1      55  1151
+ 5  1.54 Premium   G     VS1       61.1      56 14438
+ 6  0.3  Ideal     E     VS2       61.8      55   795
+ 7  0.3  Ideal     H     VVS2      61.5      56   605
+ 8  1.2  Ideal     D     SI1       61.8      58  7508
+ 9  0.58 Ideal     E     VS2       62.3      54  1809
+10  0.31 Ideal     H     VS2       62.6      57   489
 # … with 90 more rows</code></pre>
 <ol start="11" style="list-style-type: decimal">
 <li>Nachdem du nun die Spaltennamen und die Klassen behoben hast, schreibe den Datensatz wieder auf die Festplatte unter <code>diamonds_sauber.csv</code> mit der Funktion <code>write_csv()</code>.</li>
@@ -560,18 +552,18 @@ titanic &lt;- read_excel(path = &quot;XX&quot;)</code></pre>
 <li>Printe <code>titanic</code> und evaluiere die Ausmasse des Datensatzes mit <code>dim()</code>.</li>
 </ol>
 <pre><code># A tibble: 1,309 x 14
-   pclass survived name  sex      age sibsp parch ticket  fare cabin embarked
-    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   
- 1      1        1 Alle… fema… 29         0     0 24160  211.  B5    S       
- 2      1        1 Alli… male   0.917     1     2 113781 152.  C22 … S       
- 3      1        0 Alli… fema…  2         1     2 113781 152.  C22 … S       
- 4      1        0 Alli… male  30         1     2 113781 152.  C22 … S       
- 5      1        0 Alli… fema… 25         1     2 113781 152.  C22 … S       
- 6      1        1 Ande… male  48         0     0 19952   26.6 E12   S       
- 7      1        1 Andr… fema… 63         1     0 13502   78.0 D7    S       
- 8      1        0 Andr… male  39         0     0 112050   0   A36   S       
- 9      1        1 Appl… fema… 53         2     0 11769   51.5 C101  S       
-10      1        0 Arta… male  71         0     0 PC 17…  49.5 &lt;NA&gt;  C       
+   pclass survived name     sex      age sibsp parch ticket  fare cabin embarked
+    &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;    &lt;chr&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;  &lt;dbl&gt; &lt;chr&gt; &lt;chr&gt;   
+ 1      1        1 Allen, … fema… 29         0     0 24160  211.  B5    S       
+ 2      1        1 Allison… male   0.917     1     2 113781 152.  C22 … S       
+ 3      1        0 Allison… fema…  2         1     2 113781 152.  C22 … S       
+ 4      1        0 Allison… male  30         1     2 113781 152.  C22 … S       
+ 5      1        0 Allison… fema… 25         1     2 113781 152.  C22 … S       
+ 6      1        1 Anderso… male  48         0     0 19952   26.6 E12   S       
+ 7      1        1 Andrews… fema… 63         1     0 13502   78.0 D7    S       
+ 8      1        0 Andrews… male  39         0     0 112050   0   A36   S       
+ 9      1        1 Appleto… fema… 53         2     0 11769   51.5 C101  S       
+10      1        0 Artagav… male  71         0     0 PC 17…  49.5 &lt;NA&gt;  C       
 # … with 1,299 more rows, and 3 more variables: boat &lt;chr&gt;, body &lt;dbl&gt;,
 #   home.dest &lt;chr&gt;</code></pre>
 <pre><code>[1] 1309   14</code></pre>
@@ -607,18 +599,18 @@ table(titanic$XX, titanic$XX)</code></pre>
 <li>Printe <code>sleep</code> und evaluiere die Ausmasse des Datensatzes mit <code>dim()</code>. Du wirst sehen, R war so clever die Labels der Variablen mit zu übernehmen.</li>
 </ol>
 <pre><code># A tibble: 271 x 55
-      id     sex   age marital edlevel weight height healthrate fitrate
-   &lt;dbl&gt; &lt;dbl+l&gt; &lt;dbl&gt; &lt;dbl+l&gt; &lt;dbl+l&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl+lbl&gt; &lt;dbl+l&gt;
- 1    83 0 [fem…    42 2 [mar… 2 [sec…     52    162 10 [very …       7
- 2   294 0 [fem…    54 2 [mar… 5 [pos…     65    174  8               7
- 3   425 1 [mal…    NA 2 [mar… 2 [sec…     89    170  6               5
- 4    64 0 [fem…    41 2 [mar… 5 [pos…     66    178  9               7
- 5   536 0 [fem…    39 2 [mar… 5 [pos…     62    160  9               5
- 6    57 0 [fem…    66 2 [mar… 4 [und…     62    165  8               8
- 7   251 0 [fem…    36 1 [sin… 3 [tra…     62    165  9               7
- 8   255 0 [fem…    35 2 [mar… 5 [pos…     75    174  6               6
- 9   265 1 [mal…    NA 2 [mar… 5 [pos…     90    180  6               6
-10   290 1 [mal…    41 2 [mar… 5 [pos…     75    187  9               9
+      id      sex   age   marital       edlevel weight height healthrate fitrate
+   &lt;dbl&gt; &lt;dbl+lb&gt; &lt;dbl&gt; &lt;dbl+lbl&gt;     &lt;dbl+lbl&gt;  &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl+lbl&gt; &lt;dbl+l&gt;
+ 1    83 0 [fema…    42 2 [marri… 2 [secondary…     52    162 10 [very …       7
+ 2   294 0 [fema…    54 2 [marri… 5 [postgradu…     65    174  8               7
+ 3   425 1 [male]    NA 2 [marri… 2 [secondary…     89    170  6               5
+ 4    64 0 [fema…    41 2 [marri… 5 [postgradu…     66    178  9               7
+ 5   536 0 [fema…    39 2 [marri… 5 [postgradu…     62    160  9               5
+ 6    57 0 [fema…    66 2 [marri… 4 [undergrad…     62    165  8               8
+ 7   251 0 [fema…    36 1 [singl… 3 [trade tra…     62    165  9               7
+ 8   255 0 [fema…    35 2 [marri… 5 [postgradu…     75    174  6               6
+ 9   265 1 [male]    NA 2 [marri… 5 [postgradu…     90    180  6               6
+10   290 1 [male]    41 2 [marri… 5 [postgradu…     75    187  9               9
 # … with 261 more rows, and 46 more variables: weightrate &lt;dbl+lbl&gt;,
 #   smoke &lt;dbl+lbl&gt;, smokenum &lt;dbl&gt;, alchohol &lt;dbl&gt;, caffeine &lt;dbl&gt;,
 #   hourwnit &lt;dbl&gt;, hourwend &lt;dbl&gt;, hourneed &lt;dbl&gt;, trubslep &lt;dbl+lbl&gt;,
@@ -984,7 +976,7 @@ chickens &lt;- read_spss(&quot;1_Data/chickens.sav&quot;)</code></pre>
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -1002,7 +994,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>
