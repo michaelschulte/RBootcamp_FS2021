@@ -1425,6 +1425,7 @@ class: middle, center
 
 class: middle, center
 
-<h1><a>Interactive</a></h1>
+<h1><a>Projekt gemeinsam erstellen</a></h1>
+  <img src="image/folder_structure.png">
 
 
