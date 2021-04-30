@@ -62,7 +62,7 @@ require(tidyverse)
 
 # R ist eine Programmiersprache
 
-Eine Programmiersprache ist eine <high>formale Sprache</high> die eine Reihe Instruktionen für alle möglichen Ziele spezifiziert. Programmiersprachen bestehen aus <high>instruktionen für einen Computer</high> und werden genutzt um <high>Algorithmen zu implementieren</high>.
+Eine Programmiersprache ist eine <high>formale Sprache</high> die eine Reihe Instruktionen für alle möglichen Ziele spezifiziert. Programmiersprachen bestehen aus <high>Instruktionen für einen Computer</high> und werden genutzt um <high>Algorithmen zu implementieren</high>.
 
 .pull-left4[
 <br>

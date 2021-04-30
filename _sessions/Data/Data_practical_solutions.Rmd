@@ -156,7 +156,7 @@ XX <- c("XX", "XX", "XX", "XX", "XX")
 
 ```{r}
 # Kreiere Vektor geschlecht 
-geschlecht <- c("m", "m", "f", "m", "m")
+geschlecht <- c("F", "M", "F", "M", "M")
 
 # Zeige den Vektor
 geschlecht
@@ -174,7 +174,7 @@ length(geschlecht)
 
 ```{r}
 # Kreiere Vektor alter
-alter <- c(44, 65, 31, 27, 24)
+alter <- c(87, 54, 34, 31, 24)
 
 # Zeige Vektor alter
 alter
@@ -186,7 +186,7 @@ class(alter)
 length(alter)
 
 # Kreiere Vektor groesse
-groesse <- c(174, 180, 168, 209, 177)
+groesse <- c(165, 175, 147, 166, 180)
 
 # Zeige Vektor groesse
 groesse
@@ -202,7 +202,7 @@ length(groesse)
 
 ```{r}
 # Kreiere Vektor gewicht
-gewicht <- c(113, 75, 56, 934, NA)
+gewicht <- c(NA, 86, 54, 105, 102)
 
 # Zeige Vektor gewicht
 gewicht
@@ -444,7 +444,7 @@ mean(diamonds$karat > 1)
 #### Excel
 
 ```{r, out.width = "8%", fig.align = 'left', eval = TRUE, echo = FALSE}
-knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png")
+knitr::include_graphics("https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019–present%29.svg")
 ```
 
 In diesem Unterabschnitt liest du den ebenfalls sehr bekannten `titanic` Datensatz aus einem Excel Format und speicherst die Daten als `.csv`.

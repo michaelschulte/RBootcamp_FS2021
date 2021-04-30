@@ -300,7 +300,7 @@ length(XX)</code></pre>
 </ol>
 <pre class="r"><code># Kreiere Vektor geschlecht 
 XX &lt;- c(&quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;)</code></pre>
-<pre><code>[1] &quot;m&quot; &quot;m&quot; &quot;f&quot; &quot;m&quot; &quot;m&quot;</code></pre>
+<pre><code>[1] &quot;F&quot; &quot;M&quot; &quot;F&quot; &quot;M&quot; &quot;M&quot;</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li>Verwende wiederum die Funktionen <code>class()</code> und <code>length()</code>, um die Klasse (<code>character</code>) und die Länge (5) zu überprüfen?</li>
 </ol>
@@ -309,16 +309,16 @@ XX &lt;- c(&quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot;XX&quot;, &quot
 <ol start="6" style="list-style-type: decimal">
 <li>Führe die selben Schritte nun für die Spalten <code>alter</code> und <code>groesse</code> aus.</li>
 </ol>
-<pre><code>[1] 44 65 31 27 24</code></pre>
+<pre><code>[1] 87 54 34 31 24</code></pre>
 <pre><code>[1] &quot;numeric&quot;</code></pre>
 <pre><code>[1] 5</code></pre>
-<pre><code>[1] 174 180 168 209 177</code></pre>
+<pre><code>[1] 165 175 147 166 180</code></pre>
 <pre><code>[1] &quot;numeric&quot;</code></pre>
 <pre><code>[1] 5</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Schaue dir die Spalte <code>gewicht</code> an. Du wirst sehen, dass sie einen fehlenden Wert beinhaltet. Kreiere einen Vektor <code>gewicht</code> mit denselben Schritten wie zuvor. Spezifiziere den fehlenden Wert dabei als <code>NA</code> - ohne Anführungszeichen.</li>
 </ol>
-<pre><code>[1] 113  75  56 934  NA</code></pre>
+<pre><code>[1]  NA  86  54 105 102</code></pre>
 <pre><code>[1] &quot;numeric&quot;</code></pre>
 <pre><code>[1] 5</code></pre>
 </div>
@@ -335,22 +335,22 @@ XX &lt;- tibble(XX, XX, XX, XX, XX, XX) </code></pre>
 <pre><code># A tibble: 5 x 5
      id alter geschlecht groesse gewicht
   &lt;dbl&gt; &lt;dbl&gt; &lt;chr&gt;        &lt;dbl&gt;   &lt;dbl&gt;
-1     1    44 m              174     113
-2     2    65 m              180      75
-3     3    31 f              168      56
-4     4    27 m              209     934
-5     5    24 m              177      NA</code></pre>
+1     1    87 F              165      NA
+2     2    54 M              175      86
+3     3    34 F              147      54
+4     4    31 M              166     105
+5     5    24 M              180     102</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li>Verwende die Funktion <code>summary()</code> um deskriptive Statistiken für die Variablen in <code>basel</code> zu erstellen.</li>
 </ol>
-<pre><code>       id        alter       geschlecht           groesse       gewicht   
- Min.   :1   Min.   :24.0   Length:5           Min.   :168   Min.   : 56  
- 1st Qu.:2   1st Qu.:27.0   Class :character   1st Qu.:174   1st Qu.: 70  
- Median :3   Median :31.0   Mode  :character   Median :177   Median : 94  
- Mean   :3   Mean   :38.2                      Mean   :182   Mean   :294  
- 3rd Qu.:4   3rd Qu.:44.0                      3rd Qu.:180   3rd Qu.:318  
- Max.   :5   Max.   :65.0                      Max.   :209   Max.   :934  
-                                                             NA&#39;s   :1    </code></pre>
+<pre><code>       id        alter     geschlecht           groesse       gewicht     
+ Min.   :1   Min.   :24   Length:5           Min.   :147   Min.   : 54.0  
+ 1st Qu.:2   1st Qu.:31   Class :character   1st Qu.:165   1st Qu.: 78.0  
+ Median :3   Median :34   Mode  :character   Median :166   Median : 94.0  
+ Mean   :3   Mean   :46                      Mean   :167   Mean   : 86.8  
+ 3rd Qu.:4   3rd Qu.:54                      3rd Qu.:175   3rd Qu.:102.8  
+ Max.   :5   Max.   :87                      Max.   :180   Max.   :105.0  
+                                                           NA&#39;s   :1      </code></pre>
 <ol start="4" style="list-style-type: decimal">
 <li><p>Verwende den <code>$</code>-Operator, um allein die Variable <code>alter</code> zu printen.</p></li>
 <li><p>Verwende die Funktionen <code>mean()</code>, <code>max()</code>, <code>min()</code>, und <code>median()</code> umd deskriptive Statistiken direkt für die Variable <code>alter</code> zu berechnen</p></li>
@@ -541,7 +541,7 @@ FALSE  TRUE
 <h3>F - Einlesen Anderer Formate</h3>
 <div id="excel" class="section level4">
 <h4>Excel</h4>
-<p><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Microsoft_Excel_2013_logo.svg/2000px-Microsoft_Excel_2013_logo.svg.png" width="8%" style="display: block; margin: auto auto auto 0;" /></p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Microsoft_Office_Excel_%282019–present%29.svg" width="8%" style="display: block; margin: auto auto auto 0;" /></p>
 <p>In diesem Unterabschnitt liest du den ebenfalls sehr bekannten <code>titanic</code> Datensatz aus einem Excel Format und speicherst die Daten als <code>.csv</code>.</p>
 <ol style="list-style-type: decimal">
 <li>Verwende die <code>read_excel()</code> Funktion, um den Datensatz <code>titanic.xls</code> als ein neues Objekt <code>titanic</code> einzulesen.</li>
