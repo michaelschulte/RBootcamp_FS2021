@@ -86,7 +86,7 @@ patienten_ergebnisse = patienten %>%
   <br><br>
   <ul class="level">
     <li><span>Fehlende Werte ersetzen / entfernen</span></li>
-    <li><span>Ändere alle Variablen, die...</span></li>
+    <li><span>Ändere alle Variablen, die ...</span></li>
     <li><span>Zeilen zu Spalten oder Spalten zu Zeilen</span></li>
   </ul>
   </span></li>
@@ -174,11 +174,9 @@ patienten_ergebnisse
 .pull-right5[
 
 ```{r}
+# Ändere alle numeric in character
 patienten_ergebnisse %>%
-  
-  # Ändere alle numeric in character
   mutate_if(is.numeric, as.character)
-
 ```
 
 ]
@@ -212,11 +210,9 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
+# Ändere fehlende Werte in 110
 patienten_ergebnisse %>%
-  
-  # Ändere fehlende Werte in 110
   mutate(t_1 = replace_na(t_1, 110))
-
 ```
 
 ]
@@ -250,11 +246,9 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
+# Entferne Zeilen mit fehlenden Werten
 patienten_ergebnisse %>%
-  
-  # Entferne Zeilen mit fehlenden Werten
   drop_na()
-
 ```
 
 ]
@@ -288,11 +282,9 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
+# Wähle spalten aus, die mit "t" beginnen
 patienten_ergebnisse %>%
-  
-  # Wähle spalten aus, die mit "t" beginnen
   select(starts_with("t"))
-
 ```
 
 ]
@@ -326,11 +318,9 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
+# Wähle spalten aus, die "_" beinhalten
 patienten_ergebnisse %>%
-  
-  # Wähle spalten aus, die "_" beinhalten
   select(contains("_"))
-
 ```
 
 ]
@@ -364,11 +354,9 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
+# Spalten von alter bis t_1
 patienten_ergebnisse %>%
-  
-  # Spalten von alter bis t_1
   select(alter:t_1)
-
 ```
 
 ]
@@ -431,7 +419,6 @@ DATEN %>%
 # wide zu long
 patienten_ergebnisse %>% 
   filter(bed_label == "placebo")
-
 ```
 ]
 
@@ -544,7 +531,7 @@ patienten_ergebnisse_lang %>%
   <ul class="level">
     <li><span><mono>summarise()</mono></span></li>
     <li><span><mono>summarise_if()</mono></span></li>
-    <li><span><mono>group_by(), summarise()</mono></span></li>
+    <li><span><mono>group_by()</mono></span></li>
     <li><span><mono>n(), first(), last(), nth()</mono></span></li>
     <li><span><mono>pull()</mono></span></li>
   </ul>
@@ -654,9 +641,8 @@ DATEN %>%
 .pull-right5[
 
 ```{r}
+# Berechne deskriptive Statistiken
 basel %>%
-  
-  # Berechne deskriptive Statistiken
   select(alter, groesse, konfession, einkommen) %>%
   summarise_if(is.numeric, mean)
 ```
@@ -707,7 +693,7 @@ basel %>%
 
 ---
 
-# `group_by()`, `summarise()`
+# `group_by()`
 
 .pull-left4[
 

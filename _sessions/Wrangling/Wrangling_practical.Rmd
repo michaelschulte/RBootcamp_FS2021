@@ -754,12 +754,14 @@ knitr::kable(weather[1:5,])
 
 | Function| Package | Description |
 |:---|:------|:---------------------------------------------|
+|     `arrange()`|`dplyr`|    Fälle sortieren | 
+|     `case_when()`|`dplyr`| Rekodiere Spalten | 
+|     `filter()`, `slice()`|`dplyr`|  Fälle auswählen| 
+|     `mutate()`|`dplyr`|    Spalten verändern / kreieren |
+|     `pull()`|`dplyr`|    Eine Spalte herauslösen| 
 |     `rename()`|`dplyr`|    Spalten umbenennen| 
 |     `select()`|`dplyr`|    Spalten auswählen | 
-|     `filter()`, `slice()`|`dplyr`|  Fälle auswählen| 
-|     `arrange()`|`dplyr`|    Fälle sortieren | 
-|     `mutate()`|`dplyr`|    Spalten verändern / kreieren |
-|     `case_when()`|`dplyr`| Rekodiere Spalten | 
+
 
 ## Resourcen
 

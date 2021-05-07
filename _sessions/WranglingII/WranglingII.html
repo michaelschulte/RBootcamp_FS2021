@@ -3,7 +3,8 @@
   <head>
     <title>Wrangling II</title>
     <meta charset="utf-8" />
-    <meta name="author" content="Datascience mit R lernen   R Bootcamp" />
+    <meta name="author" content="Datascience mit R lernen   R Bootcamp " />
+    <script src="libs/header-attrs/header-attrs.js"></script>
     <link href="libs/remark-css/default.css" rel="stylesheet" />
     <link rel="stylesheet" href="baselrbootcamp.css" type="text/css" />
   </head>
@@ -12,8 +13,8 @@
 class: center, middle, inverse, title-slide
 
 # Wrangling II
-### Datascience mit R lernen<br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> R Bootcamp </a>
-### HS 2020
+### Datascience mit R lernen<br> <a href='https://michaelschulte.github.io/RBootcamp_FS2021/'> R Bootcamp </a>
+### FS 2021
 
 ---
 
@@ -34,7 +35,7 @@ layout: true
     &lt;/a&gt;
     &lt;a href="https://therbootcamp.github.io/"&gt;
       &lt;font color="#7E7E7E"&gt;
-       Explorative Datenanalyse mit R | HS 2020
+       Explorative Datenanalyse mit R | FS 2021
       &lt;/font&gt;
     &lt;/a&gt;
     &lt;/span&gt;
@@ -56,7 +57,7 @@ layout: true
   &lt;br&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
     &lt;li&gt;&lt;span&gt;Fehlende Werte ersetzen / entfernen&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;Ändere alle Variablen, die...&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;Ändere alle Variablen, die ...&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;Zeilen zu Spalten oder Spalten zu Zeilen&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;/span&gt;&lt;/li&gt;
@@ -157,9 +158,8 @@ patienten_ergebnisse
 
 
 ```r
+# Ändere alle numeric in character
 patienten_ergebnisse %&gt;%
-  
-  # Ändere alle numeric in character
   mutate_if(is.numeric, as.character)
 ```
 
@@ -206,9 +206,8 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
+# Ändere fehlende Werte in 110
 patienten_ergebnisse %&gt;%
-  
-  # Ändere fehlende Werte in 110
   mutate(t_1 = replace_na(t_1, 110))
 ```
 
@@ -255,9 +254,8 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
+# Entferne Zeilen mit fehlenden Werten
 patienten_ergebnisse %&gt;%
-  
-  # Entferne Zeilen mit fehlenden Werten
   drop_na()
 ```
 
@@ -302,9 +300,8 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
+# Wähle spalten aus, die mit "t" beginnen
 patienten_ergebnisse %&gt;%
-  
-  # Wähle spalten aus, die mit "t" beginnen
   select(starts_with("t"))
 ```
 
@@ -351,9 +348,8 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
+# Wähle spalten aus, die "_" beinhalten
 patienten_ergebnisse %&gt;%
-  
-  # Wähle spalten aus, die "_" beinhalten
   select(contains("_"))
 ```
 
@@ -400,9 +396,8 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
+# Spalten von alter bis t_1
 patienten_ergebnisse %&gt;%
-  
-  # Spalten von alter bis t_1
   select(alter:t_1)
 ```
 
@@ -619,7 +614,7 @@ patienten_ergebnisse_lang %&gt;%
   &lt;ul class="level"&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;summarise()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;summarise_if()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
-    &lt;li&gt;&lt;span&gt;&lt;mono&gt;group_by(), summarise()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;span&gt;&lt;mono&gt;group_by()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;n(), first(), last(), nth()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;pull()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
@@ -771,9 +766,8 @@ DATEN %&gt;%
 
 
 ```r
+# Berechne deskriptive Statistiken
 basel %&gt;%
-  
-  # Berechne deskriptive Statistiken
   select(alter, groesse, konfession, einkommen) %&gt;%
   summarise_if(is.numeric, mean)
 ```
@@ -840,7 +834,7 @@ basel %&gt;%
 
 ---
 
-# `group_by()`, `summarise()`
+# `group_by()`
 
 .pull-left4[
 
@@ -871,10 +865,6 @@ basel %&gt;%
     alter_mean = mean(alter),
     groesse_median = median(groesse)
   )
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -925,10 +915,6 @@ basel %&gt;%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 2 x 2
 ##   geschlecht     N
 ##   &lt;chr&gt;      &lt;int&gt;
@@ -971,10 +957,6 @@ basel %&gt;%
     N = n(),
     bild_1 = first(bildung)
   )
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -1021,10 +1003,6 @@ basel %&gt;%
     bild_1 = first(bildung),
     bild_N = last(bildung)
   )
-```
-
-```
-## `summarise()` ungrouping output (override with `.groups` argument)
 ```
 
 ```
@@ -1075,10 +1053,6 @@ basel %&gt;%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## # A tibble: 2 x 5
 ##   geschlecht     N bild_1       bild_N bild_150   
 ##   &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;        &lt;chr&gt;  &lt;chr&gt;      
@@ -1124,10 +1098,6 @@ basel %&gt;%
 ```
 
 ```
-## `summarise()` ungrouping output (override with `.groups` argument)
-```
-
-```
 ## [1] 5000 5000
 ```
 
@@ -1138,7 +1108,7 @@ basel %&gt;%
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://michaelschulte.github.io/RBootcamp_HS2020//_sessions/WranglingII/WranglingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://michaelschulte.github.io/RBootcamp_FS2021//_sessions/WranglingII/WranglingII_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
 <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>

@@ -502,6 +502,9 @@ patienten %&gt;%
 
 .pull-left4[
 
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Alle Zeilen von TIBBLE1, die &lt;high&gt;auch&lt;/high&gt; in TIBBLE2 vorkommen.&lt;/span&gt;
+&lt;/ul&gt;
 
 ```r
 TIBBLE1 %&gt;%
@@ -540,6 +543,10 @@ patienten %&gt;%
 # `left_join()`
 
 .pull-left4[
+
+&lt;ul&gt;
+  &lt;li class="m1"&gt;&lt;span&gt;Alles Zeilen von TIBBLE1 und &lt;high&gt;alle Spalten&lt;high&gt; von TIBBLE 1 und TIBBLE 2.&lt;/span&gt;
+&lt;/ul&gt;
 
 
 ```r
@@ -583,20 +590,20 @@ patienten %&gt;%
 .pull-left4[
 
 &lt;ul&gt;
-  &lt;li class="m4"&gt;&lt;span&gt;&lt;high&gt;Sortieren&lt;/high&gt;: Datensatz ordnen.
+  &lt;li class="m1"&gt;&lt;span&gt;&lt;high&gt;Sortieren&lt;/high&gt;: Datensatz ordnen.
   &lt;br&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;arrange()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m5"&gt;&lt;span&gt;&lt;high&gt;Filtern&lt;/high&gt;: Relevante Fälle auswählen.
+  &lt;li class="m2"&gt;&lt;span&gt;&lt;high&gt;Filtern&lt;/high&gt;: Relevante Fälle auswählen.
   &lt;br&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;slice()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;filter()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
   &lt;/ul&gt;
   &lt;/span&gt;&lt;/li&gt;
-  &lt;li class="m6"&gt;&lt;span&gt;&lt;high&gt;Auswählen&lt;/high&gt;: Relevante Variablen auswählen.
+  &lt;li class="m3"&gt;&lt;span&gt;&lt;high&gt;Auswählen&lt;/high&gt;: Relevante Variablen auswählen.
   &lt;br&gt;&lt;br&gt;
   &lt;ul class="level"&gt;
     &lt;li&gt;&lt;span&gt;&lt;mono&gt;select()&lt;/mono&gt;&lt;/span&gt;&lt;/li&gt;
@@ -819,9 +826,8 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
+# Patienten mit alter &gt; 35
 patienten_ergebnisse %&gt;%
-  
-  # Patienten mit alter &gt; 35
   filter(alter &gt; 35)
 ```
 
@@ -900,9 +906,8 @@ tibble %&gt;%
 
 
 ```r
+# Wähle id und bedingung aus
 patienten_ergebnisse %&gt;%
-  
-  # Wähle id und bedingung aus
   select(id, bedingung)
 ```
 
@@ -943,9 +948,8 @@ tibble %&gt;%
 
 
 ```r
+# Alles ausser id
 patienten_ergebnisse %&gt;%
-  
-  # Alles ausser id
   select(-id)
 ```
 
@@ -968,7 +972,7 @@ patienten_ergebnisse %&gt;%
 
 class: middle, center
 
-&lt;h1&gt;&lt;a href="https://michaelschulte.github.io/RBootcamp_FS2021//_sessions/Wrangling/Wrangling_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
+&lt;h1&gt;&lt;a href="https://michaelschulte.github.io/RBootcamp_FS2021/_sessions/Wrangling/Wrangling_practical.html"&gt;Practical&lt;/a&gt;&lt;/h1&gt;
 
     </textarea>
 <style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>

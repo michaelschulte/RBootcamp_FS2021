@@ -426,6 +426,9 @@ patienten %>%
 
 .pull-left4[
 
+<ul>
+  <li class="m1"><span>Alle Zeilen von TIBBLE1, die <high>auch</high> in TIBBLE2 vorkommen.</span>
+</ul>
 ```{r, eval = FALSE}
 TIBBLE1 %>%
   inner_join(TIBBLE2, 
@@ -453,6 +456,10 @@ patienten %>%
 # `left_join()`
 
 .pull-left4[
+
+<ul>
+  <li class="m1"><span>Alles Zeilen von TIBBLE1 und <high>alle Spalten<high> von TIBBLE 1 und TIBBLE 2.</span>
+</ul>
 
 ```{r, eval = FALSE}
 TIBBLE1 %>%
@@ -483,20 +490,20 @@ patienten %>%
 .pull-left4[
 
 <ul>
-  <li class="m4"><span><high>Sortieren</high>: Datensatz ordnen.
+  <li class="m1"><span><high>Sortieren</high>: Datensatz ordnen.
   <br><br>
   <ul class="level">
     <li><span><mono>arrange()</mono></span></li>
   </ul>
   </span></li>
-  <li class="m5"><span><high>Filtern</high>: Relevante Fälle auswählen.
+  <li class="m2"><span><high>Filtern</high>: Relevante Fälle auswählen.
   <br><br>
   <ul class="level">
     <li><span><mono>slice()</mono></span></li>
     <li><span><mono>filter()</mono></span></li>
   </ul>
   </span></li>
-  <li class="m6"><span><high>Auswählen</high>: Relevante Variablen auswählen.
+  <li class="m3"><span><high>Auswählen</high>: Relevante Variablen auswählen.
   <br><br>
   <ul class="level">
     <li><span><mono>select()</mono></span></li>
@@ -666,9 +673,8 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
+# Patienten mit alter > 35
 patienten_ergebnisse %>%
-  
-  # Patienten mit alter > 35
   filter(alter > 35)
 ```
 
@@ -724,9 +730,8 @@ tibble %>%
 .pull-right5[
 
 ```{r}
+# Wähle id und bedingung aus
 patienten_ergebnisse %>%
-  
-  # Wähle id und bedingung aus
   select(id, bedingung)
 ```
 
@@ -753,10 +758,9 @@ tibble %>%
 
 .pull-right5[
 
-```{r}
+```{r}  
+# Alles ausser id
 patienten_ergebnisse %>%
-  
-  # Alles ausser id
   select(-id)
 ```
 
@@ -768,5 +772,5 @@ patienten_ergebnisse %>%
 
 class: middle, center
 
-<h1><a href="https://michaelschulte.github.io/RBootcamp_FS2021//_sessions/Wrangling/Wrangling_practical.html">Practical</a></h1>
+<h1><a href="https://michaelschulte.github.io/RBootcamp_FS2021/_sessions/Wrangling/Wrangling_practical.html">Practical</a></h1>
 

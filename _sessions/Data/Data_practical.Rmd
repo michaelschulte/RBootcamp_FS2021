@@ -360,7 +360,7 @@ diamonds
 
 ```{r, eval = F, echo = T}
 # Schreibe den sauberen diamonds Datensatz 
-write_csv(x = XX, path = "XX/XX.csv")
+write_csv(x = XX, file = "XX/XX.csv")
 ```
 
 ```{r, eval = FALSE}
@@ -375,7 +375,7 @@ write_csv(x = diamonds, "1_Data/diamonds_sauber.csv")
 diamonds_clean <- read_csv(file = "1_Data/diamonds_sauber.csv")
 ```
 
-13. Jetzt wäre der Datensatz fertig für die Analyse. Exploriere ein wenig. Berechne deskriptive Statistiken für die verschiedenen Variablen. Du kannst mehr über die Variablen erfahren mit `?diamonds`. (Namen sind aus dem Englischen übersetzt.)
+13. Jetzt wäre der Datensatz fertig für die Analyse. Exploriere ein wenig. Berechne deskriptive Statistiken für die verschiedenen Variablen. Du kannst mehr über die Variablen erfahren mit `?diamonds`. (Namen sind aus dem Englischen übersetzt. Verwende zum Beispiel: `mean()` und `table()`)
 
 ```{r}
 # Deskriptive Statistiken
