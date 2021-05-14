@@ -275,7 +275,7 @@ ggplot(data = mpg,
 .pull-left45[
 
 <ul>
-  <li class="m1"><span>Passt mit den <high>87 Argumenten von <mono>theme()</mono></high> alle ästhetischen Aspekte deines Plots an.</span></li>
+  <li class="m1"><span>Passt mit den <high>94 Argumenten von <mono>theme()</mono></high> alle ästhetischen Aspekte deines Plots an.</span></li>
   <li class="m2"><span>Nutze hierzu vier Helferfunktionen:</span></li>
   <ul class="level">
     <li><span><mono>element_rect()</mono> | für Flächen</span></li>

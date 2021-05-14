@@ -361,7 +361,7 @@ ergebnisse
 
 
 ```r
-patienten %&gt;%
+TIBBLE %&gt;%
   rename(NEU = ALT,
          NEU = ALT)
 ```
@@ -402,7 +402,7 @@ patienten %&gt;%
 
 
 ```r
-tibble %&gt;%
+TIBBLE %&gt;%
   mutate(
    NAME1 = DEFINITION1,
    NAME2 = DEFINITION2,
@@ -446,7 +446,7 @@ patienten %&gt;%
 
 
 ```r
-tibble %&gt;%
+TIBBLE %&gt;%
   mutate(
     NAME = case_when(
       LOGICAL1 ~ WERT1,
@@ -647,11 +647,11 @@ patienten_ergebnisse
 
 ```r
 # Sortiere aufsteigend
-tibble %&gt;%
+TIBBLE %&gt;%
   arrange(VAR1, VAR2)
 
 # Sortiere absteigend (mit desc())
-tibble %&gt;%
+TIBBLE %&gt;%
   arrange(desc(VAR1), VAR2)
 ```
 
@@ -688,11 +688,11 @@ patienten_ergebnisse %&gt;%
 
 ```r
 # Sortiere aufsteigend
-tibble %&gt;%
+TIBBLE %&gt;%
   arrange(VAR1, VAR2)
 
 # Sortiere absteigend (mit desc())
-tibble %&gt;%
+TIBBLE %&gt;%
   arrange(desc(VAR1), VAR2)
 ```
 ]
@@ -814,7 +814,7 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
-patienten_ergebnisse %&gt;%
+TIBBLE %&gt;%
   filter(VAR1 == WERT1,
          VAR2 &gt; WERT2,
          VAR3 &lt; WERT3,
@@ -852,7 +852,7 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
-patienten_ergebnisse %&gt;%
+TIBBLE %&gt;%
   filter(VAR1 == WERT1,
          VAR2 &gt; WERT2,
          VAR3 &lt; WERT3,

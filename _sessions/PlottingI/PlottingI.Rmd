@@ -462,7 +462,7 @@ ggplot(data = mpg,
 
 <ul>
   <li class="m1"><span><highm>geom_*()</highm> Funktionen definieren die geometrischen Objekte mit denen die Daten repräsentiert werden.</span></li>
-  <li class="m2"><span>Ein paar <mono>geoms</mono>:</span></li>
+  <li class="m2"><span>Eine Auswahl:</li>
   <ul class="level">
     <li><span><mono>geom_point()</mono> | für Punkte</span></li>
     <li><span><mono>geom_bar()</mono> | für Balken</span></li>
@@ -1072,8 +1072,7 @@ goal + theme_economist()
 
 <ul>
   <li class="m1"><span>Mit <highm>theme()</highm> können alle Aspekte eines Plots mit einem vorgefertigten Satz an Einstellungen ästhetisch formatiert werden.</span></li>
-  <li class="m2"><span>Einige <mono>theme</mono>s:
-  <br><br>
+  <li class="m2"><span>Einige <mono>theme</mono>s:</span></li>
   <ul class="level">
     <li><span><mono>theme_gray()</mono></span></li>
     <li><span><mono>theme_classic()</mono></span></li>

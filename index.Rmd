@@ -1,6 +1,6 @@
 ---
 title: "R Bootcamp - Datascience mit R lernen"
-subtitle: "420257"
+subtitle: "420257, Stand: `r paste(Sys.Date())`"
 author: "
       <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style= 'height:16.7px;vertical-align:baseline'/><a href='https://therbootcamp.github.io'>
         <i class='fas fa-home' style='font-size:1em;'></i>
@@ -20,17 +20,17 @@ output:
 |      | Einführung R | [slides](_sessions/IntroToR/IntroToR.html), [data sets](https://michaelschulte.github.io/RBootcamp_FS2021/1_Data/RBootcamp_FS2021_data.zip) | [source](_sessions/IntroToR/IntroToR_interactive.R) |
 |      | Data | [slides](_sessions/Data/Data.html) | [practical](_sessions/Data/Data_practical.html), [solutions](_sessions/Data/Data_practical_solutions.html)|
 |07.05.| Recap | | | 
-|| Wrangling I | [slides](_sessions/Wrangling/Wrangling.html)|[practical](_sessions/Wrangling/Wrangling_practical.html) <!--[solutions](_sessions/Wrangling/Wrangling_practical_solutions.html)-->|  
-|      | Wrangling II | [slides](_sessions/WranglingII/WranglingII.html) | [practical](_sessions/WranglingII/WranglingII_practical.html)<!-- [solutions](_sessions/WranglingII/WranglingII_practical_solutions.html)-->|
+|| Wrangling I | [slides](_sessions/Wrangling/Wrangling.html)|[practical](_sessions/Wrangling/Wrangling_practical.html), [solutions](_sessions/Wrangling/Wrangling_practical_solutions.html)|  
+|      | Wrangling II | [slides](_sessions/WranglingII/WranglingII.html) | [practical](_sessions/WranglingII/WranglingII_practical.html), [solutions](_sessions/WranglingII/WranglingII_practical_solutions.html)|
 |14.05.| Recap | | | 
-|| Plotting I | <!--[slides](_sessions/PlottingI/PlottingI.html)--> |<!-- [practical](_sessions/PlottingI/PlottingI_practicaI.html), [solutions](_sessions/PlottingI/PlottingI_practicaI_solutions.html)-->| 
-|| Plotting II | <!--[slides](_sessions/PlottingII/PlottingII.html) -->|<!-- [practical](_sessions/PlottingII/PlottingII_practical.html), [solutions](_sessions/PlottingII/PlottingII_practical_solutions.html)-->|
+|| Plotting I | [slides](_sessions/PlottingI/PlottingI.html) | [practical](_sessions/PlottingI/PlottingI_practicaI.html)<!--, [solutions](_sessions/PlottingI/PlottingI_practicaI_solutions.html)-->| 
+|| Plotting II | [slides](_sessions/PlottingII/PlottingII.html) | [practical](_sessions/PlottingII/PlottingII_practical.html)<!--, [solutions](_sessions/PlottingII/PlottingII_practical_solutions.html)-->|
 |21.05.| Recap | | | 
-|| Plotting III + Competition |<!-- [slides](_sessions/PlottingIII/PlottingIII.html)-->|<!-- [Competition](_sessions/PlottingIII/Competition.html)| |
-||Intro Projekte||[Covid-Boot-Camp & Arr-PiRaten](sessions/Project/FinalProject_Medicine.html) <br> [We-R-lost & R-Pandemi](_sessions/Project/FinalProject_Clinical.html)-->||
+|| Plotting III + Competition |<!-- [slides](_sessions/PlottingIII/PlottingIII.html)-->|<!-- [Competition](_sessions/PlottingIII/Competition.html)-->| |
+||Intro Projekte||<!--[Covid-Boot-Camp & Arr-PiRaten](sessions/Project/FinalProject_Medicine.html) <br> [We-R-lost & R-Pandemi](_sessions/Project/FinalProject_Clinical.html)-->||
 |28.05.| Recap | | | 
-|| Lineare Modelle |<!--[slides](_sessions/LinearModelsI/LinearModelsI.html)-->| <!--[practical](_sessions/LinearModelsI/LinearModelsI_practical.html), [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)| |
-|| Reporting | [slides](_sessions/Reporting/Reporting.html)-->| [practical](_sessions/Reporting/Reporting_practical.html), [solutions](_sessions/Reporting/Reporting_practical_solutions.html)-->||
+|| Lineare Modelle |<!--[slides](_sessions/LinearModelsI/LinearModelsI.html)-->| <!--[practical](_sessions/LinearModelsI/LinearModelsI_practical.html), [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)| -->|
+|| Reporting | <!--[slides](_sessions/Reporting/Reporting.html)-->| <!--[practical](_sessions/Reporting/Reporting_practical.html), [solutions](_sessions/Reporting/Reporting_practical_solutions.html)-->||
 |04.06.| Projektpräsentationen |<!--[Next steps](_sessions/NextSteps/NextSteps.html)--> | <!--[feedback](https://forms.gle/38LagXxyH2cMHynt8)| 
 || Covid-R-Bootcamp, We-R-Lost, Arr-PiRaten, R-Pandemi -->|  | <!--- [Medicine](_sessions/FinalProject/FinalProject_Medicine.html), [Clinical](_sessions/FinalProject/FinalProject_Clinical.html)--->| |
 

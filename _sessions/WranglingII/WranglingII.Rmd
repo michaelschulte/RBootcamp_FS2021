@@ -282,7 +282,7 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
-# Wähle spalten aus, die mit "t" beginnen
+# Wähle Spalten aus, die mit "t" beginnen
 patienten_ergebnisse %>%
   select(starts_with("t"))
 ```
@@ -318,7 +318,7 @@ patienten_ergebnisse %>%
 .pull-right5[
 
 ```{r}
-# Wähle spalten aus, die "_" beinhalten
+# Wähle Spalten aus, die "_" beinhalten
 patienten_ergebnisse %>%
   select(contains("_"))
 ```
@@ -714,7 +714,7 @@ DATEN %>%
 ```{r}
 basel %>%
   
-  # Gruppiere nach geschlecht
+  # Gruppiere nach Geschlecht
   group_by(geschlecht) %>%
   
   # Berechne Statistiken
@@ -754,7 +754,7 @@ options(tibble.width=50, tibble.print_max=5, tibble.print_min=5, tibble.max_extr
 ```{r}
 basel %>%
   
-  # Gruppiere nach geschlecht
+  # Gruppiere nach Geschlecht
   group_by(geschlecht) %>%
   
   # Berechne Statistiken
@@ -788,7 +788,7 @@ DATEN %>%
 ```{r}
 basel %>%
   
-  # Gruppiere nach geschlecht
+  # Gruppiere nach Geschlecht
   group_by(geschlecht) %>%
   
   # Berechne Statistiken
@@ -823,7 +823,7 @@ DATEN %>%
 ```{r}
 basel %>%
   
-  # Gruppiere nach geschlecht
+  # Gruppiere nach Geschlecht
   group_by(geschlecht) %>%
   
   # Berechne Statistiken
@@ -859,7 +859,7 @@ DATEN %>%
 ```{r}
 basel %>%
   
-  # Gruppiere nach geschlecht
+  # Gruppiere nach Geschlecht
   group_by(geschlecht) %>%
   
   # Berechne Statistiken
@@ -896,7 +896,7 @@ DATEN %>%
 ```{r}
 basel %>%
   
-  # Gruppiere nach geschlecht
+  # Gruppiere nach Geschlecht
   group_by(geschlecht) %>%
   
   # Berechne Statistiken

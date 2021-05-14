@@ -322,7 +322,7 @@ ergebnisse
 .pull-left45[
 
 ```{r, eval = FALSE, echo = TRUE}
-patienten %>%
+TIBBLE %>%
   rename(NEU = ALT,
          NEU = ALT)
 ```
@@ -350,7 +350,7 @@ patienten %>%
 .pull-left45[
 
 ```{r, eval = FALSE}
-tibble %>%
+TIBBLE %>%
   mutate(
    NAME1 = DEFINITION1,
    NAME2 = DEFINITION2,
@@ -381,7 +381,7 @@ patienten %>%
 .pull-left45[
 
 ```{r, eval = FALSE}
-tibble %>%
+TIBBLE %>%
   mutate(
     NAME = case_when(
       LOGICAL1 ~ WERT1,
@@ -543,11 +543,11 @@ patienten_ergebnisse
 
 ```{r, echo = TRUE, eval = FALSE}
 # Sortiere aufsteigend
-tibble %>%
+TIBBLE %>%
   arrange(VAR1, VAR2)
 
 # Sortiere absteigend (mit desc())
-tibble %>%
+TIBBLE %>%
   arrange(desc(VAR1), VAR2)
 ```
 
@@ -571,11 +571,11 @@ patienten_ergebnisse %>%
 
 ```{r, echo = TRUE, eval = FALSE}
 # Sortiere aufsteigend
-tibble %>%
+TIBBLE %>%
   arrange(VAR1, VAR2)
 
 # Sortiere absteigend (mit desc())
-tibble %>%
+TIBBLE %>%
   arrange(desc(VAR1), VAR2)
 ```
 ]
@@ -662,7 +662,7 @@ patienten_ergebnisse %>%
 .pull-left4[
 
 ```{r, eval = F}
-patienten_ergebnisse %>%
+TIBBLE %>%
   filter(VAR1 == WERT1,
          VAR2 > WERT2,
          VAR3 < WERT3,
@@ -688,7 +688,7 @@ patienten_ergebnisse %>%
 .pull-left4[
 
 ```{r, eval = F}
-patienten_ergebnisse %>%
+TIBBLE %>%
   filter(VAR1 == WERT1,
          VAR2 > WERT2,
          VAR3 < WERT3,
