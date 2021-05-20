@@ -424,7 +424,7 @@ ggplot(verbrechen,
   mein_theme
 ```
 
-3. Wenn dir `mein_theme` nicht gefällt, geh zur 1. Aufgabe und nimmm Änderungen vor. Siehe `?theme`. Probiere zum Beispiel mal die Argumente `axis.ticks` und `strip.placement` aus.
+3. Wenn dir `mein_theme` nicht gefällt, geh zur 1. Aufgabe und nimmm Änderungen vor. Siehe `?theme`. Probiere zum Beispiel mal das Argument `axis.ticks = element_blank()` um die Achsen Ticks zu entfernen.
 
 ### F - Skalierung
 
@@ -511,7 +511,7 @@ verbrechen_gg +
 1. Es ist an der Zeit euren Plot als eine Bilddatei zu speichern. Verwende nun `ggsave` um deinen letzten `verbrechen_gg` plot als eine `.pdf`-Datei unter dem Namen `verbrechen.pdf` zu speichern. Danach solltest du deinen Plot im Ordner `3_Figures` finden. Schaue nach und öffne die Datei. 
 
 ```{r, echo = TRUE, eval = FALSE}
-ggsave(filename = "3_Figures/verbrechen.pdf", 
+ggsave(filename = "3_Plots/verbrechen.pdf", 
        device = "pdf", 
        plot = verbrechen_gg,
        width = 4, 
@@ -520,7 +520,7 @@ ggsave(filename = "3_Figures/verbrechen.pdf",
 ```
 
 ```{r, eval = FALSE}
-ggsave(filename = "3_Figures/verbrechen.pdf", 
+ggsave(filename = "3_Plots/verbrechen.pdf", 
        device = "pdf", 
        plot = verbrechen_gg,
        width = 4, 

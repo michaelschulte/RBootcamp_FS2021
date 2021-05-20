@@ -1169,7 +1169,7 @@ unschoen <- mein_plot + mein_theme
   <ul class="level">
     <li><span><mono>filename</mono> | Dateipfad</span></li>
     <li><span><mono>device</mono> | z.B. <mono>".pdf"</mono> oder <mono>".png"</mono></span></li>
-    <li><span><mono>path</mono> | Pfad zum Ordneer</span></li>
+    <li><span><mono>path</mono> | Pfad zum Ordner</span></li>
     <li><span><mono>height, width</mono> | Höhe, Breite</span></li>
     <li><span><mono>unit</mono> | Einheit für Höhe, Breite</span></li>
     <li><span><mono>dpi</mono> | Auflösung pro Einheit</span></li>
@@ -1211,7 +1211,7 @@ ggsave(filename = "mein_plot",
   <ul class="level">
     <li><span><mono>filename</mono> | Dateipfad</span></li>
     <li><span><mono>device</mono> | z.B. <mono>".pdf"</mono> oder <mono>".png"</mono></span></li>
-    <li><span><mono>path</mono> | Pfad zum Ordneer</span></li>
+    <li><span><mono>path</mono> | Pfad zum Ordner</span></li>
     <li><span><mono>height, width</mono> | Höhe, Breite</span></li>
     <li><span><mono>unit</mono> | Einheit für Höhe, Breite</span></li>
     <li><span><mono>dpi</mono> | Auflösung pro Einheit</span></li>

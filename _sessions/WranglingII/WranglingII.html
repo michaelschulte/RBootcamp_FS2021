@@ -535,7 +535,7 @@ patienten_ergebnisse %&gt;%
 
 
 ```r
-# wide zu long
+# long to wide
 DATEN %&gt;% 
   pivot_wider(names_from = VAR1,
               values_from = VAR2)
@@ -548,7 +548,7 @@ DATEN %&gt;%
 
 
 ```r
-# wide zu long
+# long to wide
 patienten_ergebnisse_lang
 ```
 
@@ -573,7 +573,7 @@ patienten_ergebnisse_lang
 
 
 ```r
-# wide zu long
+# long to wide
 DATEN %&gt;% 
   pivot_wider(names_from = VAR1,
               values_from = VAR2)
@@ -586,7 +586,7 @@ DATEN %&gt;%
 
 
 ```r
-# wide zu long
+# long to wide
 patienten_ergebnisse_lang %&gt;%
     pivot_wider(names_from = "zeit",
                 values_from = "messung")

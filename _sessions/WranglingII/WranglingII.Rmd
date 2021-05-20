@@ -459,7 +459,7 @@ patienten_ergebnisse %>%
 .pull-left4[
 
 ```{r, eval = F}
-# wide zu long
+# long to wide
 DATEN %>% 
   pivot_wider(names_from = VAR1,
               values_from = VAR2)
@@ -469,7 +469,7 @@ DATEN %>%
 .pull-right5[
 
 ```{r, echo = FALSE}
-# wide zu long
+# long to wide
 patienten_ergebnisse_lang <- patienten_ergebnisse %>% 
   filter(bed_label == "placebo") %>%
   pivot_longer(cols = c("t_1", "t_2"),
@@ -478,7 +478,7 @@ patienten_ergebnisse_lang <- patienten_ergebnisse %>%
 ```
 
 ```{r}
-# wide zu long
+# long to wide
 patienten_ergebnisse_lang
 ```
 
@@ -492,7 +492,7 @@ patienten_ergebnisse_lang
 .pull-left4[
 
 ```{r, eval = F}
-# wide zu long
+# long to wide
 DATEN %>% 
   pivot_wider(names_from = VAR1,
               values_from = VAR2)
@@ -502,7 +502,7 @@ DATEN %>%
 .pull-right5[
 
 ```{r, echo = FALSE}
-# wide zu long
+# long to wide
 patienten_ergebnisse_lang <- patienten_ergebnisse %>% 
   filter(bed_label == "placebo") %>%
   pivot_longer(cols = c("t_1", "t_2"),
@@ -511,7 +511,7 @@ patienten_ergebnisse_lang <- patienten_ergebnisse %>%
 ```
 
 ```{r}
-# wide zu long
+# long to wide
 patienten_ergebnisse_lang %>%
     pivot_wider(names_from = "zeit",
                 values_from = "messung")

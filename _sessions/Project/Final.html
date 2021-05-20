@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Finales Projekt</title>
+
+<script src="Final_files/header-attrs-2.8/header-attrs.js"></script>
+<script src="Final_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="Final_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="Final_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="Final_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="Final_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
+<script src="Final_files/navigation-1.1/tabsets.js"></script>
+<link href="Final_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="Final_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">
+  code{white-space: pre-wrap;}
+  span.smallcaps{font-variant: small-caps;}
+  span.underline{text-decoration: underline;}
+  div.column{display: inline-block; vertical-align: top; width: 50%;}
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  ul.task-list{list-style: none;}
+    </style>
+
+<style type="text/css">code{white-space: pre;}</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+
+
+<link rel="stylesheet" href="practical.css" type="text/css" />
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+pre code {
+  padding: 0;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div id="header">
+
+
+
+<h1 class="title toc-ignore">Finales Projekt</h1>
+<h4 class="author"><table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'>
+<col width='10%'>
+<col width='10%'>
+<tr style="border:none">
+<td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_FS2021/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
+</td>
+<td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
+<img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
+</td>
+</tr>
+</table></h4>
+
+</div>
+
+
+<p align="center" width="100%">
+<img src="https://chefsmandala.com/wp-content/uploads/2018/03/Avocado.jpg"> <br> <font style="font-size:10px">from: <a href="https://chefsmandala.com/"> Chefsmandala </a></font>
+</p>
+<div id="section" class="section level1 tabset">
+<h1 class="tabset"></h1>
+<div id="überblick" class="section level2">
+<h2>Überblick</h2>
+<p>In diesem finalen Projekt wirst du den gesamten Datascience Kreislauf an Hand von neuen Datensätzen durchspielen.</p>
+<p>Du wirst:</p>
+<ol style="list-style-type: decimal">
+<li><strong>Datenaufbereitung</strong></li>
+</ol>
+<ul>
+<li>die Daten einlesen</li>
+<li>bereinigen (Spalten Formatierun, Inhalte checken)</li>
+<li>fusionieren (wo nötig, Datensätze zusammenfügen)</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Fragestellung erarbeiten</strong></li>
+</ol>
+<ul>
+<li>Überleg dir eine Frage, die du mit den Daten beantworten kannst. Wie ist der Zusammenhang zwischen X und Y? Was treibt die Variable X? Gibt es eine bevorzugte Art Avocados? Verändert sich eine Variable im Beobachtungszeitraum?</li>
+<li>Fragestellung abgeben (Frage + grobe Skizze wie du Frage beantworten willst, via email an: <a href="mailto:michael.schulte@unibe.ch">michael.schulte@unibe.ch</a> abgene (27.05.21, 12.00 Uhr (high noon))</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Fragestellung beantworten</strong></li>
+</ol>
+<ul>
+<li>explorieren (diagnostische Plots erstellen)</li>
+<li>grafisch die Antwort(en) aufbreiten</li>
+<li>deskriptiv die Fragen beantworten</li>
+<li>Bonus: satistisch aufbereiten (zB Regression berechnen)</li>
+</ul>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Kommunizieren</strong></li>
+</ol>
+<ul>
+<li>Kurze R-Markdown Präsentation erstellen, in der die Daten erklärt, die Fage präsentiert und dann die Antwort(en) erläutert werden.</li>
+<li>Präsentation im Kurs vorstellen (04.06.21)</li>
+<li>Code + Markdown Präsentation abgeben (03.06.21, high noon)</li>
+</ul>
+</div>
+<div id="aufgaben" class="section level2">
+<h2>Aufgaben</h2>
+<div id="a---setup" class="section level3">
+<h3>A - Setup</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne dein <code>TheRBootcamp</code> R Projekt. Es sollte die Ordner <code>1_Data</code> und <code>2_Code</code> enthalten. Stelle sicher, dass du alle Datensätze, welche im <code>Datensätze</code> Tab aufgelisted sind, in deinem <code>1_Data</code> Ordner hast.</p></li>
+<li><p>Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und “Final_Project” als Kommentare an den Anfang des Skripts.</p></li>
+</ol>
+<pre class="r"><code>## NAME
+## DATUM
+## Final Project</code></pre>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Speichere das neue Skript unter dem Namen <code>Final_Project.R</code> im <code>2_Code</code> Ordner.</p></li>
+<li><p>Lade die nötigen Pakete (zB: Tidyverse)</p></li>
+</ol>
+</div>
+<div id="b---lade-die-datensätze" class="section level3">
+<h3>B - Lade die Datensätze</h3>
+<ol style="list-style-type: decimal">
+<li><p>Lese die Datensätze (siehe Reiter ‘Datensätze’) in die Objekte <code>prices</code> und <code>sales</code> ein.</p></li>
+<li><p>Printe den Datensatz. Wurden alle Variablentypen korrekt identifiziert?</p></li>
+<li><p>Verwende <code>summary()</code> um einen weiteren Überblick über die Daten zu bekommen.</p></li>
+<li><p>Füge einen Überblick (Slide Nummer 2 (nach Titelslide)) über die Datensätze am Anfang deiner Präsentation ein!</p></li>
+</ol>
+</div>
+<div id="c---datensätze-säubern" class="section level3">
+<h3>C - Datensätze säubern</h3>
+<ol style="list-style-type: decimal">
+<li><p>Verwende <code>names()</code> um die Spaltennamen anzuzeigen.</p></li>
+<li><p>Passe die Spaltennamen an die Vorgabe unter ‘Datensätze’ - Berschreibung an</p></li>
+<li><p>Sind die Datensätze tidy?</p></li>
+<li><p>Fusioniere die Datensätze in einen Datensatz <code>avocado</code>.</p></li>
+</ol>
+</div>
+<div id="d---fragestellung-erarbeiten" class="section level3">
+<h3>D - Fragestellung erarbeiten</h3>
+<ol style="list-style-type: decimal">
+<li><p>Überleg dir eine Frage, die du mit den Daten beantworten kannst. Wie ist der Zusammenhang zwischen X und Y? Was treibt die Variable X? Gibt es eine bevorzugte Art Avocados? Verändert sich eine Variable im Beobachtungszeitraum?</p></li>
+<li><p>Fragestellung kommt auf den Slide Nummer 3.</p></li>
+</ol>
+</div>
+<div id="e---fragestellung-beantworten" class="section level3">
+<h3>E - Fragestellung beantworten</h3>
+<ol style="list-style-type: decimal">
+<li>Beantworte deine Fragestellung mit all den verschiedenen Ansätzen, die wir im Kurs durchgemacht haben - Tabelle, Grafiken, Statistik (deskriptiv und inferenz (Bonus)).</li>
+</ol>
+</div>
+<div id="f---kommunizieren" class="section level3">
+<h3>F - Kommunizieren</h3>
+<ol style="list-style-type: decimal">
+<li><p>Öffne ein neues R-Markdown Skript - Presentation - HTML (ioslides). Schreibe deinen Gruppennamen, das Datum und “Final Project” als Information für den Titelslide.</p></li>
+<li><p>Speichere dein R-Markdown Skript in das gleiche Verzeichnis wie dein .RProj File mit Gruppenname_Project.Rmd</p></li>
+<li><p>Erstelle einen Überblicksslide für den <code>avocado</code> Datensatz.</p></li>
+<li><p>Erstelle einen Slide mit der Fragestellung</p></li>
+<li><p>Erstelle Slides für die Beantwortung der Fragestellung (Tabellen, deskriptive Statistiken, Grafiken)</p></li>
+</ol>
+</div>
+</div>
+<div id="datensätze" class="section level2">
+<h2>Datensätze</h2>
+<table>
+<colgroup>
+<col width="20%" />
+<col width="24%" />
+<col width="28%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Datei</th>
+<th align="left">Zeilen</th>
+<th align="left">Spalten</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><a href="https://github.com/therbootcamp/R4DS_2019Feb/blob/master/1_Data/appointments.csv?raw=true">prices.csv</a></td>
+<td align="left">18249</td>
+<td align="left">5</td>
+<td align="left">Datensatz zu den Avocado der Firma Hass Preisen in verschiedenen amerikanischen Staaten</td>
+</tr>
+<tr class="even">
+<td align="left"><a href="https://github.com/therbootcamp/R4DS_2019Feb/blob/master/1_Data/weather.csv?raw=true">sales.csv</a></td>
+<td align="left">18249</td>
+<td align="left">10</td>
+<td align="left">Datensatz zu den Avocado Verkaufszahlen der Firma Hass in verschiedenen amerikanischen Staaten</td>
+</tr>
+</tbody>
+</table>
+<div id="prices.csv" class="section level4">
+<h4>prices.csv</h4>
+<p><em>Erste 5 Zeilen von prices.csv</em></p>
+<table>
+<thead>
+<tr class="header">
+<th align="right">X1</th>
+<th align="left">Date</th>
+<th align="right">AveragePrice</th>
+<th align="left">type</th>
+<th align="left">region</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="left">27.12.15</td>
+<td align="right">1.33</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">20.12.15</td>
+<td align="right">1.35</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">13.12.15</td>
+<td align="right">0.93</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">06.12.15</td>
+<td align="right">1.08</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="left">29.11.15</td>
+<td align="right">1.28</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">X1</td>
+<td align="left">ID</td>
+</tr>
+<tr class="even">
+<td align="left">Date</td>
+<td align="left">Datum</td>
+</tr>
+<tr class="odd">
+<td align="left">AveragePrice</td>
+<td align="left">Durchschnittlicher Preis</td>
+</tr>
+<tr class="even">
+<td align="left">type</td>
+<td align="left">Art der Avocado: “conventional” versus “organic”</td>
+</tr>
+<tr class="odd">
+<td align="left">region</td>
+<td align="left">Ursprungsregion</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="housing.csv" class="section level4">
+<h4>housing.csv</h4>
+<p><em>Erste 5 Zeilen von sales.csv</em></p>
+<table>
+<colgroup>
+<col width="2%" />
+<col width="7%" />
+<col width="9%" />
+<col width="9%" />
+<col width="10%" />
+<col width="11%" />
+<col width="5%" />
+<col width="16%" />
+<col width="12%" />
+<col width="15%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="right">X1</th>
+<th align="left">Date</th>
+<th align="right">Small Bags</th>
+<th align="right">Large Bags</th>
+<th align="right">XLarge Bags</th>
+<th align="left">type</th>
+<th align="left">region</th>
+<th align="left">SmallMediumAvocado</th>
+<th align="left">LargeAvocado</th>
+<th align="left">ExtraLargeAvocado</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0</td>
+<td align="left">27.12.15</td>
+<td align="right">8604</td>
+<td align="right">93.2</td>
+<td align="right">0</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+<td align="left">4046_1036.74</td>
+<td align="left">4225_54454.85</td>
+<td align="left">4770_48.16</td>
+</tr>
+<tr class="even">
+<td align="right">1</td>
+<td align="left">20.12.15</td>
+<td align="right">9408</td>
+<td align="right">97.5</td>
+<td align="right">0</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+<td align="left">4046_674.28</td>
+<td align="left">4225_44638.81</td>
+<td align="left">4770_58.33</td>
+</tr>
+<tr class="odd">
+<td align="right">2</td>
+<td align="left">13.12.15</td>
+<td align="right">8042</td>
+<td align="right">103.1</td>
+<td align="right">0</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+<td align="left">4046_794.7</td>
+<td align="left">4225_109149.67</td>
+<td align="left">4770_130.5</td>
+</tr>
+<tr class="even">
+<td align="right">3</td>
+<td align="left">06.12.15</td>
+<td align="right">5677</td>
+<td align="right">133.8</td>
+<td align="right">0</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+<td align="left">4046_1132</td>
+<td align="left">4225_71976.41</td>
+<td align="left">4770_72.58</td>
+</tr>
+<tr class="odd">
+<td align="right">4</td>
+<td align="left">29.11.15</td>
+<td align="right">5986</td>
+<td align="right">197.7</td>
+<td align="right">0</td>
+<td align="left">conventional</td>
+<td align="left">Albany</td>
+<td align="left">4046_941.48</td>
+<td align="left">4225_43838.39</td>
+<td align="left">4770_75.78</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Variable</th>
+<th align="left">Beschreibung</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">X1</td>
+<td align="left">ID</td>
+</tr>
+<tr class="even">
+<td align="left">Date</td>
+<td align="left">Datum</td>
+</tr>
+<tr class="odd">
+<td align="left">Small Bags</td>
+<td align="left">Anzahl verkaufte Säcke: klein</td>
+</tr>
+<tr class="even">
+<td align="left">Large Bags</td>
+<td align="left">Anzahl verkaufte Säcke: gross</td>
+</tr>
+<tr class="odd">
+<td align="left">XLarge Bags</td>
+<td align="left">Anzahl verkaufte Säcke: sehr gross</td>
+</tr>
+<tr class="even">
+<td align="left">type</td>
+<td align="left">Art der Avocado: “conventional” versus “organic”</td>
+</tr>
+<tr class="odd">
+<td align="left">region</td>
+<td align="left">Ursprungsregion</td>
+</tr>
+<tr class="even">
+<td align="left">SmallMediumAvocado</td>
+<td align="left">Small/Medium Hass Avocado (~3-5oz avocado) Typ #4046</td>
+</tr>
+<tr class="odd">
+<td align="left">LargeAvocado</td>
+<td align="left">Large Hass Avocado (~8-10oz avocado) Typ #4225</td>
+</tr>
+<tr class="even">
+<td align="left">ExtraLargeAvocado</td>
+<td align="left">Extra Large Hass Avocado (~10-15oz avocado) Typ #4770</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="funktionen" class="section level2">
+<h2>Funktionen</h2>
+<div id="pakete" class="section level3">
+<h3>Pakete</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Package</th>
+<th align="left">Installation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>lubridate</code></td>
+<td align="left"><code>install.packages("lubridate")</code></td>
+</tr>
+<tr class="even">
+<td align="left"><code>stringr</code></td>
+<td align="left"><code>install.packages("stringr")</code></td>
+</tr>
+<tr class="odd">
+<td align="left"><code>tidyverse</code></td>
+<td align="left"><code>install.packages("tidyverse")</code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="funktionen-1" class="section level3">
+<h3>Funktionen</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Function</th>
+<th align="left">Package</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><code>arrange()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Fälle sortieren</td>
+</tr>
+<tr class="even">
+<td align="left"><code>case_when()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Rekodiere Spalten</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>filter()</code>, <code>slice()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Fälle auswählen</td>
+</tr>
+<tr class="even">
+<td align="left"><code>join_*()</code></td>
+<td align="left"><code>tidyr</code></td>
+<td align="left">Tibbles verbinden</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>mutate()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Spalten verändern / kreieren</td>
+</tr>
+<tr class="even">
+<td align="left"><code>pull()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Eine Spalte herauslösen</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>rename()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Spalten umbenennen</td>
+</tr>
+<tr class="even">
+<td align="left"><code>select()</code></td>
+<td align="left"><code>dplyr</code></td>
+<td align="left">Spalten auswählen</td>
+</tr>
+<tr class="odd">
+<td align="left"><code>str_replace()</code></td>
+<td align="left"><code>stringr</code></td>
+<td align="left">Charakter in einem String ersetzen</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="resourcen" class="section level2">
+<h2>Resourcen</h2>
+<div id="dplyr-vignette" class="section level3">
+<h3><code>dplyr</code> vignette</h3>
+<p>Siehe die <code>dplyr</code> <a href="https://cran.r-project.org/web/packages/dplyr/vignettes/dplyr.html"><strong>vignette</strong></a>.</p>
+</div>
+<div id="stringr-vignette" class="section level3">
+<h3><code>stringr</code> vignette</h3>
+<p>Siehe die <code>stringr</code> <a href="https://cran.r-project.org/web/packages/stringr/vignettes/stringr.html"><strong>vignette</strong></a>.</p>
+</div>
+<div id="cheatsheet" class="section level3">
+<h3>Cheatsheet</h3>
+<p align="center" width="100%">
+<a href="image/data-wrangling-cheatsheet.pdf" download> <img src="image/wrangling_cheat.jpg" style="width:70%"></a> <br> <font style="font-size:10px">from <a href="https://www.rstudio.com/resources/cheatsheets/">R Studio</a></font>
+</p>
+<p align="center" width="100%">
+<a href="image/strings.pdf" download> <img src="image/stringr.png" style="width:70%"></a> <br> <font style="font-size:10px">from <a href="https://github.com/rstudio/cheatsheets/blob/master/strings.pdf">R Studio</a></font>
+</p>
+</div>
+</div>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open');
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
