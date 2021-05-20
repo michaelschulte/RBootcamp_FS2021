@@ -61,7 +61,7 @@ Du wirst:
 2. **Fragestellung erarbeiten**
 
 - Überleg dir eine Frage, die du mit den Daten beantworten kannst. Wie ist der Zusammenhang zwischen X und Y? Was treibt die Variable X? Gibt es eine bevorzugte Art Avocados? Verändert sich eine Variable im Beobachtungszeitraum?
-- Fragestellung abgeben (Frage + grobe Skizze wie du Frage beantworten willst, via email an: <a href="mailto:michael.schulte@unibe.ch">michael.schulte@unibe.ch</a> abgene (27.05.21, 12.00 Uhr (high noon))
+- Fragestellung abgeben (Frage + grobe Skizze wie du Frage beantworten willst, via email an: <a href="mailto:michael.schulte@unibe.ch">michael.schulte@unibe.ch</a> abgene (**27.05.21**, 12.00 Uhr (high noon))
 
 3. **Fragestellung beantworten**
 
@@ -73,8 +73,8 @@ Du wirst:
 4. **Kommunizieren**
 
 - Kurze R-Markdown Präsentation erstellen, in der die Daten erklärt, die Fage präsentiert und dann die Antwort(en) erläutert werden. 
-- Präsentation im Kurs vorstellen (04.06.21)
-- Code + Markdown Präsentation abgeben (03.06.21, high noon)
+- Präsentation im Kurs vorstellen (**04.06.21**)
+- Code + Markdown Präsentation abgeben (**03.06.21**, high noon)
 
 ## Aufgaben
 
@@ -162,8 +162,8 @@ sales <- read_csv('1_Data/sales.csv')
 
 |Datei | Zeilen | Spalten | Beschreibung | 
 |:----|:-----|:------|:------|
-|[prices.csv](https://michaelschulte.github.io/RBootcamp_FS2021/1_Data/prices.csv?raw=true)| `r nrow(prices)` | `r ncol(prices)`| Datensatz zu den Avocado der Firma Hass Preisen in verschiedenen amerikanischen Staaten|
-|[sales.csv](https://michaelschulte.github.io/RBootcamp_FS2021/1_Data/sales.csv?raw=true)| `r nrow(sales)` | `r ncol(sales)`| Datensatz zu den Avocado Verkaufszahlen der Firma Hass in verschiedenen amerikanischen Staaten |
+|[prices.csv](https://github.com/michaelschulte/RBootcamp_FS2021/blob/master/1_Data/prices.csv?raw=true)| `r nrow(prices)` | `r ncol(prices)`| Datensatz zu den Avocado der Firma Hass Preisen in verschiedenen amerikanischen Staaten|
+|[sales.csv](https://github.com/michaelschulte/RBootcamp_FS2021/blob/master/1_Data/sales.csv?raw=true)| `r nrow(sales)` | `r ncol(sales)`| Datensatz zu den Avocado Verkaufszahlen der Firma Hass in verschiedenen amerikanischen Staaten |
 
 #### prices.csv
 

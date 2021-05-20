@@ -13,28 +13,28 @@ graph1 <-
   raw %>%
   select(2:4) %>%
   summarise(across(where(is.numeric), ~mean(.x, na.rm = TRUE))) %>%
-  mutate(graph = 'Covid-Boot-Camp')
+  mutate(graph = 'NummeR_1')
 
 graph2 <- 
   raw %>%
   select(5:7) %>%
   summarise(across(where(is.numeric), ~mean(.x, na.rm = TRUE))) %>%
-  mutate(graph = 'Arr-PiRaten')
+  mutate(graph = 'Team_JOS')
 
 graph3 <- 
   raw %>%
   select(8:10) %>%
   summarise(across(where(is.numeric), ~mean(.x, na.rm = TRUE))) %>%
-  mutate(graph = 'We-R-lost')
+  mutate(graph = 'NiDiTa')
 
-graph4 <- 
-  raw %>%
-  select(11:13) %>%
-  summarise(across(where(is.numeric), ~mean(.x, na.rm = TRUE))) %>%
-  mutate(graph = 'R-Pandemi')
+# graph4 <- 
+#   raw %>%
+#   select(11:13) %>%
+#   summarise(across(where(is.numeric), ~mean(.x, na.rm = TRUE))) %>%
+#   mutate(graph = 'R-Pandemi')
 # bind together, make long
 result <- 
-bind_rows(graph1, graph2, graph3, graph4) %>%
+bind_rows(graph1, graph2, graph3) %>%
   rename('Ästhetik' = 'Ist die Grafik ästhetisch ansprechend?', 
          'Überzeugend' = 'Überzeugen dich die dargestellten Datenmuster (unabhängig von der Fragestellung)?', 
          'Relevant' = 'Findest du die dargestellten Datenmuster entscheidungsrelevant in Bezug auf die Fragestellung?') %>%
@@ -46,7 +46,7 @@ single <- ggplot(result, aes(Frage, value)) +
   ylim(1,5) +
   labs(y = 'Bewertung',
        x = 'Bereich',
-       caption = 'RBootcamp Bern 2020',
+       caption = 'Datascience mit R 2021',
        title = 'Ergebnisse Plotting Competition') +
   theme_bw()
 # plot overall
@@ -59,7 +59,7 @@ overall_graph <- ggplot(overall_result, aes(reorder(graph, -overall), overall)) 
   geom_point() +
   labs(y = 'Bewertung Across',
        x = 'Gruppe',
-       caption = 'RBootcamp Bern 2020',
+       caption = 'Datascience mit R 2021',
        title = 'Ergebnisse Plotting Competition') +
   theme_bw()
 # show next to each other

@@ -1,5 +1,5 @@
 ---
-title: "Wettbewerb: explorative Datenanalyse"
+title: "Competition"
 author: "<table style='table-layout:fixed;width:100%;border:0;padding:0;margin:0'><col width='10%'><col width='10%'>
   <tr style='border:none'>
     <td style='display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none' nowrap>
@@ -42,7 +42,7 @@ options(digits = 3)
 
 ## Überblick
 
-Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb zur Explorativen Datenanalyse. Grabt tief in einen Datensatz um die beste, entscheidungsrelevanteste Graphik zu erstellen und damit &#127851;&#127851;&#127851; zu gewinnnen. 
+Beweist eure Datawrangling- und visualisierungsskills in einem Wettbewerb. Grabt tief in einen Datensatz um die beste, entscheidungsrelevanteste Graphik zu erstellen und damit &#127851;&#127851;&#127851; zu gewinnnen. 
 
 Der Wettbewerb endet in...
 
@@ -50,7 +50,7 @@ Der Wettbewerb endet in...
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("Oct 16, 2020 15:52:00").getTime();
+var countDownDate = new Date("May 21, 2021 15:52:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -91,7 +91,7 @@ Christoph Brutschin, Vorsteher des Departments für Wirtschaft, Soziales und Umw
 
 1. Öffne dein `TheRBootcamp` R project. Es sollte die Ordner `1_Data` und `2_Code` enthalten. Stelle sicher, dass du alle Datensätze, welche im `Datensätze` Tab aufgelisted sind, in deinem `1_Data` Ordner hast. 
 
-2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Explorative Datenanalyse Wettbewerb" als Kommentare an den Anfang des Skripts.
+2. Öffne ein neues R Skript. Schreibe deinen Namen, das Datum und "Wettbewerb" als Kommentare an den Anfang des Skripts.
 
 3. Speichere das neue Skript unter dem Namen `Gruppenname_Wettbewerb.R` im `2_Code` Ordner.
 
@@ -135,7 +135,7 @@ ggsave(filename = "plot_PSEUDONYM.png",
 
 5. Reicht euren Beitrag über diesen Link ein: 
 
-- [**Graphik + Skript einreichen**](https://www.dropbox.com/request/G8GcXUsYXDdvNq2QlRf5)
+- [**Graphik + Skript einreichen**](https://www.dropbox.com/request/yKJIygRY1BZkpOj3ljMb)
 
 6. Jeder Beitrag wird beurteilt duch eine Jury bestehend aus den KursteilnehmerInnen. Der Beitrag mit den im dem höchten Punktemittel gewinnt.   
 
