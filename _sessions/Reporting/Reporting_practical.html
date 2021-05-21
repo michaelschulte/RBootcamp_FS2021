@@ -13,12 +13,22 @@
 
 <title>Reporting</title>
 
+<script src="Reporting_practical_files/header-attrs-2.8/header-attrs.js"></script>
 <script src="Reporting_practical_files/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="Reporting_practical_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
 <script src="Reporting_practical_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
 <script src="Reporting_practical_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
 <script src="Reporting_practical_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<style>h1 {font-size: 34px;}
+       h1.title {font-size: 38px;}
+       h2 {font-size: 30px;}
+       h3 {font-size: 24px;}
+       h4 {font-size: 18px;}
+       h5 {font-size: 16px;}
+       h6 {font-size: 12px;}
+       code {color: inherit; background-color: rgba(0, 0, 0, 0.04);}
+       pre:not([class]) { background-color: white }</style>
 <script src="Reporting_practical_files/navigation-1.1/tabsets.js"></script>
 <link href="Reporting_practical_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
 <script src="Reporting_practical_files/highlightjs-9.12.0/highlight.js"></script>
@@ -30,14 +40,9 @@
   div.column{display: inline-block; vertical-align: top; width: 50%;}
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
   ul.task-list{list-style: none;}
-      </style>
+    </style>
 
 <style type="text/css">code{white-space: pre;}</style>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 <script type="text/javascript">
 if (window.hljs) {
   hljs.configure({languages: []});
@@ -50,32 +55,7 @@ if (window.hljs) {
 
 
 
-<style type="text/css">
-h1 {
-  font-size: 34px;
-}
-h1.title {
-  font-size: 38px;
-}
-h2 {
-  font-size: 30px;
-}
-h3 {
-  font-size: 24px;
-}
-h4 {
-  font-size: 18px;
-}
-h5 {
-  font-size: 16px;
-}
-h6 {
-  font-size: 12px;
-}
-.table th:not([align]) {
-  text-align: left;
-}
-</style>
+
 
 <link rel="stylesheet" href="practical.css" type="text/css" />
 
@@ -86,10 +66,6 @@ h6 {
   max-width: 940px;
   margin-left: auto;
   margin-right: auto;
-}
-code {
-  color: inherit;
-  background-color: rgba(0, 0, 0, 0.04);
 }
 img {
   max-width:100%;
@@ -106,6 +82,9 @@ button.code-folding-btn:focus {
 summary {
   display: list-item;
 }
+pre code {
+  padding: 0;
+}
 </style>
 
 
@@ -118,7 +97,6 @@ summary {
   max-height: 500px;
   min-height: 44px;
   overflow-y: auto;
-  background: white;
   border: 1px solid #ddd;
   border-radius: 4px;
 }
@@ -182,7 +160,7 @@ summary {
 
 
 
-<div class="fluid-row" id="header">
+<div id="header">
 
 
 
@@ -192,7 +170,7 @@ summary {
 <col width='10%'>
 <tr style="border:none">
 <td style="display:block;width:100%;text-align:left;vertical-align:bottom;padding:0;margin:0;border:none" nowrap>
-<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_HS2020/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
+<font style='font-style:normal'>Datascience mit R lernen</font><br> <a href='https://michaelschulte.github.io/RBootcamp_FS2021/'> <i class='fas fa-home' style='font-size:.9em;'></i> </a>
 </td>
 <td style="width:100%;vertical-align:bottom;text-align:right;padding:0;margin:0;border:none">
 <img src='https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/by-sa.png' style='height:15px;width:80px'/>
@@ -207,7 +185,7 @@ summary {
 <img width="100%" src="image/reporting.png" margin=0><br> <font style="font-size:10px">adapted from <a href="https://www.dertreasurer.de/news/software-it/neue-technologien-helfen-beim-reporting-60631/">dertreasurer.de</a></font>
 </p>
 <div id="section" class="section level1 tabset">
-<h1></h1>
+<h1 class="tabset"></h1>
 <div id="overview" class="section level2">
 <h2>Overview</h2>
 <p>By the end of this practical you will know how to:</p>
@@ -299,7 +277,7 @@ options(digits = 2)  # Round all output to 2 digits</code></pre>
 <li><p>Create a new third level header with the text “Overview” using three hashtags <code>### Overview</code></p></li>
 <li><p>Knit the document!</p></li>
 <li><p>Create a new code chunk by either clicking the “Insert - R” button, or by using the “Command + Option + I”" shortcut on Mac</p></li>
-<li><p>Now it’s time to add an image to your document! In the chunk you just created, use the following template to include an image of a burger in your document. You can find the image here: <a href="https://michaelschulte.github.io/RBootcamp_HS2020/_sessions/PlottingI/image/burgers.jpg">link</a>. (Tip: Use right click and copy link address to copy the link)</p></li>
+<li><p>Now it’s time to add an image to your document! In the chunk you just created, use the following template to include an image of a burger in your document. You can find the image here: <a href="https://michaelschulte.github.io/RBootcamp_FS2021/_sessions/PlottingI/image/burgers.jpg">link</a>. (Tip: Use right click and copy link address to copy the link)</p></li>
 </ol>
 <pre class="r"><code># Include a buger image
 
@@ -512,7 +490,7 @@ kable(x = tidy(cal_sod_lm),
 
 // add bootstrap table styles to pandoc tables
 function bootstrapStylePandocTables() {
-  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+  $('tr.odd').parent('tbody').parent('table').addClass('table table-condensed');
 }
 $(document).ready(function () {
   bootstrapStylePandocTables();
@@ -530,7 +508,7 @@ $(document).ready(function () {
 
 $(document).ready(function () {
   $('.tabset-dropdown > .nav-tabs > li').click(function () {
-    $(this).parent().toggleClass('nav-tabs-open')
+    $(this).parent().toggleClass('nav-tabs-open');
   });
 });
 </script>

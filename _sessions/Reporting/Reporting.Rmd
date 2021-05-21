@@ -57,11 +57,11 @@ library(baselers)
 ```
 <br><br>
 
-> # How do you get your analyses into a report?
+> # Wie transferiert man Daten aus der Analyse in einen Report?
 
 ---
 
-# A typical Analysis -> Document (copy-paste) workflow
+# Dokument (copy-paste) Workflow
 ```{r, echo = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/unreproducible_workflow.png")
 ```
@@ -70,20 +70,21 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 ---
 .pull-left55[
 
-# What is wrong with this approach?
+# Wo liegt hier das Problem?
  
-Many opportunities for <high>human error</high> in transferring results.
+Viele Möglichkeiten für <high>menschliche Fehler</high> beim Kopieren.
 
-> Wait is the p-value .07 or 0.70?
+> War der p-Wert .07 oder 0.70?
 
-<high>No documentation</high> on exactly how the analysis was conducted.
-> How did I exactly do this analysis again?
+Es gibt so <high>keine Dokumentation</high> wie eine Analyse abgelaufen ist.
 
-<high>Slow</high> 
+> Wie haben wir diese Analyse genau gemacht?
 
-> You want me to do that analysis again with new data?! Do you know how long that took me?!
+<high>Langsam</high> 
 
-## The solution? <high>A Dynamic Report.</high>
+> Es gibt neue Daten - ganze Analyse erneurt durchführen?
+
+## Lösung: <high>Dynamische Berichte.</high>
 
 ]
 
@@ -98,9 +99,9 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ---
 
-## Dynamic report
+## Dynamische Berichte
 
-A <high>Dynamic Report</high> automatically generates output from a combination of code + data, images, and text.
+In einem <high>dynamischen Bericht</high> wird das Output automatisch aus der Kombination des Codes + der Daten + Grafiken und Text erstellt.
 
 ```{r, echo = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/DynamicReports_ProcessHorizontal.png")
@@ -110,22 +111,22 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 .pull-left55[
 
-## Why are dynamic reports great?
+## Warum sind dynamische Berichte grossartig?
 
 <br>
-<high>Accurate</high>
+<high>Genau</high>
 
-- No transfer errors from output to final document.
-- The R code always matches the final document. 
+- Keine Transferfehler zwischen R-Ouput und finalem Dokument.
+- R-Code ist immer exakt gleich, wie das finale Dokument.
 
-<high>Reproducible</high>
+<high>Reproduzierbar</high>
 
-- All processes are contained in one pices of code that anyone can examine and run.
-- Original data + transformations, aggregation ... is directly connected to the final output
+- Alle Analyseschritte sind in einem Stück Code enthalten, das offen gelegt werden kann.
+- Daten + Transformationen + Aggregationen ... sind direkt mit dem finalen Dokument verbunden.
 
-<high>Efficient</high>
+<high>Effizient</high>
 
-- If you get new data, you can easily repeat your analyses with one click!
+- Für einen neuen Datensatz, ist eine neue Analyse mit einem Click möglich.
 
 ]
 
@@ -141,7 +142,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 ---
 .pull-left45[
 
-## What are common output formats for a dynamic report?
+## Ausgabeformate für dynamische Berichte
 
 
 <br><br>
@@ -156,7 +157,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 |R Packages | [Pkgdown - documentation](https://pkgdown.r-lib.org) |
 
 <br>
-### Underneath everything ...R Markdown
+### Grundlage: R Markdown
 
 
 ]
@@ -172,10 +173,9 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ---
 
-## What is Markdown (.md)?
+## Was ist Markdown (.md)?
 
-Markdown is a simple, lightweight markup <high>language</high> that allows you to easily write text with special <high>formatting tags</high>, which are then converted to formatted outputs.
-
+Markdown ist eine einfache Markup <high>Sprache</high>, die es erlaubt Text mit speziellen <high>Tags</high> zu versehen un in formatiertes Output zu übersetzen.
 
 ```{r, echo = FALSE, out.width = "90%"}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/DynamicReports_BasicMarkdown.png")
@@ -185,9 +185,9 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ---
 
-## What is RMarkdown (.Rmd)?
+## Was ist RMarkdown (.Rmd)?
 
-<high>RMarkdown</high> is a combination of standard markdown combined with <high>R Code</high>
+<high>RMarkdown</high> ist eine Kombination aus <high>markdown</high> und <high>R Code</high>
 
 
 ```{r, echo = FALSE, out.width = "90%"}
@@ -197,7 +197,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ---
 
-## How do I write an R Markdown Document
+## Wie erstelle ich eine RMarkdown Dokument
 
 ```{r, echo = FALSE, out.width="80%", fig.align = 'center'}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/openmarkdown.png")
@@ -208,23 +208,23 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 .pull-left4[
 
-## Code Chunks in R Markdown
+## Code Chunks in RMarkdown
+
+R Code wird in speziellen <high>Code Chunks</high> in ein Dokument eingefügt.
+
+Alles innerhalb eines Chunks wird als R-Code verarbeitet wenn das dokument "geknitted" wird.
+
+Jeder Chunk kann Argumente haben
 
 
-Add R code to your document in <high>code chunks</high>
-
-Everything in a code chunk will be evaluated when you "knit" the document
-
-Each chunk can have arguments
-
-|Argument| Description|
+|Argument| Beschreibung|
 |:-----|:------|
-|`eval` |Should the code be evaluated? |
-|`echo` |Should the code be shown? |
-|`fig.width, fig.height`| Figure sizes|
+|`eval` |Soll der Code evaluiert werden? |
+|`echo` |Soll der Code gezeigt werden? |
+|`fig.width, fig.height`| Grösse von Grafiken|
 
 
-See a list of all chunk options at Yihui's site [here](https://yihui.name/knitr/options/)
+Chunk Optionen sind [hier](https://yihui.name/knitr/options/) dokumentiert (Yihui's Seite) 
 
 ]
 
@@ -239,9 +239,9 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ---
 
-# Inline chunks
+# Inline Chunks
 
-You can include *inline chunks* where R code is included in a sentence. This allows you to include R output in your text!
+R Code kann auch direkt im Text, als *Inline Chunk* eingefügt werden.
 
 <br>
 <br>
@@ -252,7 +252,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ---
 
-# Inline chunks
+# Inline Chunks
 
 ```{r, echo = FALSE, out.width = "100%"}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/minichunk_big_ss.png")
@@ -260,45 +260,11 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ---
 
-
-.pull-left4[
-
-<br><br>
-# Keep your project tidy!
-
-<br>
-
-1. All raw data files (.csv, .sav, etc) should be in a folder (e.g.; `1_Data`) in your R Project directory
-
-2. Keep other files such as images (.jpg, .png) in a different  folder (e.g.; `0_Materials` or `3_Figures`)
-
-3. Put the .Rmd file in the project's main directory for clean referencing
-
-<br><br>
-
-
-]
-
-.pull-right55[
-<br><br>
-
-<center><h3>Put everything into your project folder!!</h3>
-<center><high>Every</high> file (data, images) necessary to create your RMarkdown document should be somewhere <high>in your R project folder</high>!
-
-```{r, echo = FALSE, out.width="100%", fig.align = 'center'}
-knitr::include_graphics("https://github.com/therbootcamp/therbootcamp.github.io/blob/master/_sessions/_image/DynamicReports_ProjectStructure.png?raw=true")
-```
-
-]
-
-
----
-
 .pull-left45[
 
-## Keep your code complete and tidy
+## Code soll tidy sein
 
-Don't include unnecessary code like random calculations or package installation.
+Installation von Pakete oder aufwändige Berechnungen sollten vermieden werden.
 
 ```{r, echo = FALSE, out.width="100%", fig.align = 'center'}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/DynamicReports_BadMarkdown.png")
@@ -309,7 +275,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 .pull-right45[
 <br><br>
 
-If you want to save some code for yourself, comment it out with \#
+Kommentare, wie in regulärem R, mit #
 
 ```{r, echo = FALSE, out.width="100%", fig.align = 'center'}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/DynamicReports_GoodMarkdown.png")
@@ -321,13 +287,13 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 .pull-left45[
 
-## Rendering output with `knitr`
+## Ausgabe mit `knitr` erzeugen
 
 ```{r, out.width = "30%", echo = FALSE}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/knitr_hex.png")
 ```
 
-Non-text ouputs such as images and tables need to be <u>rendered</u> using functions from the amazing <high>knitr</high> package.
+Bilder und Tabellen müssen extra gerendert werden - dafür gibt es viele Funktionen aus dem <high>knitr</high> Paket.
 
 ```{r}
 # Load the knitr package
@@ -335,16 +301,16 @@ library(knitr)
 ```
 
 
-| Function|Output|
+| Funktion|Output|
 |:------|:----|
-|     `kable(df, format)`|Print a dataframe as a table|
-|     `include_graphics(path)`| Include an image (e.g.; .png, .jpg)|
+|     `kable(df, format)`|Dataframe als Tabelle ausgeben|
+|     `include_graphics(path)`| Bild einfügen (z.B. .png, .jpg)|
 
 ]
 
 .pull-right5[
 <br><br>
-Render a table with <high>kable()</high>
+Tabelle mit <high>kable()</high> rendern.
 
 ```{r, echo = TRUE, eval = FALSE, results = 'asis'}
 kable(x = baselers,  # A data frame
@@ -357,7 +323,7 @@ kable(x = baselers %>% slice(1:3) %>% select(1:6),
 ```
 
 
-Render an image with <high>include_graphics()</high>
+Bild mit <high>include_graphics()</high> einfügen
 
 ```{r, echo = TRUE, out.width = "15%", eval = FALSE}
 include_graphics(path = "images/rlogo.png")
@@ -372,10 +338,10 @@ include_graphics(path = "https://raw.githubusercontent.com/therbootcamp/therboot
 
 ---
 
-## Rendering output
+## Tabellen
 
 
-The `datatable()` function from the `DT` package will include a rich HTML table in your document. See [rstudio.github.io/DT/options.html](https://rstudio.github.io/DT/options.html) for customisation options
+Die `datatable()` Funktion aus dem `DT` Paket erstellt HTML Tabellen aus R Code. Siehe [rstudio.github.io/DT/options.html](https://rstudio.github.io/DT/options.html) 
 
 ```{r}
 library(DT)
@@ -390,26 +356,25 @@ datatable(baselers %>%
 
 .pull-left4[
 
-## Output types
+## Output Formate
 
-There are *many* different output formats you can create from an R Markdown document
+Es gibt eine grosse Anzahl Output Formate für RMarkdown Dokumente.
 
-Some come with RStudio, some are distributed in separate packages:
 
-| Package|Description|
+| Paket|Beschreibung|
 |:------|:----|
-|     `xaringan`*| Slideshows (like this one!)|
-|     `papaja`*|APA Manuscripts|
-|     `rmdformats`|Many templates|
-|     `prettydoc`|Project documentation|
+|     `xaringan`*| Präsentationen|
+|     `papaja`*|APA Manuskript|
+|     `rmdformats`|Vorlagen|
+|     `prettydoc`|Projekt Dokumentation|
 
-`* = On GitHub
+`* = GitHub
 
 ]
 
 .pull-right55[
 <br>
-### R Markdown templates in R Studio
+### R Markdown Vorlagen in R Studio
 
 ```{r, echo = FALSE, out.width="100%", fig.align = 'center'}
 knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therbootcamp.github.io/master/_sessions/_image/rmarkdown_templates.png")
@@ -422,7 +387,7 @@ knitr::include_graphics("https://raw.githubusercontent.com/therbootcamp/therboot
 
 ## R Markdown Gallery
 
-Overview of available formats: http://rmarkdown.rstudio.com/gallery.html
+Überblick über verfügbare Formate: http://rmarkdown.rstudio.com/gallery.html
 
 <iframe src="rmarkdown_gallery.htm" width="800" height="450"></iframe>
 
@@ -431,15 +396,15 @@ Overview of available formats: http://rmarkdown.rstudio.com/gallery.html
 
 .pull-left6[
 
-## Why are dynamic documents so great?
+## Vorteile dynamischer Berichte
 
-1. <high>Tidy!</high> Data, code, and output are all in the same place.
+1. <high>Tidy!</high> Daten, Code und Ausgabe sind in einer Datei.
 
-2. Everything works and is <high>replicable</high>!
+2. Ergebnisse sind <high>reproduzierbar</high>!
 
-3. You can produce <high>great looking documents</high>, from simple PDFs, to webpages, to presentations (like this one!).
+3. Elegante Dokumente können als PDF, Webpage oder als Präsentation erstellt werden.
 
-4. <high>Update your documents</high> with new data with just one line of code!
+4. Die Analyse neuer Daten ist nur <high>einen Click</high> weit weg.
 
 
 ```{r, echo = FALSE, out.width="50%", fig.align = 'center'}

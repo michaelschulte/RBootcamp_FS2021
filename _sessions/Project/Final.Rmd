@@ -61,7 +61,7 @@ Du wirst:
 2. **Fragestellung erarbeiten**
 
 - Überleg dir eine Frage, die du mit den Daten beantworten kannst. Wie ist der Zusammenhang zwischen X und Y? Was treibt die Variable X? Gibt es eine bevorzugte Art Avocados? Verändert sich eine Variable im Beobachtungszeitraum?
-- Fragestellung abgeben (Frage + grobe Skizze wie du Frage beantworten willst, via email an: <a href="mailto:michael.schulte@unibe.ch">michael.schulte@unibe.ch</a> abgene (**27.05.21**, 12.00 Uhr (high noon))
+- Fragestellung abgeben (Frage + grobe Skizze wie du die Frage beantworten willst, via email an: <a href="mailto:michael.schulte@unibe.ch">michael.schulte@unibe.ch</a> abgeben (**27.05.21**, 12.00 Uhr (high noon))
 
 3. **Fragestellung beantworten**
 
@@ -126,9 +126,11 @@ sales <- read_csv('1_Data/sales.csv')
 
 2. Fragestellung kommt auf den Slide Nummer 3.
 
+3. Fragestellung abgeben (Frage + grobe Skizze wie du die Frage beantworten willst, via email an: <a href="mailto:michael.schulte@unibe.ch">michael.schulte@unibe.ch</a> abgeben (**27.05.21**, 12.00 Uhr (high noon))
+
 ### E - Fragestellung beantworten
 
-1. Beantworte deine Fragestellung mit all den verschiedenen Ansätzen, die wir im Kurs durchgemacht haben - Tabelle, Grafiken, Statistik (deskriptiv und inferenz (Bonus)).
+1. Beantworte deine Fragestellung mit all den verschiedenen Ansätzen, die wir im Kurs durchgemacht haben - Tabellen, Grafiken, Statistik (deskriptiv und Inferenz (Bonus)).
 
 
 ### F - Kommunizieren
@@ -141,7 +143,7 @@ sales <- read_csv('1_Data/sales.csv')
 
 4. Erstelle einen Slide mit der Fragestellung
 
-5. Erstelle Slides für die Beantwortung der Fragestellung (Tabellen, deskriptive Statistiken, Grafiken)
+5. Erstelle Slides für die Beantwortung der Fragestellung (Tabellen, deskriptive Statistiken, Grafiken) (max 10!)
 
 ## Datensätze
 
@@ -162,7 +164,7 @@ sales <- read_csv('1_Data/sales.csv')
 
 |Datei | Zeilen | Spalten | Beschreibung | 
 |:----|:-----|:------|:------|
-|[prices.csv](https://github.com/michaelschulte/RBootcamp_FS2021/blob/master/1_Data/prices.csv?raw=true)| `r nrow(prices)` | `r ncol(prices)`| Datensatz zu den Avocado der Firma Hass Preisen in verschiedenen amerikanischen Staaten|
+|[prices.csv](https://github.com/michaelschulte/RBootcamp_FS2021/blob/master/1_Data/prices.csv?raw=true)| `r nrow(prices)` | `r ncol(prices)`| Datensatz zu den Avocado-Preisen der Firma Hass in verschiedenen amerikanischen Staaten|
 |[sales.csv](https://github.com/michaelschulte/RBootcamp_FS2021/blob/master/1_Data/sales.csv?raw=true)| `r nrow(sales)` | `r ncol(sales)`| Datensatz zu den Avocado Verkaufszahlen der Firma Hass in verschiedenen amerikanischen Staaten |
 
 #### prices.csv

@@ -35,6 +35,12 @@ output:
 || Covid-R-Bootcamp, We-R-Lost, Arr-PiRaten, R-Pandemi -->|  | <!--- [Medicine](_sessions/FinalProject/FinalProject_Medicine.html), [Clinical](_sessions/FinalProject/FinalProject_Clinical.html)--->| |
 
 
+# Extra Programm
+
+
+
+<img src='https://michaelschulte.github.io/RBootcamp_FS2021/_sessions/PlottingII/image/data_analytics_BS.png'/>
+
 # Practicals
 
 Upload bitte in der Form: Gruppe_Practical#XY.zip spätestens bis Donnerstag 12.00 Uhr Mittag, Folgewoche!
