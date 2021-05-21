@@ -12,7 +12,7 @@ output:
     self_contained: no
 ---
 
-# Der Plan: 
+# Der Plan
 
 |Datum|Thema|Input|Practicals|
 |:--:|:-|:--:|:--:|

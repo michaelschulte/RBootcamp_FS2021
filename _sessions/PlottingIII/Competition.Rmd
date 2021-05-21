@@ -50,7 +50,7 @@ Der Competition endet in...
 
 <script>
 // Set the date we're counting down to
-var countDownDate = new Date("May 21, 2021 15:52:00").getTime();
+var countDownDate = new Date("May 21, 2021 14:44:00").getTime();
 
 // Update the count down every 1 second
 var x = setInterval(function() {
@@ -122,7 +122,9 @@ library(tidyverse)
 
 3. Du nimmst am Wettbewerb teil indem du deine beste Graphik im `.png` Format und das zugehörige R Script einreichst.
 
-4. Vor dem Einreichen, speichere deine Graphik mittels `ggsave()` (siehe code) und benennt die Datei mit eurem *Gruppennamen*. Benutzt euren *Gruppennamen* ebenfalls im Namen der `.R` Skriptdatei (siehe oben). 
+4. Du hast (ie die Gruppe hat) einen Telefonjoker: Ihr könnt mich **einmal** konsultieren und um Hilfe bitten.
+
+5. Vor dem Einreichen, speichere deine Graphik mittels `ggsave()` (siehe code) und benennt die Datei mit eurem *Gruppennamen*. Benutzt euren *Gruppennamen* ebenfalls im Namen der `.R` Skriptdatei (siehe oben). 
 
 ```{r}
 # speichere plot
@@ -135,13 +137,13 @@ ggsave(filename = "plot_GRUPPENNAME.png",
        )
 ```
 
-5. Reiche deinen Beitrag über diesen Link ein: 
+6. Reiche deinen Beitrag über diesen Link ein: 
 
 - [**Graphik + Skript einreichen**](https://www.dropbox.com/request/yKJIygRY1BZkpOj3ljMb)
 
-6. Jeder Beitrag wird duch eine Jury beurteilt, diese besteht aus den KursteilnehmerInnen. Der Beitrag mit dem höchsten Punktemittel gewinnt.   
+7. Jeder Beitrag wird duch eine Jury beurteilt, diese besteht aus den KursteilnehmerInnen. Der Beitrag mit dem höchsten Punktemittel gewinnt.   
 
-7. Bitte deinen eigenen Beitrag nicht bewerten!
+8. Bitte deinen eigenen Beitrag nicht bewerten!
 
 Wichtig: Entscheidend für den Erfolg ist nicht nur die Ästhetik der Graphik, sondern auch die gewonnenen Erkenntnisse die darin dargestellt sind. Dafür kann es notwendig sein die beiden Datensätze gemeinsam zu analysieren.     
 
