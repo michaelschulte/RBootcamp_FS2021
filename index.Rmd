@@ -26,7 +26,7 @@ output:
 || Plotting I | [slides](_sessions/PlottingI/PlottingI.html) | [practical](_sessions/PlottingI/PlottingI_practicaI.html), [solutions](_sessions/PlottingI/PlottingI_practicaI_solutions.html)| 
 || Plotting II | [slides](_sessions/PlottingII/PlottingII.html) | [practical](_sessions/PlottingII/PlottingII_practical.html), [solutions](_sessions/PlottingII/PlottingII_practical_solutions.html)|
 |21.05.| Recap | | | 
-|| Plotting III + Competition |[slides](_sessions/PlottingIII/PlottingIII.html)|<!--[Competition](_sessions/PlottingIII/Competition.html)-->| |
+|| Plotting III + Competition |[slides](_sessions/PlottingIII/PlottingIII.html)|[Competition](_sessions/PlottingIII/Competition.html)| |
 ||Intro Finales Projekt||[Avocado](_sessions/Project/Final.html)||
 |28.05.| Recap | | | 
 || Lineare Modelle |<!--[slides](_sessions/LinearModelsI/LinearModelsI.html)-->| <!--[practical](_sessions/LinearModelsI/LinearModelsI_practical.html), [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)| -->|
