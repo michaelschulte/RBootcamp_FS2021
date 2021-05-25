@@ -8,7 +8,8 @@ library(tidyverse)
 library(patchwork)
 # read in data 
 raw <- read_sheet(ss = '1qODIQcqM8VrWeEyGl2bCfqFqRE9MBtkJyMXiksSzYVU')
-# generate graphs for each group  
+
+# generate tibble for each group ----
 graph1 <- 
   raw %>%
   select(2:4) %>%
@@ -23,23 +24,20 @@ graph2 <-
 
 graph3 <- 
   raw %>%
-  select(8:10) %>%
+  select(8, 12:13) %>%
   summarise(across(where(is.numeric), ~mean(.x, na.rm = TRUE))) %>%
   mutate(graph = 'NiDiTa')
 
-# graph4 <- 
-#   raw %>%
-#   select(11:13) %>%
-#   summarise(across(where(is.numeric), ~mean(.x, na.rm = TRUE))) %>%
-#   mutate(graph = 'R-Pandemi')
-# bind together, make long
+
+# bind together, make long ----
 result <- 
 bind_rows(graph1, graph2, graph3) %>%
   rename('Ästhetik' = 'Ist die Grafik ästhetisch ansprechend?', 
          'Überzeugend' = 'Überzeugen dich die dargestellten Datenmuster (unabhängig von der Fragestellung)?', 
          'Relevant' = 'Findest du die dargestellten Datenmuster entscheidungsrelevant in Bezug auf die Fragestellung?') %>%
   pivot_longer(cols = 1:3, names_to = 'Frage')
-# plot single result 
+
+# plot single result ----
 single <- ggplot(result, aes(Frage, value)) +
  geom_point(stat = 'identity') + 
  facet_wrap(~graph, nrow = 1) +
@@ -49,7 +47,8 @@ single <- ggplot(result, aes(Frage, value)) +
        caption = 'Datascience mit R 2021',
        title = 'Ergebnisse Plotting Competition') +
   theme_bw()
-# plot overall
+
+# plot overall ----
 overall_result <- 
   result %>%
     group_by(graph) %>%
@@ -61,6 +60,17 @@ overall_graph <- ggplot(overall_result, aes(reorder(graph, -overall), overall)) 
        x = 'Gruppe',
        caption = 'Datascience mit R 2021',
        title = 'Ergebnisse Plotting Competition') +
+  ylim(1,5) +
   theme_bw()
 # show next to each other
 overall_graph / single
+
+
+
+# Dump ----
+
+# graph4 <- 
+#   raw %>%
+#   select(11:13) %>%
+#   summarise(across(where(is.numeric), ~mean(.x, na.rm = TRUE))) %>%
+#   mutate(graph = 'R-Pandemi')

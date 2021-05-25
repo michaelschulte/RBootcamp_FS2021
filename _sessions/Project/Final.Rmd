@@ -162,6 +162,9 @@ sales <- read_csv('1_Data/sales.csv')
 # check <- readr::read_csv(here('1_Data/sales_bad.csv'))
 ```
 
+Die beiden Datensätze beinhalten Daten über die Verkaufszahlen von Avocados der Firma Hass. In `prices.csv` werden durchschnittliche Preise der Avocados und die Verkaufsregion gelistet, in `sales.csv` die die Grösse der Avocados genauer unterteilt, hier finden sich auch Informationen über die Grösse der Säcke, in denen die Avocados verkauft werden.
+
+
 |Datei | Zeilen | Spalten | Beschreibung | 
 |:----|:-----|:------|:------|
 |[prices.csv](https://github.com/michaelschulte/RBootcamp_FS2021/blob/master/1_Data/prices.csv?raw=true)| `r nrow(prices)` | `r ncol(prices)`| Datensatz zu den Avocado-Preisen der Firma Hass in verschiedenen amerikanischen Staaten|
@@ -180,11 +183,11 @@ knitr::kable(prices[1:5,])
 |:--------|:-----------------------------|
 |X1 | ID |
 |Date | Datum |
-|AveragePrice | Durchschnittlicher Preis|
+|AveragePrice | Durchschnittlicher Preis einer Avocado|
 |type | Art der Avocado: "conventional" versus "organic" |
-|region | Ursprungsregion |
+|region | Verkaufsregion |
 
-#### housing.csv
+#### sales.csv
 
 *Erste 5 Zeilen von sales.csv*
 
@@ -200,7 +203,7 @@ knitr::kable(sales[1:5,])
 |Large Bags | Anzahl verkaufte Säcke: gross |
 |XLarge Bags | Anzahl verkaufte Säcke: sehr gross |
 |type | Art der Avocado: "conventional" versus "organic"|
-|region|Ursprungsregion|
+|region|Verkaufsregion|
 |SmallMediumAvocado|Small/Medium Hass Avocado (~3-5oz avocado) Typ #4046| 
 |LargeAvocado|Large Hass Avocado (~8-10oz avocado) Typ #4225| 
 |ExtraLargeAvocado|Extra Large Hass Avocado (~10-15oz avocado) Typ #4770| 
