@@ -41,6 +41,11 @@ library(tidyverse)
 </p>
 
 ```{r, echo = FALSE, fig.align = 'center', eval = TRUE, out.width = "70%"}
+library(tidyverse)
+library(lubridate)
+require(scales)
+
+avocado <- read_csv('1_Data/avocado.csv')
 #knitr::include_graphics("")
 ```
 
@@ -160,6 +165,7 @@ sales <- read_csv('1_Data/sales.csv')
 # 
 # write_csv(sales_bad, '1_Data/sales.csv')
 # check <- readr::read_csv(here('1_Data/sales_bad.csv'))
+
 ```
 
 Die beiden Datensätze beinhalten Daten über die Verkaufszahlen von Avocados der Firma Hass. In `prices.csv` werden durchschnittliche Preise der Avocados und die Verkaufsregion gelistet, in `sales.csv` die die Grösse der Avocados genauer unterteilt, hier finden sich auch Informationen über die Grösse der Säcke, in denen die Avocados verkauft werden.
@@ -208,6 +214,21 @@ knitr::kable(sales[1:5,])
 |LargeAvocado|Large Hass Avocado (~8-10oz avocado) Typ #4225| 
 |ExtraLargeAvocado|Extra Large Hass Avocado (~10-15oz avocado) Typ #4770| 
 
+#### Beispiel der Verkaufszahlen für den Avocado Typ 4225 (ganzer US Markt)
+
+
+```{r}
+avocado %>%
+  filter(year(Date) == 2015 & region == 'TotalUS') %>%
+  group_by(Date) %>%
+  summarise(sum_A = sum(`4225`)) %>%
+ggplot(aes(Date, sum_A)) + 
+  geom_line(group = 1) +
+  scale_y_continuous(labels = comma) +
+  labs(y = 'Sales in # pieces',
+       title = 'Sales of type 4225 in 2015') +
+  theme_bw()
+```
 
 
 ## Funktionen
