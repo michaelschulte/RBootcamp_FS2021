@@ -162,7 +162,7 @@ Hier ist eine unvollständige Liste guter Bücher über R lose geordnet nach vor
   </td>
 
   <td>
-  <a href="www.rcpp.org/"><img border="0" alt="W3Schools" src="https://lh3.googleusercontent.com/proxy/sjugA9zq41KQLXcWJDFp_5o5D5VAwRFDs0wJ4TaGjRGxy2FH22WGv9e0eRGTItgo3tWEa4CaZ42FH9Xm4A" height="180" ></a>
+  <a href="www.rcpp.org/"><img border="0" alt="W3Schools" src="https://lh3.googleusercontent.com/proxy/lGETCRe9LvpG4dN2drbxxHeEDn-jQmB9pC-uQ1fMqwWGvyluIzQrphMni6MVGQeGCwHYxhHr4jt4zALp_g" height="180" ></a>
   </td>
   
   

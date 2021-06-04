@@ -31,7 +31,7 @@ output:
 |28.05.| Lineare Modelle |[slides](_sessions/LinearModelsI/LinearModelsI.html)| [practical](_sessions/LinearModelsI/LinearModelsI_practical.html), [solutions](_sessions/LinearModelsI/LinearModelsI_practical_solutions.html)| |
 || Reporting | [slides](_sessions/Reporting/Reporting.html)| [practical](_sessions/Reporting/Reporting_practical.html), [solutions](_sessions/Reporting/Reporting_practical_solutions.html)||
 |04.06.| Recap | | | 
-|| Projektpräsentationen |[Next steps](_sessions/NextSteps/NextSteps.html) | [feedback](https://forms.gle/38LagXxyH2cMHynt8)| 
+|| Projektpräsentationen |[Next steps](_sessions/NextSteps/NextSteps.html) | [feedback](https://forms.gle/38LagXxyH2cMHynt8), [evaluation](https://www.dropbox.com/s/lin8heqvmcemyxd/FS21-Seminar_Datascience_mit_R_lernen.pdf?dl=0)| 
 |||  | <!--- [Medicine](_sessions/FinalProject/FinalProject_Medicine.html),x [Clinical](_sessions/FinalProject/FinalProject_Clinical.html)--->| |
 
 
