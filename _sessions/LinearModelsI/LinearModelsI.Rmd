@@ -34,7 +34,7 @@ layout: true
     </a>
     <a href="https://therbootcamp.github.io/">
       <font color="#7E7E7E">
-       Statistik mit R | Mai 2020
+       Datascience mit R | FS 2021
       </font>
     </a>
     </span>
