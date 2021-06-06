@@ -1,0 +1,51 @@
+---
+title: "Project_Feedback"
+author: "MSM"
+date: "6/6/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+# load packages
+library(googlesheets4)
+library(tidyverse)
+library(patchwork)
+# read in data 
+raw <- read_sheet(ss = '1oTizDKD79odNgjSe4J_nlF-mx-X2V8qDR_vtTWUDjqY') %>%
+  rename(group = "Bitte die Gruppe auswählen",
+         Frage = "Die Fragestellung wurde beantwortet.",
+         Ergebnisse = "Die Ergebnisse wurden verständlich präsentiert.",
+         Grafisch = "Die grafische Aufbereitung der Ergebnisse war",
+         Note = "Nach dem Schulnotensystem würde ich der Gruppe die folgende Note geben:",
+         comment = "Hier noch die Möglichkeit für verbales Feedback an die Gruppe:") %>%
+  select(-comment, -Timestamp) %>%
+  pivot_longer(!group,  names_to = "Frage", values_to = "Bewertung")
+```
+
+Hier die Ergebnisse der Projekt Feedbacks (bis auf die Note Skala von 1:10). Die Fragen zu den Labels unten sind:
+
+- Ergebnisse = Die Ergebnisse wurden verständlich präsentiert.
+- Frage = Die Fragestellung wurde beantwortet.
+- Grafisch = Die grafische Aufbereitung der Ergebnisse war.
+- Note = Nach dem Schulnotensystem würde ich der Gruppe die folgende Note geben.
+
+```{r echo = FALSE, warning = FALSE}
+av_Berwertung <- 
+  raw %>%
+  group_by(group, Frage) %>%
+  summarise(mean_Bewertung = mean(Bewertung), .groups = 'keep')
+
+av_Berwertung  %>%
+  ggplot(aes(Frage, mean_Bewertung)) +
+  geom_bar(stat = 'identity') +
+  facet_wrap(group ~ .) +
+  geom_text(aes(label = round(mean_Bewertung, 2)), vjust = 1.5, color = 'white') +
+  labs(title = 'Bewertung durch andere Gruppen',
+       y = 'Durchschnittliche Bewertung', 
+       x = 'Item aus Fragebogen') +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.5)) +
+  theme_bw()
+```
+
+
